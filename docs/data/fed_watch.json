@@ -3,17 +3,17 @@
   "meetings": [
     {
       "date": "2026-10-28",
-      "days_until": 32,
+      "days_until": 31,
       "probabilities": {
         "hold": 33.4,
         "hike_25": 66.6
       },
       "most_likely": "hike_25",
-      "consensus_direction": "hawkish_lean"
+      "consensus_direction": "hawkish"
     },
     {
       "date": "2026-12-09",
-      "days_until": 74,
+      "days_until": 73,
       "probabilities": {
         "hold": 7.5,
         "hike_25": 40.9,
@@ -24,18 +24,18 @@
     },
     {
       "date": "2027-01-27",
-      "days_until": 123,
+      "days_until": 122,
       "probabilities": {
-        "hold": 3.6,
-        "hike_25": 23.4,
-        "hike_50": 73.1
+        "hold": 0.7,
+        "hike_25": 6.8,
+        "hike_50": 92.5
       },
       "most_likely": "hike_50",
       "consensus_direction": "hawkish"
     },
     {
       "date": "2027-03-17",
-      "days_until": 172,
+      "days_until": 171,
       "probabilities": {
         "hold": 1.2,
         "hike_25": 10.3,
@@ -45,43 +45,39 @@
       "consensus_direction": "hawkish"
     }
   ],
-  "implied_terminal_rate": "4.50-4.75",
-  "implied_terminal_date": "2027-Q2",
-  "data_snapshot_date": "2026-09-26 00:35 EDT",
-  "recent_event_impact": "最近7天内未发现NFP/CPI/PPI/FOMC或Fed Chair Warsh正式讲话；最近关键数据为9/4 NFP +162K、失业率4.1%，9/10 PPI同比+5.4%，9/11 CPI环比+0.4%、核心CPI同比2.4%，随后9/16 FOMC加息25bp至3.75-4.00%。强就业与偏热PPI支持后续加息定价，核心CPI回落限制更激进加息概率。",
-  "commentary": "Data snapshot 为2026-09-26 00:35 EDT，已晚于9/4 NFP、9/10 PPI、9/11 CPI和9/16 FOMC，因此关键近期事件已反映。市场目前明显偏鹰，定价10月再加25bp概率约66.6%，12月达到累计50bp上调或以上的概率约51.6%；1月和3月中'hike_50'包含CME目标区间中超过50bp的上行尾部聚合。",
+  "implied_terminal_rate": "4.75-5.00",
+  "implied_terminal_date": "2027-Q3/Q4",
+  "data_snapshot_date": "2026-09-25",
+  "recent_event_impact": "9/4 NFP +162K、9/10 PPI +0.4% m/m、9/11 CPI 3.4% y/y且核心CPI +0.3% m/m，叠加9/16 FOMC已加息25bp至3.75-4.00%，推动市场继续定价10月及后续会议加息路径。",
+  "commentary": "CME官方页面显示FedWatch最后更新时间为2026-09-25 10:21:20 PM CT，备选Investing/Fed Rate Monitor表格为2026-09-25晚间快照，晚于9月NFP、PPI、CPI和9/16 FOMC，因此关键近期事件已反映。过去7天内未发现新的NFP/CPI/PPI/FOMC或Fed Chair Warsh正式讲话；因输出标签限制，远端会议的hike_50归并表示相对当前目标区间累计加息50bp或以上。",
   "sources": [
-    {
-      "url": "https://www.investing.com/central-banks/fed-rate-monitor?entry=header_strip",
-      "type": "cme_fedwatch_secondary"
-    },
     {
       "url": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
       "type": "cme_fedwatch"
     },
     {
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm",
-      "type": "fomc_statement"
-    },
-    {
-      "url": "https://www.bls.gov/news.release/empsit.htm",
-      "type": "nfp"
-    },
-    {
-      "url": "https://www.bls.gov/news.release/archives/ppi_09102026.htm",
-      "type": "ppi"
+      "url": "https://www.investing.com/central-banks/fed-rate-monitor",
+      "type": "fed_rate_monitor_backup"
     },
     {
       "url": "https://www.bls.gov/news.release/archives/cpi_09112026.htm",
-      "type": "cpi"
+      "type": "cpi_release"
+    },
+    {
+      "url": "https://www.dol.gov/newsroom/economicdata/ppi_09102026.pdf",
+      "type": "ppi_release"
+    },
+    {
+      "url": "https://www.bls.gov/news.release/empsit.htm",
+      "type": "nfp_release"
     }
   ],
   "confidence": "medium",
   "source_via": "codex_cli_websearch",
-  "fetched_at": "2026-09-26T10:32:02+00:00",
+  "fetched_at": "2026-09-26T18:34:32+00:00",
   "_meta": {
-    "cached_at": "2026-09-26T19:32:02.736839",
-    "age_sec": 25259,
+    "cached_at": "2026-09-27T03:34:32.573959",
+    "age_sec": 3510,
     "stale": false,
     "refreshing": false
   }
