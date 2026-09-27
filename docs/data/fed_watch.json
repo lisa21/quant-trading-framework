@@ -5,8 +5,11 @@
       "date": "2026-10-28",
       "days_until": 31,
       "probabilities": {
-        "hold": 33.4,
-        "hike_25": 66.6
+        "hold": 36,
+        "hike_25": 64,
+        "hike_50": 0,
+        "cut_25": 0,
+        "cut_50": 0
       },
       "most_likely": "hike_25",
       "consensus_direction": "hawkish"
@@ -15,69 +18,75 @@
       "date": "2026-12-09",
       "days_until": 73,
       "probabilities": {
-        "hold": 7.5,
-        "hike_25": 40.9,
-        "hike_50": 51.6
+        "hold": 23,
+        "hike_25": 77,
+        "hike_50": 0,
+        "cut_25": 0,
+        "cut_50": 0
       },
-      "most_likely": "hike_50",
+      "most_likely": "hike_25",
       "consensus_direction": "hawkish"
     },
     {
       "date": "2027-01-27",
       "days_until": 122,
       "probabilities": {
-        "hold": 0.7,
-        "hike_25": 6.8,
-        "hike_50": 92.5
+        "hold": 49,
+        "hike_25": 51,
+        "hike_50": 0,
+        "cut_25": 0,
+        "cut_50": 0
       },
-      "most_likely": "hike_50",
-      "consensus_direction": "hawkish"
+      "most_likely": "hike_25",
+      "consensus_direction": "slight_hawkish_lean"
     },
     {
       "date": "2027-03-17",
       "days_until": 171,
       "probabilities": {
-        "hold": 1.2,
-        "hike_25": 10.3,
-        "hike_50": 88.5
+        "hold": 32,
+        "hike_25": 68,
+        "hike_50": 0,
+        "cut_25": 0,
+        "cut_50": 0
       },
-      "most_likely": "hike_50",
+      "most_likely": "hike_25",
       "consensus_direction": "hawkish"
     }
   ],
   "implied_terminal_rate": "4.75-5.00",
-  "implied_terminal_date": "2027-Q3/Q4",
+  "implied_terminal_date": "2027-Q3",
   "data_snapshot_date": "2026-09-25",
-  "recent_event_impact": "9/4 NFP +162K、9/10 PPI +0.4% m/m、9/11 CPI 3.4% y/y且核心CPI +0.3% m/m，叠加9/16 FOMC已加息25bp至3.75-4.00%，推动市场继续定价10月及后续会议加息路径。",
-  "commentary": "CME官方页面显示FedWatch最后更新时间为2026-09-25 10:21:20 PM CT，备选Investing/Fed Rate Monitor表格为2026-09-25晚间快照，晚于9月NFP、PPI、CPI和9/16 FOMC，因此关键近期事件已反映。过去7天内未发现新的NFP/CPI/PPI/FOMC或Fed Chair Warsh正式讲话；因输出标签限制，远端会议的hike_50归并表示相对当前目标区间累计加息50bp或以上。",
+  "recent_event_impact": "9/4 August NFP and 9/10 PPI / 9/11 CPI came before this snapshot; reports described jobs as strong and inflation as sticky/hot, which pushed September hike odds sharply higher and was followed by the 9/16 FOMC 25bp hike. No NFP/CPI/PPI release occurred during 2026-09-20 to 2026-09-27; Fed speeches on 9/22-9/23 were after the FOMC and before the 9/25 snapshot.",
+  "commentary": "Data snapshot is 2026-09-25, the most recent U.S. trading day before 2026-09-27. The curve is hawkish: after the strong August labor data and hot August CPI/PPI helped validate the 9/16 Warsh-era hike, markets priced a further 64%-77% chance of 25bp hikes at the next two meetings.",
   "sources": [
     {
       "url": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
       "type": "cme_fedwatch"
     },
     {
-      "url": "https://www.investing.com/central-banks/fed-rate-monitor",
-      "type": "fed_rate_monitor_backup"
+      "url": "https://www.fedchirp.com/",
+      "type": "fed_funds_futures_probabilities_snapshot"
     },
     {
-      "url": "https://www.bls.gov/news.release/archives/cpi_09112026.htm",
-      "type": "cpi_release"
+      "url": "https://www.frenzycap.com/fedwatch",
+      "type": "fedwatch_methodology_crosscheck"
     },
     {
-      "url": "https://www.dol.gov/newsroom/economicdata/ppi_09102026.pdf",
-      "type": "ppi_release"
+      "url": "https://www.newyorkfed.org/research/calendars/i-sep26.html",
+      "type": "economic_calendar"
     },
     {
-      "url": "https://www.bls.gov/news.release/empsit.htm",
-      "type": "nfp_release"
+      "url": "https://www.federalreserve.gov/newsevents/2026-speeches.htm",
+      "type": "fed_speeches_calendar"
     }
   ],
   "confidence": "medium",
   "source_via": "codex_cli_websearch",
-  "fetched_at": "2026-09-26T18:34:32+00:00",
+  "fetched_at": "2026-09-27T02:36:17+00:00",
   "_meta": {
-    "cached_at": "2026-09-27T03:34:32.573959",
-    "age_sec": 25110,
+    "cached_at": "2026-09-27T11:36:17.468244",
+    "age_sec": 3405,
     "stale": false,
     "refreshing": false
   }

@@ -1,6 +1,6 @@
 {
-  "as_of": "2026-09-26T22:32:23.594767",
-  "count_total_actions": 589,
+  "as_of": "2026-09-27T10:36:20.359411",
+  "count_total_actions": 597,
   "tools": [
     {
       "tool_key": "long_end_buyback",
@@ -23,7 +23,7 @@
         "confidence": 8
       },
       "yield_reaction_30y": {},
-      "event_count_180d": 206
+      "event_count_180d": 208
     },
     {
       "tool_key": "fed_hawkish_signal",
@@ -36,17 +36,17 @@
       "last_action": {
         "tool_key": "fed_hawkish_signal",
         "action_type": "signaled",
-        "date": "2026-09-25",
+        "date": "2026-09-26",
         "actor": "Warsh",
         "amount_desc": "",
-        "commentary": "Fed制度变化继续推进且遇阻，指向更鹰派政策框架；对QE/YCC预期不利。",
-        "verbatim": "Warsh's regime change at the Fed pushes ahead – and meets resistance",
+        "commentary": "“利率能升多高”是明确鹰派叙事，通常压制债价、抬升收益率。",
+        "verbatim": "6 Words From Kevin Warsh Changed the Question From “Will the Fed Hike Rates?” to “How High Can Rates Go?”",
         "source": "GoogleNews: Warsh Federal Reserve rate hike inflation",
-        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPZk5lSkEzNDdYMEcyZjAtdnRicXhMSGMtU0MzR3JNWEdSR2dIaW9Ndm9sUFNzRGlGLXNhclRmU3FlcXJ5aDByVExyMmZUX3MyNEFaQ0lWX3oxM2U2cU1NT0dfc3FTQ1dnbUp5U19XQWNJOVIyUVlkdlcydzgwQWdIYjNLRXRLMHBr0gGOAUFVX3lxTE1MQ3lndjVhRDktQmJPN0xOcjNsaHprWnRodWRBN09QblZQOTNacDJ6Z3ZYNUJsYkJIOWhJRWJRXzg4NWlXc1Q4ZVRSWnNwTFpLX1VhNTVVYk1MQ2xCekh4ZmhaSU5URlJIMTFfVktVMFYwc1pDbjNyN1dqbEtfRWVnLTlITWdTdDVMS2tmYVE?oc=5",
-        "confidence": 5
+        "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOMWdJNURvWVlCd3Z6MWR2MVZRaGNqRlk4UHdKNXU5cUdrOHVtVVhkdjVQVHhxRVdTdnFKbHZSWjBYYmlWWk4ydTRoczZqMGJpRXJMVnBBQjlUcnJGQ3laSklUOVhXVGNBWGFDMW9ZWC14d0R6TmNaLUFlbUduNk1rbGNNUk1sYlNfbFhITDdheGt4TXZ3bE45V0hCUmVLekRWY014bG9FZlI5ZDdpVXpLaDIxQXIyYnNKbHlRUkVvZUVmXzRSTDAtTVdEU0dpRk5YTHRqcHN5YU1Zc0U?oc=5",
+        "confidence": 8
       },
       "yield_reaction_30y": {},
-      "event_count_180d": 300
+      "event_count_180d": 306
     },
     {
       "tool_key": "ycc",
@@ -233,7 +233,5 @@
       "yield_reaction_30y": {},
       "event_count_180d": 0
     }
-  ],
-  "stale": true,
-  "age_hours": 12.0
+  ]
 }
