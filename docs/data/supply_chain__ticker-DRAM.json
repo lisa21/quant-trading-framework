@@ -1,41 +1,48 @@
 {
   "ticker": "DRAM",
-  "sector": "存储半导体",
-  "business": "DRAM 是偏存储芯片主题的标的，核心暴露在动态随机存取存储器及相关半导体供应链，包括存储芯片制造、晶圆代工、设备和下游服务器/消费电子需求。",
+  "sector": "半导体存储器ETF",
+  "business": "DRAM 是 Roundhill Memory ETF，主要追踪全球存储器产业链公司，包括 DRAM、NAND、HBM 及相关半导体设备与材料企业。",
   "upstream": [
     {
       "name": "ASML Holding",
       "ticker": "ASML",
-      "note": "提供EUV/DUV光刻设备，是先进DRAM制程扩产的关键设备供应商",
-      "weight": 90,
+      "note": "提供先进光刻设备，是高端DRAM/HBM制程扩产的关键瓶颈设备供应商",
+      "weight": 95,
       "confidence": "medium"
     },
     {
       "name": "Applied Materials",
       "ticker": "AMAT",
-      "note": "提供沉积、刻蚀、离子注入等晶圆制造设备，覆盖存储芯片产线多个关键环节",
-      "weight": 85,
+      "note": "提供沉积、刻蚀、离子注入和检测等晶圆制造设备",
+      "weight": 88,
       "confidence": "medium"
     },
     {
       "name": "Lam Research",
       "ticker": "LRCX",
-      "note": "提供刻蚀和薄膜沉积设备，在DRAM高深宽比结构制造中战略重要度高",
-      "weight": 82,
+      "note": "提供刻蚀和薄膜沉积设备，直接服务存储芯片制造环节",
+      "weight": 85,
       "confidence": "medium"
     },
     {
       "name": "Tokyo Electron",
       "ticker": "8035.T",
-      "note": "提供涂布显影、刻蚀、清洗和沉积设备，服务全球存储厂资本开支",
-      "weight": 72,
+      "note": "提供涂胶显影、沉积、刻蚀和清洗设备",
+      "weight": 78,
       "confidence": "medium"
     },
     {
-      "name": "KLA Corporation",
+      "name": "KLA",
       "ticker": "KLAC",
-      "note": "提供过程控制、检测和量测设备，帮助提升DRAM良率",
-      "weight": 60,
+      "note": "提供制程控制、缺陷检测和量测设备，提高先进存储良率",
+      "weight": 70,
+      "confidence": "medium"
+    },
+    {
+      "name": "Shin-Etsu Chemical",
+      "ticker": "4063.T",
+      "note": "提供硅晶圆和半导体材料",
+      "weight": 62,
       "confidence": "medium"
     }
   ],
@@ -43,71 +50,84 @@
     {
       "name": "NVIDIA",
       "ticker": "NVDA",
-      "note": "采购高带宽存储器及相关存储供应链能力，用于AI GPU和加速卡",
+      "note": "采购HBM用于AI GPU和加速卡，是高带宽存储需求的核心拉动方",
       "weight": 95,
       "confidence": "medium"
     },
     {
-      "name": "Amazon",
-      "ticker": "AMZN",
-      "note": "云计算服务器和AI基础设施需要大量DRAM与HBM相关存储资源",
+      "name": "Advanced Micro Devices",
+      "ticker": "AMD",
+      "note": "采购HBM及图形/服务器相关存储，用于AI加速器和GPU产品",
       "weight": 82,
-      "confidence": "medium"
-    },
-    {
-      "name": "Microsoft",
-      "ticker": "MSFT",
-      "note": "Azure数据中心、AI训练和推理服务器带动服务器DRAM需求",
-      "weight": 80,
       "confidence": "medium"
     },
     {
       "name": "Apple",
       "ticker": "AAPL",
-      "note": "iPhone、Mac、iPad等终端设备采购移动DRAM和封装存储方案",
-      "weight": 74,
+      "note": "采购移动DRAM和NAND用于iPhone、Mac、iPad等终端设备",
+      "weight": 76,
+      "confidence": "medium"
+    },
+    {
+      "name": "Amazon",
+      "ticker": "AMZN",
+      "note": "通过AWS数据中心服务器采购大量内存和SSD，用于云计算与AI基础设施",
+      "weight": 72,
+      "confidence": "medium"
+    },
+    {
+      "name": "Microsoft",
+      "ticker": "MSFT",
+      "note": "通过Azure数据中心采购服务器内存、SSD和AI集群相关存储",
+      "weight": 70,
       "confidence": "medium"
     },
     {
       "name": "Dell Technologies",
       "ticker": "DELL",
-      "note": "服务器、工作站和企业PC使用DRAM模组及高容量内存配置",
-      "weight": 65,
+      "note": "采购服务器DRAM、企业级SSD和存储组件，用于AI服务器与企业IT设备",
+      "weight": 64,
       "confidence": "medium"
     }
   ],
   "peers": [
     {
+      "name": "VanEck Semiconductor ETF",
+      "ticker": "SMH",
+      "note": "半导体ETF，覆盖更广的芯片设计、代工、设备和存储产业链",
+      "confidence": "medium"
+    },
+    {
+      "name": "iShares Semiconductor ETF",
+      "ticker": "SOXX",
+      "note": "美国半导体ETF，和DRAM在存储及半导体设备持仓上有重叠",
+      "confidence": "medium"
+    },
+    {
+      "name": "Global X Semiconductor ETF",
+      "ticker": "SEMI",
+      "note": "半导体主题ETF，竞争资金流向与存储周期敞口",
+      "confidence": "medium"
+    },
+    {
       "name": "Micron Technology",
       "ticker": "MU",
-      "note": "DRAM、NAND和HBM存储芯片制造商，是美国主要存储厂",
+      "note": "DRAM和NAND龙头之一，也是DRAM主题投资的核心单一股票替代标的",
       "confidence": "high"
     },
     {
       "name": "Samsung Electronics",
-      "ticker": "005930.KS",
-      "note": "全球DRAM和NAND龙头之一，在HBM与服务器内存领域竞争",
-      "confidence": "medium"
-    },
-    {
-      "name": "SK hynix",
-      "ticker": "000660.KS",
-      "note": "DRAM和HBM核心供应商，在AI高带宽存储市场竞争力强",
-      "confidence": "medium"
-    },
-    {
-      "name": "Western Digital",
-      "ticker": "WDC",
-      "note": "主要竞争在NAND和存储解决方案，部分需求端与存储周期相关",
+      "ticker": null,
+      "note": "全球DRAM、NAND和HBM主要竞争者，但其主上市地不在指定市场范围内",
       "confidence": "medium"
     }
   ],
-  "generated_at": "2026-08-28T09:03:33.114050+00:00",
+  "generated_at": "2026-09-27T09:33:33.941129+00:00",
   "source": "codex",
   "_meta": {
-    "cached_at": "2026-08-28T18:03:33.115049",
-    "age_sec": 2593770,
-    "stale": true,
-    "refreshing": true
+    "cached_at": "2026-09-27T18:33:33.942134",
+    "age_sec": 7172,
+    "stale": false,
+    "refreshing": false
   }
 }

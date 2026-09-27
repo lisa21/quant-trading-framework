@@ -1,5 +1,5 @@
 {
-  "asof": "2026-09-27T18:24",
+  "asof": "2026-09-27T20:28",
   "yields": {
     "10y": {
       "value": 5.184,
@@ -505,7 +505,7 @@
     "unemployment_asof": "2026-08-01",
     "stablecoin_total_bn": 259.0,
     "usdt_bn": 183.8,
-    "usdc_bn": 75.3,
+    "usdc_bn": 75.2,
     "vix": 14.87,
     "bbi_score": 0.94,
     "bbi_components": {
@@ -516,8 +516,8 @@
     }
   },
   "_meta": {
-    "cached_at": "2026-09-27T18:25:05.688793",
-    "age_sec": 477,
+    "cached_at": "2026-09-27T20:29:03.361243",
+    "age_sec": 239,
     "stale": false,
     "refreshing": false
   }

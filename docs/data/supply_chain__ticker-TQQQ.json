@@ -1,119 +1,126 @@
 {
   "ticker": "TQQQ",
-  "sector": "纳斯达克100科技成长股三倍杠杆ETF",
-  "business": "TQQQ 是 ProShares 发行的三倍日内杠杆 ETF，核心经济敞口来自纳斯达克100指数，主要集中于大型科技、半导体、云计算、消费电子和互联网平台公司。",
+  "sector": "杠杆型纳斯达克100ETF",
+  "business": "TQQQ 是 ProShares 发行的 3 倍做多纳斯达克100指数的杠杆ETF，核心风险收益来自 QQQ/纳斯达克100中大型科技与成长股敞口。",
   "upstream": [
     {
-      "name": "台积电",
-      "ticker": "TSM",
-      "note": "为英伟达、苹果、AMD、博通等纳斯达克100核心持仓提供先进制程晶圆代工，是AI芯片和消费电子芯片供应链关键环节",
-      "weight": 95,
-      "confidence": "medium"
+      "name": "NVIDIA",
+      "ticker": "NVDA",
+      "note": "QQQ/纳斯达克100最大权重成分之一，提供AI芯片、GPU与数据中心计算敞口，是TQQQ净值波动的核心来源",
+      "weight": 100,
+      "confidence": "high"
     },
     {
-      "name": "ASML",
-      "ticker": "ASML",
-      "note": "提供EUV光刻设备，支撑台积电、三星、英特尔等先进制程产能，间接影响纳斯达克100半导体权重股供给",
-      "weight": 88,
-      "confidence": "medium"
+      "name": "Apple",
+      "ticker": "AAPL",
+      "note": "提供消费电子、服务与生态系统敞口，是纳斯达克100的重要权重股",
+      "weight": 90,
+      "confidence": "high"
     },
     {
-      "name": "鸿海精密",
-      "ticker": "2317.TW",
-      "note": "苹果 iPhone、Mac 等硬件的重要代工制造商，间接影响苹果这一纳斯达克100重仓股的产品交付",
-      "weight": 82,
-      "confidence": "medium"
+      "name": "Microsoft",
+      "ticker": "MSFT",
+      "note": "提供云计算、企业软件与AI基础设施敞口，对指数收益贡献较高",
+      "weight": 75,
+      "confidence": "high"
     },
     {
-      "name": "三星电子",
-      "ticker": "005930.KS",
-      "note": "提供存储芯片、显示面板及部分半导体制造能力，服务于智能手机、云服务器和AI硬件供应链",
-      "weight": 76,
-      "confidence": "medium"
+      "name": "Amazon.com",
+      "ticker": "AMZN",
+      "note": "提供电商、云服务AWS与数字广告敞口，是主要成长股权重来源",
+      "weight": 60,
+      "confidence": "high"
     },
     {
-      "name": "美光科技",
-      "ticker": "MU",
-      "note": "提供DRAM和NAND存储产品，是AI服务器、云计算和高端终端设备的重要上游供应商",
-      "weight": 68,
-      "confidence": "medium"
+      "name": "Meta Platforms",
+      "ticker": "META",
+      "note": "提供社交平台、数字广告与AI资本开支相关敞口",
+      "weight": 50,
+      "confidence": "high"
+    },
+    {
+      "name": "Tesla",
+      "ticker": "TSLA",
+      "note": "提供电动车、能源存储与自动驾驶预期敞口，波动性对杠杆ETF影响较大",
+      "weight": 45,
+      "confidence": "high"
     }
   ],
   "downstream": [
     {
-      "name": "企业云与AI客户",
-      "ticker": null,
-      "note": "购买微软Azure、亚马逊AWS、谷歌云和英伟达AI算力，用于企业软件、数据分析、模型训练和推理",
-      "weight": 95,
+      "name": "Robinhood Markets",
+      "ticker": "HOOD",
+      "note": "面向活跃零售交易者提供TQQQ等杠杆ETF交易入口，用于短线方向性交易和高波动敞口",
+      "weight": 85,
       "confidence": "medium"
     },
     {
-      "name": "全球消费电子用户",
-      "ticker": null,
-      "note": "购买苹果硬件、微软软件订阅、亚马逊电商服务及各类数字内容，是大型科技平台收入基础",
-      "weight": 90,
-      "confidence": "medium"
-    },
-    {
-      "name": "广告主与营销代理商",
-      "ticker": null,
-      "note": "向Alphabet、Meta、亚马逊等平台购买搜索、社交、电商和视频广告投放",
-      "weight": 84,
-      "confidence": "medium"
-    },
-    {
-      "name": "数据中心与云服务运营商",
-      "ticker": null,
-      "note": "采购英伟达GPU、网络设备、服务器和相关软件栈，用于AI集群和高性能计算基础设施",
+      "name": "Charles Schwab",
+      "ticker": "SCHW",
+      "note": "券商和托管平台客户可买入TQQQ，用于战术性纳斯达克100杠杆配置",
       "weight": 80,
       "confidence": "medium"
     },
     {
-      "name": "软件开发者与企业IT部门",
-      "ticker": null,
-      "note": "采购微软、Adobe、Oracle、ServiceNow等软件和平台服务，用于办公、开发、自动化和业务系统",
-      "weight": 72,
+      "name": "Morgan Stanley",
+      "ticker": "MS",
+      "note": "财富管理和机构客户可能通过平台使用TQQQ进行短期指数增强或对冲组合调整",
+      "weight": 65,
+      "confidence": "medium"
+    },
+    {
+      "name": "Interactive Brokers Group",
+      "ticker": "IBKR",
+      "note": "活跃交易客户使用TQQQ获取纳斯达克100日内或短周期3倍杠杆敞口",
+      "weight": 60,
+      "confidence": "medium"
+    },
+    {
+      "name": "JPMorgan Chase",
+      "ticker": "JPM",
+      "note": "通过经纪、财富管理和机构渠道服务使用杠杆ETF的投资者，主要用于战术配置而非长期持有",
+      "weight": 50,
       "confidence": "medium"
     }
   ],
   "peers": [
     {
-      "name": "Invesco QQQ Trust",
-      "ticker": "QQQ",
-      "note": "非杠杆纳斯达克100ETF，是TQQQ的基础指数敞口参照产品",
+      "name": "ProShares Ultra QQQ",
+      "ticker": "QLD",
+      "note": "2倍做多纳斯达克100ETF，与TQQQ竞争较低杠杆的同类指数产品",
       "confidence": "high"
     },
     {
-      "name": "ProShares Ultra QQQ",
-      "ticker": "QLD",
-      "note": "提供纳斯达克100指数两倍日内杠杆敞口，与TQQQ竞争杠杆科技指数资金",
+      "name": "ProShares UltraPro Short QQQ",
+      "ticker": "SQQQ",
+      "note": "3倍做空纳斯达克100ETF，是TQQQ的反向杠杆交易替代品",
+      "confidence": "high"
+    },
+    {
+      "name": "Invesco QQQ Trust",
+      "ticker": "QQQ",
+      "note": "非杠杆纳斯达克100ETF，是TQQQ追踪敞口的核心基准替代品",
+      "confidence": "high"
+    },
+    {
+      "name": "Invesco NASDAQ 100 ETF",
+      "ticker": "QQQM",
+      "note": "低费率非杠杆纳斯达克100ETF，面向长期配置需求",
       "confidence": "high"
     },
     {
       "name": "Direxion Daily Technology Bull 3X Shares",
       "ticker": "TECL",
-      "note": "提供美国科技板块三倍杠杆敞口，风险收益特征与TQQQ相近",
-      "confidence": "medium"
-    },
-    {
-      "name": "ProShares UltraPro S&P500",
-      "ticker": "UPRO",
-      "note": "提供标普500三倍杠杆敞口，竞争高杠杆宽基ETF资金",
-      "confidence": "medium"
-    },
-    {
-      "name": "MicroSectors FANG+ Index 3X Leveraged ETN",
-      "ticker": "FNGU",
-      "note": "提供大型科技和互联网龙头三倍杠杆敞口，与TQQQ在高贝塔科技交易中竞争",
+      "note": "3倍做多科技板块ETF，与TQQQ在高杠杆科技成长股敞口上竞争",
       "confidence": "medium"
     }
   ],
-  "generated_at": "2026-08-28T09:03:40.020524+00:00",
+  "generated_at": "2026-09-27T09:33:35.384654+00:00",
   "source": "codex",
   "_meta": {
-    "cached_at": "2026-08-28T18:03:40.033487",
-    "age_sec": 2593763,
-    "stale": true,
-    "refreshing": true
+    "cached_at": "2026-09-27T18:33:35.388731",
+    "age_sec": 7171,
+    "stale": false,
+    "refreshing": false
   }
 }
