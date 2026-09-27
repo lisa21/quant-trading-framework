@@ -1,5 +1,5 @@
 {
-  "asof": "2026-09-27T12:28",
+  "asof": "2026-09-27T14:32",
   "yields": {
     "10y": {
       "value": 5.184,
@@ -292,7 +292,7 @@
     },
     {
       "level": "info",
-      "msg": "稳定币影子美元 $259.1B (USDT $184B + USDC $75B, 抽血 EM 通胀国 + 压低美债短端)",
+      "msg": "稳定币影子美元 $259.0B (USDT $184B + USDC $75B, 抽血 EM 通胀国 + 压低美债短端)",
       "key": "stablecoin_large"
     }
   ],
@@ -350,7 +350,7 @@
     "cdx_hy_bps": 280.0,
     "dxy": 100.97,
     "dxy_pct_20d": 1.83,
-    "dxy_z_60d": 0.87,
+    "dxy_z_60d": 0.86,
     "asia_indices": {
       "N225": {
         "symbol": "^N225",
@@ -503,7 +503,7 @@
     "core_cpi_yoy_pct": 2.76,
     "unemployment_pct": 4.1,
     "unemployment_asof": "2026-08-01",
-    "stablecoin_total_bn": 259.1,
+    "stablecoin_total_bn": 259.0,
     "usdt_bn": 183.8,
     "usdc_bn": 75.3,
     "vix": 14.87,
@@ -516,8 +516,8 @@
     }
   },
   "_meta": {
-    "cached_at": "2026-09-27T12:28:33.561609",
-    "age_sec": 268,
+    "cached_at": "2026-09-27T14:32:35.381762",
+    "age_sec": 27,
     "stale": false,
     "refreshing": false
   }
