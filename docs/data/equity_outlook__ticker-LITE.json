@@ -196,11 +196,11 @@
     ]
   },
   "official_guidance_status": "not_connected",
-  "fetched_at": "2026-09-27T05:46:55.150730+00:00",
+  "fetched_at": "2026-09-27T11:47:23.128623+00:00",
   "source": "yfinance analyst aggregation",
   "_meta": {
-    "cached_at": "2026-09-27T14:46:55.150730",
-    "age_sec": 20771,
+    "cached_at": "2026-09-27T20:47:23.129621",
+    "age_sec": 6340,
     "stale": false,
     "refreshing": false
   },

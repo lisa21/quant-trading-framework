@@ -35,7 +35,7 @@
     "peer_pe_details": [
       {
         "ticker": "AMZN",
-        "pe": 24.02
+        "pe": 23.83
       },
       {
         "ticker": "GOOGL",
@@ -236,11 +236,11 @@
     ]
   },
   "official_guidance_status": "not_connected",
-  "fetched_at": "2026-09-27T05:47:56.274446+00:00",
+  "fetched_at": "2026-09-27T11:48:24.497498+00:00",
   "source": "yfinance analyst aggregation",
   "_meta": {
-    "cached_at": "2026-09-27T14:47:56.275461",
-    "age_sec": 20710,
+    "cached_at": "2026-09-27T20:48:24.498498",
+    "age_sec": 6279,
     "stale": false,
     "refreshing": false
   },
