@@ -3808,17 +3808,17 @@
     }
   ],
   "trend_30d": {
-    "n_samples": 59,
+    "n_samples": 58,
     "period_days": 30,
-    "cut_prob_start": 27,
+    "cut_prob_start": 30,
     "cut_prob_latest": 22,
-    "cut_prob_delta": -5,
-    "y10_delta_bps": 46.0,
+    "cut_prob_delta": -8,
+    "y10_delta_bps": 51.0,
     "cpi_yoy_delta_pp": 0.17,
     "unrate_delta_pp": 0.0,
-    "vix_delta": 0.39,
+    "vix_delta": 0.36,
     "hy_delta_bps": 17.0,
-    "dxy_delta": 1.32
+    "dxy_delta": 1.81
   },
   "trend_90d": {
     "n_samples": 105,
