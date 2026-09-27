@@ -106,8 +106,8 @@
   "source": "codex",
   "_meta": {
     "cached_at": "2026-08-28T18:03:33.115049",
-    "age_sec": 2586570,
-    "stale": false,
-    "refreshing": false
+    "age_sec": 2593770,
+    "stale": true,
+    "refreshing": true
   }
 }

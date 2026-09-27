@@ -5,18 +5,18 @@
   "last_log_mtime": null,
   "log_age_min": null,
   "log_path": "F:\\fsi-skills\\agents\\logs\\run_20260927.log",
-  "now": "2026-09-27T07:33:02.582888+00:00",
+  "now": "2026-09-27T09:33:02.675031+00:00",
   "version": {
-    "git_head": "b450422356e3",
+    "git_head": "c0d48b37bf3a",
     "is_dirty": true,
     "modified_files": 45,
     "untracked_files": 95
   },
   "calibration": {
     "exists": true,
-    "age_days": 46,
+    "age_days": 47,
     "is_stale": false
   },
-  "ai_last_call_ts": "2026-09-27T07:31:34.591235+00:00",
+  "ai_last_call_ts": "2026-09-27T09:30:46.597629+00:00",
   "last_invalidation": "2026-09-18T06:36:31.172847+00:00"
 }
