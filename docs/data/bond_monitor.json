@@ -1,5 +1,5 @@
 {
-  "asof": "2026-09-28T02:25",
+  "asof": "2026-09-28T04:29",
   "yields": {
     "10y": {
       "value": 5.184,
@@ -252,7 +252,7 @@
     },
     {
       "level": "warn",
-      "msg": "KRW/USD 1355.3 韩元明显走弱",
+      "msg": "KRW/USD 1353.4 韩元明显走弱",
       "key": "krw_weak"
     },
     {
@@ -292,7 +292,7 @@
     },
     {
       "level": "info",
-      "msg": "稳定币影子美元 $259.0B (USDT $184B + USDC $75B, 抽血 EM 通胀国 + 压低美债短端)",
+      "msg": "稳定币影子美元 $258.9B (USDT $184B + USDC $75B, 抽血 EM 通胀国 + 压低美债短端)",
       "key": "stablecoin_large"
     }
   ],
@@ -330,8 +330,8 @@
     "usdjpy_20d_delta_pct": -1.84,
     "usdjpy_60d_high": 163.86,
     "usdjpy_pullback_from_60d_high_pct": -4.08,
-    "krw_usd": 1355.3,
-    "krw_20d_pct": -1.58,
+    "krw_usd": 1353.4,
+    "krw_20d_pct": -1.72,
     "jgb_10y_pct": 2.94,
     "jgb_asof": "2026-08-01",
     "ust_jgb_spread_bps": 224.4,
@@ -503,7 +503,7 @@
     "core_cpi_yoy_pct": 2.76,
     "unemployment_pct": 4.1,
     "unemployment_asof": "2026-08-01",
-    "stablecoin_total_bn": 259.0,
+    "stablecoin_total_bn": 258.9,
     "usdt_bn": 183.8,
     "usdc_bn": 75.2,
     "vix": 14.87,
@@ -516,8 +516,8 @@
     }
   },
   "_meta": {
-    "cached_at": "2026-09-28T02:26:04.825486",
-    "age_sec": 418,
+    "cached_at": "2026-09-28T04:30:07.442978",
+    "age_sec": 175,
     "stale": false,
     "refreshing": false
   }

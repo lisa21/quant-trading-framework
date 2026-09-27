@@ -207,9 +207,9 @@
   "source": "yfinance analyst aggregation",
   "_meta": {
     "cached_at": "2026-09-27T20:48:24.142925",
-    "age_sec": 20680,
-    "stale": false,
-    "refreshing": false
+    "age_sec": 27880,
+    "stale": true,
+    "refreshing": true
   },
   "ticker": "NBIS",
   "is_proxy": false
