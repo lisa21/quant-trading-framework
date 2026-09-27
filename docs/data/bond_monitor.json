@@ -1,5 +1,5 @@
 {
-  "asof": "2026-09-27T22:17",
+  "asof": "2026-09-28T00:21",
   "yields": {
     "10y": {
       "value": 5.184,
@@ -252,7 +252,7 @@
     },
     {
       "level": "warn",
-      "msg": "KRW/USD 1354.4 韩元明显走弱",
+      "msg": "KRW/USD 1355.3 韩元明显走弱",
       "key": "krw_weak"
     },
     {
@@ -330,8 +330,8 @@
     "usdjpy_20d_delta_pct": -1.84,
     "usdjpy_60d_high": 163.86,
     "usdjpy_pullback_from_60d_high_pct": -4.08,
-    "krw_usd": 1354.4,
-    "krw_20d_pct": -1.65,
+    "krw_usd": 1355.3,
+    "krw_20d_pct": -1.58,
     "jgb_10y_pct": 2.94,
     "jgb_asof": "2026-08-01",
     "ust_jgb_spread_bps": 224.4,
@@ -516,8 +516,8 @@
     }
   },
   "_meta": {
-    "cached_at": "2026-09-27T22:18:03.287826",
-    "age_sec": 899,
+    "cached_at": "2026-09-28T00:22:03.231630",
+    "age_sec": 659,
     "stale": false,
     "refreshing": false
   }

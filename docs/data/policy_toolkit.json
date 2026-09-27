@@ -1,6 +1,6 @@
 {
-  "as_of": "2026-09-27T10:36:20.359411",
-  "count_total_actions": 597,
+  "as_of": "2026-09-27T22:38:40.353464",
+  "count_total_actions": 604,
   "tools": [
     {
       "tool_key": "long_end_buyback",
@@ -12,18 +12,21 @@
       "status": "已用",
       "last_action": {
         "tool_key": "long_end_buyback",
-        "action_type": "signaled",
-        "date": "2026-09-23",
+        "action_type": "announced",
+        "date": "2026-09-25",
         "actor": "Bessent",
         "amount_desc": "",
-        "commentary": "Bessent为回购辩护，说明财政部仍把该工具视作稳债手段。",
-        "verbatim": "Bessent Defends Bond Buybacks as Treasury Yields Hit 19-Year High",
-        "source": "GoogleNews: Bessent Treasury buyback",
-        "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE8xNldGYUlRS3JYa1dQUTdOaGJNeDNsSEN6dEdrOFpYbkd1STc3N2JnbE1fUXhHREhuempSeG1kOU52bWZ4dXJtVTJyTHV2QWdwNEM1S0pGRVpVeGN4MFpZN2JGa05Jelk0elRsMGNiM1UtQlh0VEp2dHZfa1VZdw?oc=5",
-        "confidence": 8
+        "commentary": "市场不买账说明回购力度或可信度不足。长端收益率可能继续要求更大政策溢价。",
+        "verbatim": "The U.S. bond market isn’t buying what Scott Bessent is selling",
+        "source": "GoogleNews: Treasury bond market intervention Bessent",
+        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOU2dPZDNrNFBVZmR3RklKZEU0cmVDZlRVYXlxNDFFazZIT3V5alQxaGJGdEg5UWdBdUh5VTJRSWV6NUo0ZUpkczRwV1pSaHZVUXVYSXBWMjRsMkJhUnA2MXpmc0c3MEdtMVcxYmFZUm0yTGYzc3U2ZXNDR0lkNDlYUHA2OWR5SlgxX01HazZyNW53QQ?oc=5",
+        "confidence": 6
       },
-      "yield_reaction_30y": {},
-      "event_count_180d": 208
+      "yield_reaction_30y": {
+        "t0_bp": 4.3,
+        "yield_at_close": 5.504
+      },
+      "event_count_180d": 210
     },
     {
       "tool_key": "fed_hawkish_signal",
@@ -35,18 +38,18 @@
       "status": "已用",
       "last_action": {
         "tool_key": "fed_hawkish_signal",
-        "action_type": "signaled",
-        "date": "2026-09-26",
-        "actor": "Warsh",
+        "action_type": "announced",
+        "date": "2026-09-27",
+        "actor": "Fed",
         "amount_desc": "",
-        "commentary": "“利率能升多高”是明确鹰派叙事，通常压制债价、抬升收益率。",
-        "verbatim": "6 Words From Kevin Warsh Changed the Question From “Will the Fed Hike Rates?” to “How High Can Rates Go?”",
+        "commentary": "加息是明确鹰派动作，直接推高短端并压制债价。",
+        "verbatim": "Why the Fed’s rate hike just came at the worst possible moment",
         "source": "GoogleNews: Warsh Federal Reserve rate hike inflation",
-        "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOMWdJNURvWVlCd3Z6MWR2MVZRaGNqRlk4UHdKNXU5cUdrOHVtVVhkdjVQVHhxRVdTdnFKbHZSWjBYYmlWWk4ydTRoczZqMGJpRXJMVnBBQjlUcnJGQ3laSklUOVhXVGNBWGFDMW9ZWC14d0R6TmNaLUFlbUduNk1rbGNNUk1sYlNfbFhITDdheGt4TXZ3bE45V0hCUmVLekRWY014bG9FZlI5ZDdpVXpLaDIxQXIyYnNKbHlRUkVvZUVmXzRSTDAtTVdEU0dpRk5YTHRqcHN5YU1Zc0U?oc=5",
+        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPTXdSMVVzN0FwN3Z1WFRSeG1SZzRWalgzMllFM21yb1hOenBYLVFXeGZpUDc1QW5lQ3lsb3JPZTBWSUQwY3JIZnlZdzJzQVVaa1hGRUN6S0NtTm1kd0N6dkVBRUY3RGJUeXNhMGJCMkdqajVCYVN0OXFFenl4SlFhT09tZVZFYUw4X1loUi1CYw?oc=5",
         "confidence": 8
       },
       "yield_reaction_30y": {},
-      "event_count_180d": 306
+      "event_count_180d": 310
     },
     {
       "tool_key": "ycc",
@@ -196,18 +199,18 @@
       "status": "被否",
       "last_action": {
         "tool_key": "fed_dovish_signal",
-        "action_type": "signaled",
-        "date": "2026-09-16",
-        "actor": "Trump",
-        "amount_desc": "1% or lower interest rates",
-        "commentary": "特朗普要求1%或更低利率，是政治层面的宽松施压。非Fed决定，债市影响取决于执行。",
-        "verbatim": "Trump says he still has confidence in Fed Chair Warsh, demands 1% or lower interest rates",
+        "action_type": "opposed",
+        "date": "2026-09-24",
+        "actor": "Warsh",
+        "amount_desc": "",
+        "commentary": "反对前瞻指引削弱鸽派承诺，对债市支撑有限。",
+        "verbatim": "Kevin Warsh is against forward guidance. But that hasn't stopped other Fed officials",
         "source": "GoogleNews: Warsh Federal Reserve rate hike inflation",
-        "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBzYXVXRVNMRmFVMkVqeGJMLVhsQklJNlVTOU4yN09nMVJMcXozWmJRUUFORlpzTTdBWHB2dU1aS1pGRkY0cWpBc3FjV1RaV3h1ZzdnbVVKQXNiVjBvY1NGYWFwRkdrQ2R6c3hyRjlGbzB6TXV10gF6QVVfeXFMTzlzVC1yMDVCc3UwVld5bEpIbm04VWx4Q3JYR1c4NVZDXy1YUElET05SNG82TVJnVUcydVo3UHozTHBXRDNQcm05YTRCOEo2M3BjTHUycko0MUZteEJzU0NRM2RsdWpJRkt0aU8weS1LRjhhVzdncWxiQXc?oc=5",
-        "confidence": 5
+        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOVTFDczJZc25TN2lfV05CSFBvZEVralVHNmxKVS1oN0RhY1l3b3dfckpkRlQ3WDU5V2Q1WDBLdldYRE9BeGt0TnNSQWZCMzJKU0tzXzN6MVFHT2RfNG84dDBLUmZGZzFGQVhqeG9KOEJDTkhmQTdMbGdXeEx3aXNFRVBpc2RCVzk5cnFsQWNheEhRRzZtQm51Y1R1VUoydjlONzBzVFdaRFlTZw?oc=5",
+        "confidence": 6
       },
       "yield_reaction_30y": {},
-      "event_count_180d": 15
+      "event_count_180d": 16
     },
     {
       "tool_key": "fima_repo",
