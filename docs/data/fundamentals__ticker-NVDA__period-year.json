@@ -60,8 +60,8 @@
   },
   "_meta": {
     "cached_at": "2026-08-29T16:25:40.575552",
-    "age_sec": 2585242,
-    "stale": false,
-    "refreshing": false
+    "age_sec": 2592442,
+    "stale": true,
+    "refreshing": true
   }
 }
