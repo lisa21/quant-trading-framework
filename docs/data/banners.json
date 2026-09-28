@@ -8,17 +8,18 @@
     "magnitude": "small",
     "score": 0,
     "event_counts": {
-      "DOMESTIC_POLICY": 8,
-      "MEDIA_ATTACK": 2
+      "DOMESTIC_POLICY": 6,
+      "MEDIA_ATTACK": 3,
+      "MARKET": 1
     },
     "breaking": [],
     "summary": {
-      "text": "批评媒体并强调就业强劲，市场情绪偏正面。",
+      "text": "媒体攻击与保守派背书为主，市场情绪偏中性略负面。",
       "state": "cached",
       "post_ids": [
+        "117348562110206457",
         "117348541943680165",
-        "117348516464234551",
-        "117348468544269011"
+        "117348516464234551"
       ]
     }
   },

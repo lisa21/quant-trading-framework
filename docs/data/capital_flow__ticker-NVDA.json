@@ -1,23 +1,23 @@
 {
   "ticker": "NVDA",
   "flow": {
-    "super_net": -23484648.620000005,
-    "big_net": -38322070.356000066,
-    "mid_net": 6277024.0039999485,
-    "small_net": 29173191.56399989,
-    "total_net": -26356503.407999992,
-    "smart_pct": -0.008208099775729834
+    "super_net": 35299160.032000005,
+    "big_net": 45231488.100999996,
+    "mid_net": 70603527.764,
+    "small_net": 33895242.735,
+    "total_net": 185029418.632,
+    "smart_pct": 0.1828989598055765
   },
   "anomaly": {
-    "detected": false,
-    "reason": "",
-    "score": 0.0
+    "detected": true,
+    "reason": "主力（super+big）净流入 $+80.5M（占总成交额 +18.3%）",
+    "score": 0.6096631993519217
   },
-  "asof": "2026-09-28 08:58:55",
+  "asof": "2026-09-28 09:30:45",
   "source": "moomoo",
   "_meta": {
-    "cached_at": "2026-09-28T21:58:58.296900",
-    "age_sec": 244,
+    "cached_at": "2026-09-28T22:30:55.101430",
+    "age_sec": 127,
     "stale": false,
     "refreshing": false
   }
