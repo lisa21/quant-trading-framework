@@ -21,24 +21,24 @@
       "style_zh": "震荡偏强",
       "chop_score": 3,
       "is_choppy": true,
-      "reason": "10日趋势效率偏低(0.25)；ADX偏低(11.9)；净涨跌小但路径反复",
+      "reason": "10日趋势效率偏低(0.21)；ADX偏低(11.3)；净涨跌小但路径反复",
       "metrics": {
-        "pct_5d": 0.85,
-        "pct_20d": 0.39,
-        "dist_ma20_pct": 0.43,
-        "dist_ma50_pct": 1.02,
-        "efficiency_10": 0.253,
-        "efficiency_20": 0.035,
-        "adx_14": 11.9,
+        "pct_5d": 1.27,
+        "pct_20d": 0.28,
+        "dist_ma20_pct": 0.96,
+        "dist_ma50_pct": 1.51,
+        "efficiency_10": 0.213,
+        "efficiency_20": 0.026,
+        "adx_14": 11.3,
         "reversal_count_10d": 3,
         "ma20_crossings_10d": 1,
-        "atr_5_20_ratio": 0.978
+        "atr_5_20_ratio": 1.04
       },
       "policy_note": "短线震荡：提高加仓门槛、降低目标波动，不把宏观偏多当追涨依据"
     },
-    "date": "2026-09-25",
+    "date": "2026-09-28",
     "expected_date": "2026-09-28",
-    "stale": true,
-    "ts": "2026-09-25T13:25:53.171934+00:00"
+    "stale": false,
+    "ts": "2026-09-28T12:35:04.353181+00:00"
   }
 }

@@ -8,20 +8,17 @@
     "magnitude": "small",
     "score": 0,
     "event_counts": {
-      "MEDIA_ATTACK": 2,
-      "NOISE": 3,
-      "DOMESTIC_POLICY": 1,
-      "DEAL": 1,
-      "GEOPOLITICAL": 1
+      "DOMESTIC_POLICY": 8,
+      "MEDIA_ATTACK": 2
     },
     "breaking": [],
     "summary": {
-      "text": "特朗普释放中美友好信号，情绪偏乐观。",
+      "text": "批评媒体并强调就业强劲，市场情绪偏正面。",
       "state": "cached",
       "post_ids": [
-        "117333027652824076",
-        "117332812545704813",
-        "117332704655075384"
+        "117348541943680165",
+        "117348516464234551",
+        "117348468544269011"
       ]
     }
   },
