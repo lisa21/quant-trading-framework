@@ -3,21 +3,21 @@
   "flow": {
     "super_net": 101445000.0,
     "big_net": 75214050.72,
-    "mid_net": 7534373.973,
-    "small_net": -15573277.398000002,
-    "total_net": 168620147.29500002,
-    "smart_pct": 0.5289930780810211
+    "mid_net": 6447471.773,
+    "small_net": -17828865.807000004,
+    "total_net": 165277656.686,
+    "smart_pct": 0.5136953673155029
   },
   "anomaly": {
     "detected": true,
-    "reason": "主力（super+big）净流入 $+176.7M（占总成交额 +52.9%）",
+    "reason": "主力（super+big）净流入 $+176.7M（占总成交额 +51.4%）",
     "score": 1.0
   },
-  "asof": "2026-09-28 14:58:04",
+  "asof": "2026-09-28 15:30:50",
   "source": "moomoo",
   "_meta": {
-    "cached_at": "2026-09-29T03:58:29.718345",
-    "age_sec": 273,
+    "cached_at": "2026-09-29T04:30:56.552531",
+    "age_sec": 126,
     "stale": false,
     "refreshing": false
   }
