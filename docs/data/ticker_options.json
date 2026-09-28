@@ -12868,14 +12868,14 @@
   "cache_contract": "15efd89eda8e",
   "_meta": {
     "cached_at": "2026-09-28T18:30:31.352738",
-    "age_sec": 18151,
+    "age_sec": 19951,
     "stale": false,
     "refreshing": false
   },
   "flow_meta": {
     "generated_at": "2026-09-28T14:06:23.767756+00:00",
     "status": "ready",
-    "age_sec": 1562.0,
+    "age_sec": 3361.9,
     "stale": false
   }
 }

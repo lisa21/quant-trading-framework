@@ -2,12 +2,12 @@
   "orchestrator_pid": 115996,
   "orchestrator_alive": true,
   "opend_alive": true,
-  "last_log_mtime": "2026-09-28T23:07:00.860214",
-  "log_age_min": 26.0,
-  "log_path": "F:\\fsi-skills\\agents\\logs\\run_20260928.log",
-  "now": "2026-09-28T14:33:02.493287+00:00",
+  "last_log_mtime": null,
+  "log_age_min": null,
+  "log_path": "F:\\fsi-skills\\agents\\logs\\run_20260929.log",
+  "now": "2026-09-28T15:03:02.429664+00:00",
   "version": {
-    "git_head": "aa4184b4139e",
+    "git_head": "0174cdfd0036",
     "is_dirty": true,
     "modified_files": 45,
     "untracked_files": 96
