@@ -1,5 +1,5 @@
 {
-  "ts": "2026-09-28T14:57:50.982920+00:00",
+  "ts": "2026-09-28T15:30:20.982841+00:00",
   "tickers": [
     {
       "ticker": "TDK",
@@ -7,36 +7,31 @@
       "name_zh": "TDK",
       "name_en": "TDK",
       "thesis": "电子元器件龙头 · Apple/NVDA 供应链 · MLCC + 固态电池 + HDD 磁头 + 无线充电",
-      "price": 2955.0,
-      "pct_1d": -0.77,
-      "pct_5d": 2.89,
-      "rsi": 57.7,
-      "ma20": 2912.88,
-      "ma50": 3001.49,
-      "bb_pct_b": 59.8,
-      "macd_dif": -40.15,
-      "macd_dea": -61.38,
-      "adx": 28.8,
-      "cci": 51.2,
+      "price": NaN,
+      "pct_1d": NaN,
+      "pct_5d": NaN,
+      "rsi": NaN,
+      "ma20": NaN,
+      "ma50": NaN,
+      "bb_pct_b": 50.0,
+      "macd_dif": -48.53,
+      "macd_dea": -63.06,
+      "adx": NaN,
+      "cci": NaN,
       "vol_ratio": 0.96,
-      "trend": "up",
-      "bull_count": 1,
-      "bear_count": 2,
-      "reasons_bull": [
-        "价格站上MA20"
-      ],
-      "reasons_bear": [
-        "均线空排 MA20<MA50",
-        "一目 云下"
-      ],
+      "trend": "down",
+      "bull_count": 0,
+      "bear_count": 0,
+      "reasons_bull": [],
+      "reasons_bear": [],
       "action_zh": "观望",
       "ichimoku": {
-        "tenkan": 2886.0,
-        "kijun": 2929.5,
+        "tenkan": NaN,
+        "kijun": NaN,
         "senkou_a": 3088.75,
         "senkou_b": 3420.0,
-        "position": "云下",
-        "direction": "bearish",
+        "position": "云中",
+        "direction": "neutral",
         "cloud_color": "bearish",
         "tk_cross": "死叉"
       },
@@ -131,7 +126,7 @@
           2845.0,
           2954.5,
           2978.0,
-          2955.0
+          NaN
         ],
         "tenkan": [
           3001.25,
@@ -223,7 +218,7 @@
           2836.5,
           2864.5,
           2864.5,
-          2886.0
+          null
         ],
         "kijun": [
           2676.0,
@@ -315,7 +310,7 @@
           3012.0,
           3012.0,
           3012.0,
-          2929.5
+          null
         ],
         "span_a": [
           2069.51,
@@ -511,37 +506,31 @@
       "name_zh": "铠侠",
       "name_en": "Kioxia",
       "thesis": "NAND 闪存全球#2 · 前东芝存储 · 2024-12 IPO · Data-center SSD + Client SSD",
-      "price": 53340.0,
-      "pct_1d": -4.37,
-      "pct_5d": 5.04,
-      "rsi": 52.8,
-      "ma20": 53292.5,
-      "ma50": 53456.2,
-      "bb_pct_b": 50.4,
-      "macd_dif": -263.87,
-      "macd_dea": -545.55,
-      "adx": 17.7,
-      "cci": 27.2,
+      "price": NaN,
+      "pct_1d": NaN,
+      "pct_5d": NaN,
+      "rsi": NaN,
+      "ma20": NaN,
+      "ma50": NaN,
+      "bb_pct_b": 50.0,
+      "macd_dif": -259.18,
+      "macd_dea": -544.61,
+      "adx": NaN,
+      "cci": NaN,
       "vol_ratio": 0.63,
-      "trend": "up",
-      "bull_count": 1,
-      "bear_count": 3,
-      "reasons_bull": [
-        "价格站上MA20"
-      ],
-      "reasons_bear": [
-        "均线空排 MA20<MA50",
-        "一目 云下",
-        "转换<基准 (死叉)"
-      ],
+      "trend": "down",
+      "bull_count": 0,
+      "bear_count": 0,
+      "reasons_bull": [],
+      "reasons_bear": [],
       "action_zh": "观望",
       "ichimoku": {
-        "tenkan": 52960.0,
-        "kijun": 53510.0,
+        "tenkan": NaN,
+        "kijun": NaN,
         "senkou_a": 56897.5,
         "senkou_b": 74360.0,
-        "position": "云下",
-        "direction": "bearish",
+        "position": "云中",
+        "direction": "neutral",
         "cloud_color": "bearish",
         "tk_cross": "死叉"
       },
@@ -636,7 +625,7 @@
           54570.0,
           54580.0,
           55780.0,
-          53340.0
+          NaN
         ],
         "tenkan": [
           47695.0,
@@ -728,7 +717,7 @@
           54885.0,
           53620.0,
           53475.0,
-          52960.0
+          null
         ],
         "kijun": [
           39665.0,
@@ -820,7 +809,7 @@
           54665.0,
           54665.0,
           54665.0,
-          53510.0
+          null
         ],
         "span_a": [
           20550.0,
@@ -1016,38 +1005,33 @@
       "name_zh": "藤仓",
       "name_en": "Fujikura",
       "thesis": "光纤/海底电缆 · AI 数据中心光互联需求爆发 · NVDA GPU 集群互联受益股",
-      "price": 4957.0,
-      "pct_1d": -0.58,
-      "pct_5d": 2.44,
-      "rsi": 50.2,
-      "ma20": 5091.7,
-      "ma50": 4998.48,
-      "bb_pct_b": 35.7,
-      "macd_dif": -71.3,
-      "macd_dea": -51.19,
-      "adx": 27.6,
-      "cci": -39.3,
+      "price": NaN,
+      "pct_1d": NaN,
+      "pct_5d": NaN,
+      "rsi": NaN,
+      "ma20": NaN,
+      "ma50": NaN,
+      "bb_pct_b": 50.0,
+      "macd_dif": -73.95,
+      "macd_dea": -51.72,
+      "adx": NaN,
+      "cci": NaN,
       "vol_ratio": 0.72,
       "trend": "down",
-      "bull_count": 1,
-      "bear_count": 4,
-      "reasons_bull": [
-        "均线多排 MA20>MA50"
-      ],
+      "bull_count": 0,
+      "bear_count": 1,
+      "reasons_bull": [],
       "reasons_bear": [
-        "价格跌破MA20",
-        "MACD 空头零轴下",
-        "一目 云下",
-        "转换<基准 (死叉)"
+        "MACD 空头零轴下"
       ],
-      "action_zh": "偏空",
+      "action_zh": "观望",
       "ichimoku": {
-        "tenkan": 4879.5,
-        "kijun": 5146.0,
+        "tenkan": NaN,
+        "kijun": NaN,
         "senkou_a": 5227.75,
         "senkou_b": 5366.5,
-        "position": "云下",
-        "direction": "bearish",
+        "position": "云中",
+        "direction": "neutral",
         "cloud_color": "bearish",
         "tk_cross": "死叉"
       },
@@ -1142,7 +1126,7 @@
           4952.0,
           4911.0,
           4986.0,
-          4957.0
+          NaN
         ],
         "tenkan": [
           6296.5,
@@ -1234,7 +1218,7 @@
           5127.0,
           5127.0,
           5029.5,
-          4879.5
+          null
         ],
         "kijun": [
           6296.5,
@@ -1326,7 +1310,7 @@
           5549.0,
           5549.0,
           5549.0,
-          5146.0
+          null
         ],
         "span_a": [
           4342.23,
@@ -1522,41 +1506,35 @@
       "name_zh": "村田",
       "name_en": "Murata",
       "thesis": "MLCC 全球龙头（市占 40%+）· Apple/NVDA/Tesla 直接供应 · AI 服务器 + EV 高价值 MLCC 需求",
-      "price": 8004.0,
-      "pct_1d": -0.22,
-      "pct_5d": 4.86,
-      "rsi": 66.0,
-      "ma20": 7404.45,
-      "ma50": 7555.8,
-      "bb_pct_b": 95.7,
-      "macd_dif": 70.86,
-      "macd_dea": -48.9,
-      "adx": 22.4,
-      "cci": 175.3,
+      "price": NaN,
+      "pct_1d": NaN,
+      "pct_5d": NaN,
+      "rsi": NaN,
+      "ma20": NaN,
+      "ma50": NaN,
+      "bb_pct_b": 50.0,
+      "macd_dif": 38.4,
+      "macd_dea": -55.39,
+      "adx": NaN,
+      "cci": NaN,
       "vol_ratio": 0.99,
-      "trend": "up",
-      "bull_count": 3,
-      "bear_count": 3,
+      "trend": "down",
+      "bull_count": 1,
+      "bear_count": 0,
       "reasons_bull": [
-        "价格站上MA20",
-        "MACD 多头零轴上",
-        "转换>基准 (金叉)"
+        "MACD 多头零轴上"
       ],
-      "reasons_bear": [
-        "均线空排 MA20<MA50",
-        "冲破布林上轨",
-        "CCI 超买"
-      ],
+      "reasons_bear": [],
       "action_zh": "观望",
       "ichimoku": {
-        "tenkan": 7549.0,
-        "kijun": 7534.5,
+        "tenkan": NaN,
+        "kijun": NaN,
         "senkou_a": 7855.5,
         "senkou_b": 9378.0,
         "position": "云中",
         "direction": "neutral",
         "cloud_color": "bearish",
-        "tk_cross": "金叉"
+        "tk_cross": "死叉"
       },
       "series": {
         "close": [
@@ -1649,7 +1627,7 @@
           7763.0,
           7823.0,
           8022.0,
-          8004.0
+          NaN
         ],
         "tenkan": [
           5969.5,
@@ -1741,7 +1719,7 @@
           7341.5,
           7439.5,
           7487.0,
-          7549.0
+          null
         ],
         "kijun": [
           5227.0,
@@ -1833,7 +1811,7 @@
           7658.5,
           7570.5,
           7570.5,
-          7534.5
+          null
         ],
         "span_a": [
           3659.68,
@@ -2029,37 +2007,31 @@
       "name_zh": "TEKSCEND",
       "name_en": "Tekscend Photomask",
       "thesis": "半导体光罩制造 · TSMC/Samsung 关键工艺供应 · 光刻上游（ASML 之外的国产替代）",
-      "price": 3920.0,
-      "pct_1d": 1.03,
-      "pct_5d": 6.81,
-      "rsi": 55.0,
-      "ma20": 3768.5,
-      "ma50": 3827.7,
-      "bb_pct_b": 86.6,
-      "macd_dif": -1.03,
-      "macd_dea": -26.64,
-      "adx": 17.9,
-      "cci": 120.7,
+      "price": NaN,
+      "pct_1d": NaN,
+      "pct_5d": NaN,
+      "rsi": NaN,
+      "ma20": NaN,
+      "ma50": NaN,
+      "bb_pct_b": 50.0,
+      "macd_dif": -13.7,
+      "macd_dea": -29.18,
+      "adx": NaN,
+      "cci": NaN,
       "vol_ratio": 0.75,
-      "trend": "up",
-      "bull_count": 1,
-      "bear_count": 3,
-      "reasons_bull": [
-        "价格站上MA20"
-      ],
-      "reasons_bear": [
-        "均线空排 MA20<MA50",
-        "CCI 超买",
-        "一目 云下"
-      ],
+      "trend": "down",
+      "bull_count": 0,
+      "bear_count": 0,
+      "reasons_bull": [],
+      "reasons_bear": [],
       "action_zh": "观望",
       "ichimoku": {
-        "tenkan": 3757.5,
-        "kijun": 3762.5,
+        "tenkan": NaN,
+        "kijun": NaN,
         "senkou_a": 3963.75,
         "senkou_b": 4157.5,
-        "position": "云下",
-        "direction": "bearish",
+        "position": "云中",
+        "direction": "neutral",
         "cloud_color": "bearish",
         "tk_cross": "死叉"
       },
@@ -2154,7 +2126,7 @@
           3770.0,
           3835.0,
           3880.0,
-          3920.0
+          NaN
         ],
         "tenkan": [
           4675.0,
@@ -2246,7 +2218,7 @@
           3800.0,
           3762.5,
           3762.5,
-          3757.5
+          null
         ],
         "kijun": [
           4250.0,
@@ -2338,7 +2310,7 @@
           3762.5,
           3762.5,
           3762.5,
-          3762.5
+          null
         ],
         "span_a": [
           3024.27,
@@ -2534,37 +2506,31 @@
       "name_zh": "ARE 控股",
       "name_en": "ARE Holdings",
       "thesis": "贵金属回收（金/银/铂）· 半导体电子废弃物 urban mining · AI 芯片需求带动金/铂回收溢价",
-      "price": 3645.0,
-      "pct_1d": -0.41,
-      "pct_5d": -0.41,
-      "rsi": 37.7,
-      "ma20": 3761.25,
-      "ma50": 3526.8,
-      "bb_pct_b": 33.2,
-      "macd_dif": 6.24,
-      "macd_dea": 34.12,
-      "adx": 28.4,
-      "cci": -52.0,
+      "price": NaN,
+      "pct_1d": NaN,
+      "pct_5d": NaN,
+      "rsi": NaN,
+      "ma20": NaN,
+      "ma50": NaN,
+      "bb_pct_b": 50.0,
+      "macd_dif": 10.08,
+      "macd_dea": 34.89,
+      "adx": NaN,
+      "cci": NaN,
       "vol_ratio": 0.81,
       "trend": "down",
-      "bull_count": 2,
-      "bear_count": 2,
-      "reasons_bull": [
-        "均线多排 MA20>MA50",
-        "一目 云上"
-      ],
-      "reasons_bear": [
-        "价格跌破MA20",
-        "转换<基准 (死叉)"
-      ],
+      "bull_count": 0,
+      "bear_count": 0,
+      "reasons_bull": [],
+      "reasons_bear": [],
       "action_zh": "观望",
       "ichimoku": {
-        "tenkan": 3617.5,
-        "kijun": 3865.0,
+        "tenkan": NaN,
+        "kijun": NaN,
         "senkou_a": 3395.75,
         "senkou_b": 3309.0,
-        "position": "云上",
-        "direction": "bullish",
+        "position": "云中",
+        "direction": "neutral",
         "cloud_color": "bullish",
         "tk_cross": "死叉"
       },
@@ -2659,7 +2625,7 @@
           3705.0,
           3670.0,
           3660.0,
-          3645.0
+          NaN
         ],
         "tenkan": [
           3895.0,
@@ -2751,7 +2717,7 @@
           3662.5,
           3620.0,
           3617.5,
-          3617.5
+          null
         ],
         "kijun": [
           3800.0,
@@ -2843,7 +2809,7 @@
           3865.0,
           3865.0,
           3865.0,
-          3865.0
+          null
         ],
         "span_a": [
           3713.65,
@@ -3076,38 +3042,33 @@
         "upgrade_gate": "FY2026 Q1 结果确认日本利率收益兑现，且年度指引维持或经官方文件上修。",
         "source_url": "https://www.mufg.jp/dam/ir/presentation/2025/pdf/slides2603_en.pdf"
       },
-      "price": 3721.0,
-      "pct_1d": 0.19,
-      "pct_5d": 1.81,
-      "rsi": 47.4,
-      "ma20": 3674.15,
-      "ma50": 3628.46,
-      "bb_pct_b": 72.5,
-      "macd_dif": 20.76,
-      "macd_dea": 23.91,
-      "adx": 27.0,
-      "cci": 89.7,
+      "price": NaN,
+      "pct_1d": NaN,
+      "pct_5d": NaN,
+      "rsi": NaN,
+      "ma20": NaN,
+      "ma50": NaN,
+      "bb_pct_b": 50.0,
+      "macd_dif": 16.75,
+      "macd_dea": 23.11,
+      "adx": NaN,
+      "cci": NaN,
       "vol_ratio": 1.09,
-      "trend": "up",
-      "bull_count": 4,
+      "trend": "down",
+      "bull_count": 0,
       "bear_count": 0,
-      "reasons_bull": [
-        "价格站上MA20",
-        "均线多排 MA20>MA50",
-        "一目 云上",
-        "转换>基准 (金叉)"
-      ],
+      "reasons_bull": [],
       "reasons_bear": [],
-      "action_zh": "偏多",
+      "action_zh": "观望",
       "ichimoku": {
-        "tenkan": 3647.0,
-        "kijun": 3605.0,
+        "tenkan": NaN,
+        "kijun": NaN,
         "senkou_a": 3603.5,
         "senkou_b": 3446.5,
-        "position": "云上",
-        "direction": "bullish",
+        "position": "云中",
+        "direction": "neutral",
         "cloud_color": "bullish",
-        "tk_cross": "金叉"
+        "tk_cross": "死叉"
       },
       "series": {
         "close": [
@@ -3200,7 +3161,7 @@
           3620.0,
           3573.0,
           3714.0,
-          3721.0
+          NaN
         ],
         "tenkan": [
           2949.0,
@@ -3292,7 +3253,7 @@
           3654.0,
           3643.5,
           3643.5,
-          3647.0
+          null
         ],
         "kijun": [
           2912.5,
@@ -3384,7 +3345,7 @@
           3605.0,
           3605.0,
           3605.0,
-          3605.0
+          null
         ],
         "span_a": [
           2683.41,
@@ -3588,36 +3549,31 @@
       "name_zh": "胜高",
       "name_en": "SUMCO",
       "thesis": "硅晶圆全球 #2（信越化学后）· 300mm wafer 供 TSMC/Samsung/Intel · AI 芯片上游原材料 · 12 吋产能瓶颈受益",
-      "price": 3020.0,
-      "pct_1d": -3.11,
-      "pct_5d": 1.46,
-      "rsi": 44.8,
-      "ma20": 3125.68,
-      "ma50": 3476.29,
-      "bb_pct_b": 35.3,
-      "macd_dif": -141.12,
-      "macd_dea": -164.22,
-      "adx": 27.3,
-      "cci": -37.5,
+      "price": NaN,
+      "pct_1d": NaN,
+      "pct_5d": NaN,
+      "rsi": NaN,
+      "ma20": NaN,
+      "ma50": NaN,
+      "bb_pct_b": 50.0,
+      "macd_dif": -148.07,
+      "macd_dea": -165.61,
+      "adx": NaN,
+      "cci": NaN,
       "vol_ratio": 1.06,
       "trend": "down",
       "bull_count": 0,
-      "bear_count": 4,
+      "bear_count": 0,
       "reasons_bull": [],
-      "reasons_bear": [
-        "价格跌破MA20",
-        "均线空排 MA20<MA50",
-        "一目 云下",
-        "转换<基准 (死叉)"
-      ],
-      "action_zh": "偏空",
+      "reasons_bear": [],
+      "action_zh": "观望",
       "ichimoku": {
-        "tenkan": 2990.0,
-        "kijun": 3193.5,
+        "tenkan": NaN,
+        "kijun": NaN,
         "senkou_a": 4056.25,
         "senkou_b": 4349.5,
-        "position": "云下",
-        "direction": "bearish",
+        "position": "云中",
+        "direction": "neutral",
         "cloud_color": "bearish",
         "tk_cross": "死叉"
       },
@@ -3712,7 +3668,7 @@
           3028.0,
           3115.0,
           3117.0,
-          3020.0
+          NaN
         ],
         "tenkan": [
           3365.16,
@@ -3804,7 +3760,7 @@
           3042.0,
           2990.0,
           2990.0,
-          2990.0
+          null
         ],
         "kijun": [
           2838.05,
@@ -3896,7 +3852,7 @@
           3499.5,
           3466.0,
           3466.0,
-          3193.5
+          null
         ],
         "span_a": [
           1715.87,
@@ -4092,36 +4048,31 @@
       "name_zh": "信越化学",
       "name_en": "Shin-Etsu Chemical",
       "thesis": "硅晶圆全球 #1 (超 SUMCO) + PVC 世界龙头 + 光罩用光刻胶 · 半导体材料 upstream 最上游 · AI 需求+日元弱势双利好",
-      "price": 5814.0,
-      "pct_1d": -1.27,
-      "pct_5d": -0.1,
-      "rsi": 47.1,
-      "ma20": 5835.7,
-      "ma50": 6165.7,
-      "bb_pct_b": 44.7,
-      "macd_dif": -94.5,
-      "macd_dea": -129.62,
-      "adx": 50.7,
-      "cci": 5.0,
+      "price": NaN,
+      "pct_1d": NaN,
+      "pct_5d": NaN,
+      "rsi": NaN,
+      "ma20": NaN,
+      "ma50": NaN,
+      "bb_pct_b": 50.0,
+      "macd_dif": -100.36,
+      "macd_dea": -130.8,
+      "adx": NaN,
+      "cci": NaN,
       "vol_ratio": 1.28,
       "trend": "down",
       "bull_count": 0,
-      "bear_count": 4,
+      "bear_count": 0,
       "reasons_bull": [],
-      "reasons_bear": [
-        "价格跌破MA20",
-        "均线空排 MA20<MA50",
-        "一目 云下",
-        "转换<基准 (死叉)"
-      ],
-      "action_zh": "偏空",
+      "reasons_bear": [],
+      "action_zh": "观望",
       "ichimoku": {
-        "tenkan": 5774.5,
-        "kijun": 5913.5,
+        "tenkan": NaN,
+        "kijun": NaN,
         "senkou_a": 6459.5,
         "senkou_b": 6686.0,
-        "position": "云下",
-        "direction": "bearish",
+        "position": "云中",
+        "direction": "neutral",
         "cloud_color": "bearish",
         "tk_cross": "死叉"
       },
@@ -4216,7 +4167,7 @@
           5844.0,
           5903.0,
           5889.0,
-          5814.0
+          NaN
         ],
         "tenkan": [
           7405.5,
@@ -4308,7 +4259,7 @@
           5743.0,
           5774.5,
           5774.5,
-          5774.5
+          null
         ],
         "kijun": [
           7133.0,
@@ -4400,7 +4351,7 @@
           6068.0,
           6018.0,
           6016.5,
-          5913.5
+          null
         ],
         "span_a": [
           6250.4,
@@ -4596,36 +4547,31 @@
       "name_zh": "CyberAgent",
       "name_en": "CyberAgent Inc.",
       "thesis": "日本最大互联网广告代理 · Uma Musume 手游长期收入台柱 · Abema TV 流媒体 · 生成 AI 内容/AI ads platform 投入加大",
-      "price": 1233.5,
-      "pct_1d": -1.28,
-      "pct_5d": -1.6,
-      "rsi": 41.1,
-      "ma20": 1270.03,
-      "ma50": 1348.29,
-      "bb_pct_b": 26.5,
-      "macd_dif": -26.17,
-      "macd_dea": -29.02,
-      "adx": 23.5,
-      "cci": -72.3,
+      "price": NaN,
+      "pct_1d": NaN,
+      "pct_5d": NaN,
+      "rsi": NaN,
+      "ma20": NaN,
+      "ma50": NaN,
+      "bb_pct_b": 50.0,
+      "macd_dif": -25.98,
+      "macd_dea": -28.99,
+      "adx": NaN,
+      "cci": NaN,
       "vol_ratio": 1.24,
       "trend": "down",
       "bull_count": 0,
-      "bear_count": 4,
+      "bear_count": 0,
       "reasons_bull": [],
-      "reasons_bear": [
-        "价格跌破MA20",
-        "均线空排 MA20<MA50",
-        "一目 云下",
-        "转换<基准 (死叉)"
-      ],
-      "action_zh": "偏空",
+      "reasons_bear": [],
+      "action_zh": "观望",
       "ichimoku": {
-        "tenkan": 1246.75,
-        "kijun": 1289.0,
+        "tenkan": NaN,
+        "kijun": NaN,
         "senkou_a": 1388.38,
         "senkou_b": 1408.25,
-        "position": "云下",
-        "direction": "bearish",
+        "position": "云中",
+        "direction": "neutral",
         "cloud_color": "bearish",
         "tk_cross": "死叉"
       },
@@ -4720,7 +4666,7 @@
           1260.0,
           1246.0,
           1249.5,
-          1233.5
+          NaN
         ],
         "tenkan": [
           1313.5,
@@ -4812,7 +4758,7 @@
           1241.5,
           1241.5,
           1241.5,
-          1246.75
+          null
         ],
         "kijun": [
           1313.5,
@@ -4904,7 +4850,7 @@
           1289.0,
           1289.0,
           1289.0,
-          1289.0
+          null
         ],
         "span_a": [
           1340.62,
@@ -5100,38 +5046,33 @@
       "name_zh": "同和控股",
       "name_en": "DOWA Holdings",
       "thesis": "非鉄金属(锌/铅/铜)精炼 + 半导体电子材料 + urban mining (半导体电子废弃物金属回收) · 与 ARE 同赛道但更多元 · AI 芯片+EV 电池金属需求受益",
-      "price": 8910.0,
-      "pct_1d": -0.69,
-      "pct_5d": -0.79,
-      "rsi": 37.6,
-      "ma20": 9334.3,
-      "ma50": 9085.6,
-      "bb_pct_b": 29.2,
-      "macd_dif": -128.37,
-      "macd_dea": -68.36,
-      "adx": 47.1,
-      "cci": -68.6,
+      "price": NaN,
+      "pct_1d": NaN,
+      "pct_5d": NaN,
+      "rsi": NaN,
+      "ma20": NaN,
+      "ma50": NaN,
+      "bb_pct_b": 50.0,
+      "macd_dif": -121.38,
+      "macd_dea": -66.96,
+      "adx": NaN,
+      "cci": NaN,
       "vol_ratio": 0.8,
       "trend": "down",
-      "bull_count": 1,
-      "bear_count": 4,
-      "reasons_bull": [
-        "均线多排 MA20>MA50"
-      ],
+      "bull_count": 0,
+      "bear_count": 1,
+      "reasons_bull": [],
       "reasons_bear": [
-        "价格跌破MA20",
-        "MACD 空头零轴下",
-        "一目 云下",
-        "转换<基准 (死叉)"
+        "MACD 空头零轴下"
       ],
-      "action_zh": "偏空",
+      "action_zh": "观望",
       "ichimoku": {
-        "tenkan": 8924.0,
-        "kijun": 9681.5,
+        "tenkan": NaN,
+        "kijun": NaN,
         "senkou_a": 8986.25,
         "senkou_b": 8932.5,
-        "position": "云下",
-        "direction": "bearish",
+        "position": "云中",
+        "direction": "neutral",
         "cloud_color": "bullish",
         "tk_cross": "死叉"
       },
@@ -5226,7 +5167,7 @@
           9095.0,
           8964.0,
           8972.0,
-          8910.0
+          NaN
         ],
         "tenkan": [
           10976.5,
@@ -5318,7 +5259,7 @@
           9101.5,
           9101.5,
           9101.5,
-          8924.0
+          null
         ],
         "kijun": [
           10868.0,
@@ -5410,7 +5351,7 @@
           9681.5,
           9681.5,
           9681.5,
-          9681.5
+          null
         ],
         "span_a": [
           9376.38,
@@ -5603,9 +5544,9 @@
   ],
   "data_source": "yfinance",
   "_meta": {
-    "cached_at": "2026-09-28T23:57:54.788805",
-    "age_sec": 308,
-    "stale": true,
-    "refreshing": true
+    "cached_at": "2026-09-29T00:30:23.205536",
+    "age_sec": 159,
+    "stale": false,
+    "refreshing": false
   }
 }

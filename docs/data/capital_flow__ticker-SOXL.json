@@ -17,8 +17,8 @@
   "source": "moomoo",
   "_meta": {
     "cached_at": "2026-09-29T00:01:55.280297",
-    "age_sec": 67,
-    "stale": false,
-    "refreshing": false
+    "age_sec": 1867,
+    "stale": true,
+    "refreshing": true
   }
 }
