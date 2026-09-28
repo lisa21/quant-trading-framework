@@ -1,41 +1,41 @@
 {
   "ticker": "MSFT",
   "sector": "云计算与企业软件",
-  "business": "微软以 Azure 云、Microsoft 365、Windows、Dynamics、LinkedIn、游戏和 AI 平台为核心，向企业、开发者和消费者销售软件订阅、云基础设施与数字服务。",
+  "business": "微软以 Azure 云、Microsoft 365、Windows、Dynamics、LinkedIn、游戏和 AI 平台为核心，向企业、政府、开发者和消费者销售软件、云服务与硬件。",
   "upstream": [
     {
       "name": "NVIDIA",
       "ticker": "NVDA",
-      "note": "为 Azure 数据中心和 AI 训练/推理集群提供 GPU、网络设备和加速计算生态",
+      "note": "为 Azure AI 数据中心提供 GPU、网络与 AI 加速硬件",
       "weight": 95,
+      "confidence": "medium"
+    },
+    {
+      "name": "OpenAI",
+      "ticker": null,
+      "note": "提供大模型能力与 AI 技术合作，支撑 Copilot、Azure OpenAI Service 等产品",
+      "weight": 90,
       "confidence": "medium"
     },
     {
       "name": "AMD",
       "ticker": "AMD",
-      "note": "为 Azure 云服务器提供 EPYC CPU、Instinct GPU 等计算芯片",
-      "weight": 75,
+      "note": "提供服务器 CPU/GPU，以及 Xbox 相关定制芯片生态",
+      "weight": 70,
       "confidence": "medium"
     },
     {
       "name": "Intel",
       "ticker": "INTC",
-      "note": "为云服务器和企业终端生态提供 CPU、网络和平台芯片",
-      "weight": 65,
-      "confidence": "medium"
-    },
-    {
-      "name": "Taiwan Semiconductor Manufacturing",
-      "ticker": "TSM",
-      "note": "代工生产微软自研及上游芯片供应商的先进制程芯片，间接支撑 Azure 和 AI 基础设施",
+      "note": "提供服务器与 PC 处理器，支撑 Windows PC 和部分数据中心硬件生态",
       "weight": 60,
       "confidence": "medium"
     },
     {
-      "name": "Samsung Electronics",
-      "ticker": null,
-      "note": "提供服务器内存、存储和显示/终端相关零部件，支撑数据中心与设备供应链",
-      "weight": 45,
+      "name": "TSMC",
+      "ticker": "TSM",
+      "note": "为微软自研芯片及生态伙伴芯片提供先进制程代工能力",
+      "weight": 55,
       "confidence": "medium"
     }
   ],
@@ -43,36 +43,36 @@
     {
       "name": "OpenAI",
       "ticker": null,
-      "note": "采购和使用 Azure 超算与云基础设施，用于大模型训练、推理和产品运行",
-      "weight": 95,
+      "note": "采购并使用 Azure 超算和云基础设施训练、部署 AI 模型",
+      "weight": 90,
       "confidence": "medium"
     },
     {
       "name": "Walmart",
       "ticker": "WMT",
-      "note": "使用 Microsoft Azure、Microsoft 365 和数据/AI 工具支持零售运营与数字化转型",
+      "note": "使用 Microsoft Azure、Microsoft 365 和企业数字化服务",
+      "weight": 65,
+      "confidence": "medium"
+    },
+    {
+      "name": "AT&T",
+      "ticker": "T",
+      "note": "使用 Azure、Microsoft 365 和云迁移服务支持企业 IT 与通信业务",
       "weight": 55,
       "confidence": "medium"
     },
     {
-      "name": "The Coca-Cola Company",
-      "ticker": "KO",
-      "note": "采购 Microsoft Cloud、Azure OpenAI Service 和企业协作工具用于全球业务数字化与生成式 AI 应用",
+      "name": "SAP",
+      "ticker": "SAP",
+      "note": "与微软云深度集成，客户工作负载运行在 Azure 上并采购微软云服务",
+      "weight": 50,
+      "confidence": "medium"
+    },
+    {
+      "name": "Adobe",
+      "ticker": "ADBE",
+      "note": "在企业生产力、营销云与 AI 工作流中与微软云和 Copilot 生态集成",
       "weight": 45,
-      "confidence": "medium"
-    },
-    {
-      "name": "Amgen",
-      "ticker": "AMGN",
-      "note": "使用 Microsoft 365、Azure 和 AI 工具支持研发、运营和企业生产力场景",
-      "weight": 40,
-      "confidence": "medium"
-    },
-    {
-      "name": "London Stock Exchange Group",
-      "ticker": null,
-      "note": "使用微软云、数据分析和协作平台推进金融数据与工作流产品合作",
-      "weight": 38,
       "confidence": "medium"
     }
   ],
@@ -80,40 +80,40 @@
     {
       "name": "Amazon",
       "ticker": "AMZN",
-      "note": "AWS 与 Azure 在云基础设施、AI 云服务和企业客户上直接竞争",
+      "note": "AWS 与 Azure 在公有云、AI 基础设施和企业云服务竞争",
       "confidence": "high"
     },
     {
       "name": "Alphabet",
       "ticker": "GOOGL",
-      "note": "Google Cloud、Workspace、AI 模型和搜索广告生态与微软多线竞争",
+      "note": "Google Cloud、Workspace、搜索广告和 AI 平台与微软竞争",
       "confidence": "high"
     },
     {
       "name": "Apple",
       "ticker": "AAPL",
-      "note": "在操作系统、生产力入口、设备生态和消费者服务方面竞争",
+      "note": "在操作系统、设备、应用生态和消费者服务领域竞争",
       "confidence": "medium"
     },
     {
       "name": "Oracle",
       "ticker": "ORCL",
-      "note": "在企业云、数据库、ERP 和行业应用市场竞争",
+      "note": "在企业数据库、ERP、云基础设施和行业云领域竞争",
       "confidence": "medium"
     },
     {
       "name": "Salesforce",
       "ticker": "CRM",
-      "note": "在企业 SaaS、CRM、协作和 AI 助手工作流领域竞争",
+      "note": "在 CRM、企业 SaaS、AI 助手和业务应用平台竞争",
       "confidence": "medium"
     }
   ],
-  "generated_at": "2026-08-29T01:33:32.251563+00:00",
+  "generated_at": "2026-09-28T02:03:27.936365+00:00",
   "source": "codex",
   "_meta": {
-    "cached_at": "2026-08-29T10:33:32.252564",
-    "age_sec": 2593771,
-    "stale": true,
-    "refreshing": true
+    "cached_at": "2026-09-28T11:03:27.954951",
+    "age_sec": 1779,
+    "stale": false,
+    "refreshing": false
   }
 }
