@@ -78,8 +78,8 @@
     "implied_peer_upside": null,
     "source": "yfinance analyst aggregation",
     "_meta": {
-      "cached_at": "2026-09-28T22:50:53.883626",
-      "age_sec": 20529,
+      "cached_at": "2026-09-29T04:51:23.494443",
+      "age_sec": 700,
       "stale": false,
       "refreshing": false
     }
