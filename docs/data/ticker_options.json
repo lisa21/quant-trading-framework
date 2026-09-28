@@ -12991,14 +12991,14 @@
   "cache_contract": "15efd89eda8e",
   "_meta": {
     "cached_at": "2026-09-28T18:30:31.352738",
-    "age_sec": 1951,
+    "age_sec": 3751,
     "stale": false,
     "refreshing": false
   },
   "flow_meta": {
     "generated_at": "2026-09-25T20:06:21.348433+00:00",
     "status": "stale",
-    "age_sec": 222964.0,
+    "age_sec": 224763.9,
     "stale": true
   }
 }
