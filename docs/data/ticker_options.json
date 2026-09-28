@@ -14042,14 +14042,14 @@
   "cache_contract": "15efd89eda8e",
   "_meta": {
     "cached_at": "2026-09-28T18:30:31.352738",
-    "age_sec": 28951,
+    "age_sec": 30751,
     "stale": false,
     "refreshing": false
   },
   "flow_meta": {
     "generated_at": "2026-09-28T17:06:23.764628+00:00",
     "status": "ready",
-    "age_sec": 1560.7,
+    "age_sec": 3360.9,
     "stale": false
   }
 }
