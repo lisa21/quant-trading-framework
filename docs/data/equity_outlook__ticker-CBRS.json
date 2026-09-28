@@ -5,16 +5,16 @@
   "analyst_consensus": {
     "n_analysts": 11,
     "recommendation": "strong_buy",
-    "current_price": 206.75,
+    "current_price": 201.58,
     "forward_eps": 1.27,
     "trailing_eps": -4.65,
     "eps_growth_pct": null,
-    "forward_pe": 162.32,
+    "forward_pe": 158.27,
     "trailing_pe": null,
     "target_mean": 291.64,
     "target_high": 330.0,
     "target_low": 209.0,
-    "target_upside_pct": 41.1,
+    "target_upside_pct": 44.7,
     "revenue_growth_pct": 74.3,
     "earnings_growth_pct": null,
     "next_earnings": "2026-11-11",
@@ -30,104 +30,104 @@
     "implied_hist_p25": null,
     "implied_hist_p75": null,
     "implied_hist_upside": null,
-    "peer_pe_median": 31.62,
+    "peer_pe_median": 30.97,
     "peer_pe_n_peers": 4,
     "peer_pe_details": [
       {
         "ticker": "NVDA",
-        "pe": 14.35
+        "pe": 14.76
       },
       {
         "ticker": "AMD",
-        "pe": 40.48
+        "pe": 39.36
       },
       {
         "ticker": "GOOGL",
-        "pe": 22.77
+        "pe": 22.58
       },
       {
         "ticker": "INTC",
-        "pe": 59.65
+        "pe": 57.53
       }
     ],
-    "implied_peer_median": 40.27,
-    "implied_peer_upside": -80.5,
+    "implied_peer_median": 39.45,
+    "implied_peer_upside": -80.4,
     "source": "yfinance analyst aggregation",
     "forward_estimates": {
       "earnings": {
         "0q": {
-          "avg": -0.1409,
+          "avg": -0.1419,
           "low": -0.21,
           "high": -0.03,
-          "numberOfAnalysts": 9.0
+          "numberOfAnalysts": 10.0
         },
         "+1q": {
-          "avg": -0.224,
+          "avg": -0.2266,
           "low": -0.33,
           "high": -0.05,
-          "numberOfAnalysts": 9.0
+          "numberOfAnalysts": 10.0
         },
         "0y": {
-          "avg": -0.4704,
+          "avg": -0.4694,
           "low": -0.7056,
           "high": -0.16,
-          "numberOfAnalysts": 10.0
+          "numberOfAnalysts": 11.0
         },
         "+1y": {
           "avg": 1.2737,
           "low": 0.84,
           "high": 1.943,
-          "yearAgoEps": -0.4704,
+          "yearAgoEps": -0.4694,
           "numberOfAnalysts": 11.0,
-          "growth": 3.7078
+          "growth": 3.7132
         }
       },
       "revenue": {
         "0q": {
-          "avg": 214665810.0,
+          "avg": 214702940.0,
           "low": 213310000.0,
           "high": 215287000.0,
-          "numberOfAnalysts": 8.0
+          "numberOfAnalysts": 9.0
         },
         "+1q": {
-          "avg": 275085520.0,
+          "avg": 274409350.0,
           "low": 268690000.0,
           "high": 302552920.0,
-          "numberOfAnalysts": 8.0
+          "numberOfAnalysts": 9.0
         },
         "0y": {
-          "avg": 887290510.0,
+          "avg": 887081460.0,
           "low": 884935000.0,
           "high": 891084140.0,
-          "numberOfAnalysts": 9.0
+          "numberOfAnalysts": 10.0
         },
         "+1y": {
           "avg": 2951599710.0,
           "low": 2628378000.0,
           "high": 3615796210.0,
-          "yearAgoRevenue": 887290510.0,
+          "yearAgoRevenue": 887081460.0,
           "numberOfAnalysts": 11.0,
-          "growth": 2.3265
+          "growth": 2.3273
         }
       },
       "eps_trend": {
         "0q": {
-          "current": -0.1409,
-          "7daysAgo": -0.1409,
+          "current": -0.1419,
+          "7daysAgo": -0.1419,
           "30daysAgo": -0.3241,
           "60daysAgo": -0.3241,
           "90daysAgo": 0.0
         },
         "+1q": {
-          "current": -0.224,
-          "7daysAgo": -0.224,
+          "current": -0.2266,
+          "7daysAgo": -0.2266,
           "30daysAgo": -0.3834,
           "60daysAgo": -0.3814,
           "90daysAgo": 0.0
         },
         "0y": {
-          "current": -0.4704,
-          "7daysAgo": -0.4715,
+          "current": -0.4694,
+          "7daysAgo": -0.4704,
           "30daysAgo": -0.9712,
           "60daysAgo": -0.9702,
           "90daysAgo": 0.0
@@ -187,31 +187,31 @@
         "key": "analyst_target",
         "label": "分析师目标均值",
         "implied_price": 291.64,
-        "gap_pct": 41.1
+        "gap_pct": 44.7
       },
       {
         "key": "peer_pe",
         "label": "前瞻 EPS × 同行 PE 中位",
-        "implied_price": 40.27,
-        "gap_pct": -80.5
+        "implied_price": 39.45,
+        "gap_pct": -80.4
       }
     ],
-    "median_gap_pct": -19.7,
+    "median_gap_pct": -17.9,
     "revision_signal": "upward",
     "required_eps_growth_pct": null,
     "consensus_eps_growth_pct": null,
     "growth_cushion_pct": null,
     "rationale": [
-      "多口径隐含价中位数低于现价 19.7%",
+      "多口径隐含价中位数低于现价 17.9%",
       "近 30 天 EPS 共识上修"
     ]
   },
   "official_guidance_status": "not_connected",
-  "fetched_at": "2026-09-28T08:03:07.662544+00:00",
+  "fetched_at": "2026-09-28T14:03:26.048255+00:00",
   "source": "yfinance analyst aggregation",
   "_meta": {
-    "cached_at": "2026-09-28T17:03:07.664063",
-    "age_sec": 21599,
+    "cached_at": "2026-09-28T23:03:26.049253",
+    "age_sec": 1777,
     "stale": false,
     "refreshing": false
   },
