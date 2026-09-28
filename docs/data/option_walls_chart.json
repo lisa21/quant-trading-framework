@@ -349,8 +349,8 @@
   ],
   "_meta": {
     "cached_at": "2026-09-27T20:33:06.352496",
-    "age_sec": 86396,
-    "stale": false,
-    "refreshing": false
+    "age_sec": 88197,
+    "stale": true,
+    "refreshing": true
   }
 }
