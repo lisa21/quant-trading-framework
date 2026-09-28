@@ -112,8 +112,8 @@
   "source": "codex",
   "_meta": {
     "cached_at": "2026-08-29T10:33:32.252564",
-    "age_sec": 2591973,
-    "stale": false,
-    "refreshing": false
+    "age_sec": 2593771,
+    "stale": true,
+    "refreshing": true
   }
 }

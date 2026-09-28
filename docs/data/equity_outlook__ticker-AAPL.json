@@ -209,13 +209,13 @@
     ]
   },
   "official_guidance_status": "not_connected",
-  "fetched_at": "2026-09-27T19:33:05.210570+00:00",
+  "fetched_at": "2026-09-28T01:33:07.125363+00:00",
   "source": "yfinance analyst aggregation",
   "_meta": {
-    "cached_at": "2026-09-28T04:33:05.242395",
-    "age_sec": 21600,
-    "stale": true,
-    "refreshing": true
+    "cached_at": "2026-09-28T10:33:07.128401",
+    "age_sec": 1796,
+    "stale": false,
+    "refreshing": false
   },
   "ticker": "AAPL",
   "is_proxy": false

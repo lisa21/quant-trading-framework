@@ -30,7 +30,7 @@
     "implied_hist_p25": null,
     "implied_hist_p75": null,
     "implied_hist_upside": null,
-    "peer_pe_median": 31.78,
+    "peer_pe_median": 31.62,
     "peer_pe_n_peers": 4,
     "peer_pe_details": [
       {
@@ -43,15 +43,15 @@
       },
       {
         "ticker": "GOOGL",
-        "pe": 23.08
+        "pe": 22.77
       },
       {
         "ticker": "INTC",
         "pe": 59.65
       }
     ],
-    "implied_peer_median": 40.48,
-    "implied_peer_upside": -80.4,
+    "implied_peer_median": 40.27,
+    "implied_peer_upside": -80.5,
     "source": "yfinance analyst aggregation",
     "forward_estimates": {
       "earnings": {
@@ -192,8 +192,8 @@
       {
         "key": "peer_pe",
         "label": "前瞻 EPS × 同行 PE 中位",
-        "implied_price": 40.48,
-        "gap_pct": -80.4
+        "implied_price": 40.27,
+        "gap_pct": -80.5
       }
     ],
     "median_gap_pct": -19.7,
@@ -207,13 +207,13 @@
     ]
   },
   "official_guidance_status": "not_connected",
-  "fetched_at": "2026-09-27T19:33:06.017856+00:00",
+  "fetched_at": "2026-09-28T01:33:08.295711+00:00",
   "source": "yfinance analyst aggregation",
   "_meta": {
-    "cached_at": "2026-09-28T04:33:06.078646",
-    "age_sec": 21600,
-    "stale": true,
-    "refreshing": true
+    "cached_at": "2026-09-28T10:33:08.296712",
+    "age_sec": 1795,
+    "stale": false,
+    "refreshing": false
   },
   "ticker": "CBRS",
   "is_proxy": false
