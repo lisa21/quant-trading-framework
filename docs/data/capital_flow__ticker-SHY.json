@@ -13,11 +13,11 @@
     "reason": "主力（super+big）净流入 $+176.7M（占总成交额 +50.4%）",
     "score": 1.0
   },
-  "asof": "2026-09-28 18:00:15",
+  "asof": "2026-09-28 18:14:24",
   "source": "moomoo",
   "_meta": {
-    "cached_at": "2026-09-29T07:00:59.418022",
-    "age_sec": 123,
+    "cached_at": "2026-09-29T07:32:56.709935",
+    "age_sec": 6,
     "stale": false,
     "refreshing": false
   }
