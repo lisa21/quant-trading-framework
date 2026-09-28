@@ -5,8 +5,8 @@
       "date": "2026-10-28",
       "days_until": 30,
       "probabilities": {
-        "hold": 36,
-        "hike_25": 64
+        "hold": 28,
+        "hike_25": 72
       },
       "most_likely": "hike_25",
       "consensus_direction": "hawkish"
@@ -15,80 +15,74 @@
       "date": "2026-12-09",
       "days_until": 72,
       "probabilities": {
-        "hold": 8,
-        "hike_25": 42,
-        "hike_50": 51
+        "hold": 18,
+        "hike_25": 82
       },
-      "most_likely": "hike_50",
+      "most_likely": "hike_25",
       "consensus_direction": "hawkish"
     },
     {
       "date": "2027-01-27",
       "days_until": 121,
       "probabilities": {
-        "hold": 4,
-        "hike_25": 24,
-        "hike_50": 46,
-        "hike_75": 26
+        "hold": 48,
+        "hike_25": 52
       },
-      "most_likely": "hike_50",
-      "consensus_direction": "hawkish"
+      "most_likely": "hike_25",
+      "consensus_direction": "hawkish_lean"
     },
     {
       "date": "2027-03-17",
       "days_until": 170,
       "probabilities": {
-        "hold": 1,
-        "hike_25": 11,
-        "hike_50": 32,
-        "hike_75": 39,
-        "hike_100": 17
+        "hold": 25,
+        "hike_25": 75
       },
-      "most_likely": "hike_75",
+      "most_likely": "hike_25",
       "consensus_direction": "hawkish"
     }
   ],
-  "implied_terminal_rate": "4.75-5.00",
-  "implied_terminal_date": "2027-Q3",
-  "data_snapshot_date": "2026-09-25",
-  "recent_event_impact": "最近7天内未发现新的NFP/CPI/PPI/FOMC或Fed Chair Warsh讲话；9/25数据已反映9/16 FOMC加息25bp至3.75-4.00、9/11 CPI +0.4% MoM/+3.4% YoY、9/10 PPI +0.4% MoM以及9/4 NFP +162K/失业率4.1%，这些偏强就业与通胀数据强化了后续加息定价。",
-  "commentary": "Data snapshot为2026-09-25，属于2026-09-28的最近1个交易日；CME官方页面可访问但动态表格未在静态抓取中展开，因此概率采用25bp基于CME 30-Day Fed Funds futures方法的最新全曲线。市场目前明显偏鹰，10月加息25bp约64%，12月至少一次加息约93%；强于预期的8月NFP、CPI和PPI解释了加息路径上移。",
+  "implied_terminal_rate": "4.57% midpoint",
+  "implied_terminal_date": "2027-03-17",
+  "data_snapshot_date": "2026-09-28",
+  "recent_event_impact": "最近7天内未发现新的NFP/CPI/PPI/FOMC决定；最新关键数据为8月NFP 2026-09-04 +162K、失业率4.1%，8月PPI 2026-09-10 +0.4% m/m、+5.4% y/y，8月CPI 2026-09-11 +0.4% m/m、+3.4% y/y；9月16日FOMC已加息25bp至3.75-4.00，当前2026-09-28快照已在这些事件之后。",
+  "commentary": "CME FedWatch/30-Day Fed Funds futures衍生数据的2026-09-28快照显示，市场继续消化8月CPI/PPI偏热和9月16日Warsh主持的FOMC加息，未来数次会议均偏向继续加息而非降息。由于9月就业报告尚未发布，最新NFP仍是9月4日公布的8月+162K，未对最近7天形成新的就业冲击。",
   "sources": [
     {
       "url": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
       "type": "cme_fedwatch"
     },
     {
-      "url": "https://25bp.eu/en/fed/",
-      "type": "fed_funds_futures_probability_backup"
+      "url": "https://www.fisclear.com/fed-watch",
+      "type": "backup_fed_funds_futures_snapshot"
     },
     {
-      "url": "https://25bp.eu/en/fed/rate-path/",
-      "type": "terminal_rate_backup"
-    },
-    {
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm",
-      "type": "fomc_statement"
-    },
-    {
-      "url": "https://www.bls.gov/news.release/archives/cpi_09112026.htm",
-      "type": "cpi"
-    },
-    {
-      "url": "https://www.bls.gov/news.release/archives/ppi_09102026.htm",
-      "type": "ppi"
+      "url": "https://sessionopen.com/fed-watch",
+      "type": "backup_fed_funds_futures_snapshot"
     },
     {
       "url": "https://www.bls.gov/news.release/empsit.htm",
-      "type": "nfp"
+      "type": "nfp_event_check"
+    },
+    {
+      "url": "https://www.bls.gov/news.release/archives/cpi_09112026.htm",
+      "type": "cpi_event_check"
+    },
+    {
+      "url": "https://www.bls.gov/news.release/archives/ppi_09102026.htm",
+      "type": "ppi_event_check"
+    },
+    {
+      "url": "https://www.axios.com/2026/09/16/fed-rates-warsh-trump",
+      "type": "fomc_event_check"
     }
   ],
   "confidence": "medium",
   "source_via": "codex_cli_websearch",
-  "fetched_at": "2026-09-28T02:41:51+00:00",
+  "fetched_at": "2026-09-28T10:43:15+00:00",
   "_meta": {
-    "cached_at": "2026-09-28T11:41:51.585877",
-    "age_sec": 28271,
+    "cached_at": "2026-09-28T19:43:15.964867",
+    "age_sec": 1186,
     "stale": false,
     "refreshing": false
   }
