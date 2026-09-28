@@ -14436,14 +14436,14 @@
   "cache_contract": "15efd89eda8e",
   "_meta": {
     "cached_at": "2026-09-27T18:29:28.803723",
-    "age_sec": 65082,
+    "age_sec": 66814,
     "stale": false,
     "refreshing": false
   },
   "flow_meta": {
     "generated_at": "2026-09-25T20:06:21.348433+00:00",
     "status": "stale",
-    "age_sec": 199632.9,
+    "age_sec": 201364.5,
     "stale": true
   }
 }

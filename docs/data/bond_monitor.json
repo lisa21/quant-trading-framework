@@ -1,5 +1,5 @@
 {
-  "asof": "2026-09-28T12:32",
+  "asof": "2026-09-28T12:48",
   "yields": {
     "10y": {
       "value": 5.184,
@@ -247,12 +247,12 @@
     },
     {
       "level": "warn",
-      "msg": "USDJPY 157.78 进入 155-160 口头干预区间 (JP MoF)",
+      "msg": "USDJPY 157.79 进入 155-160 口头干预区间 (JP MoF)",
       "key": "jpy_verbal_zone"
     },
     {
       "level": "warn",
-      "msg": "KRW/USD 1357.1 韩元明显走弱",
+      "msg": "KRW/USD 1356.8 韩元明显走弱",
       "key": "krw_weak"
     },
     {
@@ -272,7 +272,7 @@
     },
     {
       "level": "warn",
-      "msg": "Shenzhen Composite (深) -3.5% (5d -5.8%) 明显走弱",
+      "msg": "Shenzhen Composite (深) -3.4% (5d -5.7%) 明显走弱",
       "key": "asia_szse_weak"
     },
     {
@@ -330,13 +330,13 @@
     "sofr_pct": 3.88,
     "iorb_pct": 3.9,
     "sofr_iorb_spread_bps": -2.0,
-    "usdjpy": 157.78,
+    "usdjpy": 157.79,
     "usdjpy_20d_pct": -1.46,
     "usdjpy_20d_delta_pct": -1.46,
     "usdjpy_60d_high": 163.86,
     "usdjpy_pullback_from_60d_high_pct": -3.71,
-    "krw_usd": 1357.1,
-    "krw_20d_pct": -1.45,
+    "krw_usd": 1356.8,
+    "krw_20d_pct": -1.47,
     "jgb_10y_pct": 2.94,
     "jgb_asof": "2026-08-01",
     "ust_jgb_spread_bps": 224.4,
@@ -353,22 +353,22 @@
     "kbe_spy_20d_delta_pct": -4.2,
     "cdx_ig_bps": 79.0,
     "cdx_hy_bps": 280.0,
-    "dxy": 101.1,
-    "dxy_pct_20d": 1.4,
-    "dxy_z_60d": 1.0,
+    "dxy": 101.12,
+    "dxy_pct_20d": 1.42,
+    "dxy_z_60d": 1.02,
     "asia_indices": {
       "N225": {
         "symbol": "^N225",
         "label": "Nikkei 225 (日)",
-        "close": 66333.53,
-        "chg_1d": -0.05,
-        "chg_5d_pct": 3.77,
+        "close": 66228.12,
+        "chg_1d": -0.21,
+        "chg_5d_pct": 3.61,
         "asof": "2026-09-28"
       },
       "HSI": {
         "symbol": "^HSI",
         "label": "Hang Seng (港)",
-        "close": 24683.92,
+        "close": 24683.82,
         "chg_1d": 0.71,
         "chg_5d_pct": -1.43,
         "asof": "2026-09-28"
@@ -376,25 +376,25 @@
       "SSE": {
         "symbol": "000001.SS",
         "label": "Shanghai Composite (沪)",
-        "close": 3818.89,
-        "chg_1d": -1.79,
-        "chg_5d_pct": -2.38,
+        "close": 3820.98,
+        "chg_1d": -1.73,
+        "chg_5d_pct": -2.32,
         "asof": "2026-09-28"
       },
       "SZSE": {
         "symbol": "399001.SZ",
         "label": "Shenzhen Composite (深)",
-        "close": 12845.51,
-        "chg_1d": -3.54,
-        "chg_5d_pct": -5.83,
+        "close": 12868.28,
+        "chg_1d": -3.37,
+        "chg_5d_pct": -5.66,
         "asof": "2026-09-28"
       },
       "KOSPI": {
         "symbol": "^KS11",
         "label": "KOSPI (韩)",
-        "close": 6907.26,
-        "chg_1d": -2.45,
-        "chg_5d_pct": 2.86,
+        "close": 6912.57,
+        "chg_1d": -2.38,
+        "chg_5d_pct": 2.94,
         "asof": "2026-09-28"
       }
     },
@@ -402,31 +402,31 @@
       "es_f": {
         "symbol": "ES=F",
         "label": "S&P 500 futures",
-        "price": 7775.5,
-        "chg_pct": -0.36
+        "price": 7772.75,
+        "chg_pct": -0.4
       },
       "nq_f": {
         "symbol": "NQ=F",
         "label": "Nasdaq futures",
-        "price": 30673.5,
-        "chg_pct": -0.7
+        "price": 30654.5,
+        "chg_pct": -0.76
       },
       "cl_f": {
         "symbol": "CL=F",
         "label": "WTI crude futures",
-        "price": 93.32,
-        "chg_pct": 0.98
+        "price": 93.8,
+        "chg_pct": 1.5
       },
       "gc_f": {
         "symbol": "GC=F",
         "label": "Gold futures",
-        "price": 4227.8,
-        "chg_pct": -2.16
+        "price": 4226.4,
+        "chg_pct": -2.19
       }
     },
     "oil_uso": 148.33,
     "oil_pct_20d": 14.09,
-    "oil_wti": 93.29,
+    "oil_wti": 93.81,
     "eem_pct_20d": 0.55,
     "eem_vs_spx_20d": 0.27,
     "volume_confirm": {
@@ -521,8 +521,8 @@
     }
   },
   "_meta": {
-    "cached_at": "2026-09-28T12:33:02.526505",
-    "age_sec": 68,
+    "cached_at": "2026-09-28T12:48:33.604665",
+    "age_sec": 869,
     "stale": false,
     "refreshing": false
   }
