@@ -2,22 +2,22 @@
   "ticker": "SHY",
   "flow": {
     "super_net": 101445000.0,
-    "big_net": 36189900.0,
-    "mid_net": 4227274.552,
-    "small_net": -4075065.950000003,
-    "total_net": 137787108.602,
-    "smart_pct": 0.5234619325988205
+    "big_net": 58988050.72,
+    "mid_net": 7534373.973,
+    "small_net": -10437757.537000004,
+    "total_net": 157529667.15600002,
+    "smart_pct": 0.5159588164683307
   },
   "anomaly": {
     "detected": true,
-    "reason": "主力（super+big）净流入 $+137.6M（占总成交额 +52.3%）",
+    "reason": "主力（super+big）净流入 $+160.4M（占总成交额 +51.6%）",
     "score": 1.0
   },
-  "asof": "2026-09-28 13:59:07",
+  "asof": "2026-09-28 14:31:19",
   "source": "moomoo",
   "_meta": {
-    "cached_at": "2026-09-29T02:59:25.216002",
-    "age_sec": 218,
+    "cached_at": "2026-09-29T03:31:54.743353",
+    "age_sec": 68,
     "stale": false,
     "refreshing": false
   }

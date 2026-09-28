@@ -2,22 +2,22 @@
   "ticker": "SWKS",
   "flow": {
     "super_net": -75657.03999999998,
-    "big_net": -266311.80200000014,
-    "mid_net": 1470046.207,
-    "small_net": 2043671.8790000007,
-    "total_net": 3171749.244000001,
-    "smart_pct": -0.012697391577871014
+    "big_net": -151013.45699999994,
+    "mid_net": 1647111.9949999992,
+    "small_net": 2742689.7860000003,
+    "total_net": 4163131.284,
+    "smart_pct": -0.007276933520958178
   },
   "anomaly": {
     "detected": false,
     "reason": "",
     "score": 0.0
   },
-  "asof": "2026-09-28 14:00:39",
+  "asof": "2026-09-28 14:32:31",
   "source": "moomoo",
   "_meta": {
-    "cached_at": "2026-09-29T03:00:54.553792",
-    "age_sec": 128,
+    "cached_at": "2026-09-29T03:32:54.278941",
+    "age_sec": 9,
     "stale": false,
     "refreshing": false
   }

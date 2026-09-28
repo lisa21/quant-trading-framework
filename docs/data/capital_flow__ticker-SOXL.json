@@ -1,23 +1,23 @@
 {
   "ticker": "SOXL",
   "flow": {
-    "super_net": 24918707.825000003,
-    "big_net": 2974782.027999997,
-    "mid_net": -4246071.978999972,
-    "small_net": 66288414.75600004,
-    "total_net": 89935832.63000011,
-    "smart_pct": 0.0104242935229091
+    "super_net": 25487307.424999997,
+    "big_net": 3479640.3330000043,
+    "mid_net": -3866820.194999993,
+    "small_net": 66885798.05700004,
+    "total_net": 91985925.62000012,
+    "smart_pct": 0.010559445166610303
   },
   "anomaly": {
     "detected": false,
     "reason": "",
     "score": 0.0
   },
-  "asof": "2026-09-28 14:00:38",
+  "asof": "2026-09-28 14:32:39",
   "source": "moomoo",
   "_meta": {
-    "cached_at": "2026-09-29T03:00:54.420451",
-    "age_sec": 129,
+    "cached_at": "2026-09-29T03:32:54.150447",
+    "age_sec": 9,
     "stale": false,
     "refreshing": false
   }
