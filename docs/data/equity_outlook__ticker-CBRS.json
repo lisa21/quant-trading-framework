@@ -211,9 +211,9 @@
   "source": "yfinance analyst aggregation",
   "_meta": {
     "cached_at": "2026-09-28T04:33:06.078646",
-    "age_sec": 19797,
-    "stale": false,
-    "refreshing": false
+    "age_sec": 21600,
+    "stale": true,
+    "refreshing": true
   },
   "ticker": "CBRS",
   "is_proxy": false
