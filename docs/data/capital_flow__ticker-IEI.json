@@ -13,11 +13,11 @@
     "reason": "主力（super+big）净流出 $-164.4M（占总成交额 -43.6%）",
     "score": 1.0
   },
-  "asof": "2026-09-28 16:55:00",
+  "asof": "2026-09-28 17:47:00",
   "source": "moomoo",
   "_meta": {
-    "cached_at": "2026-09-29T06:28:59.231881",
-    "age_sec": 246,
+    "cached_at": "2026-09-29T07:00:59.389425",
+    "age_sec": 123,
     "stale": false,
     "refreshing": false
   }
