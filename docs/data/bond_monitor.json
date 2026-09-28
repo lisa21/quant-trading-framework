@@ -1,5 +1,5 @@
 {
-  "asof": "2026-09-28T08:23",
+  "asof": "2026-09-28T08:54",
   "yields": {
     "10y": {
       "value": 5.184,
@@ -247,12 +247,12 @@
     },
     {
       "level": "warn",
-      "msg": "USDJPY 157.54 进入 155-160 口头干预区间 (JP MoF)",
+      "msg": "USDJPY 157.47 进入 155-160 口头干预区间 (JP MoF)",
       "key": "jpy_verbal_zone"
     },
     {
       "level": "warn",
-      "msg": "KRW/USD 1354.9 韩元明显走弱",
+      "msg": "KRW/USD 1355.6 韩元明显走弱",
       "key": "krw_weak"
     },
     {
@@ -325,13 +325,13 @@
     "sofr_pct": 3.88,
     "iorb_pct": 3.9,
     "sofr_iorb_spread_bps": -2.0,
-    "usdjpy": 157.54,
-    "usdjpy_20d_pct": -1.61,
-    "usdjpy_20d_delta_pct": -1.61,
+    "usdjpy": 157.47,
+    "usdjpy_20d_pct": -1.66,
+    "usdjpy_20d_delta_pct": -1.66,
     "usdjpy_60d_high": 163.86,
-    "usdjpy_pullback_from_60d_high_pct": -3.86,
-    "krw_usd": 1354.9,
-    "krw_20d_pct": -1.61,
+    "usdjpy_pullback_from_60d_high_pct": -3.9,
+    "krw_usd": 1355.6,
+    "krw_20d_pct": -1.56,
     "jgb_10y_pct": 2.94,
     "jgb_asof": "2026-08-01",
     "ust_jgb_spread_bps": 224.4,
@@ -397,31 +397,31 @@
       "es_f": {
         "symbol": "ES=F",
         "label": "S&P 500 futures",
-        "price": 7783.0,
-        "chg_pct": -0.27
+        "price": 7780.5,
+        "chg_pct": -0.3
       },
       "nq_f": {
         "symbol": "NQ=F",
         "label": "Nasdaq futures",
-        "price": 30808.75,
+        "price": 30808.5,
         "chg_pct": -0.26
       },
       "cl_f": {
         "symbol": "CL=F",
         "label": "WTI crude futures",
-        "price": 93.45,
-        "chg_pct": 1.13
+        "price": 93.56,
+        "chg_pct": 1.24
       },
       "gc_f": {
         "symbol": "GC=F",
         "label": "Gold futures",
-        "price": 4298.7,
-        "chg_pct": -0.52
+        "price": 4294.0,
+        "chg_pct": -0.63
       }
     },
     "oil_uso": 148.33,
     "oil_pct_20d": 14.09,
-    "oil_wti": 93.45,
+    "oil_wti": 93.56,
     "eem_pct_20d": 0.55,
     "eem_vs_spx_20d": 0.27,
     "volume_confirm": {
@@ -505,7 +505,7 @@
     "unemployment_asof": "2026-08-01",
     "stablecoin_total_bn": 258.9,
     "usdt_bn": 183.8,
-    "usdc_bn": 75.2,
+    "usdc_bn": 75.1,
     "vix": 14.87,
     "bbi_score": 0.94,
     "bbi_components": {
@@ -516,8 +516,8 @@
     }
   },
   "_meta": {
-    "cached_at": "2026-09-28T08:23:34.511756",
-    "age_sec": 568,
+    "cached_at": "2026-09-28T08:54:34.623060",
+    "age_sec": 508,
     "stale": false,
     "refreshing": false
   }
