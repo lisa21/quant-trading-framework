@@ -12,50 +12,50 @@
   "confidence": "unverified",
   "source_verified": true,
   "source_status": "analyst_only",
-  "generated_at": "2026-09-25T09:43:50.102781+00:00",
+  "generated_at": "2026-09-28T09:44:52.234052+00:00",
   "ai_error": "no_trusted_source",
   "analyst_consensus": {
     "n_analysts": 18,
     "recommendation": "strong_buy",
-    "current_price": 8022.0,
+    "current_price": 8004.0,
     "forward_eps": 237.27,
-    "trailing_eps": 127.51,
-    "eps_growth_pct": 86.1,
-    "forward_pe": 33.81,
-    "trailing_pe": 62.91,
+    "trailing_eps": 127.55,
+    "eps_growth_pct": 86.0,
+    "forward_pe": 33.73,
+    "trailing_pe": 62.75,
     "target_mean": 10413.89,
     "target_high": 17000.0,
     "target_low": 4200.0,
-    "target_upside_pct": 29.8,
+    "target_upside_pct": 30.1,
     "revenue_growth_pct": 20.7,
     "earnings_growth_pct": 66.5,
     "next_earnings": "2026-10-30",
-    "implied_pe_hold": 14927.3,
-    "implied_pe_hold_upside": 86.1,
-    "peg_fair_price": 20428.95,
+    "implied_pe_hold": 14889.13,
+    "implied_pe_hold_upside": 86.0,
+    "peg_fair_price": 20405.22,
     "peg_ratio": 0.39,
-    "hist_pe_median": 25.61,
+    "hist_pe_median": 25.62,
     "hist_pe_p25": 21.21,
     "hist_pe_p75": 29.81,
-    "hist_pe_n_days": 852,
-    "implied_hist_median": 6076.48,
+    "hist_pe_n_days": 853,
+    "implied_hist_median": 6078.86,
     "implied_hist_p25": 5032.5,
     "implied_hist_p75": 7073.02,
-    "implied_hist_upside": -24.3,
-    "peer_pe_median": 35.45,
+    "implied_hist_upside": -24.1,
+    "peer_pe_median": 35.26,
     "peer_pe_n_peers": 5,
     "peer_pe_details": [
       {
         "ticker": "009150.KS",
-        "pe": 35.45
+        "pe": 35.26
       },
       {
         "ticker": "6976.T",
-        "pe": 48.91
+        "pe": 48.55
       },
       {
         "ticker": "6762.T",
-        "pe": 27.86
+        "pe": 27.65
       },
       {
         "ticker": "2327.TW",
@@ -63,16 +63,16 @@
       },
       {
         "ticker": "6971.T",
-        "pe": 42.06
+        "pe": 41.37
       }
     ],
-    "implied_peer_median": 8411.22,
-    "implied_peer_upside": 4.9,
+    "implied_peer_median": 8366.14,
+    "implied_peer_upside": 4.5,
     "source": "yfinance analyst aggregation"
   },
   "_meta": {
-    "cached_at": "2026-09-25T18:44:23.792801",
-    "age_sec": 258522,
+    "cached_at": "2026-09-28T18:45:31.320739",
+    "age_sec": 1055,
     "stale": false,
     "refreshing": false
   }

@@ -6,14 +6,19 @@
   "magnitude": "小",
   "last_update": "2026-08-04",
   "next_earnings": "2026-11-04",
-  "guidance_note": "2027年3月期通期予想は売上収益6,800億円（+19.3% YoY）、営業利益410億円（+10.8%）、親会社帰属当期利益290億円（+19.0%）、EPS337.43円。",
-  "revision_reason": "2026年5月1日公表の通期予想から変更なし。売上収益6,800→6,800億円、営業利益410→410億円、純利290→290億円、EPS337.43→337.43円で据え置き。",
+  "guidance_note": "2027年3月期通期予想は売上収益680,000百万円、営業利益41,000百万円、親会社所有者帰属当期利益29,000百万円、EPS 337.43円（純利益は+19.0% YoY）。",
+  "revision_reason": "2026年5月1日公表予想から変更なし。売上収益680,000→680,000百万円、営業利益41,000→41,000百万円、親会社所有者帰属当期利益29,000→29,000百万円、EPS 337.43→337.43円。",
   "market_reaction": "不明",
   "confidence": "high",
   "source_verified": true,
   "source_status": "codex_cli_websearch",
-  "generated_at": "2026-09-25T09:44:20.239115+00:00",
+  "generated_at": "2026-09-28T09:45:22.320042+00:00",
   "sources": [
+    {
+      "url": "https://www2.jpx.co.jp/disc/58570/140120260501516555.pdf",
+      "type": "TDnet",
+      "title": "2026年3月期 決算短信〔IFRS〕（連結）"
+    },
     {
       "url": "https://www.are-holdings.com/ir/calendar/",
       "type": "IR",
@@ -24,50 +29,50 @@
   "analyst_consensus": {
     "n_analysts": 1,
     "recommendation": "none",
-    "current_price": 3660.0,
+    "current_price": 3645.0,
     "forward_eps": 178.8,
-    "trailing_eps": 286.99,
-    "eps_growth_pct": -37.7,
-    "forward_pe": 20.47,
-    "trailing_pe": 12.75,
+    "trailing_eps": 287.31,
+    "eps_growth_pct": -37.8,
+    "forward_pe": 20.39,
+    "trailing_pe": 12.69,
     "target_mean": 6400.0,
     "target_high": 6400.0,
     "target_low": 6400.0,
-    "target_upside_pct": 74.9,
+    "target_upside_pct": 75.6,
     "revenue_growth_pct": 43.8,
     "earnings_growth_pct": 131.4,
     "next_earnings": "2026-10-28",
-    "implied_pe_hold": 2280.25,
-    "implied_pe_hold_upside": -37.7,
+    "implied_pe_hold": 2268.37,
+    "implied_pe_hold_upside": -37.8,
     "peg_fair_price": null,
     "peg_ratio": null,
     "hist_pe_median": 9.6,
     "hist_pe_p25": 6.97,
     "hist_pe_p75": 13.67,
-    "hist_pe_n_days": 1097,
+    "hist_pe_n_days": 1098,
     "implied_hist_median": 1716.48,
     "implied_hist_p25": 1246.24,
     "implied_hist_p75": 2444.2,
-    "implied_hist_upside": -53.1,
-    "peer_pe_median": 16.94,
+    "implied_hist_upside": -52.9,
+    "peer_pe_median": 16.81,
     "peer_pe_n_peers": 2,
     "peer_pe_details": [
       {
         "ticker": "5714.T",
-        "pe": 18.56
+        "pe": 18.43
       },
       {
         "ticker": "5711.T",
-        "pe": 15.32
+        "pe": 15.19
       }
     ],
-    "implied_peer_median": 3028.87,
-    "implied_peer_upside": -17.2,
+    "implied_peer_median": 3005.63,
+    "implied_peer_upside": -17.5,
     "source": "yfinance analyst aggregation"
   },
   "_meta": {
-    "cached_at": "2026-09-25T18:44:58.434184",
-    "age_sec": 258488,
+    "cached_at": "2026-09-28T18:45:59.963402",
+    "age_sec": 1026,
     "stale": false,
     "refreshing": false
   }
