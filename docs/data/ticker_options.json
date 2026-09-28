@@ -11578,14 +11578,14 @@
   "cache_contract": "15efd89eda8e",
   "_meta": {
     "cached_at": "2026-09-28T18:30:31.352738",
-    "age_sec": 14551,
+    "age_sec": 16351,
     "stale": false,
     "refreshing": false
   },
   "flow_meta": {
     "generated_at": "2026-09-28T13:06:23.745514+00:00",
     "status": "ready",
-    "age_sec": 1561.7,
+    "age_sec": 3362.0,
     "stale": false
   }
 }

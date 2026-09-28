@@ -1,6 +1,6 @@
 {
-  "as_of": "2026-09-28T10:42:41.182196",
-  "count_total_actions": 607,
+  "as_of": "2026-09-28T22:46:44.855465",
+  "count_total_actions": 612,
   "tools": [
     {
       "tool_key": "long_end_buyback",
@@ -24,9 +24,10 @@
       },
       "yield_reaction_30y": {
         "t0_bp": 4.3,
-        "yield_at_close": 5.504
+        "yield_at_close": 5.504,
+        "t1d_bp": 4.7
       },
-      "event_count_180d": 210
+      "event_count_180d": 212
     },
     {
       "tool_key": "fed_hawkish_signal",
@@ -48,8 +49,11 @@
         "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPTXdSMVVzN0FwN3Z1WFRSeG1SZzRWalgzMllFM21yb1hOenBYLVFXeGZpUDc1QW5lQ3lsb3JPZTBWSUQwY3JIZnlZdzJzQVVaa1hGRUN6S0NtTm1kd0N6dkVBRUY3RGJUeXNhMGJCMkdqajVCYVN0OXFFenl4SlFhT09tZVZFYUw4X1loUi1CYw?oc=5",
         "confidence": 8
       },
-      "yield_reaction_30y": {},
-      "event_count_180d": 312
+      "yield_reaction_30y": {
+        "t0_bp": 4.7,
+        "yield_at_close": 5.551
+      },
+      "event_count_180d": 314
     },
     {
       "tool_key": "ycc",
@@ -210,7 +214,7 @@
         "confidence": 6
       },
       "yield_reaction_30y": {},
-      "event_count_180d": 17
+      "event_count_180d": 18
     },
     {
       "tool_key": "fima_repo",
