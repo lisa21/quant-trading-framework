@@ -40,10 +40,10 @@
   "piotroski_max": 9,
   "cf_available": true,
   "is_jp": false,
-  "pbr": 43.44,
-  "per": 36.7,
+  "pbr": 46.34,
+  "per": 39.07,
   "roe_pct": 148.75,
-  "div_yield_pct": 0.34,
+  "div_yield_pct": 0.32,
   "equity_ratio": [
     null,
     14.4,
@@ -59,9 +59,9 @@
     "equity_ratio": 20.5
   },
   "_meta": {
-    "cached_at": "2026-08-29T16:33:05.470070",
-    "age_sec": 2593798,
-    "stale": true,
-    "refreshing": true
+    "cached_at": "2026-09-28T17:03:05.252360",
+    "age_sec": 1801,
+    "stale": false,
+    "refreshing": false
   }
 }

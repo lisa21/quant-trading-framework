@@ -30,28 +30,28 @@
     "implied_hist_p25": 1323.78,
     "implied_hist_p75": 21362.33,
     "implied_hist_upside": 706.8,
-    "peer_pe_median": 9.12,
+    "peer_pe_median": 9.09,
     "peer_pe_n_peers": 4,
     "peer_pe_details": [
       {
         "ticker": "005930.KS",
-        "pe": 3.85
+        "pe": 3.78
       },
       {
         "ticker": "000660.KS",
-        "pe": 3.77
+        "pe": 3.74
       },
       {
         "ticker": "285A.T",
-        "pe": 53.93
+        "pe": 52.83
       },
       {
         "ticker": "WDC",
         "pe": 14.39
       }
     ],
-    "implied_peer_median": 1454.57,
-    "implied_peer_upside": 34.4,
+    "implied_peer_median": 1449.78,
+    "implied_peer_upside": 34.0,
     "source": "yfinance analyst aggregation",
     "forward_estimates": {
       "earnings": {
@@ -210,8 +210,8 @@
       {
         "key": "peer_pe",
         "label": "前瞻 EPS × 同行 PE 中位",
-        "implied_price": 1454.57,
-        "gap_pct": 34.4
+        "implied_price": 1449.78,
+        "gap_pct": 34.0
       }
     ],
     "median_gap_pct": 40.0,
@@ -226,13 +226,13 @@
     ]
   },
   "official_guidance_status": "not_connected",
-  "fetched_at": "2026-09-28T02:03:05.981717+00:00",
+  "fetched_at": "2026-09-28T08:03:08.179565+00:00",
   "source": "yfinance analyst aggregation",
   "_meta": {
-    "cached_at": "2026-09-28T11:03:05.982718",
-    "age_sec": 21600,
-    "stale": true,
-    "refreshing": true
+    "cached_at": "2026-09-28T17:03:08.179566",
+    "age_sec": 1798,
+    "stale": false,
+    "refreshing": false
   },
   "ticker": "MULL",
   "is_proxy": true

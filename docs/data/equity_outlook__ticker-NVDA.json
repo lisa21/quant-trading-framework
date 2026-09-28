@@ -236,13 +236,13 @@
     ]
   },
   "official_guidance_status": "not_connected",
-  "fetched_at": "2026-09-28T02:03:05.810651+00:00",
+  "fetched_at": "2026-09-28T08:03:07.995155+00:00",
   "source": "yfinance analyst aggregation",
   "_meta": {
-    "cached_at": "2026-09-28T11:03:05.811651",
-    "age_sec": 21600,
-    "stale": true,
-    "refreshing": true
+    "cached_at": "2026-09-28T17:03:07.996155",
+    "age_sec": 1799,
+    "stale": false,
+    "refreshing": false
   },
   "ticker": "NVDA",
   "is_proxy": false
