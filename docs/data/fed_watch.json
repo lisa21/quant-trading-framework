@@ -3,7 +3,7 @@
   "meetings": [
     {
       "date": "2026-10-28",
-      "days_until": 29,
+      "days_until": 28,
       "probabilities": {
         "hold": 30.0,
         "hike_25": 70.0
@@ -13,70 +13,71 @@
     },
     {
       "date": "2026-12-09",
-      "days_until": 71,
+      "days_until": 70,
       "probabilities": {
-        "hold": 4.6,
-        "hike_25": 36.2,
-        "hike_50": 59.2
+        "hold": 5.9,
+        "hike_25": 37.8,
+        "hike_50": 56.3
       },
       "most_likely": "hike_50",
       "consensus_direction": "hawkish"
     },
     {
       "date": "2027-01-27",
-      "days_until": 120,
+      "days_until": 119,
       "probabilities": {
-        "hold": 2.1,
-        "hike_25": 18.7,
-        "hike_50": 46.4,
-        "hike_75": 32.8
+        "hold": 2.4,
+        "hike_25": 18.8,
+        "hike_50": 78.9
       },
       "most_likely": "hike_50",
       "consensus_direction": "hawkish"
     },
     {
       "date": "2027-03-17",
-      "days_until": 169,
+      "days_until": 168,
       "probabilities": {
-        "hold": 0.5,
-        "hike_25": 6.2,
-        "hike_50": 25.5,
-        "hike_75": 43.1,
-        "hike_100": 24.7
+        "hold": 0.7,
+        "hike_25": 7.4,
+        "hike_50": 91.8
       },
-      "most_likely": "hike_75",
+      "most_likely": "hike_50",
       "consensus_direction": "hawkish"
     }
   ],
   "implied_terminal_rate": "4.75-5.00",
-  "implied_terminal_date": "2027-Q2",
-  "data_snapshot_date": "2026-09-29 01:01 UTC",
-  "recent_event_impact": "最近7天未发现NFP/CPI/PPI/FOMC/Warsh讲话；较近的8月NFP +162K、失业率4.1%，以及9/10 PPI和9/11偏热CPI已在9/29快照之后被反映，CPI后9月加息概率曾升至约91.6%。",
-  "commentary": "CME FedWatch同源期货定价显示，市场在10月会议定价约70%概率再加25bp，12月前累计加息50bp为主。8月NFP强于预期、PPI/CPI偏热推动9月已加息并使曲线继续向鹰派重定价；9/29快照未滞后于这些关键数据。",
+  "implied_terminal_date": "2027-03-17",
+  "data_snapshot_date": "2026-09-29 10:05 EDT",
+  "recent_event_impact": "过去7天未发现NFP/CPI/PPI/FOMC或Fed Chair Warsh讲话；最新已反映的数据为8月NFP +162K、失业率4.1%，8月CPI +0.4% m/m、3.4% y/y，8月PPI +0.4% m/m、5.4% y/y，均偏向强化继续加息定价。",
+  "commentary": "数据快照为2026-09-29，距2026-09-30仍在最近1个交易日内；8月CPI/PPI重新走强、NFP仍为正增长，使市场从降息/观望转向明显鹰派，未来3-4次会议主要定价为继续加息。2027年会议的hike_50为简化标签，包含累计加息50bp及以上的目标区间概率。",
   "sources": [
     {
-      "url": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
-      "type": "cme_fedwatch_official"
+      "url": "https://www.investing.com/central-banks/fed-rate-monitor?sid=9oBG33",
+      "type": "cme_fedwatch_backup"
     },
     {
-      "url": "https://terminal.kryptomagazin.cz/en/macro/fedwatch",
-      "type": "cme_fedwatch_proxy_snapshot"
+      "url": "https://www.oanda.jp/lab-education/dictionary/fedwatchtool/",
+      "type": "cme_fedwatch_backup"
     },
     {
       "url": "https://www.bls.gov/news.release/empsit.htm",
-      "type": "nfp_release"
+      "type": "nfp"
     },
     {
-      "url": "https://finance.yahoo.com/economy/policy/articles/hot-core-cpi-data-sends-133021255.html",
-      "type": "cpi_market_impact"
+      "url": "https://www.bls.gov/news.release/archives/cpi_09112026.htm",
+      "type": "cpi"
+    },
+    {
+      "url": "https://www.bls.gov/news.release/archives/ppi_09102026.htm",
+      "type": "ppi"
     }
   ],
   "confidence": "medium",
   "source_via": "codex_cli_websearch",
-  "fetched_at": "2026-09-29T10:47:52+00:00",
+  "fetched_at": "2026-09-29T18:49:27+00:00",
   "_meta": {
-    "cached_at": "2026-09-29T19:47:52.149839",
-    "age_sec": 27910,
+    "cached_at": "2026-09-30T03:49:27.850429",
+    "age_sec": 817,
     "stale": false,
     "refreshing": false
   }
