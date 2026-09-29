@@ -8,17 +8,16 @@
     "magnitude": "small",
     "score": 0,
     "event_counts": {
-      "MEDIA_ATTACK": 3,
-      "DOMESTIC_POLICY": 6
+      "MEDIA_ATTACK": 1,
+      "DOMESTIC_POLICY": 1
     },
     "breaking": [],
     "summary": {
-      "text": "媒体攻击与保守派背书为主，市场情绪偏中性略负面。",
+      "text": "体育法案推进并否认对伊让步，情绪中性偏谨慎。",
       "state": "cached",
       "post_ids": [
-        "117348562110206457",
-        "117348541943680165",
-        "117348516464234551"
+        "117351985093810875",
+        "117350810719202305"
       ]
     }
   },
