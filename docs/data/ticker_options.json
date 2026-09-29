@@ -13372,14 +13372,14 @@
   "cache_contract": "15efd89eda8e",
   "_meta": {
     "cached_at": "2026-09-29T18:31:29.133599",
-    "age_sec": 18094,
+    "age_sec": 19893,
     "stale": false,
     "refreshing": false
   },
   "flow_meta": {
     "generated_at": "2026-09-29T14:06:24.112367+00:00",
     "status": "ready",
-    "age_sec": 1548.7,
+    "age_sec": 3348.6,
     "stale": false
   }
 }
