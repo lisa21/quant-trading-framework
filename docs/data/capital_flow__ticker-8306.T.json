@@ -79,7 +79,7 @@
         "tier": "huge_abs"
       }
     ],
-    "day_ratio": 0.72,
+    "day_ratio": 0.92,
     "trading_date": "2026-09-29",
     "date_short": "9/29",
     "net_bias": "sell",
@@ -166,20 +166,20 @@
           }
         ],
         "slices": [],
-        "day_ratio": 0.72,
+        "day_ratio": 0.92,
         "day_chg_pct": 0,
         "day_open": NaN,
-        "day_close": 3611.0,
+        "day_close": 3606.0,
         "net_bias": "sell",
         "buy_shares": 0,
         "sell_shares": 5360000,
         "buy_value_oku": 0,
         "sell_value_oku": 194.62,
         "full_bias": "sell",
-        "full_up_shares": 4276800,
-        "full_down_shares": 14558200,
-        "full_up_value_oku": 154.37,
-        "full_down_value_oku": 526.55
+        "full_up_shares": 6621000,
+        "full_down_shares": 17987400,
+        "full_up_value_oku": 239.0,
+        "full_down_value_oku": 650.24
       },
       {
         "trading_date": "2026-09-28",
@@ -283,7 +283,7 @@
           }
         ],
         "slices": [],
-        "day_ratio": 1.06,
+        "day_ratio": 1.05,
         "day_chg_pct": 0.08,
         "day_open": 3710.0,
         "day_close": 3713.0,
@@ -388,7 +388,7 @@
           }
         ],
         "slices": [],
-        "day_ratio": 1.15,
+        "day_ratio": 1.13,
         "day_chg_pct": 1.31,
         "day_open": 3656.0,
         "day_close": 3704.0,
@@ -481,7 +481,7 @@
           }
         ],
         "slices": [],
-        "day_ratio": 1.06,
+        "day_ratio": 1.04,
         "day_chg_pct": -0.56,
         "day_open": 3601.0,
         "day_close": 3581.0,
@@ -623,7 +623,7 @@
             "tier": "huge_2bar"
           }
         ],
-        "day_ratio": 1.13,
+        "day_ratio": 1.11,
         "day_chg_pct": -0.69,
         "day_open": 3645.0,
         "day_close": 3620.0,
@@ -688,12 +688,12 @@
       "value_oku_min": 1.0
     }
   },
-  "asof": "2026-09-29 14:10 JST",
+  "asof": "2026-09-29 15:20 JST",
   "source": "yfinance_intraday",
   "_meta": {
-    "cached_at": "2026-09-29T14:27:54.752572",
-    "age_sec": 308,
-    "stale": true,
-    "refreshing": true
+    "cached_at": "2026-09-29T16:28:04.812249",
+    "age_sec": 299,
+    "stale": false,
+    "refreshing": false
   }
 }

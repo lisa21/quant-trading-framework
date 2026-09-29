@@ -25,7 +25,7 @@
     "hist_pe_median": 17.68,
     "hist_pe_p25": 14.71,
     "hist_pe_p75": 20.65,
-    "hist_pe_n_days": 1000,
+    "hist_pe_n_days": 1001,
     "implied_hist_median": 87.74,
     "implied_hist_p25": 73.0,
     "implied_hist_p75": 102.48,
@@ -47,7 +47,7 @@
       },
       {
         "ticker": "6981.T",
-        "pe": 33.89
+        "pe": 34.01
       },
       {
         "ticker": "NXPI",
@@ -236,11 +236,11 @@
     ]
   },
   "official_guidance_status": "not_connected",
-  "fetched_at": "2026-09-29T00:37:58.790386+00:00",
+  "fetched_at": "2026-09-29T06:38:28.261432+00:00",
   "source": "yfinance analyst aggregation",
   "_meta": {
-    "cached_at": "2026-09-29T09:37:58.791385",
-    "age_sec": 17706,
+    "cached_at": "2026-09-29T15:38:28.262476",
+    "age_sec": 3276,
     "stale": false,
     "refreshing": false
   },

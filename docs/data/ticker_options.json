@@ -12737,14 +12737,14 @@
   "cache_contract": "15efd89eda8e",
   "_meta": {
     "cached_at": "2026-09-28T18:30:31.352738",
-    "age_sec": 72151,
+    "age_sec": 79352,
     "stale": false,
     "refreshing": false
   },
   "flow_meta": {
     "generated_at": "2026-09-28T20:06:23.796962+00:00",
     "status": "stale",
-    "age_sec": 33961.5,
+    "age_sec": 41162.8,
     "stale": true
   }
 }
