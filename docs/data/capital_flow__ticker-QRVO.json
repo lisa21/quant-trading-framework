@@ -2,22 +2,22 @@
   "ticker": "QRVO",
   "flow": {
     "super_net": 0.0,
-    "big_net": 36825.03999999999,
-    "mid_net": 145058.12600000005,
-    "small_net": 276726.955,
-    "total_net": 458610.12100000004,
-    "smart_pct": 0.01704692494502722
+    "big_net": 152475.04,
+    "mid_net": 249065.326,
+    "small_net": 307633.8389999999,
+    "total_net": 709174.2050000001,
+    "smart_pct": 0.05936777809395895
   },
   "anomaly": {
     "detected": false,
     "reason": "",
     "score": 0.0
   },
-  "asof": "2026-09-29 12:58:05",
+  "asof": "2026-09-29 13:30:10",
   "source": "moomoo",
   "_meta": {
-    "cached_at": "2026-09-30T01:58:25.878642",
-    "age_sec": 277,
+    "cached_at": "2026-09-30T02:30:25.708682",
+    "age_sec": 157,
     "stale": false,
     "refreshing": false
   }
