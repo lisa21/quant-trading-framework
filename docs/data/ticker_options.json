@@ -14155,14 +14155,14 @@
   "cache_contract": "15efd89eda8e",
   "_meta": {
     "cached_at": "2026-09-29T18:31:29.133599",
-    "age_sec": 21694,
+    "age_sec": 23494,
     "stale": false,
     "refreshing": false
   },
   "flow_meta": {
     "generated_at": "2026-09-29T15:06:24.130482+00:00",
     "status": "ready",
-    "age_sec": 1556.0,
+    "age_sec": 3356.0,
     "stale": false
   }
 }
