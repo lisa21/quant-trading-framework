@@ -14467,14 +14467,14 @@
   "cache_contract": "15efd89eda8e",
   "_meta": {
     "cached_at": "2026-09-29T18:31:29.133599",
-    "age_sec": 10893,
+    "age_sec": 12693,
     "stale": false,
     "refreshing": false
   },
   "flow_meta": {
     "generated_at": "2026-09-29T12:06:24.069820+00:00",
     "status": "ready",
-    "age_sec": 1559.6,
+    "age_sec": 3359.6,
     "stale": false
   }
 }

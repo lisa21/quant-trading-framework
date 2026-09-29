@@ -121,8 +121,8 @@
       "policy_note": "短线震荡：提高加仓门槛、降低目标波动，不把宏观偏多当追涨依据"
     }
   ],
-  "ts": "2026-09-29T12:30:31.258437+00:00",
-  "canonical_regime": "unknown",
+  "ts": "2026-09-29T13:01:52.116070+00:00",
+  "canonical_regime": "neutral_chop",
   "n_disagreements_this_call": 0,
   "rotation_speed": {
     "rotation_speed": 5,
@@ -146,8 +146,8 @@
     "asof": "2026-09-28 00:00:00-04:00"
   },
   "_meta": {
-    "cached_at": "2026-09-29T21:30:31.258986",
-    "age_sec": 151,
+    "cached_at": "2026-09-29T22:01:52.123077",
+    "age_sec": 70,
     "stale": false,
     "refreshing": false
   }

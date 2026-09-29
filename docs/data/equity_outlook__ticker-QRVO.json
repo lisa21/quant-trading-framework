@@ -7,10 +7,10 @@
     "recommendation": "hold",
     "current_price": 116.3,
     "forward_eps": 7.91,
-    "trailing_eps": 4.25,
-    "eps_growth_pct": 86.0,
+    "trailing_eps": 4.32,
+    "eps_growth_pct": 83.0,
     "forward_pe": 14.71,
-    "trailing_pe": 27.36,
+    "trailing_pe": 26.92,
     "target_mean": 90.17,
     "target_high": 105.0,
     "target_low": 66.0,
@@ -18,10 +18,10 @@
     "revenue_growth_pct": -4.2,
     "earnings_growth_pct": 255.6,
     "next_earnings": "2026-11-10",
-    "implied_pe_hold": 216.36,
-    "implied_pe_hold_upside": 86.0,
-    "peg_fair_price": 679.95,
-    "peg_ratio": 0.17,
+    "implied_pe_hold": 212.85,
+    "implied_pe_hold_upside": 83.0,
+    "peg_fair_price": 656.23,
+    "peg_ratio": 0.18,
     "hist_pe_median": 106.08,
     "hist_pe_p25": 92.59,
     "hist_pe_p75": 140.71,
@@ -43,7 +43,7 @@
       },
       {
         "ticker": "6981.T",
-        "pe": 34.0
+        "pe": 34.09
       },
       {
         "ticker": "QCOM",
@@ -208,8 +208,8 @@
       {
         "key": "pe_hold",
         "label": "前瞻 EPS × 当前估值",
-        "implied_price": 216.36,
-        "gap_pct": 86.0
+        "implied_price": 212.85,
+        "gap_pct": 83.0
       },
       {
         "key": "peer_pe",
@@ -220,21 +220,21 @@
     ],
     "median_gap_pct": 24.9,
     "revision_signal": "upward",
-    "required_eps_growth_pct": -74.2,
-    "consensus_eps_growth_pct": 86.0,
-    "growth_cushion_pct": 160.2,
+    "required_eps_growth_pct": -74.6,
+    "consensus_eps_growth_pct": 83.0,
+    "growth_cushion_pct": 157.6,
     "rationale": [
       "多口径隐含价中位数高于现价 24.9%",
       "近 30 天 EPS 共识上修",
-      "历史 PE 口径要求 EPS 增长 -74.2%，共识为 +86.0%"
+      "历史 PE 口径要求 EPS 增长 -74.6%，共识为 +83.0%"
     ]
   },
   "official_guidance_status": "not_connected",
-  "fetched_at": "2026-09-29T06:38:27.837188+00:00",
+  "fetched_at": "2026-09-29T12:38:31.273324+00:00",
   "source": "yfinance analyst aggregation",
   "_meta": {
-    "cached_at": "2026-09-29T15:38:27.855012",
-    "age_sec": 21276,
+    "cached_at": "2026-09-29T21:38:31.274338",
+    "age_sec": 1472,
     "stale": false,
     "refreshing": false
   },
