@@ -1,0 +1,24 @@
+{
+  "ticker": "SWKS",
+  "flow": {
+    "super_net": -356125.88000000006,
+    "big_net": 284032.39599999995,
+    "mid_net": 553140.815,
+    "small_net": 1100557.6150000002,
+    "total_net": 1581604.946,
+    "smart_pct": -0.007840119526114828
+  },
+  "anomaly": {
+    "detected": false,
+    "reason": "",
+    "score": 0.0
+  },
+  "asof": "2026-09-29 12:31:00",
+  "source": "moomoo",
+  "_meta": {
+    "cached_at": "2026-09-30T01:31:26.339343",
+    "age_sec": 96,
+    "stale": false,
+    "refreshing": false
+  }
+}
