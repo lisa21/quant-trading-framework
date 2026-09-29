@@ -1,6 +1,6 @@
 {
-  "as_of": "2026-09-29T10:50:38.595021",
-  "count_total_actions": 616,
+  "as_of": "2026-09-29T22:54:43.589301",
+  "count_total_actions": 618,
   "tools": [
     {
       "tool_key": "long_end_buyback",
@@ -51,9 +51,10 @@
       },
       "yield_reaction_30y": {
         "t0_bp": 5.7,
-        "yield_at_close": 5.561
+        "yield_at_close": 5.561,
+        "t1d_bp": 2.0
       },
-      "event_count_180d": 317
+      "event_count_180d": 319
     },
     {
       "tool_key": "ycc",
