@@ -1,5 +1,5 @@
 {
-  "asof": "2026-09-29T09:50",
+  "asof": "2026-09-29T10:21",
   "yields": {
     "10y": {
       "value": 5.24,
@@ -252,18 +252,23 @@
     },
     {
       "level": "warn",
-      "msg": "USDJPY 157.44 进入 155-160 口头干预区间 (JP MoF)",
+      "msg": "USDJPY 157.46 进入 155-160 口头干预区间 (JP MoF)",
       "key": "jpy_verbal_zone"
     },
     {
       "level": "warn",
-      "msg": "KRW/USD 1361.1 韩元明显走弱",
+      "msg": "KRW/USD 1359.5 韩元明显走弱",
       "key": "krw_weak"
     },
     {
       "level": "bad",
       "msg": "BIS CIP: FX 对冲后 UST 10Y (2.8%) < JGB (2.94%) = JP 投资者会抛售 UST",
       "key": "cip_repatriation_signal"
+    },
+    {
+      "level": "warn",
+      "msg": "KOSPI (韩) -3.1% (5d +2.2%) 明显走弱",
+      "key": "asia_kospi_weak"
     },
     {
       "level": "warn",
@@ -315,13 +320,13 @@
     "sofr_pct": 3.9,
     "iorb_pct": 3.9,
     "sofr_iorb_spread_bps": 0.0,
-    "usdjpy": 157.44,
-    "usdjpy_20d_pct": -1.44,
-    "usdjpy_20d_delta_pct": -1.44,
+    "usdjpy": 157.46,
+    "usdjpy_20d_pct": -1.66,
+    "usdjpy_20d_delta_pct": -1.66,
     "usdjpy_60d_high": 163.86,
-    "usdjpy_pullback_from_60d_high_pct": -3.92,
-    "krw_usd": 1361.1,
-    "krw_20d_pct": -0.4,
+    "usdjpy_pullback_from_60d_high_pct": -3.91,
+    "krw_usd": 1359.5,
+    "krw_20d_pct": -0.52,
     "jgb_10y_pct": 2.94,
     "jgb_asof": "2026-08-01",
     "ust_jgb_spread_bps": 230.0,
@@ -337,16 +342,16 @@
     "kbe_spy_20d_delta_pct": null,
     "cdx_ig_bps": 81.0,
     "cdx_hy_bps": 293.0,
-    "dxy": 101.23,
-    "dxy_pct_20d": 1.53,
-    "dxy_z_60d": 1.13,
+    "dxy": 101.22,
+    "dxy_pct_20d": 1.52,
+    "dxy_z_60d": 1.12,
     "asia_indices": {
       "N225": {
         "symbol": "^N225",
         "label": "Nikkei 225 (日)",
-        "close": 65338.21,
-        "chg_1d": -1.55,
-        "chg_5d_pct": 2.21,
+        "close": 65203.96,
+        "chg_1d": -1.75,
+        "chg_5d_pct": 2.0,
         "asof": "2026-09-29"
       },
       "HSI": {
@@ -376,9 +381,9 @@
       "KOSPI": {
         "symbol": "^KS11",
         "label": "KOSPI (韩)",
-        "close": 6884.05,
-        "chg_1d": -2.78,
-        "chg_5d_pct": 2.51,
+        "close": 6863.72,
+        "chg_1d": -3.07,
+        "chg_5d_pct": 2.21,
         "asof": "2026-09-29"
       }
     },
@@ -386,31 +391,31 @@
       "es_f": {
         "symbol": "ES=F",
         "label": "S&P 500 futures",
-        "price": 7741.5,
-        "chg_pct": -0.8
+        "price": 7733.75,
+        "chg_pct": -0.9
       },
       "nq_f": {
         "symbol": "NQ=F",
         "label": "Nasdaq futures",
-        "price": 30543.75,
-        "chg_pct": -1.12
+        "price": 30478.0,
+        "chg_pct": -1.33
       },
       "cl_f": {
         "symbol": "CL=F",
         "label": "WTI crude futures",
-        "price": 93.15,
-        "chg_pct": 0.8
+        "price": 93.47,
+        "chg_pct": 1.15
       },
       "gc_f": {
         "symbol": "GC=F",
         "label": "Gold futures",
-        "price": 4153.5,
-        "chg_pct": -3.88
+        "price": 4150.0,
+        "chg_pct": -3.96
       }
     },
     "oil_uso": null,
     "oil_pct_20d": null,
-    "oil_wti": 93.15,
+    "oil_wti": 93.47,
     "eem_pct_20d": null,
     "eem_vs_spx_20d": null,
     "volume_confirm": {
@@ -505,8 +510,8 @@
     }
   },
   "_meta": {
-    "cached_at": "2026-09-29T09:51:04.698305",
-    "age_sec": 717,
+    "cached_at": "2026-09-29T10:22:04.075778",
+    "age_sec": 657,
     "stale": false,
     "refreshing": false
   }
