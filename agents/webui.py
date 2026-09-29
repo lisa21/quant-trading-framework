@@ -5257,10 +5257,35 @@ class Handler(BaseHTTPRequestHandler):
             self._json({"error": str(e)}, status=500)
 
 
+def _reuse_address_allowed() -> bool:
+    """Windows 的 SO_REUSEADDR 允许多个进程同时绑定同一端口 (2026-09-28 因此叠出
+    5 个 WebUI 实例). Windows 上关闭; 其他平台保持标准行为 (TIME_WAIT 快速重启)."""
+    return os.name != "nt"
+
+
+class _ExclusiveHTTPServer(ThreadingHTTPServer):
+    """独占端口: 已有 WebUI 在监听时, 新实例 bind 失败 (而不是悄悄并存)."""
+    allow_reuse_address = _reuse_address_allowed()
+
+    def server_bind(self):
+        import socket as _socket
+        excl = getattr(_socket, "SO_EXCLUSIVEADDRUSE", None)
+        if excl is not None:
+            self.socket.setsockopt(_socket.SOL_SOCKET, excl, 1)
+        super().server_bind()
+
+
 def main():
     print(f"WebUI 启动于 http://{HOST}:{PORT}")
     print(f"仅本机可访问（HOST=127.0.0.1）。Ctrl+C 停止。")
-    server = ThreadingHTTPServer((HOST, PORT), Handler)
+    try:
+        server = _ExclusiveHTTPServer((HOST, PORT), Handler)
+    except OSError as e:
+        # 端口已被占用 (通常是已有 WebUI 在跑). 立即硬退出: 普通 return 会被
+        # 非 daemon 后台线程拖住, 进程变成不监听端口的僵尸 (2026-09-28).
+        print(f"WebUI 无法绑定 {HOST}:{PORT}: {e} — 已有实例在运行? 退出.",
+              file=sys.stderr, flush=True)
+        os._exit(3)
     try:
         server.serve_forever()
     except KeyboardInterrupt:

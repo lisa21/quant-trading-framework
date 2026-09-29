@@ -151,6 +151,26 @@ class MainFlowTests(unittest.TestCase):
 
 class LaunchExeTests(unittest.TestCase):
 
+    def setUp(self):
+        # 所有 _launch_opend 调用只写临时日志 (不污染生产 signals/opend_watchdog.jsonl)
+        self._tmp = tempfile.TemporaryDirectory()
+        self._log_patch = patch.object(ow, "LOG_PATH", Path(self._tmp.name) / "opend_watchdog.jsonl")
+        self._log_patch.start()
+
+    def tearDown(self):
+        self._log_patch.stop()
+        self._tmp.cleanup()
+
+    def test_missing_exe_does_not_write_production_log(self):
+        """2026-09-29: 这里曾把 'exe not found: C:\\does\\not\\exist.exe' 写进
+        生产 signals/opend_watchdog.jsonl. 测试必须只写临时日志."""
+        prod = Path(ow.__file__).parent / "signals" / "opend_watchdog.jsonl"
+        before = prod.read_bytes() if prod.exists() else None
+        with patch.object(ow, "OPEND_EXE", r"C:\does\not\exist.exe"):
+            ow._launch_opend()
+        after = prod.read_bytes() if prod.exists() else None
+        self.assertEqual(before, after, "test wrote to production opend_watchdog.jsonl")
+
     def test_launch_fails_gracefully_when_exe_missing(self):
         with patch.object(ow, "OPEND_EXE", r"C:\does\not\exist.exe"):
             r = ow._launch_opend()
