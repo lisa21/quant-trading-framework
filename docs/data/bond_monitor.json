@@ -1,5 +1,5 @@
 {
-  "asof": "2026-09-30T06:23",
+  "asof": "2026-09-30T06:54",
   "yields": {
     "10y": {
       "value": 5.255,
@@ -242,7 +242,7 @@
     },
     {
       "level": "warn",
-      "msg": "USDJPY 157.28 进入 155-160 口头干预区间 (JP MoF)",
+      "msg": "USDJPY 157.36 进入 155-160 口头干预区间 (JP MoF)",
       "key": "jpy_verbal_zone"
     },
     {
@@ -310,11 +310,11 @@
     "sofr_pct": 3.9,
     "iorb_pct": 3.9,
     "sofr_iorb_spread_bps": 0.0,
-    "usdjpy": 157.28,
-    "usdjpy_20d_pct": -1.54,
-    "usdjpy_20d_delta_pct": -1.54,
+    "usdjpy": 157.36,
+    "usdjpy_20d_pct": -1.49,
+    "usdjpy_20d_delta_pct": -1.49,
     "usdjpy_60d_high": 163.86,
-    "usdjpy_pullback_from_60d_high_pct": -4.02,
+    "usdjpy_pullback_from_60d_high_pct": -3.97,
     "krw_usd": 1352.4,
     "krw_20d_pct": -1.04,
     "jgb_10y_pct": 2.94,
@@ -498,8 +498,8 @@
     }
   },
   "_meta": {
-    "cached_at": "2026-09-30T06:24:08.265885",
-    "age_sec": 537,
+    "cached_at": "2026-09-30T06:55:10.344889",
+    "age_sec": 472,
     "stale": false,
     "refreshing": false
   }
