@@ -30,7 +30,7 @@
     "implied_hist_p25": 779.88,
     "implied_hist_p75": 906.55,
     "implied_hist_upside": 65.9,
-    "peer_pe_median": 22.7,
+    "peer_pe_median": 22.74,
     "peer_pe_n_peers": 5,
     "peer_pe_details": [
       {
@@ -39,7 +39,7 @@
       },
       {
         "ticker": "GOOGL",
-        "pe": 22.7
+        "pe": 22.74
       },
       {
         "ticker": "AAPL",
@@ -54,8 +54,8 @@
         "pe": 14.2
       }
     ],
-    "implied_peer_median": 537.44,
-    "implied_peer_upside": 5.5,
+    "implied_peer_median": 538.39,
+    "implied_peer_upside": 5.7,
     "source": "yfinance analyst aggregation",
     "forward_estimates": {
       "earnings": {
@@ -118,8 +118,8 @@
           "growth": 0.1784
         },
         "+1y": {
-          "avg": 467272443870.0,
-          "low": 433178000000.0,
+          "avg": 467272639950.0,
+          "low": 433188000000.0,
           "high": 503000000000.0,
           "yearAgoRevenue": 391037111320.0,
           "numberOfAnalysts": 51.0,
@@ -131,28 +131,28 @@
           "current": 4.7245,
           "7daysAgo": 4.7245,
           "30daysAgo": 4.7245,
-          "60daysAgo": 4.7015,
+          "60daysAgo": 4.7239,
           "90daysAgo": 4.6228
         },
         "+1q": {
           "current": 4.8216,
           "7daysAgo": 4.8216,
           "30daysAgo": 4.8288,
-          "60daysAgo": 4.7745,
+          "60daysAgo": 4.8061,
           "90daysAgo": 4.7869
         },
         "0y": {
           "current": 19.7597,
           "7daysAgo": 19.7597,
           "30daysAgo": 19.7531,
-          "60daysAgo": 19.4465,
+          "60daysAgo": 19.5681,
           "90daysAgo": 19.3974
         },
         "+1y": {
           "current": 23.6759,
-          "7daysAgo": 23.5927,
+          "7daysAgo": 23.6759,
           "30daysAgo": 23.5733,
-          "60daysAgo": 22.774,
+          "60daysAgo": 23.1472,
           "90daysAgo": 22.6278
         }
       },
@@ -220,8 +220,8 @@
       {
         "key": "peer_pe",
         "label": "前瞻 EPS × 同行 PE 中位",
-        "implied_price": 537.44,
-        "gap_pct": 5.5
+        "implied_price": 538.39,
+        "gap_pct": 5.7
       }
     ],
     "median_gap_pct": 22.6,
@@ -236,11 +236,11 @@
     ]
   },
   "official_guidance_status": "not_connected",
-  "fetched_at": "2026-09-29T02:04:00.137787+00:00",
+  "fetched_at": "2026-09-29T08:04:27.686539+00:00",
   "source": "yfinance analyst aggregation",
   "_meta": {
-    "cached_at": "2026-09-29T11:04:00.140794",
-    "age_sec": 21544,
+    "cached_at": "2026-09-29T17:04:27.688058",
+    "age_sec": 1717,
     "stale": false,
     "refreshing": false
   },

@@ -30,7 +30,7 @@
     "implied_hist_p25": null,
     "implied_hist_p75": null,
     "implied_hist_upside": null,
-    "peer_pe_median": 30.86,
+    "peer_pe_median": 30.88,
     "peer_pe_n_peers": 4,
     "peer_pe_details": [
       {
@@ -43,14 +43,14 @@
       },
       {
         "ticker": "GOOGL",
-        "pe": 22.7
+        "pe": 22.74
       },
       {
         "ticker": "INTC",
         "pe": 56.27
       }
     ],
-    "implied_peer_median": 39.31,
+    "implied_peer_median": 39.33,
     "implied_peer_upside": -80.0,
     "source": "yfinance analyst aggregation",
     "forward_estimates": {
@@ -114,30 +114,30 @@
         "0q": {
           "current": -0.1419,
           "7daysAgo": -0.1419,
-          "30daysAgo": -0.3241,
+          "30daysAgo": -0.1419,
           "60daysAgo": -0.3241,
-          "90daysAgo": 0.0
+          "90daysAgo": -0.3241
         },
         "+1q": {
           "current": -0.2266,
           "7daysAgo": -0.2266,
-          "30daysAgo": -0.3834,
-          "60daysAgo": -0.3814,
-          "90daysAgo": 0.0
+          "30daysAgo": -0.2266,
+          "60daysAgo": -0.3834,
+          "90daysAgo": -0.3814
         },
         "0y": {
           "current": -0.4694,
-          "7daysAgo": -0.4704,
-          "30daysAgo": -0.9712,
-          "60daysAgo": -0.9702,
-          "90daysAgo": 0.0
+          "7daysAgo": -0.4694,
+          "30daysAgo": -0.4694,
+          "60daysAgo": -0.9712,
+          "90daysAgo": -0.9702
         },
         "+1y": {
           "current": 1.2737,
-          "7daysAgo": 1.2971,
-          "30daysAgo": 0.9613,
-          "60daysAgo": 0.9573,
-          "90daysAgo": 0.0
+          "7daysAgo": 1.2737,
+          "30daysAgo": 1.2737,
+          "60daysAgo": 0.9613,
+          "90daysAgo": 0.9573
         }
       },
       "eps_revisions": {
@@ -165,11 +165,11 @@
       "revision_summary": {
         "period": "+1y",
         "signal": "upward",
-        "trend_signal": "upward",
+        "trend_signal": "flat",
         "breadth_signal": "upward",
         "eps_current": 1.2737,
-        "eps_30d_ago": 0.9613,
-        "eps_trend_pct_30d": 32.5,
+        "eps_30d_ago": 1.2737,
+        "eps_trend_pct_30d": 0.0,
         "up_30d": 9,
         "down_30d": 0,
         "net_30d": 9
@@ -192,7 +192,7 @@
       {
         "key": "peer_pe",
         "label": "前瞻 EPS × 同行 PE 中位",
-        "implied_price": 39.31,
+        "implied_price": 39.33,
         "gap_pct": -80.0
       }
     ],
@@ -207,11 +207,11 @@
     ]
   },
   "official_guidance_status": "not_connected",
-  "fetched_at": "2026-09-29T02:03:59.489471+00:00",
+  "fetched_at": "2026-09-29T08:04:26.807536+00:00",
   "source": "yfinance analyst aggregation",
   "_meta": {
-    "cached_at": "2026-09-29T11:03:59.491481",
-    "age_sec": 21545,
+    "cached_at": "2026-09-29T17:04:26.809058",
+    "age_sec": 1718,
     "stale": false,
     "refreshing": false
   },

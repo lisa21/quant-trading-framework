@@ -35,7 +35,7 @@
     "peer_pe_details": [
       {
         "ticker": "GOOGL",
-        "pe": 22.7
+        "pe": 22.74
       },
       {
         "ticker": "MSFT",
@@ -43,7 +43,7 @@
       },
       {
         "ticker": "1810.HK",
-        "pe": 16.22
+        "pe": 16.33
       }
     ],
     "implied_peer_median": 206.18,
@@ -60,12 +60,12 @@
           "growth": 0.0689
         },
         "+1q": {
-          "avg": 2.9047,
+          "avg": 2.9031,
           "low": 2.56,
           "high": 3.42,
           "yearAgoEps": 2.84,
-          "numberOfAnalysts": 21.0,
-          "growth": 0.0228
+          "numberOfAnalysts": 22.0,
+          "growth": 0.0222
         },
         "0y": {
           "avg": 8.8194,
@@ -127,7 +127,7 @@
           "90daysAgo": 2.0084
         },
         "+1q": {
-          "current": 2.9047,
+          "current": 2.9031,
           "7daysAgo": 2.9042,
           "30daysAgo": 2.9086,
           "60daysAgo": 2.9697,
@@ -228,11 +228,11 @@
     ]
   },
   "official_guidance_status": "not_connected",
-  "fetched_at": "2026-09-29T02:03:59.570472+00:00",
+  "fetched_at": "2026-09-29T08:04:26.337050+00:00",
   "source": "yfinance analyst aggregation",
   "_meta": {
-    "cached_at": "2026-09-29T11:03:59.572998",
-    "age_sec": 21545,
+    "cached_at": "2026-09-29T17:04:26.339049",
+    "age_sec": 1718,
     "stale": false,
     "refreshing": false
   },
