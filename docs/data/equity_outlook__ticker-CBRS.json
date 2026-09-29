@@ -5,16 +5,16 @@
   "analyst_consensus": {
     "n_analysts": 11,
     "recommendation": "strong_buy",
-    "current_price": 196.74,
+    "current_price": 204.23,
     "forward_eps": 1.27,
-    "trailing_eps": -4.43,
+    "trailing_eps": -4.66,
     "eps_growth_pct": null,
-    "forward_pe": 154.47,
+    "forward_pe": 160.35,
     "trailing_pe": null,
     "target_mean": 291.64,
     "target_high": 330.0,
     "target_low": 209.0,
-    "target_upside_pct": 48.2,
+    "target_upside_pct": 42.8,
     "revenue_growth_pct": 74.3,
     "earnings_growth_pct": null,
     "next_earnings": "2026-11-11",
@@ -30,28 +30,28 @@
     "implied_hist_p25": null,
     "implied_hist_p75": null,
     "implied_hist_upside": null,
-    "peer_pe_median": 30.88,
+    "peer_pe_median": 31.11,
     "peer_pe_n_peers": 4,
     "peer_pe_details": [
       {
         "ticker": "NVDA",
-        "pe": 14.59
+        "pe": 14.66
       },
       {
         "ticker": "AMD",
-        "pe": 39.02
+        "pe": 39.69
       },
       {
         "ticker": "GOOGL",
-        "pe": 22.74
+        "pe": 22.54
       },
       {
         "ticker": "INTC",
-        "pe": 56.27
+        "pe": 56.45
       }
     ],
-    "implied_peer_median": 39.33,
-    "implied_peer_upside": -80.0,
+    "implied_peer_median": 39.62,
+    "implied_peer_upside": -80.6,
     "source": "yfinance analyst aggregation",
     "forward_estimates": {
       "earnings": {
@@ -187,31 +187,31 @@
         "key": "analyst_target",
         "label": "分析师目标均值",
         "implied_price": 291.64,
-        "gap_pct": 48.2
+        "gap_pct": 42.8
       },
       {
         "key": "peer_pe",
         "label": "前瞻 EPS × 同行 PE 中位",
-        "implied_price": 39.33,
-        "gap_pct": -80.0
+        "implied_price": 39.62,
+        "gap_pct": -80.6
       }
     ],
-    "median_gap_pct": -15.9,
+    "median_gap_pct": -18.9,
     "revision_signal": "upward",
     "required_eps_growth_pct": null,
     "consensus_eps_growth_pct": null,
     "growth_cushion_pct": null,
     "rationale": [
-      "多口径隐含价中位数低于现价 15.9%",
+      "多口径隐含价中位数低于现价 18.9%",
       "近 30 天 EPS 共识上修"
     ]
   },
   "official_guidance_status": "not_connected",
-  "fetched_at": "2026-09-29T08:04:26.807536+00:00",
+  "fetched_at": "2026-09-29T14:04:57.543951+00:00",
   "source": "yfinance analyst aggregation",
   "_meta": {
-    "cached_at": "2026-09-29T17:04:26.809058",
-    "age_sec": 21517,
+    "cached_at": "2026-09-29T23:04:57.544952",
+    "age_sec": 1686,
     "stale": false,
     "refreshing": false
   },
