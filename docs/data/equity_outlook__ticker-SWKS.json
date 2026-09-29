@@ -25,37 +25,37 @@
     "hist_pe_median": 17.68,
     "hist_pe_p25": 14.71,
     "hist_pe_p75": 20.65,
-    "hist_pe_n_days": 1001,
+    "hist_pe_n_days": 1000,
     "implied_hist_median": 87.74,
     "implied_hist_p25": 73.0,
     "implied_hist_p75": 102.48,
     "implied_hist_upside": 0.2,
-    "peer_pe_median": 18.11,
+    "peer_pe_median": 18.03,
     "peer_pe_n_peers": 5,
     "peer_pe_details": [
       {
         "ticker": "QRVO",
-        "pe": 14.7
+        "pe": 14.71
       },
       {
         "ticker": "AVGO",
-        "pe": 18.11
+        "pe": 18.03
       },
       {
         "ticker": "QCOM",
-        "pe": 18.41
+        "pe": 18.37
       },
       {
         "ticker": "6981.T",
-        "pe": 33.73
+        "pe": 33.89
       },
       {
         "ticker": "NXPI",
         "pe": 13.06
       }
     ],
-    "implied_peer_median": 89.87,
-    "implied_peer_upside": 2.6,
+    "implied_peer_median": 89.48,
+    "implied_peer_upside": 2.2,
     "source": "yfinance analyst aggregation",
     "forward_estimates": {
       "earnings": {
@@ -220,27 +220,27 @@
       {
         "key": "peer_pe",
         "label": "前瞻 EPS × 同行 PE 中位",
-        "implied_price": 89.87,
-        "gap_pct": 2.6
+        "implied_price": 89.48,
+        "gap_pct": 2.2
       }
     ],
-    "median_gap_pct": 1.4,
+    "median_gap_pct": 1.2,
     "revision_signal": "downward",
     "required_eps_growth_pct": 156.7,
     "consensus_eps_growth_pct": 157.1,
     "growth_cushion_pct": 0.4,
     "rationale": [
-      "多口径隐含价中位数高于现价 1.4%",
+      "多口径隐含价中位数高于现价 1.2%",
       "近 30 天 EPS 共识下修",
       "历史 PE 口径要求 EPS 增长 +156.7%，共识为 +157.1%"
     ]
   },
   "official_guidance_status": "not_connected",
-  "fetched_at": "2026-09-28T18:37:55.948632+00:00",
+  "fetched_at": "2026-09-29T00:37:58.790386+00:00",
   "source": "yfinance analyst aggregation",
   "_meta": {
-    "cached_at": "2026-09-29T03:37:55.948632",
-    "age_sec": 21307,
+    "cached_at": "2026-09-29T09:37:58.791385",
+    "age_sec": 1504,
     "stale": false,
     "refreshing": false
   },
