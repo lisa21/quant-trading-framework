@@ -1,12 +1,12 @@
 {
-  "ts": "2026-09-29T21:00:55.803759+00:00",
+  "ts": "2026-09-29T21:32:36.046210+00:00",
   "factors": [
     {
       "arrow": "▼",
       "name": "WTI 油价",
       "direction": "bearish",
       "weight": 1,
-      "value": "$88.95 (20d +3.7%)",
+      "value": "$88.94 (20d +3.7%)",
       "hint": "美国基准油价 20 天大幅涨跌指示供需变化"
     },
     {
@@ -14,7 +14,7 @@
       "name": "Brent-WTI 价差",
       "direction": "neutral",
       "weight": 1,
-      "value": "$6.74 (Brent $95.69 - WTI $88.95)",
+      "value": "$6.73 (Brent $95.67 - WTI $88.94)",
       "hint": "正常 $2-6；>$7 = 供应紧张利多，接近 0 = 美国供应过剩利空"
     },
     {
@@ -34,6 +34,14 @@
       "hint": "油以美元计价，美元升值 = 油价承压。DXY 5d +2% = 利空油"
     },
     {
+      "arrow": "▲",
+      "name": "美国汽油零售价",
+      "direction": "bullish",
+      "weight": 1,
+      "value": "$4.46/gal (4周 +9.7%)",
+      "hint": "零售汽油价 = 需求端信号。上涨 3%+ = 需求强劲支撑油价 / 下跌 = 需求疲软利空"
+    },
+    {
       "arrow": "▼",
       "name": "OVX 油价波动率",
       "direction": "bearish",
@@ -51,17 +59,17 @@
     }
   ],
   "direction": "bearish",
-  "score": -3,
+  "score": -2,
   "notes": [
     "油价 5d 急跌 → 需求疲软信号 / 或供应过剩"
   ],
-  "price": 88.95,
-  "pct_5d": -5.96,
-  "pct_20d": 3.72,
+  "price": 88.94,
+  "pct_5d": -5.97,
+  "pct_20d": 3.71,
   "source": "WTI 期货 (CL=F) 主 + 5 因子",
   "_meta": {
-    "cached_at": "2026-09-30T06:01:05.244080",
-    "age_sec": 117,
+    "cached_at": "2026-09-30T06:32:37.967129",
+    "age_sec": 27,
     "stale": false,
     "refreshing": false
   }
