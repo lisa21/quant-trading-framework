@@ -8,14 +8,16 @@
     "magnitude": "small",
     "score": 0,
     "event_counts": {
-      "MEDIA_ATTACK": 1,
-      "DOMESTIC_POLICY": 1
+      "GEOPOLITICAL": 1,
+      "DOMESTIC_POLICY": 1,
+      "NOISE": 1
     },
     "breaking": [],
     "summary": {
-      "text": "体育法案推进并否认对伊让步，情绪中性偏谨慎。",
+      "text": "涉高校体育法案与伊朗制裁澄清，情绪中性偏谨慎",
       "state": "cached",
       "post_ids": [
+        "117354335756073765",
         "117351985093810875",
         "117350810719202305"
       ]
