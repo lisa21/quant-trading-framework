@@ -4,20 +4,20 @@
     "super_net": -2644187.33,
     "big_net": 1344833.5320000006,
     "mid_net": 148270.483,
-    "small_net": 5998872.041000001,
-    "total_net": 4847788.726000007,
-    "smart_pct": -0.018079895903980393
+    "small_net": 5996864.587000001,
+    "total_net": 4845781.272,
+    "smart_pct": -0.017755262092336944
   },
   "anomaly": {
     "detected": false,
     "reason": "",
     "score": 0.0
   },
-  "asof": "2026-09-29 14:58:51",
+  "asof": "2026-09-29 15:30:30",
   "source": "moomoo",
   "_meta": {
-    "cached_at": "2026-09-30T03:59:05.599222",
-    "age_sec": 240,
+    "cached_at": "2026-09-30T04:30:32.273079",
+    "age_sec": 150,
     "stale": false,
     "refreshing": false
   }

@@ -1,24 +1,24 @@
 {
   "ticker": "XLV",
   "flow": {
-    "super_net": 225540747.82,
-    "big_net": -7316204.218000002,
-    "mid_net": 6444029.285999998,
-    "small_net": 1662414.6190000027,
-    "total_net": 226330987.50700003,
-    "smart_pct": 0.2599214072129118
+    "super_net": 220272733.64,
+    "big_net": -5971815.736999996,
+    "mid_net": 8692389.196999997,
+    "small_net": 5804987.101999998,
+    "total_net": 228798294.20200002,
+    "smart_pct": 0.22959967168458456
   },
   "anomaly": {
     "detected": true,
-    "reason": "主力（super+big）净流入 $+218.2M（占总成交额 +26.0%）",
-    "score": 0.866404690709706
+    "reason": "主力（super+big）净流入 $+214.3M（占总成交额 +23.0%）",
+    "score": 0.7653322389486152
   },
-  "asof": "2026-09-29 14:57:48",
+  "asof": "2026-09-29 15:29:37",
   "source": "moomoo",
   "_meta": {
-    "cached_at": "2026-09-30T03:58:02.031865",
-    "age_sec": 303,
-    "stale": true,
-    "refreshing": true
+    "cached_at": "2026-09-30T04:29:39.855096",
+    "age_sec": 203,
+    "stale": false,
+    "refreshing": false
   }
 }
