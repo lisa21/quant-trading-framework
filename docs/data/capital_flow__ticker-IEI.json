@@ -16,9 +16,9 @@
   "asof": "2026-09-28 17:47:00",
   "source": "moomoo",
   "_meta": {
-    "cached_at": "2026-09-29T10:27:59.706087",
-    "age_sec": 302,
-    "stale": true,
-    "refreshing": true
+    "cached_at": "2026-09-29T10:59:56.788842",
+    "age_sec": 185,
+    "stale": false,
+    "refreshing": false
   }
 }
