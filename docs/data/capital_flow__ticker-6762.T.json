@@ -193,8 +193,8 @@
   "source": "yfinance_intraday",
   "_meta": {
     "cached_at": "2026-09-30T00:00:57.536973",
-    "age_sec": 125,
-    "stale": false,
-    "refreshing": false
+    "age_sec": 1925,
+    "stale": true,
+    "refreshing": true
   }
 }
