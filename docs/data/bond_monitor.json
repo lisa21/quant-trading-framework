@@ -1,5 +1,5 @@
 {
-  "asof": "2026-09-29T20:29",
+  "asof": "2026-09-29T20:44",
   "yields": {
     "10y": {
       "value": 5.24,
@@ -252,7 +252,7 @@
     },
     {
       "level": "warn",
-      "msg": "KRW/USD 1354.6 韩元明显走弱",
+      "msg": "KRW/USD 1354.9 韩元明显走弱",
       "key": "krw_weak"
     },
     {
@@ -330,8 +330,8 @@
     "usdjpy_20d_delta_pct": -1.66,
     "usdjpy_60d_high": 163.86,
     "usdjpy_pullback_from_60d_high_pct": -3.91,
-    "krw_usd": 1354.6,
-    "krw_20d_pct": -0.88,
+    "krw_usd": 1354.9,
+    "krw_20d_pct": -0.86,
     "jgb_10y_pct": 2.94,
     "jgb_asof": "2026-08-01",
     "ust_jgb_spread_bps": 230.0,
@@ -348,9 +348,9 @@
     "kbe_spy_20d_delta_pct": -5.02,
     "cdx_ig_bps": 81.0,
     "cdx_hy_bps": 293.0,
-    "dxy": 101.34,
-    "dxy_pct_20d": 1.92,
-    "dxy_z_60d": 1.23,
+    "dxy": 101.33,
+    "dxy_pct_20d": 1.91,
+    "dxy_z_60d": 1.22,
     "asia_indices": {
       "N225": {
         "symbol": "^N225",
@@ -397,31 +397,31 @@
       "es_f": {
         "symbol": "ES=F",
         "label": "S&P 500 futures",
-        "price": 7756.25,
-        "chg_pct": 0.12
+        "price": 7758.75,
+        "chg_pct": 0.15
       },
       "nq_f": {
         "symbol": "NQ=F",
         "label": "Nasdaq futures",
-        "price": 30642.5,
-        "chg_pct": 0.25
+        "price": 30653.25,
+        "chg_pct": 0.28
       },
       "cl_f": {
         "symbol": "CL=F",
         "label": "WTI crude futures",
-        "price": 91.66,
-        "chg_pct": -1.02
+        "price": 91.61,
+        "chg_pct": -1.07
       },
       "gc_f": {
         "symbol": "GC=F",
         "label": "Gold futures",
-        "price": 4189.6,
-        "chg_pct": 0.51
+        "price": 4190.3,
+        "chg_pct": 0.53
       }
     },
     "oil_uso": 150.01,
     "oil_pct_20d": 15.66,
-    "oil_wti": 91.66,
+    "oil_wti": 91.61,
     "eem_pct_20d": 0.09,
     "eem_vs_spx_20d": 0.33,
     "volume_confirm": {
@@ -503,19 +503,19 @@
     "core_cpi_yoy_pct": 2.76,
     "unemployment_pct": 4.1,
     "unemployment_asof": "2026-08-01",
-    "vix": 15.92,
-    "bbi_score": 0.73,
+    "vix": 15.84,
+    "bbi_score": 0.74,
     "bbi_components": {
-      "vix": -0.35,
+      "vix": -0.36,
       "ig": -1.4,
       "hy": -1.02,
       "erp": 1.79
     }
   },
   "_meta": {
-    "cached_at": "2026-09-29T20:29:35.174264",
-    "age_sec": 207,
-    "stale": false,
-    "refreshing": false
+    "cached_at": "2026-09-29T20:44:56.434422",
+    "age_sec": 1086,
+    "stale": true,
+    "refreshing": true
   }
 }
