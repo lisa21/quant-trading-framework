@@ -10,7 +10,10 @@ _watchdog.py
 
 输出：
   signals/watchdog.jsonl（每次执行追加一条 { ts, event, pid, msg }）
-  event: healthy / dead_restart / no_lock_start / launch_failed
+  event: healthy / dead_restart / no_lock_start / launch_failed / opend_check_failed
+
+2026-09-29: 先调用 _opend_watchdog.main() 守护 OpenD (任务计划直接跑本脚本,
+watchdog.bat 里的 OpenD 步骤从未按计划执行). OpenD 检查失败不阻断 orchestrator 检查.
 """
 from __future__ import annotations
 
@@ -93,7 +96,18 @@ def _launch_orchestrator() -> int | None:
         return None
 
 
+def _ensure_opend() -> int | None:
+    """先守护 OpenD (orchestrator 依赖它). 任何异常只记日志, 不阻断后续检查."""
+    try:
+        import _opend_watchdog
+        return _opend_watchdog.main()
+    except Exception as e:
+        _log("opend_check_failed", None, f"{type(e).__name__}: {e}")
+        return None
+
+
 def main() -> int:
+    _ensure_opend()
     # 情况 1：锁存在，PID 活着 → healthy
     # 情况 2：锁存在，PID 死了 → 清 lock + restart
     # 情况 3：锁不存在 → 直接 start

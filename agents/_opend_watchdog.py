@@ -4,8 +4,9 @@
 exe. OpenD 需要在 GUI 里预先配置 "记住密码 + 自动登录", 本脚本只负责 exe 启动.
 
 用法:
-  · Windows Task Scheduler 每 5-15 分钟跑一次 (可以塞进 watchdog.bat 与
-    _watchdog.py 串行执行 — OpenD 先起, orchestrator 再起, 顺序对)
+  · 由 _watchdog.py 每次运行时先调用 (2026-09-29 起; 任务计划
+    FSI-OrchestratorWatchdog 直接跑 _watchdog.py, 不经过 watchdog.bat)
+  · watchdog.bat 仍可用 (会跑两次 OpenD 检查, 无害)
   · 手动: python _opend_watchdog.py
 
 输出:
@@ -42,6 +43,9 @@ OPEND_EXE = _cfg("MOOMOO_OPEND_EXE", DEFAULT_OPEND_EXE)
 # process image name for tasklist 匹配 (moomoo installer 用大小写敏感 exe 名)
 OPEND_PROC_NAMES = ("moomoo_OpenD.exe", "FutuOpenD.exe")
 
+# 任务计划用 pythonw 运行 (_watchdog.py 调用本模块): tasklist 不加这个会闪控制台窗口
+_HIDDEN = {"creationflags": 0x08000000} if os.name == "nt" else {}
+
 
 def _port_open(host: str, port: int, timeout: float = 2.0) -> bool:
     """OpenD 端口可否建立 TCP 连接."""
@@ -57,7 +61,7 @@ def _opend_process_alive() -> int | None:
     try:
         r = subprocess.run(
             ["tasklist", "/FO", "CSV", "/NH"],
-            capture_output=True, text=True, timeout=10,
+            capture_output=True, text=True, timeout=10, **_HIDDEN,
             encoding="utf-8", errors="replace",
         )
     except Exception:
