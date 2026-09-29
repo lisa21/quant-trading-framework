@@ -15,72 +15,68 @@
       "date": "2026-12-09",
       "days_until": 71,
       "probabilities": {
-        "cut_25": 4.6,
-        "hold": 36.2,
-        "hike_25": 59.2
+        "hold": 4.6,
+        "hike_25": 36.2,
+        "hike_50": 59.2
       },
-      "most_likely": "hike_25",
+      "most_likely": "hike_50",
       "consensus_direction": "hawkish"
     },
     {
       "date": "2027-01-27",
       "days_until": 120,
       "probabilities": {
-        "cut_50": 2.1,
-        "cut_25": 18.7,
-        "hold": 46.4,
-        "hike_25": 32.8
+        "hold": 2.1,
+        "hike_25": 18.7,
+        "hike_50": 46.4,
+        "hike_75": 32.8
       },
-      "most_likely": "hold",
-      "consensus_direction": "hawkish_lean"
+      "most_likely": "hike_50",
+      "consensus_direction": "hawkish"
     },
     {
       "date": "2027-03-17",
       "days_until": 169,
       "probabilities": {
-        "cut_50": 0.5,
-        "cut_25": 6.2,
-        "hold": 25.5,
-        "hike_25": 43.1,
-        "hike_50": 24.7
+        "hold": 0.5,
+        "hike_25": 6.2,
+        "hike_50": 25.5,
+        "hike_75": 43.1,
+        "hike_100": 24.7
       },
-      "most_likely": "hike_25",
+      "most_likely": "hike_75",
       "consensus_direction": "hawkish"
     }
   ],
   "implied_terminal_rate": "4.75-5.00",
-  "implied_terminal_date": "2027-Q3",
+  "implied_terminal_date": "2027-Q2",
   "data_snapshot_date": "2026-09-29 01:01 UTC",
-  "recent_event_impact": "最近7天未发现NFP/CPI/PPI/FOMC或Fed Chair Warsh正式讲话；最新已反映的关键数据为9/4 NFP +162K vs 约+53K预期、9/10 PPI +0.4% m/m、9/11 CPI +0.4% m/m，均强化通胀/增长韧性与加息定价。",
-  "commentary": "Snapshot为2026-09-29 01:01 UTC，数据在9/23热PMI与收益率上行之后，10月会议市场定价约70%概率再加25bp。此前NFP大幅强于预期、CPI/PPI均偏热，使市场从降息/观望叙事转向继续加息路径；未发现snapshot之后的NFP/CPI/PPI事件，因此不标记数据滞后。",
+  "recent_event_impact": "最近7天未发现NFP/CPI/PPI/FOMC/Warsh讲话；较近的8月NFP +162K、失业率4.1%，以及9/10 PPI和9/11偏热CPI已在9/29快照之后被反映，CPI后9月加息概率曾升至约91.6%。",
+  "commentary": "CME FedWatch同源期货定价显示，市场在10月会议定价约70%概率再加25bp，12月前累计加息50bp为主。8月NFP强于预期、PPI/CPI偏热推动9月已加息并使曲线继续向鹰派重定价；9/29快照未滞后于这些关键数据。",
   "sources": [
     {
       "url": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
-      "type": "cme_fedwatch"
+      "type": "cme_fedwatch_official"
     },
     {
       "url": "https://terminal.kryptomagazin.cz/en/macro/fedwatch",
-      "type": "fedwatch_mirror"
-    },
-    {
-      "url": "https://www.bls.gov/news.release/archives/cpi_09112026.htm",
-      "type": "cpi"
-    },
-    {
-      "url": "https://www.dol.gov/newsroom/economicdata/ppi_09102026.pdf",
-      "type": "ppi"
+      "type": "cme_fedwatch_proxy_snapshot"
     },
     {
       "url": "https://www.bls.gov/news.release/empsit.htm",
-      "type": "nfp"
+      "type": "nfp_release"
+    },
+    {
+      "url": "https://finance.yahoo.com/economy/policy/articles/hot-core-cpi-data-sends-133021255.html",
+      "type": "cpi_market_impact"
     }
   ],
   "confidence": "medium",
   "source_via": "codex_cli_websearch",
-  "fetched_at": "2026-09-29T02:46:11+00:00",
+  "fetched_at": "2026-09-29T10:47:52+00:00",
   "_meta": {
-    "cached_at": "2026-09-29T11:46:11.226130",
-    "age_sec": 28012,
+    "cached_at": "2026-09-29T19:47:52.149839",
+    "age_sec": 911,
     "stale": false,
     "refreshing": false
   }
