@@ -13897,14 +13897,14 @@
   "cache_contract": "15efd89eda8e",
   "_meta": {
     "cached_at": "2026-09-30T18:32:16.014111",
-    "age_sec": 21647,
+    "age_sec": 23447,
     "stale": false,
     "refreshing": false
   },
   "flow_meta": {
     "generated_at": "2026-09-30T15:06:25.644990+00:00",
     "status": "ready",
-    "age_sec": 1557.1,
+    "age_sec": 3357.0,
     "stale": false
   }
 }
