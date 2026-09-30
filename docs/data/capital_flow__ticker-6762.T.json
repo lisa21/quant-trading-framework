@@ -4,7 +4,7 @@
   "anomaly": {
     "detected": true,
     "reason": "9/30 09:05 6.42× 均值 · 主动卖 ¥19.28億 (@¥3022.0)",
-    "score": 0.58,
+    "score": 0.83,
     "peak_bars": [
       {
         "time": "09:05",
@@ -31,7 +31,7 @@
         "tier": "ratio_spike"
       }
     ],
-    "day_ratio": 1.18,
+    "day_ratio": 1.43,
     "trading_date": "2026-09-30",
     "date_short": "9/30",
     "net_bias": "neutral",
@@ -83,27 +83,27 @@
             "tier": "multi_bar"
           }
         ],
-        "day_ratio": 1.18,
-        "day_chg_pct": -1.41,
+        "day_ratio": 1.43,
+        "day_chg_pct": -1.51,
         "day_open": 3040.0,
-        "day_close": 2997.0,
+        "day_close": 2994.0,
         "net_bias": "neutral",
         "buy_shares": 348600,
         "sell_shares": 638000,
         "buy_value_oku": 10.6,
         "sell_value_oku": 19.28,
         "full_bias": "neutral",
-        "full_up_shares": 3333100,
-        "full_down_shares": 3263500,
-        "full_up_value_oku": 99.77,
-        "full_down_value_oku": 97.54
+        "full_up_shares": 4006600,
+        "full_down_shares": 4048800,
+        "full_up_value_oku": 119.99,
+        "full_down_value_oku": 121.06
       },
       {
         "trading_date": "2026-09-29",
         "date_short": "9/29",
         "peak_bars": [],
         "slices": [],
-        "day_ratio": 0.79,
+        "day_ratio": 0.78,
         "day_chg_pct": 0,
         "day_open": NaN,
         "day_close": 2901.0,
@@ -123,7 +123,7 @@
         "date_short": "9/28",
         "peak_bars": [],
         "slices": [],
-        "day_ratio": 0.91,
+        "day_ratio": 0.9,
         "day_chg_pct": -1.27,
         "day_open": 2983.0,
         "day_close": 2945.0,
@@ -143,7 +143,7 @@
         "date_short": "9/25",
         "peak_bars": [],
         "slices": [],
-        "day_ratio": 1.05,
+        "day_ratio": 1.04,
         "day_chg_pct": 1.84,
         "day_open": 2938.5,
         "day_close": 2992.5,
@@ -201,7 +201,7 @@
             "tier": "multi_bar"
           }
         ],
-        "day_ratio": 1.7,
+        "day_ratio": 1.67,
         "day_chg_pct": 1.42,
         "day_open": 2918.0,
         "day_close": 2959.5,
@@ -266,11 +266,11 @@
       "value_oku_min": 1.0
     }
   },
-  "asof": "2026-09-30 14:10 JST",
+  "asof": "2026-09-30 15:20 JST",
   "source": "yfinance_intraday",
   "_meta": {
-    "cached_at": "2026-09-30T14:29:55.344636",
-    "age_sec": 187,
+    "cached_at": "2026-09-30T16:31:04.883428",
+    "age_sec": 119,
     "stale": false,
     "refreshing": false
   }

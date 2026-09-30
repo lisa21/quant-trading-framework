@@ -103,7 +103,7 @@
         "tier": "huge_abs"
       }
     ],
-    "day_ratio": 1.03,
+    "day_ratio": 1.25,
     "trading_date": "2026-09-30",
     "date_short": "9/30",
     "net_bias": "neutral",
@@ -214,20 +214,20 @@
           }
         ],
         "slices": [],
-        "day_ratio": 1.03,
-        "day_chg_pct": 0.75,
+        "day_ratio": 1.25,
+        "day_chg_pct": 0.64,
         "day_open": 18000.0,
-        "day_close": 18135.0,
+        "day_close": 18115.0,
         "net_bias": "neutral",
         "buy_shares": 3808300,
         "sell_shares": 2902900,
         "buy_value_oku": 695.52,
         "sell_value_oku": 528.15,
         "full_bias": "neutral",
-        "full_up_shares": 12271200,
-        "full_down_shares": 13945200,
-        "full_up_value_oku": 2242.72,
-        "full_down_value_oku": 2541.26
+        "full_up_shares": 14221400,
+        "full_down_shares": 17072900,
+        "full_up_value_oku": 2597.15,
+        "full_down_value_oku": 3109.27
       },
       {
         "trading_date": "2026-09-29",
@@ -344,7 +344,7 @@
             "tier": "huge_2bar"
           }
         ],
-        "day_ratio": 1.4,
+        "day_ratio": 1.38,
         "day_chg_pct": 0,
         "day_open": NaN,
         "day_close": 17800.0,
@@ -578,7 +578,7 @@
           }
         ],
         "slices": [],
-        "day_ratio": 0.75,
+        "day_ratio": 0.74,
         "day_chg_pct": 1.05,
         "day_open": 18390.0,
         "day_close": 18583.33,
@@ -695,7 +695,7 @@
           }
         ],
         "slices": [],
-        "day_ratio": 0.95,
+        "day_ratio": 0.94,
         "day_chg_pct": -3.56,
         "day_open": 18926.67,
         "day_close": 18253.33,
@@ -760,11 +760,11 @@
       "value_oku_min": 1.0
     }
   },
-  "asof": "2026-09-30 14:10 JST",
+  "asof": "2026-09-30 15:20 JST",
   "source": "yfinance_intraday",
   "_meta": {
-    "cached_at": "2026-09-30T14:29:55.778378",
-    "age_sec": 187,
+    "cached_at": "2026-09-30T16:31:05.361098",
+    "age_sec": 118,
     "stale": false,
     "refreshing": false
   }
