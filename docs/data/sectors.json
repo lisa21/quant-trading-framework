@@ -4,10 +4,10 @@
       "key": "SPY",
       "zh": "大盘 S&P500",
       "linked": "参考",
-      "price": 762.48,
-      "pct_5d": -0.69,
-      "pct_20d": 0.34,
-      "dist_ma20": -0.2,
+      "price": 762.63,
+      "pct_5d": -0.67,
+      "pct_20d": 0.36,
+      "dist_ma20": -0.18,
       "trend": "down",
       "regime": "chop",
       "regime_zh": "震荡",
@@ -15,14 +15,14 @@
       "style_zh": "横盘震荡",
       "chop_score": 4,
       "is_choppy": true,
-      "style_reason": "10日趋势效率偏低(0.25)；ADX偏低(10.8)；10日穿越MA20 2次；净涨跌小但路径反复",
+      "style_reason": "10日趋势效率偏低(0.26)；ADX偏低(10.8)；10日穿越MA20 2次；净涨跌小但路径反复",
       "style_metrics": {
-        "pct_5d": -0.69,
-        "pct_20d": 0.34,
-        "dist_ma20_pct": -0.2,
-        "dist_ma50_pct": 0.17,
-        "efficiency_10": 0.253,
-        "efficiency_20": 0.031,
+        "pct_5d": -0.67,
+        "pct_20d": 0.36,
+        "dist_ma20_pct": -0.18,
+        "dist_ma50_pct": 0.19,
+        "efficiency_10": 0.258,
+        "efficiency_20": 0.033,
         "adx_14": 10.8,
         "reversal_count_10d": 3,
         "ma20_crossings_10d": 2,
@@ -121,7 +121,7 @@
       "policy_note": "短线震荡：提高加仓门槛、降低目标波动，不把宏观偏多当追涨依据"
     }
   ],
-  "ts": "2026-09-30T20:30:35.730770+00:00",
+  "ts": "2026-09-30T21:02:12.968582+00:00",
   "canonical_regime": "neutral_chop",
   "n_disagreements_this_call": 0,
   "rotation_speed": {
@@ -146,8 +146,8 @@
     "asof": "2026-09-30 00:00:00-04:00"
   },
   "_meta": {
-    "cached_at": "2026-10-01T05:30:35.731764",
-    "age_sec": 147,
+    "cached_at": "2026-10-01T06:02:12.970086",
+    "age_sec": 50,
     "stale": false,
     "refreshing": false
   }

@@ -1,5 +1,5 @@
 {
-  "asof": "2026-10-01T05:23",
+  "asof": "2026-10-01T05:54",
   "yields": {
     "10y": {
       "value": 5.293,
@@ -232,7 +232,7 @@
     },
     {
       "level": "warn",
-      "msg": "MOVE 110.4 债券波动率抬升 (>100 = 期限对冲变贵)",
+      "msg": "MOVE 110.5 债券波动率抬升 (>100 = 期限对冲变贵)",
       "key": "move_elevated"
     },
     {
@@ -242,12 +242,12 @@
     },
     {
       "level": "warn",
-      "msg": "USDJPY 157.46 进入 155-160 口头干预区间 (JP MoF)",
+      "msg": "USDJPY 157.43 进入 155-160 口头干预区间 (JP MoF)",
       "key": "jpy_verbal_zone"
     },
     {
       "level": "warn",
-      "msg": "KRW/USD 1356.1 韩元明显走弱",
+      "msg": "KRW/USD 1356.6 韩元明显走弱",
       "key": "krw_weak"
     },
     {
@@ -262,7 +262,7 @@
     },
     {
       "level": "warn",
-      "msg": "KBE/SPY 20d -5.36% 银行相对走弱 (需持续观察)",
+      "msg": "KBE/SPY 20d -5.38% 银行相对走弱 (需持续观察)",
       "key": "bank_stress_warn"
     },
     {
@@ -282,7 +282,7 @@
     },
     {
       "level": "info",
-      "msg": "稳定币影子美元 $257.9B (USDT $184B + USDC $74B, 抽血 EM 通胀国 + 压低美债短端)",
+      "msg": "稳定币影子美元 $257.8B (USDT $184B + USDC $74B, 抽血 EM 通胀国 + 压低美债短端)",
       "key": "stablecoin_large"
     }
   ],
@@ -305,8 +305,8 @@
     "walcl_tn": 6.748,
     "walcl_asof": "2026-09-23",
     "walcl_12w_delta_bn": 12.0,
-    "move_index": 110.4,
-    "move_20d_delta": 32.5,
+    "move_index": 110.5,
+    "move_20d_delta": 32.6,
     "effr_pct": 3.88,
     "sofr_effr_spread_bps": 0.0,
     "bank_reserves_bn": 2930.0,
@@ -315,13 +315,13 @@
     "sofr_pct": 3.88,
     "iorb_pct": 3.9,
     "sofr_iorb_spread_bps": -2.0,
-    "usdjpy": 157.46,
-    "usdjpy_20d_pct": -1.71,
-    "usdjpy_20d_delta_pct": -1.71,
+    "usdjpy": 157.43,
+    "usdjpy_20d_pct": -1.73,
+    "usdjpy_20d_delta_pct": -1.73,
     "usdjpy_60d_high": 163.86,
-    "usdjpy_pullback_from_60d_high_pct": -3.91,
-    "krw_usd": 1356.1,
-    "krw_20d_pct": -1.22,
+    "usdjpy_pullback_from_60d_high_pct": -3.93,
+    "krw_usd": 1356.6,
+    "krw_20d_pct": -1.18,
     "jgb_10y_pct": 2.94,
     "jgb_asof": "2026-08-01",
     "ust_jgb_spread_bps": 235.3,
@@ -334,13 +334,13 @@
     "real_yield_gap_us_jp": 1.81,
     "cpi_jp_yoy_pct": 3.17,
     "spy_ief_60d_corr": 0.539,
-    "kbe_spy_ratio": 0.08291,
-    "kbe_spy_20d_delta_pct": -5.36,
+    "kbe_spy_ratio": 0.0829,
+    "kbe_spy_20d_delta_pct": -5.38,
     "cdx_ig_bps": 84.0,
     "cdx_hy_bps": 308.0,
-    "dxy": 101.51,
-    "dxy_pct_20d": 1.85,
-    "dxy_z_60d": 1.39,
+    "dxy": 101.46,
+    "dxy_pct_20d": 1.8,
+    "dxy_z_60d": 1.34,
     "asia_indices": {
       "N225": {
         "symbol": "^N225",
@@ -387,33 +387,33 @@
       "es_f": {
         "symbol": "ES=F",
         "label": "S&P 500 futures",
-        "price": 7720.25,
+        "price": 7720.5,
         "chg_pct": -0.15
       },
       "nq_f": {
         "symbol": "NQ=F",
         "label": "Nasdaq futures",
-        "price": 30707.75,
-        "chg_pct": 0.31
+        "price": 30731.25,
+        "chg_pct": 0.39
       },
       "cl_f": {
         "symbol": "CL=F",
         "label": "WTI crude futures",
-        "price": 90.52,
-        "chg_pct": 1.28
+        "price": 90.32,
+        "chg_pct": 1.05
       },
       "gc_f": {
         "symbol": "GC=F",
         "label": "Gold futures",
-        "price": 4188.2,
-        "chg_pct": 0.2
+        "price": 4190.8,
+        "chg_pct": 0.27
       }
     },
     "oil_uso": 145.66,
     "oil_pct_20d": 3.3,
-    "oil_wti": 90.52,
+    "oil_wti": 90.31,
     "eem_pct_20d": 0.03,
-    "eem_vs_spx_20d": -0.31,
+    "eem_vs_spx_20d": -0.33,
     "volume_confirm": {
       "rates": {
         "proxy": "TLT",
@@ -493,21 +493,21 @@
     "core_cpi_yoy_pct": 2.76,
     "unemployment_pct": 4.1,
     "unemployment_asof": "2026-08-01",
-    "stablecoin_total_bn": 257.9,
+    "stablecoin_total_bn": 257.8,
     "usdt_bn": 183.8,
-    "usdc_bn": 74.1,
-    "vix": 16.39,
-    "bbi_score": 0.47,
+    "usdc_bn": 74.0,
+    "vix": 16.34,
+    "bbi_score": 0.48,
     "bbi_components": {
-      "vix": -0.27,
+      "vix": -0.28,
       "ig": -1.31,
       "hy": -0.9,
       "erp": 1.85
     }
   },
   "_meta": {
-    "cached_at": "2026-10-01T05:23:55.318598",
-    "age_sec": 547,
+    "cached_at": "2026-10-01T05:54:28.359220",
+    "age_sec": 514,
     "stale": false,
     "refreshing": false
   }
