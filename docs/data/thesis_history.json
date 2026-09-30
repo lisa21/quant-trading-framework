@@ -3865,17 +3865,17 @@
     }
   ],
   "trend_30d": {
-    "n_samples": 59,
+    "n_samples": 58,
     "period_days": 30,
-    "cut_prob_start": 30,
+    "cut_prob_start": 27,
     "cut_prob_latest": 27,
-    "cut_prob_delta": -3,
-    "y10_delta_bps": 57.99999999999999,
+    "cut_prob_delta": 0,
+    "y10_delta_bps": 50.0,
     "cpi_yoy_delta_pp": 0.17,
     "unrate_delta_pp": 0.0,
-    "vix_delta": 0.77,
-    "hy_delta_bps": 39.0,
-    "dxy_delta": 1.89
+    "vix_delta": 1.09,
+    "hy_delta_bps": 42.0,
+    "dxy_delta": 1.95
   },
   "trend_90d": {
     "n_samples": 108,
