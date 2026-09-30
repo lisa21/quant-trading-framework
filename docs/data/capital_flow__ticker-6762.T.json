@@ -19,7 +19,7 @@
         "tier": "ratio_spike"
       }
     ],
-    "day_ratio": 0.37,
+    "day_ratio": 0.5,
     "trading_date": "2026-09-30",
     "date_short": "9/30",
     "net_bias": "sell",
@@ -46,27 +46,27 @@
           }
         ],
         "slices": [],
-        "day_ratio": 0.37,
-        "day_chg_pct": -1.83,
+        "day_ratio": 0.5,
+        "day_chg_pct": -2.19,
         "day_open": 3040.0,
-        "day_close": 2984.5,
+        "day_close": 2973.5,
         "net_bias": "sell",
         "buy_shares": 0,
         "sell_shares": 638000,
         "buy_value_oku": 0,
         "sell_value_oku": 19.28,
         "full_bias": "sell",
-        "full_up_shares": 554400,
-        "full_down_shares": 1480400,
-        "full_up_value_oku": 16.67,
-        "full_down_value_oku": 44.54
+        "full_up_shares": 864700,
+        "full_down_shares": 1867000,
+        "full_up_value_oku": 25.93,
+        "full_down_value_oku": 56.04
       },
       {
         "trading_date": "2026-09-29",
         "date_short": "9/29",
         "peak_bars": [],
         "slices": [],
-        "day_ratio": 0.83,
+        "day_ratio": 0.82,
         "day_chg_pct": 0,
         "day_open": NaN,
         "day_close": 2901.0,
@@ -86,7 +86,7 @@
         "date_short": "9/28",
         "peak_bars": [],
         "slices": [],
-        "day_ratio": 0.95,
+        "day_ratio": 0.94,
         "day_chg_pct": -1.27,
         "day_open": 2983.0,
         "day_close": 2945.0,
@@ -164,7 +164,7 @@
             "tier": "multi_bar"
           }
         ],
-        "day_ratio": 1.77,
+        "day_ratio": 1.76,
         "day_chg_pct": 1.42,
         "day_open": 2918.0,
         "day_close": 2959.5,
@@ -229,11 +229,11 @@
       "value_oku_min": 1.0
     }
   },
-  "asof": "2026-09-30 09:45 JST",
+  "asof": "2026-09-30 10:15 JST",
   "source": "yfinance_intraday",
   "_meta": {
-    "cached_at": "2026-09-30T10:01:33.314401",
-    "age_sec": 89,
+    "cached_at": "2026-09-30T10:32:30.385484",
+    "age_sec": 32,
     "stale": false,
     "refreshing": false
   }
