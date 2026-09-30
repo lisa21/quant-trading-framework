@@ -5,23 +5,23 @@
   "analyst_consensus": {
     "n_analysts": 46,
     "recommendation": "strong_buy",
-    "current_price": 1072.01,
+    "current_price": 1065.11,
     "forward_eps": 161.49,
     "trailing_eps": 44.2,
     "eps_growth_pct": 265.4,
-    "forward_pe": 6.64,
-    "trailing_pe": 24.26,
+    "forward_pe": 6.6,
+    "trailing_pe": 24.1,
     "target_mean": 1520.76,
     "target_high": 2200.0,
     "target_low": 361.0,
-    "target_upside_pct": 41.9,
+    "target_upside_pct": 42.8,
     "revenue_growth_pct": 345.7,
     "earnings_growth_pct": 1368.5,
     "next_earnings": "2026-10-01",
-    "implied_pe_hold": 3917.81,
-    "implied_pe_hold_upside": 265.5,
+    "implied_pe_hold": 3891.57,
+    "implied_pe_hold_upside": 265.4,
     "peg_fair_price": 42860.14,
-    "peg_ratio": 0.03,
+    "peg_ratio": 0.02,
     "hist_pe_median": 55.03,
     "hist_pe_p25": 8.3,
     "hist_pe_p75": 134.49,
@@ -29,8 +29,8 @@
     "implied_hist_median": 8886.94,
     "implied_hist_p25": 1340.39,
     "implied_hist_p75": 21719.14,
-    "implied_hist_upside": 729.0,
-    "peer_pe_median": 9.03,
+    "implied_hist_upside": 734.4,
+    "peer_pe_median": 9.04,
     "peer_pe_n_peers": 4,
     "peer_pe_details": [
       {
@@ -47,11 +47,11 @@
       },
       {
         "ticker": "WDC",
-        "pe": 14.27
+        "pe": 14.31
       }
     ],
-    "implied_peer_median": 1458.28,
-    "implied_peer_upside": 36.0,
+    "implied_peer_median": 1459.89,
+    "implied_peer_upside": 37.1,
     "source": "yfinance analyst aggregation",
     "forward_estimates": {
       "earnings": {
@@ -199,38 +199,38 @@
         "key": "analyst_target",
         "label": "分析师目标均值",
         "implied_price": 1520.76,
-        "gap_pct": 41.9
+        "gap_pct": 42.8
       },
       {
         "key": "pe_hold",
         "label": "前瞻 EPS × 当前估值",
-        "implied_price": 3917.81,
-        "gap_pct": 265.5
+        "implied_price": 3891.57,
+        "gap_pct": 265.4
       },
       {
         "key": "peer_pe",
         "label": "前瞻 EPS × 同行 PE 中位",
-        "implied_price": 1458.28,
-        "gap_pct": 36.0
+        "implied_price": 1459.89,
+        "gap_pct": 37.1
       }
     ],
-    "median_gap_pct": 41.9,
+    "median_gap_pct": 42.8,
     "revision_signal": "upward",
-    "required_eps_growth_pct": -55.9,
+    "required_eps_growth_pct": -56.2,
     "consensus_eps_growth_pct": 265.4,
-    "growth_cushion_pct": 321.3,
+    "growth_cushion_pct": 321.6,
     "rationale": [
-      "多口径隐含价中位数高于现价 41.9%",
+      "多口径隐含价中位数高于现价 42.8%",
       "近 30 天 EPS 共识上修",
-      "历史 PE 口径要求 EPS 增长 -55.9%，共识为 +265.4%"
+      "历史 PE 口径要求 EPS 增长 -56.2%，共识为 +265.4%"
     ]
   },
   "official_guidance_status": "not_connected",
-  "fetched_at": "2026-09-30T14:05:40.576332+00:00",
+  "fetched_at": "2026-09-30T20:06:05.713227+00:00",
   "source": "yfinance analyst aggregation",
   "_meta": {
-    "cached_at": "2026-09-30T23:05:40.577340",
-    "age_sec": 21443,
+    "cached_at": "2026-10-01T05:06:05.715236",
+    "age_sec": 1618,
     "stale": false,
     "refreshing": false
   },
