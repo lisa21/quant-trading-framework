@@ -1,5 +1,5 @@
 {
-  "asof": "2026-09-30T18:00",
+  "asof": "2026-09-30T18:17",
   "yields": {
     "10y": {
       "value": 5.255,
@@ -160,6 +160,38 @@
       "asof": "2026-09-28",
       "name": "2Y 国债",
       "source": "FRED DGS2"
+    },
+    "tips_10y": {
+      "value": 2.9,
+      "chg_1d_bps": 7.0,
+      "chg_5d_bps": 28.0,
+      "chg_20d_bps": 48.0,
+      "z_score_20d": 1.34,
+      "history": [
+        2.9,
+        2.83,
+        2.85,
+        2.76,
+        2.63,
+        2.62,
+        2.68,
+        2.61,
+        2.68,
+        2.62,
+        2.6,
+        2.6,
+        2.55,
+        2.46,
+        2.43,
+        2.43,
+        2.42,
+        2.45,
+        2.44,
+        2.44
+      ],
+      "asof": "2026-09-28",
+      "name": "10Y TIPS 实际利率",
+      "source": "FRED DFII10"
     }
   },
   "spreads": {
@@ -172,8 +204,9 @@
   },
   "gld_correlation": {
     "vs_10y": -0.511,
-    "regime": "unknown",
-    "reason": "数据不足无法计算"
+    "vs_tips_10y": 0.109,
+    "regime": "aligned",
+    "reason": "相关性 0.109，正相关（可能通胀 regime，两者同向）"
   },
   "anomalies": [],
   "warnings": [
@@ -184,8 +217,18 @@
     },
     {
       "level": "bad",
+      "msg": "实际利率 2.90% 极端高位",
+      "key": "tips_extreme"
+    },
+    {
+      "level": "bad",
       "msg": "30Y 5.59% 极端高位 (2007 以来罕见)",
       "key": "30y_extreme"
+    },
+    {
+      "level": "warn",
+      "msg": "ERP 1.15% 股权风险溢价压缩到危险区 (SPX 尾随 EPS yield 4.05% − TIPS 2.9%，1985+ 仅 1987/2000/2007 出现过)",
+      "key": "erp_low"
     },
     {
       "level": "warn",
@@ -204,7 +247,7 @@
     },
     {
       "level": "warn",
-      "msg": "KRW/USD 1352.5 韩元明显走弱",
+      "msg": "KRW/USD 1353.4 韩元明显走弱",
       "key": "krw_weak"
     },
     {
@@ -250,6 +293,10 @@
   ],
   "macro_context": {
     "term_spread_30_10_bps": 33.9,
+    "spx_trailing_pe": 24.71,
+    "spx_eps_yield_pct": 4.05,
+    "erp_vs_tips_pct": 1.15,
+    "erp_basis": "trailing",
     "nfci": {
       "value": -0.555,
       "asof": "2026-09-18"
@@ -278,8 +325,8 @@
     "usdjpy_20d_delta_pct": -1.49,
     "usdjpy_60d_high": 163.86,
     "usdjpy_pullback_from_60d_high_pct": -3.97,
-    "krw_usd": 1352.5,
-    "krw_20d_pct": -1.48,
+    "krw_usd": 1353.4,
+    "krw_20d_pct": -1.42,
     "jgb_10y_pct": 2.94,
     "jgb_asof": "2026-08-01",
     "ust_jgb_spread_bps": 231.5,
@@ -296,9 +343,9 @@
     "kbe_spy_20d_delta_pct": -5.22,
     "cdx_ig_bps": 83.0,
     "cdx_hy_bps": 302.0,
-    "dxy": 101.23,
-    "dxy_pct_20d": 1.57,
-    "dxy_z_60d": 1.08,
+    "dxy": 101.24,
+    "dxy_pct_20d": 1.58,
+    "dxy_z_60d": 1.1,
     "asia_indices": {
       "N225": {
         "symbol": "^N225",
@@ -345,31 +392,31 @@
       "es_f": {
         "symbol": "ES=F",
         "label": "S&P 500 futures",
-        "price": 7747.5,
-        "chg_pct": 0.2
+        "price": 7741.25,
+        "chg_pct": 0.12
       },
       "nq_f": {
         "symbol": "NQ=F",
         "label": "Nasdaq futures",
-        "price": 30648.5,
-        "chg_pct": 0.12
+        "price": 30610.75,
+        "chg_pct": -0.01
       },
       "cl_f": {
         "symbol": "CL=F",
         "label": "WTI crude futures",
-        "price": 89.61,
-        "chg_pct": 0.26
+        "price": 90.21,
+        "chg_pct": 0.93
       },
       "gc_f": {
         "symbol": "GC=F",
         "label": "Gold futures",
-        "price": 4229.0,
-        "chg_pct": 1.18
+        "price": 4222.3,
+        "chg_pct": 1.02
       }
     },
     "oil_uso": 143.35,
     "oil_pct_20d": 7.22,
-    "oil_wti": 89.61,
+    "oil_wti": 90.21,
     "eem_pct_20d": 0.57,
     "eem_vs_spx_20d": 0.69,
     "volume_confirm": {
@@ -453,19 +500,20 @@
     "unemployment_asof": "2026-08-01",
     "stablecoin_total_bn": 258.2,
     "usdt_bn": 183.8,
-    "usdc_bn": 74.4,
-    "vix": 15.93,
-    "bbi_score": 2.64,
+    "usdc_bn": 74.3,
+    "vix": 15.99,
+    "bbi_score": 0.58,
     "bbi_components": {
-      "vix": -0.35,
+      "vix": -0.33,
       "ig": -1.34,
-      "hy": -0.95
+      "hy": -0.95,
+      "erp": 1.85
     }
   },
   "_meta": {
-    "cached_at": "2026-09-30T18:02:22.927637",
-    "age_sec": 40,
-    "stale": false,
-    "refreshing": false
+    "cached_at": "2026-09-30T18:17:40.309973",
+    "age_sec": 925,
+    "stale": true,
+    "refreshing": true
   }
 }
