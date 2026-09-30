@@ -7,10 +7,10 @@
     "recommendation": "hold",
     "current_price": 88.04,
     "forward_eps": 4.96,
-    "trailing_eps": 1.94,
-    "eps_growth_pct": 155.8,
+    "trailing_eps": 1.93,
+    "eps_growth_pct": 157.1,
     "forward_pe": 17.74,
-    "trailing_pe": 45.38,
+    "trailing_pe": 45.62,
     "target_mean": 68.35,
     "target_high": 85.0,
     "target_low": 52.0,
@@ -18,9 +18,9 @@
     "revenue_growth_pct": -3.1,
     "earnings_growth_pct": -68.6,
     "next_earnings": "2026-11-04",
-    "implied_pe_hold": 225.21,
-    "implied_pe_hold_upside": 155.8,
-    "peg_fair_price": 773.18,
+    "implied_pe_hold": 226.38,
+    "implied_pe_hold_upside": 157.1,
+    "peg_fair_price": 779.63,
     "peg_ratio": 0.11,
     "hist_pe_median": 17.68,
     "hist_pe_p25": 14.71,
@@ -47,7 +47,7 @@
       },
       {
         "ticker": "6981.T",
-        "pe": 33.29
+        "pe": 33.09
       },
       {
         "ticker": "NXPI",
@@ -208,8 +208,8 @@
       {
         "key": "pe_hold",
         "label": "前瞻 EPS × 当前估值",
-        "implied_price": 225.21,
-        "gap_pct": 155.8
+        "implied_price": 226.38,
+        "gap_pct": 157.1
       },
       {
         "key": "historical_pe",
@@ -226,21 +226,21 @@
     ],
     "median_gap_pct": 0.7,
     "revision_signal": "downward",
-    "required_eps_growth_pct": 156.7,
-    "consensus_eps_growth_pct": 155.8,
+    "required_eps_growth_pct": 158.0,
+    "consensus_eps_growth_pct": 157.1,
     "growth_cushion_pct": -0.9,
     "rationale": [
       "多口径隐含价中位数高于现价 0.7%",
       "近 30 天 EPS 共识下修",
-      "历史 PE 口径要求 EPS 增长 +156.7%，共识为 +155.8%"
+      "历史 PE 口径要求 EPS 增长 +158.0%，共识为 +157.1%"
     ]
   },
   "official_guidance_status": "not_connected",
-  "fetched_at": "2026-09-30T06:39:41.846122+00:00",
+  "fetched_at": "2026-09-30T12:40:05.645368+00:00",
   "source": "yfinance analyst aggregation",
   "_meta": {
-    "cached_at": "2026-09-30T15:39:41.847124",
-    "age_sec": 21202,
+    "cached_at": "2026-09-30T21:40:05.646885",
+    "age_sec": 1380,
     "stale": false,
     "refreshing": false
   },

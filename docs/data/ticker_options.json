@@ -15067,14 +15067,14 @@
   "cache_contract": "15efd89eda8e",
   "_meta": {
     "cached_at": "2026-09-30T18:32:16.014111",
-    "age_sec": 10847,
+    "age_sec": 12647,
     "stale": false,
     "refreshing": false
   },
   "flow_meta": {
     "generated_at": "2026-09-30T12:06:24.465512+00:00",
     "status": "ready",
-    "age_sec": 1560.6,
+    "age_sec": 3361.0,
     "stale": false
   }
 }

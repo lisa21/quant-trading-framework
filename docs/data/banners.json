@@ -8,18 +8,29 @@
     "magnitude": "small",
     "score": 0,
     "event_counts": {
-      "GEOPOLITICAL": 1,
-      "DOMESTIC_POLICY": 1,
-      "NOISE": 1
+      "GEOPOLITICAL": 1
     },
-    "breaking": [],
+    "breaking": [
+      {
+        "event_type": "GEOPOLITICAL",
+        "direction": "bearish",
+        "magnitude": "medium",
+        "confidence": 7,
+        "tickers": [
+          "SPY",
+          "QQQ",
+          "GLD"
+        ],
+        "preview": "Iran Has Lost Control of the Strait: https://x.com/BurggrabenH/status/2104361288000221497",
+        "verbatim": "Iran Has Lost Control of the Strait",
+        "post_time": "2026-09-29T21:00:34.470Z"
+      }
+    ],
     "summary": {
-      "text": "涉高校体育法案与伊朗制裁澄清，情绪中性偏谨慎",
+      "text": "特朗普称伊朗失控霍尔木兹，市场避险情绪升温。",
       "state": "cached",
       "post_ids": [
-        "117354335756073765",
-        "117351985093810875",
-        "117350810719202305"
+        "117356339820644146"
       ]
     }
   },
