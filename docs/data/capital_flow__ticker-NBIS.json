@@ -1,23 +1,23 @@
 {
   "ticker": "NBIS",
   "flow": {
-    "super_net": 2782751.989,
-    "big_net": -2299424.822999999,
-    "mid_net": -3350656.228,
-    "small_net": 3022935.027999997,
-    "total_net": 155605.9659999907,
-    "smart_pct": 0.0017389801872799231
+    "super_net": 4221190.788999999,
+    "big_net": -1027636.747999996,
+    "mid_net": -5071443.236000001,
+    "small_net": 4897245.627999999,
+    "total_net": 3019356.433000028,
+    "smart_pct": 0.01017583842197883
   },
   "anomaly": {
     "detected": false,
     "reason": "",
     "score": 0.0
   },
-  "asof": "2026-09-30 10:32:18",
+  "asof": "2026-09-30 10:58:41",
   "source": "moomoo",
   "_meta": {
-    "cached_at": "2026-09-30T23:32:40.008683",
-    "age_sec": 24,
+    "cached_at": "2026-09-30T23:59:00.735017",
+    "age_sec": 243,
     "stale": false,
     "refreshing": false
   }
