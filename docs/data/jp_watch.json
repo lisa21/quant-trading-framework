@@ -1,5 +1,5 @@
 {
-  "ts": "2026-09-30T18:00:22.100709+00:00",
+  "ts": "2026-09-30T18:27:52.107012+00:00",
   "tickers": [
     {
       "ticker": "TDK",
@@ -5548,9 +5548,9 @@
   ],
   "data_source": "yfinance",
   "_meta": {
-    "cached_at": "2026-10-01T03:00:24.436903",
-    "age_sec": 159,
-    "stale": false,
-    "refreshing": false
+    "cached_at": "2026-10-01T03:27:54.498520",
+    "age_sec": 309,
+    "stale": true,
+    "refreshing": true
   }
 }
