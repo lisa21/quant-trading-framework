@@ -8,30 +8,17 @@
     "magnitude": "small",
     "score": 0,
     "event_counts": {
-      "GEOPOLITICAL": 1
+      "GEOPOLITICAL": 2,
+      "MEDIA_ATTACK": 2
     },
-    "breaking": [
-      {
-        "event_type": "GEOPOLITICAL",
-        "direction": "bearish",
-        "magnitude": "medium",
-        "confidence": 7,
-        "tickers": [
-          "SPY",
-          "QQQ",
-          "TQQQ",
-          "GLD"
-        ],
-        "preview": "Iran Has Lost Control of the Strait: https://x.com/BurggrabenH/status/2104361288000221497",
-        "verbatim": "Iran Has Lost Control of the Strait",
-        "post_time": "2026-09-29T21:00:34.470Z"
-      }
-    ],
+    "breaking": [],
     "summary": {
-      "text": "特朗普称伊朗失控霍尔木兹，市场避险情绪升温。",
+      "text": "撤军与抨击媒体为主，情绪偏风险中性。",
       "state": "cached",
       "post_ids": [
-        "117356339820644146"
+        "117361125172345134",
+        "117361036176846921",
+        "117360881299832502"
       ]
     }
   },

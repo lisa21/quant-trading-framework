@@ -1,23 +1,23 @@
 {
   "ticker": "MSFT",
   "flow": {
-    "super_net": 36104444.64400001,
-    "big_net": -11859549.550000012,
-    "mid_net": 9594074.611999989,
-    "small_net": -8485654.191999972,
-    "total_net": 25353315.514000177,
-    "smart_pct": 0.015046362068424775
+    "super_net": 5217980.42400001,
+    "big_net": -31414735.171000004,
+    "mid_net": -20619635.064999998,
+    "small_net": 21173343.963999987,
+    "total_net": -25643045.84800005,
+    "smart_pct": -0.00951987948539347
   },
   "anomaly": {
     "detected": false,
     "reason": "",
     "score": 0.0
   },
-  "asof": "2026-09-30 15:29:29",
+  "asof": "2026-09-30 16:00:38",
   "source": "moomoo",
   "_meta": {
-    "cached_at": "2026-10-01T04:29:30.001069",
-    "age_sec": 213,
+    "cached_at": "2026-10-01T05:00:55.662642",
+    "age_sec": 128,
     "stale": false,
     "refreshing": false
   }
