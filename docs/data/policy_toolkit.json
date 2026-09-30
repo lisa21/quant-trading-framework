@@ -1,6 +1,6 @@
 {
-  "as_of": "2026-09-30T10:58:32.875483",
-  "count_total_actions": 619,
+  "as_of": "2026-09-30T23:02:58.343203",
+  "count_total_actions": 623,
   "tools": [
     {
       "tool_key": "long_end_buyback",
@@ -13,21 +13,20 @@
       "last_action": {
         "tool_key": "long_end_buyback",
         "action_type": "announced",
-        "date": "2026-09-25",
+        "date": "2026-09-30",
         "actor": "Bessent",
         "amount_desc": "",
-        "commentary": "市场不买账说明回购力度或可信度不足。长端收益率可能继续要求更大政策溢价。",
-        "verbatim": "The U.S. bond market isn’t buying what Scott Bessent is selling",
-        "source": "GoogleNews: Treasury bond market intervention Bessent",
-        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOU2dPZDNrNFBVZmR3RklKZEU0cmVDZlRVYXlxNDFFazZIT3V5alQxaGJGdEg5UWdBdUh5VTJRSWV6NUo0ZUpkczRwV1pSaHZVUXVYSXBWMjRsMkJhUnA2MXpmc0c3MEdtMVcxYmFZUm0yTGYzc3U2ZXNDR0lkNDlYUHA2OWR5SlgxX01HazZyNW53QQ?oc=5",
-        "confidence": 6
+        "commentary": "财政部回购被市场视作稳长债尝试；重点看规模是否足以压期限溢价。",
+        "verbatim": "Bessent Treasury Buyback Sparks Bond Alarm: Will BTC Feel It?",
+        "source": "GoogleNews: Bessent Treasury buyback",
+        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQS0l1Z2w3YkRWcmVtRjUwUWVQMlRWNHUxNllnUDBsVzk1YzR2bkxpRVNwTE5XejF4Umdjbmh3X05RQjE2eGtaQlZDSUFyajU1T05UaWVLdFptaEdZd0ZmaVN0enBFLU4zMzJyS0tvWVhTNmZhSDN1eVNrR1I1R0R5VmR5SldVVzh0?oc=5",
+        "confidence": 7
       },
       "yield_reaction_30y": {
-        "t0_bp": 4.3,
-        "yield_at_close": 5.504,
-        "t1d_bp": 5.7
+        "t0_bp": 2.3,
+        "yield_at_close": 5.617
       },
-      "event_count_180d": 213
+      "event_count_180d": 214
     },
     {
       "tool_key": "fed_hawkish_signal",
@@ -39,22 +38,18 @@
       "status": "已用",
       "last_action": {
         "tool_key": "fed_hawkish_signal",
-        "action_type": "announced",
-        "date": "2026-09-27",
-        "actor": "Fed",
+        "action_type": "signaled",
+        "date": "2026-09-30",
+        "actor": "Warsh",
         "amount_desc": "",
-        "commentary": "加息是明确鹰派动作，直接推高短端并压制债价。",
-        "verbatim": "Why the Fed’s rate hike just came at the worst possible moment",
+        "commentary": "Warsh警告若指向通胀或估值风险，将强化鹰派预期并压制债市。",
+        "verbatim": "One Sentence From Fed Chair Kevin Warsh Delivers a Dire Warning to Wall Street and Investors",
         "source": "GoogleNews: Warsh Federal Reserve rate hike inflation",
-        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPTXdSMVVzN0FwN3Z1WFRSeG1SZzRWalgzMllFM21yb1hOenBYLVFXeGZpUDc1QW5lQ3lsb3JPZTBWSUQwY3JIZnlZdzJzQVVaa1hGRUN6S0NtTm1kd0N6dkVBRUY3RGJUeXNhMGJCMkdqajVCYVN0OXFFenl4SlFhT09tZVZFYUw4X1loUi1CYw?oc=5",
-        "confidence": 8
+        "url": "https://news.google.com/rss/articles/CBMiigJBVV95cUxQd1ljeWVEQVNtZDhRTy0wWnRwS0wxTTc0T1VPQUpQNGxpdW9EZ1MyUVIxeFRUNGhBdy1fOTh4TlpLMF9FOEpNOWNONERjNVRrSko4OE5zLUl6cU4tQmpacC1QbkZOQ3JYMU56VmljVm4xMG9zenRUajNRWkY2RUVxYzJLZF9rRjJ3UlZ6RnZKbTZvcGRMUFdOdVdFbFUzaGNCUk1ITFJUYW5ZQ21EdTI3bkhJWkw1VHhtSmFfT25DQmxYbDFPWG05em5NZG01Mm40WGVKTkg5WlVLUVl0ZUUtd2pTempUMmhnNmVObmRYcXZmenQtUnNWYkk0c2UyN2E3S0FuT00tWUFwUQ?oc=5",
+        "confidence": 6
       },
-      "yield_reaction_30y": {
-        "t0_bp": 5.7,
-        "yield_at_close": 5.561,
-        "t1d_bp": 3.3
-      },
-      "event_count_180d": 320
+      "yield_reaction_30y": {},
+      "event_count_180d": 322
     },
     {
       "tool_key": "ycc",
@@ -215,7 +210,7 @@
         "confidence": 6
       },
       "yield_reaction_30y": {},
-      "event_count_180d": 18
+      "event_count_180d": 19
     },
     {
       "tool_key": "fima_repo",
