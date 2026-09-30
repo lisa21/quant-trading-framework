@@ -1,5 +1,5 @@
 {
-  "asof": "2026-10-01T06:56",
+  "asof": "2026-10-01T07:27",
   "yields": {
     "10y": {
       "value": 5.293,
@@ -242,7 +242,7 @@
     },
     {
       "level": "warn",
-      "msg": "USDJPY 157.33 进入 155-160 口头干预区间 (JP MoF)",
+      "msg": "USDJPY 157.4 进入 155-160 口头干预区间 (JP MoF)",
       "key": "jpy_verbal_zone"
     },
     {
@@ -315,11 +315,11 @@
     "sofr_pct": 3.88,
     "iorb_pct": 3.9,
     "sofr_iorb_spread_bps": -2.0,
-    "usdjpy": 157.33,
-    "usdjpy_20d_pct": -1.79,
-    "usdjpy_20d_delta_pct": -1.79,
+    "usdjpy": 157.4,
+    "usdjpy_20d_pct": -1.75,
+    "usdjpy_20d_delta_pct": -1.75,
     "usdjpy_60d_high": 163.86,
-    "usdjpy_pullback_from_60d_high_pct": -3.99,
+    "usdjpy_pullback_from_60d_high_pct": -3.94,
     "krw_usd": 1356.5,
     "krw_20d_pct": -1.19,
     "jgb_10y_pct": 2.94,
@@ -338,9 +338,9 @@
     "kbe_spy_20d_delta_pct": -5.38,
     "cdx_ig_bps": 84.0,
     "cdx_hy_bps": 308.0,
-    "dxy": 101.45,
-    "dxy_pct_20d": 1.79,
-    "dxy_z_60d": 1.33,
+    "dxy": 101.46,
+    "dxy_pct_20d": 1.8,
+    "dxy_z_60d": 1.34,
     "asia_indices": {
       "N225": {
         "symbol": "^N225",
@@ -387,31 +387,31 @@
       "es_f": {
         "symbol": "ES=F",
         "label": "S&P 500 futures",
-        "price": 7721.5,
-        "chg_pct": -0.14
+        "price": 7727.75,
+        "chg_pct": -0.05
       },
       "nq_f": {
         "symbol": "NQ=F",
         "label": "Nasdaq futures",
-        "price": 30725.75,
-        "chg_pct": 0.37
+        "price": 30735.75,
+        "chg_pct": 0.4
       },
       "cl_f": {
         "symbol": "CL=F",
         "label": "WTI crude futures",
-        "price": 90.34,
-        "chg_pct": 1.07
+        "price": 90.19,
+        "chg_pct": 0.91
       },
       "gc_f": {
         "symbol": "GC=F",
         "label": "Gold futures",
-        "price": 4189.1,
-        "chg_pct": 0.22
+        "price": 4186.2,
+        "chg_pct": 0.16
       }
     },
     "oil_uso": 145.66,
     "oil_pct_20d": 3.3,
-    "oil_wti": 90.34,
+    "oil_wti": 90.19,
     "eem_pct_20d": 0.03,
     "eem_vs_spx_20d": -0.33,
     "volume_confirm": {
@@ -506,8 +506,8 @@
     }
   },
   "_meta": {
-    "cached_at": "2026-10-01T06:56:22.439194",
-    "age_sec": 400,
+    "cached_at": "2026-10-01T07:27:18.951009",
+    "age_sec": 343,
     "stale": false,
     "refreshing": false
   }
