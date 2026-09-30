@@ -4,9 +4,9 @@
   "hits": [],
   "count": 0,
   "_meta": {
-    "cached_at": "2026-09-30T18:33:08.085546",
-    "age_sec": 23398,
-    "stale": true,
-    "refreshing": true
+    "cached_at": "2026-10-01T01:03:06.585334",
+    "age_sec": 1800,
+    "stale": false,
+    "refreshing": false
   }
 }
