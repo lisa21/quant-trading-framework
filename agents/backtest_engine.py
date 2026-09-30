@@ -40,6 +40,33 @@ BACKTEST_DAYS = 60      # 回测最近 N 个交易日
 FORWARD_DAYS  = [1, 5, 10]   # 信号后的 N 天检查
 INITIAL_CASH  = 1_500_000    # Mid 模拟起始资金
 
+# F05: 回测的已知简化, 随结果一起输出, 不宣称"完整复刻线上策略"
+BACKTEST_ASSUMPTIONS = {
+    "macro": "固定 vix=18 / fg=55 / t10y2y=0.4 (无历史宏观数据)",
+    "regime": "仅按 SPY 与 MA50 偏离分 bull_extended/bull_pulling/bull_trending",
+    "events": "无事件/新闻/观点 (thesis_snapshot={})",
+    "signal_fill": "收盘信号 → 次日开盘成交; 最后一日信号不成交",
+    "stop_fill": "trailing stop / 阶梯止盈按当日收盘价近似成交, 先于置信度过滤",
+    "costs": "未计手续费/滑点",
+}
+
+
+def _pyramid_add_qty(pos_qty, price, size_usd, power, add_frac=0.50, pos_max=0.40) -> int:
+    """与 paper_trader._pyramid_add_qty 同一规则 (测试锁定一致):
+    加仓 = 当前持仓 × 50%; 金额 ≤ size_usd; 加仓后总市值 ≤ power × 40%."""
+    try:
+        pos_qty, price = float(pos_qty), float(price)
+        size_usd, power = float(size_usd), float(power)
+    except (TypeError, ValueError):
+        return 0
+    if pos_qty <= 0 or price <= 0 or size_usd <= 0:
+        return 0
+    want = int(pos_qty * add_frac)
+    room = int(size_usd // price)
+    if power > 0:
+        room = min(room, int(max(0.0, power * pos_max - pos_qty * price) // price))
+    return max(0, min(want, room))
+
 
 # ── 数据加载 ────────────────────────────────────────────────────────────────
 def load_history(ticker: str, days: int = 350) -> pd.DataFrame:
@@ -487,7 +514,61 @@ def _run_mid_impl(tickers=None, days=BACKTEST_DAYS) -> dict:
     from datetime import datetime as _dt, timezone as _tz
     from decision_context import from_snapshot as _from_snapshot
 
+    # F05 (Codex MODEL_AUDIT 2026-09-19) 执行纪律与实盘一致:
+    #   · 止损/阶梯止盈 (价格触发) 先于置信度过滤, 决策异常或低置信度日也执行; 按当日收盘价近似成交.
+    #   · 方向信号 (BUY/加仓/re-BUY/REDUCE/SELL) 在当日收盘产生 → 次日开盘成交, 不用产生信号的同一收盘价.
+    #   · 加仓规则与实盘 paper_trader._pyramid_add_qty 一致.
+    pending: dict[str, dict] = {}   # full → 待次日开盘执行的订单
+
+    def _open_price(row) -> float:
+        try:
+            o = float(row["open"])
+            if o > 0 and o == o:
+                return o
+        except (KeyError, TypeError, ValueError):
+            pass
+        return float(row["close"])
+
+    def _execute_pending(d, full, row):
+        order = pending.pop(full, None)
+        if not order:
+            return
+        px = _open_price(row)
+        ds = d.strftime("%Y-%m-%d")
+        pos_now = account.positions.get(full, {"qty": 0, "cost": 0})
+        kind = order["kind"]
+        if kind == "BUY":
+            if pos_now["qty"] == 0 and account.buy(ds, full, order["qty"], px, order["reason"]):
+                account.last_action_meta[full] = {
+                    "action": "BUY", "date": d, "price": px,
+                    "entry_price": px, "entry_high": px,
+                    "entry_qty": order["qty"], "entry_conf": order["conf"],
+                    "layer": 1, "tp_hit": [],
+                }
+        elif kind == "PYRAMID":
+            if pos_now["qty"] > 0 and account.buy(ds, full, order["qty"], px, order["reason"]):
+                meta = account.last_action_meta.get(full, {})
+                meta["layer"] = order["layer"]
+                meta["entry_conf"] = order["conf"]
+                account.last_action_meta[full] = meta
+        elif kind == "REBUY":
+            if account.buy(ds, full, order["qty"], px, order["reason"]):
+                last = account.last_action_meta.get(full) or {}
+                last["rebuy_done"] = True
+                account.last_action_meta[full] = last
+        elif kind == "REDUCE":
+            qty = min(order["qty"], pos_now["qty"])
+            if qty > 0 and account.sell(ds, full, qty, px, order["reason"]):
+                account.last_action_meta[full] = {
+                    "action": "REDUCE", "date": d, "price": px, "qty": qty, "rebuy_done": False}
+        elif kind == "SELL":
+            if pos_now["qty"] > 0:
+                account.sell(ds, full, pos_now["qty"], px, order["reason"])
+
     for d in dates:
+        # 1) 昨日收盘信号 → 今日开盘成交
+        for tk in tickers:
+            _execute_pending(d, "US." + tk, histories[tk].loc[d])
         prices_today = {tk: float(histories[tk].loc[d, "close"]) for tk in tickers}
         power_today = account.value(prices_today)
         regime_today = _daily_regime(d)   # Layer 1 子类
@@ -496,9 +577,42 @@ def _run_mid_impl(tickers=None, days=BACKTEST_DAYS) -> dict:
             as_of_utc = d.to_pydatetime().replace(tzinfo=_tz.utc)
         except Exception:
             as_of_utc = _dt.now(_tz.utc)
+        ds = d.strftime("%Y-%m-%d")
         for tk in tickers:
             row = histories[tk].loc[d]
             full = "US." + tk
+            price = float(row["close"])
+            # 2) 纪律性管理 (trailing stop / 阶梯止盈) — 不受置信度/决策异常影响
+            pos_data = account.positions.get(full)
+            if pos_data and pos_data["qty"] > 0:
+                meta = account.last_action_meta.get(full, {})
+                entry_price = meta.get("entry_price", pos_data["cost"])
+                entry_high  = max(meta.get("entry_high", entry_price), price)
+                meta["entry_high"] = entry_high
+                account.last_action_meta[full] = meta
+                ts_pct = 0.08 * _lev_sqrt(full)
+                if entry_high > 0 and (price - entry_high) / entry_high <= -ts_pct:
+                    qty = pos_data["qty"]
+                    account.sell(ds, full, qty, price,
+                                 f"TRAIL-STOP from ${entry_high:.2f} ({(price-entry_high)/entry_high*100:+.1f}%) lev{_lev_sqrt(full):.2f}x")
+                    account.last_action_meta[full] = {"action":"TRAIL_STOP","date":d,"price":price,"qty":qty,"rebuy_done":False}
+                    pending.pop(full, None)
+                    continue
+                gain = (price - entry_price) / entry_price if entry_price else 0.0
+                tp_hit = set(meta.get("tp_hit", []))
+                original_qty = meta.get("entry_qty", pos_data["qty"])
+                s_tp = _lev_sqrt(full)
+                for thresh, frac_tp, label in [(0.15*s_tp,0.30,"tp15"),(0.30*s_tp,0.30,"tp30"),(0.50*s_tp,0.40,"tp50")]:
+                    if gain >= thresh and label not in tp_hit:
+                        qty = max(1, min(int(original_qty * frac_tp), pos_data["qty"]))
+                        if qty > 0:
+                            account.sell(ds, full, qty, price, f"TP-{label} (+{gain*100:.0f}%)")
+                            tp_hit.add(label)
+                            meta["tp_hit"] = list(tp_hit)
+                            account.last_action_meta[full] = meta
+                        break
+
+            # 3) 方向信号 (决策异常/低置信度 → 本日不产生新订单)
             try:
                 mkt = build_mkt(full, row)
                 # WP04: per-bar frozen context (thesis empty → 无 look-ahead)
@@ -519,55 +633,24 @@ def _run_mid_impl(tickers=None, days=BACKTEST_DAYS) -> dict:
             conf = dec.get("confidence", 0) or 0
             if conf < conf_min:
                 continue
-            price = float(row["close"])
             pos = account.positions.get(full, {"qty":0,"cost":0})
-            # ── 纪律性管理 (TP / SL / Pyramid) ──
-            pos_data = account.positions.get(full)
-            if pos_data and pos_data["qty"] > 0:
-                meta = account.last_action_meta.get(full, {})
-                entry_price = meta.get("entry_price", pos_data["cost"])
-                entry_high  = max(meta.get("entry_high", entry_price), price)
-                meta["entry_high"] = entry_high
-                account.last_action_meta[full] = meta
-                # Trailing stop -8%
-                ts_pct = 0.08 * _lev_sqrt(full)
-                if entry_high > 0 and (price - entry_high) / entry_high <= -ts_pct:
-                    qty = pos_data["qty"]
-                    account.sell(d.strftime("%Y-%m-%d"), full, qty, price,
-                                 f"TRAIL-STOP from ${entry_high:.2f} ({(price-entry_high)/entry_high*100:+.1f}%) lev{_lev_sqrt(full):.2f}x")
-                    account.last_action_meta[full] = {"action":"TRAIL_STOP","date":d,"price":price,"qty":qty,"rebuy_done":False}
-                    continue
-                # 阶梯止盈 (sqrt(leverage) 缩放)
-                gain = (price - entry_price) / entry_price
-                tp_hit = set(meta.get("tp_hit", []))
-                original_qty = meta.get("entry_qty", pos_data["qty"])
-                s_tp = _lev_sqrt(full)
-                for thresh, frac, label in [(0.15*s_tp,0.30,"tp15"),(0.30*s_tp,0.30,"tp30"),(0.50*s_tp,0.40,"tp50")]:
-                    if gain >= thresh and label not in tp_hit:
-                        qty = max(1, min(int(original_qty * frac), pos_data["qty"]))
-                        if qty > 0:
-                            account.sell(d.strftime("%Y-%m-%d"), full, qty, price, f"TP-{label} (+{gain*100:.0f}%)")
-                            tp_hit.add(label)
-                            meta["tp_hit"] = list(tp_hit)
-                            account.last_action_meta[full] = meta
-                        break
 
             # auto re-BUY check v2: 平回到 vol-target 目标仓位
             last = account.last_action_meta.get(full)
-            if last and last["action"] == "REDUCE" and action in BUY_ACTIONS:
+            if last and last.get("action") == "REDUCE" and action in BUY_ACTIONS:
                 hours_since = (d - last["date"]).total_seconds() / 3600
                 bounce = (price - last["price"]) / last["price"]
                 if hours_since < 24*7 and bounce >= 0.03 * _lev_sqrt(full) and not last.get("rebuy_done"):
-                    # 算 vol-target 目标仓位（与首次 BUY / Pyramid 共用尺度与 probe 规则）
                     frac = _position_fraction(full, regime_today, conf, power_today, action)
                     if frac > 0:
                         target_qty = int(power_today * frac // price)
                         current_qty = pos["qty"]
                         rebuy_qty = max(0, target_qty - current_qty)
-                        if rebuy_qty > 0 and account.buy(d.strftime("%Y-%m-%d"), full, rebuy_qty, price, f"REBUY→target ({current_qty}→{target_qty}, bounce +{bounce*100:.1f}%)"):
-                            last["rebuy_done"] = True
+                        if rebuy_qty > 0:
+                            pending[full] = {"kind": "REBUY", "qty": rebuy_qty, "conf": conf,
+                                             "reason": f"REBUY→target ({current_qty}→{target_qty}, bounce +{bounce*100:.1f}%)"}
                             continue
-            # Pyramid: 已持仓 + conf 高于入场 → 加 50% 原仓
+            # Pyramid: 已持仓 + conf 高于入场 → 加 50% 当前仓 (与实盘同一规则)
             if action in BUY_ACTIONS and pos["qty"] > 0:
                 meta = account.last_action_meta.get(full, {})
                 entry_conf = meta.get("entry_conf", conf_min)
@@ -575,38 +658,27 @@ def _run_mid_impl(tickers=None, days=BACKTEST_DAYS) -> dict:
                 if conf >= entry_conf + 1 and layer < 3:
                     frac = _position_fraction(full, regime_today, conf, power_today, action)
                     if frac > 0:
-                        add_qty = int(power_today * frac * 0.5 // price)
-                        if add_qty > 0 and account.buy(d.strftime("%Y-%m-%d"), full, add_qty, price, f"PYRAMID L{layer+1} (conf {entry_conf}→{conf})"):
-                            meta["layer"] = layer + 1
-                            meta["entry_conf"] = conf
-                            account.last_action_meta[full] = meta
+                        add_qty = _pyramid_add_qty(pos["qty"], price, power_today * frac, power_today)
+                        if add_qty > 0:
+                            pending[full] = {"kind": "PYRAMID", "qty": add_qty, "conf": conf,
+                                             "layer": layer + 1,
+                                             "reason": f"PYRAMID L{layer+1} (conf {entry_conf}→{conf})"}
                 continue
             if action in BUY_ACTIONS and pos["qty"] == 0:
-                # vol-target sizing（与 re-BUY / Pyramid 共用同一实现）
                 frac = _position_fraction(full, regime_today, conf, power_today, action)
                 if frac > 0:
-                    size = power_today * frac
-                    qty = int(size // price)
+                    qty = int(power_today * frac // price)
                     if qty > 0:
-                        if account.buy(d.strftime("%Y-%m-%d"), full, qty, price, f"{action} conf={conf} frac={frac:.0%}"):
-                            # 记 entry 元数据 (给 TP/SL/Pyramid 用)
-                            account.last_action_meta[full] = {
-                                "action": "BUY", "date": d, "price": price,
-                                "entry_price": price, "entry_high": price,
-                                "entry_qty": qty, "entry_conf": conf,
-                                "layer": 1, "tp_hit": [],
-                            }
+                        pending[full] = {"kind": "BUY", "qty": qty, "conf": conf,
+                                         "reason": f"{action} conf={conf} frac={frac:.0%}"}
             elif action == "REDUCE" and pos["qty"] > 0:
-                qty = max(1, pos["qty"] // 2)
-                account.sell(d.strftime("%Y-%m-%d"), full, qty, price, f"REDUCE conf={conf}")
-                # 记录 REDUCE 元信息供 re-BUY 用
-                account.last_action_meta[full] = {
-                    "action":"REDUCE","date":d,"price":price,"qty":qty,"rebuy_done":False
-                }
+                pending[full] = {"kind": "REDUCE", "qty": max(1, pos["qty"] // 2), "conf": conf,
+                                 "reason": f"REDUCE conf={conf}"}
             elif action == "SELL" and pos["qty"] > 0:
-                account.sell(d.strftime("%Y-%m-%d"), full, pos["qty"], price, f"SELL conf={conf}")
+                pending[full] = {"kind": "SELL", "qty": pos["qty"], "conf": conf,
+                                 "reason": f"SELL conf={conf}"}
         nav = account.value(prices_today)
-        account.nav_curve.append((d.strftime("%Y-%m-%d"), nav))
+        account.nav_curve.append((ds, nav))
 
     # buy-and-hold 终值
     bh_nav_end = sum(bh_shares[tk] * float(histories[tk].loc[dates[-1], "close"]) for tk in tickers)
@@ -628,6 +700,8 @@ def _run_mid_impl(tickers=None, days=BACKTEST_DAYS) -> dict:
         "max_dd":     float(max_dd),
         "history":    [t.__dict__ for t in account.history],
         "nav_curve":  list(account.nav_curve),
+        "unfilled_last_day_orders": sorted(pending),
+        "assumptions": BACKTEST_ASSUMPTIONS,
     }
 
 
@@ -643,6 +717,8 @@ def report_mid(result: dict, label: str = "Mid") -> list[str]:
     lines.append(f"  B&H 基线:   {result['bh_return']:+7.2f}%")
     lines.append(f"  alpha:      {result['alpha']:+7.2f}%   {'✅ 跑赢' if result['alpha']>0 else '❌ 跑输'}")
     lines.append(f"  最大回撤:   {result['max_dd']:+7.2f}%")
+    for k, v in (result.get("assumptions") or {}).items():
+        lines.append(f"  假设[{k}]: {v}")
     return lines
 
 

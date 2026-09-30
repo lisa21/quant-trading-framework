@@ -1056,29 +1056,35 @@ class BacktestContractTests(unittest.TestCase):
              ) as multiplier:
             result = backtest_engine.run_mid(tickers=["GLD"], days=3)
         multiplier.assert_any_call(5, 5, probe=False)
-        self.assertGreaterEqual(result["n_trades"], 2)
+        # 2026-09-30 (F05 + 9/24 加仓修复): 首仓已达 40% 单票上限, 按实盘同一规则不再加仓;
+        # 原断言 n_trades>=2 依赖旧的"加整笔目标 50%"行为. 这里锁定: 加仓后不超上限.
+        self.assertGreaterEqual(result["n_trades"], 1)
+        self.assertFalse(any("PYRAMID" in t["reason"] for t in result["history"]),
+                         "position already at 40% cap → no pyramid add")
 
     def test_mid_backtest_sell_signal_cannot_rebuy_after_reduce(self):
-        dates = pd.date_range("2026-07-27", periods=3, freq="B")
+        # 2026-09-30 F05: 信号次日开盘成交 → 加第 4 天让第 3 天的 SELL 能成交 (测试意图不变)
+        dates = pd.date_range("2026-07-27", periods=4, freq="B")
         frame = pd.DataFrame({
-            "close": [100.0, 100.0, 104.0],
-            "ma50": [100.0, 100.0, 100.0],
-            "rsi_14": [40.0, 40.0, 40.0],
-            "ma20": [100.0, 100.0, 100.0],
-            "bb_pct": [0.5, 0.5, 0.5],
-            "cci_20": [0.0, 0.0, 0.0],
+            "close": [100.0, 100.0, 104.0, 104.0],
+            "ma50": [100.0, 100.0, 100.0, 100.0],
+            "rsi_14": [40.0, 40.0, 40.0, 40.0],
+            "ma20": [100.0, 100.0, 100.0, 100.0],
+            "bb_pct": [0.5, 0.5, 0.5, 0.5],
+            "cci_20": [0.0, 0.0, 0.0, 0.0],
         }, index=dates)
         decisions = [
             {"action": "BUY", "confidence": 3},
             {"action": "REDUCE", "confidence": 3},
             {"action": "SELL", "confidence": 3},
+            {"action": "HOLD", "confidence": 3},
         ]
         with patch.object(backtest_engine, "load_history", return_value=frame.copy()), \
              patch.object(backtest_engine, "add_indicators", side_effect=lambda value: value), \
              patch.object(backtest_engine, "build_mkt", return_value={"ticker": "US.GLD"}), \
              patch.object(decision_agent, "_conf_scale", return_value=5), \
              patch.object(decision_agent, "get_decision", side_effect=decisions):
-            result = backtest_engine.run_mid(tickers=["GLD"], days=3)
+            result = backtest_engine.run_mid(tickers=["GLD"], days=4)
         self.assertEqual([trade["side"] for trade in result["history"]], ["BUY", "SELL", "SELL"])
         self.assertNotIn("REBUY", " ".join(trade["reason"] for trade in result["history"]))
 

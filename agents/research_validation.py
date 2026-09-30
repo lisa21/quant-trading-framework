@@ -58,6 +58,42 @@ def _stats(trades: list[dict], hold: int) -> dict:
     }
 
 
+# F06 准入 (2026-09-30): 旧门槛 "≥5 笔 + 胜率≥52%" 不足以区分运气与规则有效.
+MIN_OOS_TRADES = 20          # 独立 (不重叠) 样本数
+WILSON_Z = 1.645             # 单侧 95%
+MIN_FOLD_STABILITY = 0.5
+
+
+def _wilson_lower(wins: float, n: int, z: float = WILSON_Z) -> float:
+    """胜率的 Wilson 置信下界 (0~1)."""
+    if n <= 0:
+        return 0.0
+    p = wins / n
+    denom = 1 + z * z / n
+    centre = p + z * z / (2 * n)
+    margin = z * math.sqrt(p * (1 - p) / n + z * z / (4 * n * n))
+    return max(0.0, (centre - margin) / denom)
+
+
+def _admission(aggregate: dict, stability: float) -> tuple[bool, dict]:
+    """返回 (是否通过, 明细). 所有条件必须同时满足."""
+    n = int(aggregate.get("n", 0))
+    wins = round(aggregate.get("win_rate", 0.0) / 100.0 * n)
+    lower = _wilson_lower(wins, n) * 100
+    checks = {
+        "n": n >= MIN_OOS_TRADES,
+        "win_rate_lower_bound": lower > 50.0,
+        "avg_ret": aggregate.get("avg_ret", 0.0) > 0,
+        "fold_stability": stability >= MIN_FOLD_STABILITY,
+    }
+    info = {
+        "min_trades": MIN_OOS_TRADES,
+        "win_rate_lower_bound": round(lower, 1),
+        "failed": [k for k, ok in checks.items() if not ok],
+    }
+    return all(checks.values()), info
+
+
 def evaluate_rule_walk_forward(
     rule: dict,
     rows,
@@ -90,11 +126,17 @@ def evaluate_rule_walk_forward(
     all_oos: list[dict] = []
     for split in splits:
         trades = []
-        last_entry = min(split.test_end, n - hold)
-        for i in range(split.test_start, last_entry):
+        # F06 (2026-09-30): 标签 (i+hold 的价格) 必须仍在本测试段内, 不能读到 test_end 之后.
+        last_entry = min(split.test_end, n) - hold
+        # F06: 持有期内不再开新样本 → 样本互不重叠, n 是独立样本数.
+        next_allowed = split.test_start
+        for i in range(split.test_start, max(split.test_start, last_entry)):
+            if i < next_allowed:
+                continue
             row = rows.iloc[i] if hasattr(rows, "iloc") else rows[i]
             if not check_rule(row, rule):
                 continue
+            next_allowed = i + hold
             future = rows.iloc[i + hold] if hasattr(rows, "iloc") else rows[i + hold]
             entry = float(row["close"])
             exit_price = float(future["close"])
@@ -130,11 +172,7 @@ def evaluate_rule_walk_forward(
     positive_folds = sum(1 for fold in folds if fold["n"] > 0 and fold["win_rate"] >= 50)
     active_folds = sum(1 for fold in folds if fold["n"] > 0)
     stability = positive_folds / active_folds if active_folds else 0.0
-    passed = bool(
-        aggregate["n"] >= 5
-        and aggregate["win_rate"] >= 52.0
-        and stability >= 0.5
-    )
+    passed, admission = _admission(aggregate, stability)
     return {
         "method": "purged_walk_forward",
         "purge_days": hold,
@@ -147,6 +185,10 @@ def evaluate_rule_walk_forward(
         "oos_sharpe": round(aggregate["sharpe"], 2),
         "fold_stability": round(stability, 3),
         "passed": passed,
+        "admission": admission,
+        "sampling": "non_overlapping",
+        # 规则参数固定, 训练段不参与拟合, 只用于 purge/embargo 定位 (如实标注)
+        "train_used_for_fitting": False,
         "folds": folds,
     }
 

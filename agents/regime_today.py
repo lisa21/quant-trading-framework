@@ -38,8 +38,68 @@ ET = ZoneInfo("America/New_York")
 _STALE_WARNED_FOR: str | None = None
 
 
+def _easter(year: int) -> date:
+    """Anonymous Gregorian algorithm."""
+    a = year % 19
+    b, c = divmod(year, 100)
+    d_, e = divmod(b, 4)
+    f = (b + 8) // 25
+    g = (b - f + 1) // 3
+    h = (19 * a + b - d_ - g + 15) % 30
+    i, k = divmod(c, 4)
+    l = (32 + 2 * e + 2 * i - h - k) % 7
+    m = (a + 11 * h + 22 * l) // 451
+    month = (h + l - 7 * m + 114) // 31
+    day = (h + l - 7 * m + 114) % 31 + 1
+    return date(year, month, day)
+
+
+def _nth_weekday(year: int, month: int, weekday: int, n: int) -> date:
+    d = date(year, month, 1)
+    d += timedelta(days=(weekday - d.weekday()) % 7)
+    return d + timedelta(weeks=n - 1)
+
+
+def _last_weekday(year: int, month: int, weekday: int) -> date:
+    d = date(year, month + 1, 1) - timedelta(days=1) if month < 12 else date(year, 12, 31)
+    return d - timedelta(days=(d.weekday() - weekday) % 7)
+
+
+def _observed(d: date) -> date:
+    if d.weekday() == 5:
+        return d - timedelta(days=1)
+    if d.weekday() == 6:
+        return d + timedelta(days=1)
+    return d
+
+
+def nyse_holidays(year: int) -> set[date]:
+    """NYSE 全天休市日 (规则推算, 无网络). 提前收盘日仍算交易日.
+    2026-09-30: Codex MODEL_AUDIT 指出 _market_date 只处理周末, 未处理交易所节假日."""
+    out = set()
+    ny = date(year, 1, 1)
+    if ny.weekday() != 5:                     # 元旦逢周六: 不在前一年 12/31 补休
+        out.add(_observed(ny))
+    out.add(_nth_weekday(year, 1, 0, 3))      # MLK Day
+    out.add(_nth_weekday(year, 2, 0, 3))      # Washington's Birthday
+    out.add(_easter(year) - timedelta(days=2))  # Good Friday
+    out.add(_last_weekday(year, 5, 0))        # Memorial Day
+    if year >= 2022:
+        out.add(_observed(date(year, 6, 19)))  # Juneteenth
+    out.add(_observed(date(year, 7, 4)))      # Independence Day
+    out.add(_nth_weekday(year, 9, 0, 1))      # Labor Day
+    out.add(_nth_weekday(year, 11, 3, 4))     # Thanksgiving
+    out.add(_observed(date(year, 12, 25)))    # Christmas
+    return {d for d in out if d.year == year}
+
+
+def is_nyse_session(d: date) -> bool:
+    return d.weekday() < 5 and d not in nyse_holidays(d.year)
+
+
 def _next_weekday(d: date) -> date:
-    while d.weekday() >= 5:
+    """下一个 NYSE 交易日 (含当天). 名称保留以兼容旧调用; 现在同时跳过交易所节假日."""
+    while not is_nyse_session(d):
         d += timedelta(days=1)
     return d
 
@@ -53,7 +113,7 @@ def _market_date(now: datetime | None = None) -> str:
     """
     now_et = now.astimezone(ET) if now else datetime.now(ET)
     d = now_et.date()
-    if now_et.weekday() >= 5:
+    if not is_nyse_session(d):
         d = _next_weekday(d)
     elif now_et.hour >= 20:
         d = _next_weekday(d + timedelta(days=1))
