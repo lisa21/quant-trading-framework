@@ -8,7 +8,7 @@
       "rsi": 69.3,
       "vol_ratio": 1.18,
       "trend": "up",
-      "ts": "2026-09-30 21:35:52",
+      "ts": "2026-09-30 22:21:55",
       "display_profile": {
         "card_group": "main",
         "asset_class": "equity",
@@ -35,7 +35,7 @@
       "rsi": 47.7,
       "vol_ratio": 1.18,
       "trend": "down",
-      "ts": "2026-09-30 21:35:41",
+      "ts": "2026-09-30 22:21:54",
       "display_profile": {
         "card_group": "main",
         "asset_class": "equity",
@@ -62,7 +62,7 @@
       "rsi": 61.6,
       "vol_ratio": 0.4,
       "trend": "up",
-      "ts": "2026-09-30 21:35:40",
+      "ts": "2026-09-30 22:21:53",
       "display_profile": {
         "card_group": "main",
         "asset_class": "equity",
@@ -89,7 +89,7 @@
       "rsi": 28.1,
       "vol_ratio": 1.12,
       "trend": "down",
-      "ts": "2026-09-30 21:35:39",
+      "ts": "2026-09-30 22:21:53",
       "display_profile": {
         "card_group": "macro",
         "asset_class": "fixed_income",
@@ -116,7 +116,7 @@
       "rsi": 62.2,
       "vol_ratio": 0.51,
       "trend": "up",
-      "ts": "2026-09-30 21:35:39",
+      "ts": "2026-09-30 22:21:52",
       "display_profile": {
         "card_group": "main",
         "asset_class": "equity",
@@ -132,7 +132,7 @@
       "conf": 0,
       "scale": 5,
       "regime": "中性震荡",
-      "bull_count": 2,
+      "bull_count": 3,
       "bear_count": 0
     },
     "NVDA": {
@@ -143,7 +143,7 @@
       "rsi": 52.2,
       "vol_ratio": 0.87,
       "trend": "up",
-      "ts": "2026-09-30 21:35:38",
+      "ts": "2026-09-30 22:21:51",
       "display_profile": {
         "card_group": "main",
         "asset_class": "equity",
@@ -170,7 +170,7 @@
       "rsi": 46.7,
       "vol_ratio": 0.86,
       "trend": "up",
-      "ts": "2026-09-30 21:35:38",
+      "ts": "2026-09-30 22:21:51",
       "display_profile": {
         "card_group": "main",
         "asset_class": "equity",
@@ -197,7 +197,7 @@
       "rsi": 58.9,
       "vol_ratio": 0.98,
       "trend": "up",
-      "ts": "2026-09-30 21:35:26",
+      "ts": "2026-09-30 22:21:50",
       "display_profile": {
         "card_group": "main",
         "asset_class": "equity",
@@ -209,7 +209,7 @@
         "show_supply_chain": true,
         "fundamental_profile": "industrial"
       },
-      "action_zh": "持仓观望",
+      "action_zh": "关注买入",
       "conf": 4,
       "scale": 5,
       "regime": "中性震荡",
@@ -224,7 +224,7 @@
       "rsi": 49.4,
       "vol_ratio": 1.37,
       "trend": "up",
-      "ts": "2026-09-30 21:35:26",
+      "ts": "2026-09-30 22:21:50",
       "display_profile": {
         "card_group": "main",
         "asset_class": "equity",
@@ -240,7 +240,7 @@
       "conf": 0,
       "scale": 5,
       "regime": "中性震荡",
-      "bull_count": 5,
+      "bull_count": 4,
       "bear_count": 0
     },
     "IEI": {
@@ -251,7 +251,7 @@
       "rsi": 24.3,
       "vol_ratio": 3.03,
       "trend": "down",
-      "ts": "2026-09-30 21:35:25",
+      "ts": "2026-09-30 22:21:49",
       "display_profile": {
         "card_group": "macro",
         "asset_class": "fixed_income",
@@ -278,7 +278,7 @@
       "rsi": 46.6,
       "vol_ratio": 1.62,
       "trend": "down",
-      "ts": "2026-09-30 21:35:24",
+      "ts": "2026-09-30 22:21:48",
       "display_profile": {
         "card_group": "main",
         "asset_class": "equity",
@@ -305,7 +305,7 @@
       "rsi": 62.9,
       "vol_ratio": 0.9,
       "trend": "down",
-      "ts": "2026-09-30 21:35:24",
+      "ts": "2026-09-30 22:21:48",
       "display_profile": {
         "card_group": "main",
         "asset_class": "equity",
@@ -332,7 +332,7 @@
       "rsi": 35.3,
       "vol_ratio": 0.8,
       "trend": "down",
-      "ts": "2026-09-30 21:35:23",
+      "ts": "2026-09-30 22:21:47",
       "display_profile": {
         "card_group": "macro",
         "asset_class": "commodity",
@@ -355,7 +355,7 @@
       "rsi": 57.5,
       "vol_ratio": 1.18,
       "trend": "up",
-      "ts": "2026-09-30 21:34:58",
+      "ts": "2026-09-30 22:21:40",
       "display_profile": {
         "card_group": "main",
         "asset_class": "equity",
@@ -382,7 +382,7 @@
       "rsi": 50.4,
       "vol_ratio": 0.77,
       "trend": "up",
-      "ts": "2026-09-30 21:34:57",
+      "ts": "2026-09-30 22:21:39",
       "display_profile": {
         "card_group": "main",
         "asset_class": "equity",
@@ -409,7 +409,7 @@
       "rsi": 61.3,
       "vol_ratio": 0.91,
       "trend": "up",
-      "ts": "2026-09-30 21:34:57",
+      "ts": "2026-09-30 22:21:39",
       "display_profile": {
         "card_group": "main",
         "asset_class": "equity",
@@ -436,7 +436,7 @@
       "rsi": 60.5,
       "vol_ratio": 0.96,
       "trend": "up",
-      "ts": "2026-09-30 21:34:56",
+      "ts": "2026-09-30 22:21:38",
       "display_profile": {
         "card_group": "main",
         "asset_class": "equity",
@@ -452,7 +452,7 @@
       "conf": 2,
       "scale": 5,
       "regime": "中性震荡",
-      "bull_count": 3,
+      "bull_count": 2,
       "bear_count": 0
     }
   },
