@@ -13825,14 +13825,14 @@
   "cache_contract": "15efd89eda8e",
   "_meta": {
     "cached_at": "2026-09-30T18:32:16.014111",
-    "age_sec": 28847,
+    "age_sec": 30647,
     "stale": false,
     "refreshing": false
   },
   "flow_meta": {
     "generated_at": "2026-09-30T17:06:25.667556+00:00",
     "status": "ready",
-    "age_sec": 1558.7,
+    "age_sec": 3358.9,
     "stale": false
   }
 }
