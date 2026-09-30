@@ -3,17 +3,17 @@
   "meetings": [
     {
       "date": "2026-10-28",
-      "days_until": 28,
+      "days_until": 27,
       "probabilities": {
-        "hold": 56,
-        "hike_25": 44
+        "hold": 60,
+        "hike_25": 40
       },
       "most_likely": "hold",
       "consensus_direction": "hawkish_lean"
     },
     {
       "date": "2026-12-09",
-      "days_until": 70,
+      "days_until": 69,
       "probabilities": {
         "hold": 15,
         "hike_25": 85
@@ -23,7 +23,7 @@
     },
     {
       "date": "2027-01-27",
-      "days_until": 119,
+      "days_until": 118,
       "probabilities": {
         "hold": 47,
         "hike_25": 53
@@ -33,7 +33,7 @@
     },
     {
       "date": "2027-03-17",
-      "days_until": 168,
+      "days_until": 167,
       "probabilities": {
         "hold": 25,
         "hike_25": 75
@@ -44,9 +44,9 @@
   ],
   "implied_terminal_rate": "4.75-5.00",
   "implied_terminal_date": "2027-Q3",
-  "data_snapshot_date": "2026-09-30",
-  "recent_event_impact": "近7天内未发现 NFP/CPI/PPI/FOMC/Fed Chair Warsh 讲话；最新已知宏观事件为 9/4 August NFP +162K、失业率4.1%，9/10 August PPI +0.4% m/m、+5.4% y/y，9/11 August CPI +0.4% m/m、+3.4% y/y，以及9/16 FOMC加息25bp，整体推动市场维持偏鹰预期。",
-  "commentary": "Data snapshot 为2026-09-30收盘/当日抓取；CME官方页面可见最近更新时间为2026-09-28 16:55 CT，另用30-Day Fed Funds futures 复制CME FedWatch方法的当日源校验。August NFP强于近12个月均值、CPI/PPI均偏热，叠加9/16 Warsh任内首次加息后，市场对未来数次会议继续加息的定价明显高于降息或维持不变。",
+  "data_snapshot_date": "2026-09-30 close",
+  "recent_event_impact": "过去7天内未发现NFP/CPI/PPI正式发布或FOMC决议；9月就业报告计划于2026-10-02发布，尚未反映。最近已反映的关键宏观信息是2026-09-11发布的8月CPI偏热，以及2026-09-16 FOMC加息25bp至3.75-4.00%。",
+  "commentary": "数据快照为2026-09-30收盘，晚于9/16 FOMC加息和8月CPI偏热信息，但早于10/2 NFP，因此不包含即将发布的就业冲击。市场路径明显偏鹰：10月仍以按兵不动略占优，但12月、1月和3月均隐含继续加息的较高概率。",
   "sources": [
     {
       "url": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
@@ -54,31 +54,31 @@
     },
     {
       "url": "https://sessionopen.com/fed-watch",
-      "type": "fed_funds_futures_snapshot"
+      "type": "fed_funds_futures_backup"
     },
     {
-      "url": "https://www.frenzycap.com/fedwatch",
-      "type": "fedwatch_methodology_replica"
+      "url": "https://www.investing.com/central-banks/fed-rate-monitor",
+      "type": "fedwatch_backup"
     },
     {
-      "url": "https://www.bls.gov/news.release/empsit.htm",
-      "type": "nfp"
-    },
-    {
-      "url": "https://www.bls.gov/news.release/ppi.htm",
-      "type": "ppi"
+      "url": "https://www.bls.gov/ces/",
+      "type": "event_calendar"
     },
     {
       "url": "https://www.bls.gov/news.release/cpi.htm",
-      "type": "cpi"
+      "type": "cpi_release"
+    },
+    {
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm",
+      "type": "fomc_statement"
     }
   ],
   "confidence": "medium",
   "source_via": "codex_cli_websearch",
-  "fetched_at": "2026-09-30T10:52:14+00:00",
+  "fetched_at": "2026-09-30T18:53:48+00:00",
   "_meta": {
-    "cached_at": "2026-09-30T19:52:14.621884",
-    "age_sec": 27648,
+    "cached_at": "2026-10-01T03:53:48.460086",
+    "age_sec": 554,
     "stale": false,
     "refreshing": false
   }

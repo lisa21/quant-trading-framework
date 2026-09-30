@@ -5,41 +5,41 @@
   "analyst_consensus": {
     "n_analysts": 12,
     "recommendation": "hold",
-    "current_price": 116.75,
+    "current_price": 114.5,
     "forward_eps": 7.91,
     "trailing_eps": 4.31,
     "eps_growth_pct": 83.4,
-    "forward_pe": 14.77,
-    "trailing_pe": 27.09,
+    "forward_pe": 14.48,
+    "trailing_pe": 26.57,
     "target_mean": 90.17,
     "target_high": 105.0,
     "target_low": 66.0,
-    "target_upside_pct": -22.8,
+    "target_upside_pct": -21.3,
     "revenue_growth_pct": -4.2,
     "earnings_growth_pct": 255.6,
     "next_earnings": "2026-11-10",
-    "implied_pe_hold": 214.17,
+    "implied_pe_hold": 210.04,
     "implied_pe_hold_upside": 83.4,
     "peg_fair_price": 659.39,
-    "peg_ratio": 0.18,
-    "hist_pe_median": 106.04,
+    "peg_ratio": 0.17,
+    "hist_pe_median": 106.0,
     "hist_pe_p25": 92.48,
     "hist_pe_p75": 140.71,
-    "hist_pe_n_days": 627,
-    "implied_hist_median": 838.39,
+    "hist_pe_n_days": 628,
+    "implied_hist_median": 838.08,
     "implied_hist_p25": 731.18,
     "implied_hist_p75": 1112.51,
-    "implied_hist_upside": 618.1,
-    "peer_pe_median": 18.32,
+    "implied_hist_upside": 631.9,
+    "peer_pe_median": 18.25,
     "peer_pe_n_peers": 5,
     "peer_pe_details": [
       {
         "ticker": "SWKS",
-        "pe": 17.74
+        "pe": 17.22
       },
       {
         "ticker": "AVGO",
-        "pe": 18.32
+        "pe": 18.25
       },
       {
         "ticker": "6981.T",
@@ -47,15 +47,15 @@
       },
       {
         "ticker": "QCOM",
-        "pe": 18.04
+        "pe": 18.06
       },
       {
         "ticker": "MTSI",
-        "pe": 33.5
+        "pe": 33.62
       }
     ],
-    "implied_peer_median": 144.85,
-    "implied_peer_upside": 24.1,
+    "implied_peer_median": 144.29,
+    "implied_peer_upside": 26.0,
     "source": "yfinance analyst aggregation",
     "forward_estimates": {
       "earnings": {
@@ -203,38 +203,38 @@
         "key": "analyst_target",
         "label": "分析师目标均值",
         "implied_price": 90.17,
-        "gap_pct": -22.8
+        "gap_pct": -21.3
       },
       {
         "key": "pe_hold",
         "label": "前瞻 EPS × 当前估值",
-        "implied_price": 214.17,
+        "implied_price": 210.04,
         "gap_pct": 83.4
       },
       {
         "key": "peer_pe",
         "label": "前瞻 EPS × 同行 PE 中位",
-        "implied_price": 144.85,
-        "gap_pct": 24.1
+        "implied_price": 144.29,
+        "gap_pct": 26.0
       }
     ],
-    "median_gap_pct": 24.1,
+    "median_gap_pct": 26.0,
     "revision_signal": "upward",
-    "required_eps_growth_pct": -74.5,
+    "required_eps_growth_pct": -74.9,
     "consensus_eps_growth_pct": 83.4,
-    "growth_cushion_pct": 157.9,
+    "growth_cushion_pct": 158.3,
     "rationale": [
-      "多口径隐含价中位数高于现价 24.1%",
+      "多口径隐含价中位数高于现价 26.0%",
       "近 30 天 EPS 共识上修",
-      "历史 PE 口径要求 EPS 增长 -74.5%，共识为 +83.4%"
+      "历史 PE 口径要求 EPS 增长 -74.9%，共识为 +83.4%"
     ]
   },
   "official_guidance_status": "not_connected",
-  "fetched_at": "2026-09-30T12:40:05.375808+00:00",
+  "fetched_at": "2026-09-30T18:40:24.169521+00:00",
   "source": "yfinance analyst aggregation",
   "_meta": {
-    "cached_at": "2026-09-30T21:40:05.376812",
-    "age_sec": 21181,
+    "cached_at": "2026-10-01T03:40:24.170521",
+    "age_sec": 1359,
     "stale": false,
     "refreshing": false
   },
