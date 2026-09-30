@@ -240,7 +240,7 @@
   "source": "yfinance analyst aggregation",
   "_meta": {
     "cached_at": "2026-09-30T23:05:41.509277",
-    "age_sec": 10642,
+    "age_sec": 12443,
     "stale": false,
     "refreshing": false
   },
