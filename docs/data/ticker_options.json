@@ -14128,14 +14128,14 @@
   "cache_contract": "15efd89eda8e",
   "_meta": {
     "cached_at": "2026-09-30T18:32:16.014111",
-    "age_sec": 25247,
+    "age_sec": 27047,
     "stale": false,
     "refreshing": false
   },
   "flow_meta": {
     "generated_at": "2026-09-30T16:06:25.666767+00:00",
     "status": "ready",
-    "age_sec": 1559.3,
+    "age_sec": 3359.2,
     "stale": false
   }
 }
