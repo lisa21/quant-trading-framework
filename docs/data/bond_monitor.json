@@ -1,5 +1,5 @@
 {
-  "asof": "2026-09-30T10:48",
+  "asof": "2026-09-30T11:19",
   "yields": {
     "10y": {
       "value": 5.255,
@@ -247,7 +247,7 @@
     },
     {
       "level": "warn",
-      "msg": "KRW/USD 1357.9 韩元明显走弱",
+      "msg": "KRW/USD 1354.9 韩元明显走弱",
       "key": "krw_weak"
     },
     {
@@ -267,7 +267,7 @@
     },
     {
       "level": "warn",
-      "msg": "Shenzhen Composite (深) +0.3% (5d -5.7%) 明显走弱",
+      "msg": "Shenzhen Composite (深) +0.4% (5d -5.6%) 明显走弱",
       "key": "asia_szse_weak"
     },
     {
@@ -325,8 +325,8 @@
     "usdjpy_20d_delta_pct": -1.49,
     "usdjpy_60d_high": 163.86,
     "usdjpy_pullback_from_60d_high_pct": -3.97,
-    "krw_usd": 1357.9,
-    "krw_20d_pct": -1.09,
+    "krw_usd": 1354.9,
+    "krw_20d_pct": -1.31,
     "jgb_10y_pct": 2.94,
     "jgb_asof": "2026-08-01",
     "ust_jgb_spread_bps": 231.5,
@@ -343,48 +343,48 @@
     "kbe_spy_20d_delta_pct": -5.22,
     "cdx_ig_bps": 83.0,
     "cdx_hy_bps": 302.0,
-    "dxy": 101.35,
-    "dxy_pct_20d": 1.93,
-    "dxy_z_60d": 1.24,
+    "dxy": 101.37,
+    "dxy_pct_20d": 1.95,
+    "dxy_z_60d": 1.26,
     "asia_indices": {
       "N225": {
         "symbol": "^N225",
         "label": "Nikkei 225 (日)",
-        "close": 66284.41,
-        "chg_1d": 1.23,
-        "chg_5d_pct": 1.95,
+        "close": 66352.57,
+        "chg_1d": 1.33,
+        "chg_5d_pct": 2.05,
         "asof": "2026-09-30"
       },
       "HSI": {
         "symbol": "^HSI",
         "label": "Hang Seng (港)",
-        "close": 24387.37,
-        "chg_1d": -0.56,
-        "chg_5d_pct": -1.8,
+        "close": 24434.76,
+        "chg_1d": -0.36,
+        "chg_5d_pct": -1.61,
         "asof": "2026-09-30"
       },
       "SSE": {
         "symbol": "000001.SS",
         "label": "Shanghai Composite (沪)",
-        "close": 3839.68,
-        "chg_1d": 0.24,
-        "chg_5d_pct": -2.85,
+        "close": 3846.09,
+        "chg_1d": 0.41,
+        "chg_5d_pct": -2.68,
         "asof": "2026-09-30"
       },
       "SZSE": {
         "symbol": "399001.SZ",
         "label": "Shenzhen Composite (深)",
-        "close": 12945.53,
-        "chg_1d": 0.34,
-        "chg_5d_pct": -5.67,
+        "close": 12958.84,
+        "chg_1d": 0.44,
+        "chg_5d_pct": -5.57,
         "asof": "2026-09-30"
       },
       "KOSPI": {
         "symbol": "^KS11",
         "label": "KOSPI (韩)",
-        "close": 6939.26,
-        "chg_1d": 1.0,
-        "chg_5d_pct": -0.98,
+        "close": 6904.68,
+        "chg_1d": 0.49,
+        "chg_5d_pct": -1.47,
         "asof": "2026-09-30"
       }
     },
@@ -392,31 +392,31 @@
       "es_f": {
         "symbol": "ES=F",
         "label": "S&P 500 futures",
-        "price": 7743.5,
-        "chg_pct": -0.04
+        "price": 7744.75,
+        "chg_pct": -0.03
       },
       "nq_f": {
         "symbol": "NQ=F",
         "label": "Nasdaq futures",
-        "price": 30638.75,
-        "chg_pct": 0.24
+        "price": 30621.75,
+        "chg_pct": 0.18
       },
       "cl_f": {
         "symbol": "CL=F",
         "label": "WTI crude futures",
-        "price": 89.7,
-        "chg_pct": -3.13
+        "price": 89.48,
+        "chg_pct": -3.37
       },
       "gc_f": {
         "symbol": "GC=F",
         "label": "Gold futures",
-        "price": 4200.7,
-        "chg_pct": 0.77
+        "price": 4208.8,
+        "chg_pct": 0.97
       }
     },
     "oil_uso": 143.35,
     "oil_pct_20d": 7.22,
-    "oil_wti": 89.7,
+    "oil_wti": 89.48,
     "eem_pct_20d": 0.57,
     "eem_vs_spx_20d": 0.69,
     "volume_confirm": {
@@ -511,8 +511,8 @@
     }
   },
   "_meta": {
-    "cached_at": "2026-09-30T10:48:45.546754",
-    "age_sec": 856,
+    "cached_at": "2026-09-30T11:19:33.548621",
+    "age_sec": 809,
     "stale": false,
     "refreshing": false
   }

@@ -30,19 +30,19 @@
     "implied_hist_p25": null,
     "implied_hist_p75": null,
     "implied_hist_upside": null,
-    "peer_pe_median": 18.05,
+    "peer_pe_median": 18.04,
     "peer_pe_n_peers": 2,
     "peer_pe_details": [
       {
         "ticker": "ORCL",
-        "pe": 12.54
+        "pe": 12.53
       },
       {
         "ticker": "AMZN",
         "pe": 23.55
       }
     ],
-    "implied_peer_median": -63.08,
+    "implied_peer_median": -63.04,
     "implied_peer_upside": -126.6,
     "source": "yfinance analyst aggregation",
     "forward_estimates": {
@@ -203,11 +203,11 @@
     ]
   },
   "official_guidance_status": "not_connected",
-  "fetched_at": "2026-09-29T20:05:05.444427+00:00",
+  "fetched_at": "2026-09-30T02:05:11.166162+00:00",
   "source": "yfinance analyst aggregation",
   "_meta": {
-    "cached_at": "2026-09-30T05:05:05.447089",
-    "age_sec": 21477,
+    "cached_at": "2026-09-30T11:05:11.167163",
+    "age_sec": 1672,
     "stale": false,
     "refreshing": false
   },

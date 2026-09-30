@@ -47,7 +47,7 @@
       },
       {
         "ticker": "ORCL",
-        "pe": 12.54
+        "pe": 12.53
       },
       {
         "ticker": "CRM",
@@ -236,11 +236,11 @@
     ]
   },
   "official_guidance_status": "not_connected",
-  "fetched_at": "2026-09-29T20:05:05.614385+00:00",
+  "fetched_at": "2026-09-30T02:05:11.313542+00:00",
   "source": "yfinance analyst aggregation",
   "_meta": {
-    "cached_at": "2026-09-30T05:05:05.615391",
-    "age_sec": 21477,
+    "cached_at": "2026-09-30T11:05:11.314542",
+    "age_sec": 1672,
     "stale": false,
     "refreshing": false
   },

@@ -7,7 +7,7 @@
     "recommendation": "strong_buy",
     "current_price": 973.49,
     "forward_eps": 34.71,
-    "trailing_eps": -92.96,
+    "trailing_eps": -98.23,
     "eps_growth_pct": null,
     "forward_pe": 28.04,
     "trailing_pe": null,
@@ -196,11 +196,11 @@
     ]
   },
   "official_guidance_status": "not_connected",
-  "fetched_at": "2026-09-29T20:05:04.321402+00:00",
+  "fetched_at": "2026-09-30T02:05:09.466346+00:00",
   "source": "yfinance analyst aggregation",
   "_meta": {
-    "cached_at": "2026-09-30T05:05:04.322414",
-    "age_sec": 21479,
+    "cached_at": "2026-09-30T11:05:09.467346",
+    "age_sec": 1673,
     "stale": false,
     "refreshing": false
   },
