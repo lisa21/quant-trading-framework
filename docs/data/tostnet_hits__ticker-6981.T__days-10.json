@@ -13,9 +13,9 @@
   ],
   "count": 1,
   "_meta": {
-    "cached_at": "2026-09-30T06:03:03.952869",
-    "age_sec": 23399,
-    "stale": true,
-    "refreshing": true
+    "cached_at": "2026-09-30T12:33:03.645296",
+    "age_sec": 1800,
+    "stale": false,
+    "refreshing": false
   }
 }
