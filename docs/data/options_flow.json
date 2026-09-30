@@ -4831,7 +4831,7 @@
       "explanation": "snapshot chain only; buy/sell side is heuristic and cannot trigger an automatic reduction"
     }
   },
-  "age_sec": 8758.9,
+  "age_sec": 10559.0,
   "stale": false,
   "status": "ready"
 }
