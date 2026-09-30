@@ -1,5 +1,5 @@
 {
-  "asof": "2026-09-30T09:29",
+  "asof": "2026-09-30T10:00",
   "yields": {
     "10y": {
       "value": 5.255,
@@ -160,53 +160,13 @@
       "asof": "2026-09-28",
       "name": "2Y 国债",
       "source": "FRED DGS2"
-    },
-    "tips_10y": {
-      "value": 2.9,
-      "chg_1d_bps": 7.0,
-      "chg_5d_bps": 28.0,
-      "chg_20d_bps": 48.0,
-      "z_score_20d": 1.34,
-      "history": [
-        2.9,
-        2.83,
-        2.85,
-        2.76,
-        2.63,
-        2.62,
-        2.68,
-        2.61,
-        2.68,
-        2.62,
-        2.6,
-        2.6,
-        2.55,
-        2.46,
-        2.43,
-        2.43,
-        2.42,
-        2.45,
-        2.44,
-        2.44
-      ],
-      "asof": "2026-09-28",
-      "name": "10Y TIPS 实际利率",
-      "source": "FRED DFII10"
     }
   },
-  "spreads": {
-    "2s10s": {
-      "value": 0.37,
-      "chg_20d_bps": -3.0,
-      "regime": "正常",
-      "asof": "2026-09-29"
-    }
-  },
+  "spreads": {},
   "gld_correlation": {
     "vs_10y": -0.515,
-    "vs_tips_10y": 0.062,
-    "regime": "aligned",
-    "reason": "相关性 0.062，正相关（可能通胀 regime，两者同向）"
+    "regime": "unknown",
+    "reason": "数据不足无法计算"
   },
   "anomalies": [],
   "warnings": [
@@ -217,18 +177,8 @@
     },
     {
       "level": "bad",
-      "msg": "实际利率 2.90% 极端高位",
-      "key": "tips_extreme"
-    },
-    {
-      "level": "bad",
       "msg": "30Y 5.59% 极端高位 (2007 以来罕见)",
       "key": "30y_extreme"
-    },
-    {
-      "level": "warn",
-      "msg": "ERP 1.15% 股权风险溢价压缩到危险区 (SPX 尾随 EPS yield 4.05% − TIPS 2.9%，1985+ 仅 1987/2000/2007 出现过)",
-      "key": "erp_low"
     },
     {
       "level": "warn",
@@ -242,18 +192,13 @@
     },
     {
       "level": "warn",
-      "msg": "USDJPY 157.3 进入 155-160 口头干预区间 (JP MoF)",
+      "msg": "USDJPY 157.36 进入 155-160 口头干预区间 (JP MoF)",
       "key": "jpy_verbal_zone"
     },
     {
       "level": "warn",
-      "msg": "KRW/USD 1354.3 韩元明显走弱",
+      "msg": "KRW/USD 1358.7 韩元明显走弱",
       "key": "krw_weak"
-    },
-    {
-      "level": "bad",
-      "msg": "BIS CIP: FX 对冲后 UST 10Y (2.81%) < JGB (2.94%) = JP 投资者会抛售 UST",
-      "key": "cip_repatriation_signal"
     },
     {
       "level": "warn",
@@ -273,23 +218,9 @@
   ],
   "macro_context": {
     "term_spread_30_10_bps": 33.9,
-    "spx_trailing_pe": 24.71,
-    "spx_eps_yield_pct": 4.05,
-    "erp_vs_tips_pct": 1.15,
-    "erp_basis": "trailing",
-    "nfci": {
-      "value": -0.555,
-      "asof": "2026-09-18"
-    },
-    "nfci_12w_delta": -0.039,
-    "rrp_bn": 11.4,
-    "rrp_asof": "2026-09-29",
     "tga_bn": 977.1,
     "tga_asof": "2026-09-23",
     "tga_4w_delta_bn": 9.2,
-    "walcl_tn": 6.748,
-    "walcl_asof": "2026-09-23",
-    "walcl_12w_delta_bn": 12.0,
     "move_index": 106.6,
     "move_20d_delta": 31.3,
     "effr_pct": 3.88,
@@ -297,16 +228,13 @@
     "bank_reserves_bn": 2930.0,
     "bank_total_assets_bn": 25772.0,
     "bank_reserves_pct_of_assets": 11.4,
-    "sofr_pct": 3.9,
-    "iorb_pct": 3.9,
-    "sofr_iorb_spread_bps": 0.0,
-    "usdjpy": 157.3,
-    "usdjpy_20d_pct": -1.81,
-    "usdjpy_20d_delta_pct": -1.81,
+    "usdjpy": 157.36,
+    "usdjpy_20d_pct": -1.49,
+    "usdjpy_20d_delta_pct": -1.49,
     "usdjpy_60d_high": 163.86,
-    "usdjpy_pullback_from_60d_high_pct": -4.01,
-    "krw_usd": 1354.3,
-    "krw_20d_pct": -1.35,
+    "usdjpy_pullback_from_60d_high_pct": -3.97,
+    "krw_usd": 1358.7,
+    "krw_20d_pct": -1.03,
     "jgb_10y_pct": 2.94,
     "jgb_asof": "2026-08-01",
     "ust_jgb_spread_bps": 231.5,
@@ -314,10 +242,6 @@
     "ktb_10y_pct": 4.29,
     "ktb_asof": "2026-08-01",
     "ust_ktb_spread_bps": 96.5,
-    "hedged_ust_10y_for_jp": 2.81,
-    "hedge_cost_jp": 2.44,
-    "real_yield_gap_us_jp": 1.77,
-    "cpi_jp_yoy_pct": 3.17,
     "kbe_spy_ratio": null,
     "kbe_spy_20d_delta_pct": null,
     "cdx_ig_bps": 83.0,
@@ -329,9 +253,9 @@
       "N225": {
         "symbol": "^N225",
         "label": "Nikkei 225 (日)",
-        "close": 66421.28,
-        "chg_1d": 0.83,
-        "chg_5d_pct": 3.56,
+        "close": 66151.73,
+        "chg_1d": 0.42,
+        "chg_5d_pct": 3.14,
         "asof": "2026-09-30"
       },
       "HSI": {
@@ -361,9 +285,9 @@
       "KOSPI": {
         "symbol": "^KS11",
         "label": "KOSPI (韩)",
-        "close": 6953.74,
-        "chg_1d": 0.93,
-        "chg_5d_pct": 0.86,
+        "close": 6939.53,
+        "chg_1d": 0.72,
+        "chg_5d_pct": 0.66,
         "asof": "2026-09-30"
       }
     },
@@ -371,33 +295,34 @@
       "es_f": {
         "symbol": "ES=F",
         "label": "S&P 500 futures",
-        "price": 7749.75,
-        "chg_pct": 0.04
+        "price": 7742.5,
+        "chg_pct": -0.05
       },
       "nq_f": {
         "symbol": "NQ=F",
         "label": "Nasdaq futures",
-        "price": 30701.0,
-        "chg_pct": 0.44
+        "price": 30647.0,
+        "chg_pct": 0.26
       },
       "cl_f": {
         "symbol": "CL=F",
         "label": "WTI crude futures",
-        "price": 89.22,
-        "chg_pct": -3.65
+        "price": 89.42,
+        "chg_pct": -3.43
       },
       "gc_f": {
         "symbol": "GC=F",
         "label": "Gold futures",
-        "price": 4215.3,
-        "chg_pct": 1.13
+        "price": 4211.0,
+        "chg_pct": 1.02
       }
     },
     "oil_uso": null,
     "oil_pct_20d": null,
-    "oil_wti": 89.22,
+    "oil_wti": 89.42,
     "eem_pct_20d": null,
     "eem_vs_spx_20d": null,
+    "rrp_bn": 11.4,
     "volume_confirm": {
       "rates": {
         "proxy": "TLT",
@@ -478,17 +403,16 @@
     "unemployment_pct": 4.1,
     "unemployment_asof": "2026-08-01",
     "vix": 16.04,
-    "bbi_score": 0.58,
+    "bbi_score": 2.62,
     "bbi_components": {
       "vix": -0.33,
       "ig": -1.34,
-      "hy": -0.95,
-      "erp": 1.85
+      "hy": -0.95
     }
   },
   "_meta": {
-    "cached_at": "2026-09-30T09:29:36.387736",
-    "age_sec": 206,
+    "cached_at": "2026-09-30T10:02:30.000750",
+    "age_sec": 32,
     "stale": false,
     "refreshing": false
   }
