@@ -1,7 +1,7 @@
 {
   "posts_analyzed": 85,
   "posts_total": 92,
-  "snapshots_used": 196,
+  "snapshots_used": 197,
   "window_hours": 48,
   "top_movers": [
     {
@@ -80,6 +80,7 @@
       "tickers": [
         "SPY",
         "QQQ",
+        "TQQQ",
         "GLD"
       ],
       "preview": "Iran Has Lost Control of the Strait: https://x.com/BurggrabenH/status/2104361288000221497",
@@ -87,7 +88,7 @@
       "cut_prob_after": 27,
       "delta": 5,
       "before_ts": "2026-09-29T13:40:21+00:00",
-      "after_ts": "2026-09-30T01:42:08+00:00"
+      "after_ts": "2026-09-30T13:44:17+00:00"
     },
     {
       "post_time": "2026-08-15T12:31:50.605Z",
@@ -284,10 +285,10 @@
       "sum_delta": 0.0
     }
   },
-  "generated_at": "2026-09-30T13:12:13+00:00",
+  "generated_at": "2026-09-30T19:12:24+00:00",
   "_meta": {
-    "cached_at": "2026-09-30T22:12:13.733008",
-    "age_sec": 21049,
+    "cached_at": "2026-10-01T04:12:24.598404",
+    "age_sec": 1238,
     "stale": false,
     "refreshing": false
   }

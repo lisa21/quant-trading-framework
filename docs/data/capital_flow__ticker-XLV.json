@@ -2,22 +2,22 @@
   "ticker": "XLV",
   "flow": {
     "super_net": -5193707.1499999985,
-    "big_net": -7416069.085000001,
-    "mid_net": -937406.6139999926,
-    "small_net": -3268422.6410000026,
-    "total_net": -16815605.48999995,
-    "smart_pct": -0.0136967132536128
+    "big_net": -6345763.255000003,
+    "mid_net": -1711020.5600000024,
+    "small_net": -2957338.921000004,
+    "total_net": -16207829.886000037,
+    "smart_pct": -0.012004177168515368
   },
   "anomaly": {
     "detected": false,
     "reason": "",
     "score": 0.0
   },
-  "asof": "2026-09-30 15:02:41",
+  "asof": "2026-09-30 15:29:26",
   "source": "moomoo",
   "_meta": {
-    "cached_at": "2026-10-01T04:02:51.676722",
-    "age_sec": 11,
+    "cached_at": "2026-10-01T04:29:32.151623",
+    "age_sec": 211,
     "stale": false,
     "refreshing": false
   }

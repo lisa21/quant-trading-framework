@@ -1,23 +1,23 @@
 {
   "ticker": "IEI",
   "flow": {
-    "super_net": 21460051.32,
+    "super_net": 64440318.87,
     "big_net": 9563600.739999998,
-    "mid_net": 1983347.4069999978,
-    "small_net": -55225488.99000001,
-    "total_net": -22218489.523000002,
-    "smart_pct": 0.08533080044035599
+    "mid_net": 7521820.9130000025,
+    "small_net": -53890220.404,
+    "total_net": 27635520.119000018,
+    "smart_pct": 0.1738971358595943
   },
   "anomaly": {
-    "detected": false,
-    "reason": "",
-    "score": 0.0
+    "detected": true,
+    "reason": "主力（super+big）净流入 $+74.0M（占总成交额 +17.4%）",
+    "score": 0.579657119531981
   },
-  "asof": "2026-09-30 15:01:57",
+  "asof": "2026-09-30 15:29:10",
   "source": "moomoo",
   "_meta": {
-    "cached_at": "2026-10-01T04:02:51.858346",
-    "age_sec": 11,
+    "cached_at": "2026-10-01T04:29:32.346386",
+    "age_sec": 211,
     "stale": false,
     "refreshing": false
   }
