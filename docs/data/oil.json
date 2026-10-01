@@ -1,5 +1,5 @@
 {
-  "ts": "2026-10-01T21:29:45.076158+00:00",
+  "ts": "2026-10-01T22:00:21.536608+00:00",
   "factors": [
     {
       "arrow": "·",
@@ -30,16 +30,8 @@
       "name": "美元指数 DXY",
       "direction": "neutral",
       "weight": 1,
-      "value": "102.01 (5d +0.7%)",
+      "value": "102.02 (5d +0.7%)",
       "hint": "油以美元计价，美元升值 = 油价承压。DXY 5d +2% = 利空油"
-    },
-    {
-      "arrow": "▲",
-      "name": "美国汽油零售价",
-      "direction": "bullish",
-      "weight": 1,
-      "value": "$4.46/gal (4周 +9.7%)",
-      "hint": "零售汽油价 = 需求端信号。上涨 3%+ = 需求强劲支撑油价 / 下跌 = 需求疲软利空"
     },
     {
       "arrow": "▼",
@@ -59,17 +51,17 @@
     }
   ],
   "direction": "neutral",
-  "score": 0,
+  "score": -1,
   "notes": [
-    "综合 score=+0，多因子分歧，观察后续"
+    "综合 score=-1，多因子分歧，观察后续"
   ],
   "price": 92.91,
   "pct_5d": -1.8,
   "pct_20d": 2.09,
   "source": "WTI 期货 (CL=F) 主 + 5 因子",
   "_meta": {
-    "cached_at": "2026-10-02T06:29:46.601097",
-    "age_sec": 196,
+    "cached_at": "2026-10-02T07:00:30.876805",
+    "age_sec": 154,
     "stale": false,
     "refreshing": false
   }
