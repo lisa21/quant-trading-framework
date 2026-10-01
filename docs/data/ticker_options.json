@@ -13447,14 +13447,14 @@
   "cache_contract": "15efd89eda8e",
   "_meta": {
     "cached_at": "2026-09-30T18:32:16.014111",
-    "age_sec": 68446,
+    "age_sec": 70245,
     "stale": false,
     "refreshing": false
   },
   "flow_meta": {
     "generated_at": "2026-09-30T20:06:25.705044+00:00",
     "status": "stale",
-    "age_sec": 30358.5,
+    "age_sec": 32158.4,
     "stale": true
   }
 }

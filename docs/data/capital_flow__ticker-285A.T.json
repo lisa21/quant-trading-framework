@@ -103,7 +103,7 @@
         "tier": "huge_abs"
       }
     ],
-    "day_ratio": 1.02,
+    "day_ratio": 1.15,
     "trading_date": "2026-10-01",
     "date_short": "10/1",
     "net_bias": "neutral",
@@ -227,20 +227,20 @@
             "tier": "huge_2bar"
           }
         ],
-        "day_ratio": 1.02,
-        "day_chg_pct": 0.94,
+        "day_ratio": 1.15,
+        "day_chg_pct": 1.74,
         "day_open": 18665.0,
-        "day_close": 18840.0,
+        "day_close": 18990.0,
         "net_bias": "neutral",
         "buy_shares": 5578800,
         "sell_shares": 4049700,
         "buy_value_oku": 1051.06,
         "sell_value_oku": 757.85,
         "full_bias": "neutral",
-        "full_up_shares": 14302500,
-        "full_down_shares": 12594300,
-        "full_up_value_oku": 2695.53,
-        "full_down_value_oku": 2366.63
+        "full_up_shares": 16910100,
+        "full_down_shares": 13530100,
+        "full_up_value_oku": 3188.41,
+        "full_down_value_oku": 2542.57
       },
       {
         "trading_date": "2026-09-30",
@@ -344,7 +344,7 @@
           }
         ],
         "slices": [],
-        "day_ratio": 1.26,
+        "day_ratio": 1.25,
         "day_chg_pct": 0.64,
         "day_open": 18000.0,
         "day_close": 18115.0,
@@ -474,7 +474,7 @@
             "tier": "huge_2bar"
           }
         ],
-        "day_ratio": 1.4,
+        "day_ratio": 1.39,
         "day_chg_pct": 0,
         "day_open": NaN,
         "day_close": 17800.0,
@@ -708,7 +708,7 @@
           }
         ],
         "slices": [],
-        "day_ratio": 0.75,
+        "day_ratio": 0.74,
         "day_chg_pct": 1.05,
         "day_open": 18390.0,
         "day_close": 18583.33,
@@ -773,11 +773,11 @@
       "value_oku_min": 1.0
     }
   },
-  "asof": "2026-10-01 13:15 JST",
+  "asof": "2026-10-01 13:40 JST",
   "source": "yfinance_intraday",
   "_meta": {
-    "cached_at": "2026-10-01T13:32:57.542813",
-    "age_sec": 4,
+    "cached_at": "2026-10-01T13:58:55.946121",
+    "age_sec": 246,
     "stale": false,
     "refreshing": false
   }
