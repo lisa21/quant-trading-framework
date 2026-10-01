@@ -14,8 +14,8 @@
   "count": 1,
   "_meta": {
     "cached_at": "2026-10-01T20:03:04.066134",
-    "age_sec": 19802,
-    "stale": false,
-    "refreshing": false
+    "age_sec": 21601,
+    "stale": true,
+    "refreshing": true
   }
 }
