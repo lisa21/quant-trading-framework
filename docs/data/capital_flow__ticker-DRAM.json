@@ -1,23 +1,23 @@
 {
   "ticker": "DRAM",
   "flow": {
-    "super_net": -13948868.835,
-    "big_net": -13507727.007999994,
-    "mid_net": -10156789.267000005,
-    "small_net": -9887334.456,
-    "total_net": -47500719.565999985,
-    "smart_pct": -0.03099252151036929
+    "super_net": -13057062.594999999,
+    "big_net": -14345615.576000005,
+    "mid_net": -11425641.019999996,
+    "small_net": -12631054.164000034,
+    "total_net": -51459373.35500008,
+    "smart_pct": -0.027898655933872727
   },
   "anomaly": {
     "detected": false,
     "reason": "",
     "score": 0.0
   },
-  "asof": "2026-10-01 13:58:53",
+  "asof": "2026-10-01 14:30:53",
   "source": "moomoo",
   "_meta": {
-    "cached_at": "2026-10-02T02:58:57.052224",
-    "age_sec": 246,
+    "cached_at": "2026-10-02T03:30:57.072992",
+    "age_sec": 126,
     "stale": false,
     "refreshing": false
   }
