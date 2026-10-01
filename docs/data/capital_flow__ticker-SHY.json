@@ -4,20 +4,20 @@
     "super_net": 76702006.71000001,
     "big_net": 10127500.0,
     "mid_net": 18760289.254,
-    "small_net": 34901656.77600001,
-    "total_net": 140491452.74,
-    "smart_pct": 0.36685483546290043
+    "small_net": 30243058.326999996,
+    "total_net": 135832854.291,
+    "smart_pct": 0.34973354595183165
   },
   "anomaly": {
     "detected": true,
-    "reason": "主力（super+big）净流入 $+86.8M（占总成交额 +36.7%）",
+    "reason": "主力（super+big）净流入 $+86.8M（占总成交额 +35.0%）",
     "score": 1.0
   },
-  "asof": "2026-10-01 13:32:06",
+  "asof": "2026-10-01 13:58:26",
   "source": "moomoo",
   "_meta": {
-    "cached_at": "2026-10-02T02:32:59.451015",
-    "age_sec": 3,
+    "cached_at": "2026-10-02T02:59:59.521343",
+    "age_sec": 183,
     "stale": false,
     "refreshing": false
   }
