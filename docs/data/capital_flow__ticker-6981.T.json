@@ -79,6 +79,18 @@
         "tier": "huge_abs"
       },
       {
+        "time": "10:10",
+        "vol": 612600,
+        "ratio": 2.02,
+        "open": 8272.0,
+        "price": 8304.0,
+        "chg_pct": 0.39,
+        "direction": "buy",
+        "value_oku": 50.87,
+        "date": "2026-10-01",
+        "tier": "huge_abs"
+      },
+      {
         "time": "09:05",
         "vol": 603000,
         "ratio": 1.13,
@@ -89,28 +101,16 @@
         "value_oku": 49.13,
         "date": "2026-10-01",
         "tier": "huge_abs"
-      },
-      {
-        "time": "09:50",
-        "vol": 582800,
-        "ratio": 1.64,
-        "open": 8291.0,
-        "price": 8253.0,
-        "chg_pct": -0.46,
-        "direction": "sell",
-        "value_oku": 48.1,
-        "date": "2026-10-01",
-        "tier": "huge_abs"
       }
     ],
-    "day_ratio": 0.48,
+    "day_ratio": 0.62,
     "trading_date": "2026-10-01",
     "date_short": "10/1",
     "net_bias": "buy",
-    "buy_shares": 3742500,
-    "sell_shares": 1824200,
-    "buy_value_oku": 307.63,
-    "sell_value_oku": 149.33,
+    "buy_shares": 4355100,
+    "sell_shares": 1241400,
+    "buy_value_oku": 358.5,
+    "sell_value_oku": 101.23,
     "days": [
       {
         "trading_date": "2026-10-01",
@@ -189,6 +189,18 @@
             "tier": "huge_abs"
           },
           {
+            "time": "10:10",
+            "vol": 612600,
+            "ratio": 2.02,
+            "open": 8272.0,
+            "price": 8304.0,
+            "chg_pct": 0.39,
+            "direction": "buy",
+            "value_oku": 50.87,
+            "date": "2026-10-01",
+            "tier": "huge_abs"
+          },
+          {
             "time": "09:05",
             "vol": 603000,
             "ratio": 1.13,
@@ -199,35 +211,23 @@
             "value_oku": 49.13,
             "date": "2026-10-01",
             "tier": "huge_abs"
-          },
-          {
-            "time": "09:50",
-            "vol": 582800,
-            "ratio": 1.64,
-            "open": 8291.0,
-            "price": 8253.0,
-            "chg_pct": -0.46,
-            "direction": "sell",
-            "value_oku": 48.1,
-            "date": "2026-10-01",
-            "tier": "huge_abs"
           }
         ],
         "slices": [],
-        "day_ratio": 0.48,
-        "day_chg_pct": 1.17,
+        "day_ratio": 0.62,
+        "day_chg_pct": 1.64,
         "day_open": 8179.0,
-        "day_close": 8275.0,
+        "day_close": 8313.0,
         "net_bias": "buy",
-        "buy_shares": 3742500,
-        "sell_shares": 1824200,
-        "buy_value_oku": 307.63,
-        "sell_value_oku": 149.33,
+        "buy_shares": 4355100,
+        "sell_shares": 1241400,
+        "buy_value_oku": 358.5,
+        "sell_value_oku": 101.23,
         "full_bias": "buy",
-        "full_up_shares": 5416000,
-        "full_down_shares": 2707700,
-        "full_up_value_oku": 445.24,
-        "full_down_value_oku": 222.15
+        "full_up_shares": 6491300,
+        "full_down_shares": 4085900,
+        "full_up_value_oku": 534.77,
+        "full_down_value_oku": 336.45
       },
       {
         "trading_date": "2026-09-30",
@@ -331,7 +331,7 @@
           }
         ],
         "slices": [],
-        "day_ratio": 1.18,
+        "day_ratio": 1.17,
         "day_chg_pct": -2.75,
         "day_open": 8116.0,
         "day_close": 7893.0,
@@ -553,7 +553,7 @@
           }
         ],
         "slices": [],
-        "day_ratio": 1.07,
+        "day_ratio": 1.06,
         "day_chg_pct": 0.31,
         "day_open": 8017.0,
         "day_close": 8042.0,
@@ -670,7 +670,7 @@
           }
         ],
         "slices": [],
-        "day_ratio": 1.15,
+        "day_ratio": 1.14,
         "day_chg_pct": 0.9,
         "day_open": 7979.0,
         "day_close": 8051.0,
@@ -735,12 +735,12 @@
       "value_oku_min": 1.0
     }
   },
-  "asof": "2026-10-01 10:10 JST",
+  "asof": "2026-10-01 10:40 JST",
   "source": "yfinance_intraday",
   "_meta": {
-    "cached_at": "2026-10-01T10:27:47.578348",
-    "age_sec": 314,
-    "stale": true,
-    "refreshing": true
+    "cached_at": "2026-10-01T10:59:13.566959",
+    "age_sec": 229,
+    "stale": false,
+    "refreshing": false
   }
 }

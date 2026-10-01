@@ -6,7 +6,7 @@
     "reason": "",
     "score": 0.0,
     "peak_bars": [],
-    "day_ratio": 0.3,
+    "day_ratio": 0.41,
     "trading_date": "2026-10-01",
     "date_short": "10/1",
     "net_bias": "neutral",
@@ -20,27 +20,27 @@
         "date_short": "10/1",
         "peak_bars": [],
         "slices": [],
-        "day_ratio": 0.3,
-        "day_chg_pct": 1.24,
+        "day_ratio": 0.41,
+        "day_chg_pct": 1.26,
         "day_open": 5948.0,
-        "day_close": 6022.0,
+        "day_close": 6023.0,
         "net_bias": "neutral",
         "buy_shares": 0,
         "sell_shares": 0,
         "buy_value_oku": 0,
         "sell_value_oku": 0,
         "full_bias": "buy",
-        "full_up_shares": 1020300,
-        "full_down_shares": 175800,
-        "full_up_value_oku": 61.17,
-        "full_down_value_oku": 10.5
+        "full_up_shares": 1263500,
+        "full_down_shares": 382000,
+        "full_up_value_oku": 75.84,
+        "full_down_value_oku": 22.92
       },
       {
         "trading_date": "2026-09-30",
         "date_short": "9/30",
         "peak_bars": [],
         "slices": [],
-        "day_ratio": 1.14,
+        "day_ratio": 1.13,
         "day_chg_pct": 1.66,
         "day_open": 5847.0,
         "day_close": 5944.0,
@@ -60,7 +60,7 @@
         "date_short": "9/29",
         "peak_bars": [],
         "slices": [],
-        "day_ratio": 0.73,
+        "day_ratio": 0.72,
         "day_chg_pct": 0,
         "day_open": NaN,
         "day_close": 5737.0,
@@ -93,7 +93,7 @@
           }
         ],
         "slices": [],
-        "day_ratio": 1.31,
+        "day_ratio": 1.3,
         "day_chg_pct": -0.5,
         "day_open": 5845.0,
         "day_close": 5816.0,
@@ -150,12 +150,12 @@
       "value_oku_min": 1.0
     }
   },
-  "asof": "2026-10-01 10:10 JST",
+  "asof": "2026-10-01 10:40 JST",
   "source": "yfinance_intraday",
   "_meta": {
-    "cached_at": "2026-10-01T10:27:48.758412",
-    "age_sec": 313,
-    "stale": true,
-    "refreshing": true
+    "cached_at": "2026-10-01T10:59:14.921072",
+    "age_sec": 227,
+    "stale": false,
+    "refreshing": false
   }
 }
