@@ -3,9 +3,21 @@
   "flow": null,
   "anomaly": {
     "detected": true,
-    "reason": "10/1 09:05 2.38× 均值 · 主动卖 ¥350.12億 (@¥18590.0)",
+    "reason": "10/1 13:40 6.52× 均值 · 主动买 ¥369.43億 (@¥19075.0)",
     "score": 1.0,
     "peak_bars": [
+      {
+        "time": "13:40",
+        "vol": 1936700,
+        "ratio": 6.52,
+        "open": 18905.0,
+        "price": 19075.0,
+        "chg_pct": 0.9,
+        "direction": "buy",
+        "value_oku": 369.43,
+        "date": "2026-10-01",
+        "tier": "huge_abs"
+      },
       {
         "time": "09:05",
         "vol": 1883400,
@@ -15,6 +27,18 @@
         "chg_pct": -0.4,
         "direction": "sell",
         "value_oku": 350.12,
+        "date": "2026-10-01",
+        "tier": "huge_abs"
+      },
+      {
+        "time": "13:45",
+        "vol": 1706800,
+        "ratio": 6.14,
+        "open": 19080.0,
+        "price": 19210.0,
+        "chg_pct": 0.68,
+        "direction": "buy",
+        "value_oku": 327.88,
         "date": "2026-10-01",
         "tier": "huge_abs"
       },
@@ -55,6 +79,18 @@
         "tier": "huge_abs"
       },
       {
+        "time": "13:55",
+        "vol": 1262600,
+        "ratio": 5.09,
+        "open": 19170.0,
+        "price": 19155.0,
+        "chg_pct": -0.08,
+        "direction": "flat",
+        "value_oku": 241.85,
+        "date": "2026-10-01",
+        "tier": "huge_abs"
+      },
+      {
         "time": "09:25",
         "vol": 1137800,
         "ratio": 1.63,
@@ -65,57 +101,33 @@
         "value_oku": 213.91,
         "date": "2026-10-01",
         "tier": "huge_abs"
-      },
-      {
-        "time": "10:05",
-        "vol": 1118700,
-        "ratio": 2.37,
-        "open": 18790.0,
-        "price": 18870.0,
-        "chg_pct": 0.43,
-        "direction": "buy",
-        "value_oku": 211.1,
-        "date": "2026-10-01",
-        "tier": "huge_abs"
-      },
-      {
-        "time": "09:15",
-        "vol": 1058400,
-        "ratio": 1.15,
-        "open": 18740.0,
-        "price": 18755.0,
-        "chg_pct": 0.08,
-        "direction": "flat",
-        "value_oku": 198.5,
-        "date": "2026-10-01",
-        "tier": "huge_abs"
-      },
-      {
-        "time": "10:15",
-        "vol": 1028500,
-        "ratio": 2.5,
-        "open": 18925.0,
-        "price": 18845.0,
-        "chg_pct": -0.42,
-        "direction": "sell",
-        "value_oku": 193.82,
-        "date": "2026-10-01",
-        "tier": "huge_abs"
       }
     ],
-    "day_ratio": 1.15,
+    "day_ratio": 1.42,
     "trading_date": "2026-10-01",
     "date_short": "10/1",
-    "net_bias": "neutral",
-    "buy_shares": 5578800,
-    "sell_shares": 4049700,
-    "buy_value_oku": 1051.06,
-    "sell_value_oku": 757.85,
+    "net_bias": "buy",
+    "buy_shares": 8103600,
+    "sell_shares": 3021200,
+    "buy_value_oku": 1537.27,
+    "sell_value_oku": 564.03,
     "days": [
       {
         "trading_date": "2026-10-01",
         "date_short": "10/1",
         "peak_bars": [
+          {
+            "time": "13:40",
+            "vol": 1936700,
+            "ratio": 6.52,
+            "open": 18905.0,
+            "price": 19075.0,
+            "chg_pct": 0.9,
+            "direction": "buy",
+            "value_oku": 369.43,
+            "date": "2026-10-01",
+            "tier": "huge_abs"
+          },
           {
             "time": "09:05",
             "vol": 1883400,
@@ -125,6 +137,18 @@
             "chg_pct": -0.4,
             "direction": "sell",
             "value_oku": 350.12,
+            "date": "2026-10-01",
+            "tier": "huge_abs"
+          },
+          {
+            "time": "13:45",
+            "vol": 1706800,
+            "ratio": 6.14,
+            "open": 19080.0,
+            "price": 19210.0,
+            "chg_pct": 0.68,
+            "direction": "buy",
+            "value_oku": 327.88,
             "date": "2026-10-01",
             "tier": "huge_abs"
           },
@@ -165,6 +189,18 @@
             "tier": "huge_abs"
           },
           {
+            "time": "13:55",
+            "vol": 1262600,
+            "ratio": 5.09,
+            "open": 19170.0,
+            "price": 19155.0,
+            "chg_pct": -0.08,
+            "direction": "flat",
+            "value_oku": 241.85,
+            "date": "2026-10-01",
+            "tier": "huge_abs"
+          },
+          {
             "time": "09:25",
             "vol": 1137800,
             "ratio": 1.63,
@@ -173,42 +209,6 @@
             "chg_pct": -0.19,
             "direction": "sell",
             "value_oku": 213.91,
-            "date": "2026-10-01",
-            "tier": "huge_abs"
-          },
-          {
-            "time": "10:05",
-            "vol": 1118700,
-            "ratio": 2.37,
-            "open": 18790.0,
-            "price": 18870.0,
-            "chg_pct": 0.43,
-            "direction": "buy",
-            "value_oku": 211.1,
-            "date": "2026-10-01",
-            "tier": "huge_abs"
-          },
-          {
-            "time": "09:15",
-            "vol": 1058400,
-            "ratio": 1.15,
-            "open": 18740.0,
-            "price": 18755.0,
-            "chg_pct": 0.08,
-            "direction": "flat",
-            "value_oku": 198.5,
-            "date": "2026-10-01",
-            "tier": "huge_abs"
-          },
-          {
-            "time": "10:15",
-            "vol": 1028500,
-            "ratio": 2.5,
-            "open": 18925.0,
-            "price": 18845.0,
-            "chg_pct": -0.42,
-            "direction": "sell",
-            "value_oku": 193.82,
             "date": "2026-10-01",
             "tier": "huge_abs"
           }
@@ -225,22 +225,46 @@
             "duration_min": 10,
             "avg_price": 18898.67,
             "tier": "huge_2bar"
+          },
+          {
+            "start": "13:40",
+            "end": "13:45",
+            "direction": "buy",
+            "n_bars": 2,
+            "total_value_oku": 697.31,
+            "total_shares": 3643500,
+            "avg_ratio": 6.33,
+            "duration_min": 10,
+            "avg_price": 19138.24,
+            "tier": "huge_2bar"
+          },
+          {
+            "start": "13:50",
+            "end": "13:55",
+            "direction": "sell",
+            "n_bars": 2,
+            "total_value_oku": 439.39,
+            "total_shares": 2292800,
+            "avg_ratio": 4.39,
+            "duration_min": 10,
+            "avg_price": 19163.99,
+            "tier": "huge_2bar"
           }
         ],
-        "day_ratio": 1.15,
-        "day_chg_pct": 1.74,
+        "day_ratio": 1.42,
+        "day_chg_pct": 2.46,
         "day_open": 18665.0,
-        "day_close": 18990.0,
-        "net_bias": "neutral",
-        "buy_shares": 5578800,
-        "sell_shares": 4049700,
-        "buy_value_oku": 1051.06,
-        "sell_value_oku": 757.85,
+        "day_close": 19125.0,
+        "net_bias": "buy",
+        "buy_shares": 8103600,
+        "sell_shares": 3021200,
+        "buy_value_oku": 1537.27,
+        "sell_value_oku": 564.03,
         "full_bias": "neutral",
-        "full_up_shares": 16910100,
-        "full_down_shares": 13530100,
-        "full_up_value_oku": 3188.41,
-        "full_down_value_oku": 2542.57
+        "full_up_shares": 21731100,
+        "full_down_shares": 16625300,
+        "full_up_value_oku": 4111.89,
+        "full_down_value_oku": 3135.32
       },
       {
         "trading_date": "2026-09-30",
@@ -344,7 +368,7 @@
           }
         ],
         "slices": [],
-        "day_ratio": 1.25,
+        "day_ratio": 1.24,
         "day_chg_pct": 0.64,
         "day_open": 18000.0,
         "day_close": 18115.0,
@@ -474,7 +498,7 @@
             "tier": "huge_2bar"
           }
         ],
-        "day_ratio": 1.39,
+        "day_ratio": 1.37,
         "day_chg_pct": 0,
         "day_open": NaN,
         "day_close": 17800.0,
@@ -591,7 +615,7 @@
           }
         ],
         "slices": [],
-        "day_ratio": 0.64,
+        "day_ratio": 0.63,
         "day_chg_pct": -4.54,
         "day_open": 18663.33,
         "day_close": 17816.67,
@@ -708,7 +732,7 @@
           }
         ],
         "slices": [],
-        "day_ratio": 0.74,
+        "day_ratio": 0.73,
         "day_chg_pct": 1.05,
         "day_open": 18390.0,
         "day_close": 18583.33,
@@ -726,46 +750,46 @@
     ],
     "highlights": [
       {
-        "time": "10:10",
-        "vol": 1503700,
-        "ratio": 3.35,
-        "open": 18865.0,
-        "price": 18920.0,
-        "chg_pct": 0.29,
+        "time": "13:40",
+        "vol": 1936700,
+        "ratio": 6.52,
+        "open": 18905.0,
+        "price": 19075.0,
+        "chg_pct": 0.9,
         "direction": "buy",
-        "value_oku": 284.5,
+        "value_oku": 369.43,
         "date": "2026-10-01",
         "tier": "huge_abs",
-        "_score": 953.08,
+        "_score": 2408.68,
         "date_short": "10/1"
       },
       {
-        "time": "09:05",
-        "vol": 1883400,
-        "ratio": 2.38,
-        "open": 18665.0,
-        "price": 18590.0,
-        "chg_pct": -0.4,
-        "direction": "sell",
-        "value_oku": 350.12,
+        "time": "13:45",
+        "vol": 1706800,
+        "ratio": 6.14,
+        "open": 19080.0,
+        "price": 19210.0,
+        "chg_pct": 0.68,
+        "direction": "buy",
+        "value_oku": 327.88,
         "date": "2026-10-01",
         "tier": "huge_abs",
-        "_score": 833.29,
+        "_score": 2013.18,
         "date_short": "10/1"
       },
       {
-        "time": "09:20",
-        "vol": 1513900,
-        "ratio": 1.93,
-        "open": 18095.0,
-        "price": 18300.0,
-        "chg_pct": 1.13,
-        "direction": "buy",
-        "value_oku": 277.04,
-        "date": "2026-09-30",
+        "time": "13:55",
+        "vol": 1262600,
+        "ratio": 5.09,
+        "open": 19170.0,
+        "price": 19155.0,
+        "chg_pct": -0.08,
+        "direction": "flat",
+        "value_oku": 241.85,
+        "date": "2026-10-01",
         "tier": "huge_abs",
-        "_score": 534.69,
-        "date_short": "9/30"
+        "_score": 1231.02,
+        "date_short": "10/1"
       }
     ],
     "thresholds": {
@@ -773,11 +797,11 @@
       "value_oku_min": 1.0
     }
   },
-  "asof": "2026-10-01 13:40 JST",
+  "asof": "2026-10-01 14:15 JST",
   "source": "yfinance_intraday",
   "_meta": {
-    "cached_at": "2026-10-01T13:58:55.946121",
-    "age_sec": 246,
+    "cached_at": "2026-10-01T14:31:12.462269",
+    "age_sec": 110,
     "stale": false,
     "refreshing": false
   }
