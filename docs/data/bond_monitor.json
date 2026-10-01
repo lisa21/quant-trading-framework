@@ -1,5 +1,5 @@
 {
-  "asof": "2026-10-01T08:59",
+  "asof": "2026-10-01T09:30",
   "yields": {
     "10y": {
       "value": 5.293,
@@ -203,10 +203,10 @@
     }
   },
   "gld_correlation": {
-    "vs_10y": -0.501,
-    "vs_tips_10y": 0.149,
+    "vs_10y": -0.5,
+    "vs_tips_10y": 0.147,
     "regime": "aligned",
-    "reason": "相关性 0.149，正相关（可能通胀 regime，两者同向）"
+    "reason": "相关性 0.147，正相关（可能通胀 regime，两者同向）"
   },
   "anomalies": [],
   "warnings": [
@@ -242,28 +242,18 @@
     },
     {
       "level": "warn",
-      "msg": "USDJPY 157.56 进入 155-160 口头干预区间 (JP MoF)",
+      "msg": "USDJPY 157.73 进入 155-160 口头干预区间 (JP MoF)",
       "key": "jpy_verbal_zone"
     },
     {
       "level": "warn",
-      "msg": "KRW/USD 1357.3 韩元明显走弱",
+      "msg": "KRW/USD 1359.0 韩元明显走弱",
       "key": "krw_weak"
     },
     {
       "level": "bad",
       "msg": "BIS CIP: FX 对冲后 UST 10Y (2.87%) < JGB (2.94%) = JP 投资者会抛售 UST",
       "key": "cip_repatriation_signal"
-    },
-    {
-      "level": "bad",
-      "msg": "SPY-IEF 60d 相关 +0.539 → 股债双杀严重区 (1970s 滞胀级, 传统对冲完全失效)",
-      "key": "stock_bond_corr_extreme"
-    },
-    {
-      "level": "warn",
-      "msg": "KBE/SPY 20d -5.38% 银行相对走弱 (需持续观察)",
-      "key": "bank_stress_warn"
     },
     {
       "level": "warn",
@@ -315,13 +305,13 @@
     "sofr_pct": 3.88,
     "iorb_pct": 3.9,
     "sofr_iorb_spread_bps": -2.0,
-    "usdjpy": 157.56,
-    "usdjpy_20d_pct": -0.86,
-    "usdjpy_20d_delta_pct": -0.86,
+    "usdjpy": 157.73,
+    "usdjpy_20d_pct": -0.75,
+    "usdjpy_20d_delta_pct": -0.75,
     "usdjpy_60d_high": 163.86,
-    "usdjpy_pullback_from_60d_high_pct": -3.85,
-    "krw_usd": 1357.3,
-    "krw_20d_pct": -0.08,
+    "usdjpy_pullback_from_60d_high_pct": -3.74,
+    "krw_usd": 1359.0,
+    "krw_20d_pct": 0.04,
     "jgb_10y_pct": 2.94,
     "jgb_asof": "2026-08-01",
     "ust_jgb_spread_bps": 235.3,
@@ -333,22 +323,21 @@
     "hedge_cost_jp": 2.42,
     "real_yield_gap_us_jp": 1.81,
     "cpi_jp_yoy_pct": 3.17,
-    "spy_ief_60d_corr": 0.539,
-    "kbe_spy_ratio": 0.0829,
-    "kbe_spy_20d_delta_pct": -5.38,
+    "kbe_spy_ratio": null,
+    "kbe_spy_20d_delta_pct": null,
     "cdx_ig_bps": 84.0,
     "cdx_hy_bps": 308.0,
-    "dxy": 101.48,
-    "dxy_pct_20d": 1.82,
-    "dxy_z_60d": 1.36,
+    "dxy": 101.49,
+    "dxy_pct_20d": 1.83,
+    "dxy_z_60d": 1.37,
     "asia_indices": {
       "N225": {
         "symbol": "^N225",
         "label": "Nikkei 225 (日)",
-        "close": 65481.27,
-        "chg_1d": -0.6,
-        "chg_5d_pct": 2.1,
-        "asof": "2026-09-29"
+        "close": 67406.11,
+        "chg_1d": 2.94,
+        "chg_5d_pct": 3.67,
+        "asof": "2026-10-01"
       },
       "HSI": {
         "symbol": "^HSI",
@@ -377,43 +366,43 @@
       "KOSPI": {
         "symbol": "^KS11",
         "label": "KOSPI (韩)",
-        "close": 6870.81,
-        "chg_1d": -0.27,
-        "chg_5d_pct": -0.34,
-        "asof": "2026-09-29"
+        "close": 6796.75,
+        "chg_1d": -1.08,
+        "chg_5d_pct": -3.01,
+        "asof": "2026-10-01"
       }
     },
     "us_futures": {
       "es_f": {
         "symbol": "ES=F",
         "label": "S&P 500 futures",
-        "price": 7743.25,
-        "chg_pct": 0.15
+        "price": 7735.75,
+        "chg_pct": 0.05
       },
       "nq_f": {
         "symbol": "NQ=F",
         "label": "Nasdaq futures",
-        "price": 30822.0,
-        "chg_pct": 0.68
+        "price": 30776.25,
+        "chg_pct": 0.53
       },
       "cl_f": {
         "symbol": "CL=F",
         "label": "WTI crude futures",
-        "price": 89.93,
-        "chg_pct": 0.62
+        "price": 90.39,
+        "chg_pct": 1.13
       },
       "gc_f": {
         "symbol": "GC=F",
         "label": "Gold futures",
-        "price": 4186.1,
-        "chg_pct": 0.15
+        "price": 4172.8,
+        "chg_pct": -0.17
       }
     },
-    "oil_uso": 145.66,
-    "oil_pct_20d": 3.3,
-    "oil_wti": 89.93,
-    "eem_pct_20d": 0.03,
-    "eem_vs_spx_20d": -0.33,
+    "oil_uso": null,
+    "oil_pct_20d": null,
+    "oil_wti": 90.39,
+    "eem_pct_20d": null,
+    "eem_vs_spx_20d": null,
     "volume_confirm": {
       "rates": {
         "proxy": "TLT",
@@ -506,8 +495,8 @@
     }
   },
   "_meta": {
-    "cached_at": "2026-10-01T08:59:42.381763",
-    "age_sec": 199,
+    "cached_at": "2026-10-01T09:30:43.488428",
+    "age_sec": 138,
     "stale": false,
     "refreshing": false
   }
