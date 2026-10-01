@@ -269,8 +269,8 @@
   "asof": "2026-09-30 15:20 JST",
   "source": "yfinance_intraday",
   "_meta": {
-    "cached_at": "2026-10-01T08:31:27.050395",
-    "age_sec": 95,
+    "cached_at": "2026-10-01T09:02:57.772756",
+    "age_sec": 4,
     "stale": false,
     "refreshing": false
   }
