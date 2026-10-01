@@ -9,77 +9,89 @@
     "score": 0,
     "event_counts": {
       "MEDIA_ATTACK": 6,
-      "GEOPOLITICAL": 4,
+      "GEOPOLITICAL": 5,
       "FED": 1,
       "DEAL": 2,
       "NOISE": 4,
-      "DOMESTIC_POLICY": 5,
-      "MARKET": 1
+      "DOMESTIC_POLICY": 4,
+      "MARKET": 3
     },
     "breaking": [
       {
-        "event_type": "FED",
-        "direction": "bullish",
-        "magnitude": "medium",
-        "confidence": 9,
-        "tickers": [
-          "SPY",
-          "QQQ",
-          "TQQQ",
-          "SOXL",
-          "NVDA"
-        ],
-        "preview": "The Inspector General's Report just came out on Jerome \"Too Late\" Powell's \"renovation\" of the Federal Reserve Headquart",
-        "verbatim": "Powell should be forced to resign from the Board... High Interest Rate Policy",
-        "post_time": "2026-09-30T19:48:03.293Z"
-      },
-      {
         "event_type": "DEAL",
         "direction": "bullish",
-        "magnitude": "medium",
-        "confidence": 8,
+        "magnitude": "large",
+        "confidence": 9,
         "tickers": [
           "SPY",
           "QQQ",
           "TQQQ"
         ],
         "preview": "In New York, I met with Lee Jae Myung, the President of the Republic of Korea, and we agreed to launch 200 Billion Dolla",
-        "verbatim": "agreed to launch 200 Billion Dollars of new Investments in AMERICA... 350 BILLION DOLLAR Korea Strategic Trade and Investment Deal",
+        "verbatim": "we agreed to launch 200 Billion Dollars of new Investments in AMERICA",
         "post_time": "2026-10-01T00:41:28.355Z"
       },
       {
         "event_type": "DEAL",
         "direction": "bullish",
-        "magnitude": "medium",
-        "confidence": 8,
+        "magnitude": "large",
+        "confidence": 9,
         "tickers": [
           "SPY",
-          "QQQ"
+          "QQQ",
+          "TQQQ"
         ],
         "preview": "RT @realDonaldTrumpIn New York, I met with Lee Jae Myung, the President of the Republic of Korea, and we agreed to launc",
         "verbatim": "launch 200 Billion Dollars of new Investments in AMERICA... 350 BILLION DOLLAR Korea Strategic Trade and Investment Deal",
         "post_time": "2026-10-01T02:25:19.582Z"
       },
       {
+        "event_type": "FED",
+        "direction": "bullish",
+        "magnitude": "medium",
+        "confidence": 8,
+        "tickers": [
+          "SPY",
+          "QQQ",
+          "TQQQ",
+          "GLD"
+        ],
+        "preview": "The Inspector General's Report just came out on Jerome \"Too Late\" Powell's \"renovation\" of the Federal Reserve Headquart",
+        "verbatim": "Powell should be forced to resign from the Board... High Interest Rate Policy",
+        "post_time": "2026-09-30T19:48:03.293Z"
+      },
+      {
         "event_type": "MARKET",
         "direction": "bullish",
         "magnitude": "small",
-        "confidence": 7,
+        "confidence": 8,
         "tickers": [
           "SPY"
         ],
         "preview": "Congratulations to the GREAT Boeing Company for producing a plane, the 737 Max, that was able to withstand G Forces and ",
-        "verbatim": "Congratulations to the GREAT Boeing Company... The Boeing Company... builds, by far, the finest commercial airliners in the sky",
+        "verbatim": "Congratulations to the GREAT Boeing Company... The Boeing Company, which builds, by far, the finest commercial airliners in the sky",
         "post_time": "2026-10-01T04:40:35.537Z"
+      },
+      {
+        "event_type": "MARKET",
+        "direction": "bullish",
+        "magnitude": "small",
+        "confidence": 8,
+        "tickers": [
+          "SPY"
+        ],
+        "preview": "RT @realDonaldTrumpCongratulations to the GREAT Boeing Company for producing a plane, the 737 Max, that was able to with",
+        "verbatim": "RT @realDonaldTrumpCongratulations to the GREAT Boeing Company... congratulations on a job well done",
+        "post_time": "2026-10-01T14:58:51.870Z"
       }
     ],
     "summary": {
-      "text": "利好波音、抨击媒体偏见，整体情绪偏正面。",
+      "text": "特朗普提名法官并力挺波音，市场情绪偏正面。",
       "state": "cached",
       "post_ids": [
-        "117363810994521058",
-        "117363530938149737",
-        "117363529555626519"
+        "117366396669364721",
+        "117366242139776153",
+        "117363810994521058"
       ]
     }
   },

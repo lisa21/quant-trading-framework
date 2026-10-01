@@ -1,24 +1,24 @@
 {
   "ticker": "USO",
   "flow": {
-    "super_net": -1381557.1870000004,
-    "big_net": 3437411.308,
-    "mid_net": 1948621.7939999998,
-    "small_net": 174852.5799999982,
-    "total_net": 4179328.495000005,
-    "smart_pct": 0.02503072867897327
+    "super_net": -2154386.812,
+    "big_net": 1198915.8359999992,
+    "mid_net": -758920.7960000001,
+    "small_net": -9664982.388,
+    "total_net": -11379374.160000011,
+    "smart_pct": -0.006565246943949153
   },
   "anomaly": {
     "detected": false,
     "reason": "",
     "score": 0.0
   },
-  "asof": "2026-10-01 11:32:49",
+  "asof": "2026-10-01 12:29:10",
   "source": "moomoo",
   "_meta": {
-    "cached_at": "2026-10-02T00:33:03.415833",
-    "age_sec": 1799,
-    "stale": true,
-    "refreshing": true
+    "cached_at": "2026-10-02T01:29:29.041514",
+    "age_sec": 213,
+    "stale": false,
+    "refreshing": false
   }
 }
