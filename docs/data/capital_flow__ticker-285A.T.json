@@ -800,9 +800,9 @@
   "asof": "2026-10-01 15:20 JST",
   "source": "yfinance_intraday",
   "_meta": {
-    "cached_at": "2026-10-01T23:30:45.793644",
-    "age_sec": 137,
-    "stale": false,
-    "refreshing": false
+    "cached_at": "2026-10-01T23:57:29.313828",
+    "age_sec": 336,
+    "stale": true,
+    "refreshing": true
   }
 }
