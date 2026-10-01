@@ -237,9 +237,9 @@
         "buy_value_oku": 47.77,
         "sell_value_oku": 290.04,
         "full_bias": "sell",
-        "full_up_shares": 6021000,
+        "full_up_shares": 6144900,
         "full_down_shares": 14617000,
-        "full_up_value_oku": 216.58,
+        "full_up_value_oku": 221.04,
         "full_down_value_oku": 525.08
       },
       {
@@ -727,8 +727,8 @@
   "asof": "2026-10-01 11:30 JST",
   "source": "yfinance_intraday",
   "_meta": {
-    "cached_at": "2026-10-01T11:58:26.167712",
-    "age_sec": 276,
+    "cached_at": "2026-10-01T12:29:56.998017",
+    "age_sec": 185,
     "stale": false,
     "refreshing": false
   }
