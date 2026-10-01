@@ -5,8 +5,8 @@
       "date": "2026-10-28",
       "days_until": 27,
       "probabilities": {
-        "hold": 64.4,
-        "hike_25": 35.6
+        "hold": 59.8,
+        "hike_25": 40.2
       },
       "most_likely": "hold",
       "consensus_direction": "hawkish_lean"
@@ -15,9 +15,9 @@
       "date": "2026-12-09",
       "days_until": 69,
       "probabilities": {
-        "hold": 12.4,
-        "hike_25": 58.9,
-        "hike_50": 28.7
+        "hold": 11.5,
+        "hike_25": 56.0,
+        "hike_50": 32.5
       },
       "most_likely": "hike_25",
       "consensus_direction": "hawkish"
@@ -26,38 +26,31 @@
       "date": "2027-01-27",
       "days_until": 118,
       "probabilities": {
-        "hold": 5.3,
-        "hike_25": 32.3,
-        "hike_50": 62.4
-      },
-      "most_likely": "hike_50",
-      "consensus_direction": "hawkish"
-    },
-    {
-      "date": "2027-03-17",
-      "days_until": 167,
-      "probabilities": {
-        "hold": 1.4,
-        "hike_25": 12.5,
-        "hike_50": 86.1
+        "hold": 4.9,
+        "hike_25": 30.6,
+        "hike_50": 64.6
       },
       "most_likely": "hike_50",
       "consensus_direction": "hawkish"
     }
   ],
-  "implied_terminal_rate": "4.75-5.00",
-  "implied_terminal_date": "2027-Q3/Q4",
-  "data_snapshot_date": "2026-09-30 22:05 EDT",
-  "recent_event_impact": "过去7天内未发现新的NFP/CPI/PPI/FOMC或Fed Chair Warsh讲话；最新可用就业/通胀事件为8月NFP +162K、8月CPI +0.4% m/m且3.4% y/y、8月PPI同比5.4%，叠加9月16日FOMC加息25bp，使期货曲线继续定价后续加息路径。",
-  "commentary": "Data snapshot为2026-09-30 22:05 EDT，晚于最近一次8月NFP、CPI、PPI和2026-09-16 FOMC加息事件，因此未见数据滞后。市场目前不是定价降息，而是受8月CPI/PPI偏热和8月就业强于前期均值影响，预期到12月有较高概率再加息25bp，并在2027年进一步上移至约4.75-5.00区间。",
+  "implied_terminal_rate": "4.50-4.75",
+  "implied_terminal_date": "2027-Q2",
+  "data_snapshot_date": "2026-10-01 06:05 EDT",
+  "recent_event_impact": "最近7天内未发现NFP/CPI/PPI/FOMC或Fed Chair Warsh政策讲话；最近关键数据为8月NFP +162K、失业率4.1%(9/4发布)，8月PPI +0.4% m/m、+5.4% y/y(9/10发布)，8月CPI +0.4% m/m、+3.4% y/y(9/11发布)，以及9/16 FOMC加息25bp至3.75-4.00。10/1快照已在这些事件之后，市场仍定价年内继续加息，说明通胀数据与Warsh时代首次加息后的鹰派反应占主导。",
+  "commentary": "数据快照为2026-10-01 06:05 EDT，满足今日/最近1交易日要求；9/4 NFP显示就业仍稳、9/10 PPI与9/11 CPI显示通胀压力偏高，叠加9/16 FOMC加息后，市场对10月仅小幅偏向按兵不动，但对12月和2027年1月明显转向继续加息。注意Jan 2027的hike_50桶包含50bp及以上的累计目标区间概率，因为可用来源给出的是会后目标区间分布而非单次会议精确行动拆分。",
   "sources": [
-    {
-      "url": "https://www.investing.com/central-banks/fed-rate-monitor",
-      "type": "cme_based_fedwatch_snapshot"
-    },
     {
       "url": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
       "type": "cme_fedwatch"
+    },
+    {
+      "url": "https://www.investing.com/central-banks/fed-rate-monitor",
+      "type": "fed_rate_monitor_cme_based"
+    },
+    {
+      "url": "https://sessionopen.com/fed-watch",
+      "type": "fed_funds_futures_cme_based"
     },
     {
       "url": "https://www.bls.gov/news.release/empsit.htm",
@@ -72,16 +65,16 @@
       "type": "ppi"
     },
     {
-      "url": "https://www.axios.com/2026/09/16/fed-rates-warsh-trump",
-      "type": "fomc_report"
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm",
+      "type": "fomc_statement"
     }
   ],
   "confidence": "medium",
   "source_via": "codex_cli_websearch",
-  "fetched_at": "2026-10-01T02:55:46+00:00",
+  "fetched_at": "2026-10-01T10:57:24+00:00",
   "_meta": {
-    "cached_at": "2026-10-01T11:55:46.934392",
-    "age_sec": 27435,
+    "cached_at": "2026-10-01T19:57:24.456360",
+    "age_sec": 338,
     "stale": false,
     "refreshing": false
   }
