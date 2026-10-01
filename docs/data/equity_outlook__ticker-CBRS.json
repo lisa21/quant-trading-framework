@@ -211,7 +211,7 @@
   "source": "yfinance analyst aggregation",
   "_meta": {
     "cached_at": "2026-10-01T17:06:31.700025",
-    "age_sec": 12391,
+    "age_sec": 14191,
     "stale": false,
     "refreshing": false
   },
