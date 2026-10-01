@@ -7,10 +7,10 @@
     "recommendation": "strong_buy",
     "current_price": 512.9,
     "forward_eps": 23.64,
-    "trailing_eps": 17.97,
-    "eps_growth_pct": 31.6,
+    "trailing_eps": 18.11,
+    "eps_growth_pct": 30.6,
     "forward_pe": 21.69,
-    "trailing_pe": 28.54,
+    "trailing_pe": 28.32,
     "target_mean": 578.42,
     "target_high": 870.0,
     "target_low": 440.0,
@@ -18,10 +18,10 @@
     "revenue_growth_pct": 17.7,
     "earnings_growth_pct": 31.7,
     "next_earnings": "2026-10-29",
-    "implied_pe_hold": 674.84,
-    "implied_pe_hold_upside": 31.6,
-    "peg_fair_price": 747.15,
-    "peg_ratio": 0.69,
+    "implied_pe_hold": 669.63,
+    "implied_pe_hold_upside": 30.6,
+    "peg_fair_price": 723.5,
+    "peg_ratio": 0.71,
     "hist_pe_median": 35.68,
     "hist_pe_p25": 32.93,
     "hist_pe_p75": 38.29,
@@ -43,7 +43,7 @@
       },
       {
         "ticker": "AAPL",
-        "pe": 34.74
+        "pe": 34.75
       },
       {
         "ticker": "ORCL",
@@ -208,8 +208,8 @@
       {
         "key": "pe_hold",
         "label": "前瞻 EPS × 当前估值",
-        "implied_price": 674.84,
-        "gap_pct": 31.6
+        "implied_price": 669.63,
+        "gap_pct": 30.6
       },
       {
         "key": "historical_pe",
@@ -224,23 +224,23 @@
         "gap_pct": 5.2
       }
     ],
-    "median_gap_pct": 22.2,
+    "median_gap_pct": 21.7,
     "revision_signal": "upward",
-    "required_eps_growth_pct": -20.0,
-    "consensus_eps_growth_pct": 31.6,
-    "growth_cushion_pct": 51.6,
+    "required_eps_growth_pct": -20.6,
+    "consensus_eps_growth_pct": 30.6,
+    "growth_cushion_pct": 51.2,
     "rationale": [
-      "多口径隐含价中位数高于现价 22.2%",
+      "多口径隐含价中位数高于现价 21.7%",
       "近 30 天 EPS 共识上修",
-      "历史 PE 口径要求 EPS 增长 -20.0%，共识为 +31.6%"
+      "历史 PE 口径要求 EPS 增长 -20.6%，共识为 +30.6%"
     ]
   },
   "official_guidance_status": "not_connected",
-  "fetched_at": "2026-10-01T02:06:15.415948+00:00",
+  "fetched_at": "2026-10-01T08:06:32.932992+00:00",
   "source": "yfinance analyst aggregation",
   "_meta": {
-    "cached_at": "2026-10-01T11:06:15.420941",
-    "age_sec": 21408,
+    "cached_at": "2026-10-01T17:06:32.934000",
+    "age_sec": 1590,
     "stale": false,
     "refreshing": false
   },
