@@ -1,33 +1,7 @@
 {
-  "as_of": "2026-10-01T11:07:01.065296",
-  "count_total_actions": 625,
+  "as_of": "2026-10-01T23:10:57.155823",
+  "count_total_actions": 631,
   "tools": [
-    {
-      "tool_key": "long_end_buyback",
-      "zh": "长端回购扩容",
-      "owner": "Treasury",
-      "feasibility": "high",
-      "canonical_desc": "定期回购 10-30Y 老券, 压制长端 term premium",
-      "invalidation": "结构性发债需求未减 → 通常 T+1d 收益率反弹回来",
-      "status": "已用",
-      "last_action": {
-        "tool_key": "long_end_buyback",
-        "action_type": "announced",
-        "date": "2026-09-30",
-        "actor": "Bessent",
-        "amount_desc": "",
-        "commentary": "财政部回购被市场视作稳长债尝试；重点看规模是否足以压期限溢价。",
-        "verbatim": "Bessent Treasury Buyback Sparks Bond Alarm: Will BTC Feel It?",
-        "source": "GoogleNews: Bessent Treasury buyback",
-        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQS0l1Z2w3YkRWcmVtRjUwUWVQMlRWNHUxNllnUDBsVzk1YzR2bkxpRVNwTE5XejF4Umdjbmh3X05RQjE2eGtaQlZDSUFyajU1T05UaWVLdFptaEdZd0ZmaVN0enBFLU4zMzJyS0tvWVhTNmZhSDN1eVNrR1I1R0R5VmR5SldVVzh0?oc=5",
-        "confidence": 7
-      },
-      "yield_reaction_30y": {
-        "t0_bp": 4.4,
-        "yield_at_close": 5.638
-      },
-      "event_count_180d": 215
-    },
     {
       "tool_key": "fed_hawkish_signal",
       "zh": "Fed 官员鹰派信号",
@@ -49,7 +23,30 @@
         "confidence": 6
       },
       "yield_reaction_30y": {},
-      "event_count_180d": 323
+      "event_count_180d": 327
+    },
+    {
+      "tool_key": "long_end_buyback",
+      "zh": "长端回购扩容",
+      "owner": "Treasury",
+      "feasibility": "high",
+      "canonical_desc": "定期回购 10-30Y 老券, 压制长端 term premium",
+      "invalidation": "结构性发债需求未减 → 通常 T+1d 收益率反弹回来",
+      "status": "已用",
+      "last_action": {
+        "tool_key": "long_end_buyback",
+        "action_type": "signaled",
+        "date": "2026-10-01",
+        "actor": "Bessent",
+        "amount_desc": "",
+        "commentary": "从强硬喊话转向承认价格约束，显示干预边界被市场测试。",
+        "verbatim": "I can’t set the equilibrium price",
+        "source": "GoogleNews: Treasury bond market intervention Bessent",
+        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNdWJNcy1OeGdaekN1cHlFNHdXQzNqMUFzakhadzhSVlczYVh0Zno0X2UycDJWbHZIYnFUc253Mks4a1dBdEk1OHpHaGtmQlBicU5TWWZlUFR1VHpzMFBMMzNlMTcyZlJ6ZldRZUphWE1zM2djM2VoVFlac2piN29ZcHp1SHFTUnNPMEhQcXFBRjI?oc=5",
+        "confidence": 6
+      },
+      "yield_reaction_30y": {},
+      "event_count_180d": 216
     },
     {
       "tool_key": "ycc",
@@ -164,7 +161,7 @@
         "confidence": 5
       },
       "yield_reaction_30y": {},
-      "event_count_180d": 43
+      "event_count_180d": 44
     },
     {
       "tool_key": "qe_restart",

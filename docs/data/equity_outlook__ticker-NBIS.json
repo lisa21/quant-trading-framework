@@ -5,16 +5,16 @@
   "analyst_consensus": {
     "n_analysts": 19,
     "recommendation": "buy",
-    "current_price": 235.88,
+    "current_price": 228.69,
     "forward_eps": -3.49,
     "trailing_eps": -0.07,
     "eps_growth_pct": null,
-    "forward_pe": -67.58,
+    "forward_pe": -65.54,
     "trailing_pe": null,
     "target_mean": 283.58,
     "target_high": 415.0,
     "target_low": 84.0,
-    "target_upside_pct": 20.2,
+    "target_upside_pct": 24.0,
     "revenue_growth_pct": 454.0,
     "earnings_growth_pct": null,
     "next_earnings": "2026-11-10",
@@ -30,20 +30,20 @@
     "implied_hist_p25": null,
     "implied_hist_p75": null,
     "implied_hist_upside": null,
-    "peer_pe_median": 18.14,
+    "peer_pe_median": 17.96,
     "peer_pe_n_peers": 2,
     "peer_pe_details": [
       {
         "ticker": "ORCL",
-        "pe": 12.49
+        "pe": 12.32
       },
       {
         "ticker": "AMZN",
-        "pe": 23.78
+        "pe": 23.61
       }
     ],
-    "implied_peer_median": -63.32,
-    "implied_peer_upside": -126.8,
+    "implied_peer_median": -62.69,
+    "implied_peer_upside": -127.4,
     "source": "yfinance analyst aggregation",
     "forward_estimates": {
       "earnings": {
@@ -189,25 +189,25 @@
         "key": "analyst_target",
         "label": "分析师目标均值",
         "implied_price": 283.58,
-        "gap_pct": 20.2
+        "gap_pct": 24.0
       }
     ],
-    "median_gap_pct": 20.2,
+    "median_gap_pct": 24.0,
     "revision_signal": "upward",
     "required_eps_growth_pct": null,
     "consensus_eps_growth_pct": null,
     "growth_cushion_pct": null,
     "rationale": [
-      "多口径隐含价中位数高于现价 20.2%",
+      "多口径隐含价中位数高于现价 24.0%",
       "近 30 天 EPS 共识上修"
     ]
   },
   "official_guidance_status": "not_connected",
-  "fetched_at": "2026-10-01T08:06:32.721031+00:00",
+  "fetched_at": "2026-10-01T14:06:41.637460+00:00",
   "source": "yfinance analyst aggregation",
   "_meta": {
-    "cached_at": "2026-10-01T17:06:32.722034",
-    "age_sec": 21390,
+    "cached_at": "2026-10-01T23:06:41.638988",
+    "age_sec": 1581,
     "stale": false,
     "refreshing": false
   },
