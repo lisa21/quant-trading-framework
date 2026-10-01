@@ -1,5 +1,5 @@
 {
-  "asof": "2026-10-01T19:02",
+  "asof": "2026-10-01T19:18",
   "yields": {
     "10y": {
       "value": 5.293,
@@ -247,7 +247,7 @@
     },
     {
       "level": "warn",
-      "msg": "KRW/USD 1365.5 韩元明显走弱",
+      "msg": "KRW/USD 1364.2 韩元明显走弱",
       "key": "krw_weak"
     },
     {
@@ -325,8 +325,8 @@
     "usdjpy_20d_delta_pct": -1.75,
     "usdjpy_60d_high": 163.86,
     "usdjpy_pullback_from_60d_high_pct": -3.94,
-    "krw_usd": 1365.5,
-    "krw_20d_pct": 0.52,
+    "krw_usd": 1364.2,
+    "krw_20d_pct": 0.43,
     "jgb_10y_pct": 2.94,
     "jgb_asof": "2026-08-01",
     "ust_jgb_spread_bps": 235.3,
@@ -343,9 +343,9 @@
     "kbe_spy_20d_delta_pct": -5.38,
     "cdx_ig_bps": 84.0,
     "cdx_hy_bps": 308.0,
-    "dxy": 101.87,
-    "dxy_pct_20d": 2.32,
-    "dxy_z_60d": 1.74,
+    "dxy": 101.93,
+    "dxy_pct_20d": 2.38,
+    "dxy_z_60d": 1.81,
     "asia_indices": {
       "N225": {
         "symbol": "^N225",
@@ -392,31 +392,31 @@
       "es_f": {
         "symbol": "ES=F",
         "label": "S&P 500 futures",
-        "price": 7732.75,
-        "chg_pct": 0.22
+        "price": 7722.5,
+        "chg_pct": 0.09
       },
       "nq_f": {
         "symbol": "NQ=F",
         "label": "Nasdaq futures",
-        "price": 30871.25,
-        "chg_pct": 0.56
+        "price": 30808.75,
+        "chg_pct": 0.36
       },
       "cl_f": {
         "symbol": "CL=F",
         "label": "WTI crude futures",
-        "price": 92.32,
-        "chg_pct": 2.1
+        "price": 92.17,
+        "chg_pct": 1.94
       },
       "gc_f": {
         "symbol": "GC=F",
         "label": "Gold futures",
-        "price": 4190.7,
-        "chg_pct": 0.1
+        "price": 4184.4,
+        "chg_pct": -0.05
       }
     },
     "oil_uso": 145.66,
     "oil_pct_20d": 3.3,
-    "oil_wti": 92.32,
+    "oil_wti": 92.17,
     "eem_pct_20d": 0.03,
     "eem_vs_spx_20d": -0.33,
     "volume_confirm": {
@@ -501,18 +501,18 @@
     "stablecoin_total_bn": 257.9,
     "usdt_bn": 183.8,
     "usdc_bn": 74.1,
-    "vix": 16.53,
-    "bbi_score": 0.45,
+    "vix": 16.74,
+    "bbi_score": 0.43,
     "bbi_components": {
-      "vix": -0.24,
+      "vix": -0.21,
       "ig": -1.31,
       "hy": -0.9,
       "erp": 1.85
     }
   },
   "_meta": {
-    "cached_at": "2026-10-01T19:03:00.052184",
-    "age_sec": 2,
+    "cached_at": "2026-10-01T19:18:19.418797",
+    "age_sec": 883,
     "stale": false,
     "refreshing": false
   }
