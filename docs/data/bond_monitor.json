@@ -1,5 +1,5 @@
 {
-  "asof": "2026-10-02T05:53",
+  "asof": "2026-10-02T06:23",
   "yields": {
     "10y": {
       "value": 5.237,
@@ -196,10 +196,10 @@
   },
   "spreads": {
     "2s10s": {
-      "value": 0.41,
-      "chg_20d_bps": 1.0,
+      "value": 0.46,
+      "chg_20d_bps": 3.0,
       "regime": "正常",
-      "asof": "2026-09-30"
+      "asof": "2026-10-01"
     }
   },
   "gld_correlation": {
@@ -247,12 +247,12 @@
     },
     {
       "level": "warn",
-      "msg": "USDJPY 158.04 进入 155-160 口头干预区间 (JP MoF)",
+      "msg": "USDJPY 158.05 进入 155-160 口头干预区间 (JP MoF)",
       "key": "jpy_verbal_zone"
     },
     {
       "level": "warn",
-      "msg": "KRW/USD 1358.2 韩元明显走弱",
+      "msg": "KRW/USD 1358.5 韩元明显走弱",
       "key": "krw_weak"
     },
     {
@@ -325,13 +325,13 @@
     "sofr_pct": 3.9,
     "iorb_pct": 3.9,
     "sofr_iorb_spread_bps": 0.0,
-    "usdjpy": 158.04,
-    "usdjpy_20d_pct": -0.56,
-    "usdjpy_20d_delta_pct": -0.56,
+    "usdjpy": 158.05,
+    "usdjpy_20d_pct": -0.55,
+    "usdjpy_20d_delta_pct": -0.55,
     "usdjpy_60d_high": 163.86,
     "usdjpy_pullback_from_60d_high_pct": -3.55,
-    "krw_usd": 1358.2,
-    "krw_20d_pct": -0.01,
+    "krw_usd": 1358.5,
+    "krw_20d_pct": 0.01,
     "jgb_10y_pct": 2.94,
     "jgb_asof": "2026-08-01",
     "ust_jgb_spread_bps": 229.7,
@@ -397,38 +397,38 @@
       "es_f": {
         "symbol": "ES=F",
         "label": "S&P 500 futures",
-        "price": 7726.5,
-        "chg_pct": 0.14
+        "price": 7725.0,
+        "chg_pct": 0.12
       },
       "nq_f": {
         "symbol": "NQ=F",
         "label": "Nasdaq futures",
-        "price": 30782.0,
-        "chg_pct": 0.27
+        "price": 30771.25,
+        "chg_pct": 0.24
       },
       "cl_f": {
         "symbol": "CL=F",
         "label": "WTI crude futures",
-        "price": 92.98,
-        "chg_pct": 2.83
+        "price": 92.91,
+        "chg_pct": 2.75
       },
       "gc_f": {
         "symbol": "GC=F",
         "label": "Gold futures",
-        "price": 4203.7,
-        "chg_pct": 0.41
+        "price": 4207.8,
+        "chg_pct": 0.5
       }
     },
     "oil_uso": 150.02,
     "oil_pct_20d": 6.28,
-    "oil_wti": 92.98,
+    "oil_wti": 92.91,
     "eem_pct_20d": -0.51,
     "eem_vs_spx_20d": -0.61,
     "volume_confirm": {
       "rates": {
         "proxy": "TLT",
         "label": "20+Y 美债",
-        "vol_z_20d": 2.07,
+        "vol_z_20d": 2.08,
         "notable": true
       },
       "real_rates": {
@@ -446,37 +446,37 @@
       "credit_ig": {
         "proxy": "LQD",
         "label": "投资级信用 ETF",
-        "vol_z_20d": 1.26,
+        "vol_z_20d": 1.54,
         "notable": true
       },
       "credit_hy": {
         "proxy": "HYG",
         "label": "高收益信用 ETF",
-        "vol_z_20d": 1.96,
+        "vol_z_20d": 2.02,
         "notable": true
       },
       "vol": {
         "proxy": "VXX",
         "label": "VIX 期货 ETF",
-        "vol_z_20d": 0.28,
+        "vol_z_20d": 0.29,
         "notable": false
       },
       "em": {
         "proxy": "EEM",
         "label": "新兴市场 ETF",
-        "vol_z_20d": -0.01,
+        "vol_z_20d": -0.0,
         "notable": false
       },
       "us_equity": {
         "proxy": "SPY",
         "label": "S&P 500 ETF",
-        "vol_z_20d": 0.12,
+        "vol_z_20d": 0.23,
         "notable": false
       },
       "us_qqq": {
         "proxy": "QQQ",
         "label": "Nasdaq 100 ETF",
-        "vol_z_20d": 0.31,
+        "vol_z_20d": 0.34,
         "notable": false
       },
       "jp_equity": {
@@ -488,13 +488,13 @@
       "kr_equity": {
         "proxy": "EWY",
         "label": "iShares KR ETF (代 KOSPI)",
-        "vol_z_20d": -0.21,
+        "vol_z_20d": -0.2,
         "notable": false
       },
       "oil": {
         "proxy": "USO",
         "label": "WTI 原油 ETF",
-        "vol_z_20d": -0.25,
+        "vol_z_20d": -0.23,
         "notable": false
       }
     },
@@ -516,8 +516,8 @@
     }
   },
   "_meta": {
-    "cached_at": "2026-10-02T05:53:27.266428",
-    "age_sec": 575,
+    "cached_at": "2026-10-02T06:24:04.275558",
+    "age_sec": 538,
     "stale": false,
     "refreshing": false
   }
