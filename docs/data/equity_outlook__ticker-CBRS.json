@@ -207,11 +207,11 @@
     ]
   },
   "official_guidance_status": "not_connected",
-  "fetched_at": "2026-09-30T20:06:05.488572+00:00",
+  "fetched_at": "2026-10-01T02:06:14.429137+00:00",
   "source": "yfinance analyst aggregation",
   "_meta": {
-    "cached_at": "2026-10-01T05:06:05.489572",
-    "age_sec": 21417,
+    "cached_at": "2026-10-01T11:06:14.430143",
+    "age_sec": 1608,
     "stale": false,
     "refreshing": false
   },

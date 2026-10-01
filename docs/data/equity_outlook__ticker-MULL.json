@@ -35,15 +35,15 @@
     "peer_pe_details": [
       {
         "ticker": "005930.KS",
-        "pe": 3.78
+        "pe": 3.77
       },
       {
         "ticker": "000660.KS",
-        "pe": 3.78
+        "pe": 3.77
       },
       {
         "ticker": "285A.T",
-        "pe": 17.94
+        "pe": 18.76
       },
       {
         "ticker": "WDC",
@@ -56,14 +56,6 @@
     "forward_estimates": {
       "earnings": {
         "0q": {
-          "avg": 31.818,
-          "low": 30.2,
-          "high": 37.44,
-          "yearAgoEps": 3.03,
-          "numberOfAnalysts": 33.0,
-          "growth": 9.501
-        },
-        "+1q": {
           "avg": 35.9246,
           "low": 32.42,
           "high": 47.81,
@@ -71,33 +63,33 @@
           "numberOfAnalysts": 32.0,
           "growth": 6.5156
         },
-        "0y": {
-          "avg": 73.8829,
-          "low": 72.29,
-          "high": 80.16,
-          "yearAgoEps": 8.29,
-          "numberOfAnalysts": 36.0,
-          "growth": 7.9123
+        "+1q": {
+          "avg": 38.9027,
+          "low": 31.75,
+          "high": 51.18,
+          "yearAgoEps": 12.2,
+          "numberOfAnalysts": 31.0,
+          "growth": 2.1887
         },
-        "+1y": {
+        "0y": {
           "avg": 161.4926,
           "low": 131.96,
           "high": 221.27,
-          "yearAgoEps": 73.8829,
+          "yearAgoEps": 75.52,
           "numberOfAnalysts": 36.0,
-          "growth": 1.1858
+          "growth": 1.1384
+        },
+        "+1y": {
+          "avg": 181.983,
+          "low": 136.0,
+          "high": 335.5,
+          "yearAgoEps": 161.4926,
+          "numberOfAnalysts": 24.0,
+          "growth": 0.1269
         }
       },
       "revenue": {
         "0q": {
-          "avg": 51511982990.0,
-          "low": 49719000000.0,
-          "high": 59805000000.0,
-          "yearAgoRevenue": 11315000000.0,
-          "numberOfAnalysts": 35.0,
-          "growth": 3.5525
-        },
-        "+1q": {
           "avg": 57933826550.0,
           "low": 53256600000.0,
           "high": 75369000000.0,
@@ -105,86 +97,94 @@
           "numberOfAnalysts": 31.0,
           "growth": 3.2464
         },
-        "0y": {
-          "avg": 130342514110.0,
-          "low": 128678000000.0,
-          "high": 138764000000.0,
-          "yearAgoRevenue": 37378000000.0,
-          "numberOfAnalysts": 42.0,
-          "growth": 2.4871
+        "+1q": {
+          "avg": 62205478000.0,
+          "low": 54373000000.0,
+          "high": 80835000000.0,
+          "yearAgoRevenue": 23860000000.0,
+          "numberOfAnalysts": 30.0,
+          "growth": 1.6071
         },
-        "+1y": {
+        "0y": {
           "avg": 250518682630.0,
           "low": 131958000000.0,
           "high": 286830300000.0,
-          "yearAgoRevenue": 130342514110.0,
+          "yearAgoRevenue": 133188000000.0,
           "numberOfAnalysts": 43.0,
-          "growth": 0.922
+          "growth": 0.8809
+        },
+        "+1y": {
+          "avg": 285523933210.0,
+          "low": 127430000000.0,
+          "high": 396620000000.0,
+          "yearAgoRevenue": 250518682630.0,
+          "numberOfAnalysts": 30.0,
+          "growth": 0.1397
         }
       },
       "eps_trend": {
         "0q": {
-          "current": 31.818,
-          "7daysAgo": 31.5003,
-          "30daysAgo": 31.3289,
-          "60daysAgo": 31.3469,
-          "90daysAgo": 31.3029
-        },
-        "+1q": {
           "current": 35.9246,
           "7daysAgo": 35.5928,
           "30daysAgo": 34.8421,
           "60daysAgo": 34.8308,
           "90daysAgo": 34.7636
         },
-        "0y": {
-          "current": 73.8829,
-          "7daysAgo": 73.518,
-          "30daysAgo": 73.4368,
-          "60daysAgo": 73.4091,
-          "90daysAgo": 73.3111
+        "+1q": {
+          "current": 38.9027,
+          "7daysAgo": 38.4731,
+          "30daysAgo": 37.6711,
+          "60daysAgo": 37.6226,
+          "90daysAgo": 37.3962
         },
-        "+1y": {
+        "0y": {
           "current": 161.4926,
           "7daysAgo": 158.9264,
           "30daysAgo": 155.8047,
           "60daysAgo": 153.4883,
           "90daysAgo": 149.7435
+        },
+        "+1y": {
+          "current": 181.983,
+          "7daysAgo": 178.1976,
+          "30daysAgo": 171.0249,
+          "60daysAgo": 162.9444,
+          "90daysAgo": 163.347
         }
       },
       "eps_revisions": {
         "0q": {
-          "upLast7days": 0.0,
-          "upLast30days": 0.0,
-          "downLast30days": 2.0
-        },
-        "+1q": {
           "upLast7days": 1.0,
           "upLast30days": 1.0,
+          "downLast30days": 1.0
+        },
+        "+1q": {
+          "upLast7days": 0.0,
+          "upLast30days": 2.0,
           "downLast30days": 1.0
         },
         "0y": {
           "upLast7days": 1.0,
-          "upLast30days": 1.0,
-          "downLast30days": 1.0
+          "upLast30days": 2.0,
+          "downLast30days": 2.0
         },
         "+1y": {
           "upLast7days": 1.0,
-          "upLast30days": 2.0,
-          "downLast30days": 2.0
+          "upLast30days": 3.0,
+          "downLast30days": 1.0
         }
       },
       "revision_summary": {
         "period": "+1y",
         "signal": "upward",
         "trend_signal": "upward",
-        "breadth_signal": "flat",
-        "eps_current": 161.4926,
-        "eps_30d_ago": 155.8047,
-        "eps_trend_pct_30d": 3.65,
-        "up_30d": 2,
-        "down_30d": 2,
-        "net_30d": 0
+        "breadth_signal": "upward",
+        "eps_current": 181.983,
+        "eps_30d_ago": 171.0249,
+        "eps_trend_pct_30d": 6.41,
+        "up_30d": 3,
+        "down_30d": 1,
+        "net_30d": 2
       }
     }
   },
@@ -226,11 +226,11 @@
     ]
   },
   "official_guidance_status": "not_connected",
-  "fetched_at": "2026-09-30T20:06:05.713227+00:00",
+  "fetched_at": "2026-10-01T02:06:14.798234+00:00",
   "source": "yfinance analyst aggregation",
   "_meta": {
-    "cached_at": "2026-10-01T05:06:05.715236",
-    "age_sec": 21417,
+    "cached_at": "2026-10-01T11:06:14.800232",
+    "age_sec": 1608,
     "stale": false,
     "refreshing": false
   },

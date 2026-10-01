@@ -1,6 +1,6 @@
 {
-  "as_of": "2026-09-30T23:02:58.343203",
-  "count_total_actions": 623,
+  "as_of": "2026-10-01T11:07:01.065296",
+  "count_total_actions": 625,
   "tools": [
     {
       "tool_key": "long_end_buyback",
@@ -23,10 +23,10 @@
         "confidence": 7
       },
       "yield_reaction_30y": {
-        "t0_bp": 2.3,
-        "yield_at_close": 5.617
+        "t0_bp": 4.4,
+        "yield_at_close": 5.638
       },
-      "event_count_180d": 214
+      "event_count_180d": 215
     },
     {
       "tool_key": "fed_hawkish_signal",
@@ -49,7 +49,7 @@
         "confidence": 6
       },
       "yield_reaction_30y": {},
-      "event_count_180d": 322
+      "event_count_180d": 323
     },
     {
       "tool_key": "ycc",
@@ -236,7 +236,5 @@
       "yield_reaction_30y": {},
       "event_count_180d": 0
     }
-  ],
-  "stale": true,
-  "age_hours": 12.0
+  ]
 }

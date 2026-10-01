@@ -43,7 +43,7 @@
       },
       {
         "ticker": "1810.HK",
-        "pe": 16.42
+        "pe": 16.4
       }
     ],
     "implied_peer_median": 207.91,
@@ -228,11 +228,11 @@
     ]
   },
   "official_guidance_status": "not_connected",
-  "fetched_at": "2026-09-30T20:06:05.200142+00:00",
+  "fetched_at": "2026-10-01T02:06:14.037203+00:00",
   "source": "yfinance analyst aggregation",
   "_meta": {
-    "cached_at": "2026-10-01T05:06:05.201141",
-    "age_sec": 21417,
+    "cached_at": "2026-10-01T11:06:14.038211",
+    "age_sec": 1608,
     "stale": false,
     "refreshing": false
   },
