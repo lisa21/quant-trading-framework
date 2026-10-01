@@ -1254,8 +1254,25 @@ _COMPLEXITY_MODEL_ENV = {
 # 让 dashboard/复盘可以看到"这次 backtest 实际用了什么模型"而不是靠注释猜测.
 _AI_CALL_LOG_PATH = None   # 延迟初始化, 避 import 循环
 
+import threading as _threading
+
+# F11 (2026-10-01): 记录 CLI 自己回报的运行时模型 (每线程最近一次 codex 调用)
+_CODEX_RECEIPT = _threading.local()
+_MODEL_LINE_RE = re.compile(r"^\s*model\s*[:=]\s*([A-Za-z0-9][A-Za-z0-9._:/\-]*)\s*$",
+                            re.IGNORECASE | re.MULTILINE)
+
+
+def _parse_codex_model(text: str | None) -> str | None:
+    """从 codex exec 输出头部解析 "model: xxx". 解析不到返回 None (不猜)."""
+    if not text:
+        return None
+    m = _MODEL_LINE_RE.search(text)
+    return m.group(1) if m else None
+
+
 def _log_ai_call(*, provider: str, model: str | None, complexity: str,
-                  status: str, duration_s: float, fallback_reason: str = "") -> None:
+                  status: str, duration_s: float, fallback_reason: str = "",
+                  model_reported: str | None = None) -> None:
     """Append 一条 AI call metadata 到 signals/ai_calls.jsonl. 静默失败."""
     import json as _json
     from datetime import datetime as _dt, timezone as _tz
@@ -1272,7 +1289,11 @@ def _log_ai_call(*, provider: str, model: str | None, complexity: str,
             f.write(_json.dumps({
                 "ts":               _dt.now(_tz.utc).isoformat(),
                 "provider":         provider,
-                "model":            model or "cli_internal_default",
+                # F11: model = CLI 回报 > env 指定 > "cli_internal_default" (兼容旧标签);
+                # 是否真有 CLI 回报看 model_reported (None = CLI 未回报, 不猜)
+                "model":            model_reported or model or "cli_internal_default",
+                "model_requested":  model,
+                "model_reported":   model_reported,
                 "complexity":       complexity,
                 "status":           status,
                 "duration_s":       round(duration_s, 2),
@@ -1307,6 +1328,7 @@ def query_codex_cli(prompt: str, timeout: int = 300, *,
         return None, "codex_not_installed"
 
     model = _resolve_codex_model(complexity)
+    _CODEX_RECEIPT.model = None
 
     try:
         with tempfile.TemporaryDirectory(prefix="codex_ai_run_") as run_dir:
@@ -1347,6 +1369,8 @@ def query_codex_cli(prompt: str, timeout: int = 300, *,
                 env=_codex_safe_env(),
                 **_hidden_cli_subprocess_kwargs(),
             )
+            _CODEX_RECEIPT.model = (_parse_codex_model(result.stderr)
+                                    or _parse_codex_model(result.stdout))
             output = ""
             try:
                 output = out_path.read_text(encoding="utf-8", errors="replace").strip()
@@ -1428,7 +1452,9 @@ def query_ai_cli(
     dur = _time.monotonic() - t0
     # F11: 每次调用后 log (无论成功/失败) — 如果 fallback 起飞我们要有两条 audit
     _log_ai_call(provider=primary, model=model_used, complexity=complexity,
-                  status=status, duration_s=dur)
+                  status=status, duration_s=dur,
+                  model_reported=(getattr(_CODEX_RECEIPT, "model", None)
+                                  if primary == "codex" else None))
     if output:
         return output, status, primary.title(), ""
 
@@ -1450,12 +1476,16 @@ def query_ai_cli(
     if output:
         _log_ai_call(provider=fallback, model=fb_model, complexity=complexity,
                       status=fallback_status, duration_s=fb_dur,
-                      fallback_reason=fallback_reason)
+                      fallback_reason=fallback_reason,
+                      model_reported=(getattr(_CODEX_RECEIPT, "model", None)
+                                      if fallback == "codex" else None))
         return output, fallback_status, fallback.title(), fallback_reason
     combined = f"{fallback_reason}; {fallback}={fallback_status}"
     _log_ai_call(provider=fallback, model=fb_model, complexity=complexity,
                   status=fallback_status, duration_s=fb_dur,
-                  fallback_reason=fallback_reason)
+                  fallback_reason=fallback_reason,
+                  model_reported=(getattr(_CODEX_RECEIPT, "model", None)
+                                  if fallback == "codex" else None))
     return None, _redact_cli_text(combined), fallback.title(), fallback_reason
 
 

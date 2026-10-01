@@ -90,6 +90,27 @@ ORDER_ACTIONS = frozenset({Action.PROBE, Action.BUY, Action.ADD,
                             Action.REDUCE, Action.EXIT})
 
 
+# R07 (2026-10-01): 决策层词表 = canonical 值 + 决策可能输出的旧别名.
+# 执行内部标签 (TAKE_PROFIT / TRAILING_STOP / STOP_LOSS / PYRAMID_ADD / REBALANCE_*)
+# 仍可 parse, 但不属于决策词表, 不会变成可下单的决策动作.
+DECISION_ALIASES = frozenset({
+    "WATCH_BUY", "WATCH_BUY_PROBE", "WATCH_BUY_LONG_HOLD",
+    "SELL", "SELL_ALL", "REDUCE_RISK",
+})
+
+
+def decision_vocabulary() -> dict[str, Action]:
+    vocab = {a.value: a for a in Action}
+    vocab.update({s: LEGACY_ACTION_MAP[s] for s in DECISION_ALIASES})
+    return vocab
+
+
+def decision_strings(*actions: Action) -> frozenset[str]:
+    """决策词表里映射到给定 canonical 动作的全部字符串 (trading_contracts 由此派生)."""
+    wanted = set(actions)
+    return frozenset(s for s, a in decision_vocabulary().items() if a in wanted)
+
+
 def is_buy_like(action: Union[str, Action, None]) -> bool:
     """True for any bullish/opening action (WATCH / PROBE / BUY / ADD).
     Tolerates str / Action / None input."""

@@ -6,21 +6,18 @@ tradable in one component while silently ignored by another.
 from __future__ import annotations
 
 
-BUY_ACTIONS = frozenset({"BUY", "WATCH_BUY", "WATCH_BUY_PROBE",
-                          # R07 fix (2026-09-20 audit): canonical action enum
-                          # 值也要在这里, 否则新 caller 输出 PROBE/ADD 会被
-                          # ORDER_ACTIONS 检查漏掉, 生产 filter/execute 忽略.
-                          "PROBE", "ADD"})
-SELL_ACTIONS = frozenset({"SELL",
-                           "EXIT"})   # R07: canonical EXIT 也算 sell
-REDUCE_ACTIONS = frozenset({"REDUCE"})
+# R07 (2026-10-01): 单一权威 — 以下集合全部由 trading_actions 的决策词表派生,
+# 不再手写并行定义 (之前 SELL_ALL / REDUCE_RISK 在 enum 里可下单, 这里却没有).
+from trading_actions import Action as _A, decision_strings as _ds
+
+BUY_ACTIONS = _ds(_A.BUY, _A.PROBE, _A.ADD)      # BUY WATCH_BUY WATCH_BUY_PROBE PROBE ADD
+SELL_ACTIONS = _ds(_A.EXIT)                       # SELL SELL_ALL EXIT
+REDUCE_ACTIONS = _ds(_A.REDUCE)                   # REDUCE REDUCE_RISK
 ORDER_ACTIONS = BUY_ACTIONS | SELL_ACTIONS | REDUCE_ACTIONS
 
-PROBE_ONLY_ACTIONS = frozenset({"WATCH_BUY_PROBE",
-                                 "PROBE"})   # R07: canonical PROBE
+PROBE_ONLY_ACTIONS = _ds(_A.PROBE)               # WATCH_BUY_PROBE PROBE
 CRISIS_PROBE_TARGET_VOL = 0.05
-NON_EXECUTING_BULLISH_ACTIONS = frozenset({"WATCH_BUY_LONG_HOLD",
-                                             "WATCH"})   # R07: canonical WATCH
+NON_EXECUTING_BULLISH_ACTIONS = _ds(_A.WATCH)    # WATCH_BUY_LONG_HOLD WATCH (不下单)
 BULLISH_SIGNAL_ACTIONS = BUY_ACTIONS | NON_EXECUTING_BULLISH_ACTIONS
 BEARISH_SIGNAL_ACTIONS = SELL_ACTIONS | REDUCE_ACTIONS | frozenset({"CAUTION"})
 

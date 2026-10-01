@@ -50,8 +50,7 @@ _MAX_AGE_HOURS = 48
 _BUY_ACTIONS = {"BUY", "WATCH_BUY", "WATCH_BUY_PROBE"}
 _HOLD_ACTIONS = {"HOLD", "HOLD_CROSS"}
 _CAUTION_ACTIONS = {"CAUTION"}
-_REDUCE_ACTIONS = {"REDUCE", "REDUCE_RISK"}
-_SELL_ACTIONS = {"SELL", "SELL_ALL"}
+from trading_contracts import REDUCE_ACTIONS as _REDUCE_ACTIONS, SELL_ACTIONS as _SELL_ACTIONS  # R07 单一来源
 
 
 def _load_signal(path: Path) -> Optional[dict]:

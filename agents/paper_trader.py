@@ -1468,6 +1468,8 @@ def _place(code: str, side, qty: int, price: float, tag: str = "",
         "order_id": str(oid),
         "ticker": code,
         "side": side_label.strip(),
+        # 2026-10-01: 记录 tag, refresh_execution_ledger 才能按 tag 排除 REBALANCE 等
+        "tag": tag,
         "requested_qty": qty,
         "order_price": order_price,
         "reference_price": ref_price,
@@ -2581,36 +2583,16 @@ def submit_rebalance_order(ticker: str, side: str, qty: int, price: float,
     side_enum = TrdSide.BUY if side.upper() == "BUY" else TrdSide.SELL
     side_label = side.upper()
     tag = f"[REBALANCE {reason}]"
-
-    if DRY_RUN:
-        logger.info(f"[trader-DRY] {side_label} {qty} {code} @ {price:.2f} {tag}")
-        _log_trade(code, side_label, qty, round(price, 2), "DRY", tag,
-                   decision={"action": f"REBALANCE_{side_label}",
-                             "reason": reason, "engine": "rebalance"},
-                   mkt={"price": price}, window="pre-close")
-        return "DRY"
-
-    ctx = _ctx_get()
-    try:
-        ret, info = ctx.place_order(
-            price=round(price, 2), qty=float(qty), code=code,
-            trd_side=side_enum, order_type=OrderType.NORMAL,
-            trd_env=TRD_ENV, acc_id=ACC_ID,
-        )
-    except Exception as exc:
-        logger.error(f"[rebalance-submit] {code} FAIL: {exc}")
-        return None
-    if ret != RET_OK:
-        logger.error(f"[rebalance-submit] {side_label} {qty} {code} @ {price:.2f}: {info}")
-        return None
-    oid = info.iloc[0]["order_id"] if hasattr(info, "iloc") else str(info)
-    logger.info(f"[trader-LIVE] {side_label} {qty} {code} @ {price:.2f} "
-                f"order={oid} {tag}")
-    _log_trade(code, side_label, qty, round(price, 2), str(oid), tag,
-               decision={"action": f"REBALANCE_{side_label}",
-                         "reason": reason, "engine": "rebalance"},
-               mkt={"price": price}, window="pre-close")
-    return str(oid)
+    # F09 (Codex MODEL_AUDIT 2026-09-19, 修于 2026-10-01): 走标准 _place 链路 —
+    # 组合风险门 / 执行计划 / execution ledger "submitted" (成交才能被对账) / 通知.
+    # 之前直接 ctx.place_order, 以上全部绕过. buffer=0: 保持原来按给定价挂限价单.
+    # 价格新鲜度由 auto_rebalance 负责 (它未提供带时间戳的行情, 故不传 mkt).
+    return _place(
+        code, side_enum, int(qty), float(price), tag=tag, buffer=0.0,
+        decision={"action": f"REBALANCE_{side_label}",
+                  "reason": reason, "engine": "rebalance"},
+        window="pre-close",
+    )
 
 
 def _cli_flatten():

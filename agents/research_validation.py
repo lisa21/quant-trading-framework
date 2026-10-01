@@ -121,7 +121,8 @@ def evaluate_rule_walk_forward(
     # 之前 avg_ret 用原始 raw return, REDUCE 后价格跌 → ret<0 → 平均 avg_ret 负,
     # 但方向 100% 命中 (win_rate 高), 出现 "胜率 100%, 收益负" 的矛盾.
     # Fix: reduce 动作用 effective_ret = -ret (避损收益), 与 win 定义对齐.
-    is_reduce = action in {"REDUCE", "REDUCE_RISK", "EXIT", "SELL", "SELL_ALL"}
+    from trading_contracts import REDUCE_ACTIONS, SELL_ACTIONS   # R07 单一来源
+    is_reduce = action in (REDUCE_ACTIONS | SELL_ACTIONS)
     folds = []
     all_oos: list[dict] = []
     for split in splits:
