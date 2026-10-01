@@ -1,5 +1,5 @@
 {
-  "asof": "2026-10-02T06:54",
+  "asof": "2026-10-02T07:25",
   "yields": {
     "10y": {
       "value": 5.237,
@@ -247,12 +247,12 @@
     },
     {
       "level": "warn",
-      "msg": "USDJPY 158.05 进入 155-160 口头干预区间 (JP MoF)",
+      "msg": "USDJPY 157.56 进入 155-160 口头干预区间 (JP MoF)",
       "key": "jpy_verbal_zone"
     },
     {
       "level": "warn",
-      "msg": "KRW/USD 1359.8 韩元明显走弱",
+      "msg": "KRW/USD 1359.6 韩元明显走弱",
       "key": "krw_weak"
     },
     {
@@ -325,13 +325,13 @@
     "sofr_pct": 3.9,
     "iorb_pct": 3.9,
     "sofr_iorb_spread_bps": 0.0,
-    "usdjpy": 158.05,
-    "usdjpy_20d_pct": -0.55,
-    "usdjpy_20d_delta_pct": -0.55,
+    "usdjpy": 157.56,
+    "usdjpy_20d_pct": -0.86,
+    "usdjpy_20d_delta_pct": -0.86,
     "usdjpy_60d_high": 163.86,
-    "usdjpy_pullback_from_60d_high_pct": -3.55,
-    "krw_usd": 1359.8,
-    "krw_20d_pct": 0.1,
+    "usdjpy_pullback_from_60d_high_pct": -3.85,
+    "krw_usd": 1359.6,
+    "krw_20d_pct": 0.09,
     "jgb_10y_pct": 2.94,
     "jgb_asof": "2026-08-01",
     "ust_jgb_spread_bps": 229.7,
@@ -348,9 +348,9 @@
     "kbe_spy_20d_delta_pct": -6.45,
     "cdx_ig_bps": 84.0,
     "cdx_hy_bps": 312.0,
-    "dxy": 102.02,
-    "dxy_pct_20d": 2.47,
-    "dxy_z_60d": 1.9,
+    "dxy": 102.04,
+    "dxy_pct_20d": 2.49,
+    "dxy_z_60d": 1.92,
     "asia_indices": {
       "N225": {
         "symbol": "^N225",
@@ -397,31 +397,31 @@
       "es_f": {
         "symbol": "ES=F",
         "label": "S&P 500 futures",
-        "price": 7725.0,
-        "chg_pct": 0.12
+        "price": 7725.75,
+        "chg_pct": 0.13
       },
       "nq_f": {
         "symbol": "NQ=F",
         "label": "Nasdaq futures",
-        "price": 30771.25,
-        "chg_pct": 0.24
+        "price": 30786.75,
+        "chg_pct": 0.29
       },
       "cl_f": {
         "symbol": "CL=F",
         "label": "WTI crude futures",
-        "price": 92.91,
-        "chg_pct": 2.75
+        "price": 93.15,
+        "chg_pct": 3.02
       },
       "gc_f": {
         "symbol": "GC=F",
         "label": "Gold futures",
-        "price": 4207.8,
-        "chg_pct": 0.5
+        "price": 4202.2,
+        "chg_pct": 0.37
       }
     },
     "oil_uso": 150.02,
     "oil_pct_20d": 6.28,
-    "oil_wti": 92.91,
+    "oil_wti": 93.15,
     "eem_pct_20d": -0.51,
     "eem_vs_spx_20d": -0.61,
     "volume_confirm": {
@@ -516,8 +516,8 @@
     }
   },
   "_meta": {
-    "cached_at": "2026-10-02T06:54:51.639194",
-    "age_sec": 493,
+    "cached_at": "2026-10-02T07:25:55.678174",
+    "age_sec": 427,
     "stale": false,
     "refreshing": false
   }
