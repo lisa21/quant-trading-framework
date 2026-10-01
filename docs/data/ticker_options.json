@@ -14417,14 +14417,14 @@
   "cache_contract": "15efd89eda8e",
   "_meta": {
     "cached_at": "2026-10-01T18:33:20.110216",
-    "age_sec": 10782,
+    "age_sec": 12582,
     "stale": false,
     "refreshing": false
   },
   "flow_meta": {
     "generated_at": "2026-10-01T12:06:23.488433+00:00",
     "status": "ready",
-    "age_sec": 1561.4,
+    "age_sec": 3361.6,
     "stale": false
   }
 }

@@ -9,11 +9,12 @@
     "score": 0,
     "event_counts": {
       "MEDIA_ATTACK": 6,
-      "GEOPOLITICAL": 5,
+      "GEOPOLITICAL": 4,
       "FED": 1,
       "DEAL": 2,
       "NOISE": 4,
-      "DOMESTIC_POLICY": 4
+      "DOMESTIC_POLICY": 5,
+      "MARKET": 1
     },
     "breaking": [
       {
@@ -29,7 +30,7 @@
           "NVDA"
         ],
         "preview": "RT @realDonaldTrumpIn New York, I met with Lee Jae Myung, the President of the Republic of Korea, and we agreed to launc",
-        "verbatim": "we agreed to launch 200 Billion Dollars of new Investments in AMERICA... 350 BILLION DOLLAR Korea Strategic Trade and Investment Deal",
+        "verbatim": "agreed to launch 200 Billion Dollars of new Investments in AMERICA... 350 BILLION DOLLAR Korea Strategic Trade and Investment Deal",
         "post_time": "2026-10-01T02:25:19.582Z"
       },
       {
@@ -41,12 +42,10 @@
           "SPY",
           "QQQ",
           "TQQQ",
-          "SOXL",
-          "NVDA",
           "GLD"
         ],
         "preview": "The Inspector General's Report just came out on Jerome \"Too Late\" Powell's \"renovation\" of the Federal Reserve Headquart",
-        "verbatim": "Powell should be forced to resign from the Board. He can't manage a Building, and he certainly shouldn't be allowed to manage his High Interest Rate Policy",
+        "verbatim": "Powell should be forced to resign... shouldn't be allowed to manage his High Interest Rate Policy",
         "post_time": "2026-09-30T19:48:03.293Z"
       },
       {
@@ -59,8 +58,20 @@
           "QQQ"
         ],
         "preview": "In New York, I met with Lee Jae Myung, the President of the Republic of Korea, and we agreed to launch 200 Billion Dolla",
-        "verbatim": "we agreed to launch 200 Billion Dollars of new Investments in AMERICA",
+        "verbatim": "agreed to launch 200 Billion Dollars of new Investments in AMERICA",
         "post_time": "2026-10-01T00:41:28.355Z"
+      },
+      {
+        "event_type": "MARKET",
+        "direction": "bullish",
+        "magnitude": "small",
+        "confidence": 8,
+        "tickers": [
+          "SPY"
+        ],
+        "preview": "Congratulations to the GREAT Boeing Company for producing a plane, the 737 Max, that was able to withstand G Forces and ",
+        "verbatim": "Congratulations to the GREAT Boeing Company for producing a plane, the 737 Max, that was able to withstand G Forces",
+        "post_time": "2026-10-01T04:40:35.537Z"
       },
       {
         "event_type": "GEOPOLITICAL",
@@ -69,33 +80,20 @@
         "confidence": 7,
         "tickers": [
           "SPY",
-          "GLD"
+          "QQQ"
         ],
         "preview": "Today, I am pleased to announce, that the last American Forces are leaving Iraq! It has been a long time, with very bad ",
         "verbatim": "I am pleased to announce, that the last American Forces are leaving Iraq!",
         "post_time": "2026-09-30T17:17:33.142Z"
-      },
-      {
-        "event_type": "GEOPOLITICAL",
-        "direction": "bullish",
-        "magnitude": "small",
-        "confidence": 7,
-        "tickers": [
-          "SPY",
-          "GLD"
-        ],
-        "preview": "RT @realDonaldTrumpToday, I am pleased to announce, that the last American Forces are leaving Iraq! It has been a long t",
-        "verbatim": "RT @realDonaldTrumpToday, I am pleased to announce, that the last American Forces are leaving Iraq!",
-        "post_time": "2026-09-30T23:30:40.827Z"
       }
     ],
     "summary": {
-      "text": "特朗普集中攻击媒体与Jack Smith，情绪偏负面避险。",
+      "text": "利好波音、抨击媒体偏见，整体情绪偏正面。",
       "state": "cached",
       "post_ids": [
+        "117363810994521058",
         "117363530938149737",
-        "117363529555626519",
-        "117363528339371665"
+        "117363529555626519"
       ]
     }
   },

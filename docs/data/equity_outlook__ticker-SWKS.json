@@ -47,7 +47,7 @@
       },
       {
         "ticker": "6981.T",
-        "pe": 35.7
+        "pe": 35.88
       },
       {
         "ticker": "NXPI",
@@ -236,11 +236,11 @@
     ]
   },
   "official_guidance_status": "not_connected",
-  "fetched_at": "2026-10-01T06:41:14.252522+00:00",
+  "fetched_at": "2026-10-01T12:41:26.764645+00:00",
   "source": "yfinance analyst aggregation",
   "_meta": {
-    "cached_at": "2026-10-01T15:41:14.253532",
-    "age_sec": 21109,
+    "cached_at": "2026-10-01T21:41:26.766160",
+    "age_sec": 1296,
     "stale": false,
     "refreshing": false
   },

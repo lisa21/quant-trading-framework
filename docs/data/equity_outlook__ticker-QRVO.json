@@ -7,10 +7,10 @@
     "recommendation": "hold",
     "current_price": 114.48,
     "forward_eps": 7.91,
-    "trailing_eps": 4.22,
-    "eps_growth_pct": 87.4,
+    "trailing_eps": 4.3,
+    "eps_growth_pct": 83.9,
     "forward_pe": 14.48,
-    "trailing_pe": 27.13,
+    "trailing_pe": 26.62,
     "target_mean": 90.17,
     "target_high": 105.0,
     "target_low": 66.0,
@@ -18,9 +18,9 @@
     "revenue_growth_pct": -4.2,
     "earnings_growth_pct": 255.6,
     "next_earnings": "2026-11-10",
-    "implied_pe_hold": 214.48,
-    "implied_pe_hold_upside": 87.4,
-    "peg_fair_price": 691.02,
+    "implied_pe_hold": 210.49,
+    "implied_pe_hold_upside": 83.9,
+    "peg_fair_price": 663.35,
     "peg_ratio": 0.17,
     "hist_pe_median": 106.0,
     "hist_pe_p25": 92.48,
@@ -43,7 +43,7 @@
       },
       {
         "ticker": "6981.T",
-        "pe": 35.7
+        "pe": 35.88
       },
       {
         "ticker": "QCOM",
@@ -208,8 +208,8 @@
       {
         "key": "pe_hold",
         "label": "前瞻 EPS × 当前估值",
-        "implied_price": 214.48,
-        "gap_pct": 87.4
+        "implied_price": 210.49,
+        "gap_pct": 83.9
       },
       {
         "key": "peer_pe",
@@ -220,21 +220,21 @@
     ],
     "median_gap_pct": 25.1,
     "revision_signal": "upward",
-    "required_eps_growth_pct": -74.4,
-    "consensus_eps_growth_pct": 87.4,
-    "growth_cushion_pct": 161.8,
+    "required_eps_growth_pct": -74.9,
+    "consensus_eps_growth_pct": 83.9,
+    "growth_cushion_pct": 158.8,
     "rationale": [
       "多口径隐含价中位数高于现价 25.1%",
       "近 30 天 EPS 共识上修",
-      "历史 PE 口径要求 EPS 增长 -74.4%，共识为 +87.4%"
+      "历史 PE 口径要求 EPS 增长 -74.9%，共识为 +83.9%"
     ]
   },
   "official_guidance_status": "not_connected",
-  "fetched_at": "2026-10-01T06:41:14.368711+00:00",
+  "fetched_at": "2026-10-01T12:41:26.119021+00:00",
   "source": "yfinance analyst aggregation",
   "_meta": {
-    "cached_at": "2026-10-01T15:41:14.369218",
-    "age_sec": 21108,
+    "cached_at": "2026-10-01T21:41:26.119022",
+    "age_sec": 1297,
     "stale": false,
     "refreshing": false
   },

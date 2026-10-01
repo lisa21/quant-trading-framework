@@ -17,28 +17,28 @@
     "regime_zh": "中性震荡",
     "base_regime": "neutral",
     "style": {
-      "style": "chop_weak",
-      "style_zh": "震荡偏弱",
-      "chop_score": 3,
+      "style": "chop",
+      "style_zh": "横盘震荡",
+      "chop_score": 4,
       "is_choppy": true,
-      "reason": "10日趋势效率偏低(0.21)；ADX偏低(10.8)；净涨跌小但路径反复",
+      "reason": "10日趋势效率偏低(0.26)；ADX偏低(10.4)；10日穿越MA20 2次；净涨跌小但路径反复",
       "metrics": {
-        "pct_5d": -1.19,
-        "pct_20d": -0.12,
-        "dist_ma20_pct": 0.04,
-        "dist_ma50_pct": 0.44,
-        "efficiency_10": 0.205,
-        "efficiency_20": 0.011,
-        "adx_14": 10.8,
-        "reversal_count_10d": 4,
-        "ma20_crossings_10d": 1,
-        "atr_5_20_ratio": 0.929
+        "pct_5d": -0.67,
+        "pct_20d": 0.36,
+        "dist_ma20_pct": -0.18,
+        "dist_ma50_pct": 0.19,
+        "efficiency_10": 0.258,
+        "efficiency_20": 0.033,
+        "adx_14": 10.4,
+        "reversal_count_10d": 3,
+        "ma20_crossings_10d": 2,
+        "atr_5_20_ratio": 0.941
       },
       "policy_note": "短线震荡：提高加仓门槛、降低目标波动，不把宏观偏多当追涨依据"
     },
-    "date": "2026-09-30",
+    "date": "2026-10-01",
     "expected_date": "2026-10-01",
-    "stale": true,
-    "ts": "2026-09-30T13:21:36.096745+00:00"
+    "stale": false,
+    "ts": "2026-10-01T12:34:12.219157+00:00"
   }
 }
