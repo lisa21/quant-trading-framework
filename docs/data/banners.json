@@ -18,36 +18,34 @@
     },
     "breaking": [
       {
-        "event_type": "DEAL",
+        "event_type": "FED",
         "direction": "bullish",
-        "magnitude": "large",
+        "magnitude": "medium",
         "confidence": 9,
         "tickers": [
           "SPY",
           "QQQ",
+          "TQQQ",
           "SOXL",
           "NVDA"
         ],
-        "preview": "RT @realDonaldTrumpIn New York, I met with Lee Jae Myung, the President of the Republic of Korea, and we agreed to launc",
-        "verbatim": "launch 200 Billion Dollars of new Investments in AMERICA... 350 BILLION DOLLAR Korea Strategic Trade and Investment Deal",
-        "post_time": "2026-10-01T02:25:19.582Z"
+        "preview": "The Inspector General's Report just came out on Jerome \"Too Late\" Powell's \"renovation\" of the Federal Reserve Headquart",
+        "verbatim": "Powell should be forced to resign from the Board... High Interest Rate Policy",
+        "post_time": "2026-09-30T19:48:03.293Z"
       },
       {
-        "event_type": "FED",
+        "event_type": "DEAL",
         "direction": "bullish",
         "magnitude": "medium",
         "confidence": 8,
         "tickers": [
           "SPY",
           "QQQ",
-          "TQQQ",
-          "SOXL",
-          "NVDA",
-          "GLD"
+          "TQQQ"
         ],
-        "preview": "The Inspector General's Report just came out on Jerome \"Too Late\" Powell's \"renovation\" of the Federal Reserve Headquart",
-        "verbatim": "Powell should be forced to resign from the Board... shouldn't be allowed to manage his High Interest Rate Policy",
-        "post_time": "2026-09-30T19:48:03.293Z"
+        "preview": "In New York, I met with Lee Jae Myung, the President of the Republic of Korea, and we agreed to launch 200 Billion Dolla",
+        "verbatim": "agreed to launch 200 Billion Dollars of new Investments in AMERICA... 350 BILLION DOLLAR Korea Strategic Trade and Investment Deal",
+        "post_time": "2026-10-01T00:41:28.355Z"
       },
       {
         "event_type": "DEAL",
@@ -58,35 +56,21 @@
           "SPY",
           "QQQ"
         ],
-        "preview": "In New York, I met with Lee Jae Myung, the President of the Republic of Korea, and we agreed to launch 200 Billion Dolla",
-        "verbatim": "we agreed to launch 200 Billion Dollars of new Investments in AMERICA",
-        "post_time": "2026-10-01T00:41:28.355Z"
+        "preview": "RT @realDonaldTrumpIn New York, I met with Lee Jae Myung, the President of the Republic of Korea, and we agreed to launc",
+        "verbatim": "launch 200 Billion Dollars of new Investments in AMERICA... 350 BILLION DOLLAR Korea Strategic Trade and Investment Deal",
+        "post_time": "2026-10-01T02:25:19.582Z"
       },
       {
-        "event_type": "GEOPOLITICAL",
+        "event_type": "MARKET",
         "direction": "bullish",
         "magnitude": "small",
         "confidence": 7,
         "tickers": [
-          "SPY",
-          "GLD"
+          "SPY"
         ],
-        "preview": "Today, I am pleased to announce, that the last American Forces are leaving Iraq! It has been a long time, with very bad ",
-        "verbatim": "the last American Forces are leaving Iraq! It has been a long time... but soon, that will be part of History. This is a Great Day for America",
-        "post_time": "2026-09-30T17:17:33.142Z"
-      },
-      {
-        "event_type": "GEOPOLITICAL",
-        "direction": "bullish",
-        "magnitude": "small",
-        "confidence": 7,
-        "tickers": [
-          "SPY",
-          "GLD"
-        ],
-        "preview": "RT @realDonaldTrumpToday, I am pleased to announce, that the last American Forces are leaving Iraq! It has been a long t",
-        "verbatim": "RT @realDonaldTrumpToday, I am pleased to announce, that the last American Forces are leaving Iraq!",
-        "post_time": "2026-09-30T23:30:40.827Z"
+        "preview": "Congratulations to the GREAT Boeing Company for producing a plane, the 737 Max, that was able to withstand G Forces and ",
+        "verbatim": "Congratulations to the GREAT Boeing Company... The Boeing Company... builds, by far, the finest commercial airliners in the sky",
+        "post_time": "2026-10-01T04:40:35.537Z"
       }
     ],
     "summary": {
