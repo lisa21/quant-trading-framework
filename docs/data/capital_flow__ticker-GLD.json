@@ -1,23 +1,23 @@
 {
   "ticker": "GLD",
   "flow": {
-    "super_net": -6981269.389,
-    "big_net": 29683397.75,
-    "mid_net": 23264201.604000002,
-    "small_net": 23056632.462000012,
-    "total_net": 69022962.42699999,
-    "smart_pct": 0.026677082672077718
+    "super_net": -36742274.923,
+    "big_net": 28016546.396999985,
+    "mid_net": 22135285.356000006,
+    "small_net": 23371127.743999988,
+    "total_net": 36780684.574,
+    "smart_pct": -0.009716685937736773
   },
   "anomaly": {
     "detected": false,
     "reason": "",
     "score": 0.0
   },
-  "asof": "2026-10-01 14:28:18",
+  "asof": "2026-10-01 14:58:42",
   "source": "moomoo",
   "_meta": {
-    "cached_at": "2026-10-02T03:28:29.800376",
-    "age_sec": 273,
+    "cached_at": "2026-10-02T03:59:07.198309",
+    "age_sec": 235,
     "stale": false,
     "refreshing": false
   }

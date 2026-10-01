@@ -13668,14 +13668,14 @@
   "cache_contract": "15efd89eda8e",
   "_meta": {
     "cached_at": "2026-10-01T18:33:20.110216",
-    "age_sec": 32382,
+    "age_sec": 34182,
     "stale": false,
     "refreshing": false
   },
   "flow_meta": {
     "generated_at": "2026-10-01T18:06:23.585006+00:00",
     "status": "ready",
-    "age_sec": 1562.8,
+    "age_sec": 3362.8,
     "stale": false
   }
 }
