@@ -13,12 +13,12 @@
     "reason": "",
     "score": 0.0
   },
-  "asof": "2026-10-01 04:24:57",
+  "asof": "2026-10-01 04:57:19",
   "source": "moomoo",
   "_meta": {
-    "cached_at": "2026-10-01T17:27:31.106472",
-    "age_sec": 332,
-    "stale": true,
-    "refreshing": true
+    "cached_at": "2026-10-01T17:59:01.459770",
+    "age_sec": 241,
+    "stale": false,
+    "refreshing": false
   }
 }
