@@ -5,29 +5,29 @@
   "revision_type": "unverified",
   "magnitude": "不明",
   "last_update": "2026-07-31",
-  "next_earnings": "2026-11-13",
-  "guidance_note": "過去90日内の公式開示では、2027年3月期の通期業績予想（EPS、売上収益、営業利益、純利益）は確認できず。7月31日公表は2027年3月期第1四半期決算短信で、通期予想数値は未確認。",
-  "revision_reason": "通期予想の具体的な修正額は確認不能（売上収益：未開示→未開示、営業利益：未開示→未開示、純利益：未開示→未開示、EPS：未開示→未開示）。したがって上修・下修・据え置きの判定は不可。",
+  "next_earnings": "2026-10-30",
+  "guidance_note": "最近90天官方公告未确认2027年3月期通期業績予想。2026-07-31公告仅给出第2四半期/中間期見通し：中間期売上収益4兆1,571億円、営業利益3兆1,600億円、親会社帰属中間利益2兆1,122億円。",
+  "revision_reason": "通期売上/EPS/営業利益/純利益の修正値は未開示で核验不能。参考：第2四半期单季见通しは売上収益1兆7,671→2兆3,900億円（+35.2%）、営業利益1兆2,700→1兆8,900億円（+48.8%）、親会社帰属利益8,422→1兆2,700億円（+50.8%）、EPS 1,539.91→2,317.46円（+777.55円）。",
   "market_reaction": "不明",
   "confidence": "low",
   "source_verified": true,
   "source_status": "analyst_only",
-  "generated_at": "2026-09-28T09:45:52.183484+00:00",
+  "generated_at": "2026-10-01T09:47:14.251174+00:00",
   "sources": [],
   "source_via": "codex_cli_websearch",
   "analyst_consensus": {
     "n_analysts": 16,
     "recommendation": "buy",
-    "current_price": 53340.0,
+    "current_price": 19100.0,
     "forward_eps": null,
-    "trailing_eps": 1009.62,
+    "trailing_eps": 1009.7,
     "eps_growth_pct": null,
     "forward_pe": null,
-    "trailing_pe": 52.83,
-    "target_mean": 111256.25,
-    "target_high": 200000.0,
-    "target_low": 40000.0,
-    "target_upside_pct": 108.6,
+    "trailing_pe": 18.92,
+    "target_mean": 37293.84,
+    "target_high": 66666.66,
+    "target_low": 16333.33,
+    "target_upside_pct": 95.3,
     "revenue_growth_pct": 415.5,
     "earnings_growth_pct": 4418.8,
     "next_earnings": "2026-10-30",
@@ -35,32 +35,32 @@
     "implied_pe_hold_upside": null,
     "peg_fair_price": null,
     "peg_ratio": null,
-    "hist_pe_median": 21.83,
-    "hist_pe_p25": 4.92,
-    "hist_pe_p75": 45.68,
-    "hist_pe_n_days": 364,
+    "hist_pe_median": 13.3,
+    "hist_pe_p25": 7.22,
+    "hist_pe_p75": 17.72,
+    "hist_pe_n_days": 249,
     "implied_hist_median": null,
     "implied_hist_p25": null,
     "implied_hist_p75": null,
     "implied_hist_upside": null,
-    "peer_pe_median": 5.27,
+    "peer_pe_median": 5.25,
     "peer_pe_n_peers": 4,
     "peer_pe_details": [
       {
         "ticker": "005930.KS",
-        "pe": 3.78
+        "pe": 3.89
       },
       {
         "ticker": "000660.KS",
-        "pe": 3.74
+        "pe": 3.9
       },
       {
         "ticker": "MU",
-        "pe": 6.76
+        "pe": 6.6
       },
       {
         "ticker": "WDC",
-        "pe": 14.39
+        "pe": 14.31
       }
     ],
     "implied_peer_median": null,
@@ -68,8 +68,8 @@
     "source": "yfinance analyst aggregation"
   },
   "_meta": {
-    "cached_at": "2026-09-28T18:46:58.406920",
-    "age_sec": 258368,
+    "cached_at": "2026-10-01T18:48:21.389992",
+    "age_sec": 882,
     "stale": false,
     "refreshing": false
   }

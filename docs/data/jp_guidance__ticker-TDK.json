@@ -12,67 +12,67 @@
   "confidence": "unverified",
   "source_verified": true,
   "source_status": "analyst_only",
-  "generated_at": "2026-09-28T09:45:21.842765+00:00",
+  "generated_at": "2026-10-01T09:46:14.328886+00:00",
   "ai_error": "no_trusted_source",
   "analyst_consensus": {
     "n_analysts": 16,
     "recommendation": "buy",
-    "current_price": 2955.0,
+    "current_price": 3200.0,
     "forward_eps": 106.88,
-    "trailing_eps": 103.04,
-    "eps_growth_pct": 3.7,
-    "forward_pe": 27.65,
-    "trailing_pe": 28.68,
+    "trailing_eps": 102.84,
+    "eps_growth_pct": 3.9,
+    "forward_pe": 29.94,
+    "trailing_pe": 31.12,
     "target_mean": 4157.81,
     "target_high": 4950.0,
     "target_low": 2575.0,
-    "target_upside_pct": 40.7,
+    "target_upside_pct": 29.9,
     "revenue_growth_pct": 38.3,
     "earnings_growth_pct": 94.3,
     "next_earnings": "2026-10-30",
-    "implied_pe_hold": 3065.12,
-    "implied_pe_hold_upside": 3.7,
-    "peg_fair_price": 395.46,
-    "peg_ratio": 7.47,
+    "implied_pe_hold": 3325.71,
+    "implied_pe_hold_upside": 3.9,
+    "peg_fair_price": 416.83,
+    "peg_ratio": 7.68,
     "hist_pe_median": 24.5,
-    "hist_pe_p25": 18.96,
-    "hist_pe_p75": 28.47,
-    "hist_pe_n_days": 853,
+    "hist_pe_p25": 19.0,
+    "hist_pe_p75": 28.49,
+    "hist_pe_n_days": 856,
     "implied_hist_median": 2618.56,
-    "implied_hist_p25": 2026.44,
-    "implied_hist_p75": 3042.87,
-    "implied_hist_upside": -11.4,
-    "peer_pe_median": 35.26,
+    "implied_hist_p25": 2030.72,
+    "implied_hist_p75": 3045.01,
+    "implied_hist_upside": -18.2,
+    "peer_pe_median": 36.47,
     "peer_pe_n_peers": 5,
     "peer_pe_details": [
       {
         "ticker": "6981.T",
-        "pe": 33.73
+        "pe": 35.88
       },
       {
         "ticker": "6976.T",
-        "pe": 48.55
+        "pe": 53.93
       },
       {
         "ticker": "6971.T",
-        "pe": 41.37
+        "pe": 41.65
       },
       {
         "ticker": "2327.TW",
-        "pe": 18.51
+        "pe": 19.22
       },
       {
         "ticker": "009150.KS",
-        "pe": 35.26
+        "pe": 36.47
       }
     ],
-    "implied_peer_median": 3768.59,
-    "implied_peer_upside": 27.5,
+    "implied_peer_median": 3897.91,
+    "implied_peer_upside": 21.8,
     "source": "yfinance analyst aggregation"
   },
   "_meta": {
-    "cached_at": "2026-09-28T18:45:57.625302",
-    "age_sec": 258429,
+    "cached_at": "2026-10-01T18:46:56.657174",
+    "age_sec": 966,
     "stale": false,
     "refreshing": false
   }

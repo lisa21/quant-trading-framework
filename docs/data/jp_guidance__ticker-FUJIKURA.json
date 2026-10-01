@@ -1,78 +1,85 @@
 {
   "ticker": "FUJIKURA",
   "source_stock": "5803.T",
-  "direction": "待核验",
-  "revision_type": "unverified",
-  "magnitude": "不明",
-  "last_update": null,
-  "next_earnings": "2026-11-10",
-  "guidance_note": "AI 返回 上修 但未附可核验来源，已拒收",
-  "revision_reason": null,
+  "direction": "上修",
+  "revision_type": "upward",
+  "magnitude": "大",
+  "last_update": "2026-08-07",
+  "next_earnings": "2026-11-06",
+  "guidance_note": "2027年3月期通期予想は売上高1兆7,550億円（+48.4% YoY）、営業利益4,320億円（+128.9%）、親会社株主帰属純利益3,260億円（+107.4%）、EPS196.88円。",
+  "revision_reason": "前回予想から売上高1兆4,620億円→1兆7,550億円（+20.0%）、営業利益3,100億円→4,320億円（+39.4%）、純利益2,290億円→3,260億円（+42.4%）、EPS138.31円→196.88円へ上方修正。データセンタ向け需要拡大で光コンポーネント製品が伸長し、中間期修正の反映に加え需要継続を見込む。",
   "market_reaction": "不明",
-  "confidence": "unverified",
+  "confidence": "medium",
   "source_verified": true,
-  "source_status": "analyst_only",
-  "generated_at": "2026-09-28T09:45:52.267367+00:00",
-  "ai_error": "no_trusted_source",
+  "source_status": "codex_cli_websearch",
+  "generated_at": "2026-10-01T09:47:14.420503+00:00",
+  "sources": [
+    {
+      "url": "https://www.fujikura.co.jp/ir/ir-calendar/",
+      "type": "IR",
+      "title": "IRカレンダー｜株式会社フジクラ"
+    }
+  ],
+  "source_via": "codex_cli_websearch",
   "analyst_consensus": {
     "n_analysts": 12,
     "recommendation": "buy",
-    "current_price": 4957.0,
+    "current_price": 5368.0,
     "forward_eps": 302.84,
-    "trailing_eps": 94.73,
-    "eps_growth_pct": 219.7,
-    "forward_pe": 16.37,
-    "trailing_pe": 52.33,
+    "trailing_eps": 95.08,
+    "eps_growth_pct": 218.5,
+    "forward_pe": 17.73,
+    "trailing_pe": 56.46,
     "target_mean": 7351.67,
     "target_high": 11700.0,
     "target_low": 3500.0,
-    "target_upside_pct": 48.3,
+    "target_upside_pct": 37.0,
     "revenue_growth_pct": null,
     "earnings_growth_pct": null,
     "next_earnings": "2026-11-10",
-    "implied_pe_hold": 15846.91,
-    "implied_pe_hold_upside": 219.7,
-    "peg_fair_price": 66533.95,
-    "peg_ratio": 0.07,
-    "hist_pe_median": 22.92,
-    "hist_pe_p25": 10.88,
-    "hist_pe_p75": 48.18,
-    "hist_pe_n_days": 853,
-    "implied_hist_median": 6941.09,
-    "implied_hist_p25": 3294.9,
-    "implied_hist_p75": 14590.83,
-    "implied_hist_upside": 40.0,
-    "peer_pe_median": 12.76,
+    "implied_pe_hold": 17097.66,
+    "implied_pe_hold_upside": 218.5,
+    "peg_fair_price": 66170.54,
+    "peg_ratio": 0.08,
+    "hist_pe_median": 22.99,
+    "hist_pe_p25": 11.41,
+    "hist_pe_p75": 48.38,
+    "hist_pe_n_days": 856,
+    "implied_hist_median": 6962.29,
+    "implied_hist_p25": 3455.4,
+    "implied_hist_p75": 14651.4,
+    "implied_hist_upside": 29.7,
+    "peer_pe_median": 13.87,
     "peer_pe_n_peers": 5,
     "peer_pe_details": [
       {
         "ticker": "5802.T",
-        "pe": 9.95
+        "pe": 10.72
       },
       {
         "ticker": "5801.T",
-        "pe": 12.76
+        "pe": 13.87
       },
       {
         "ticker": "GLW",
-        "pe": 35.91
+        "pe": 35.33
       },
       {
         "ticker": "PRY.MI",
-        "pe": 19.91
+        "pe": 20.9
       },
       {
         "ticker": "6869.HK",
-        "pe": 10.75
+        "pe": 11.62
       }
     ],
-    "implied_peer_median": 3864.24,
-    "implied_peer_upside": -22.0,
+    "implied_peer_median": 4200.39,
+    "implied_peer_upside": -21.8,
     "source": "yfinance analyst aggregation"
   },
   "_meta": {
-    "cached_at": "2026-09-28T18:47:00.118406",
-    "age_sec": 258367,
+    "cached_at": "2026-10-01T18:48:23.703679",
+    "age_sec": 879,
     "stale": false,
     "refreshing": false
   }
