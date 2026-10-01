@@ -8,13 +8,13 @@
     "magnitude": "small",
     "score": 0,
     "event_counts": {
-      "MEDIA_ATTACK": 6,
-      "GEOPOLITICAL": 5,
       "FED": 1,
+      "GEOPOLITICAL": 5,
       "DEAL": 2,
-      "NOISE": 4,
-      "DOMESTIC_POLICY": 4,
-      "MARKET": 3
+      "NOISE": 5,
+      "DOMESTIC_POLICY": 8,
+      "MEDIA_ATTACK": 4,
+      "MARKET": 2
     },
     "breaking": [
       {
@@ -24,11 +24,10 @@
         "confidence": 9,
         "tickers": [
           "SPY",
-          "QQQ",
-          "TQQQ"
+          "QQQ"
         ],
         "preview": "In New York, I met with Lee Jae Myung, the President of the Republic of Korea, and we agreed to launch 200 Billion Dolla",
-        "verbatim": "we agreed to launch 200 Billion Dollars of new Investments in AMERICA",
+        "verbatim": "agreed to launch 200 Billion Dollars of new Investments in AMERICA... Korea Strategic Trade and Investment Deal",
         "post_time": "2026-10-01T00:41:28.355Z"
       },
       {
@@ -42,7 +41,7 @@
           "TQQQ"
         ],
         "preview": "RT @realDonaldTrumpIn New York, I met with Lee Jae Myung, the President of the Republic of Korea, and we agreed to launc",
-        "verbatim": "launch 200 Billion Dollars of new Investments in AMERICA... 350 BILLION DOLLAR Korea Strategic Trade and Investment Deal",
+        "verbatim": "agreed to launch 200 Billion Dollars of new Investments in AMERICA...350 BILLION DOLLAR Korea Strategic Trade and Investment Deal",
         "post_time": "2026-10-01T02:25:19.582Z"
       },
       {
@@ -54,10 +53,12 @@
           "SPY",
           "QQQ",
           "TQQQ",
+          "SOXL",
+          "NVDA",
           "GLD"
         ],
         "preview": "The Inspector General's Report just came out on Jerome \"Too Late\" Powell's \"renovation\" of the Federal Reserve Headquart",
-        "verbatim": "Powell should be forced to resign from the Board... High Interest Rate Policy",
+        "verbatim": "Powell should be forced to resign from the Board... shouldn't be allowed to manage his High Interest Rate Policy",
         "post_time": "2026-09-30T19:48:03.293Z"
       },
       {
@@ -68,30 +69,32 @@
         "tickers": [
           "SPY"
         ],
-        "preview": "Congratulations to the GREAT Boeing Company for producing a plane, the 737 Max, that was able to withstand G Forces and ",
-        "verbatim": "Congratulations to the GREAT Boeing Company... The Boeing Company, which builds, by far, the finest commercial airliners in the sky",
-        "post_time": "2026-10-01T04:40:35.537Z"
+        "preview": "RT @realDonaldTrumpCongratulations to the GREAT Boeing Company for producing a plane, the 737 Max, that was able to with",
+        "verbatim": "Congratulations to the GREAT Boeing Company... The Boeing Company... builds... the finest commercial airliners in the sky",
+        "post_time": "2026-10-01T14:58:51.870Z"
       },
       {
-        "event_type": "MARKET",
-        "direction": "bullish",
+        "event_type": "GEOPOLITICAL",
+        "direction": "bearish",
         "magnitude": "small",
-        "confidence": 8,
+        "confidence": 7,
         "tickers": [
-          "SPY"
+          "SPY",
+          "QQQ",
+          "GLD"
         ],
-        "preview": "RT @realDonaldTrumpCongratulations to the GREAT Boeing Company for producing a plane, the 737 Max, that was able to with",
-        "verbatim": "RT @realDonaldTrumpCongratulations to the GREAT Boeing Company... congratulations on a job well done",
-        "post_time": "2026-10-01T14:58:51.870Z"
+        "preview": "Iran's economy will have 'nothing' left 'within two weeks,' Scott Bessent warns: https://nypost.com/2026/09/27/us-news/i",
+        "verbatim": "Iran's economy will have 'nothing' left 'within two weeks,' Scott Bessent warns",
+        "post_time": "2026-10-01T02:19:05.601Z"
       }
     ],
     "summary": {
-      "text": "特朗普提名法官并力挺波音，市场情绪偏正面。",
+      "text": "强调降价政绩与伊朗核威胁解除，情绪偏风险偏好。",
       "state": "cached",
       "post_ids": [
-        "117366396669364721",
-        "117366242139776153",
-        "117363810994521058"
+        "117367105128831509",
+        "117366933918841897",
+        "117366845448721312"
       ]
     }
   },

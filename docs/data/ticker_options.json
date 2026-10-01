@@ -13670,14 +13670,14 @@
   "cache_contract": "15efd89eda8e",
   "_meta": {
     "cached_at": "2026-10-01T18:33:20.110216",
-    "age_sec": 35982,
+    "age_sec": 37782,
     "stale": false,
     "refreshing": false
   },
   "flow_meta": {
     "generated_at": "2026-10-01T19:06:23.611919+00:00",
     "status": "ready",
-    "age_sec": 1563.1,
+    "age_sec": 3363.2,
     "stale": false
   }
 }

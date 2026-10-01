@@ -1,23 +1,23 @@
 {
   "ticker": "CBRS",
   "flow": {
-    "super_net": -414365.38999999873,
-    "big_net": -25110439.902000003,
-    "mid_net": -16892002.847000003,
-    "small_net": -13114849.259000003,
-    "total_net": -55531657.398,
-    "smart_pct": -0.06838626919735659
+    "super_net": -2974091.5409999993,
+    "big_net": -25046388.579000004,
+    "mid_net": -22686866.383999996,
+    "small_net": -14069541.941,
+    "total_net": -64776888.44499999,
+    "smart_pct": -0.056386772854904205
   },
   "anomaly": {
     "detected": false,
     "reason": "",
     "score": 0.0
   },
-  "asof": "2026-10-01 15:29:15",
+  "asof": "2026-10-01 16:00:10",
   "source": "moomoo",
   "_meta": {
-    "cached_at": "2026-10-02T04:29:26.062957",
-    "age_sec": 217,
+    "cached_at": "2026-10-02T05:00:29.159777",
+    "age_sec": 154,
     "stale": false,
     "refreshing": false
   }
