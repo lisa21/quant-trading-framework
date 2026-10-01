@@ -2417,11 +2417,11 @@
       }
     }
   ],
-  "generated_at": "2026-10-01T10:06:07",
+  "generated_at": "2026-10-01T16:06:22",
   "note": "Scenarios 是规则版预测. 实际数据发布时,系统会自动对照到最近的 scenario 追加 thesis_history 验证.",
   "_meta": {
-    "cached_at": "2026-10-01T10:06:07.227920",
-    "age_sec": 16015,
+    "cached_at": "2026-10-01T16:06:22.943472",
+    "age_sec": 1599,
     "stale": false,
     "refreshing": false
   }

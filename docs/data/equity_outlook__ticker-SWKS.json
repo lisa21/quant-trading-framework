@@ -11,10 +11,10 @@
     "eps_growth_pct": 157.1,
     "forward_pe": 17.22,
     "trailing_pe": 44.29,
-    "target_mean": 68.35,
-    "target_high": 85.0,
+    "target_mean": 69.82,
+    "target_high": 95.0,
     "target_low": 52.0,
-    "target_upside_pct": -20.0,
+    "target_upside_pct": -18.3,
     "revenue_growth_pct": -3.1,
     "earnings_growth_pct": -68.6,
     "next_earnings": "2026-11-04",
@@ -22,14 +22,14 @@
     "implied_pe_hold_upside": 157.1,
     "peg_fair_price": 779.63,
     "peg_ratio": 0.11,
-    "hist_pe_median": 17.68,
+    "hist_pe_median": 17.69,
     "hist_pe_p25": 14.71,
-    "hist_pe_p75": 20.65,
-    "hist_pe_n_days": 1002,
-    "implied_hist_median": 87.74,
+    "hist_pe_p75": 20.67,
+    "hist_pe_n_days": 1003,
+    "implied_hist_median": 87.79,
     "implied_hist_p25": 73.0,
-    "implied_hist_p75": 102.48,
-    "implied_hist_upside": 2.6,
+    "implied_hist_p75": 102.58,
+    "implied_hist_upside": 2.7,
     "peer_pe_median": 18.04,
     "peer_pe_n_peers": 5,
     "peer_pe_details": [
@@ -47,7 +47,7 @@
       },
       {
         "ticker": "6981.T",
-        "pe": 34.55
+        "pe": 35.7
       },
       {
         "ticker": "NXPI",
@@ -130,30 +130,30 @@
         "0q": {
           "current": 1.2732,
           "7daysAgo": 1.2732,
-          "30daysAgo": 1.2743,
-          "60daysAgo": 1.3047,
-          "90daysAgo": 1.3074
+          "30daysAgo": 1.2732,
+          "60daysAgo": 1.2743,
+          "90daysAgo": 1.3067
         },
         "+1q": {
           "current": 1.3182,
           "7daysAgo": 1.3182,
-          "30daysAgo": 1.3139,
-          "60daysAgo": 1.373,
-          "90daysAgo": 1.3813
+          "30daysAgo": 1.3182,
+          "60daysAgo": 1.3139,
+          "90daysAgo": 1.3772
         },
         "0y": {
           "current": 5.0409,
           "7daysAgo": 5.0409,
-          "30daysAgo": 5.0424,
-          "60daysAgo": 5.004,
-          "90daysAgo": 5.0107
+          "30daysAgo": 5.0405,
+          "60daysAgo": 5.0424,
+          "90daysAgo": 5.0072
         },
         "+1y": {
           "current": 4.9627,
           "7daysAgo": 4.9627,
-          "30daysAgo": 4.9733,
-          "60daysAgo": 5.1349,
-          "90daysAgo": 5.146
+          "30daysAgo": 4.9731,
+          "60daysAgo": 4.9733,
+          "90daysAgo": 5.1377
         }
       },
       "eps_revisions": {
@@ -184,7 +184,7 @@
         "trend_signal": "flat",
         "breadth_signal": "downward",
         "eps_current": 4.9627,
-        "eps_30d_ago": 4.9733,
+        "eps_30d_ago": 4.9731,
         "eps_trend_pct_30d": -0.21,
         "up_30d": 4,
         "down_30d": 14,
@@ -202,8 +202,8 @@
       {
         "key": "analyst_target",
         "label": "分析师目标均值",
-        "implied_price": 68.35,
-        "gap_pct": -20.0
+        "implied_price": 69.82,
+        "gap_pct": -18.3
       },
       {
         "key": "pe_hold",
@@ -214,8 +214,8 @@
       {
         "key": "historical_pe",
         "label": "前瞻 EPS × 五年 PE 中位",
-        "implied_price": 87.74,
-        "gap_pct": 2.6
+        "implied_price": 87.79,
+        "gap_pct": 2.7
       },
       {
         "key": "peer_pe",
@@ -226,21 +226,21 @@
     ],
     "median_gap_pct": 3.7,
     "revision_signal": "downward",
-    "required_eps_growth_pct": 150.5,
+    "required_eps_growth_pct": 150.4,
     "consensus_eps_growth_pct": 157.1,
-    "growth_cushion_pct": 6.6,
+    "growth_cushion_pct": 6.7,
     "rationale": [
       "多口径隐含价中位数高于现价 3.7%",
       "近 30 天 EPS 共识下修",
-      "历史 PE 口径要求 EPS 增长 +150.5%，共识为 +157.1%"
+      "历史 PE 口径要求 EPS 增长 +150.4%，共识为 +157.1%"
     ]
   },
   "official_guidance_status": "not_connected",
-  "fetched_at": "2026-10-01T00:40:58.331165+00:00",
+  "fetched_at": "2026-10-01T06:41:14.252522+00:00",
   "source": "yfinance analyst aggregation",
   "_meta": {
-    "cached_at": "2026-10-01T09:40:58.332623",
-    "age_sec": 17524,
+    "cached_at": "2026-10-01T15:41:14.253532",
+    "age_sec": 3109,
     "stale": false,
     "refreshing": false
   },

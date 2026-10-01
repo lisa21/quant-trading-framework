@@ -103,7 +103,7 @@
         "tier": "huge_abs"
       }
     ],
-    "day_ratio": 1.24,
+    "day_ratio": 1.44,
     "trading_date": "2026-10-01",
     "date_short": "10/1",
     "net_bias": "buy",
@@ -239,20 +239,20 @@
             "tier": "huge_2bar"
           }
         ],
-        "day_ratio": 1.24,
-        "day_chg_pct": 4.02,
+        "day_ratio": 1.44,
+        "day_chg_pct": 3.57,
         "day_open": 8179.0,
-        "day_close": 8508.0,
+        "day_close": 8471.0,
         "net_bias": "buy",
         "buy_shares": 4656300,
         "sell_shares": 834800,
         "buy_value_oku": 384.79,
         "sell_value_oku": 70.09,
         "full_bias": "buy",
-        "full_up_shares": 14772300,
-        "full_down_shares": 6852300,
-        "full_up_value_oku": 1234.03,
-        "full_down_value_oku": 570.76
+        "full_up_shares": 16179000,
+        "full_down_shares": 9126800,
+        "full_up_value_oku": 1353.79,
+        "full_down_value_oku": 764.01
       },
       {
         "trading_date": "2026-09-30",
@@ -356,7 +356,7 @@
           }
         ],
         "slices": [],
-        "day_ratio": 1.13,
+        "day_ratio": 1.12,
         "day_chg_pct": -2.75,
         "day_open": 8116.0,
         "day_close": 7893.0,
@@ -461,7 +461,7 @@
           }
         ],
         "slices": [],
-        "day_ratio": 0.8,
+        "day_ratio": 0.79,
         "day_chg_pct": 0,
         "day_open": NaN,
         "day_close": 8066.0,
@@ -578,7 +578,7 @@
           }
         ],
         "slices": [],
-        "day_ratio": 1.02,
+        "day_ratio": 1.01,
         "day_chg_pct": 0.31,
         "day_open": 8017.0,
         "day_close": 8042.0,
@@ -695,7 +695,7 @@
           }
         ],
         "slices": [],
-        "day_ratio": 1.1,
+        "day_ratio": 1.09,
         "day_chg_pct": 0.9,
         "day_open": 7979.0,
         "day_close": 8051.0,
@@ -760,11 +760,11 @@
       "value_oku_min": 1.0
     }
   },
-  "asof": "2026-10-01 14:15 JST",
+  "asof": "2026-10-01 15:20 JST",
   "source": "yfinance_intraday",
   "_meta": {
-    "cached_at": "2026-10-01T14:31:12.793504",
-    "age_sec": 110,
+    "cached_at": "2026-10-01T16:31:57.445312",
+    "age_sec": 65,
     "stale": false,
     "refreshing": false
   }

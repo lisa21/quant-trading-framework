@@ -1,7 +1,7 @@
 {
-  "posts_analyzed": 85,
-  "posts_total": 92,
-  "snapshots_used": 197,
+  "posts_analyzed": 87,
+  "posts_total": 95,
+  "snapshots_used": 198,
   "window_hours": 48,
   "top_movers": [
     {
@@ -88,7 +88,7 @@
       "cut_prob_after": 27,
       "delta": 5,
       "before_ts": "2026-09-29T13:40:21+00:00",
-      "after_ts": "2026-09-30T13:44:17+00:00"
+      "after_ts": "2026-10-01T01:45:55+00:00"
     },
     {
       "post_time": "2026-08-15T12:31:50.605Z",
@@ -265,13 +265,13 @@
       "sum_delta": -23.0
     },
     "FED": {
-      "count": 4,
-      "avg_delta": -1.25,
+      "count": 5,
+      "avg_delta": -1.0,
       "sum_delta": -5.0
     },
     "DEAL": {
-      "count": 13,
-      "avg_delta": -0.46,
+      "count": 14,
+      "avg_delta": -0.43,
       "sum_delta": -6.0
     },
     "MARKET": {
@@ -285,10 +285,10 @@
       "sum_delta": 0.0
     }
   },
-  "generated_at": "2026-10-01T01:12:34+00:00",
+  "generated_at": "2026-10-01T07:12:56+00:00",
   "_meta": {
-    "cached_at": "2026-10-01T10:12:34.584153",
-    "age_sec": 15627,
+    "cached_at": "2026-10-01T16:12:56.760259",
+    "age_sec": 1205,
     "stale": false,
     "refreshing": false
   }

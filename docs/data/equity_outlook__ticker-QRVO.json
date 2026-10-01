@@ -7,10 +7,10 @@
     "recommendation": "hold",
     "current_price": 114.48,
     "forward_eps": 7.91,
-    "trailing_eps": 4.31,
-    "eps_growth_pct": 83.4,
+    "trailing_eps": 4.22,
+    "eps_growth_pct": 87.4,
     "forward_pe": 14.48,
-    "trailing_pe": 26.56,
+    "trailing_pe": 27.13,
     "target_mean": 90.17,
     "target_high": 105.0,
     "target_low": 66.0,
@@ -18,18 +18,18 @@
     "revenue_growth_pct": -4.2,
     "earnings_growth_pct": 255.6,
     "next_earnings": "2026-11-10",
-    "implied_pe_hold": 210.01,
-    "implied_pe_hold_upside": 83.4,
-    "peg_fair_price": 659.39,
+    "implied_pe_hold": 214.48,
+    "implied_pe_hold_upside": 87.4,
+    "peg_fair_price": 691.02,
     "peg_ratio": 0.17,
-    "hist_pe_median": 106.04,
+    "hist_pe_median": 106.0,
     "hist_pe_p25": 92.48,
     "hist_pe_p75": 140.71,
-    "hist_pe_n_days": 627,
-    "implied_hist_median": 838.39,
+    "hist_pe_n_days": 628,
+    "implied_hist_median": 838.08,
     "implied_hist_p25": 731.18,
     "implied_hist_p75": 1112.51,
-    "implied_hist_upside": 632.3,
+    "implied_hist_upside": 632.1,
     "peer_pe_median": 18.12,
     "peer_pe_n_peers": 5,
     "peer_pe_details": [
@@ -43,7 +43,7 @@
       },
       {
         "ticker": "6981.T",
-        "pe": 34.55
+        "pe": 35.7
       },
       {
         "ticker": "QCOM",
@@ -208,8 +208,8 @@
       {
         "key": "pe_hold",
         "label": "前瞻 EPS × 当前估值",
-        "implied_price": 210.01,
-        "gap_pct": 83.4
+        "implied_price": 214.48,
+        "gap_pct": 87.4
       },
       {
         "key": "peer_pe",
@@ -220,21 +220,21 @@
     ],
     "median_gap_pct": 25.1,
     "revision_signal": "upward",
-    "required_eps_growth_pct": -75.0,
-    "consensus_eps_growth_pct": 83.4,
-    "growth_cushion_pct": 158.4,
+    "required_eps_growth_pct": -74.4,
+    "consensus_eps_growth_pct": 87.4,
+    "growth_cushion_pct": 161.8,
     "rationale": [
       "多口径隐含价中位数高于现价 25.1%",
       "近 30 天 EPS 共识上修",
-      "历史 PE 口径要求 EPS 增长 -75.0%，共识为 +83.4%"
+      "历史 PE 口径要求 EPS 增长 -74.4%，共识为 +87.4%"
     ]
   },
   "official_guidance_status": "not_connected",
-  "fetched_at": "2026-10-01T00:40:58.122592+00:00",
+  "fetched_at": "2026-10-01T06:41:14.368711+00:00",
   "source": "yfinance analyst aggregation",
   "_meta": {
-    "cached_at": "2026-10-01T09:40:58.124108",
-    "age_sec": 17524,
+    "cached_at": "2026-10-01T15:41:14.369218",
+    "age_sec": 3108,
     "stale": false,
     "refreshing": false
   },
