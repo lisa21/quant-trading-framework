@@ -5,16 +5,16 @@
   "analyst_consensus": {
     "n_analysts": 27,
     "recommendation": "strong_buy",
-    "current_price": 1045.78,
+    "current_price": 1069.97,
     "forward_eps": 34.73,
-    "trailing_eps": -100.08,
+    "trailing_eps": -92.97,
     "eps_growth_pct": null,
-    "forward_pe": 30.11,
+    "forward_pe": 30.81,
     "trailing_pe": null,
     "target_mean": 1159.4,
     "target_high": 1400.0,
     "target_low": 820.0,
-    "target_upside_pct": 10.9,
+    "target_upside_pct": 8.4,
     "revenue_growth_pct": 109.3,
     "earnings_growth_pct": null,
     "next_earnings": "2026-11-06",
@@ -182,25 +182,25 @@
         "key": "analyst_target",
         "label": "分析师目标均值",
         "implied_price": 1159.4,
-        "gap_pct": 10.9
+        "gap_pct": 8.4
       }
     ],
-    "median_gap_pct": 10.9,
+    "median_gap_pct": 8.4,
     "revision_signal": "upward",
     "required_eps_growth_pct": null,
     "consensus_eps_growth_pct": null,
     "growth_cushion_pct": null,
     "rationale": [
-      "多口径隐含价中位数高于现价 10.9%",
+      "多口径隐含价中位数高于现价 8.4%",
       "近 30 天 EPS 共识上修"
     ]
   },
   "official_guidance_status": "not_connected",
-  "fetched_at": "2026-10-02T08:07:30.099402+00:00",
+  "fetched_at": "2026-10-02T14:07:51.557382+00:00",
   "source": "yfinance analyst aggregation",
   "_meta": {
-    "cached_at": "2026-10-02T17:07:30.100399",
-    "age_sec": 21334,
+    "cached_at": "2026-10-02T23:07:51.559544",
+    "age_sec": 1512,
     "stale": false,
     "refreshing": false
   },

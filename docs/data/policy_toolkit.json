@@ -1,6 +1,6 @@
 {
-  "as_of": "2026-10-02T11:15:12.823256",
-  "count_total_actions": 638,
+  "as_of": "2026-10-02T23:19:35.426168",
+  "count_total_actions": 640,
   "tools": [
     {
       "tool_key": "long_end_buyback",
@@ -24,29 +24,6 @@
       },
       "yield_reaction_30y": {},
       "event_count_180d": 217
-    },
-    {
-      "tool_key": "fed_hawkish_signal",
-      "zh": "Fed 官员鹰派信号",
-      "owner": "Fed (口头)",
-      "feasibility": "high",
-      "canonical_desc": "官员讲话暗示维持高利率或加息",
-      "invalidation": "会推高长端收益率 → 反救市信号",
-      "status": "已用",
-      "last_action": {
-        "tool_key": "fed_hawkish_signal",
-        "action_type": "signaled",
-        "date": "2026-10-01",
-        "actor": "Kashkari",
-        "amount_desc": "",
-        "commentary": "官员预期继续加息，抬升短端利率预期，对债市估值不利。",
-        "verbatim": "Fed's Kashkari expects more rate hikes, unsure on need to act this month",
-        "source": "GoogleNews: Warsh Federal Reserve rate hike inflation",
-        "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQS1FONGU2V3pLdVdjRHNndjBCZXNtOEtrWWNVUXhpdmtxZHYxa2xRMjNmM3FHQ0ZwQlRwb1VFajNRRk84MWRjSFY0UnVNM2ZUdktSY05vQjU0Rk1QMjJZd3JqanZHT0tSOEVNRkNzZEg3RGtOTWdsSWpxTzdUd3djUmFSYjNtbHZvVWdPMHE1U05ubTlmcENhRGJvajlVNHctTjVZLWNadndUNkc4YXc?oc=5",
-        "confidence": 9
-      },
-      "yield_reaction_30y": {},
-      "event_count_180d": 330
     },
     {
       "tool_key": "ycc",
@@ -164,6 +141,52 @@
       "event_count_180d": 44
     },
     {
+      "tool_key": "fed_dovish_signal",
+      "zh": "Fed 官员鸽派信号",
+      "owner": "Fed (口头)",
+      "feasibility": "high",
+      "canonical_desc": "官员讲话暗示降息倾向, 前瞻指引",
+      "invalidation": "口头 → 若数据不配合, 反被 hawkish surprise 抹平",
+      "status": "口头/待发",
+      "last_action": {
+        "tool_key": "fed_dovish_signal",
+        "action_type": "signaled",
+        "date": "2026-10-01",
+        "actor": "",
+        "amount_desc": "October pause",
+        "commentary": "加息押注降温意味着利率路径下修，对国债尤其前端有支撑。",
+        "verbatim": "US rate hike bets fade as revised inflation data points to October pause",
+        "source": "GoogleNews: Warsh Federal Reserve rate hike inflation",
+        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQemRiOUR0aEZfNnRzU2tpX2lZMl9rMU9XX0JyVk5kRnI3ckg1RDNBd1dkZWFnY19ZRWRmTE1kY0psNk9VcEJoNktpejQ5cUVsX3diaFNiNHhkSDVmMEFpMTJSVGx0Z1JUSGRkd1djVnZQQW1mZWQ3R0x5alFZeXZEMFlrNVFhalNzaFZjdUR4SEtsblVEazJLOTRYUXUtYV90ejZ6enBDVUxoN3ZoWWdlMGE5UQ?oc=5",
+        "confidence": 5
+      },
+      "yield_reaction_30y": {},
+      "event_count_180d": 23
+    },
+    {
+      "tool_key": "fed_hawkish_signal",
+      "zh": "Fed 官员鹰派信号",
+      "owner": "Fed (口头)",
+      "feasibility": "high",
+      "canonical_desc": "官员讲话暗示维持高利率或加息",
+      "invalidation": "会推高长端收益率 → 反救市信号",
+      "status": "口头/待发",
+      "last_action": {
+        "tool_key": "fed_hawkish_signal",
+        "action_type": "signaled",
+        "date": "2026-10-02",
+        "actor": "Trump",
+        "amount_desc": "",
+        "commentary": "标题暗示Warsh支持加息投票；政治反对不改变其鹰派市场含义。",
+        "verbatim": "Trump says Warsh should have voted against Fed’s rate hike",
+        "source": "GoogleNews: Warsh Federal Reserve rate hike inflation",
+        "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOeWphSDFyZkJ6bTJDSmlZQUlJOUczcWwwOS1CR1UtZ2lvd3VTSUFRS0dtTk9BRnd2UVlrUXd1UkFpZEtiMllZOEo1ZV8wLWpNUnRwR0ZwX3pOVnktN0xGVmdJVDcwejFoa3RYdFFkNjRwNlZsbUZYMndEWlg1OTFRSGhZSFZrTjFkbWN6VzdQUWVWUG10ZWhpdzlZTUQ2V29FZWNBU21OVngxclpWVGZFdGdZWWg3bzU5M1JxWXFnM3otZw?oc=5",
+        "confidence": 5
+      },
+      "yield_reaction_30y": {},
+      "event_count_180d": 331
+    },
+    {
       "tool_key": "qe_restart",
       "zh": "重启 QE / 扩表",
       "owner": "Fed",
@@ -185,29 +208,6 @@
       },
       "yield_reaction_30y": {},
       "event_count_180d": 1
-    },
-    {
-      "tool_key": "fed_dovish_signal",
-      "zh": "Fed 官员鸽派信号",
-      "owner": "Fed (口头)",
-      "feasibility": "high",
-      "canonical_desc": "官员讲话暗示降息倾向, 前瞻指引",
-      "invalidation": "口头 → 若数据不配合, 反被 hawkish surprise 抹平",
-      "status": "被否",
-      "last_action": {
-        "tool_key": "fed_dovish_signal",
-        "action_type": "signaled",
-        "date": "2026-10-01",
-        "actor": "",
-        "amount_desc": "October pause",
-        "commentary": "加息押注降温意味着利率路径下修，对国债尤其前端有支撑。",
-        "verbatim": "US rate hike bets fade as revised inflation data points to October pause",
-        "source": "GoogleNews: Warsh Federal Reserve rate hike inflation",
-        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQemRiOUR0aEZfNnRzU2tpX2lZMl9rMU9XX0JyVk5kRnI3ckg1RDNBd1dkZWFnY19ZRWRmTE1kY0psNk9VcEJoNktpejQ5cUVsX3diaFNiNHhkSDVmMEFpMTJSVGx0Z1JUSGRkd1djVnZQQW1mZWQ3R0x5alFZeXZEMFlrNVFhalNzaFZjdUR4SEtsblVEazJLOTRYUXUtYV90ejZ6enBDVUxoN3ZoWWdlMGE5UQ?oc=5",
-        "confidence": 5
-      },
-      "yield_reaction_30y": {},
-      "event_count_180d": 22
     },
     {
       "tool_key": "fima_repo",
