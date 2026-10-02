@@ -7,35 +7,12 @@
     "direction": "neutral",
     "magnitude": "small",
     "score": 0,
-    "event_counts": {
-      "MARKET": 1,
-      "DOMESTIC_POLICY": 5,
-      "NOISE": 5,
-      "GEOPOLITICAL": 1,
-      "DEAL": 1
-    },
-    "breaking": [
-      {
-        "event_type": "DEAL",
-        "direction": "bullish",
-        "magnitude": "medium",
-        "confidence": 8,
-        "tickers": [
-          "SPY"
-        ],
-        "preview": "I am thrilled to announce the Republic of Korea Deal keeps getting BETTER! 8.4 Billion Dollars for an enhanced Oil Recov",
-        "verbatim": "Republic of Korea Deal keeps getting BETTER! 8.4 Billion Dollars for an enhanced Oil Recovery Project.",
-        "post_time": "2026-10-02T12:38:49.656Z"
-      }
-    ],
+    "event_counts": {},
+    "breaking": [],
     "summary": {
-      "text": "韩美能源交易利好延续，夹杂爱国表态，市场情绪偏正面。",
-      "state": "cached",
-      "post_ids": [
-        "117371353802794328",
-        "117369900687288624",
-        "117369458827039533"
-      ]
+      "text": null,
+      "state": "empty",
+      "post_ids": []
     }
   },
   "gold_macro": {
