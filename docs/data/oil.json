@@ -1,12 +1,12 @@
 {
-  "ts": "2026-10-02T00:00:40.277062+00:00",
+  "ts": "2026-10-02T00:32:14.907219+00:00",
   "factors": [
     {
       "arrow": "·",
       "name": "WTI 油价",
       "direction": "neutral",
       "weight": 1,
-      "value": "$92.96 (20d +2.1%)",
+      "value": "$93.13 (20d +2.3%)",
       "hint": "美国基准油价 20 天大幅涨跌指示供需变化"
     },
     {
@@ -14,7 +14,7 @@
       "name": "Brent-WTI 价差",
       "direction": "bullish",
       "weight": 1,
-      "value": "$9.52 (Brent $102.48 - WTI $92.96)",
+      "value": "$9.50 (Brent $102.63 - WTI $93.13)",
       "hint": "正常 $2-6；>$7 = 供应紧张利多，接近 0 = 美国供应过剩利空"
     },
     {
@@ -30,7 +30,7 @@
       "name": "美元指数 DXY",
       "direction": "neutral",
       "weight": 1,
-      "value": "101.98 (5d +0.7%)",
+      "value": "102.04 (5d +0.7%)",
       "hint": "油以美元计价，美元升值 = 油价承压。DXY 5d +2% = 利空油"
     },
     {
@@ -63,13 +63,13 @@
   "notes": [
     "综合 score=+1，多因子分歧，观察后续"
   ],
-  "price": 92.96,
-  "pct_5d": -1.74,
-  "pct_20d": 2.14,
+  "price": 93.13,
+  "pct_5d": -1.56,
+  "pct_20d": 2.33,
   "source": "WTI 期货 (CL=F) 主 + 5 因子",
   "_meta": {
-    "cached_at": "2026-10-02T09:00:48.323418",
-    "age_sec": 133,
+    "cached_at": "2026-10-02T09:32:16.519800",
+    "age_sec": 46,
     "stale": false,
     "refreshing": false
   }
