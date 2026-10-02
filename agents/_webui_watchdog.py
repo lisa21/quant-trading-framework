@@ -17,6 +17,13 @@
   · 端口仍在监听但 health 失败 → unresponsive, 不拉新实例 (避免多实例并存);
     连续 UNRESPONSIVE_LIMIT 次 (≈15 分钟) 才结束监听 8080 的 webui.py 进程再拉起.
   计数存在 signals/webui_watchdog_state.json.
+
+2026-10-02: 文件触发重启 (不需要人操作电脑).
+  · 写入 signals/webui_restart_request.json (内容可选 {"reason": ...}).
+  · 下一次运行 (≤5 分钟): 只结束监听 8080 且命令行含 webui.py 的进程,
+    等端口释放后拉起新实例, 请求文件改名 .done (一次请求只执行一次).
+  · 端口被非 webui 进程占用 → 不杀不拉 (requested_restart_skipped);
+    结束后端口仍未释放 → 不叠第二个实例 (requested_restart_failed).
 """
 from __future__ import annotations
 
@@ -25,6 +32,7 @@ import os
 import socket
 import subprocess
 import sys
+import time
 import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
@@ -35,6 +43,8 @@ HEALTH_URL = "http://127.0.0.1:8080/api/health"
 WEBUI_BAT  = SCRIPT_DIR / "webui.bat"
 STATE_PATH = SCRIPT_DIR / "signals" / "webui_watchdog_state.json"
 HOST, PORT = "127.0.0.1", 8080
+RESTART_REQUEST_PATH = SCRIPT_DIR / "signals" / "webui_restart_request.json"
+PORT_RELEASE_WAIT_S = 30
 UNRESPONSIVE_LIMIT = 3          # 连续 3 次 (5 分钟一次) 无响应才判定卡死
 # 任务计划用 pythonw 运行; 子进程 (netstat/powershell/taskkill) 不加这个会闪出控制台窗口
 _HIDDEN = {"creationflags": 0x08000000} if os.name == "nt" else {}
@@ -160,8 +170,51 @@ def _launch_webui() -> int | None:
         return None
 
 
+def _consume_restart_request() -> str | None:
+    """有请求 → 改名 .done 并返回 reason (先消费, 保证一次请求只执行一次)."""
+    if not RESTART_REQUEST_PATH.exists():
+        return None
+    reason = ""
+    try:
+        reason = str((json.loads(RESTART_REQUEST_PATH.read_text(encoding="utf-8") or "{}")
+                      or {}).get("reason") or "")
+    except Exception:
+        pass
+    done = RESTART_REQUEST_PATH.with_suffix(".done")
+    try:
+        os.replace(RESTART_REQUEST_PATH, done)
+    except OSError as e:
+        _log("requested_restart_failed", f"cannot consume request: {e}")
+        return None
+    return reason or "(no reason)"
+
+
+def _handle_restart_request(reason: str) -> int:
+    pids = _webui_listener_pids() if _port_listening() else []
+    if _port_listening() and not pids:
+        _log("requested_restart_skipped", f"port {PORT} held by non-webui process; reason={reason}")
+        return 3
+    killed = [pid for pid in pids if _kill_pid(pid)]
+    for _ in range(PORT_RELEASE_WAIT_S):
+        if not _port_listening():
+            break
+        time.sleep(1)
+    else:
+        _log("requested_restart_failed", f"port {PORT} not released; killed={killed}; reason={reason}")
+        return 2
+    _save_state({"unresponsive": 0})
+    new_pid = _launch_webui()
+    _log("requested_restart", f"killed={killed} new pid={new_pid}; reason={reason}")
+    return 1 if new_pid else 2
+
+
 def main() -> int:
     now_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    reason = _consume_restart_request()
+    if reason is not None:
+        rc = _handle_restart_request(reason)
+        print(f"[{now_str}] restart request ({reason}) → rc={rc}")
+        return rc
     state = _load_state()
     if _webui_healthy():
         if state.get("unresponsive"):
