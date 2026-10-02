@@ -71,7 +71,7 @@ class RestartRequest(unittest.TestCase):
         launch.assert_called_once()
         self.assertFalse(self.req.exists())
         self.assertTrue(self.req.with_suffix(".done").exists())
-        self.assertEqual(self.events()[-1], "requested_restart")
+        self.assertEqual(self.events()[-3:], ["requested_restart_begin", "requested_restart_killed", "requested_restart"])
         # 下一轮: 请求已消费, 正常健康检查, 不再重启
         rc, kill, launch = self.run_main(listening=(True,))
         launch.assert_not_called()
@@ -102,3 +102,35 @@ class RestartRequest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class ListenerPidsDecoding(unittest.TestCase):
+    """2026-10-02 生产故障: pythonw -X utf8 下 netstat 输出是 cp932 (日文表头),
+    text=True 解码在读线程里失败 → stdout=None → AttributeError, 重启请求中途崩溃.
+    现在按字节读取并容错解码."""
+
+    def test_cp932_netstat_output(self):
+        netstat = ("\r\nアクティブな接続\r\n\r\n  プロトコル  ローカル アドレス  外部アドレス  状態  PID\r\n"
+                   "  TCP  127.0.0.1:8080  0.0.0.0:0  LISTENING  4242\r\n"
+                   "  TCP  127.0.0.1:18080  0.0.0.0:0  LISTENING  5555\r\n").encode("cp932")
+        calls = []
+
+        class R:
+            def __init__(self, out):
+                self.stdout, self.returncode = out, 0
+
+        def fake_run(args, **kw):
+            calls.append(kw)
+            if args[0] == "netstat":
+                return R(netstat)
+            return R("C:\\Python312\\python.exe -X utf8 -u webui.py\r\n".encode("cp932"))
+
+        with patch.object(wd.subprocess, "run", side_effect=fake_run):
+            self.assertEqual(wd._webui_listener_pids(), [4242])
+        self.assertTrue(all("text" not in kw for kw in calls))
+
+    def test_stdout_none_does_not_crash(self):
+        class R:
+            stdout, returncode = None, 0
+        with patch.object(wd.subprocess, "run", return_value=R()):
+            self.assertEqual(wd._webui_listener_pids(), [])

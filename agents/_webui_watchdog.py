@@ -29,6 +29,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import socket
 import subprocess
 import sys
@@ -95,11 +96,26 @@ def _save_state(state: dict) -> None:
         pass
 
 
+def _decode(raw) -> str:
+    """Windows 控制台命令输出是 ANSI 代码页 (日文系统 cp932), 不是 UTF-8.
+    2026-10-02: 之前 text=True + -X utf8 → 读线程解码失败 → stdout=None → 崩溃."""
+    if not raw:
+        return ""
+    if isinstance(raw, str):
+        return raw
+    for enc in (("mbcs",) if os.name == "nt" else ()) + ("cp932", "utf-8"):
+        try:
+            return raw.decode(enc)
+        except (UnicodeDecodeError, LookupError):
+            continue
+    return raw.decode("utf-8", errors="replace")
+
+
 def _webui_listener_pids(port: int = PORT) -> list[int]:
     """监听 port 且命令行含 webui.py 的进程 PID (Windows). 其他进程一律不返回."""
     try:
-        out = subprocess.run(["netstat", "-ano", "-p", "TCP"], capture_output=True,
-                             text=True, timeout=15, **_HIDDEN).stdout
+        out = _decode(subprocess.run(["netstat", "-ano", "-p", "TCP"], capture_output=True,
+                                     timeout=15, **_HIDDEN).stdout)
     except Exception:
         return []
     pids = set()
@@ -114,13 +130,14 @@ def _webui_listener_pids(port: int = PORT) -> list[int]:
     result = []
     for pid in sorted(pids):
         try:
-            cmd = subprocess.run(
+            cmd = _decode(subprocess.run(
                 ["powershell", "-NoProfile", "-Command",
                  f"(Get-CimInstance Win32_Process -Filter 'ProcessId={pid}').CommandLine"],
-                capture_output=True, text=True, timeout=20, **_HIDDEN).stdout
+                capture_output=True, timeout=20, **_HIDDEN).stdout)
         except Exception:
             continue
-        if "webui.py" in (cmd or ""):
+        # 只认 webui.py 本体, 不认 _webui_watchdog.py
+        if re.search(r"(?<![\w_])webui\.py\b", cmd or ""):
             result.append(pid)
     return result
 
@@ -128,7 +145,7 @@ def _webui_listener_pids(port: int = PORT) -> list[int]:
 def _kill_pid(pid: int) -> bool:
     try:
         r = subprocess.run(["taskkill", "/PID", str(pid), "/T", "/F"],
-                           capture_output=True, text=True, timeout=20, **_HIDDEN)
+                           capture_output=True, timeout=20, **_HIDDEN)
         return r.returncode == 0
     except Exception:
         return False
@@ -190,11 +207,15 @@ def _consume_restart_request() -> str | None:
 
 
 def _handle_restart_request(reason: str) -> int:
-    pids = _webui_listener_pids() if _port_listening() else []
-    if _port_listening() and not pids:
+    listening = _port_listening()
+    pids = _webui_listener_pids() if listening else []
+    _log("requested_restart_begin", f"listening={listening} webui_pids={pids}; reason={reason}")
+    if listening and not pids:
         _log("requested_restart_skipped", f"port {PORT} held by non-webui process; reason={reason}")
         return 3
     killed = [pid for pid in pids if _kill_pid(pid)]
+    if pids:
+        _log("requested_restart_killed", f"killed={killed} of {pids}")
     for _ in range(PORT_RELEASE_WAIT_S):
         if not _port_listening():
             break
@@ -262,4 +283,11 @@ def main() -> int:
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    try:
+        sys.exit(main())
+    except SystemExit:
+        raise
+    except BaseException as e:   # pythonw 下异常不可见 → 写进日志
+        import traceback
+        _log("watchdog_crash", traceback.format_exc()[-1500:])
+        sys.exit(9)
