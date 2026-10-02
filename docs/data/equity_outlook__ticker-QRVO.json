@@ -7,10 +7,10 @@
     "recommendation": "hold",
     "current_price": 112.21,
     "forward_eps": 7.91,
-    "trailing_eps": 4.3,
-    "eps_growth_pct": 83.9,
+    "trailing_eps": 4.22,
+    "eps_growth_pct": 87.4,
     "forward_pe": 14.19,
-    "trailing_pe": 26.1,
+    "trailing_pe": 26.59,
     "target_mean": 90.17,
     "target_high": 105.0,
     "target_low": 66.0,
@@ -18,18 +18,18 @@
     "revenue_growth_pct": -4.2,
     "earnings_growth_pct": 255.6,
     "next_earnings": "2026-11-10",
-    "implied_pe_hold": 206.32,
-    "implied_pe_hold_upside": 83.9,
-    "peg_fair_price": 663.35,
-    "peg_ratio": 0.17,
-    "hist_pe_median": 106.0,
-    "hist_pe_p25": 92.48,
-    "hist_pe_p75": 140.71,
-    "hist_pe_n_days": 628,
-    "implied_hist_median": 838.08,
-    "implied_hist_p25": 731.18,
-    "implied_hist_p75": 1112.51,
-    "implied_hist_upside": 646.9,
+    "implied_pe_hold": 210.23,
+    "implied_pe_hold_upside": 87.4,
+    "peg_fair_price": 691.02,
+    "peg_ratio": 0.16,
+    "hist_pe_median": 105.96,
+    "hist_pe_p25": 92.22,
+    "hist_pe_p75": 140.67,
+    "hist_pe_n_days": 629,
+    "implied_hist_median": 837.76,
+    "implied_hist_p25": 729.13,
+    "implied_hist_p75": 1112.19,
+    "implied_hist_upside": 646.6,
     "peer_pe_median": 17.84,
     "peer_pe_n_peers": 5,
     "peer_pe_details": [
@@ -43,7 +43,7 @@
       },
       {
         "ticker": "6981.T",
-        "pe": 35.65
+        "pe": 35.63
       },
       {
         "ticker": "QCOM",
@@ -208,8 +208,8 @@
       {
         "key": "pe_hold",
         "label": "前瞻 EPS × 当前估值",
-        "implied_price": 206.32,
-        "gap_pct": 83.9
+        "implied_price": 210.23,
+        "gap_pct": 87.4
       },
       {
         "key": "peer_pe",
@@ -220,21 +220,21 @@
     ],
     "median_gap_pct": 25.7,
     "revision_signal": "upward",
-    "required_eps_growth_pct": -75.4,
-    "consensus_eps_growth_pct": 83.9,
-    "growth_cushion_pct": 159.3,
+    "required_eps_growth_pct": -74.9,
+    "consensus_eps_growth_pct": 87.4,
+    "growth_cushion_pct": 162.3,
     "rationale": [
       "多口径隐含价中位数高于现价 25.7%",
       "近 30 天 EPS 共识上修",
-      "历史 PE 口径要求 EPS 增长 -75.4%，共识为 +83.9%"
+      "历史 PE 口径要求 EPS 增长 -74.9%，共识为 +87.4%"
     ]
   },
   "official_guidance_status": "not_connected",
-  "fetched_at": "2026-10-02T00:42:10.077175+00:00",
+  "fetched_at": "2026-10-02T06:42:49.678990+00:00",
   "source": "yfinance analyst aggregation",
   "_meta": {
-    "cached_at": "2026-10-02T09:42:10.078175",
-    "age_sec": 17453,
+    "cached_at": "2026-10-02T15:42:49.683074",
+    "age_sec": 3014,
     "stale": false,
     "refreshing": false
   },
