@@ -26,32 +26,6 @@
         "preview": "I am thrilled to announce the Republic of Korea Deal keeps getting BETTER! 8.4 Billion Dollars for an enhanced Oil Recov",
         "verbatim": "Republic of Korea Deal keeps getting BETTER! 8.4 Billion Dollars for an enhanced Oil Recovery Project.",
         "post_time": "2026-10-02T12:38:49.656Z"
-      },
-      {
-        "event_type": "MARKET",
-        "direction": "bullish",
-        "magnitude": "small",
-        "confidence": 8,
-        "tickers": [
-          "SPY"
-        ],
-        "preview": "RT @realDonaldTrumpCongratulations to the GREAT Boeing Company for producing a plane, the 737 Max, that was able to with",
-        "verbatim": "Congratulations to the GREAT Boeing Company... builds, by far, the finest commercial airliners in the sky",
-        "post_time": "2026-10-01T14:58:51.870Z"
-      },
-      {
-        "event_type": "GEOPOLITICAL",
-        "direction": "bullish",
-        "magnitude": "small",
-        "confidence": 7,
-        "tickers": [
-          "SPY",
-          "QQQ",
-          "GLD"
-        ],
-        "preview": "I stated, numerous times, that it would take 4-6 weeks to get rid of THE IRAN NUCLEAR THREAT, and I did it in one night!",
-        "verbatim": "get rid of THE IRAN NUCLEAR THREAT, and I did it in one night",
-        "post_time": "2026-10-01T17:54:47.579Z"
       }
     ],
     "summary": {

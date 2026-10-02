@@ -12373,14 +12373,14 @@
   "cache_contract": "15efd89eda8e",
   "_meta": {
     "cached_at": "2026-10-02T18:34:08.273218",
-    "age_sec": 14335,
+    "age_sec": 16135,
     "stale": false,
     "refreshing": false
   },
   "flow_meta": {
     "generated_at": "2026-10-02T13:06:22.081644+00:00",
     "status": "ready",
-    "age_sec": 1560.0,
+    "age_sec": 3360.0,
     "stale": false
   }
 }
