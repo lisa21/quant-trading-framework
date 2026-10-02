@@ -5,8 +5,8 @@
   "count": 0,
   "_meta": {
     "cached_at": "2026-10-03T00:03:05.750366",
-    "age_sec": 21598,
-    "stale": false,
-    "refreshing": false
+    "age_sec": 23399,
+    "stale": true,
+    "refreshing": true
   }
 }
