@@ -13614,14 +13614,14 @@
   "cache_contract": "15efd89eda8e",
   "_meta": {
     "cached_at": "2026-10-01T18:33:20.110216",
-    "age_sec": 68382,
+    "age_sec": 70182,
     "stale": false,
     "refreshing": false
   },
   "flow_meta": {
     "generated_at": "2026-10-01T20:06:23.644132+00:00",
     "status": "stale",
-    "age_sec": 30361.4,
+    "age_sec": 32161.4,
     "stale": true
   }
 }
