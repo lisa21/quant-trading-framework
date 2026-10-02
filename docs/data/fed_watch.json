@@ -5,8 +5,11 @@
       "date": "2026-10-28",
       "days_until": 26,
       "probabilities": {
-        "hold": 71.3,
-        "hike_25": 28.7
+        "hold": 78,
+        "hike_25": 22,
+        "hike_50": 0,
+        "cut_25": 0,
+        "cut_50": 0
       },
       "most_likely": "hold",
       "consensus_direction": "hawkish_lean"
@@ -15,9 +18,11 @@
       "date": "2026-12-09",
       "days_until": 68,
       "probabilities": {
-        "hold": 18.6,
-        "hike_25": 60.2,
-        "hike_50": 21.2
+        "hold": 27,
+        "hike_25": 73,
+        "hike_50": 0,
+        "cut_25": 0,
+        "cut_50": 0
       },
       "most_likely": "hike_25",
       "consensus_direction": "hawkish"
@@ -26,58 +31,58 @@
       "date": "2027-01-27",
       "days_until": 117,
       "probabilities": {
-        "hold": 11.5,
-        "hike_25": 44.3,
-        "hike_50": 44.2
+        "hold": 63,
+        "hike_25": 37,
+        "hike_50": 0,
+        "cut_25": 0,
+        "cut_50": 0
       },
-      "most_likely": "hike_25",
-      "consensus_direction": "hawkish"
+      "most_likely": "hold",
+      "consensus_direction": "hawkish_lean"
     },
     {
       "date": "2027-03-17",
       "days_until": 166,
       "probabilities": {
-        "hold": 3.9,
-        "hike_25": 22.8,
-        "hike_50": 73.3
+        "hold": 34,
+        "hike_25": 66,
+        "hike_50": 0,
+        "cut_25": 0,
+        "cut_50": 0
       },
-      "most_likely": "hike_50",
+      "most_likely": "hike_25",
       "consensus_direction": "hawkish"
     }
   ],
-  "implied_terminal_rate": "4.40%",
-  "implied_terminal_date": "2026-end",
-  "data_snapshot_date": "2026-10-01 22:25 EDT",
-  "recent_event_impact": "最近7天内9/30 PCE发布、10/2 NFP原定08:30 ET发布；可抓取到的FedWatch/Investing快照为10/1 22:25 EDT，早于10/2 NFP。最新可核验NFP为8月+162K、失业率4.1%，强于预期并支持加息定价；8月CPI/PPI仍显示通胀高于2%目标，强化Warsh时期偏鹰预期。",
-  "commentary": "CME 30-Day Fed Funds futures implied路径显示市场预计10月大概率暂停，但12月起重新转向加息，且2027年初累积加息概率较高。需注意10/1晚间快照尚未反映10/2 September NFP实际值；若该NFP显著偏离预期，10月和12月概率可能快速重定价。",
+  "implied_terminal_rate": "4.25-4.50",
+  "implied_terminal_date": "2026-Q4",
+  "data_snapshot_date": "2026-10-02",
+  "recent_event_impact": "过去7天内，BLS日历显示9月Employment Situation/NFP定于2026-10-02 08:30 ET发布；可检索到的期货概率快照为2026-10-02早盘，未能证明已反映该NFP。9月CPI/PPI尚未发布，8月CPI与PPI均为+0.4% MoM，强化了市场对后续加息而非降息的定价。",
+  "commentary": "Data snapshot: 2026-10-02；当前可见的CME Fed Funds futures衍生概率显示市场从10月按兵不动转向12月及之后更偏加息。警告：9月NFP在2026-10-02 08:30 ET发布，当前快照未能证明在该事件之后更新；若NFP实际结果已发布，则上述概率可能数据滞后。",
   "sources": [
     {
-      "url": "https://www.investing.com/central-banks/fed-rate-monitor?entry=header_strip",
-      "type": "cme_fedwatch_proxy"
+      "url": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
+      "type": "cme_fedwatch"
+    },
+    {
+      "url": "https://www.frenzycap.com/fedwatch",
+      "type": "fed_funds_futures_replica"
     },
     {
       "url": "https://www.fisclear.com/fed-watch",
-      "type": "cme_fedwatch_proxy_terminal_rate"
+      "type": "fed_funds_futures_monitor"
     },
     {
-      "url": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
-      "type": "cme_fedwatch_official"
-    },
-    {
-      "url": "https://www.bls.gov/schedule/news_release/empsit.htm",
-      "type": "economic_event_check"
-    },
-    {
-      "url": "https://www.kiplinger.com/investing/economy/this-weeks-economic-calendar",
-      "type": "economic_event_check"
+      "url": "https://www.bls.gov/schedule/2026/home.htm",
+      "type": "economic_calendar"
     }
   ],
-  "confidence": "medium",
+  "confidence": "low",
   "source_via": "codex_cli_websearch",
-  "fetched_at": "2026-10-02T03:00:15+00:00",
+  "fetched_at": "2026-10-02T11:01:51+00:00",
   "_meta": {
-    "cached_at": "2026-10-02T12:00:15.659509",
-    "age_sec": 27167,
+    "cached_at": "2026-10-02T20:01:51.868506",
+    "age_sec": 71,
     "stale": false,
     "refreshing": false
   }
