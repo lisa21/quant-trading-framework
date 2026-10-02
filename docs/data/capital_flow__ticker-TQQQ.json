@@ -1,23 +1,23 @@
 {
   "ticker": "TQQQ",
   "flow": {
-    "super_net": -22923559.005999997,
-    "big_net": -10020528.077000022,
-    "mid_net": 15995930.068000019,
-    "small_net": 12079967.044999957,
-    "total_net": -4868189.970000029,
-    "smart_pct": -0.00999057602649037
+    "super_net": 0.0,
+    "big_net": 0.0,
+    "mid_net": 0.0,
+    "small_net": 0.0,
+    "total_net": 0.0,
+    "smart_pct": 0.0
   },
   "anomaly": {
     "detected": false,
     "reason": "",
     "score": 0.0
   },
-  "asof": "2026-10-02 08:58:17",
+  "asof": "",
   "source": "moomoo",
   "_meta": {
-    "cached_at": "2026-10-02T21:58:27.467293",
-    "age_sec": 276,
+    "cached_at": "2026-10-02T22:29:42.348207",
+    "age_sec": 201,
     "stale": false,
     "refreshing": false
   }
