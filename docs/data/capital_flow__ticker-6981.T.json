@@ -103,7 +103,7 @@
         "tier": "huge_abs"
       }
     ],
-    "day_ratio": 0.8,
+    "day_ratio": 0.85,
     "trading_date": "2026-10-02",
     "date_short": "10/2",
     "net_bias": "neutral",
@@ -214,20 +214,20 @@
           }
         ],
         "slices": [],
-        "day_ratio": 0.8,
-        "day_chg_pct": -0.55,
+        "day_ratio": 0.85,
+        "day_chg_pct": -0.47,
         "day_open": 8513.0,
-        "day_close": 8466.0,
+        "day_close": 8473.0,
         "net_bias": "neutral",
         "buy_shares": 2744600,
         "sell_shares": 3026000,
         "buy_value_oku": 232.16,
         "sell_value_oku": 251.67,
         "full_bias": "neutral",
-        "full_up_shares": 7046600,
-        "full_down_shares": 6798700,
-        "full_up_value_oku": 593.44,
-        "full_down_value_oku": 568.75
+        "full_up_shares": 7482400,
+        "full_down_shares": 7196700,
+        "full_up_value_oku": 630.32,
+        "full_down_value_oku": 602.4
       },
       {
         "trading_date": "2026-10-01",
@@ -356,7 +356,7 @@
             "tier": "huge_2bar"
           }
         ],
-        "day_ratio": 1.45,
+        "day_ratio": 1.44,
         "day_chg_pct": 3.57,
         "day_open": 8179.0,
         "day_close": 8471.0,
@@ -760,11 +760,11 @@
       "value_oku_min": 1.0
     }
   },
-  "asof": "2026-10-02 13:45 JST",
+  "asof": "2026-10-02 14:10 JST",
   "source": "yfinance_intraday",
   "_meta": {
-    "cached_at": "2026-10-02T14:01:29.927113",
-    "age_sec": 93,
+    "cached_at": "2026-10-02T14:28:22.284827",
+    "age_sec": 280,
     "stale": false,
     "refreshing": false
   }
