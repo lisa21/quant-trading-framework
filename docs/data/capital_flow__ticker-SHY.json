@@ -3,22 +3,22 @@
   "flow": {
     "super_net": 0.0,
     "big_net": 11998027.5,
-    "mid_net": -456666.32000000007,
-    "small_net": -109561.16100000031,
-    "total_net": 11431800.019000001,
-    "smart_pct": 0.25663021230300836
+    "mid_net": 848639.4099999999,
+    "small_net": -42334.50600000098,
+    "total_net": 12804332.404,
+    "smart_pct": 0.2475052617343357
   },
   "anomaly": {
     "detected": false,
     "reason": "",
     "score": 0.0
   },
-  "asof": "2026-10-02 11:00:12",
+  "asof": "2026-10-02 11:05:13",
   "source": "moomoo",
   "_meta": {
-    "cached_at": "2026-10-03T00:00:16.165934",
-    "age_sec": 167,
-    "stale": false,
-    "refreshing": false
+    "cached_at": "2026-10-03T00:05:35.433104",
+    "age_sec": 1648,
+    "stale": true,
+    "refreshing": true
   }
 }
