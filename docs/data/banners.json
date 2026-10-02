@@ -7,12 +7,47 @@
     "direction": "neutral",
     "magnitude": "small",
     "score": 0,
-    "event_counts": {},
-    "breaking": [],
+    "event_counts": {
+      "NOISE": 5,
+      "DOMESTIC_POLICY": 1,
+      "DEAL": 2
+    },
+    "breaking": [
+      {
+        "event_type": "DEAL",
+        "direction": "bullish",
+        "magnitude": "medium",
+        "confidence": 8,
+        "tickers": [
+          "SPY"
+        ],
+        "preview": "I am thrilled to announce the Republic of Korea Deal keeps getting BETTER! 8.4 Billion Dollars for an enhanced Oil Recov",
+        "verbatim": "Republic of Korea Deal keeps getting BETTER! 8.4 Billion Dollars for an enhanced Oil Recovery Project.",
+        "post_time": "2026-10-02T12:38:49.656Z"
+      },
+      {
+        "event_type": "DEAL",
+        "direction": "bullish",
+        "magnitude": "medium",
+        "confidence": 7,
+        "tickers": [
+          "SPY",
+          "QQQ",
+          "GLD"
+        ],
+        "preview": "Europe has just agreed to release a massive amount of their heavily stocked Diesel Oil. The process will begin immediate",
+        "verbatim": "Europe has just agreed to release a massive amount of their heavily stocked Diesel Oil. The process will begin immediately.",
+        "post_time": "2026-10-02T14:01:01.407Z"
+      }
+    ],
     "summary": {
-      "text": null,
-      "state": "empty",
-      "post_ids": []
+      "text": "欧美韩能源相关利好频出，供应与合作改善，市场情绪偏积极。",
+      "state": "cached",
+      "post_ids": [
+        "117372767454121009",
+        "117371677010048663",
+        "117371353802794328"
+      ]
     }
   },
   "gold_macro": {
