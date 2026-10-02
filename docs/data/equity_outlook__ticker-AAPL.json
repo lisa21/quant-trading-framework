@@ -7,10 +7,10 @@
     "recommendation": "buy",
     "current_price": 330.32,
     "forward_eps": 9.58,
-    "trailing_eps": 8.73,
-    "eps_growth_pct": 9.8,
+    "trailing_eps": 8.65,
+    "eps_growth_pct": 10.8,
     "forward_pe": 34.47,
-    "trailing_pe": 37.84,
+    "trailing_pe": 38.19,
     "target_mean": 328.09,
     "target_high": 405.0,
     "target_low": 215.0,
@@ -18,10 +18,10 @@
     "revenue_growth_pct": 16.4,
     "earnings_growth_pct": 28.7,
     "next_earnings": "2026-10-30",
-    "implied_pe_hold": 362.59,
-    "implied_pe_hold_upside": 9.8,
-    "peg_fair_price": 93.91,
-    "peg_ratio": 3.52,
+    "implied_pe_hold": 365.94,
+    "implied_pe_hold_upside": 10.8,
+    "peg_fair_price": 103.49,
+    "peg_ratio": 3.19,
     "hist_pe_median": 34.02,
     "hist_pe_p25": 29.1,
     "hist_pe_p75": 37.25,
@@ -43,7 +43,7 @@
       },
       {
         "ticker": "1810.HK",
-        "pe": 16.4
+        "pe": 15.56
       }
     ],
     "implied_peer_median": 207.85,
@@ -200,8 +200,8 @@
       {
         "key": "pe_hold",
         "label": "前瞻 EPS × 当前估值",
-        "implied_price": 362.59,
-        "gap_pct": 9.8
+        "implied_price": 365.94,
+        "gap_pct": 10.8
       },
       {
         "key": "historical_pe",
@@ -218,21 +218,21 @@
     ],
     "median_gap_pct": -1.0,
     "revision_signal": "downward",
-    "required_eps_growth_pct": 11.2,
-    "consensus_eps_growth_pct": 9.8,
+    "required_eps_growth_pct": 12.2,
+    "consensus_eps_growth_pct": 10.8,
     "growth_cushion_pct": -1.4,
     "rationale": [
       "多口径隐含价中位数低于现价 1.0%",
       "近 30 天 EPS 共识下修",
-      "历史 PE 口径要求 EPS 增长 +11.2%，共识为 +9.8%"
+      "历史 PE 口径要求 EPS 增长 +12.2%，共识为 +10.8%"
     ]
   },
   "official_guidance_status": "not_connected",
-  "fetched_at": "2026-10-01T20:07:07.476521+00:00",
+  "fetched_at": "2026-10-02T02:07:14.296138+00:00",
   "source": "yfinance analyst aggregation",
   "_meta": {
-    "cached_at": "2026-10-02T05:07:07.477522",
-    "age_sec": 21355,
+    "cached_at": "2026-10-02T11:07:14.297164",
+    "age_sec": 1548,
     "stale": false,
     "refreshing": false
   },

@@ -203,11 +203,11 @@
     ]
   },
   "official_guidance_status": "not_connected",
-  "fetched_at": "2026-10-01T20:07:08.860608+00:00",
+  "fetched_at": "2026-10-02T02:07:15.784367+00:00",
   "source": "yfinance analyst aggregation",
   "_meta": {
-    "cached_at": "2026-10-02T05:07:08.861609",
-    "age_sec": 21354,
+    "cached_at": "2026-10-02T11:07:15.785367",
+    "age_sec": 1547,
     "stale": false,
     "refreshing": false
   },
