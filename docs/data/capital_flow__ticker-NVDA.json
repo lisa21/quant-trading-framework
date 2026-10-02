@@ -1,23 +1,23 @@
 {
   "ticker": "NVDA",
   "flow": {
-    "super_net": 87956289.68399996,
-    "big_net": 67431750.43199992,
-    "mid_net": 73054202.54699993,
-    "small_net": 131219723.19200039,
-    "total_net": 359661965.85499954,
-    "smart_pct": 0.015289355139325464
+    "super_net": 89833671.218,
+    "big_net": 75275933.95099986,
+    "mid_net": 64468404.50300002,
+    "small_net": 129459002.23000002,
+    "total_net": 359037011.9019995,
+    "smart_pct": 0.01545760161169475
   },
   "anomaly": {
     "detected": false,
     "reason": "",
     "score": 0.0
   },
-  "asof": "2026-10-02 13:28:15",
+  "asof": "2026-10-02 14:00:15",
   "source": "moomoo",
   "_meta": {
-    "cached_at": "2026-10-03T02:28:28.499589",
-    "age_sec": 274,
+    "cached_at": "2026-10-03T03:00:28.286839",
+    "age_sec": 155,
     "stale": false,
     "refreshing": false
   }

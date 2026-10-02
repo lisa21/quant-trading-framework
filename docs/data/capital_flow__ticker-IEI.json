@@ -1,23 +1,23 @@
 {
   "ticker": "IEI",
   "flow": {
-    "super_net": 0.0,
+    "super_net": -27345906.12,
     "big_net": 5479954.168000001,
-    "mid_net": -13837703.395000003,
-    "small_net": -31111694.914000005,
-    "total_net": -39469444.14099999,
-    "smart_pct": 0.017857809675998277
+    "mid_net": -11636138.285000004,
+    "small_net": -28792141.30299999,
+    "total_net": -62294231.54000002,
+    "smart_pct": -0.06155917621780108
   },
   "anomaly": {
     "detected": false,
     "reason": "",
     "score": 0.0
   },
-  "asof": "2026-10-02 13:32:55",
+  "asof": "2026-10-02 13:59:21",
   "source": "moomoo",
   "_meta": {
-    "cached_at": "2026-10-03T02:32:59.885828",
-    "age_sec": 3,
+    "cached_at": "2026-10-03T02:59:30.169975",
+    "age_sec": 213,
     "stale": false,
     "refreshing": false
   }
