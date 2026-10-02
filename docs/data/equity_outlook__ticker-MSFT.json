@@ -3,22 +3,22 @@
   "source_stock": "MSFT",
   "state": "ready",
   "analyst_consensus": {
-    "n_analysts": 52,
+    "n_analysts": 53,
     "recommendation": "strong_buy",
-    "current_price": 517.77,
+    "current_price": 517.53,
     "forward_eps": 23.65,
     "trailing_eps": 17.95,
     "eps_growth_pct": 31.7,
-    "forward_pe": 21.9,
-    "trailing_pe": 28.85,
-    "target_mean": 578.9,
+    "forward_pe": 21.89,
+    "trailing_pe": 28.83,
+    "target_mean": 578.82,
     "target_high": 870.0,
     "target_low": 440.0,
     "target_upside_pct": 11.8,
     "revenue_growth_pct": 17.7,
     "earnings_growth_pct": 31.7,
     "next_earnings": "2026-10-29",
-    "implied_pe_hold": 682.11,
+    "implied_pe_hold": 681.79,
     "implied_pe_hold_upside": 31.7,
     "peg_fair_price": 749.62,
     "peg_ratio": 0.69,
@@ -29,33 +29,33 @@
     "implied_hist_median": 843.5,
     "implied_hist_p25": 778.47,
     "implied_hist_p75": 905.46,
-    "implied_hist_upside": 62.9,
-    "peer_pe_median": 22.84,
+    "implied_hist_upside": 63.0,
+    "peer_pe_median": 22.79,
     "peer_pe_n_peers": 5,
     "peer_pe_details": [
       {
         "ticker": "AMZN",
-        "pe": 24.09
+        "pe": 24.01
       },
       {
         "ticker": "GOOGL",
-        "pe": 22.84
+        "pe": 22.79
       },
       {
         "ticker": "AAPL",
-        "pe": 34.79
+        "pe": 34.82
       },
       {
         "ticker": "ORCL",
-        "pe": 13.07
+        "pe": 12.96
       },
       {
         "ticker": "CRM",
-        "pe": 14.82
+        "pe": 14.66
       }
     ],
-    "implied_peer_median": 540.1,
-    "implied_peer_upside": 4.3,
+    "implied_peer_median": 538.92,
+    "implied_peer_upside": 4.1,
     "source": "yfinance analyst aggregation",
     "forward_estimates": {
       "earnings": {
@@ -145,14 +145,14 @@
           "current": 19.7484,
           "7daysAgo": 19.7597,
           "30daysAgo": 19.7531,
-          "60daysAgo": 19.6769,
+          "60daysAgo": 19.6731,
           "90daysAgo": 19.3974
         },
         "+1y": {
           "current": 23.6473,
           "7daysAgo": 23.6759,
           "30daysAgo": 23.5733,
-          "60daysAgo": 23.474,
+          "60daysAgo": 23.4688,
           "90daysAgo": 22.6278
         }
       },
@@ -202,45 +202,45 @@
       {
         "key": "analyst_target",
         "label": "分析师目标均值",
-        "implied_price": 578.9,
+        "implied_price": 578.82,
         "gap_pct": 11.8
       },
       {
         "key": "pe_hold",
         "label": "前瞻 EPS × 当前估值",
-        "implied_price": 682.11,
+        "implied_price": 681.79,
         "gap_pct": 31.7
       },
       {
         "key": "historical_pe",
         "label": "前瞻 EPS × 五年 PE 中位",
         "implied_price": 843.5,
-        "gap_pct": 62.9
+        "gap_pct": 63.0
       },
       {
         "key": "peer_pe",
         "label": "前瞻 EPS × 同行 PE 中位",
-        "implied_price": 540.1,
-        "gap_pct": 4.3
+        "implied_price": 538.92,
+        "gap_pct": 4.1
       }
     ],
     "median_gap_pct": 21.8,
     "revision_signal": "upward",
-    "required_eps_growth_pct": -19.1,
+    "required_eps_growth_pct": -19.2,
     "consensus_eps_growth_pct": 31.7,
-    "growth_cushion_pct": 50.8,
+    "growth_cushion_pct": 50.9,
     "rationale": [
       "多口径隐含价中位数高于现价 21.8%",
       "近 30 天 EPS 共识上修",
-      "历史 PE 口径要求 EPS 增长 -19.1%，共识为 +31.7%"
+      "历史 PE 口径要求 EPS 增长 -19.2%，共识为 +31.7%"
     ]
   },
   "official_guidance_status": "not_connected",
-  "fetched_at": "2026-10-02T14:07:53.013958+00:00",
+  "fetched_at": "2026-10-02T20:08:35.826780+00:00",
   "source": "yfinance analyst aggregation",
   "_meta": {
-    "cached_at": "2026-10-02T23:07:53.015464",
-    "age_sec": 21310,
+    "cached_at": "2026-10-03T05:08:35.827795",
+    "age_sec": 1468,
     "stale": false,
     "refreshing": false
   },
