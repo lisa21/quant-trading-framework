@@ -37,9 +37,9 @@
   ],
   "count": 4,
   "_meta": {
-    "cached_at": "2026-10-02T02:03:05.978331",
-    "age_sec": 23397,
-    "stale": true,
-    "refreshing": true
+    "cached_at": "2026-10-02T08:33:03.920799",
+    "age_sec": 1799,
+    "stale": false,
+    "refreshing": false
   }
 }

@@ -1,21 +1,12 @@
 {
   "ticker": "6981.T",
   "days": 10,
-  "hits": [
-    {
-      "date": "20260916",
-      "trade_time": "15:40",
-      "price": 7633.0,
-      "volume": 2356000,
-      "value_oku": 179.8,
-      "sheet": "Tost50億円"
-    }
-  ],
-  "count": 1,
+  "hits": [],
+  "count": 0,
   "_meta": {
-    "cached_at": "2026-10-02T02:03:05.972282",
-    "age_sec": 23397,
-    "stale": true,
-    "refreshing": true
+    "cached_at": "2026-10-02T08:33:03.919801",
+    "age_sec": 1799,
+    "stale": false,
+    "refreshing": false
   }
 }
