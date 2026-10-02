@@ -10,6 +10,8 @@ if exist "%~dp0.sec_user_agent" set /p SEC_USER_AGENT=<"%~dp0.sec_user_agent"
 set "PY=C:\Users\masa\AppData\Local\Programs\Python\Python312\python.exe"
 echo [%DATE% %TIME%] start > "%~dp0logs\eps_growth_last.log"
 "%PY%" -X utf8 -u growth_eps_data.py >> "%~dp0logs\eps_growth_last.log" 2>&1
+echo fetch exit=%ERRORLEVEL% >> "%~dp0logs\eps_growth_last.log"
 "%PY%" -X utf8 -u _backtest_eps_growth.py >> "%~dp0logs\eps_growth_last.log" 2>&1
+echo backtest exit=%ERRORLEVEL% >> "%~dp0logs\eps_growth_last.log"
 echo [%DATE% %TIME%] done >> "%~dp0logs\eps_growth_last.log"
 del "%~dp0signals\job_eps_growth_backtest.running" 2>nul

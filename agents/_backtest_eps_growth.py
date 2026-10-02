@@ -21,7 +21,7 @@ import calendar
 import json
 import math
 import sys
-from datetime import date, timedelta
+from datetime import date, datetime, timedelta
 from pathlib import Path
 
 AGENTS = Path(__file__).resolve().parent
@@ -256,7 +256,6 @@ def main() -> None:
         sys.stdout.reconfigure(encoding="utf-8", errors="backslashreplace")
     except Exception:
         pass
-    from datetime import datetime
     cache = Path(a.cache)
     print("[load]")
     companies, close, dvol = build(*load(cache))
@@ -283,5 +282,41 @@ def main() -> None:
     print(f"[out] {out}")
 
 
+def _run_logged(fn, log_name: str) -> None:
+    """stdout/stderr 同时写入 logs/<log_name> (后台无控制台运行时也能看到输出与异常)."""
+    import traceback
+    log_path = Path(__file__).resolve().parent / "logs" / log_name
+    log_path.parent.mkdir(parents=True, exist_ok=True)
+
+    class _Tee:
+        def __init__(self, *streams):
+            self.streams = [s for s in streams if s is not None]
+        def write(self, s):
+            for st in self.streams:
+                try:
+                    st.write(s)
+                    st.flush()
+                except Exception:
+                    pass
+            return len(s)
+        def flush(self):
+            pass
+
+    with open(log_path, "a", encoding="utf-8") as f:
+        sys.stdout = _Tee(sys.__stdout__, f)
+        sys.stderr = _Tee(sys.__stderr__, f)
+        print(f"===== {datetime.now().isoformat(timespec='seconds')} {Path(sys.argv[0]).name} {sys.argv[1:]} =====")
+        try:
+            fn()
+        except SystemExit as e:
+            print(f"[exit] {e}")
+            raise
+        except BaseException:
+            traceback.print_exc()
+            raise SystemExit(1)
+        finally:
+            sys.stdout, sys.stderr = sys.__stdout__, sys.__stderr__
+
+
 if __name__ == "__main__":
-    main()
+    _run_logged(main, "eps_growth_py.log")

@@ -193,12 +193,40 @@ def fetch_prices(tickers: list[str], start: str = "2009-01-01", batch: int = 150
     return rows
 
 
+def network_diag(hosts=("www.sec.gov", "data.sec.gov", "query1.finance.yahoo.com",
+                        "fred.stlouisfed.org", "www.google.com")) -> dict:
+    """DNS 解析诊断 (2026-10-03: Windows 上 www.sec.gov getaddrinfo 11002 失败)."""
+    import socket
+    out = {}
+    for h in hosts:
+        try:
+            out[h] = sorted({ai[4][0] for ai in socket.getaddrinfo(h, 443)})[:3]
+        except Exception as e:
+            out[h] = f"ERR {e}"
+    import urllib.request
+    out["proxies"] = urllib.request.getproxies()
+    print("[diag]", json.dumps(out, ensure_ascii=False))
+    return out
+
+
+def _with_retry(fn, *a, tries: int = 4, wait: float = 20, **k):
+    for i in range(tries):
+        try:
+            return fn(*a, **k)
+        except Exception as e:
+            if i == tries - 1:
+                raise
+            print(f"  retry {i + 1}/{tries - 1} after error: {e}")
+            time.sleep(wait * (i + 1))
+
+
 def fetch_all(cache: Path = DEFAULT_CACHE, skip_prices: bool = False) -> dict:
     ua = _ua()
+    network_diag()
     cache.mkdir(parents=True, exist_ok=True)
     t0 = time.time()
     print("[1/3] SEC ticker 列表")
-    tick_path = _download(SEC_TICKERS_URL, cache / "company_tickers_exchange.json", ua, 1)
+    tick_path = _with_retry(_download, SEC_TICKERS_URL, cache / "company_tickers_exchange.json", ua, 1)
     universe = parse_universe(json.loads(tick_path.read_text(encoding="utf-8")))
     with open(cache / "universe.csv", "w", encoding="utf-8", newline="") as f:
         w = csv.DictWriter(f, fieldnames=["cik", "ticker", "name", "exchange"])
@@ -206,7 +234,7 @@ def fetch_all(cache: Path = DEFAULT_CACHE, skip_prices: bool = False) -> dict:
         w.writerows(universe)
     print(f"  {len(universe)} 家 (NYSE/Nasdaq)")
     print("[2/3] SEC companyfacts.zip (约 1GB, 首次需要几分钟)")
-    zp = _download(SEC_FACTS_ZIP_URL, cache / "companyfacts.zip", ua, 7)
+    zp = _with_retry(_download, SEC_FACTS_ZIP_URL, cache / "companyfacts.zip", ua, 7)
     facts = facts_from_zip(zp, {u["cik"] for u in universe})
     write_csv_gz(cache / "facts.csv.gz", facts, FACT_FIELDS)
     have = {r["cik"] for r in facts}
@@ -238,5 +266,41 @@ def main() -> None:
     fetch_all(Path(a.cache), skip_prices=a.skip_prices)
 
 
+def _run_logged(fn, log_name: str) -> None:
+    """stdout/stderr 同时写入 logs/<log_name> (后台无控制台运行时也能看到输出与异常)."""
+    import traceback
+    log_path = Path(__file__).resolve().parent / "logs" / log_name
+    log_path.parent.mkdir(parents=True, exist_ok=True)
+
+    class _Tee:
+        def __init__(self, *streams):
+            self.streams = [s for s in streams if s is not None]
+        def write(self, s):
+            for st in self.streams:
+                try:
+                    st.write(s)
+                    st.flush()
+                except Exception:
+                    pass
+            return len(s)
+        def flush(self):
+            pass
+
+    with open(log_path, "a", encoding="utf-8") as f:
+        sys.stdout = _Tee(sys.__stdout__, f)
+        sys.stderr = _Tee(sys.__stderr__, f)
+        print(f"===== {datetime.now().isoformat(timespec='seconds')} {Path(sys.argv[0]).name} {sys.argv[1:]} =====")
+        try:
+            fn()
+        except SystemExit as e:
+            print(f"[exit] {e}")
+            raise
+        except BaseException:
+            traceback.print_exc()
+            raise SystemExit(1)
+        finally:
+            sys.stdout, sys.stderr = sys.__stdout__, sys.__stderr__
+
+
 if __name__ == "__main__":
-    main()
+    _run_logged(main, "eps_growth_py.log")
