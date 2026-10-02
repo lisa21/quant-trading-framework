@@ -435,6 +435,47 @@ def _load_calibration() -> dict | None:
     return _CALIB_CACHE["data"]
 
 
+_MV_CALIB_CACHE: dict = {"key": None, "val": None}
+
+
+def _model_versions_used(context) -> dict:
+    """F10 (2026-10-02): 本次决策实际使用的校准 / HMM 版本 (只追溯, 不改决策).
+
+    - 校准: 与 _load_calibration 同源 (context 快照优先; backtest 不读 live).
+    - HMM: context 提供 hmm_state 或 backtest → 只记 context 值, 不读 live 文件;
+      否则读 live hmm_state.json 的版本, applied_label = 实际被采用的标签
+      (stale > 72h 或置信度 < 0.6 时为 None).
+    """
+    from model_versions import calibration_version, hmm_version
+    cal = _load_calibration()
+    key = id(cal)
+    if _MV_CALIB_CACHE["key"] != key or _MV_CALIB_CACHE["val"] is None:
+        _MV_CALIB_CACHE.update(key=key, val=calibration_version(cal))
+    out = {"source": "live" if context is None else "context",
+           "calibration": dict(_MV_CALIB_CACHE["val"])}
+    ctx_hmm = getattr(context, "hmm_state", None) if context is not None else None
+    if context is not None and (ctx_hmm is not None or getattr(context, "is_backtest", False)):
+        out["hmm"] = ({"id": None, "status": "context_label", "label": ctx_hmm} if ctx_hmm
+                      else {"id": None, "status": "context_unavailable", "label": None})
+    else:
+        try:
+            from hmm_regime import load as _hmm_load
+            hv = hmm_version(_hmm_load())
+        except Exception:
+            hv = {"id": None, "status": "load_failed"}
+        hv["applied_label"] = _get_hmm_meta_state()
+        out["hmm"] = hv
+    return out
+
+
+def _attach_model_versions(result: dict, context) -> dict:
+    try:
+        result["model_versions"] = _model_versions_used(context)
+    except Exception as e:  # 追溯失败不影响决策
+        result["model_versions"] = {"error": f"{type(e).__name__}: {e}"}
+    return result
+
+
 def get_calibration_info() -> dict:
     """F10: 校准 metadata 摘要 (dashboard / audit 用).
 
@@ -467,7 +508,16 @@ def get_calibration_info() -> dict:
         "covered_tickers":   data.get("tickers", []) or [],
         "lookback_days":     data.get("lookback_days"),
         "forward_days":      data.get("forward_days"),
+        "version_id":        _model_versions_calib_id(data),
     }
+
+
+def _model_versions_calib_id(data) -> str | None:
+    try:
+        from model_versions import calibration_version
+        return calibration_version(data)["id"]
+    except Exception:
+        return None
 
 
 def _warn_stale_calibration_once() -> None:
@@ -1539,7 +1589,7 @@ def _get_decision_impl(market: dict, events: dict, macro: dict | None,
     # thesis 硬过滤: 最后一步防 blacklist ticker 漏 BUY 信号
     # WP04: 传 context (若有) 让 backtest 走 snapshot thesis, live 走 live
     result = _apply_thesis_filter(result, market.get("ticker", ""), context=context)
-    return result
+    return _attach_model_versions(result, context)
 
 
 def get_gold_decision(market: dict, events: dict, macro: dict | None = None,
@@ -1626,4 +1676,4 @@ def _get_gold_decision_impl(market: dict, events: dict, macro: dict | None,
     )
     # WP04: 传 context 让 gold 决策也能走 snapshot thesis (backtest 用)
     result = _apply_thesis_filter(result, market.get("ticker", ""), context=context)
-    return result
+    return _attach_model_versions(result, context)

@@ -2914,6 +2914,61 @@ def api_tostnet_hits(ticker: str, days: int = 10) -> dict:
     return _cached(f"tostnet_{tk}_{days}", ttl_sec=6*3600, compute_fn=_compute)
 
 
+def _classify_execution_status(*, broker_ok: bool, ticker_orders: list,
+                               positions_ok: bool, has_position: bool,
+                               system_action: str, ai_buy_plan: bool,
+                               entry_ref, price, last_fill_ts, decision_ts,
+                               buy_actions) -> str:
+    """F12 (2026-10-02): 看板执行状态, 严格区分
+
+    candidate        规则决策是买入类, 未挂单, 也没有等待中的价位计划
+    pending_trigger  有当前有效入场价 (AI 计划未过期, 否则最新决策的 entry_ref),
+                     现价尚未回落到入场价 (等待触发, 不是订单)
+    submitted        broker 有系统未结单 (未成交)
+    partially_filled broker 有系统未结单且已部分成交
+    filled           最新决策之后已有实际成交 (execution_ledger)
+    position_open    已持仓, 成交早于最新决策, 无未结单
+    broker_unknown   broker 订单/持仓查询失败 → 不冒充候选或未触发
+    inactive_signal / inactive
+    """
+    if not broker_ok:
+        return "broker_unknown"
+    if ticker_orders:
+        return ("partially_filled"
+                if any(float(o.get("dealt_qty") or 0) > 0 for o in ticker_orders)
+                else "submitted")
+    if not positions_ok:
+        return "broker_unknown"
+    f_dt = _parse_datetime_utc(last_fill_ts)
+    d_dt = _parse_datetime_utc(decision_ts)
+    if f_dt is not None and d_dt is not None and f_dt >= d_dt:
+        return "filled"
+    if has_position:
+        return "position_open"
+    if system_action in buy_actions:
+        try:
+            waiting = (entry_ref is not None and price is not None
+                       and float(price) > float(entry_ref))
+        except (TypeError, ValueError):
+            waiting = False
+        return "pending_trigger" if waiting else "candidate"
+    if ai_buy_plan:
+        return "inactive_signal"
+    return "inactive"
+
+
+def _row_times(*, signal: dict, signal_mtime: float, broker_checked_at,
+               last_fill_ts) -> dict:
+    """F12: 快照写入 ≠ 行情观测 ≠ broker 查询 ≠ 成交时间, 分开给出."""
+    return {
+        "decision_written_at": (datetime.fromtimestamp(signal_mtime, timezone.utc)
+                                .isoformat(timespec="seconds") if signal_mtime else None),
+        "market_observed_at": (signal.get("market") or {}).get("ts"),
+        "broker_checked_at": broker_checked_at,
+        "last_fill_at": last_fill_ts,
+    }
+
+
 def api_ai_targets() -> dict:
     """AI 价位计划 + 最新规则决策 + broker 实际未结订单。
 
@@ -2933,6 +2988,7 @@ def api_ai_targets() -> dict:
 
         # 只把 paper_trader 提交的订单算作“系统自动单”；手工单不混入。
         submitted_ids: set[str] = set()
+        last_fill_ts: dict[str, str] = {}   # F12: ticker → 最近成交时间 (UTC)
         ledger_path = SIGNALS_DIR / "execution_ledger.jsonl"
         if ledger_path.exists():
             for line in ledger_path.read_text(encoding="utf-8", errors="replace").splitlines():
@@ -2942,8 +2998,14 @@ def api_ai_targets() -> dict:
                     continue
                 if event.get("event") == "submitted" and event.get("order_id"):
                     submitted_ids.add(str(event["order_id"]))
+                if (event.get("event") in ("filled", "partial") and event.get("ticker")
+                        and float(event.get("dealt_qty") or 0) > 0):
+                    tkf = str(event["ticker"])
+                    if str(event.get("ts", "")) > last_fill_ts.get(tkf, ""):
+                        last_fill_ts[tkf] = str(event.get("ts", ""))
 
         pending_rows: list[dict] | None
+        broker_checked_at = None
         try:
             from moomoo import RET_OK
             from paper_trader import _ctx_get, _TRADER_LOCK, ACC_ID, TRD_ENV
@@ -2953,6 +3015,7 @@ def api_ai_targets() -> dict:
             if ret != RET_OK or orders is None:
                 pending_rows = None
             else:
+                broker_checked_at = datetime.now(timezone.utc).isoformat(timespec="seconds")
                 pending_statuses = {
                     "SUBMITTED", "SUBMITTING", "WAITING_SUBMIT", "FILLED_PART",
                 }
@@ -3018,17 +3081,6 @@ def api_ai_targets() -> dict:
             ai_buy_plan = ai_action in {"buy", "watch_buy"} and bool(target.get("entry_ref"))
             target_outdated = bool(signal_mtime and target_mtime and signal_mtime > target_mtime)
 
-            if ticker_orders:
-                execution_status = "submitted"
-            elif has_position:
-                execution_status = "position_open"
-            elif system_action in buy_actions:
-                execution_status = "candidate"
-            elif ai_buy_plan and system_action not in buy_actions:
-                execution_status = "inactive_signal"
-            else:
-                execution_status = "inactive"
-
             system_entry_ref = decision.get("entry_ref") or market.get("price")
             # 一旦出现更新的规则决策，旧 AI 数字只留在原始审计字段中，
             # 不再作为 dashboard/API 消费者的“当前可执行价”。
@@ -3050,7 +3102,20 @@ def api_ai_targets() -> dict:
                 effective_stop_ref = None
                 effective_target_ref = None
 
+            decision_ts = (datetime.fromtimestamp(signal_mtime, timezone.utc).isoformat()
+                           if signal_mtime else None)
+            execution_status = _classify_execution_status(
+                broker_ok=pending_rows is not None, ticker_orders=ticker_orders,
+                positions_ok=live_positions is not None, has_position=has_position,
+                system_action=system_action,
+                ai_buy_plan=ai_buy_plan,
+                entry_ref=effective_entry_ref, price=market.get("price"),
+                last_fill_ts=last_fill_ts.get(ticker), decision_ts=decision_ts,
+                buy_actions=buy_actions)
             target.update({
+                "times": _row_times(signal=signal, signal_mtime=signal_mtime,
+                                    broker_checked_at=broker_checked_at,
+                                    last_fill_ts=last_fill_ts.get(ticker)),
                 "system_action": system_action,
                 "system_confidence": decision.get("confidence"),
                 "system_reason": decision.get("reason"),
@@ -4028,14 +4093,45 @@ def _convert_proxy_level(proxy_level: float | None, proxy_spot: float | None,
     return result
 
 
+# F12 (2026-10-02): 可挂单换算价的锚点必须是同一时刻的两只 ETF 行情.
+_ANCHOR_MARKET_SOURCES = {"yfinance_history", "yfinance_intraday", "moomoo_quote"}
+_ANCHOR_MAX_SKEW_S = 900
+
+
+def _anchor_check(proxy_spot_ts, proxy_spot_source, leveraged_spot_ts,
+                  leveraged_spot_source) -> tuple[dict | None, str | None]:
+    """返 (anchor_meta, reject_reason). 兜底来源 / 缺时间 / 两边不同时刻 → 拒绝."""
+    for src in (proxy_spot_source, leveraged_spot_source):
+        if src not in _ANCHOR_MARKET_SOURCES:
+            return None, f"anchor_source_not_market:{src}"
+    p_dt = _parse_datetime_utc(proxy_spot_ts)
+    l_dt = _parse_datetime_utc(leveraged_spot_ts)
+    if p_dt is None or l_dt is None:
+        return None, "anchor_ts_missing"
+    skew = abs((p_dt - l_dt).total_seconds())
+    if skew > _ANCHOR_MAX_SKEW_S:
+        return None, f"anchor_skew_{int(skew)}s"
+    return {"proxy_spot_ts": proxy_spot_ts, "proxy_spot_source": proxy_spot_source,
+            "leveraged_spot_ts": leveraged_spot_ts,
+            "leveraged_spot_source": leveraged_spot_source,
+            "skew_seconds": int(skew)}, None
+
+
 def _build_leveraged_option_mapping(ticker: str, source: str,
                                      proxy_spot: float | None,
                                      leveraged_spot: float | None,
                                      expiry: str | None,
                                      decay: dict | None,
-                                     levels: dict[str, float | None]) -> dict | None:
+                                     levels: dict[str, float | None],
+                                     proxy_spot_ts=None, proxy_spot_source=None,
+                                     leveraged_spot_ts=None,
+                                     leveraged_spot_source=None) -> dict | None:
     cfg = LEVERAGED_OPTION_PRICE_MAP.get(ticker)
     if not cfg or cfg.get("source") != source:
+        return None
+    anchor_meta, _reject = _anchor_check(proxy_spot_ts, proxy_spot_source,
+                                         leveraged_spot_ts, leveraged_spot_source)
+    if anchor_meta is None:
         return None
     try:
         expiry_day = datetime.strptime(expiry, "%Y-%m-%d").date() if expiry else None
@@ -4056,6 +4152,10 @@ def _build_leveraged_option_mapping(ticker: str, source: str,
         "leverage": cfg["leverage"],
         "proxy_spot": round(float(proxy_spot), 2),
         "leveraged_spot": round(float(leveraged_spot), 2),
+        # F12: 所有关键位共用这一对锚点; 观测时间 ≠ 生成时间
+        "anchor": {"proxy_spot": round(float(proxy_spot), 2),
+                   "leveraged_spot": round(float(leveraged_spot), 2), **anchor_meta},
+        "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "expiry": expiry,
         "calendar_days": calendar_days,
         "decay": decay or {"available": False, "quality": "unavailable"},
@@ -4574,10 +4674,15 @@ def _compute_ticker_options(sources: dict[str, str] | None = None) -> dict:
                     exp = expiries[0]           # fallback 最近
                 ch = t.option_chain(exp)
                 calls, puts = ch.calls.copy(), ch.puts.copy()
+            spot_source, spot_ts = None, None
             try:
-                spot = float(t.history(period="1d")["Close"].iloc[-1])
+                _h1 = t.history(period="1d")
+                spot = float(_h1["Close"].iloc[-1])
+                spot_source, spot_ts = "yfinance_history", _h1.index[-1].isoformat()
             except Exception:
+                # 只用于筛选 strike 区间; F12: 不可作为杠杆换算锚点
                 spot = float(calls["strike"].median())
+                spot_source = "strike_median_fallback"
             lo, hi = spot * 0.90, spot * 1.10
             calls = calls[(calls["strike"] >= lo) & (calls["strike"] <= hi)]
             puts  = puts [(puts ["strike"] >= lo) & (puts ["strike"] <= hi)]
@@ -4803,6 +4908,7 @@ def _compute_ticker_options(sources: dict[str, str] | None = None) -> dict:
                 proxy_history = None
                 leveraged_history = None
                 leveraged_spot = None
+                lev_spot_source, lev_spot_ts = None, None
                 try:
                     proxy_history = t.history(period="3mo")
                 except Exception:
@@ -4811,10 +4917,14 @@ def _compute_ticker_options(sources: dict[str, str] | None = None) -> dict:
                     leveraged_history = yf.Ticker(tk).history(period="3mo")
                     if leveraged_history is not None and not leveraged_history.empty:
                         leveraged_spot = float(leveraged_history["Close"].iloc[-1])
+                        lev_spot_source = "yfinance_history"
+                        lev_spot_ts = leveraged_history.index[-1].isoformat()
                 except Exception:
                     leveraged_history = None
                 if not leveraged_spot:
+                    # F12: 信号文件价只作展示兜底, 不能与 proxy 现价组成锚点
                     leveraged_spot = _latest_signal_price(tk)
+                    lev_spot_source = "signal_file_fallback"
 
                 try:
                     proxy_closes = proxy_history["Close"] if proxy_history is not None else None
@@ -4838,6 +4948,8 @@ def _compute_ticker_options(sources: dict[str, str] | None = None) -> dict:
                     leveraged_spot=leveraged_spot,
                     expiry=exp,
                     decay=decay,
+                    proxy_spot_ts=spot_ts, proxy_spot_source=spot_source,
+                    leveraged_spot_ts=lev_spot_ts, leveraged_spot_source=lev_spot_source,
                     levels={
                         "upper_resistance": key_prices.get("upper_resistance", an_call["strike"]),
                         "pin": key_prices.get("pin"),

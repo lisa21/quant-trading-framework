@@ -267,8 +267,15 @@ def archive_thesis_for_promotion(
     cur = _load()
     if not cur:
         return   # 无当前 config, 无需 archive (首次创建)
+    # 2026-10-02: retired_at 用 UTC 带时区 (之前是本机 naive 时间); 新版本
+    # 若没有 effective_from, 以本次 retire 时刻为生效起点 (调用方随后写入
+    # thesis_config.json), 避免再产生"无法证明何时生效"的归档.
+    from datetime import timezone as _tz
+    retired_at = datetime.now(_tz.utc).isoformat(timespec="seconds")
+    if isinstance(new_thesis, dict) and not new_thesis.get("effective_from"):
+        new_thesis["effective_from"] = retired_at
     entry = {
-        "retired_at":            datetime.now().isoformat(timespec="seconds"),
+        "retired_at":            retired_at,
         "retired_reason":        retired_reason,
         "invalidation_evidence": invalidation_evidence or [],
         "promoted_to_version":   new_thesis.get("version"),

@@ -36,6 +36,9 @@ CORPORATE_ACTIONS_PATH = SCRIPT_DIR / "signals" / "corporate_actions.json"
 # 券商历史基线 (2026-09-24): 本地账本开始前/之外的券商成交, 由
 # _broker_history_reconcile.py --import-baseline 生成. 每行带 origin=system|manual.
 BROKER_HISTORY_PATH = SCRIPT_DIR / "signals" / "broker_history_fills.jsonl"
+# 券商订单手续费 (2026-10-02): _broker_history_reconcile --import-fees 写入.
+# 每行 {order_id, fee_amount (float | null=券商返回 N/A), fee_details, queried_at}.
+FEES_PATH = SCRIPT_DIR / "signals" / "broker_order_fees.jsonl"
 
 
 def _load_corporate_actions(path: Optional[Path] = None) -> list[dict]:
@@ -103,6 +106,24 @@ def _load_ledger(path: Optional[Path] = None,
         if r.get("event") in ("filled", "partial") and str(r.get("order_id")) not in local_oids:
             rows.append(r)
     return rows
+
+
+def load_order_fees(path: Optional[Path] = None) -> dict[str, Optional[float]]:
+    """order_id → 手续费 (USD). None = 券商返回了订单但费用未知. 同 oid 后者为准.
+
+    文件不存在 → {} (调用方必须把"没有费用数据"与"费用为 0"区分开).
+    """
+    out: dict[str, Optional[float]] = {}
+    for r in _read_jsonl(Path(path) if path is not None else FEES_PATH):
+        oid = str(r.get("order_id") or "")
+        if not oid:
+            continue
+        v = r.get("fee_amount")
+        try:
+            out[oid] = None if v is None else float(v)
+        except (TypeError, ValueError):
+            out[oid] = None
+    return out
 
 
 def canonical_ticker(ticker: Optional[str]) -> str:

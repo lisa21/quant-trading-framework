@@ -1288,6 +1288,8 @@ def _log_trade(ticker: str, side: str, qty: int, price: float,
                 "earnings_guard":  decision.get("earnings_guard"),
                 "uncertain":       decision.get("uncertain"),
                 "trump_override":  decision.get("trump_override"),
+                # F10 (2026-10-02): 本笔决策用的校准 / HMM 版本
+                "model_versions":  decision.get("model_versions"),
             },
             "market": {
                 "rsi":      mkt.get("rsi_14"),

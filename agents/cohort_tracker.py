@@ -587,6 +587,25 @@ def stats_from_fills(since_days: int = 30) -> dict:
 
     win_rate = round(n_wins / n_roundtrips * 100, 1) if n_roundtrips else 0.0
 
+    # 手续费 (2026-10-02): 窗口内有成交的订单 (买卖都算) 的券商费用.
+    # 不摊入成本层; 没有费用数据 → fees_usd=None, 不当 0.
+    window_oids = {inc["order_id"] for inc in increments
+                   if inc.get("order_id") and inc["side"] != "SPLIT"
+                   and inc["ts"] >= cutoff_iso}
+    try:
+        import fill_ledger as _fl
+        fee_map = _fl.load_order_fees()
+    except Exception:
+        fee_map = {}
+    known = [fee_map[o] for o in window_oids if fee_map.get(o) is not None]
+    n_unknown = len(window_oids) - len(known)
+    if not fee_map or not known:
+        fee_status, fees_usd, net = "no_data", None, None
+    else:
+        fee_status = "complete" if n_unknown == 0 else "partial"
+        fees_usd = round(sum(known), 2)
+        net = round(total_realized - fees_usd, 2)
+
     return {
         "n":                     n_roundtrips,
         "n_roundtrips":          n_roundtrips,
@@ -605,6 +624,10 @@ def stats_from_fills(since_days: int = 30) -> dict:
         "qty_reversals":         qty_reversals,
         "splits_applied":        reducer_meta.get("splits_applied", 0),
         "pnl_by_origin":         {k: round(v, 2) for k, v in sorted(pnl_by_origin.items())},
+        "fee_status":            fee_status,
+        "fees_usd":              fees_usd,
+        "fee_orders":            {"known": len(known), "unknown": n_unknown},
+        "total_pnl_net_usd":     net,
         "positions":             positions,
     }
 
@@ -650,6 +673,17 @@ def format_stats(since_days: int = 30, prefer_fills: bool = True) -> str:
                 lines.append("  按开仓来源:        " + " · ".join(
                     f"{names.get(k, k)} ${v:+,.2f}" for k, v in sorted(by_o.items(),
                                                                       key=lambda kv: kv[0] != "system")))
+            fst = s_fills.get("fee_status")
+            fo = s_fills.get("fee_orders") or {}
+            if fst in ("complete", "partial"):
+                lines.append(f"  手续费:            ${s_fills['fees_usd']:,.2f} "
+                              f"(窗口内成交订单 {fo.get('known', 0)} 笔有券商费用"
+                              + (f", {fo.get('unknown', 0)} 笔未知" if fst == "partial" else "")
+                              + ")")
+                lines.append(f"  扣费后实现 P&L:    ${s_fills['total_pnl_net_usd']:+,.2f}"
+                              + (" (费用不完整, 偏乐观)" if fst == "partial" else ""))
+            else:
+                lines.append("  手续费: 未计入 (无券商费用记录; 上面的 P&L 为未扣费金额)")
             lines.append(f"  broker fill events: {s_fills.get('n_events', 0)} 条 "
                           f"({s_fills.get('n_tickers', 0)} tickers)")
             n_rev = s_fills.get("price_revisions", 0) or 0

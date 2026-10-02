@@ -15,7 +15,7 @@ HMM Regime Detection — 用 Hidden Markov Model 自动学习市场 regime。
 from __future__ import annotations
 
 import json
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Optional
 
@@ -30,6 +30,8 @@ from atomic_io import atomic_write_json
 N_STATES        = 4         # 4 个隐状态
 TRAIN_DAYS      = 500       # 训练窗口
 HMM_STATE_PATH  = Path(SIGNALS_DIR) / "hmm_state.json"
+# F10 (2026-10-02): 每次训练追加一行冻结产物 (训练窗口/特征/超参/模型参数/version_id)
+HMM_VERSIONS_PATH = Path(SIGNALS_DIR) / "hmm_versions.jsonl"
 
 
 def _fetch_features(days: int = 500) -> pd.DataFrame | None:
@@ -81,8 +83,9 @@ def train_and_detect() -> dict:
         return {"error": "no_data"}
     X = df.values
     # Gaussian HMM K=4, full covariance
-    model = hmm.GaussianHMM(n_components=N_STATES, covariance_type="full",
-                            n_iter=50, random_state=42)
+    model_params = {"n_components": N_STATES, "covariance_type": "full",
+                    "n_iter": 50, "random_state": 42}
+    model = hmm.GaussianHMM(**model_params)
     try:
         model.fit(X)
     except Exception as e:
@@ -111,8 +114,9 @@ def train_and_detect() -> dict:
     # 转移矩阵: 从 cur_state 转去其他的概率
     trans_row = model.transmat_[cur_state].tolist()
 
-    return {
+    info = {
         "ts":              datetime.now().isoformat(),
+        "ts_utc":          datetime.now(timezone.utc).isoformat(),
         "current_state":   cur_state,
         "current_label":   state_stats[cur_state]["label"],
         "current_prob":    round(float(cur_prob[cur_state]), 3),
@@ -120,7 +124,60 @@ def train_and_detect() -> dict:
         "state_stats":     {int(k): s for k, s in state_stats.items()},
         "transition_from_current": {int(k): round(float(p), 3) for k, p in enumerate(trans_row)},
         "n_train_days":    len(df),
+        # F10 (2026-10-02): 冻结训练产物, 可重放 (replay) 与追溯 (version_id)
+        "train_start":     str(df.index[0])[:10],
+        "train_end":       str(df.index[-1])[:10],
+        "features":        [str(c) for c in df.columns],
+        "model_params":    model_params,
+        "model": {
+            "startprob": model.startprob_.tolist(),
+            "transmat":  model.transmat_.tolist(),
+            "means":     model.means_.tolist(),
+            "covars":    model.covars_.tolist(),
+        },
     }
+    info["version_id"] = compute_version_id(info)
+    return info
+
+
+def compute_version_id(info: dict) -> str:
+    """训练窗口 + 特征 + 超参 + 模型参数 → 确定性 id (与推断日期/文件时间无关)."""
+    from model_versions import fingerprint
+    core = {k: info.get(k) for k in ("train_start", "train_end", "features",
+                                     "model_params", "n_train_days")}
+    m = info.get("model") or {}
+    core["model"] = {k: [round(float(x), 10) for x in _flat(v)] for k, v in sorted(m.items())}
+    return "hmm-" + fingerprint(core)
+
+
+def _flat(v):
+    if isinstance(v, (list, tuple)):
+        for x in v:
+            yield from _flat(x)
+    else:
+        yield v
+
+
+def replay(info: dict, X) -> dict:
+    """用冻结参数 (不重新拟合) 对给定特征矩阵推断. 返 {current_state, current_prob}."""
+    import numpy as np
+    from hmmlearn import hmm
+    m = info["model"]
+    p = dict(info.get("model_params") or {})
+    model = hmm.GaussianHMM(n_components=p.get("n_components", N_STATES),
+                            covariance_type=p.get("covariance_type", "full"))
+    model.startprob_ = np.asarray(m["startprob"])
+    model.transmat_ = np.asarray(m["transmat"])
+    model.means_ = np.asarray(m["means"])
+    # 直接写内部字段: 与拟合时的数值完全一致 (setter 的正定校验可能拒绝
+    # 拟合产生的近奇异协方差, 但推断本身用的就是这些数值).
+    model._covars_ = np.asarray(m["covars"])
+    model.n_features = model.means_.shape[1]
+    X = np.asarray(X)
+    states = model.predict(X)
+    post = model.predict_proba(X)
+    cur = int(states[-1])
+    return {"current_state": cur, "current_prob": round(float(post[-1][cur]), 3)}
 
 
 def save(info: dict) -> None:
@@ -145,6 +202,12 @@ def detect_today() -> dict:
     info = train_and_detect()
     if "error" not in info:
         save(info)
+        try:
+            HMM_VERSIONS_PATH.parent.mkdir(parents=True, exist_ok=True)
+            with open(HMM_VERSIONS_PATH, "a", encoding="utf-8") as f:
+                f.write(json.dumps(info, ensure_ascii=False, default=str) + "\n")
+        except Exception as e:
+            logger.warning(f"[hmm] version history append 失败: {e}")
     return info
 
 

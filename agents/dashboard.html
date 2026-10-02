@@ -3421,13 +3421,26 @@ async function loadAITargets() {
     REDUCE:          { zh: '减仓',     color: '#d29922', bg: 'rgba(210,153,34,0.10)', icon: '🟡' },
     UNKNOWN:         { zh: '无新决策', color: '#7d8590', bg: 'rgba(125,133,144,0.05)', icon: '⚪' },
   };
+  // F12 (2026-10-02): 候选 / 待触发计划 / 已提交 / 已成交 严格分开
   const STATUS_META = {
-    submitted:      { text: '已在 broker 挂单', color: '#3fb950' },
-    position_open:  { text: '已持仓，无未结单', color: '#58a6ff' },
-    candidate:      { text: '候选，尚未挂单', color: '#d29922' },
-    inactive_signal:{ text: '已被新决策停用', color: '#7d8590' },
-    inactive:       { text: '未触发', color: '#7d8590' },
+    candidate:       { text: '候选，尚未挂单', color: '#d29922' },
+    pending_trigger: { text: '待触发计划 (价格未到，非订单)', color: '#e3b341' },
+    submitted:       { text: '已在 broker 挂单', color: '#3fb950' },
+    partially_filled:{ text: '挂单部分成交', color: '#3fb950' },
+    filled:          { text: '本轮决策后已成交', color: '#58a6ff' },
+    position_open:   { text: '已持仓，无未结单', color: '#58a6ff' },
+    broker_unknown:  { text: 'broker 未连接，订单状态未知', color: '#f85149' },
+    inactive_signal: { text: '已被新决策停用', color: '#7d8590' },
+    inactive:        { text: '未触发', color: '#7d8590' },
   };
+  const hhmm = (iso) => {
+    if (!iso) return '—';
+    const d = new Date(String(iso).includes('T') ? iso : String(iso).replace(' ', 'T'));
+    return isNaN(d) ? String(iso).slice(11, 16) : d.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'});
+  };
+  const timesLine = (tm) => tm
+    ? `决策写入 ${hhmm(tm.decision_written_at)} · 行情 ${tm.market_observed_at ? String(tm.market_observed_at).slice(11, 16) : '—'} · broker 查询 ${hhmm(tm.broker_checked_at)}${tm.last_fill_at ? ' · 成交 ' + hhmm(tm.last_fill_at) : ''}`
+    : '';
   const cleanTk = (raw) => (raw || '').replace(/^(US|JP|HK|SH|SZ)\./,'');
 
   // 先按 top_picks score 排序 (高 → 低), score 缺失的排最后 (按原顺序)
@@ -3483,7 +3496,7 @@ async function loadAITargets() {
           ? `<b style="color:var(--fg); font-size:12px">$${entryRef}</b> <small style="color:var(--muted); font-size:9px">${sourceLabel}</small>`
           : (tg.target_outdated ? '<span class="muted">旧计划已隐藏</span>' : '<span class="muted">—</span>')}
       </span>
-      <span title="broker 真实未结订单状态">${actual}</span>
+      <span title="broker 真实未结订单状态">${actual}<small style="display:block;color:var(--muted);font-size:9px">${timesLine(tg.times)}</small></span>
       <span title="止损参考；模拟账户不支持 broker STOP 时由软件风控每分钟巡检">
         ${stopRef
           ? `<b class="bad" style="font-size:11px">$${stopRef}</b> <small style="color:var(--muted); font-size:9px">${stopDist ? stopDist.toFixed(1) + '%' : ''}</small>`

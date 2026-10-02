@@ -1,7 +1,8 @@
 """只读对账: moomoo OpenD 模拟账户历史订单 + 当前持仓 vs 本地 execution_ledger.
 
 安全边界:
-- 只调用 history_order_list_query / position_list_query (白名单代理, 其他方法直接报错).
+- 只调用 history_order_list_query / position_list_query / order_fee_query
+  (白名单代理, 其他方法直接报错).
 - 不下单、不改单、不撤单、不解锁交易.
 - 不修改 execution_ledger / cohort / state. 结果只写到 development/<日期>/broker_history/.
 - 输出文件里不写账户 ID.
@@ -15,6 +16,8 @@ dealt_qty / dealt_avg_price (订单累计成交) 作为成交事实.
   python agents\\_broker_history_reconcile.py --selftest            # 无 OpenD, 内置样例自检
   python agents\\_broker_history_reconcile.py --import-baseline <broker_fills_*.jsonl>
                                                    # 写券商历史基线 (不连 OpenD)
+  python agents\\_broker_history_reconcile.py --import-fees <broker_order_fees_*.jsonl>
+                                                   # 写订单手续费 (不连 OpenD)
 """
 from __future__ import annotations
 
@@ -33,7 +36,8 @@ if str(AGENTS) not in sys.path:
 DEFAULT_TICKERS = ["US.DRAM", "US.MSFT", "US.QRVO", "US.SOXL", "US.TSLA", "US.USO"]
 CHUNK_DAYS = 30          # 每次查询的日期跨度
 CALL_INTERVAL_S = 3.2    # history_order_list_query 频率限制 (约 10 次 / 30 秒)
-ALLOWED = {"history_order_list_query", "position_list_query", "close"}
+ALLOWED = {"history_order_list_query", "position_list_query", "order_fee_query", "close"}
+FEE_CHUNK = 400          # order_fee_query 每次最多 400 个订单号
 
 
 # ---------- 时间: 美股回报时间 (美东) → UTC ----------
@@ -112,6 +116,59 @@ def fetch_positions(ctx, trd_env, acc_id):
     if ret != 0:
         raise RuntimeError(f"position_list_query failed: {df}")
     return df
+
+
+def fetch_fees(ctx, trd_env, acc_id, order_ids, sleep=time.sleep):
+    """只读查询订单手续费. 返回 (rows, status).
+
+    status: "ok" / "unsupported: <券商消息>" / "error: <异常>". 失败不抛出 —
+    模拟账户可能不支持费用查询, 此时如实记录, 统计里显示"未计入".
+    """
+    ids = [str(o) for o in order_ids if str(o)]
+    rows: list[dict] = []
+    now = datetime.now(timezone.utc).isoformat()
+    for i in range(0, len(ids), FEE_CHUNK):
+        chunk = ids[i:i + FEE_CHUNK]
+        try:
+            ret, df = ctx.order_fee_query(order_id_list=chunk, trd_env=trd_env, acc_id=acc_id)
+        except PermissionError:
+            raise
+        except Exception as e:  # noqa: BLE001 — 记录而不是中断对账
+            return rows, f"error: {type(e).__name__}: {e}"
+        if ret != 0:
+            return rows, f"unsupported: {df}"
+        for _, r in (df.iterrows() if df is not None and len(df) else []):
+            v = r.get("fee_amount")
+            try:
+                fee = float(v)
+            except (TypeError, ValueError):
+                fee = None
+            rows.append({"order_id": str(r.get("order_id")), "fee_amount": fee,
+                         "fee_details": [list(x) for x in (r.get("fee_details") or [])],
+                         "queried_at": now})
+        print(f"  fees {i + 1}~{i + len(chunk)}: {0 if df is None else len(df)} rows")
+        if i + FEE_CHUNK < len(ids):
+            sleep(CALL_INTERVAL_S)
+    return rows, "ok"
+
+
+def import_fees(src: Path, out: Path) -> int:
+    """broker_order_fees_*.jsonl → signals/broker_order_fees.jsonl (同 oid 后者为准, 整体重写)."""
+    import fill_ledger as fl
+    merged: dict[str, dict] = {}
+    for r in fl._read_jsonl(Path(src)):
+        oid = str(r.get("order_id") or "")
+        if oid:
+            merged[oid] = {"order_id": oid, "fee_amount": r.get("fee_amount"),
+                           "fee_details": r.get("fee_details") or [],
+                           "queried_at": r.get("queried_at"), "import_file": Path(src).name}
+    out = Path(out)
+    out.parent.mkdir(parents=True, exist_ok=True)
+    tmp = out.with_suffix(out.suffix + ".tmp")
+    tmp.write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in merged.values()),
+                   encoding="utf-8")
+    tmp.replace(out)
+    return len(merged)
 
 
 # ---------- 归一化 ----------
@@ -228,6 +285,7 @@ def render_md(rep, meta) -> str:
     L = ["# 券商历史订单对账 (只读)", "",
          f"生成: {meta['generated_at']} · 查询区间 {meta['start']} ~ {meta['end']} · 模拟账户",
          f"券商有成交订单 {rep['n_broker_fill_orders']} 笔, 其中本地账本没有的 {rep['n_broker_only_orders']} 笔.",
+         f"手续费查询: {meta.get('fee_status', '未查询')} · {meta.get('n_fee_rows', 0)} 笔 · 合计 ${meta.get('fees_total_usd', 0):,.2f}",
          "", "## 各标的", "",
          "| 标的 | 本地缺的券商订单 | 补回买入股 | 对账前 未配对卖出 | 对账后 未配对卖出 | 推算持仓 | 券商持仓 | 一致 |",
          "|---|---:|---:|---:|---:|---:|---:|---|"]
@@ -251,7 +309,7 @@ def render_md(rep, meta) -> str:
                 L.append(f"- {t}: 本地有、券商历史查不到的订单 {p['local_orders_missing_at_broker']}")
             if p["short_side_orders"]:
                 L.append(f"- {t}: 含卖空/回补订单 {p['short_side_orders']} 笔")
-    L += ["", "说明: 这是只读诊断, 没有写入 execution_ledger. 未包含费用. 若 '一致' 为否, "
+    L += ["", "说明: 这是只读诊断, 没有写入 execution_ledger. 上表 P&L 未扣手续费. 若 '一致' 为否, "
           "说明查询起点之前仍有持仓来源 (可用 --start 往前查)."]
     return "\n".join(L) + "\n"
 
@@ -269,6 +327,9 @@ def run(args, ctx=None, sleep=time.sleep):
         print(f"[reconcile] 只读查询 {start} ~ {end}")
         orders = fetch_orders(ctx, TrdEnv.SIMULATE, MOOMOO_ACC_ID, start, end, sleep=sleep)
         pos = fetch_positions(ctx, TrdEnv.SIMULATE, MOOMOO_ACC_ID)
+        filled_ids = [e["order_id"] for e in broker_fill_events(orders)]
+        fees, fee_status = fetch_fees(ctx, TrdEnv.SIMULATE, MOOMOO_ACC_ID, filled_ids, sleep=sleep)
+        print(f"[reconcile] 手续费查询: {fee_status} ({len(fees)} 条)")
     finally:
         if own:
             try: ctx.close()
@@ -276,12 +337,16 @@ def run(args, ctx=None, sleep=time.sleep):
     broker_events = broker_fill_events(orders)
     rep = reconcile(fl._load_ledger(include_broker_history=False), broker_events,
                     positions_by_ticker(pos), tickers)
-    meta = {"generated_at": datetime.now(timezone.utc).isoformat(), "start": str(start), "end": str(end)}
+    meta = {"generated_at": datetime.now(timezone.utc).isoformat(), "start": str(start), "end": str(end),
+            "fee_status": fee_status, "n_fee_rows": len(fees),
+            "fees_total_usd": round(sum(f["fee_amount"] for f in fees if f["fee_amount"] is not None), 2)}
     out_dir = Path(args.out) if args.out else ROOT / "development" / date.today().isoformat() / "broker_history"
     out_dir.mkdir(parents=True, exist_ok=True)
     stamp = datetime.now().strftime("%H%M%S")
     (out_dir / f"broker_fills_{stamp}.jsonl").write_text(
         "".join(json.dumps(e, ensure_ascii=False) + "\n" for e in broker_events), encoding="utf-8")
+    (out_dir / f"broker_order_fees_{stamp}.jsonl").write_text(
+        "".join(json.dumps(f, ensure_ascii=False) + "\n" for f in fees), encoding="utf-8")
     (out_dir / f"reconcile_{stamp}.json").write_text(
         json.dumps({"meta": meta, **rep}, ensure_ascii=False, indent=2, default=str), encoding="utf-8")
     md = render_md(rep, meta)
@@ -367,6 +432,8 @@ def selftest():
             return 0, d.copy()
         def position_list_query(self, **kw):
             return 0, pos.copy()
+        def order_fee_query(self, **kw):
+            return -1, "selftest: fee query unsupported"
         def place_order(self, *a, **k):
             raise AssertionError("must never be reachable")
 
@@ -399,6 +466,8 @@ def main():
     ap.add_argument("--selftest", action="store_true")
     ap.add_argument("--import-baseline", metavar="BROKER_FILLS_JSONL",
                     help="不连 OpenD: 把已导出的券商成交写入 signals/broker_history_fills.jsonl")
+    ap.add_argument("--import-fees", metavar="BROKER_ORDER_FEES_JSONL",
+                    help="不连 OpenD: 把已导出的订单手续费写入 signals/broker_order_fees.jsonl")
     args = ap.parse_args()
     try:
         sys.stdout.reconfigure(encoding="utf-8", errors="backslashreplace")
@@ -406,6 +475,10 @@ def main():
         pass
     if args.selftest:
         selftest()
+    elif args.import_fees:
+        import fill_ledger as fl
+        n = import_fees(Path(args.import_fees), fl.FEES_PATH)
+        print(f"[fees] wrote {n} rows → {fl.FEES_PATH}")
     elif args.import_baseline:
         import fill_ledger as fl
         n = import_baseline(Path(args.import_baseline), fl.BROKER_HISTORY_PATH)

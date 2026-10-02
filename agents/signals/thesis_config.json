@@ -1,6 +1,9 @@
 {
   "version": "2026-Q3.3_blacklist_expanded_soft_block",
   "created_at": "2026-08-24",
+  "effective_from": "2026-09-19T06:53:24+00:00",
+  "effective_from_basis": "not_later_than",
+  "effective_from_evidence": "git 48acdf7ac (2026-09-19 15:53:24 JST): version 改为 2026-Q3.3_blacklist_expanded_soft_block",
   "last_reviewed_at": "2026-09-18",
   "review_interval_days": 30,
   "thesis_summary": "Cloud long, avoid semi + duration. 2026-09-17 Sep FOMC 已加息 +25bps → 3.75-4.00% (unanimous 12-0), dot plot 16/18 members 预期年内再加至少 1 次. 前瞻: continued_hike_regime 用 2Y yield 60d delta bps 追踪市场对后续加息的定价 (>25bps → 打脸 duration 敏感策略). 2026-09-18: 60d 复盘胜率 16.1% -$31k, 扩 blacklist (漏网 semi 追加) + 新增 soft_blacklist (whitelist 移除后仍需高置信度).",
