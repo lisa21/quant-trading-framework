@@ -1,5 +1,5 @@
 {
-  "ts": "2026-10-02T22:01:24.536208+00:00",
+  "ts": "2026-10-02T22:27:59.078981+00:00",
   "factors": [
     {
       "arrow": "·",
@@ -68,9 +68,9 @@
   "pct_20d": -0.04,
   "source": "WTI 期货 (CL=F) 主 + 5 因子",
   "_meta": {
-    "cached_at": "2026-10-03T07:01:32.212395",
-    "age_sec": 91,
-    "stale": false,
-    "refreshing": false
+    "cached_at": "2026-10-03T07:28:01.211385",
+    "age_sec": 301,
+    "stale": true,
+    "refreshing": true
   }
 }
