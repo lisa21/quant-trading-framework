@@ -14750,14 +14750,14 @@
   "cache_contract": "15efd89eda8e",
   "_meta": {
     "cached_at": "2026-10-02T18:34:08.273218",
-    "age_sec": 10734,
+    "age_sec": 12535,
     "stale": false,
     "refreshing": false
   },
   "flow_meta": {
     "generated_at": "2026-10-02T12:06:22.054361+00:00",
     "status": "ready",
-    "age_sec": 1561.1,
+    "age_sec": 3361.5,
     "stale": false
   }
 }

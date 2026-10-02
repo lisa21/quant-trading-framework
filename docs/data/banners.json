@@ -8,10 +8,9 @@
     "magnitude": "small",
     "score": 0,
     "event_counts": {
-      "MEDIA_ATTACK": 3,
-      "MARKET": 2,
-      "DOMESTIC_POLICY": 4,
-      "NOISE": 3,
+      "MARKET": 1,
+      "DOMESTIC_POLICY": 5,
+      "NOISE": 5,
       "GEOPOLITICAL": 1
     },
     "breaking": [
@@ -23,30 +22,18 @@
         "tickers": [
           "SPY"
         ],
-        "preview": "Congratulations to the GREAT Boeing Company for producing a plane, the 737 Max, that was able to withstand G Forces and ",
-        "verbatim": "Congratulations to the GREAT Boeing Company... The Boeing Company... builds, by far, the finest commercial airliners in the sky",
-        "post_time": "2026-10-01T04:40:35.537Z"
-      },
-      {
-        "event_type": "MARKET",
-        "direction": "bullish",
-        "magnitude": "small",
-        "confidence": 7,
-        "tickers": [
-          "SPY"
-        ],
         "preview": "RT @realDonaldTrumpCongratulations to the GREAT Boeing Company for producing a plane, the 737 Max, that was able to with",
-        "verbatim": "RT @realDonaldTrumpCongratulations to the GREAT Boeing Company... congratulations on a job well done",
+        "verbatim": "Congratulations to the GREAT Boeing Company... builds, by far, the finest commercial airliners in the sky",
         "post_time": "2026-10-01T14:58:51.870Z"
       }
     ],
     "summary": {
-      "text": "特朗普赴俄州造势并称物价下行，市场情绪偏乐观。",
+      "text": "内容偏政治口号与时制法案，市场情绪中性。",
       "state": "cached",
       "post_ids": [
-        "117368375016362939",
-        "117368288137760987",
-        "117367105128831509"
+        "117369900687288624",
+        "117369458827039533",
+        "117369363664701946"
       ]
     }
   },
