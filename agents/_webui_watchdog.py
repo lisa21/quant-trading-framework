@@ -24,6 +24,12 @@
     等端口释放后拉起新实例, 请求文件改名 .done (一次请求只执行一次).
   · 端口被非 webui 进程占用 → 不杀不拉 (requested_restart_skipped);
     结束后端口仍未释放 → 不叠第二个实例 (requested_restart_failed).
+
+2026-10-02: 白名单后台任务的文件触发.
+  · 写 signals/job_request_<名字>.json → 本看门狗以隐藏窗口后台启动 JOBS[名字]
+    对应的 .bat, 不等待结束. 不在白名单 → job_rejected. 同名任务的
+    signals/job_<名字>.running 未超过 JOB_STALE_HOURS → 不重复启动.
+  · 请求文件改名 .done, 一次请求只执行一次; WebUI 健康检查照常进行.
 """
 from __future__ import annotations
 
@@ -45,6 +51,20 @@ WEBUI_BAT  = SCRIPT_DIR / "webui.bat"
 STATE_PATH = SCRIPT_DIR / "signals" / "webui_watchdog_state.json"
 HOST, PORT = "127.0.0.1", 8080
 RESTART_REQUEST_PATH = SCRIPT_DIR / "signals" / "webui_restart_request.json"
+JOB_DIR = SCRIPT_DIR / "signals"
+JOB_STALE_HOURS = 4
+# 白名单: 名字 → agents 下的 .bat (只读研究任务; 不允许任何下单/改账户的脚本)
+# market_quiet=True: 美股交易时段 (工作日 UTC 12:00-21:00, 含盘前) 不启动, 请求保留到收盘后
+# — 大量 yfinance/SEC 下载会和实盘行情抓取抢带宽、触发 Yahoo 限流.
+JOBS = {
+    "eps_growth_backtest": {"bat": "_eps_growth_backtest.bat", "market_quiet": True},
+}
+QUIET_BLOCK_UTC_HOURS = (12, 21)
+
+
+def _in_us_market_window(now: datetime | None = None) -> bool:
+    now = now or datetime.now(timezone.utc)
+    return now.weekday() < 5 and QUIET_BLOCK_UTC_HOURS[0] <= now.hour < QUIET_BLOCK_UTC_HOURS[1]
 PORT_RELEASE_WAIT_S = 30
 UNRESPONSIVE_LIMIT = 3          # 连续 3 次 (5 分钟一次) 无响应才判定卡死
 # 任务计划用 pythonw 运行; 子进程 (netstat/powershell/taskkill) 不加这个会闪出控制台窗口
@@ -229,8 +249,48 @@ def _handle_restart_request(reason: str) -> int:
     return 1 if new_pid else 2
 
 
+def _launch_job(name: str) -> int | None:
+    """隐藏窗口、脱离父进程启动白名单 .bat; 不等待."""
+    try:
+        proc = subprocess.Popen(
+            ["cmd.exe", "/c", str(SCRIPT_DIR / JOBS[name]["bat"])], cwd=str(SCRIPT_DIR),
+            creationflags=0x00000008 | 0x00000200 | 0x08000000,
+            stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, close_fds=True)
+        return proc.pid
+    except Exception as e:
+        _log("job_launch_failed", f"{name}: {e}")
+        return None
+
+
+def _process_job_requests() -> None:
+    for req in sorted(JOB_DIR.glob("job_request_*.json")):
+        name = req.stem[len("job_request_"):]
+        if name in JOBS and JOBS[name].get("market_quiet") and _in_us_market_window():
+            continue          # 保留请求, 收盘后的下一轮再启动
+        try:
+            os.replace(req, req.with_suffix(".done"))
+        except OSError as e:
+            _log("job_rejected", f"{name}: cannot consume request: {e}")
+            continue
+        if name not in JOBS:
+            _log("job_rejected", f"{name}: not in whitelist")
+            continue
+        running = JOB_DIR / f"job_{name}.running"
+        if running.exists() and (time.time() - running.stat().st_mtime) < JOB_STALE_HOURS * 3600:
+            _log("job_already_running", name)
+            continue
+        pid = _launch_job(name)
+        if pid:
+            running.write_text(f"{pid} {datetime.now(timezone.utc).isoformat()}", encoding="utf-8")
+            _log("job_started", f"{name} pid={pid}")
+
+
 def main() -> int:
     now_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    try:
+        _process_job_requests()
+    except Exception as e:   # 任务触发失败不能影响 WebUI 守护
+        _log("job_error", f"{type(e).__name__}: {e}")
     reason = _consume_restart_request()
     if reason is not None:
         rc = _handle_restart_request(reason)
