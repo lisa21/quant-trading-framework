@@ -133,5 +133,33 @@ class BacktestPipeline(unittest.TestCase):
         self.assertIn("admission", summ["C25"])
 
 
+class ManualFileFallback(unittest.TestCase):
+    """2026-10-03: 本机网络解析不了 sec.gov 时不绕过, 允许手动放置文件."""
+
+    def test_uses_placed_file_when_download_fails(self):
+        import tempfile
+        from unittest.mock import patch
+        with tempfile.TemporaryDirectory() as td:
+            dest = Path(td) / "companyfacts.zip"
+            dest.write_bytes(b"x")
+            import os, time as _t
+            old = _t.time() - 30 * 86400
+            os.utime(dest, (old, old))
+            with patch.object(gd, "_download", side_effect=OSError("getaddrinfo failed")), \
+                 patch.object(gd.time, "sleep", lambda s: None):
+                self.assertEqual(gd._download_or_cached("u", dest, "ua x@y", 7), dest)
+
+    def test_missing_file_gives_instruction(self):
+        import tempfile
+        from unittest.mock import patch
+        with tempfile.TemporaryDirectory() as td:
+            dest = Path(td) / "companyfacts.zip"
+            with patch.object(gd, "_download", side_effect=OSError("getaddrinfo failed")), \
+                 patch.object(gd.time, "sleep", lambda s: None):
+                with self.assertRaises(SystemExit) as cm:
+                    gd._download_or_cached("https://x/companyfacts.zip", dest, "ua x@y", 7)
+            self.assertIn("其他网络", str(cm.exception))
+
+
 if __name__ == "__main__":
     unittest.main()

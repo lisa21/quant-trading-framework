@@ -209,6 +209,23 @@ def network_diag(hosts=("www.sec.gov", "data.sec.gov", "query1.finance.yahoo.com
     return out
 
 
+def _download_or_cached(url: str, dest: Path, ua: str, max_age_days: float) -> Path:
+    """下载失败时, 若缓存目录里已有该文件 (例如在别的网络手动下载后放进来), 不论新旧都使用.
+
+    2026-10-03: 本机所在网络无法解析 sec.gov; 不绕过网络限制, 改为允许手动放置.
+    """
+    try:
+        return _with_retry(_download, url, dest, ua, max_age_days)
+    except Exception as e:
+        if dest.exists() and dest.stat().st_size > 0:
+            age = (time.time() - dest.stat().st_mtime) / 86400
+            print(f"  [手动文件] 下载失败 ({e}); 使用已放置的 {dest.name} (约 {age:.1f} 天前)")
+            return dest
+        raise SystemExit(
+            f"无法下载 {url} ({e}).\n本机网络无法访问 sec.gov 时: 在其他网络用浏览器下载该文件, "
+            f"放到 {dest} 后重跑.")
+
+
 def _with_retry(fn, *a, tries: int = 4, wait: float = 20, **k):
     for i in range(tries):
         try:
@@ -226,7 +243,7 @@ def fetch_all(cache: Path = DEFAULT_CACHE, skip_prices: bool = False) -> dict:
     cache.mkdir(parents=True, exist_ok=True)
     t0 = time.time()
     print("[1/3] SEC ticker 列表")
-    tick_path = _with_retry(_download, SEC_TICKERS_URL, cache / "company_tickers_exchange.json", ua, 1)
+    tick_path = _download_or_cached(SEC_TICKERS_URL, cache / "company_tickers_exchange.json", ua, 1)
     universe = parse_universe(json.loads(tick_path.read_text(encoding="utf-8")))
     with open(cache / "universe.csv", "w", encoding="utf-8", newline="") as f:
         w = csv.DictWriter(f, fieldnames=["cik", "ticker", "name", "exchange"])
@@ -234,7 +251,7 @@ def fetch_all(cache: Path = DEFAULT_CACHE, skip_prices: bool = False) -> dict:
         w.writerows(universe)
     print(f"  {len(universe)} 家 (NYSE/Nasdaq)")
     print("[2/3] SEC companyfacts.zip (约 1GB, 首次需要几分钟)")
-    zp = _with_retry(_download, SEC_FACTS_ZIP_URL, cache / "companyfacts.zip", ua, 7)
+    zp = _download_or_cached(SEC_FACTS_ZIP_URL, cache / "companyfacts.zip", ua, 7)
     facts = facts_from_zip(zp, {u["cik"] for u in universe})
     write_csv_gz(cache / "facts.csv.gz", facts, FACT_FIELDS)
     have = {r["cik"] for r in facts}
