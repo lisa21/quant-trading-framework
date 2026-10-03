@@ -8,9 +8,10 @@
     "magnitude": "small",
     "score": 0,
     "event_counts": {
-      "NOISE": 5,
       "DOMESTIC_POLICY": 1,
-      "DEAL": 2
+      "NOISE": 4,
+      "DEAL": 2,
+      "MEDIA_ATTACK": 1
     },
     "breaking": [
       {
@@ -28,7 +29,7 @@
       {
         "event_type": "DEAL",
         "direction": "bullish",
-        "magnitude": "medium",
+        "magnitude": "small",
         "confidence": 7,
         "tickers": [
           "SPY",
@@ -41,12 +42,12 @@
       }
     ],
     "summary": {
-      "text": "欧美韩能源相关利好频出，供应与合作改善，市场情绪偏积极。",
-      "state": "cached",
+      "text": null,
+      "state": "generating",
       "post_ids": [
-        "117372767454121009",
-        "117371677010048663",
-        "117371353802794328"
+        "117373586079029403",
+        "117373388463106981",
+        "117372767454121009"
       ]
     }
   },

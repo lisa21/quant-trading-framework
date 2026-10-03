@@ -154,8 +154,8 @@
   "source": "yfinance_intraday",
   "_meta": {
     "cached_at": "2026-10-03T08:29:34.651477",
-    "age_sec": 209,
-    "stale": false,
-    "refreshing": false
+    "age_sec": 9213,
+    "stale": true,
+    "refreshing": true
   }
 }

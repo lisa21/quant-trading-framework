@@ -69,8 +69,8 @@
   "source": "WTI 期货 (CL=F) 主 + 5 因子",
   "_meta": {
     "cached_at": "2026-10-03T08:31:20.541118",
-    "age_sec": 102,
-    "stale": false,
-    "refreshing": false
+    "age_sec": 9104,
+    "stale": true,
+    "refreshing": true
   }
 }

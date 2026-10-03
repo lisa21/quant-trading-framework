@@ -5620,8 +5620,8 @@
   "data_source": "yfinance",
   "_meta": {
     "cached_at": "2026-10-03T08:31:15.943104",
-    "age_sec": 107,
-    "stale": false,
-    "refreshing": false
+    "age_sec": 9111,
+    "stale": true,
+    "refreshing": true
   }
 }

@@ -180,8 +180,8 @@
   "source": "yfinance_intraday",
   "_meta": {
     "cached_at": "2026-10-03T08:29:33.629734",
-    "age_sec": 210,
-    "stale": false,
-    "refreshing": false
+    "age_sec": 9214,
+    "stale": true,
+    "refreshing": true
   }
 }
