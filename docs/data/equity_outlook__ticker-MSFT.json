@@ -240,9 +240,9 @@
   "source": "yfinance analyst aggregation",
   "_meta": {
     "cached_at": "2026-10-03T13:03:07.790127",
-    "age_sec": 14402,
-    "stale": false,
-    "refreshing": false
+    "age_sec": 21607,
+    "stale": true,
+    "refreshing": true
   },
   "ticker": "MSFT",
   "is_proxy": false
