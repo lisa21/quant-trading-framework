@@ -24,6 +24,20 @@ import decision_context as dc
 from decision_context import DecisionContext, from_live_now, from_snapshot
 
 
+def _live_with_soxl_blacklisted():
+    """2026-10-03: live config 已解除半导体硬黑名单; 这里的测试关心的是
+    "无 context 时走 live thesis_config" 这条路径, 所以给 live 配置注入一个
+    含 US.SOXL 的硬黑名单 (fixture), 不依赖 live 名单内容."""
+    import json as _json
+    import thesis_config as _tc
+    from unittest.mock import patch as _patch
+    _tc._CACHE = {"mtime": 0, "data": None}
+    cfg = _json.loads(_json.dumps(_tc._load()))
+    cfg["blacklist_tickers"] = ["US.SOXL"]
+    cfg["blacklist_reason"] = "semi (fixture)"
+    return _patch.object(_tc, "_load", return_value=cfg)
+
+
 class DataclassImmutabilityTests(unittest.TestCase):
 
     def test_context_is_frozen(self):
@@ -77,7 +91,8 @@ class ThesisSnapshotReadTests(unittest.TestCase):
         # US.SOXL 在 live blacklist 里 → 应 block
         c = DecisionContext(as_of=datetime.now(timezone.utc),
                               thesis_snapshot=None)
-        blocked, _ = c.is_ticker_blacklisted("US.SOXL")
+        with _live_with_soxl_blacklisted():
+            blocked, _ = c.is_ticker_blacklisted("US.SOXL")
         self.assertTrue(blocked, "None snapshot → fallback live, SOXL 应 blocked")
 
     def test_ticker_normalization_in_snapshot_lookup(self):
@@ -153,7 +168,8 @@ class ContextMigrationCompatibilityTests(unittest.TestCase):
         # 旧 caller 不传 context, 应保持原行为 (US.SOXL blocked)
         from decision_agent import _apply_thesis_filter
         decision = {"action": "BUY", "confidence": 8, "reason": "test"}
-        out = _apply_thesis_filter(decision, "US.SOXL")
+        with _live_with_soxl_blacklisted():
+            out = _apply_thesis_filter(decision, "US.SOXL")
         self.assertEqual(out["action"], "HOLD")
         self.assertTrue(out.get("thesis_blocked"))
 
@@ -214,7 +230,8 @@ class TopPicksContextMigrationTests(unittest.TestCase):
             "market":   {"ticker": "US.SOXL"},
             "decision": {"action": "WATCH_BUY", "confidence": 5, "regime": "bull_trending"},
         }
-        r = top_picks._score_signal(sig)
+        with _live_with_soxl_blacklisted():
+            r = top_picks._score_signal(sig)
         self.assertTrue(r.get("excluded"))
         self.assertEqual(r["score"], -999.0)
 
@@ -302,8 +319,9 @@ class GetDecisionContextMigrationTests(unittest.TestCase):
                         "vol_ratio": 1.0, "cum_5d_pct": 2.0}
         fake_events = {"days_to_event": 99, "breaking_news": False,
                         "risk_level": "moderate"}
-        r = get_decision(fake_market, fake_events, macro={"vix": 18},
-                          board_regime="neutral")
+        with _live_with_soxl_blacklisted():
+            r = get_decision(fake_market, fake_events, macro={"vix": 18},
+                              board_regime="neutral")
         # 若 rule 出 BUY 类, 会被 thesis 拦; 若 rule 已经出 HOLD, 也 OK
         # 关键: 若 action=HOLD 但 thesis_blocked=True → context 兼容 OK
         # 若 action != HOLD (rule 判 BUY) 则必须 thesis_blocked

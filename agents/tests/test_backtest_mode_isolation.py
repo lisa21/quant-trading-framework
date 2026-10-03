@@ -17,6 +17,20 @@ if str(AGENTS_DIR) not in sys.path:
     sys.path.insert(0, str(AGENTS_DIR))
 
 
+def _live_with_soxl_blacklisted():
+    """2026-10-03: live config 已解除半导体硬黑名单; 这里的测试关心的是
+    "无 context 时走 live thesis_config" 这条路径, 所以给 live 配置注入一个
+    含 US.SOXL 的硬黑名单 (fixture), 不依赖 live 名单内容."""
+    import json as _json
+    import thesis_config as _tc
+    from unittest.mock import patch as _patch
+    _tc._CACHE = {"mtime": 0, "data": None}
+    cfg = _json.loads(_json.dumps(_tc._load()))
+    cfg["blacklist_tickers"] = ["US.SOXL"]
+    cfg["blacklist_reason"] = "semi (fixture)"
+    return _patch.object(_tc, "_load", return_value=cfg)
+
+
 class ThesisFilterBacktestBypassTests(unittest.TestCase):
     """patch.dict scopes BACKTEST_MODE env change per-test, prevents leakage
     that would fail other test files running in the same session."""
@@ -46,7 +60,8 @@ class ThesisFilterBacktestBypassTests(unittest.TestCase):
             thesis_config._CACHE = {"mtime": 0, "data": None}
             from decision_agent import _apply_thesis_filter
             decision = {"action": "BUY", "confidence": 8, "reason": "test"}
-            out = _apply_thesis_filter(decision, "US.SOXL")
+            with _live_with_soxl_blacklisted():
+                out = _apply_thesis_filter(decision, "US.SOXL")
             self.assertEqual(out["action"], "HOLD",
                               "无 BACKTEST_MODE 时 hard blacklist 仍生效")
             self.assertTrue(out.get("thesis_blocked"))

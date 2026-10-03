@@ -9,6 +9,22 @@ from unittest.mock import patch
 import thesis_config
 from decision_agent import _apply_thesis_filter
 
+# 2026-10-03: 用户解除了半导体硬黑名单 (live config 2026-Q3.4 blacklist 为空).
+# 硬黑名单的拦截机制仍需测试 → 用 2026-Q3.3 的半导体名单作为 fixture,
+# 不再依赖 live config 的内容.
+_SEMI_FIXTURE = ["US.DRAM", "US.KLAC", "US.AMAT", "US.MULL", "US.SOXL", "US.SOXS",
+                 "US.NVDA", "US.MU", "US.LITE", "US.CBRS", "US.QRVO", "US.SWKS",
+                 "US.MPWR", "US.STM"]
+
+
+def semi_blacklist():
+    """patch thesis_config._load → live config + 2026-Q3.3 半导体硬黑名单."""
+    thesis_config._CACHE = {"mtime": 0, "data": None}
+    cfg = json.loads(json.dumps(thesis_config._load()))
+    cfg["blacklist_tickers"] = list(_SEMI_FIXTURE)
+    cfg["blacklist_reason"] = "semi + AI 芯片链 (fixture: 2026-Q3.3 hard blacklist)"
+    return patch.object(thesis_config, "_load", return_value=cfg)
+
 
 class ThesisConfigTests(unittest.TestCase):
     def setUp(self):
@@ -19,13 +35,24 @@ class ThesisConfigTests(unittest.TestCase):
         s = thesis_config.summary()
         self.assertTrue(s["ok"])
         self.assertIsInstance(s["blacklist_count"], int)
-        self.assertGreater(s["blacklist_count"], 0)
+        self.assertGreaterEqual(s["blacklist_count"], 0)
         self.assertIsNotNone(s["version"])
 
-    def test_semi_ticker_is_blacklisted(self):
-        # 2026-Q3 thesis: avoid semi
-        for tk in ["US.SOXL", "US.KLAC", "US.NVDA", "US.MU", "US.DRAM"]:
+    def test_live_config_semis_unblocked_2026_10_03(self):
+        # 用户决定 (2026-10-03): 半导体不再硬拦截; 旧名单保留在 archive
+        for tk in _SEMI_FIXTURE:
             with self.subTest(ticker=tk):
+                blocked, _ = thesis_config.is_ticker_blacklisted(tk)
+                self.assertFalse(blocked, f"{tk} should no longer be hard-blacklisted")
+        arch = {e["thesis"]["version"]: e for e in thesis_config.list_retired_theses()}
+        old = arch["2026-Q3.3_blacklist_expanded_soft_block"]["thesis"]
+        self.assertEqual(sorted(old["blacklist_tickers"]), sorted(_SEMI_FIXTURE))
+        self.assertIsNotNone(thesis_config._load().get("effective_from"))
+
+    def test_semi_ticker_is_blacklisted(self):
+        # 机制测试 (fixture = 2026-Q3.3 半导体硬黑名单)
+        for tk in ["US.SOXL", "US.KLAC", "US.NVDA", "US.MU", "US.DRAM"]:
+            with self.subTest(ticker=tk), semi_blacklist():
                 blocked, reason = thesis_config.is_ticker_blacklisted(tk)
                 self.assertTrue(blocked, f"{tk} should be blacklisted")
                 self.assertIn("semi", reason.lower())
@@ -33,7 +60,7 @@ class ThesisConfigTests(unittest.TestCase):
     def test_expanded_blacklist_2026_09_18(self):
         # 2026-09-18 复盘后追加: QRVO/SWKS/MPWR/STM (漏网的 semi in universe)
         for tk in ["US.QRVO", "US.SWKS", "US.MPWR", "US.STM"]:
-            with self.subTest(ticker=tk):
+            with self.subTest(ticker=tk), semi_blacklist():
                 blocked, _ = thesis_config.is_ticker_blacklisted(tk)
                 self.assertTrue(blocked, f"{tk} should be blacklisted after 2026-09-18 expansion")
 
@@ -53,8 +80,9 @@ class ThesisConfigTests(unittest.TestCase):
 
     def test_ticker_prefix_handling(self):
         # 无 US. 前缀也匹配
-        b1, _ = thesis_config.is_ticker_blacklisted("SOXL")
-        b2, _ = thesis_config.is_ticker_blacklisted("US.SOXL")
+        with semi_blacklist():
+            b1, _ = thesis_config.is_ticker_blacklisted("SOXL")
+            b2, _ = thesis_config.is_ticker_blacklisted("US.SOXL")
         self.assertEqual(b1, b2)
         self.assertTrue(b1)
 
@@ -103,8 +131,8 @@ class ThesisArchiveTests(unittest.TestCase):
 
     def test_archive_has_retired_theses(self):
         arch = thesis_config.list_retired_theses()
-        self.assertGreaterEqual(len(arch), 2,
-                                 "至少 2 条历史 (2026-Q3, 2026-Q3.1) — 不能丢")
+        self.assertGreaterEqual(len(arch), 3,
+                                 "至少 3 条历史 (2026-Q3, 2026-Q3.1, 2026-Q3.3) — 不能丢")
         for e in arch:
             self.assertIn("retired_at", e)
             self.assertIn("retired_reason", e)
@@ -155,7 +183,8 @@ class ThesisFilterAppliedTests(unittest.TestCase):
 
     def test_watch_buy_on_semi_blocked_to_hold(self):
         decision = {"action": "WATCH_BUY", "confidence": 5, "reason": "oversold+uptrend"}
-        out = _apply_thesis_filter(decision, "US.SOXL")
+        with semi_blacklist():
+            out = _apply_thesis_filter(decision, "US.SOXL")
         self.assertEqual(out["action"], "HOLD")
         self.assertEqual(out["confidence"], 0)
         self.assertTrue(out.get("thesis_blocked"))
@@ -164,7 +193,8 @@ class ThesisFilterAppliedTests(unittest.TestCase):
 
     def test_buy_on_semi_blocked(self):
         decision = {"action": "BUY", "confidence": 8, "reason": "breakout"}
-        out = _apply_thesis_filter(decision, "US.KLAC")
+        with semi_blacklist():
+            out = _apply_thesis_filter(decision, "US.KLAC")
         self.assertEqual(out["action"], "HOLD")
         self.assertTrue(out.get("thesis_blocked"))
 
@@ -243,7 +273,8 @@ class ThesisFilterAppliedTests(unittest.TestCase):
     def test_hard_blocked_takes_priority_over_soft(self):
         # 若同时 hard + soft, hard 优先 (虽然 config 里应该互斥)
         decision = {"action": "BUY", "confidence": 9, "reason": "breakout"}
-        out = _apply_thesis_filter(decision, "US.SOXL")  # SOXL 只在 hard
+        with semi_blacklist():
+            out = _apply_thesis_filter(decision, "US.SOXL")  # SOXL 只在 hard
         self.assertEqual(out["action"], "HOLD")
         self.assertTrue(out.get("thesis_blocked"))
 
@@ -339,7 +370,8 @@ class ThesisFilterExecutionGuardTests(unittest.TestCase):
     def test_hard_blocked_action_not_in_buy_actions_after_filter(self):
         from trading_contracts import BUY_ACTIONS
         decision = {"action": "BUY", "confidence": 9, "reason": "breakout"}
-        out = _apply_thesis_filter(decision, "US.SOXL")
+        with semi_blacklist():
+            out = _apply_thesis_filter(decision, "US.SOXL")
         self.assertNotIn(out["action"], BUY_ACTIONS)
         self.assertEqual(out["action"], "HOLD")
 
