@@ -31,7 +31,7 @@ if str(AGENTS) not in sys.path:
 
 from growth_eps_screen import CompanyFacts, apply_rules, evaluate, metrics  # noqa: E402
 
-HORIZONS = (3, 6, 12)
+HORIZONS = (1, 3, 6, 12)
 IS_END = "2018-12-31"
 MIN_PRICE = 5.0
 MIN_DOLLAR_VOL_MONTH = 1e8
@@ -47,6 +47,23 @@ VARIANTS = {
     # M = 大盘方向 (2026-10-03): 等权市场指数 < 10 个月均线时空仓 (收益记 0)
     "C50+营收25+M":       {"min_eps_growth": 0.50, "min_sales_growth": 0.25, "market_filter": True},
 }
+# —— 书中观点扩展测试 (2026-10-03) ——
+_B = {"min_eps_growth": 0.50, "min_sales_growth": 0.25}
+VARIANTS.update({
+    "C50+营收25+SPY":          {**_B, "spy_filter": True},           # 标普 500 在 10 月均线上才买
+    "C50+营收25+趋势":         {**_B, "trend": True},                # 鱼身: 股价在 10 月均线上且距 12 月高点 ≤15%
+    "C50+营收25+SPY+趋势":     {**_B, "spy_filter": True, "trend": True},
+    "C50+营收25 连续2季":      {**_B, "min_consecutive_q": 2, "min_consecutive_sales_q": 2},
+    "C50+营收25 连续4季":      {**_B, "min_consecutive_q": 4, "min_consecutive_sales_q": 4},
+    "C50+营收25+年度1年":      {**_B, "min_annual_up_years": 1},
+    "C50+营收25+年度2年":      {**_B, "min_annual_up_years": 2},
+    "C50+营收25+年度3年":      {**_B, "min_annual_up_years": 3},
+    "Top4 按EPS增速":          {**_B, "top_n": 4, "rank_by": "eps"},
+    "Top4 按6月动量":          {**_B, "top_n": 4, "rank_by": "mom6"},
+    "Top4 按6月动量+SPY+趋势": {**_B, "top_n": 4, "rank_by": "mom6", "spy_filter": True, "trend": True},
+})
+TREND_NEAR_HIGH = 0.15
+COST_ONE_WAY = 0.001             # 组合模拟: 单边 0.1% 交易成本
 WATCH_RULE = "C50+营收25"         # 观察名单默认规则 (2026-10-03 回测样本外最稳)
 MARKET_SMA_MONTHS = 10
 
@@ -127,6 +144,15 @@ def run_backtest(companies, close, dvol, variants=VARIANTS, start="2012-01-31",
     stock_rows = {v: [] for v in variants}
     universe_rows = []
     trend = market_trend(close) if any(v.get("market_filter") for v in variants.values()) else {}
+    # 价格特征 (只用当月及以前): 10 月均线 / 12 月最高 / 6 月动量; SPY 方向
+    sma10 = close.rolling(10, min_periods=10).mean()
+    hi12 = close.rolling(12, min_periods=6).max()
+    mom6 = close / close.shift(6) - 1
+    spy_up = {}
+    if "SPY" in close.columns:
+        for m_, c_, s_ in zip(close.index, close["SPY"], sma10["SPY"]):
+            spy_up[m_] = None if (c_ != c_ or s_ != s_) else bool(c_ > s_)
+    holdings = {v: [] for v in variants}
     for m in months:
         i = idx[m]
         as_of = (date.fromisoformat(m) - timedelta(days=1)).isoformat()
@@ -155,10 +181,28 @@ def run_backtest(companies, close, dvol, variants=VARIANTS, start="2012-01-31",
             if key not in cache:
                 cache[key] = metrics(cf, as_of)
             mets[tk] = cache[key]
+        s10, h12, m6 = sma10.iloc[i].to_dict(), hi12.iloc[i].to_dict(), mom6.iloc[i].to_dict()
         for vname, rules in variants.items():
             picks = [tk for tk in liquid if apply_rules(mets[tk], as_of, rules)["pass"]]
+            if rules.get("trend"):
+                picks = [tk for tk in picks
+                         if s10.get(tk) == s10.get(tk) and s10.get(tk) is not None and px[tk] > s10[tk]
+                         and h12.get(tk) == h12.get(tk) and h12.get(tk) is not None
+                         and px[tk] >= h12[tk] * (1 - TREND_NEAR_HIGH)]
+            if rules.get("top_n"):
+                key = rules.get("rank_by", "eps")
+                def _score(tk):
+                    if key == "mom6":
+                        v = m6.get(tk)
+                        return v if v == v and v is not None else -1e9
+                    g = (mets[tk].get("eps_growth") or [None])[0]
+                    return g if g is not None else -1e9
+                picks = sorted(picks, key=_score, reverse=True)[:int(rules["top_n"])]
             row = {"month": m, "n": len(picks)}
-            if rules.get("market_filter") and trend.get(m) is False:
+            off = ((rules.get("market_filter") and trend.get(m) is False)
+                   or (rules.get("spy_filter") and spy_up.get(m) is False))
+            holdings[vname].append((m, [] if off else list(picks)))
+            if off:
                 # 大盘向下: 空仓, 收益 0, 超额 = −市场
                 row["n"] = 0
                 for h in HORIZONS:
@@ -175,8 +219,64 @@ def run_backtest(companies, close, dvol, variants=VARIANTS, start="2012-01-31",
             for tk in picks:
                 if tk in fwd[12]:
                     stock_rows[vname].append(fwd[12][tk])
+    spy_r1 = {}
+    if "SPY" in close.columns:
+        for m in months:
+            i = idx[m]
+            if i + 1 < len(close.index):
+                a_, b_ = close["SPY"].iloc[i], close["SPY"].iloc[i + 1]
+                if a_ == a_ and b_ == b_:
+                    spy_r1[m] = float(b_ / a_ - 1)
     return {"months": months, "per_month": per_month, "universe": universe_rows,
-            "stock_r12": stock_rows}
+            "stock_r12": stock_rows, "holdings": holdings, "spy_r1": spy_r1}
+
+
+def _series_stats(rets: list[float]) -> dict:
+    if not rets:
+        return {"n_months": 0}
+    level, peak, mdd = 1.0, 1.0, 0.0
+    for r in rets:
+        level *= 1 + r
+        peak = max(peak, level)
+        mdd = min(mdd, level / peak - 1)
+    n = len(rets)
+    mean = sum(rets) / n
+    sd = (sum((r - mean) ** 2 for r in rets) / (n - 1)) ** 0.5 if n > 1 else 0.0
+    return {"n_months": n, "cagr_pct": round((level ** (12 / n) - 1) * 100, 1),
+            "max_dd_pct": round(mdd * 100, 1),
+            "sharpe": round(mean / sd * math.sqrt(12), 2) if sd > 0 else None,
+            "total_pct": round((level - 1) * 100, 1)}
+
+
+def portfolio_sim(bt: dict, lo: str | None = None) -> dict:
+    """每月调仓、等权持有入选股 1 个月 (空仓 = 0), 扣单边 COST_ONE_WAY 成本."""
+    uni = {r["month"]: r.get("r1") for r in bt["universe"]}
+    out = {}
+    for v, rows in bt["per_month"].items():
+        hold = dict(bt["holdings"][v])
+        prev, rets, nh = set(), [], []
+        for r in rows:
+            m = r["month"]
+            if (lo and m < lo) or uni.get(m) is None:
+                continue
+            cur = set(hold.get(m, []))
+            gross = r.get("r1") if cur else 0.0
+            if gross is None:
+                gross = 0.0
+            if cur or prev:
+                changed = len(cur ^ prev) / max(len(cur | prev), 1)
+            else:
+                changed = 0.0
+            rets.append(gross - 2 * COST_ONE_WAY * changed)
+            nh.append(len(cur))
+            prev = cur
+        out[v] = {**_series_stats(rets), "avg_holdings": round(sum(nh) / len(nh), 1) if nh else 0,
+                  "months_in_cash_pct": round(sum(1 for x in nh if x == 0) / len(nh) * 100, 1) if nh else None}
+    ms = [m for m in bt["months"] if (not lo or m >= lo) and uni.get(m) is not None]
+    out["[基准] 全市场等权"] = _series_stats([uni[m] for m in ms])
+    if bt.get("spy_r1"):
+        out["[基准] SPY"] = _series_stats([bt["spy_r1"][m] for m in ms if m in bt["spy_r1"]])
+    return out
 
 
 def _summ(rows, h, lo=None, hi=None, step=1):
@@ -316,7 +416,7 @@ def update_watch(picks: list[dict], close, dvol, rule: str, market_up, today: st
     return watch
 
 
-def render(summary: dict, meta: dict, picks: list[dict]) -> str:
+def render(summary: dict, meta: dict, picks: list[dict], sims: dict | None = None) -> str:
     L = ["# 成长股 EPS 筛选回测", "",
          f"生成 {meta['generated']} · 区间 {meta['first_month']} ~ {meta['last_month']} · "
          f"月均股票池 {meta['avg_universe']} 只 · 样本内 ≤{IS_END[:4]}, 样本外 2019 起", "",
@@ -337,6 +437,16 @@ def render(summary: dict, meta: dict, picks: list[dict]) -> str:
           "|---|" + "---:|" * len(next(iter(summary.values()))["yearly_excess_3m_pct"])]
     for v, s in summary.items():
         L.append(f"| {v} | " + " | ".join(str(x) for x in s["yearly_excess_3m_pct"].values()) + " |")
+    if sims:
+        L += ["", f"## 组合模拟 (每月调仓, 等权持有 1 个月, 空仓收益 0, 单边成本 {COST_ONE_WAY*100:.1f}%)", "",
+              "| 规则 | 平均持股 | 空仓月份 | 全期年化 | 全期最大回撤 | 全期夏普 | 2019 起年化 | 2019 起最大回撤 |",
+              "|---|---:|---:|---:|---:|---:|---:|---:|"]
+        full, oos = sims["all"], sims["oos"]
+        for v, a in full.items():
+            o = oos.get(v, {})
+            L.append(f"| {v} | {a.get('avg_holdings', '—')} | {a.get('months_in_cash_pct', '—')}% | "
+                     f"{a.get('cagr_pct', '—')}% | {a.get('max_dd_pct', '—')}% | {a.get('sharpe', '—')} | "
+                     f"{o.get('cagr_pct', '—')}% | {o.get('max_dd_pct', '—')}% |")
     mu = meta.get("market_up")
     L += ["", f"当前大盘方向 (等权市场指数 vs {MARKET_SMA_MONTHS} 个月均线): "
           + ("向上" if mu else "向下" if mu is False else "未知")
@@ -383,9 +493,10 @@ def main() -> None:
             "picks_rule": a.picks_rule, "market_up": market_up}
     out = Path(a.out) if a.out else ROOT / "development" / date.today().isoformat() / "eps_growth"
     out.mkdir(parents=True, exist_ok=True)
-    md = render(summ, meta, picks)
+    sims = {"all": portfolio_sim(bt), "oos": portfolio_sim(bt, "2019-01-01")}
+    md = render(summ, meta, picks, sims)
     (out / "backtest_report.md").write_text(md, encoding="utf-8")
-    (out / "backtest_summary.json").write_text(json.dumps({"meta": meta, "summary": summ}, ensure_ascii=False, indent=2), encoding="utf-8")
+    (out / "backtest_summary.json").write_text(json.dumps({"meta": meta, "summary": summ, "portfolio_sim": sims}, ensure_ascii=False, indent=2), encoding="utf-8")
     import csv
     with open(out / "current_picks.csv", "w", encoding="utf-8", newline="") as f:
         if picks:

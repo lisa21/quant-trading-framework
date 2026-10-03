@@ -118,16 +118,25 @@ def metrics(cf: CompanyFacts, as_of: str, min_base_eps: float = DEFAULT_RULES["m
     if not eps_q:
         return {"last_quarter_end": None}
     last_end = list(eps_q)[-1]
-    m = {"last_quarter_end": last_end, "eps_growth": yoy_growths(eps_q, min_base_eps),
+    # eps_growth: 最近 8 个季度同比 (新→旧), 用于"连续 N 季"规则
+    m = {"last_quarter_end": last_end, "eps_growth": yoy_growths(eps_q, min_base_eps, n=8),
          "min_base_eps": min_base_eps}
     rev_q, _ = quarterly_series(cf.known("rev", as_of))
-    m["sales_growth"] = (yoy_growths(rev_q, 1.0, n=1)[0]
-                         if rev_q and list(rev_q)[-1] == last_end else None)
-    vals, ends = list(eps_a.values())[-4:], list(eps_a)[-4:]
-    spaced = len(ends) == 4 and all(330 <= (_d(b) - _d(a)).days <= 400
-                                    for a, b in zip(ends, ends[1:]))
-    m["annual_3y_growth"] = bool(spaced and vals[-1] > 0
-                                 and all(x < y for x, y in zip(vals, vals[1:])))
+    sg = yoy_growths(rev_q, 1.0, n=8) if rev_q and list(rev_q)[-1] == last_end else [None]
+    m["sales_growths"] = sg
+    m["sales_growth"] = sg[0]
+    # 年度 EPS 连续增长年数 (从最新财年往回数, 财年间隔须约 1 年, 最新财年 EPS > 0)
+    vals, ends = list(eps_a.values()), list(eps_a)
+    streak = 0
+    if vals and vals[-1] > 0:
+        for k in range(len(vals) - 1, 0, -1):
+            gap = (_d(ends[k]) - _d(ends[k - 1])).days
+            if 330 <= gap <= 400 and vals[k] > vals[k - 1]:
+                streak += 1
+            else:
+                break
+    m["annual_up_streak"] = streak
+    m["annual_3y_growth"] = streak >= 3
     return m
 
 
@@ -150,8 +159,9 @@ def apply_rules(m: dict, as_of: str, rules: dict | None = None) -> dict:
     if r["require_accel"] and (len(g) < 2 or g[1] is None or not g[0] > g[1]):
         res["reason"] = "not_accelerating"
         return res
-    if r["require_no_decel"] and len(g) == 3 and None not in g \
-            and g[0] < g[1] < g[2] and g[0] < g[2] * r["decel_ratio"]:
+    g3 = g[:3]
+    if r["require_no_decel"] and len(g3) == 3 and None not in g3 \
+            and g3[0] < g3[1] < g3[2] and g3[0] < g3[2] * r["decel_ratio"]:
         res["reason"] = "two_quarter_deceleration"
         return res
     if r["min_sales_growth"] is not None and (m["sales_growth"] is None
@@ -160,6 +170,20 @@ def apply_rules(m: dict, as_of: str, rules: dict | None = None) -> dict:
         return res
     if r["require_annual"] and not m["annual_3y_growth"]:
         res["reason"] = "annual_not_3y_growth"
+        return res
+    k = int(r.get("min_consecutive_q") or 0)        # EPS 连续 k 季同比 ≥ min_eps_growth
+    if k > 1 and not (len(g) >= k and all(x is not None and x >= r["min_eps_growth"] for x in g[:k])):
+        res["reason"] = "eps_not_consecutive"
+        return res
+    k = int(r.get("min_consecutive_sales_q") or 0)  # 营收连续 k 季同比 ≥ min_sales_growth
+    sgs = m.get("sales_growths") or []
+    if k > 1 and not (r["min_sales_growth"] is not None and len(sgs) >= k
+                      and all(x is not None and x >= r["min_sales_growth"] for x in sgs[:k])):
+        res["reason"] = "sales_not_consecutive"
+        return res
+    k = int(r.get("min_annual_up_years") or 0)      # 年度 EPS 连续增长 ≥ k 年
+    if k and m.get("annual_up_streak", 0) < k:
+        res["reason"] = "annual_streak_short"
         return res
     res["pass"] = True
     return res

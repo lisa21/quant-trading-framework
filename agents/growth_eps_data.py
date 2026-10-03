@@ -40,6 +40,7 @@ DEFAULT_CACHE = AGENTS / ".growth_cache"
 SEC_TICKERS_URL = "https://www.sec.gov/files/company_tickers_exchange.json"
 SEC_FACTS_ZIP_URL = "https://www.sec.gov/Archives/edgar/daily-index/xbrl/companyfacts.zip"
 EXCHANGES = {"NYSE", "Nasdaq"}
+BENCHMARK_TICKERS = ("SPY",)
 
 # 优先级从高到低; 同一期间同一次提交只保留最高优先级的标签
 EPS_TAGS = ("EarningsPerShareDiluted", "EarningsPerShareBasicAndDiluted",
@@ -344,7 +345,8 @@ def fetch_all(cache: Path = DEFAULT_CACHE, skip_prices: bool = False) -> dict:
               "n_facts": len(facts), "n_companies_with_facts": len(have)}
     if not skip_prices:
         print("[3/3] yfinance 月线")
-        tickers = [u["ticker"] for u in universe if u["cik"] in have]
+        # SPY: 标普 500 作大盘方向指标 (欧奈尔 M, 2026-10-03)
+        tickers = [u["ticker"] for u in universe if u["cik"] in have] + list(BENCHMARK_TICKERS)
         prices = fetch_prices(tickers)
         write_csv_gz(cache / "prices_monthly.csv.gz", prices, ["date", "ticker", "close", "volume"])
         status["n_price_rows"] = len(prices)

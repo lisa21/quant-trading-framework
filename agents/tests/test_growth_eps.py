@@ -258,5 +258,69 @@ class MarketFilterAndWatch(unittest.TestCase):
             self.assertIn("不会自动下单", json.loads(wp.read_text(encoding="utf-8"))["note"])
 
 
+class BookRuleExtensions(unittest.TestCase):
+    """2026-10-03 书中观点扩展: 连续季度/年度、Top N、鱼身趋势、SPY 方向、组合模拟."""
+
+    def test_consecutive_quarters_and_annual_streak(self):
+        rows = []
+        for y, e in ((2017, 0.2), (2018, 0.3), (2019, 0.4), (2020, 0.5)):
+            rows += year_rows(y, [e] * 4, [100.0] * 4)
+        rows += year_rows(2021, [0.6, 0.6, 1.0, 1.0], [100, 100, 150, 150])
+        c = gs.CompanyFacts(rows)
+        m = gs.metrics(c, "2022-03-01")
+        self.assertEqual(m["annual_up_streak"], 4)
+        base = {"min_eps_growth": 0.5, "min_sales_growth": 0.25}
+        self.assertTrue(gs.apply_rules(m, "2022-03-01", {**base, "min_consecutive_q": 2})["pass"])
+        r = gs.apply_rules(m, "2022-03-01", {**base, "min_consecutive_q": 3})
+        self.assertEqual(r["reason"], "eps_not_consecutive")      # 0.6 vs 0.5 = 20% < 50%
+        self.assertTrue(gs.apply_rules(m, "2022-03-01", {**base, "min_annual_up_years": 4})["pass"])
+        self.assertEqual(gs.apply_rules(m, "2022-03-01", {**base, "min_annual_up_years": 5})["reason"],
+                         "annual_streak_short")
+
+    def _setup(self, spy_path, a_path, b_path):
+        import pandas as pd
+        import _backtest_eps_growth as bt
+        months = [bt.month_end(f"{y}-{m:02d}-01") for y in (2020, 2021) for m in range(1, 13)]
+        close = pd.DataFrame({"A": a_path, "B": b_path, "SPY": spy_path}, index=months)
+        dvol = pd.DataFrame({"A": [2e8] * 24, "B": [2e8] * 24, "SPY": [2e9] * 24}, index=months)
+        g1 = gs.CompanyFacts(year_rows(2019, [0.5] * 4, [100] * 4) + year_rows(2020, [1.0] * 4, [150] * 4))
+        g2 = gs.CompanyFacts(year_rows(2019, [0.5] * 4, [100] * 4) + year_rows(2020, [2.0] * 4, [150] * 4))
+        return bt, months, close, dvol, {"A": g1, "B": g2}
+
+    def test_top_n_trend_and_spy(self):
+        up = [10 * 1.03 ** i for i in range(24)]
+        down = [10 * 0.97 ** i for i in range(24)]
+        bt, months, close, dvol, comp = self._setup(up, up, down)
+        base = {"min_eps_growth": 0.5, "min_sales_growth": 0.25}
+        res = bt.run_backtest(comp, close, dvol, start="2021-03-31", variants={
+            "top1_eps": {**base, "top_n": 1, "rank_by": "eps"},
+            "top1_mom": {**base, "top_n": 1, "rank_by": "mom6"},
+            "trend": {**base, "trend": True},
+            "spy": {**base, "spy_filter": True}})
+        h = {v: dict(res["holdings"][v]) for v in res["holdings"]}
+        m = "2021-05-31"
+        self.assertEqual(h["top1_eps"][m], ["B"])        # EPS 增速更高
+        self.assertEqual(h["top1_mom"][m], ["A"])        # 6 月动量更强
+        self.assertEqual(h["trend"][m], ["A"])           # B 在均线下且远离高点
+        self.assertEqual(sorted(h["spy"][m]), ["A", "B"])  # SPY 向上
+        bt2, months, close2, dvol2, comp2 = self._setup(down, up, up)
+        res2 = bt2.run_backtest(comp2, close2, dvol2, start="2021-03-31",
+                                variants={"spy": {**base, "spy_filter": True}})
+        self.assertEqual(dict(res2["holdings"]["spy"])[m], [])   # SPY 向下 → 空仓
+
+    def test_portfolio_sim_costs_and_cash(self):
+        import _backtest_eps_growth as bt
+        fake = {"months": ["2021-01-31", "2021-02-28", "2021-03-31"],
+                "universe": [{"month": m, "r1": 0.01} for m in ("2021-01-31", "2021-02-28", "2021-03-31")],
+                "per_month": {"v": [{"month": "2021-01-31", "r1": 0.10}, {"month": "2021-02-28", "r1": 0.10},
+                                    {"month": "2021-03-31", "r1": 0.0}]},
+                "holdings": {"v": [("2021-01-31", ["A"]), ("2021-02-28", ["A"]), ("2021-03-31", [])]},
+                "spy_r1": {}}
+        sim = bt.portfolio_sim(fake)["v"]
+        # 第 1 月换入 A (成本 0.2%), 第 2 月不换, 第 3 月清仓 (成本 0.2%)
+        self.assertAlmostEqual(sim["total_pct"], round(((1.098) * 1.10 * 0.998 - 1) * 100, 1), places=1)
+        self.assertEqual(sim["months_in_cash_pct"], 33.3)
+
+
 if __name__ == "__main__":
     unittest.main()
