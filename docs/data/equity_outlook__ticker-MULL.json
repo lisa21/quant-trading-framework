@@ -230,9 +230,9 @@
   "source": "yfinance analyst aggregation",
   "_meta": {
     "cached_at": "2026-10-03T05:07:54.213336",
-    "age_sec": 21316,
-    "stale": false,
-    "refreshing": false
+    "age_sec": 28511,
+    "stale": true,
+    "refreshing": true
   },
   "ticker": "MULL",
   "is_proxy": true

@@ -232,9 +232,9 @@
   "source": "yfinance analyst aggregation",
   "_meta": {
     "cached_at": "2026-10-03T05:08:34.477502",
-    "age_sec": 21275,
-    "stale": false,
-    "refreshing": false
+    "age_sec": 28471,
+    "stale": true,
+    "refreshing": true
   },
   "ticker": "AAPL",
   "is_proxy": false
