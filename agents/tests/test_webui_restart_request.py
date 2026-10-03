@@ -35,7 +35,8 @@ class RestartRequest(unittest.TestCase):
         self.p = [patch.object(wd, "LOG_PATH", self.log),
                   patch.object(wd, "STATE_PATH", self.td / "st.json"),
                   patch.object(wd, "RESTART_REQUEST_PATH", self.req),
-                  patch.object(wd.time, "sleep", lambda s: None)]
+                  patch.object(wd.time, "sleep", lambda s: None),
+                  patch.object(wd, "_process_job_requests", lambda: None)]
         for x in self.p:
             x.start()
 

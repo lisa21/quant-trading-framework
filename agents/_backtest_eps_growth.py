@@ -44,7 +44,11 @@ VARIANTS = {
                            "require_annual": True, "require_no_decel": True},
     "C50+营收25":         {"min_eps_growth": 0.50, "min_sales_growth": 0.25},
     "C100+营收25":        {"min_eps_growth": 1.00, "min_sales_growth": 0.25},
+    # M = 大盘方向 (2026-10-03): 等权市场指数 < 10 个月均线时空仓 (收益记 0)
+    "C50+营收25+M":       {"min_eps_growth": 0.50, "min_sales_growth": 0.25, "market_filter": True},
 }
+WATCH_RULE = "C50+营收25"         # 观察名单默认规则 (2026-10-03 回测样本外最稳)
+MARKET_SMA_MONTHS = 10
 
 
 def month_end(d: str) -> str:
@@ -87,6 +91,31 @@ def build(uni, facts, prices):
     return companies, close, dvol
 
 
+def market_trend(close, min_price: float = MIN_PRICE) -> dict[str, bool | None]:
+    """月末 → 等权市场指数是否在 MARKET_SMA_MONTHS 个月均线之上 (只用当月及以前的价格)."""
+    rets = []
+    prev = None
+    for m in close.index:
+        row = close.loc[m]
+        if prev is not None:
+            ok = prev.notna() & row.notna() & (prev >= min_price)
+            r = (row[ok] / prev[ok] - 1)
+            rets.append(float(r.mean()) if len(r) else 0.0)
+        else:
+            rets.append(0.0)
+        prev = row
+    level, idx_vals, out = 1.0, [], {}
+    for m, r in zip(close.index, rets):
+        level *= 1 + r
+        idx_vals.append(level)
+        if len(idx_vals) >= MARKET_SMA_MONTHS:
+            sma = sum(idx_vals[-MARKET_SMA_MONTHS:]) / MARKET_SMA_MONTHS
+            out[m] = level > sma
+        else:
+            out[m] = None
+    return out
+
+
 def run_backtest(companies, close, dvol, variants=VARIANTS, start="2012-01-31",
                  last_month: str | None = None) -> dict:
     today = date.today().isoformat()
@@ -97,6 +126,7 @@ def run_backtest(companies, close, dvol, variants=VARIANTS, start="2012-01-31",
     per_month = {v: [] for v in variants}
     stock_rows = {v: [] for v in variants}
     universe_rows = []
+    trend = market_trend(close) if any(v.get("market_filter") for v in variants.values()) else {}
     for m in months:
         i = idx[m]
         as_of = (date.fromisoformat(m) - timedelta(days=1)).isoformat()
@@ -128,6 +158,14 @@ def run_backtest(companies, close, dvol, variants=VARIANTS, start="2012-01-31",
         for vname, rules in variants.items():
             picks = [tk for tk in liquid if apply_rules(mets[tk], as_of, rules)["pass"]]
             row = {"month": m, "n": len(picks)}
+            if rules.get("market_filter") and trend.get(m) is False:
+                # 大盘向下: 空仓, 收益 0, 超额 = −市场
+                row["n"] = 0
+                for h in HORIZONS:
+                    row[f"r{h}"] = 0.0 if uni_mean[h] is not None else None
+                    row[f"x{h}"] = -uni_mean[h] if uni_mean[h] is not None else None
+                per_month[vname].append(row)
+                continue
             for h in HORIZONS:
                 rs = [fwd[h][tk] for tk in picks if tk in fwd[h]]
                 row[f"r{h}"] = sum(rs) / len(rs) if rs else None
@@ -217,6 +255,67 @@ def current_picks(companies, close, dvol, rules, as_of: str | None = None) -> li
     return sorted(out, key=lambda r: -r["eps_growth_pct"])
 
 
+WATCH_PATH = AGENTS / "signals" / "growth_watch.json"
+WATCH_LOG_PATH = AGENTS / "signals" / "growth_watch_log.jsonl"
+WATCH_LOG_MIN_DAYS = 6
+
+
+def _latest_prices(close, dvol, as_of: str) -> tuple[dict, dict]:
+    """最新价格 (当月未完结时取当月最新收盘) 与基准股票池 (最近完整月流动性达标)."""
+    li = -2 if close.index[-1] > as_of and len(close.index) > 1 else -1
+    last = close.iloc[-1].where(close.iloc[-1].notna(), close.iloc[li])
+    dv = dvol.iloc[li]
+    prices = {tk: float(v) for tk, v in last.items() if v == v}
+    bench = {tk: px for tk, px in prices.items()
+             if px >= MIN_PRICE and (dv.get(tk) or 0) >= MIN_DOLLAR_VOL_MONTH}
+    return prices, bench
+
+
+def shadow_performance(log: list[dict], prices: dict) -> list[dict]:
+    """观察名单的影子收益: 记录时价格 → 最新价格; 基准 = 记录时流动性股票池等权."""
+    out = []
+    for e in log:
+        pr = [prices[p["ticker"]] / p["close"] - 1 for p in e.get("picks", [])
+              if p.get("close") and prices.get(p["ticker"])]
+        br = [prices[tk] / px - 1 for tk, px in (e.get("benchmark_prices") or {}).items()
+              if px and prices.get(tk)]
+        if not pr or not br:
+            continue
+        a, b = sum(pr) / len(pr), sum(br) / len(br)
+        out.append({"date": e["date"], "rule": e.get("rule"), "market_up": e.get("market_up"),
+                    "n": len(pr), "ret_pct": round(a * 100, 2), "bench_pct": round(b * 100, 2),
+                    "excess_pct": round((a - b) * 100, 2)})
+    return out
+
+
+def update_watch(picks: list[dict], close, dvol, rule: str, market_up, today: str | None = None,
+                 watch_path: Path = WATCH_PATH, log_path: Path = WATCH_LOG_PATH) -> dict:
+    """写观察名单 (不下单) + 每周一条影子记录 + 历史记录的跟踪收益."""
+    today = today or date.today().isoformat()
+    prices, bench = _latest_prices(close, dvol, today)
+    log = []
+    if log_path.exists():
+        log = [json.loads(l) for l in log_path.read_text(encoding="utf-8").splitlines() if l.strip()]
+    last = log[-1]["date"] if log else None
+    if last is None or (date.fromisoformat(today) - date.fromisoformat(last)).days >= WATCH_LOG_MIN_DAYS:
+        entry = {"date": today, "rule": rule, "market_up": market_up,
+                 "picks": [{"ticker": p["ticker"], "close": prices.get(p["ticker"])} for p in picks],
+                 "benchmark_prices": bench}
+        log_path.parent.mkdir(parents=True, exist_ok=True)
+        with open(log_path, "a", encoding="utf-8") as f:
+            f.write(json.dumps(entry, ensure_ascii=False) + "\n")
+        log.append(entry)
+    watch = {"generated_at": datetime.now().isoformat(timespec="seconds"), "rule": rule,
+             "market_up": market_up,
+             "note": ("观察名单 (影子跟踪), 不会自动下单. market_up = 等权市场指数是否在 10 个月均线上方, "
+                      "仅供参考: 2026-10-03 回测中按它空仓反而降低收益 (C50+营收25+M 未通过准入)."),
+             "picks": picks, "shadow": shadow_performance(log, prices)}
+    tmp = watch_path.with_suffix(".json.tmp")
+    tmp.write_text(json.dumps(watch, ensure_ascii=False, indent=2), encoding="utf-8")
+    tmp.replace(watch_path)
+    return watch
+
+
 def render(summary: dict, meta: dict, picks: list[dict]) -> str:
     L = ["# 成长股 EPS 筛选回测", "",
          f"生成 {meta['generated']} · 区间 {meta['first_month']} ~ {meta['last_month']} · "
@@ -238,6 +337,10 @@ def render(summary: dict, meta: dict, picks: list[dict]) -> str:
           "|---|" + "---:|" * len(next(iter(summary.values()))["yearly_excess_3m_pct"])]
     for v, s in summary.items():
         L.append(f"| {v} | " + " | ".join(str(x) for x in s["yearly_excess_3m_pct"].values()) + " |")
+    mu = meta.get("market_up")
+    L += ["", f"当前大盘方向 (等权市场指数 vs {MARKET_SMA_MONTHS} 个月均线): "
+          + ("向上" if mu else "向下" if mu is False else "未知")
+          + " — 仅供参考; 见 C50+营收25+M 一行: 按此规则空仓的回测效果更差."]
     L += ["", f"## 当前入选 ({meta.get('picks_rule')}, 前 30)", "",
           "| 股票 | 季度末 | EPS 同比 | 上季同比 | 营收同比 | 月收盘 |", "|---|---|---:|---:|---:|---:|"]
     for p in picks[:30]:
@@ -256,7 +359,7 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--cache", default=str(AGENTS / ".growth_cache"))
     ap.add_argument("--out")
-    ap.add_argument("--picks-rule", default="C25 全条件")
+    ap.add_argument("--picks-rule", default=WATCH_RULE)
     a = ap.parse_args()
     try:
         sys.stdout.reconfigure(encoding="utf-8", errors="backslashreplace")
@@ -269,10 +372,15 @@ def main() -> None:
     bt = run_backtest(companies, close, dvol)
     summ = summarize(bt)
     picks = current_picks(companies, close, dvol, VARIANTS[a.picks_rule])
+    trend = market_trend(close)
+    done_months = [m for m in close.index if m <= date.today().isoformat()]
+    market_up = trend.get(done_months[-1]) if done_months else None
+    watch = update_watch(picks, close, dvol, a.picks_rule, market_up)
+    print(f"[watch] {len(picks)} 只 · 大盘向上={market_up} · 影子记录 {len(watch['shadow'])} 条")
     meta = {"generated": datetime.now().isoformat(timespec="seconds"),
             "first_month": bt["months"][0], "last_month": bt["months"][-1],
             "avg_universe": round(sum(r["n"] for r in bt["universe"]) / len(bt["universe"])),
-            "picks_rule": a.picks_rule}
+            "picks_rule": a.picks_rule, "market_up": market_up}
     out = Path(a.out) if a.out else ROOT / "development" / date.today().isoformat() / "eps_growth"
     out.mkdir(parents=True, exist_ok=True)
     md = render(summ, meta, picks)

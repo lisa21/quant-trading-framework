@@ -33,6 +33,8 @@ class JobRequests(unittest.TestCase):
                   patch.object(wd, "_in_us_market_window", return_value=False)]
         for x in self.p:
             x.start()
+        # 自动周跑: 默认视为刚启动过, 只测请求文件路径
+        (self.td / "job_eps_growth_backtest.last_started").write_text("x", encoding="utf-8")
 
     def tearDown(self):
         for x in self.p:
@@ -95,6 +97,32 @@ class JobRequests(unittest.TestCase):
         self.assertTrue(req.exists())
         rc, launch = self.run_main()                    # 收盘后
         launch.assert_called_once()
+
+
+    def test_weekly_auto_run(self):
+        import os
+        last = self.td / "job_eps_growth_backtest.last_started"
+        rc, launch = self.run_main()
+        launch.assert_not_called()                      # 刚跑过 → 不自动
+        old = time.time() - 8 * 86400
+        os.utime(last, (old, old))
+        rc, launch = self.run_main()
+        launch.assert_called_once()                     # 超过 7 天 → 自动启动
+        self.assertIn("job_auto_requested", self.events())
+        self.assertGreater(last.stat().st_mtime, old + 86400)
+        (self.td / "job_eps_growth_backtest.running").unlink()
+        rc, launch = self.run_main()
+        launch.assert_not_called()                      # 刚启动 → 不重复
+
+    def test_auto_run_waits_for_market_close(self):
+        import os
+        last = self.td / "job_eps_growth_backtest.last_started"
+        old = time.time() - 8 * 86400
+        os.utime(last, (old, old))
+        with patch.object(wd, "_in_us_market_window", return_value=True):
+            rc, launch = self.run_main()
+        launch.assert_not_called()
+        self.assertTrue((self.td / "job_request_eps_growth_backtest.json").exists())
 
 
 class MarketWindow(unittest.TestCase):

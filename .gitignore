@@ -92,3 +92,7 @@ webui_startup.log
 # 成长股 EPS 回测数据 (SEC companyfacts / 月线价格, 可重生)
 agents/.growth_cache/
 agents/.sec_user_agent
+# 成长股观察名单 / 白名单任务状态 (运行时生成)
+agents/signals/growth_watch.json
+agents/signals/growth_watch_log.jsonl
+agents/signals/job_*

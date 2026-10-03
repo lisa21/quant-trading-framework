@@ -57,7 +57,9 @@ JOB_STALE_HOURS = 4
 # market_quiet=True: 美股交易时段 (工作日 UTC 12:00-21:00, 含盘前) 不启动, 请求保留到收盘后
 # — 大量 yfinance/SEC 下载会和实盘行情抓取抢带宽、触发 Yahoo 限流.
 JOBS = {
-    "eps_growth_backtest": {"bat": "_eps_growth_backtest.bat", "market_quiet": True},
+    # auto_every_days: 距上次启动超过 N 天且不在交易时段 → 自动启动 (无需请求文件)
+    "eps_growth_backtest": {"bat": "_eps_growth_backtest.bat", "market_quiet": True,
+                            "auto_every_days": 7},
 }
 QUIET_BLOCK_UTC_HOURS = (12, 21)
 
@@ -262,7 +264,25 @@ def _launch_job(name: str) -> int | None:
         return None
 
 
+def _auto_job_requests(now: float | None = None) -> None:
+    """auto_every_days 到期的白名单任务 → 生成请求文件 (之后走同一套检查)."""
+    now = now or time.time()
+    for name, job in JOBS.items():
+        days = job.get("auto_every_days")
+        if not days:
+            continue
+        last = JOB_DIR / f"job_{name}.last_started"
+        req = JOB_DIR / f"job_request_{name}.json"
+        if req.exists():
+            continue
+        if last.exists() and now - last.stat().st_mtime < days * 86400:
+            continue
+        req.write_text(json.dumps({"auto": True, "every_days": days}), encoding="utf-8")
+        _log("job_auto_requested", name)
+
+
 def _process_job_requests() -> None:
+    _auto_job_requests()
     for req in sorted(JOB_DIR.glob("job_request_*.json")):
         name = req.stem[len("job_request_"):]
         if name in JOBS and JOBS[name].get("market_quiet") and _in_us_market_window():
@@ -282,6 +302,8 @@ def _process_job_requests() -> None:
         pid = _launch_job(name)
         if pid:
             running.write_text(f"{pid} {datetime.now(timezone.utc).isoformat()}", encoding="utf-8")
+            (JOB_DIR / f"job_{name}.last_started").write_text(
+                datetime.now(timezone.utc).isoformat(), encoding="utf-8")
             _log("job_started", f"{name} pid={pid}")
 
 

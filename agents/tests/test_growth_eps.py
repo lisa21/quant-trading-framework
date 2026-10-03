@@ -1,6 +1,7 @@
 """成长股 EPS 筛选 (2026-10-02): 数据解析 / 规则 / point-in-time / 回测管线."""
 from __future__ import annotations
 
+import json
 import sys
 import unittest
 from pathlib import Path
@@ -197,6 +198,64 @@ class SystemRouteFallback(unittest.TestCase):
         with tempfile.TemporaryDirectory() as td, patch.object(gd, "_run_ps", return_value=R()):
             with self.assertRaises(RuntimeError):
                 gd._download_system_route("u", Path(td) / "t.json", "ua")
+
+
+class MarketFilterAndWatch(unittest.TestCase):
+    """2026-10-03 观察模式: 大盘方向 (M) + 影子跟踪, 不下单."""
+
+    def _frames(self, path):
+        import pandas as pd
+        import _backtest_eps_growth as bt
+        months = [bt.month_end(f"{y}-{m:02d}-01") for y in (2020, 2021) for m in range(1, 13)]
+        close = pd.DataFrame({"A": path, "B": path}, index=months)
+        dvol = pd.DataFrame({"A": [2e8] * 24, "B": [2e8] * 24}, index=months)
+        return bt, months, close, dvol
+
+    def test_market_trend_point_in_time(self):
+        up = [10 * 1.02 ** i for i in range(12)] + [10 * 1.02 ** 11 * 0.95 ** i for i in range(1, 13)]
+        bt, months, close, dvol = self._frames(up)
+        tr = bt.market_trend(close)
+        self.assertIsNone(tr[months[5]])          # 不足 10 个月
+        self.assertTrue(tr[months[11]])
+        self.assertFalse(tr[months[20]])
+        # 不看未来: 截断后面的数据, 已有月份结论不变
+        tr2 = bt.market_trend(close.iloc[:12])
+        self.assertEqual(tr2[months[11]], tr[months[11]])
+
+    def test_market_filter_goes_to_cash(self):
+        down = [10 * 0.97 ** i for i in range(24)]
+        bt, months, close, dvol = self._frames(down)
+        grow = gs.CompanyFacts(year_rows(2019, [0.5] * 4, [100] * 4) + year_rows(2020, [1.0] * 4, [150] * 4))
+        res = bt.run_backtest({"A": grow, "B": grow}, close, dvol,
+                              variants={"M": {"min_eps_growth": 0.25, "min_sales_growth": 0.2,
+                                              "market_filter": True},
+                                        "noM": {"min_eps_growth": 0.25, "min_sales_growth": 0.2}},
+                              start="2020-12-31")
+        m = {r["month"]: r for r in res["per_month"]["M"]}["2021-05-31"]
+        n = {r["month"]: r for r in res["per_month"]["noM"]}["2021-05-31"]
+        self.assertEqual(m["n"], 0)
+        self.assertEqual(m["r3"], 0.0)
+        self.assertGreater(n["n"], 0)
+
+    def test_update_watch_weekly_log_and_shadow(self):
+        import tempfile
+        bt, months, close, dvol = self._frames([10.0] * 24)
+        with tempfile.TemporaryDirectory() as td:
+            wp, lp = Path(td) / "w.json", Path(td) / "l.jsonl"
+            picks = [{"ticker": "A", "eps_growth_pct": 80.0}]
+            bt.update_watch(picks, close, dvol, "C50+营收25", True, today="2021-12-31",
+                            watch_path=wp, log_path=lp)
+            bt.update_watch(picks, close, dvol, "C50+营收25", True, today="2022-01-03",
+                            watch_path=wp, log_path=lp)          # 不足 6 天 → 不重复记
+            self.assertEqual(len(lp.read_text(encoding="utf-8").splitlines()), 1)
+            close.loc[months[-1], "A"] = 12.0                    # A 涨 20%, B 不动
+            w = bt.update_watch(picks, close, dvol, "C50+营收25", True, today="2022-01-10",
+                                watch_path=wp, log_path=lp)
+            first = w["shadow"][0]
+            self.assertEqual(first["ret_pct"], 20.0)
+            self.assertEqual(first["bench_pct"], 10.0)            # 等权 (A+B)/2
+            self.assertEqual(first["excess_pct"], 10.0)
+            self.assertIn("不会自动下单", json.loads(wp.read_text(encoding="utf-8"))["note"])
 
 
 if __name__ == "__main__":

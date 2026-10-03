@@ -69,7 +69,8 @@ class WatchdogDecisions(unittest.TestCase):
         self.log = td / "wd.jsonl"
         self.state = td / "wd_state.json"
         self.p = [patch.object(wd, "LOG_PATH", self.log),
-                  patch.object(wd, "STATE_PATH", self.state)]
+                  patch.object(wd, "STATE_PATH", self.state),
+                  patch.object(wd, "_process_job_requests", lambda: None)]
         for x in self.p:
             x.start()
 
