@@ -7,10 +7,10 @@
     "recommendation": "hold",
     "current_price": 114.17,
     "forward_eps": 7.91,
-    "trailing_eps": 4.38,
-    "eps_growth_pct": 80.5,
+    "trailing_eps": 4.32,
+    "eps_growth_pct": 83.0,
     "forward_pe": 14.44,
-    "trailing_pe": 26.07,
+    "trailing_pe": 26.43,
     "target_mean": 90.17,
     "target_high": 105.0,
     "target_low": 66.0,
@@ -18,10 +18,10 @@
     "revenue_growth_pct": -4.2,
     "earnings_growth_pct": 255.6,
     "next_earnings": "2026-11-10",
-    "implied_pe_hold": 206.09,
-    "implied_pe_hold_upside": 80.5,
-    "peg_fair_price": 636.46,
-    "peg_ratio": 0.18,
+    "implied_pe_hold": 208.95,
+    "implied_pe_hold_upside": 83.0,
+    "peg_fair_price": 656.23,
+    "peg_ratio": 0.17,
     "hist_pe_median": 105.9,
     "hist_pe_p25": 92.08,
     "hist_pe_p75": 140.67,
@@ -208,8 +208,8 @@
       {
         "key": "pe_hold",
         "label": "前瞻 EPS × 当前估值",
-        "implied_price": 206.09,
-        "gap_pct": 80.5
+        "implied_price": 208.95,
+        "gap_pct": 83.0
       },
       {
         "key": "peer_pe",
@@ -220,23 +220,23 @@
     ],
     "median_gap_pct": 26.9,
     "revision_signal": "upward",
-    "required_eps_growth_pct": -75.4,
-    "consensus_eps_growth_pct": 80.5,
-    "growth_cushion_pct": 155.9,
+    "required_eps_growth_pct": -75.0,
+    "consensus_eps_growth_pct": 83.0,
+    "growth_cushion_pct": 158.0,
     "rationale": [
       "多口径隐含价中位数高于现价 26.9%",
       "近 30 天 EPS 共识上修",
-      "历史 PE 口径要求 EPS 增长 -75.4%，共识为 +80.5%"
+      "历史 PE 口径要求 EPS 增长 -75.0%，共识为 +83.0%"
     ]
   },
   "official_guidance_status": "not_connected",
-  "fetched_at": "2026-10-03T10:03:16.946352+00:00",
+  "fetched_at": "2026-10-03T18:03:08.957959+00:00",
   "source": "yfinance analyst aggregation",
   "_meta": {
-    "cached_at": "2026-10-03T19:03:16.972861",
-    "age_sec": 28789,
-    "stale": true,
-    "refreshing": true
+    "cached_at": "2026-10-04T03:03:08.958954",
+    "age_sec": 7198,
+    "stale": false,
+    "refreshing": false
   },
   "ticker": "QRVO",
   "is_proxy": false

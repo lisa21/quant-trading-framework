@@ -1,6 +1,6 @@
 {
   "days": 180,
-  "count": 174,
+  "count": 175,
   "rows": [
     {
       "ts": "2026-04-07T12:00:00+00:00",
@@ -3940,10 +3940,31 @@
       "bbi": 0.47,
       "stablecoin_bn": 258.2,
       "cut_probability_pct": 27
+    },
+    {
+      "ts": "2026-10-03T18:03:18+00:00",
+      "date": "2026-10-04",
+      "y10": 5.277,
+      "y30": 5.63,
+      "tips": 2.88,
+      "cpi_yoy": 3.71,
+      "core_cpi_yoy": 2.76,
+      "unrate": 4.2,
+      "vix": 15.31,
+      "ig_bps": 86.0,
+      "hy_bps": 324.0,
+      "nfci": -0.548,
+      "dxy": 101.93,
+      "oil_uso": 147.37,
+      "oil_pct_20d": 3.72,
+      "erp": 1.14,
+      "bbi": 0.47,
+      "stablecoin_bn": 258.2,
+      "cut_probability_pct": 27
     }
   ],
   "trend_30d": {
-    "n_samples": 58,
+    "n_samples": 59,
     "period_days": 30,
     "cut_prob_start": 27,
     "cut_prob_latest": 27,
@@ -3953,10 +3974,10 @@
     "unrate_delta_pp": 0.1,
     "vix_delta": 1.01,
     "hy_delta_bps": 58.0,
-    "dxy_delta": 2.94
+    "dxy_delta": 2.95
   },
   "trend_90d": {
-    "n_samples": 113,
+    "n_samples": 114,
     "period_days": 90,
     "cut_prob_start": 45,
     "cut_prob_latest": 27,

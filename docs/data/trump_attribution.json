@@ -1,7 +1,7 @@
 {
   "posts_analyzed": 90,
   "posts_total": 97,
-  "snapshots_used": 202,
+  "snapshots_used": 203,
   "window_hours": 48,
   "top_movers": [
     {
@@ -285,11 +285,11 @@
       "sum_delta": 0.0
     }
   },
-  "generated_at": "2026-10-03T10:03:34+00:00",
+  "generated_at": "2026-10-03T18:03:27+00:00",
   "_meta": {
-    "cached_at": "2026-10-03T19:03:34.424941",
-    "age_sec": 28768,
-    "stale": true,
-    "refreshing": true
+    "cached_at": "2026-10-04T03:03:27.074063",
+    "age_sec": 7176,
+    "stale": false,
+    "refreshing": false
   }
 }

@@ -7,10 +7,10 @@
     "recommendation": "strong_buy",
     "current_price": 233.95,
     "forward_eps": 15.7,
-    "trailing_eps": 8.02,
-    "eps_growth_pct": 95.7,
+    "trailing_eps": 7.91,
+    "eps_growth_pct": 98.4,
     "forward_pe": 14.91,
-    "trailing_pe": 29.17,
+    "trailing_pe": 29.58,
     "target_mean": 327.7,
     "target_high": 515.0,
     "target_low": 180.0,
@@ -18,10 +18,10 @@
     "revenue_growth_pct": 105.9,
     "earnings_growth_pct": 127.8,
     "next_earnings": "2026-11-18",
-    "implied_pe_hold": 457.84,
-    "implied_pe_hold_upside": 95.7,
-    "peg_fair_price": 1502.02,
-    "peg_ratio": 0.16,
+    "implied_pe_hold": 464.21,
+    "implied_pe_hold_upside": 98.4,
+    "peg_fair_price": 1544.4,
+    "peg_ratio": 0.15,
     "hist_pe_median": 62.3,
     "hist_pe_p25": 44.4,
     "hist_pe_p75": 103.98,
@@ -208,8 +208,8 @@
       {
         "key": "pe_hold",
         "label": "前瞻 EPS × 当前估值",
-        "implied_price": 457.84,
-        "gap_pct": 95.7
+        "implied_price": 464.21,
+        "gap_pct": 98.4
       },
       {
         "key": "historical_pe",
@@ -224,25 +224,25 @@
         "gap_pct": 170.6
       }
     ],
-    "median_gap_pct": 133.2,
+    "median_gap_pct": 134.5,
     "revision_signal": "upward",
-    "required_eps_growth_pct": -53.2,
-    "consensus_eps_growth_pct": 95.7,
-    "growth_cushion_pct": 148.9,
+    "required_eps_growth_pct": -52.5,
+    "consensus_eps_growth_pct": 98.4,
+    "growth_cushion_pct": 150.9,
     "rationale": [
-      "多口径隐含价中位数高于现价 133.2%",
+      "多口径隐含价中位数高于现价 134.5%",
       "近 30 天 EPS 共识上修",
-      "历史 PE 口径要求 EPS 增长 -53.2%，共识为 +95.7%"
+      "历史 PE 口径要求 EPS 增长 -52.5%，共识为 +98.4%"
     ]
   },
   "official_guidance_status": "not_connected",
-  "fetched_at": "2026-10-03T10:03:17.004982+00:00",
+  "fetched_at": "2026-10-03T18:03:08.941388+00:00",
   "source": "yfinance analyst aggregation",
   "_meta": {
-    "cached_at": "2026-10-03T19:03:17.013526",
-    "age_sec": 28790,
-    "stale": true,
-    "refreshing": true
+    "cached_at": "2026-10-04T03:03:08.943382",
+    "age_sec": 7198,
+    "stale": false,
+    "refreshing": false
   },
   "ticker": "SOXL",
   "is_proxy": true

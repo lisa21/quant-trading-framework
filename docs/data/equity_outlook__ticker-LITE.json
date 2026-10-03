@@ -7,7 +7,7 @@
     "recommendation": "strong_buy",
     "current_price": 1085.42,
     "forward_eps": 34.73,
-    "trailing_eps": -96.49,
+    "trailing_eps": -92.91,
     "eps_growth_pct": null,
     "forward_pe": 31.26,
     "trailing_pe": null,
@@ -196,13 +196,13 @@
     ]
   },
   "official_guidance_status": "not_connected",
-  "fetched_at": "2026-10-03T10:03:15.965266+00:00",
+  "fetched_at": "2026-10-03T18:03:08.159230+00:00",
   "source": "yfinance analyst aggregation",
   "_meta": {
-    "cached_at": "2026-10-03T19:03:15.969312",
-    "age_sec": 28790,
-    "stale": true,
-    "refreshing": true
+    "cached_at": "2026-10-04T03:03:08.159230",
+    "age_sec": 7199,
+    "stale": false,
+    "refreshing": false
   },
   "ticker": "LITE",
   "is_proxy": false

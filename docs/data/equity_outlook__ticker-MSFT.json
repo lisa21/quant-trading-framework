@@ -7,10 +7,10 @@
     "recommendation": "strong_buy",
     "current_price": 517.53,
     "forward_eps": 23.65,
-    "trailing_eps": 18.11,
-    "eps_growth_pct": 30.6,
+    "trailing_eps": 17.96,
+    "eps_growth_pct": 31.7,
     "forward_pe": 21.89,
-    "trailing_pe": 28.58,
+    "trailing_pe": 28.82,
     "target_mean": 578.82,
     "target_high": 870.0,
     "target_low": 440.0,
@@ -18,10 +18,10 @@
     "revenue_growth_pct": 17.7,
     "earnings_growth_pct": 31.7,
     "next_earnings": "2026-10-29",
-    "implied_pe_hold": 675.77,
-    "implied_pe_hold_upside": 30.6,
-    "peg_fair_price": 723.61,
-    "peg_ratio": 0.72,
+    "implied_pe_hold": 681.41,
+    "implied_pe_hold_upside": 31.7,
+    "peg_fair_price": 749.62,
+    "peg_ratio": 0.69,
     "hist_pe_median": 35.67,
     "hist_pe_p25": 32.92,
     "hist_pe_p75": 38.29,
@@ -208,8 +208,8 @@
       {
         "key": "pe_hold",
         "label": "前瞻 EPS × 当前估值",
-        "implied_price": 675.77,
-        "gap_pct": 30.6
+        "implied_price": 681.41,
+        "gap_pct": 31.7
       },
       {
         "key": "historical_pe",
@@ -224,25 +224,25 @@
         "gap_pct": 4.1
       }
     ],
-    "median_gap_pct": 21.2,
+    "median_gap_pct": 21.8,
     "revision_signal": "upward",
-    "required_eps_growth_pct": -19.9,
-    "consensus_eps_growth_pct": 30.6,
-    "growth_cushion_pct": 50.5,
+    "required_eps_growth_pct": -19.2,
+    "consensus_eps_growth_pct": 31.7,
+    "growth_cushion_pct": 50.9,
     "rationale": [
-      "多口径隐含价中位数高于现价 21.2%",
+      "多口径隐含价中位数高于现价 21.8%",
       "近 30 天 EPS 共识上修",
-      "历史 PE 口径要求 EPS 增长 -19.9%，共识为 +30.6%"
+      "历史 PE 口径要求 EPS 增长 -19.2%，共识为 +31.7%"
     ]
   },
   "official_guidance_status": "not_connected",
-  "fetched_at": "2026-10-03T10:03:16.934254+00:00",
+  "fetched_at": "2026-10-03T18:03:09.040571+00:00",
   "source": "yfinance analyst aggregation",
   "_meta": {
-    "cached_at": "2026-10-03T19:03:16.935244",
-    "age_sec": 28789,
-    "stale": true,
-    "refreshing": true
+    "cached_at": "2026-10-04T03:03:09.041573",
+    "age_sec": 7198,
+    "stale": false,
+    "refreshing": false
   },
   "ticker": "MSFT",
   "is_proxy": false
