@@ -48,7 +48,7 @@
     "recommendation": "buy",
     "current_price": 3544.0,
     "forward_eps": 151.68,
-    "trailing_eps": 236.43,
+    "trailing_eps": 236.38,
     "eps_growth_pct": -35.8,
     "forward_pe": 23.36,
     "trailing_pe": 14.99,
@@ -59,7 +59,7 @@
     "revenue_growth_pct": 28.8,
     "earnings_growth_pct": 50.9,
     "next_earnings": "2026-11-13",
-    "implied_pe_hold": 2273.63,
+    "implied_pe_hold": 2274.11,
     "implied_pe_hold_upside": -35.8,
     "peg_fair_price": null,
     "peg_ratio": null,
@@ -78,10 +78,10 @@
     "implied_peer_upside": null,
     "source": "yfinance analyst aggregation",
     "_meta": {
-      "cached_at": "2026-10-03T11:03:11.796992",
-      "age_sec": 28804,
-      "stale": true,
-      "refreshing": true
+      "cached_at": "2026-10-03T19:03:17.015034",
+      "age_sec": 7192,
+      "stale": false,
+      "refreshing": false
     }
   }
 }

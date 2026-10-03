@@ -203,13 +203,13 @@
     ]
   },
   "official_guidance_status": "not_connected",
-  "fetched_at": "2026-10-03T04:03:07.387024+00:00",
+  "fetched_at": "2026-10-03T10:03:16.462945+00:00",
   "source": "yfinance analyst aggregation",
   "_meta": {
-    "cached_at": "2026-10-03T13:03:07.387024",
-    "age_sec": 21607,
-    "stale": true,
-    "refreshing": true
+    "cached_at": "2026-10-03T19:03:16.464953",
+    "age_sec": 7192,
+    "stale": false,
+    "refreshing": false
   },
   "ticker": "NBIS",
   "is_proxy": false
