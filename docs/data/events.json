@@ -1,84 +1,84 @@
 {
   "events": [
     {
-      "date": "2026-10-02",
-      "days": -1,
-      "event": "NFP Release",
-      "impact": "high"
-    },
-    {
       "date": "2026-10-13",
-      "days": 10,
+      "days": 9,
       "event": "CPI Release",
       "impact": "high"
     },
     {
       "date": "2026-10-14",
-      "days": 11,
+      "days": 10,
       "event": "PPI Release",
       "impact": "high"
     },
     {
       "date": "2026-10-15",
-      "days": 12,
+      "days": 11,
       "event": "Retail Sales",
       "impact": "high"
     },
     {
       "date": "2026-10-28",
-      "days": 25,
+      "days": 24,
       "event": "FOMC Decision",
       "impact": "high"
     },
     {
       "date": "2026-10-28",
-      "days": 25,
+      "days": 24,
       "event": "GOOG Q3 Earnings (capex 是否继续上调?)",
       "impact": "high"
     },
     {
       "date": "2026-10-28",
-      "days": 25,
+      "days": 24,
       "event": "MSFT Q1 FY27 Earnings (capex 是否继续收窄?)",
       "impact": "high"
     },
     {
       "date": "2026-10-29",
-      "days": 26,
+      "days": 25,
       "event": "PCE Release",
       "impact": "critical"
     },
     {
       "date": "2026-10-30",
-      "days": 27,
+      "days": 26,
       "event": "AMZN Q3 Earnings (capex 是否继续上调?)",
       "impact": "high"
     },
     {
       "date": "2026-11-06",
-      "days": 34,
+      "days": 33,
       "event": "NFP Release",
       "impact": "high"
     },
     {
       "date": "2026-11-12",
-      "days": 40,
+      "days": 39,
       "event": "CPI Release",
       "impact": "high"
     },
     {
       "date": "2026-11-13",
-      "days": 41,
+      "days": 40,
       "event": "PPI Release",
       "impact": "high"
     },
     {
       "date": "2026-11-13",
-      "days": 41,
+      "days": 40,
       "event": "Retail Sales",
+      "impact": "high"
+    },
+    {
+      "date": "2026-11-18",
+      "days": 45,
+      "event": "NVDA Earnings (est)",
       "impact": "high"
     }
   ],
-  "today": "2026-10-03",
+  "today": "2026-10-04",
   "days_ahead": 45
 }
