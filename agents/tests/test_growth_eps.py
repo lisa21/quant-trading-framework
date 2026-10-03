@@ -161,5 +161,43 @@ class ManualFileFallback(unittest.TestCase):
             self.assertIn("其他网络", str(cm.exception))
 
 
+class SystemRouteFallback(unittest.TestCase):
+    """2026-10-03: Python 直连解析不了 sec.gov, 浏览器可以 → Windows 上改走系统网络设置."""
+
+    def test_falls_back_to_system_route_on_windows(self):
+        import tempfile
+        from unittest.mock import patch
+        with tempfile.TemporaryDirectory() as td:
+            dest = Path(td) / "t.json"
+            def fake_sys(url, d, ua):
+                d.write_text("{}")
+                return d
+            with patch.object(gd, "_download_direct", side_effect=OSError("getaddrinfo failed")), \
+                 patch.object(gd, "_download_system_route", side_effect=fake_sys) as sysr, \
+                 patch.object(gd.os, "name", "nt"):
+                self.assertEqual(gd._download("https://www.sec.gov/x", dest, "ua a@b", 1), dest)
+            sysr.assert_called_once()
+
+    def test_no_fallback_off_windows(self):
+        import tempfile
+        from unittest.mock import patch
+        with tempfile.TemporaryDirectory() as td:
+            with patch.object(gd, "_download_direct", side_effect=OSError("x")), \
+                 patch.object(gd, "_download_system_route") as sysr, \
+                 patch.object(gd.os, "name", "posix"):
+                with self.assertRaises(OSError):
+                    gd._download("https://www.sec.gov/x", Path(td) / "t.json", "ua a@b", 1)
+            sysr.assert_not_called()
+
+    def test_system_route_reports_failure(self):
+        import tempfile
+        from unittest.mock import patch
+        class R:
+            returncode, stdout, stderr = 1, b"route: http://proxy:8080/", b"boom"
+        with tempfile.TemporaryDirectory() as td, patch.object(gd, "_run_ps", return_value=R()):
+            with self.assertRaises(RuntimeError):
+                gd._download_system_route("u", Path(td) / "t.json", "ua")
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -141,12 +141,50 @@ def _ua() -> str:
     return ua
 
 
-def _download(url: str, dest: Path, ua: str, max_age_days: float = 7) -> Path:
+_HIDDEN = {"creationflags": 0x08000000} if os.name == "nt" else {}
+
+# 走 Windows 系统网络设置 (WinINet: 代理 / PAC 自动配置 / WPAD, 与浏览器同一套),
+# 用 .NET WebClient 下载. 参数经环境变量传入, 避免引号转义问题.
+_PS_DOWNLOAD = r"""
+$ErrorActionPreference = 'Stop'
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+$wc = New-Object Net.WebClient
+$wc.Headers.Add('User-Agent', $env:FSI_UA)
+$p = [Net.WebRequest]::GetSystemWebProxy()
+$p.Credentials = [Net.CredentialCache]::DefaultCredentials
+$wc.Proxy = $p
+Write-Output ("route: " + $p.GetProxy([Uri]$env:FSI_URL).AbsoluteUri)
+$wc.DownloadFile($env:FSI_URL, $env:FSI_OUT)
+Write-Output ("ok " + (Get-Item $env:FSI_OUT).Length)
+"""
+
+_PS_PROXY_FOR = r"""
+$p = [Net.WebRequest]::GetSystemWebProxy()
+Write-Output $p.GetProxy([Uri]$env:FSI_URL).AbsoluteUri
+"""
+
+
+def _run_ps(script: str, env_extra: dict, timeout: int):
+    import subprocess
+    env = {**os.environ, **env_extra}
+    return subprocess.run(["powershell", "-NoProfile", "-ExecutionPolicy", "Bypass",
+                           "-Command", script], capture_output=True, timeout=timeout,
+                          env=env, **_HIDDEN)
+
+
+def _decode(raw) -> str:
+    if not raw:
+        return ""
+    for enc in (("mbcs",) if os.name == "nt" else ()) + ("cp932", "utf-8"):
+        try:
+            return raw.decode(enc)
+        except (UnicodeDecodeError, LookupError):
+            continue
+    return raw.decode("utf-8", errors="replace")
+
+
+def _download_direct(url: str, dest: Path, ua: str) -> Path:
     import urllib.request
-    if dest.exists() and (time.time() - dest.stat().st_mtime) < max_age_days * 86400:
-        print(f"  [cache] {dest.name}")
-        return dest
-    dest.parent.mkdir(parents=True, exist_ok=True)
     tmp = dest.with_suffix(dest.suffix + ".part")
     req = urllib.request.Request(url, headers={"User-Agent": ua, "Accept-Encoding": "identity"})
     with urllib.request.urlopen(req, timeout=120) as r, open(tmp, "wb") as f:
@@ -161,6 +199,33 @@ def _download(url: str, dest: Path, ua: str, max_age_days: float = 7) -> Path:
                 print(f"  {dest.name}: {n >> 20} / {total >> 20} MB")
     os.replace(tmp, dest)
     return dest
+
+
+def _download_system_route(url: str, dest: Path, ua: str) -> Path:
+    """Windows: 按系统网络设置 (与浏览器相同) 下载. 失败抛 RuntimeError (带 PowerShell 输出)."""
+    tmp = dest.with_suffix(dest.suffix + ".part")
+    r = _run_ps(_PS_DOWNLOAD, {"FSI_URL": url, "FSI_OUT": str(tmp), "FSI_UA": ua}, timeout=3 * 3600)
+    out, err = _decode(r.stdout).strip(), _decode(r.stderr).strip()
+    print(f"  [system-route] {out[-300:]}")
+    if r.returncode != 0 or not tmp.exists() or tmp.stat().st_size == 0:
+        raise RuntimeError(f"system route failed rc={r.returncode}: {err[-500:]}")
+    os.replace(tmp, dest)
+    return dest
+
+
+def _download(url: str, dest: Path, ua: str, max_age_days: float = 7) -> Path:
+    """先 Python 直连; 失败且在 Windows 上 → 改走系统网络设置 (浏览器同款路径)."""
+    if dest.exists() and (time.time() - dest.stat().st_mtime) < max_age_days * 86400:
+        print(f"  [cache] {dest.name}")
+        return dest
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    try:
+        return _download_direct(url, dest, ua)
+    except Exception as e:
+        if os.name != "nt":
+            raise
+        print(f"  [route] 直连失败 ({e}); 改走 Windows 系统网络设置 (与浏览器相同的代理/自动配置)")
+        return _download_system_route(url, dest, ua)
 
 
 def fetch_prices(tickers: list[str], start: str = "2009-01-01", batch: int = 150) -> list[dict]:
@@ -205,6 +270,25 @@ def network_diag(hosts=("www.sec.gov", "data.sec.gov", "query1.finance.yahoo.com
             out[h] = f"ERR {e}"
     import urllib.request
     out["proxies"] = urllib.request.getproxies()
+    if os.name == "nt":
+        try:
+            import winreg
+            k = winreg.OpenKey(winreg.HKEY_CURRENT_USER,
+                               r"Software\Microsoft\Windows\CurrentVersion\Internet Settings")
+            inet = {}
+            for name in ("ProxyEnable", "ProxyServer", "AutoConfigURL", "AutoDetect"):
+                try:
+                    inet[name] = winreg.QueryValueEx(k, name)[0]
+                except OSError:
+                    inet[name] = None
+            out["inet_settings"] = inet
+        except Exception as e:
+            out["inet_settings"] = f"ERR {e}"
+        try:
+            r = _run_ps(_PS_PROXY_FOR, {"FSI_URL": SEC_TICKERS_URL}, timeout=60)
+            out["system_route_for_sec"] = _decode(r.stdout).strip() or _decode(r.stderr).strip()[-200:]
+        except Exception as e:
+            out["system_route_for_sec"] = f"ERR {e}"
     print("[diag]", json.dumps(out, ensure_ascii=False))
     return out
 
