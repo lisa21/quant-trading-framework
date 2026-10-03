@@ -89,7 +89,9 @@ def build(uni, facts, prices):
 
 def run_backtest(companies, close, dvol, variants=VARIANTS, start="2012-01-31",
                  last_month: str | None = None) -> dict:
-    months = [m for m in close.index if m >= start and (last_month is None or m <= last_month)]
+    today = date.today().isoformat()
+    months = [m for m in close.index if m >= start and m <= today
+              and (last_month is None or m <= last_month)]   # 未走完的当月不参与回测
     idx = {m: i for i, m in enumerate(close.index)}
     cache: dict[tuple, dict] = {}
     per_month = {v: [] for v in variants}
@@ -192,9 +194,12 @@ def summarize(bt: dict) -> dict:
 
 def current_picks(companies, close, dvol, rules, as_of: str | None = None) -> list[dict]:
     """最新一个月的入选名单 (按 EPS 增速排序)."""
-    m = close.index[-1]
     as_of = as_of or date.today().isoformat()
-    px, dv = close.iloc[-1], dvol.iloc[-1]
+    # 最后一根月线可能是未走完的当月 (成交额偏小) → 流动性用最近一个完整月
+    li = -2 if close.index[-1] > as_of and len(close.index) > 1 else -1
+    m = close.index[-1]
+    px = close.iloc[-1].where(close.iloc[-1].notna(), close.iloc[li])
+    dv = dvol.iloc[li]
     out = []
     for tk, cf in companies.items():
         if tk not in close.columns or not (px[tk] == px[tk] and px[tk] >= MIN_PRICE
@@ -217,14 +222,15 @@ def render(summary: dict, meta: dict, picks: list[dict]) -> str:
          f"生成 {meta['generated']} · 区间 {meta['first_month']} ~ {meta['last_month']} · "
          f"月均股票池 {meta['avg_universe']} 只 · 样本内 ≤{IS_END[:4]}, 样本外 2019 起", "",
          "超额 = 入选股等权远期收益 − 同月股票池等权远期收益. 跑赢率 = 超额 > 0 的月份占比.", "",
-         "| 规则 | 月均入选 | 3月超额 | 6月超额 | 12月超额 | 3月跑赢率 | 样本外3月超额 | 样本外不重叠 n / Wilson下界 | 12月翻倍率 (全市场) | 稳定性 | 准入 |",
-         "|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|"]
+         "| 规则 | 月均入选 | 3月超额 | 6月超额 | 12月超额 | 3月跑赢率 | 样本内3月超额 (t) | 样本外3月超额 (t) | 样本外不重叠 n / Wilson下界 | 12月翻倍率 (全市场) | 稳定性 | 准入 |",
+         "|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|"]
     for v, s in summary.items():
         a3, a6, a12 = s["all_3m"], s["all_6m"], s["all_12m"]
         oos, nov = s["OOS_3m"], s["OOS_3m_nonoverlap"]
         L.append(f"| {v} | {a3.get('avg_picks', 0)} | {a3.get('avg_excess_pct', '—')}% | "
                  f"{a6.get('avg_excess_pct', '—')}% | {a12.get('avg_excess_pct', '—')}% | "
-                 f"{a3.get('beat_rate_pct', '—')}% | {oos.get('avg_excess_pct', '—')}% | "
+                 f"{a3.get('beat_rate_pct', '—')}% | {s['IS_3m'].get('avg_excess_pct', '—')}% ({s['IS_3m'].get('t_stat')}) | "
+                 f"{oos.get('avg_excess_pct', '—')}% ({oos.get('t_stat')}) | "
                  f"{nov.get('n', 0)} / {nov.get('wilson_lower_pct', '—')}% | "
                  f"{s['p_double_12m_pct']}% ({s['p_double_12m_universe_pct']}%) | {s['stability']} | "
                  f"{'通过' if s['admission']['pass'] else '未通过: ' + ', '.join(s['admission']['failed'])} |")
