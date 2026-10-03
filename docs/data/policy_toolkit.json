@@ -1,6 +1,6 @@
 {
-  "as_of": "2026-10-02T23:19:35.426168",
-  "count_total_actions": 640,
+  "as_of": "2026-10-03T13:06:54.236391",
+  "count_total_actions": 644,
   "tools": [
     {
       "tool_key": "long_end_buyback",
@@ -151,17 +151,17 @@
       "last_action": {
         "tool_key": "fed_dovish_signal",
         "action_type": "signaled",
-        "date": "2026-10-01",
-        "actor": "",
-        "amount_desc": "October pause",
-        "commentary": "加息押注降温意味着利率路径下修，对国债尤其前端有支撑。",
-        "verbatim": "US rate hike bets fade as revised inflation data points to October pause",
+        "date": "2026-10-02",
+        "actor": "Traders",
+        "amount_desc": "",
+        "commentary": "弱就业压低加息概率，短端利率预期下行，有利债市。",
+        "verbatim": "Traders now see little chance of a Fed rate hike in October after weak jobs report",
         "source": "GoogleNews: Warsh Federal Reserve rate hike inflation",
-        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQemRiOUR0aEZfNnRzU2tpX2lZMl9rMU9XX0JyVk5kRnI3ckg1RDNBd1dkZWFnY19ZRWRmTE1kY0psNk9VcEJoNktpejQ5cUVsX3diaFNiNHhkSDVmMEFpMTJSVGx0Z1JUSGRkd1djVnZQQW1mZWQ3R0x5alFZeXZEMFlrNVFhalNzaFZjdUR4SEtsblVEazJLOTRYUXUtYV90ejZ6enBDVUxoN3ZoWWdlMGE5UQ?oc=5",
+        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPOU1aVUFEOV9MWl9TVVdodDl4eFoyUjgxN2tLZ1QtRWYzbEUtMEpVQll0ZkhSekJFZUFVZzdNeXVqTzdUYXI3OWNMcC1YQ19XVDN2MFNTOWQzNjFLLTBDWFVvLXlWMWZRZ1R6RTRhVVRuS0dkZnJBMTd2dWhGV2hPdUg0b3hJQkZncFhCMnljc2lwYmw3TFHSAZsBQVVfeXFMTzNmZkRlUzhSSXlhMzhWV3lyN0pyeUstczZQXy1HZFNMRUh6TjNPN2Q0bGdrU2tCZjg2YkFZN3RrdndRcEs2TlAxRVlmNlhQVldRd3VZRmtZUlZock5uWTFsQ3dXdDMycWJSbXQwTDBSYVBWa1RZTG9qRWxkQTk1R1Y1WmtuUW9DSF9tUGs0NF8xdmE2RHlYQVJidFk?oc=5",
         "confidence": 5
       },
       "yield_reaction_30y": {},
-      "event_count_180d": 23
+      "event_count_180d": 25
     },
     {
       "tool_key": "fed_hawkish_signal",
@@ -184,7 +184,7 @@
         "confidence": 5
       },
       "yield_reaction_30y": {},
-      "event_count_180d": 331
+      "event_count_180d": 333
     },
     {
       "tool_key": "qe_restart",
@@ -233,7 +233,5 @@
       "yield_reaction_30y": {},
       "event_count_180d": 0
     }
-  ],
-  "stale": true,
-  "age_hours": 13.7
+  ]
 }

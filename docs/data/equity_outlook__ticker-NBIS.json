@@ -35,7 +35,7 @@
     "peer_pe_details": [
       {
         "ticker": "ORCL",
-        "pe": 12.96
+        "pe": 12.94
       },
       {
         "ticker": "AMZN",
@@ -203,13 +203,13 @@
     ]
   },
   "official_guidance_status": "not_connected",
-  "fetched_at": "2026-10-02T20:07:54.282781+00:00",
+  "fetched_at": "2026-10-03T04:03:07.387024+00:00",
   "source": "yfinance analyst aggregation",
   "_meta": {
-    "cached_at": "2026-10-03T05:07:54.283302",
-    "age_sec": 28511,
-    "stale": true,
-    "refreshing": true
+    "cached_at": "2026-10-03T13:03:07.387024",
+    "age_sec": 7202,
+    "stale": false,
+    "refreshing": false
   },
   "ticker": "NBIS",
   "is_proxy": false

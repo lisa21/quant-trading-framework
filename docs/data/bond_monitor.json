@@ -1,5 +1,5 @@
 {
-  "asof": "2026-10-03T11:03",
+  "asof": "2026-10-03T13:03",
   "yields": {
     "10y": {
       "value": 5.277,
@@ -343,9 +343,9 @@
     "kbe_spy_20d_delta_pct": -6.15,
     "cdx_ig_bps": 86.0,
     "cdx_hy_bps": 324.0,
-    "dxy": 101.92,
-    "dxy_pct_20d": 2.95,
-    "dxy_z_60d": 1.72,
+    "dxy": 101.93,
+    "dxy_pct_20d": 2.96,
+    "dxy_z_60d": 1.73,
     "asia_indices": {
       "N225": {
         "symbol": "^N225",
@@ -392,31 +392,31 @@
       "es_f": {
         "symbol": "ES=F",
         "label": "S&P 500 futures",
-        "price": 7776.5,
-        "chg_pct": 0.68
+        "price": 7777.25,
+        "chg_pct": 0.69
       },
       "nq_f": {
         "symbol": "NQ=F",
         "label": "Nasdaq futures",
-        "price": 31049.0,
-        "chg_pct": 0.94
+        "price": 31061.75,
+        "chg_pct": 0.98
       },
       "cl_f": {
         "symbol": "CL=F",
         "label": "WTI crude futures",
-        "price": 91.26,
-        "chg_pct": -1.73
+        "price": 91.11,
+        "chg_pct": -1.9
       },
       "gc_f": {
         "symbol": "GC=F",
         "label": "Gold futures",
-        "price": 4172.1,
-        "chg_pct": -0.72
+        "price": 4162.3,
+        "chg_pct": -0.95
       }
     },
     "oil_uso": 147.37,
     "oil_pct_20d": 3.72,
-    "oil_wti": 91.26,
+    "oil_wti": 91.11,
     "eem_pct_20d": 0.3,
     "eem_vs_spx_20d": 0.51,
     "volume_confirm": {
@@ -511,8 +511,8 @@
     }
   },
   "_meta": {
-    "cached_at": "2026-10-03T11:03:18.857965",
-    "age_sec": 7184,
+    "cached_at": "2026-10-03T13:03:15.825178",
+    "age_sec": 7187,
     "stale": true,
     "refreshing": true
   }

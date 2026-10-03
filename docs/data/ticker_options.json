@@ -13949,14 +13949,14 @@
   "cache_contract": "15efd89eda8e",
   "_meta": {
     "cached_at": "2026-10-02T18:34:08.273218",
-    "age_sec": 66535,
+    "age_sec": 73736,
     "stale": false,
     "refreshing": false
   },
   "flow_meta": {
     "generated_at": "2026-10-02T20:06:22.184675+00:00",
-    "status": "ready",
-    "age_sec": 28560.9,
-    "stale": false
+    "status": "stale",
+    "age_sec": 35762.2,
+    "stale": true
   }
 }
