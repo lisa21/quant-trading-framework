@@ -3,95 +3,78 @@
   "meetings": [
     {
       "date": "2026-10-28",
-      "days_until": 24,
+      "days_until": 23,
       "probabilities": {
-        "cut_50": 0,
-        "cut_25": 0,
-        "hold": 79,
-        "hike_25": 21,
-        "hike_50": 0
+        "hold": 80.0,
+        "hike_25": 20.0
       },
       "most_likely": "hold",
       "consensus_direction": "hawkish_lean"
     },
     {
       "date": "2026-12-09",
-      "days_until": 66,
+      "days_until": 65,
       "probabilities": {
-        "cut_50": 0,
-        "cut_25": 0,
-        "hold": 19,
-        "hike_25": 81,
-        "hike_50": 0
+        "hold": 23.6,
+        "hike_25": 62.3,
+        "hike_50": 14.1
       },
       "most_likely": "hike_25",
-      "consensus_direction": "hawkish"
+      "consensus_direction": "hawkish_lean"
     },
     {
       "date": "2027-01-27",
-      "days_until": 115,
+      "days_until": 114,
       "probabilities": {
-        "cut_50": 0,
-        "cut_25": 0,
-        "hold": 61,
-        "hike_25": 39,
-        "hike_50": 0
+        "hold": 16.2,
+        "hike_25": 50.1,
+        "hike_50": 33.7
       },
-      "most_likely": "hold",
+      "most_likely": "hike_25",
       "consensus_direction": "hawkish_lean"
     },
     {
       "date": "2027-03-17",
-      "days_until": 164,
+      "days_until": 163,
       "probabilities": {
-        "cut_50": 0,
-        "cut_25": 0,
-        "hold": 27,
-        "hike_25": 73,
-        "hike_50": 0
+        "hold": 6.1,
+        "hike_25": 29.1,
+        "hike_50": 64.8
       },
-      "most_likely": "hike_25",
-      "consensus_direction": "hawkish"
+      "most_likely": "hike_50",
+      "consensus_direction": "hawkish_lean"
     }
   ],
   "implied_terminal_rate": "4.50-4.75",
-  "implied_terminal_date": "2027-Q3",
-  "data_snapshot_date": "2026-10-02",
-  "recent_event_impact": "2026-10-02 September NFP +29K, below consensus around +90K, with unemployment rising to 4.2%; this likely reduced near-term hike conviction, but futures still price a hawkish path after the September 16 Fed hike.",
-  "commentary": "Data snapshot is the 2026-10-02 latest trading-day futures close/live snapshot, after the September NFP release; no CPI or PPI release occurred in the last 7 days, and September CPI is scheduled for 2026-10-14. Despite weak payrolls, markets still price a high probability of another 25 bp hike by the December 9 meeting, reflecting the September 16 Warsh-led FOMC hike and still-elevated inflation concerns.",
+  "implied_terminal_date": "2027-Q2",
+  "data_snapshot_date": "2026-10-02 12:55 UTC",
+  "recent_event_impact": "2026-10-02 NFP +29K，低于约84K-90K预期；失业率升至4.2%，7-8月合计下修60K，显著压低10月加息概率。2026-09-30 PCE通胀低于预期，也削弱了近期继续加息的紧迫性；最近7天未发现新的CPI/PPI正式发布。",
+  "commentary": "数据快照为2026-10-02 12:55 UTC，晚于当天NFP发布，因此已反映就业意外走弱的影响；市场从10月大概率加息转为大概率按兵不动，但12月以后仍定价较强的累计加息路径。因CME官方页面可见快照较旧，完整3-4次会议分布采用复制CME FedWatch方法的替代源；远期会议的hike_50包含累计加息50bp及以上的简化归类。",
   "sources": [
     {
       "url": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
       "type": "cme_fedwatch"
     },
     {
-      "url": "https://www.fedchirp.com/",
-      "type": "fed_funds_futures_replica"
+      "url": "https://terminal.kryptomagazin.cz/en/macro/fedwatch",
+      "type": "cme_fedwatch_replica"
     },
     {
-      "url": "https://www.frenzycap.com/fedwatch",
-      "type": "fed_funds_futures_replica"
+      "url": "https://www.gate.com/en-us/news/detail/cme-fedwatch-779-odds-fed-keeps-rates-unchanged-in-october-17890554",
+      "type": "cme_fedwatch_report"
     },
     {
-      "url": "https://www.bls.gov/news.release/empsit.nr0.htm",
-      "type": "nfp_release"
-    },
-    {
-      "url": "https://www.bls.gov/schedule/2026/home.htm",
-      "type": "economic_release_calendar"
-    },
-    {
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm",
-      "type": "fomc_statement"
+      "url": "https://www.bls.gov/news.release/archives/empsit_10022026.htm",
+      "type": "nfp_official"
     }
   ],
   "confidence": "medium",
   "source_via": "codex_cli_websearch",
-  "fetched_at": "2026-10-04T10:04:09+00:00",
+  "fetched_at": "2026-10-04T20:04:16+00:00",
   "_meta": {
-    "cached_at": "2026-10-04T19:04:09.476665",
-    "age_sec": 35933,
-    "stale": true,
-    "refreshing": true
+    "cached_at": "2026-10-05T05:04:17.011329",
+    "age_sec": 7125,
+    "stale": false,
+    "refreshing": false
   }
 }
