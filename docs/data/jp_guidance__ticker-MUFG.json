@@ -79,9 +79,9 @@
     "source": "yfinance analyst aggregation",
     "_meta": {
       "cached_at": "2026-10-04T15:03:11.512295",
-      "age_sec": 21597,
-      "stale": false,
-      "refreshing": false
+      "age_sec": 28798,
+      "stale": true,
+      "refreshing": true
     }
   }
 }
