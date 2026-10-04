@@ -196,13 +196,13 @@
     ]
   },
   "official_guidance_status": "not_connected",
-  "fetched_at": "2026-10-04T00:03:09.772189+00:00",
+  "fetched_at": "2026-10-04T06:03:10.864466+00:00",
   "source": "yfinance analyst aggregation",
   "_meta": {
-    "cached_at": "2026-10-04T09:03:09.774188",
-    "age_sec": 21600,
-    "stale": true,
-    "refreshing": true
+    "cached_at": "2026-10-04T15:03:10.865466",
+    "age_sec": 7198,
+    "stale": false,
+    "refreshing": false
   },
   "ticker": "LITE",
   "is_proxy": false
