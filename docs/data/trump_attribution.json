@@ -288,8 +288,8 @@
   "generated_at": "2026-10-03T18:03:27+00:00",
   "_meta": {
     "cached_at": "2026-10-04T03:03:27.074063",
-    "age_sec": 21576,
-    "stale": false,
-    "refreshing": false
+    "age_sec": 28776,
+    "stale": true,
+    "refreshing": true
   }
 }

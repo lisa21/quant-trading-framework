@@ -3,99 +3,88 @@
   "meetings": [
     {
       "date": "2026-10-28",
-      "days_until": 25,
+      "days_until": 24,
       "probabilities": {
-        "hold": 79,
-        "hike_25": 21,
-        "hike_50": 0,
-        "cut_25": 0,
-        "cut_50": 0
+        "hold": 77.0,
+        "hike_25": 23.0
       },
       "most_likely": "hold",
-      "consensus_direction": "hawkish_lean_but_pausing"
+      "consensus_direction": "hawkish_tail_but_hold_base"
     },
     {
       "date": "2026-12-09",
-      "days_until": 67,
+      "days_until": 66,
       "probabilities": {
-        "hold": 19,
-        "hike_25": 81,
-        "hike_50": 0,
-        "cut_25": 0,
-        "cut_50": 0
+        "hold": 15.8,
+        "hike_25": 65.9,
+        "hike_50": 18.2
       },
       "most_likely": "hike_25",
-      "consensus_direction": "hawkish"
+      "consensus_direction": "hawkish_lean"
     },
     {
       "date": "2027-01-27",
-      "days_until": 116,
+      "days_until": 115,
       "probabilities": {
-        "hold": 61,
-        "hike_25": 39,
-        "hike_50": 0,
-        "cut_25": 0,
-        "cut_50": 0
+        "hold": 9.4,
+        "hike_25": 45.6,
+        "hike_50": 37.6,
+        "hike_75_or_more": 7.4
       },
-      "most_likely": "hold",
+      "most_likely": "hike_25",
       "consensus_direction": "hawkish_lean"
     },
     {
       "date": "2027-03-17",
-      "days_until": 165,
+      "days_until": 164,
       "probabilities": {
-        "hold": 27,
-        "hike_25": 73,
-        "hike_50": 0,
-        "cut_25": 0,
-        "cut_50": 0
+        "hold": 2.7,
+        "hike_25": 19.6,
+        "hike_50": 43.3,
+        "hike_75_or_more": 34.4
       },
-      "most_likely": "hike_25",
+      "most_likely": "hike_50",
       "consensus_direction": "hawkish"
     }
   ],
-  "implied_terminal_rate": "4.41% market-implied mid-rate, roughly 4.25-4.50 target range",
-  "implied_terminal_date": "2026-end",
-  "data_snapshot_date": "2026-10-03",
-  "recent_event_impact": "2026-10-02 September NFP +29K, below expectations around 84K, unemployment 4.2%; AP reported CME-implied October hike odds fell to below 23% from 64% a week earlier. Latest CPI/PPI were not in the last 7 days; September CPI and PPI are scheduled for 2026-10-14 and 2026-10-15.",
-  "commentary": "Snapshot is after the 2026-10-02 jobs report, so the weak NFP print is reflected: the market now prices an October pause as most likely, while still assigning high odds to a December 25bp hike because inflation remains elevated after August CPI +3.4% y/y and August PPI +5.4% y/y. No stale-data warning: the probabilities are dated 2026-10-03 or 2026-10-02, after the key employment event.",
+  "implied_terminal_rate": "4.41%",
+  "implied_terminal_date": "2026-12",
+  "data_snapshot_date": "2026-10-03 00:35 EDT",
+  "recent_event_impact": "2026-10-02 September NFP +29K vs ~84K-90K expected, unemployment 4.2%; CME/Fed-funds-implied October hike odds fell to about 23% from roughly 64%-67% a week earlier, shifting the October base case back to hold. September CPI/PPI had not yet been released as of the snapshot; BLS schedule shows September CPI due 2026-10-14 and PPI due 2026-10-15.",
+  "commentary": "Data snapshot is 2026-10-03 00:35 EDT, after the 2026-10-02 NFP release, so the weak payroll shock is reflected: the market prices an October hold as the base case while keeping later 2026 hike risk alive. Recent inflation risk remains unresolved because September CPI/PPI are scheduled after this snapshot, so the next CPI/PPI prints could materially reprice the December and 2027 path.",
   "sources": [
     {
-      "url": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
-      "type": "official_cme_fedwatch"
+      "url": "https://www.investing.com/central-banks/fed-rate-monitor",
+      "type": "fed_funds_futures_cme_derived"
     },
     {
-      "url": "https://www.fisclear.com/fed-watch",
-      "type": "cme_fedwatch_derived_snapshot"
-    },
-    {
-      "url": "https://www.fedchirp.com/",
-      "type": "cme_fedwatch_derived_probabilities"
+      "url": "https://www.cmegroup.com/market-data/market-data-api/fedwatch-api.html",
+      "type": "cme_fedwatch_methodology"
     },
     {
       "url": "https://www.bls.gov/news.release/empsit.nr0.htm",
       "type": "nfp_official"
     },
     {
-      "url": "https://apnews.com/article/stocks-markets-bonds-us-oil-a2b99562febc21d84955e243c87f5d31",
-      "type": "market_reaction_cme_reference"
-    },
-    {
       "url": "https://www.bls.gov/news.release/cpi.htm",
-      "type": "cpi_official"
+      "type": "cpi_schedule_official"
     },
     {
       "url": "https://www.bls.gov/news.release/ppi.htm",
-      "type": "ppi_official"
+      "type": "ppi_schedule_official"
+    },
+    {
+      "url": "https://www.kiplinger.com/investing/economy/this-weeks-economic-calendar",
+      "type": "event_impact_secondary"
     }
   ],
   "confidence": "medium",
   "source_via": "codex_cli_websearch",
-  "fetched_at": "2026-10-03T14:04:29+00:00",
+  "fetched_at": "2026-10-04T00:04:32+00:00",
   "_meta": {
-    "cached_at": "2026-10-03T23:04:29.983595",
-    "age_sec": 35913,
-    "stale": true,
-    "refreshing": true
+    "cached_at": "2026-10-04T09:04:32.749760",
+    "age_sec": 7110,
+    "stale": false,
+    "refreshing": false
   }
 }
