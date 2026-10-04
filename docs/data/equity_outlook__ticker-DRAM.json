@@ -155,22 +155,22 @@
       "eps_revisions": {
         "0q": {
           "upLast7days": 4.0,
-          "upLast30days": 1.0,
-          "downLast30days": 1.0
+          "upLast30days": 5.0,
+          "downLast30days": 0.0
         },
         "+1q": {
-          "upLast7days": 1.0,
+          "upLast7days": 3.0,
           "upLast30days": 6.0,
           "downLast30days": 1.0
         },
         "0y": {
-          "upLast7days": 1.0,
-          "upLast30days": 1.0,
-          "downLast30days": 1.0
+          "upLast7days": 2.0,
+          "upLast30days": 4.0,
+          "downLast30days": 0.0
         },
         "+1y": {
           "upLast7days": 3.0,
-          "upLast30days": 2.0,
+          "upLast30days": 3.0,
           "downLast30days": 1.0
         }
       },
@@ -182,9 +182,9 @@
         "eps_current": 205.9545,
         "eps_30d_ago": 171.0249,
         "eps_trend_pct_30d": 20.42,
-        "up_30d": 2,
+        "up_30d": 3,
         "down_30d": 1,
-        "net_30d": 1
+        "net_30d": 2
       }
     }
   },
@@ -226,13 +226,13 @@
     ]
   },
   "official_guidance_status": "not_connected",
-  "fetched_at": "2026-10-04T10:03:09.639684+00:00",
+  "fetched_at": "2026-10-04T18:03:09.719259+00:00",
   "source": "yfinance analyst aggregation",
   "_meta": {
-    "cached_at": "2026-10-04T19:03:09.725208",
-    "age_sec": 28798,
-    "stale": true,
-    "refreshing": true
+    "cached_at": "2026-10-05T03:03:09.736310",
+    "age_sec": 7197,
+    "stale": false,
+    "refreshing": false
   },
   "ticker": "DRAM",
   "is_proxy": true

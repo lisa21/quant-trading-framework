@@ -161,7 +161,7 @@
         },
         "0y": {
           "upLast7days": 0.0,
-          "upLast30days": 2.0,
+          "upLast30days": 3.0,
           "downLast30days": 2.0
         },
         "+1y": {
@@ -228,13 +228,13 @@
     ]
   },
   "official_guidance_status": "not_connected",
-  "fetched_at": "2026-10-04T10:03:09.226243+00:00",
+  "fetched_at": "2026-10-04T18:03:09.736310+00:00",
   "source": "yfinance analyst aggregation",
   "_meta": {
-    "cached_at": "2026-10-04T19:03:09.239939",
-    "age_sec": 28798,
-    "stale": true,
-    "refreshing": true
+    "cached_at": "2026-10-05T03:03:09.741308",
+    "age_sec": 7197,
+    "stale": false,
+    "refreshing": false
   },
   "ticker": "AAPL",
   "is_proxy": false

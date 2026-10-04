@@ -163,39 +163,39 @@
           "downLast30days": 5.0
         },
         "+1q": {
-          "upLast7days": 1.0,
+          "upLast7days": 0.0,
           "upLast30days": 1.0,
           "downLast30days": 1.0
         },
         "0y": {
-          "upLast7days": 3.0,
+          "upLast7days": 1.0,
           "upLast30days": 1.0,
           "downLast30days": 0.0
         },
         "+1y": {
           "upLast7days": 1.0,
-          "upLast30days": 19.0,
-          "downLast30days": 3.0
+          "upLast30days": 1.0,
+          "downLast30days": 2.0
         }
       },
       "revision_summary": {
         "period": "+1y",
-        "signal": "upward",
+        "signal": "downward",
         "trend_signal": "flat",
-        "breadth_signal": "upward",
+        "breadth_signal": "downward",
         "eps_current": 23.6473,
         "eps_30d_ago": 23.5733,
         "eps_trend_pct_30d": 0.31,
-        "up_30d": 19,
-        "down_30d": 3,
-        "net_30d": 16
+        "up_30d": 1,
+        "down_30d": 2,
+        "net_30d": -1
       }
     }
   },
   "pricing": {
-    "classification": "underpriced",
-    "label": "市场预期偏低",
-    "tone": "ok",
+    "classification": "mixed",
+    "label": "估值与修正信号分歧",
+    "tone": "warn",
     "confidence": "high",
     "anchor_count": 4,
     "anchors": [
@@ -225,24 +225,24 @@
       }
     ],
     "median_gap_pct": 21.8,
-    "revision_signal": "upward",
+    "revision_signal": "downward",
     "required_eps_growth_pct": -19.2,
     "consensus_eps_growth_pct": 31.7,
     "growth_cushion_pct": 50.9,
     "rationale": [
       "多口径隐含价中位数高于现价 21.8%",
-      "近 30 天 EPS 共识上修",
+      "近 30 天 EPS 共识下修",
       "历史 PE 口径要求 EPS 增长 -19.2%，共识为 +31.7%"
     ]
   },
   "official_guidance_status": "not_connected",
-  "fetched_at": "2026-10-04T10:03:09.606275+00:00",
+  "fetched_at": "2026-10-04T18:03:09.992912+00:00",
   "source": "yfinance analyst aggregation",
   "_meta": {
-    "cached_at": "2026-10-04T19:03:09.676450",
-    "age_sec": 28798,
-    "stale": true,
-    "refreshing": true
+    "cached_at": "2026-10-05T03:03:10.024065",
+    "age_sec": 7196,
+    "stale": false,
+    "refreshing": false
   },
   "ticker": "MSFT",
   "is_proxy": false
