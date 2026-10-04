@@ -207,13 +207,13 @@
     ]
   },
   "official_guidance_status": "not_connected",
-  "fetched_at": "2026-10-04T00:03:10.829443+00:00",
+  "fetched_at": "2026-10-04T08:03:10.681947+00:00",
   "source": "yfinance analyst aggregation",
   "_meta": {
-    "cached_at": "2026-10-04T09:03:10.831989",
-    "age_sec": 28798,
-    "stale": true,
-    "refreshing": true
+    "cached_at": "2026-10-04T17:03:10.681948",
+    "age_sec": 7196,
+    "stale": false,
+    "refreshing": false
   },
   "ticker": "CBRS",
   "is_proxy": false

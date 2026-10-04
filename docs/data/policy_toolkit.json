@@ -1,6 +1,6 @@
 {
-  "as_of": "2026-10-04T03:06:55.427487",
-  "count_total_actions": 650,
+  "as_of": "2026-10-04T17:06:52.444803",
+  "count_total_actions": 656,
   "tools": [
     {
       "tool_key": "ycc",
@@ -23,7 +23,7 @@
         "confidence": 5
       },
       "yield_reaction_30y": {},
-      "event_count_180d": 5
+      "event_count_180d": 6
     },
     {
       "tool_key": "qra_wording",
@@ -46,7 +46,7 @@
         "confidence": 5
       },
       "yield_reaction_30y": {},
-      "event_count_180d": 4
+      "event_count_180d": 5
     },
     {
       "tool_key": "fx_intervention",
@@ -115,7 +115,7 @@
         "confidence": 5
       },
       "yield_reaction_30y": {},
-      "event_count_180d": 44
+      "event_count_180d": 45
     },
     {
       "tool_key": "long_end_buyback",
@@ -141,29 +141,6 @@
       "event_count_180d": 220
     },
     {
-      "tool_key": "fed_dovish_signal",
-      "zh": "Fed 官员鸽派信号",
-      "owner": "Fed (口头)",
-      "feasibility": "high",
-      "canonical_desc": "官员讲话暗示降息倾向, 前瞻指引",
-      "invalidation": "口头 → 若数据不配合, 反被 hawkish surprise 抹平",
-      "status": "口头/待发",
-      "last_action": {
-        "tool_key": "fed_dovish_signal",
-        "action_type": "signaled",
-        "date": "2026-10-02",
-        "actor": "Traders",
-        "amount_desc": "",
-        "commentary": "弱就业压低加息概率，短端利率预期下行，有利债市。",
-        "verbatim": "Traders now see little chance of a Fed rate hike in October after weak jobs report",
-        "source": "GoogleNews: Warsh Federal Reserve rate hike inflation",
-        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPOU1aVUFEOV9MWl9TVVdodDl4eFoyUjgxN2tLZ1QtRWYzbEUtMEpVQll0ZkhSekJFZUFVZzdNeXVqTzdUYXI3OWNMcC1YQ19XVDN2MFNTOWQzNjFLLTBDWFVvLXlWMWZRZ1R6RTRhVVRuS0dkZnJBMTd2dWhGV2hPdUg0b3hJQkZncFhCMnljc2lwYmw3TFHSAZsBQVVfeXFMTzNmZkRlUzhSSXlhMzhWV3lyN0pyeUstczZQXy1HZFNMRUh6TjNPN2Q0bGdrU2tCZjg2YkFZN3RrdndRcEs2TlAxRVlmNlhQVldRd3VZRmtZUlZock5uWTFsQ3dXdDMycWJSbXQwTDBSYVBWa1RZTG9qRWxkQTk1R1Y1WmtuUW9DSF9tUGs0NF8xdmE2RHlYQVJidFk?oc=5",
-        "confidence": 5
-      },
-      "yield_reaction_30y": {},
-      "event_count_180d": 25
-    },
-    {
       "tool_key": "fed_hawkish_signal",
       "zh": "Fed 官员鹰派信号",
       "owner": "Fed (口头)",
@@ -185,6 +162,29 @@
       },
       "yield_reaction_30y": {},
       "event_count_180d": 336
+    },
+    {
+      "tool_key": "fed_dovish_signal",
+      "zh": "Fed 官员鸽派信号",
+      "owner": "Fed (口头)",
+      "feasibility": "high",
+      "canonical_desc": "官员讲话暗示降息倾向, 前瞻指引",
+      "invalidation": "口头 → 若数据不配合, 反被 hawkish surprise 抹平",
+      "status": "口头/待发",
+      "last_action": {
+        "tool_key": "fed_dovish_signal",
+        "action_type": "signaled",
+        "date": "2026-10-04",
+        "actor": "Fed officials",
+        "amount_desc": "",
+        "commentary": "官员谨慎叠加低通胀削弱加息预期，对债市友好。",
+        "verbatim": "Fed Officials’ Caution, Soft Inflation Data Cut Odds of an October Rate Hike",
+        "source": "GoogleNews: Warsh Federal Reserve rate hike inflation",
+        "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE4tOVBLcVZZdXQ0ZGxTb2JFSk0ya1dlREwteW9pUnpEM1Z4QjlJQmU3blFlUjdmd25hT0x5NzJtSGE0V0pWbTc0WmxwNW5sSGliaklpTQ?oc=5",
+        "confidence": 7
+      },
+      "yield_reaction_30y": {},
+      "event_count_180d": 28
     },
     {
       "tool_key": "qe_restart",
@@ -233,7 +233,5 @@
       "yield_reaction_30y": {},
       "event_count_180d": 0
     }
-  ],
-  "stale": true,
-  "age_hours": 13.9
+  ]
 }
