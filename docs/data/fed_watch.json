@@ -94,8 +94,8 @@
   "fetched_at": "2026-10-03T14:04:29+00:00",
   "_meta": {
     "cached_at": "2026-10-03T23:04:29.983595",
-    "age_sec": 28712,
-    "stale": false,
-    "refreshing": false
+    "age_sec": 35913,
+    "stale": true,
+    "refreshing": true
   }
 }
