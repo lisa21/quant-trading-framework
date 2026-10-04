@@ -236,13 +236,13 @@
     ]
   },
   "official_guidance_status": "not_connected",
-  "fetched_at": "2026-10-04T02:03:11.575740+00:00",
+  "fetched_at": "2026-10-04T10:03:09.606275+00:00",
   "source": "yfinance analyst aggregation",
   "_meta": {
-    "cached_at": "2026-10-04T11:03:11.577254",
-    "age_sec": 28796,
-    "stale": true,
-    "refreshing": true
+    "cached_at": "2026-10-04T19:03:09.676450",
+    "age_sec": 7199,
+    "stale": false,
+    "refreshing": false
   },
   "ticker": "MSFT",
   "is_proxy": false

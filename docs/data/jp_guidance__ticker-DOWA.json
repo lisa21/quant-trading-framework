@@ -6,87 +6,77 @@
   "magnitude": "小",
   "last_update": "2026-08-07",
   "next_earnings": "2026-11-11",
-  "guidance_note": "2027年3月期通期予想は売上高9,410億円、営業利益530億円、親会社株主に帰属する当期純利益570億円、EPS 963.68円。",
-  "revision_reason": "2026年8月7日の第1四半期決算短信で「直近に公表されている業績予想からの修正の有無：無」と明記。5月14日公表値から売上高9,410→9,410億円、営業利益530→530億円、純利益570→570億円、EPS 963.68→963.68円で据え置き。",
+  "guidance_note": "2027年3月期通期予想は売上高9,410億円（+26.2% YoY）、営業利益530億円（+55.0%）、親会社株主帰属当期純利益570億円（-8.7%）、EPS 963.68円。",
+  "revision_reason": "直近予想から修正なし。売上高941,000→941,000百万円、営業利益53,000→53,000百万円、純利益57,000→57,000百万円、EPS 963.68→963.68円で据え置き；金属価格・為替は好転したが需要面がおおむね想定通りのため。",
   "market_reaction": "不明",
   "confidence": "high",
   "source_verified": true,
   "source_status": "codex_cli_websearch",
-  "generated_at": "2026-10-01T09:46:16.120867+00:00",
+  "generated_at": "2026-10-04T10:03:08.195638+00:00",
   "sources": [
     {
-      "url": "https://hd.dowa.co.jp/ja/ir/news/auto_20260805510866/pdfFile.pdf",
+      "url": "https://hd.dowa.co.jp/ja/ir/schedule.html",
       "type": "IR",
-      "title": "2027年3月期 第1四半期決算短信〔日本基準〕(連結)"
-    },
-    {
-      "url": "https://www2.jpx.co.jp/disc/57140/140120260512527418.pdf",
-      "type": "TDnet",
-      "title": "2026年3月期 決算短信〔日本基準〕(連結)"
-    },
-    {
-      "url": "https://hd.dowa.co.jp/en/ir/schedule.html",
-      "type": "IR",
-      "title": "Financial calendar"
+      "title": "IRカレンダー"
     }
   ],
   "source_via": "codex_cli_websearch",
   "analyst_consensus": {
     "n_analysts": 7,
     "recommendation": "hold",
-    "current_price": 8881.0,
+    "current_price": 8703.0,
     "forward_eps": 483.35,
-    "trailing_eps": 1049.53,
+    "trailing_eps": 1049.58,
     "eps_growth_pct": -53.9,
-    "forward_pe": 18.37,
-    "trailing_pe": 8.46,
+    "forward_pe": 18.01,
+    "trailing_pe": 8.29,
     "target_mean": 10452.86,
     "target_high": 12700.0,
     "target_low": 8570.0,
-    "target_upside_pct": 17.7,
+    "target_upside_pct": 20.1,
     "revenue_growth_pct": 58.2,
     "earnings_growth_pct": 268.9,
     "next_earnings": "2026-11-11",
-    "implied_pe_hold": 4090.05,
+    "implied_pe_hold": 4007.88,
     "implied_pe_hold_upside": -53.9,
     "peg_fair_price": null,
     "peg_ratio": null,
     "hist_pe_median": 10.88,
     "hist_pe_p25": 9.93,
-    "hist_pe_p75": 12.24,
-    "hist_pe_n_days": 856,
+    "hist_pe_p75": 12.23,
+    "hist_pe_n_days": 857,
     "implied_hist_median": 5258.85,
     "implied_hist_p25": 4799.67,
-    "implied_hist_p75": 5916.2,
-    "implied_hist_upside": -40.8,
-    "peer_pe_median": 17.41,
+    "implied_hist_p75": 5911.37,
+    "implied_hist_upside": -39.6,
+    "peer_pe_median": 17.07,
     "peer_pe_n_peers": 4,
     "peer_pe_details": [
       {
         "ticker": "5857.T",
-        "pe": 19.8
+        "pe": 19.32
       },
       {
         "ticker": "5706.T",
-        "pe": 4.1
+        "pe": 4.25
       },
       {
         "ticker": "5713.T",
-        "pe": 24.03
+        "pe": 23.91
       },
       {
         "ticker": "5711.T",
-        "pe": 15.03
+        "pe": 14.82
       }
     ],
-    "implied_peer_median": 8415.12,
+    "implied_peer_median": 8250.78,
     "implied_peer_upside": -5.2,
     "source": "yfinance analyst aggregation"
   },
   "_meta": {
-    "cached_at": "2026-10-01T18:46:53.876118",
-    "age_sec": 260174,
-    "stale": true,
-    "refreshing": true
+    "cached_at": "2026-10-04T19:03:43.132237",
+    "age_sec": 7166,
+    "stale": false,
+    "refreshing": false
   }
 }
