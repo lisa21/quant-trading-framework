@@ -1,5 +1,5 @@
 {
-  "ts": "2026-10-03T14:03:05.863205+00:00",
+  "ts": "2026-10-04T16:03:04.794455+00:00",
   "boards": [
     {
       "key": "QQQ",
@@ -348,9 +348,9 @@
     }
   ],
   "_meta": {
-    "cached_at": "2026-10-03T23:03:08.578674",
-    "age_sec": 93596,
-    "stale": true,
-    "refreshing": true
+    "cached_at": "2026-10-05T01:03:08.344184",
+    "age_sec": 7195,
+    "stale": false,
+    "refreshing": false
   }
 }

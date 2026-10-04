@@ -112,8 +112,8 @@
   "generated_at": "2026-10-04T10:03:48+00:00",
   "_meta": {
     "cached_at": "2026-10-04T19:03:48.506108",
-    "age_sec": 21554,
-    "stale": false,
-    "refreshing": false
+    "age_sec": 28755,
+    "stale": true,
+    "refreshing": true
   }
 }
