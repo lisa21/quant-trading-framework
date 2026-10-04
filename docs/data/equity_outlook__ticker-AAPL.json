@@ -43,7 +43,7 @@
       },
       {
         "ticker": "1810.HK",
-        "pe": 15.76
+        "pe": 15.75
       }
     ],
     "implied_peer_median": 209.77,
@@ -157,30 +157,30 @@
         "+1q": {
           "upLast7days": 0.0,
           "upLast30days": 1.0,
-          "downLast30days": 1.0
+          "downLast30days": 2.0
         },
         "0y": {
           "upLast7days": 0.0,
-          "upLast30days": 5.0,
+          "upLast30days": 2.0,
           "downLast30days": 2.0
         },
         "+1y": {
-          "upLast7days": 1.0,
-          "upLast30days": 2.0,
-          "downLast30days": 7.0
+          "upLast7days": 3.0,
+          "upLast30days": 5.0,
+          "downLast30days": 4.0
         }
       },
       "revision_summary": {
         "period": "+1y",
-        "signal": "downward",
+        "signal": "upward",
         "trend_signal": "flat",
-        "breadth_signal": "downward",
+        "breadth_signal": "upward",
         "eps_current": 9.5758,
         "eps_30d_ago": 9.5306,
         "eps_trend_pct_30d": 0.47,
-        "up_30d": 2,
-        "down_30d": 7,
-        "net_30d": -5
+        "up_30d": 5,
+        "down_30d": 4,
+        "net_30d": 1
       }
     }
   },
@@ -217,24 +217,24 @@
       }
     ],
     "median_gap_pct": -2.0,
-    "revision_signal": "downward",
+    "revision_signal": "upward",
     "required_eps_growth_pct": 12.6,
     "consensus_eps_growth_pct": 10.0,
     "growth_cushion_pct": -2.6,
     "rationale": [
       "多口径隐含价中位数低于现价 2.0%",
-      "近 30 天 EPS 共识下修",
+      "近 30 天 EPS 共识上修",
       "历史 PE 口径要求 EPS 增长 +12.6%，共识为 +10.0%"
     ]
   },
   "official_guidance_status": "not_connected",
-  "fetched_at": "2026-10-03T18:03:08.738743+00:00",
+  "fetched_at": "2026-10-04T02:03:11.378265+00:00",
   "source": "yfinance analyst aggregation",
   "_meta": {
-    "cached_at": "2026-10-04T03:03:08.807953",
-    "age_sec": 28800,
-    "stale": true,
-    "refreshing": true
+    "cached_at": "2026-10-04T11:03:11.379593",
+    "age_sec": 7198,
+    "stale": false,
+    "refreshing": false
   },
   "ticker": "AAPL",
   "is_proxy": false

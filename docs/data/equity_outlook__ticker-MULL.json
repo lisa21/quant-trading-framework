@@ -6,10 +6,10 @@
     "n_analysts": 46,
     "recommendation": "strong_buy",
     "current_price": 1074.89,
-    "forward_eps": 204.79,
+    "forward_eps": 205.95,
     "trailing_eps": 74.38,
-    "eps_growth_pct": 175.3,
-    "forward_pe": 5.25,
+    "eps_growth_pct": 176.9,
+    "forward_pe": 5.22,
     "trailing_pe": 14.45,
     "target_mean": 1520.02,
     "target_high": 2200.0,
@@ -18,18 +18,18 @@
     "revenue_growth_pct": 379.3,
     "earnings_growth_pct": 1060.5,
     "next_earnings": "2026-12-24",
-    "implied_pe_hold": 2959.45,
-    "implied_pe_hold_upside": 175.3,
-    "peg_fair_price": 35899.25,
+    "implied_pe_hold": 2976.32,
+    "implied_pe_hold_upside": 176.9,
+    "peg_fair_price": 36433.35,
     "peg_ratio": 0.03,
     "hist_pe_median": 55.12,
     "hist_pe_p25": 8.3,
     "hist_pe_p75": 134.54,
     "hist_pe_n_days": 774,
-    "implied_hist_median": 11287.89,
-    "implied_hist_p25": 1699.74,
-    "implied_hist_p75": 27552.11,
-    "implied_hist_upside": 950.1,
+    "implied_hist_median": 11352.21,
+    "implied_hist_p25": 1709.42,
+    "implied_hist_p75": 27709.11,
+    "implied_hist_upside": 956.1,
     "peer_pe_median": 8.5,
     "peer_pe_n_peers": 4,
     "peer_pe_details": [
@@ -50,102 +50,102 @@
         "pe": 13.08
       }
     ],
-    "implied_peer_median": 1740.69,
-    "implied_peer_upside": 61.9,
+    "implied_peer_median": 1750.61,
+    "implied_peer_upside": 62.9,
     "source": "yfinance analyst aggregation",
     "forward_estimates": {
       "earnings": {
         "0q": {
-          "avg": 38.2289,
+          "avg": 38.2106,
           "low": 30.2,
           "high": 40.47,
           "yearAgoEps": 3.03,
           "numberOfAnalysts": 33.0,
-          "growth": 11.6168
+          "growth": 11.6108
         },
         "+1q": {
-          "avg": 42.1351,
+          "avg": 42.1201,
           "low": 39.71,
           "high": 46.85,
           "yearAgoEps": 4.78,
-          "numberOfAnalysts": 29.0,
-          "growth": 7.8149
+          "numberOfAnalysts": 30.0,
+          "growth": 7.8117
         },
         "0y": {
-          "avg": 176.4656,
+          "avg": 176.4161,
           "low": 72.29,
           "high": 214.7,
           "yearAgoEps": 73.8829,
           "numberOfAnalysts": 36.0,
-          "growth": 1.3884
+          "growth": 1.3878
         },
         "+1y": {
-          "avg": 204.7875,
+          "avg": 205.9545,
           "low": 161.0,
           "high": 335.5,
-          "yearAgoEps": 176.4656,
+          "yearAgoEps": 176.4161,
           "numberOfAnalysts": 33.0,
-          "growth": 0.1605
+          "growth": 0.1674
         }
       },
       "revenue": {
         "0q": {
-          "avg": 61669197360.0,
+          "avg": 61670130780.0,
           "low": 58065000000.0,
           "high": 65610000000.0,
           "yearAgoRevenue": 13643000000.0,
-          "numberOfAnalysts": 32.0,
-          "growth": 3.5202
+          "numberOfAnalysts": 33.0,
+          "growth": 3.5203
         },
         "+1q": {
-          "avg": 66977957970.0,
+          "avg": 66970314159.0,
           "low": 58853000000.0,
           "high": 74381000000.0,
           "yearAgoRevenue": 23860000000.0,
-          "numberOfAnalysts": 30.0,
-          "growth": 1.8071
+          "numberOfAnalysts": 31.0,
+          "growth": 1.8068
         },
         "0y": {
-          "avg": 274710135729.0,
+          "avg": 274729631960.0,
           "low": 212417000000.0,
           "high": 307231000000.0,
           "yearAgoRevenue": 133188000000.0,
-          "numberOfAnalysts": 35.0,
-          "growth": 1.0626
+          "numberOfAnalysts": 36.0,
+          "growth": 1.0627
         },
         "+1y": {
-          "avg": 313348127320.0,
+          "avg": 314145793990.0,
           "low": 127430000000.0,
           "high": 396620000000.0,
-          "yearAgoRevenue": 274710135729.0,
+          "yearAgoRevenue": 274729631960.0,
           "numberOfAnalysts": 39.0,
-          "growth": 0.1407
+          "growth": 0.1435
         }
       },
       "eps_trend": {
         "0q": {
-          "current": 38.2289,
+          "current": 38.2106,
           "7daysAgo": 35.6641,
           "30daysAgo": 34.8915,
           "60daysAgo": 34.8798,
           "90daysAgo": 34.8105
         },
         "+1q": {
-          "current": 42.1351,
-          "7daysAgo": 38.4874,
+          "current": 42.1201,
+          "7daysAgo": 38.4661,
           "30daysAgo": 37.7685,
           "60daysAgo": 37.7185,
           "90daysAgo": 37.4848
         },
         "0y": {
-          "current": 176.4656,
+          "current": 176.4161,
           "7daysAgo": 160.0418,
           "30daysAgo": 156.2494,
           "60daysAgo": 155.7946,
           "90daysAgo": 150.0075
         },
         "+1y": {
-          "current": 204.7875,
+          "current": 205.9545,
           "7daysAgo": 179.5134,
           "30daysAgo": 171.0249,
           "60daysAgo": 166.8887,
@@ -154,13 +154,13 @@
       },
       "eps_revisions": {
         "0q": {
-          "upLast7days": 0.0,
-          "upLast30days": 0.0,
-          "downLast30days": 2.0
+          "upLast7days": 4.0,
+          "upLast30days": 1.0,
+          "downLast30days": 1.0
         },
         "+1q": {
-          "upLast7days": 0.0,
-          "upLast30days": 2.0,
+          "upLast7days": 1.0,
+          "upLast30days": 6.0,
           "downLast30days": 1.0
         },
         "0y": {
@@ -169,8 +169,8 @@
           "downLast30days": 1.0
         },
         "+1y": {
-          "upLast7days": 1.0,
-          "upLast30days": 3.0,
+          "upLast7days": 3.0,
+          "upLast30days": 2.0,
           "downLast30days": 1.0
         }
       },
@@ -179,12 +179,12 @@
         "signal": "upward",
         "trend_signal": "upward",
         "breadth_signal": "upward",
-        "eps_current": 204.7875,
+        "eps_current": 205.9545,
         "eps_30d_ago": 171.0249,
-        "eps_trend_pct_30d": 19.74,
-        "up_30d": 3,
+        "eps_trend_pct_30d": 20.42,
+        "up_30d": 2,
         "down_30d": 1,
-        "net_30d": 2
+        "net_30d": 1
       }
     }
   },
@@ -204,35 +204,35 @@
       {
         "key": "pe_hold",
         "label": "前瞻 EPS × 当前估值",
-        "implied_price": 2959.45,
-        "gap_pct": 175.3
+        "implied_price": 2976.32,
+        "gap_pct": 176.9
       },
       {
         "key": "peer_pe",
         "label": "前瞻 EPS × 同行 PE 中位",
-        "implied_price": 1740.69,
-        "gap_pct": 61.9
+        "implied_price": 1750.61,
+        "gap_pct": 62.9
       }
     ],
-    "median_gap_pct": 61.9,
+    "median_gap_pct": 62.9,
     "revision_signal": "upward",
     "required_eps_growth_pct": -73.8,
-    "consensus_eps_growth_pct": 175.3,
-    "growth_cushion_pct": 249.1,
+    "consensus_eps_growth_pct": 176.9,
+    "growth_cushion_pct": 250.7,
     "rationale": [
-      "多口径隐含价中位数高于现价 61.9%",
+      "多口径隐含价中位数高于现价 62.9%",
       "近 30 天 EPS 共识上修",
-      "历史 PE 口径要求 EPS 增长 -73.8%，共识为 +175.3%"
+      "历史 PE 口径要求 EPS 增长 -73.8%，共识为 +176.9%"
     ]
   },
   "official_guidance_status": "not_connected",
-  "fetched_at": "2026-10-03T18:03:08.955430+00:00",
+  "fetched_at": "2026-10-04T02:03:11.734852+00:00",
   "source": "yfinance analyst aggregation",
   "_meta": {
-    "cached_at": "2026-10-04T03:03:08.957959",
-    "age_sec": 28800,
-    "stale": true,
-    "refreshing": true
+    "cached_at": "2026-10-04T11:03:11.735869",
+    "age_sec": 7197,
+    "stale": false,
+    "refreshing": false
   },
   "ticker": "MULL",
   "is_proxy": true

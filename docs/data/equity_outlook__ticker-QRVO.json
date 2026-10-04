@@ -230,13 +230,13 @@
     ]
   },
   "official_guidance_status": "not_connected",
-  "fetched_at": "2026-10-03T18:03:08.957959+00:00",
+  "fetched_at": "2026-10-04T02:03:11.934839+00:00",
   "source": "yfinance analyst aggregation",
   "_meta": {
-    "cached_at": "2026-10-04T03:03:08.958954",
-    "age_sec": 28800,
-    "stale": true,
-    "refreshing": true
+    "cached_at": "2026-10-04T11:03:11.935839",
+    "age_sec": 7197,
+    "stale": false,
+    "refreshing": false
   },
   "ticker": "QRVO",
   "is_proxy": false

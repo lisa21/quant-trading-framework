@@ -164,16 +164,16 @@
         },
         "+1q": {
           "upLast7days": 1.0,
-          "upLast30days": 13.0,
-          "downLast30days": 8.0
+          "upLast30days": 1.0,
+          "downLast30days": 1.0
         },
         "0y": {
           "upLast7days": 3.0,
-          "upLast30days": 21.0,
-          "downLast30days": 8.0
+          "upLast30days": 1.0,
+          "downLast30days": 0.0
         },
         "+1y": {
-          "upLast7days": 3.0,
+          "upLast7days": 1.0,
           "upLast30days": 19.0,
           "downLast30days": 3.0
         }
@@ -236,13 +236,13 @@
     ]
   },
   "official_guidance_status": "not_connected",
-  "fetched_at": "2026-10-03T18:03:09.040571+00:00",
+  "fetched_at": "2026-10-04T02:03:11.575740+00:00",
   "source": "yfinance analyst aggregation",
   "_meta": {
-    "cached_at": "2026-10-04T03:03:09.041573",
-    "age_sec": 28800,
-    "stale": true,
-    "refreshing": true
+    "cached_at": "2026-10-04T11:03:11.577254",
+    "age_sec": 7197,
+    "stale": false,
+    "refreshing": false
   },
   "ticker": "MSFT",
   "is_proxy": false

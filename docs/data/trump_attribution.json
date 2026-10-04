@@ -285,11 +285,11 @@
       "sum_delta": 0.0
     }
   },
-  "generated_at": "2026-10-03T18:03:27+00:00",
+  "generated_at": "2026-10-04T02:03:29+00:00",
   "_meta": {
-    "cached_at": "2026-10-04T03:03:27.074063",
-    "age_sec": 28776,
-    "stale": true,
-    "refreshing": true
+    "cached_at": "2026-10-04T11:03:29.570148",
+    "age_sec": 7174,
+    "stale": false,
+    "refreshing": false
   }
 }
