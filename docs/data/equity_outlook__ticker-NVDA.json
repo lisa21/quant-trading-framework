@@ -35,7 +35,7 @@
     "peer_pe_details": [
       {
         "ticker": "AMD",
-        "pe": 40.68
+        "pe": 40.6
       },
       {
         "ticker": "INTC",
@@ -236,13 +236,13 @@
     ]
   },
   "official_guidance_status": "not_connected",
-  "fetched_at": "2026-10-05T00:33:09.147900+00:00",
+  "fetched_at": "2026-10-05T07:33:15.694565+00:00",
   "source": "yfinance analyst aggregation",
   "_meta": {
-    "cached_at": "2026-10-05T09:33:09.147900",
-    "age_sec": 25204,
-    "stale": true,
-    "refreshing": true
+    "cached_at": "2026-10-05T16:33:15.695564",
+    "age_sec": 1793,
+    "stale": false,
+    "refreshing": false
   },
   "ticker": "NVDA",
   "is_proxy": false

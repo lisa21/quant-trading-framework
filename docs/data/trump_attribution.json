@@ -1,7 +1,7 @@
 {
-  "posts_analyzed": 90,
-  "posts_total": 97,
-  "snapshots_used": 204,
+  "posts_analyzed": 92,
+  "posts_total": 99,
+  "snapshots_used": 205,
   "window_hours": 48,
   "top_movers": [
     {
@@ -255,8 +255,8 @@
   ],
   "by_event_type": {
     "TARIFF": {
-      "count": 19,
-      "avg_delta": -1.89,
+      "count": 20,
+      "avg_delta": -1.8,
       "sum_delta": -36.0
     },
     "GEOPOLITICAL": {
@@ -275,8 +275,8 @@
       "sum_delta": -6.0
     },
     "MARKET": {
-      "count": 17,
-      "avg_delta": -0.18,
+      "count": 18,
+      "avg_delta": -0.17,
       "sum_delta": -3.0
     },
     "DOMESTIC_POLICY": {
@@ -285,11 +285,11 @@
       "sum_delta": 0.0
     }
   },
-  "generated_at": "2026-10-05T00:33:03+00:00",
+  "generated_at": "2026-10-05T07:33:32+00:00",
   "_meta": {
-    "cached_at": "2026-10-05T09:33:03.367142",
-    "age_sec": 25202,
-    "stale": true,
-    "refreshing": true
+    "cached_at": "2026-10-05T16:33:32.652218",
+    "age_sec": 1770,
+    "stale": false,
+    "refreshing": false
   }
 }

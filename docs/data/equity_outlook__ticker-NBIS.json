@@ -30,8 +30,8 @@
     "implied_hist_p25": null,
     "implied_hist_p75": null,
     "implied_hist_upside": null,
-    "peer_pe_median": 18.48,
-    "peer_pe_n_peers": 2,
+    "peer_pe_median": 22.34,
+    "peer_pe_n_peers": 4,
     "peer_pe_details": [
       {
         "ticker": "ORCL",
@@ -40,10 +40,18 @@
       {
         "ticker": "AMZN",
         "pe": 24.01
+      },
+      {
+        "ticker": "MSFT",
+        "pe": 21.89
+      },
+      {
+        "ticker": "GOOGL",
+        "pe": 22.79
       }
     ],
-    "implied_peer_median": -64.51,
-    "implied_peer_upside": -126.6,
+    "implied_peer_median": -77.98,
+    "implied_peer_upside": -132.1,
     "source": "yfinance analyst aggregation",
     "forward_estimates": {
       "earnings": {
@@ -203,13 +211,13 @@
     ]
   },
   "official_guidance_status": "not_connected",
-  "fetched_at": "2026-10-05T00:03:10.253901+00:00",
+  "fetched_at": "2026-10-05T07:33:15.701090+00:00",
   "source": "yfinance analyst aggregation",
   "_meta": {
-    "cached_at": "2026-10-05T09:03:10.254901",
-    "age_sec": 27003,
-    "stale": true,
-    "refreshing": true
+    "cached_at": "2026-10-05T16:33:15.706084",
+    "age_sec": 1793,
+    "stale": false,
+    "refreshing": false
   },
   "ticker": "NBIS",
   "is_proxy": false

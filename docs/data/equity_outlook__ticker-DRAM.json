@@ -43,7 +43,7 @@
       },
       {
         "ticker": "285A.T",
-        "pe": 19.25
+        "pe": 18.95
       },
       {
         "ticker": "WDC",
@@ -226,13 +226,13 @@
     ]
   },
   "official_guidance_status": "not_connected",
-  "fetched_at": "2026-10-05T00:33:08.971982+00:00",
+  "fetched_at": "2026-10-05T07:33:15.799273+00:00",
   "source": "yfinance analyst aggregation",
   "_meta": {
-    "cached_at": "2026-10-05T09:33:08.972981",
-    "age_sec": 25204,
-    "stale": true,
-    "refreshing": true
+    "cached_at": "2026-10-05T16:33:15.799273",
+    "age_sec": 1793,
+    "stale": false,
+    "refreshing": false
   },
   "ticker": "DRAM",
   "is_proxy": true
