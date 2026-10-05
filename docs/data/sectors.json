@@ -121,7 +121,7 @@
       "policy_note": "短线承压：等待价格与动量重新确认"
     }
   ],
-  "ts": "2026-10-05T09:33:03.971993+00:00",
+  "ts": "2026-10-05T10:03:04.029554+00:00",
   "canonical_regime": "unknown",
   "n_disagreements_this_call": 0,
   "rotation_speed": {
@@ -146,7 +146,7 @@
     "asof": "2026-10-02 00:00:00-04:00"
   },
   "_meta": {
-    "cached_at": "2026-10-05T18:33:03.972994",
+    "cached_at": "2026-10-05T19:03:04.031559",
     "age_sec": 1799,
     "stale": true,
     "refreshing": true
