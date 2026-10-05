@@ -13291,14 +13291,14 @@
   "cache_contract": "15efd89eda8e",
   "_meta": {
     "cached_at": "2026-10-05T21:33:46.707113",
-    "age_sec": 34156,
+    "age_sec": 35956,
     "stale": false,
     "refreshing": false
   },
   "flow_meta": {
     "generated_at": "2026-10-05T20:06:22.666328+00:00",
     "status": "ready",
-    "age_sec": 6960.4,
+    "age_sec": 8760.4,
     "stale": false
   }
 }
