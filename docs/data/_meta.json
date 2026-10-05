@@ -1,9 +1,9 @@
 {
-  "generated_at_utc": "2026-10-05T12:33:07+00:00",
-  "generated_at_local": "2026-10-05T21:33:07",
+  "generated_at_utc": "2026-10-05T13:03:15+00:00",
+  "generated_at_local": "2026-10-05T22:03:15",
   "endpoints_ok": 130,
   "endpoints_fail": 0,
-  "elapsed_sec": 5.0,
+  "elapsed_sec": 6.6,
   "saved_files": [
     "ai_analysis.json",
     "ai_targets.json",

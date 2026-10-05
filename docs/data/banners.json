@@ -8,50 +8,20 @@
     "magnitude": "small",
     "score": 0,
     "event_counts": {
-      "MEDIA_ATTACK": 6,
-      "GEOPOLITICAL": 1,
-      "MARKET": 1,
+      "MEDIA_ATTACK": 4,
       "DOMESTIC_POLICY": 2,
       "TARIFF": 1,
-      "NOISE": 3
+      "GEOPOLITICAL": 2,
+      "NOISE": 2
     },
-    "breaking": [
-      {
-        "event_type": "MARKET",
-        "direction": "bullish",
-        "magnitude": "medium",
-        "confidence": 7,
-        "tickers": [
-          "QQQ",
-          "TQQQ",
-          "SOXL",
-          "NVDA",
-          "SPY"
-        ],
-        "preview": "Following the Historic White House Accord on Super Intelligence, where the World's most important Technology Companies c",
-        "verbatim": "the World's most important Technology Companies came together... America continues to lead the World in Super Intelligence",
-        "post_time": "2026-10-04T12:23:09.107Z"
-      },
-      {
-        "event_type": "TARIFF",
-        "direction": "bullish",
-        "magnitude": "medium",
-        "confidence": 7,
-        "tickers": [
-          "SPY"
-        ],
-        "preview": "Trump credits tariffs for bringing pharmaceutical manufacturing campus to Ohio: https://justthenews.com/government/white",
-        "verbatim": "Trump credits tariffs for bringing pharmaceutical manufacturing campus to Ohio",
-        "post_time": "2026-10-04T17:49:24.109Z"
-      }
-    ],
+    "breaking": [],
     "summary": {
-      "text": "印度大选投票信息为主，市场情绪中性。",
-      "state": "cached",
+      "text": null,
+      "state": "generating",
       "post_ids": [
+        "117386635456194100",
         "117386191183722432",
-        "117384612085223868",
-        "117384609805773432"
+        "117384612085223868"
       ]
     }
   },
