@@ -80,6 +80,54 @@ def is_ticker_whitelisted(ticker: str) -> tuple[bool, str]:
     return False, ""
 
 
+_GUARD_STATE_PATH = Path(SIGNALS_DIR) / "semi_risk_guard.json"
+_GUARD_STALE_DAYS = 4
+
+
+def semi_risk_guard_config() -> Optional[dict]:
+    """thesis_config.json 的 semi_risk_guard 段 (2026-10-03): tickers / min_confidence / conditions."""
+    cfg = _load()
+    g = (cfg or {}).get("semi_risk_guard")
+    return g if isinstance(g, dict) else None
+
+
+def semi_risk_guard_state(path: Optional[Path] = None, now: Optional[float] = None) -> dict:
+    """读 _semi_risk_guard 每日检查结果. 文件缺失 / 过期 / 无法解析 → status=unknown, active=False."""
+    import time as _time
+    path = Path(path) if path is not None else _GUARD_STATE_PATH
+    if not path.exists():
+        return {"status": "unknown", "active": False, "reason": "no_state_file"}
+    age_d = ((now or _time.time()) - path.stat().st_mtime) / 86400
+    if age_d > _GUARD_STALE_DAYS:
+        return {"status": "unknown", "active": False, "reason": f"stale {age_d:.1f}d"}
+    try:
+        st = json.loads(path.read_text(encoding="utf-8"))
+    except Exception:
+        return {"status": "unknown", "active": False, "reason": "unreadable"}
+    return {"status": "active" if st.get("active") else "inactive", "active": bool(st.get("active")),
+            "triggered": st.get("triggered", []), "unknown": st.get("unknown", []), "ts": st.get("ts")}
+
+
+def _semi_guard_block(ticker: str) -> Optional[tuple[str, dict]]:
+    g = semi_risk_guard_config()
+    if not g:
+        return None
+    target = _normalize_ticker(ticker)
+    if target not in {_normalize_ticker(t) for t in g.get("tickers", [])}:
+        return None
+    st = semi_risk_guard_state()
+    if not st.get("active"):
+        return None
+    try:
+        mc = int(g.get("min_confidence", 10))
+    except (TypeError, ValueError):
+        mc = 10
+    reason = (f"semi_risk_guard: 看错条件触发 ({', '.join(st.get('triggered', []))}) → "
+              f"半导体买入门槛提高")
+    return reason, {"min_confidence": mc, "since": st.get("ts", ""), "semi_risk_guard": True,
+                    "triggered": st.get("triggered", [])}
+
+
 def is_ticker_soft_blacklisted(ticker: str) -> tuple[bool, str, dict]:
     """Soft block (2026-09-18 加): whitelist 移除的 ticker 需要更高置信度才能 BUY.
 
@@ -96,6 +144,18 @@ def is_ticker_soft_blacklisted(ticker: str) -> tuple[bool, str, dict]:
     cfg = _load()
     if not cfg:
         return False, "", {}
+    # 2026-10-03: 半导体风险开关 (条件式 soft block), 与静态 soft_blacklist 取更严者
+    guard = _semi_guard_block(ticker)
+    static = _static_soft_blacklisted(cfg, ticker)
+    if guard and static[0]:
+        return (static if static[2].get("min_confidence", 7) >= guard[1]["min_confidence"]
+                else (True, guard[0], guard[1]))
+    if guard:
+        return True, guard[0], guard[1]
+    return static
+
+
+def _static_soft_blacklisted(cfg: dict, ticker: str) -> tuple[bool, str, dict]:
     soft = cfg.get("soft_blacklist", {})
     if not isinstance(soft, dict):
         # 手误: soft_blacklist 写成 list/其他类型 → 静默降级为空 dict
@@ -205,6 +265,9 @@ def summary() -> dict:
         "has_next_conjecture": bool(cfg.get("next_thesis_conjecture")),
         "archived_count": _count_archived(),
         "soft_blacklist_count": len(cfg.get("soft_blacklist", {}) or {}),
+        "semi_risk_guard": ({**semi_risk_guard_state(),
+                             "n_tickers": len((semi_risk_guard_config() or {}).get("tickers", []))}
+                            if semi_risk_guard_config() else None),
     }
 
 

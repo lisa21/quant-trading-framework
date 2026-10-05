@@ -1,7 +1,7 @@
 {
-  "version": "2026-Q3.4_semi_unblocked",
-  "created_at": "2026-10-03",
-  "last_reviewed_at": "2026-10-03",
+  "version": "2026-Q3.5_semi_risk_guard",
+  "created_at": "2026-10-05",
+  "last_reviewed_at": "2026-10-05",
   "review_interval_days": 30,
   "thesis_summary": "Cloud long, avoid duration. 2026-10-03 用户解除半导体硬黑名单 (不再 'avoid semi'), 半导体回到常规规则 + 风控. 2026-09-17 Sep FOMC 已加息 +25bps → 3.75-4.00% (unanimous 12-0), dot plot 16/18 members 预期年内再加至少 1 次. 前瞻: continued_hike_regime 用 2Y yield 60d delta bps 追踪市场对后续加息的定价 (>25bps → 打脸 duration 敏感策略). 2026-09-18: 60d 复盘胜率 16.1% -$31k, 扩 blacklist (漏网 semi 追加) + 新增 soft_blacklist (whitelist 移除后仍需高置信度).",
   "blacklist_tickers": [],
@@ -59,7 +59,7 @@
     }
   ],
   "auto_clear_blacklist_on_invalidation": false,
-  "notes": "读取器: thesis_config.py. decision_agent.get_decision 每次决策时调用 is_ticker_blacklisted (hard block → HOLD) 和 is_ticker_soft_blacklisted (soft block → 要求 confidence ≥ min_confidence, 不满足降级 HOLD). 手动 review 每 30 天 review_interval_days 到期时 dashboard/log warn. 2026-09-11 半自动校准: CPI hot 触发 cpi_hot_reprice, whitelist 精准收缩 (SHY/IEI/NBIS 移除), blacklist 全保留. 2026-09-17: Fed 已确认加息, 新增 continued_hike_regime (2Y 60d delta bps 前瞻指标). 2026-09-18: 60d 复盘 -$31k 后加 QRVO/SWKS/MPWR/STM 到 hard blacklist, 加 soft_blacklist (SHY/IEI/NBIS) 阻止 whitelist 移除后的低置信度 BUY. 2026-10-03: 用户决定解除全部硬黑名单 (半导体), 版本 2026-Q3.4; soft_blacklist / whitelist 不变.",
+  "notes": "读取器: thesis_config.py. decision_agent.get_decision 每次决策时调用 is_ticker_blacklisted (hard block → HOLD) 和 is_ticker_soft_blacklisted (soft block → 要求 confidence ≥ min_confidence, 不满足降级 HOLD). 手动 review 每 30 天 review_interval_days 到期时 dashboard/log warn. 2026-09-11 半自动校准: CPI hot 触发 cpi_hot_reprice, whitelist 精准收缩 (SHY/IEI/NBIS 移除), blacklist 全保留. 2026-09-17: Fed 已确认加息, 新增 continued_hike_regime (2Y 60d delta bps 前瞻指标). 2026-09-18: 60d 复盘 -$31k 后加 QRVO/SWKS/MPWR/STM 到 hard blacklist, 加 soft_blacklist (SHY/IEI/NBIS) 阻止 whitelist 移除后的低置信度 BUY. 2026-10-03: 用户决定解除全部硬黑名单 (半导体), 版本 2026-Q3.4; soft_blacklist / whitelist 不变. 2026-10-05: 加 semi_risk_guard (3 个看错条件 → 半导体买入门槛自动提高), 版本 2026-Q3.5.",
   "next_thesis_conjecture": {
     "conjectured_at": "2026-09-17",
     "candidates": [
@@ -103,6 +103,52 @@
     ],
     "decision_process": "两个候选是 A/B 二叉: higher_for_longer 假设 Fed 加息软着陆成功 (base case ~60%), recession_first 假设加息破坏就业市场 (tail case ~35%). 剩 5% 是 Fed 突然鸽派转向 (低概率). 4 周内看 (1) 后续 CPI print (2) NFP unemp trend (3) 曲线形态, 决定 promote 哪个作正式 thesis-2026-Q4."
   },
-  "effective_from": "2026-10-03T04:38:01+00:00",
+  "semi_risk_guard": {
+    "added": "2026-10-05",
+    "tickers": [
+      "US.DRAM",
+      "US.KLAC",
+      "US.AMAT",
+      "US.MULL",
+      "US.SOXL",
+      "US.SOXS",
+      "US.NVDA",
+      "US.MU",
+      "US.LITE",
+      "US.CBRS",
+      "US.QRVO",
+      "US.SWKS",
+      "US.MPWR",
+      "US.STM"
+    ],
+    "min_confidence": 10,
+    "reason": "看多半导体的前提是'高利率只压估值, 不伤盈利'. 任一看错条件触发 → 半导体买入门槛提高到 canonical 10/10 (5 分制 = 5/5); 不卖出, 不改仓位. 每日收盘后 _semi_risk_guard 检查, 结果 signals/semi_risk_guard.json (超过 4 天未更新视为未知, 不额外限制).",
+    "conditions": {
+      "earnings_revisions_down": {
+        "metric": "mega_eps_revision_30d_pct",
+        "op": "<",
+        "threshold": -0.5,
+        "description": "15 家最大市值公司今年+明年 EPS 一致预期 30 天市值加权修正 < -0.5% (预期转为下调)"
+      },
+      "yield_5p5_real_rising": {
+        "metric": "dgs10_pct",
+        "op": ">",
+        "threshold": 5.5,
+        "and": {
+          "metric": "dfii10_60d_delta_bps",
+          "op": ">",
+          "threshold": 0
+        },
+        "description": "10 年期收益率 > 5.5% 且 10 年期 TIPS 实际利率 60 天上行"
+      },
+      "hy_spread_widening": {
+        "metric": "hy_oas_60d_delta_bps",
+        "op": ">=",
+        "threshold": 75,
+        "description": "高收益债利差 (ICE BofA HY OAS) 60 天走阔 ≥ 75bp"
+      }
+    }
+  },
+  "effective_from": "2026-10-05T06:04:59+00:00",
   "effective_from_basis": "promotion_time"
 }

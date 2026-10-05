@@ -1446,6 +1446,9 @@ def _apply_thesis_filter(result: dict, ticker: str, context=None) -> dict:
                 result["min_confidence_required"] = effective_min
                 result["min_confidence_canonical"] = min_conf_canonical
                 result["confidence_scale"] = scale
+                if soft_meta.get("semi_risk_guard"):
+                    # 2026-10-03: 半导体风险开关触发 (盈利下修 / 高利率+实际利率上行 / 信用利差走阔)
+                    result["semi_risk_guard"] = list(soft_meta.get("triggered") or [])
                 result["demoted_from"] = original
                 prev_reason = result.get("reason") or ""
                 result["reason"] = (f"thesis_soft_blocked (conf {cur_conf}<{effective_min}/{scale}, "

@@ -226,8 +226,17 @@ def from_live_now(
     For live decisions where the "now" perspective is authoritative.
     """
     try:
+        import json as _json
         import thesis_config as _tc
-        thesis_snap = _tc._load() or {}
+        thesis_snap = _json.loads(_json.dumps(_tc._load() or {}))
+        # 2026-10-03: 半导体风险开关是 live 状态 → 冻结进快照的 soft_blacklist
+        g = _tc.semi_risk_guard_config()
+        if g and _tc.semi_risk_guard_state().get("active"):
+            soft = thesis_snap.setdefault("soft_blacklist", {})
+            for tk in g.get("tickers", []):
+                old = soft.get(tk) if isinstance(soft.get(tk), dict) else {}
+                mc = max(int(old.get("min_confidence", 0) or 0), int(g.get("min_confidence", 10)))
+                soft[tk] = {**old, "min_confidence": mc, "reason": "semi_risk_guard"}
     except Exception:
         thesis_snap = None
     try:

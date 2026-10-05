@@ -34,7 +34,8 @@ class JobRequests(unittest.TestCase):
         for x in self.p:
             x.start()
         # 自动周跑: 默认视为刚启动过, 只测请求文件路径
-        (self.td / "job_eps_growth_backtest.last_started").write_text("x", encoding="utf-8")
+        for name in wd.JOBS:
+            (self.td / f"job_{name}.last_started").write_text("x", encoding="utf-8")
 
     def tearDown(self):
         for x in self.p:

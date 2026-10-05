@@ -96,3 +96,4 @@ agents/.sec_user_agent
 agents/signals/growth_watch.json
 agents/signals/growth_watch_log.jsonl
 agents/signals/job_*
+agents/signals/semi_risk_guard.json

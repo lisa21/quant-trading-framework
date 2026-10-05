@@ -60,6 +60,9 @@ JOBS = {
     # auto_every_days: 距上次启动超过 N 天且不在交易时段 → 自动启动 (无需请求文件)
     "eps_growth_backtest": {"bat": "_eps_growth_backtest.bat", "market_quiet": True,
                             "auto_every_days": 7},
+    # 2026-10-03: 半导体风险开关, 每天收盘后检查一次
+    "semi_risk_guard": {"bat": "_semi_risk_guard.bat", "market_quiet": True,
+                        "auto_every_days": 1},
 }
 QUIET_BLOCK_UTC_HOURS = (12, 21)
 
