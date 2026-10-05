@@ -9,11 +9,11 @@
     "score": 0,
     "event_counts": {
       "MEDIA_ATTACK": 6,
-      "GEOPOLITICAL": 2,
+      "GEOPOLITICAL": 1,
       "MARKET": 1,
       "DOMESTIC_POLICY": 2,
       "TARIFF": 1,
-      "NOISE": 2
+      "NOISE": 3
     },
     "breaking": [
       {
@@ -25,7 +25,8 @@
           "QQQ",
           "TQQQ",
           "SOXL",
-          "NVDA"
+          "NVDA",
+          "SPY"
         ],
         "preview": "Following the Historic White House Accord on Super Intelligence, where the World's most important Technology Companies c",
         "verbatim": "the World's most important Technology Companies came together... America continues to lead the World in Super Intelligence",
@@ -34,7 +35,7 @@
       {
         "event_type": "TARIFF",
         "direction": "bullish",
-        "magnitude": "small",
+        "magnitude": "medium",
         "confidence": 7,
         "tickers": [
           "SPY"

@@ -3982,7 +3982,7 @@
     }
   ],
   "trend_30d": {
-    "n_samples": 58,
+    "n_samples": 57,
     "period_days": 30,
     "cut_prob_start": 27,
     "cut_prob_latest": 27,

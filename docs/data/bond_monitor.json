@@ -1,5 +1,5 @@
 {
-  "asof": "2026-10-05T17:03",
+  "asof": "2026-10-05T17:33",
   "yields": {
     "10y": {
       "value": 5.277,
@@ -247,7 +247,7 @@
     },
     {
       "level": "warn",
-      "msg": "USDJPY 157.6 进入 155-160 口头干预区间 (JP MoF)",
+      "msg": "USDJPY 157.93 进入 155-160 口头干预区间 (JP MoF)",
       "key": "jpy_verbal_zone"
     },
     {
@@ -320,13 +320,13 @@
     "sofr_pct": 3.87,
     "iorb_pct": 3.9,
     "sofr_iorb_spread_bps": -3.0,
-    "usdjpy": 157.6,
-    "usdjpy_20d_pct": 0.9,
-    "usdjpy_20d_delta_pct": 0.9,
+    "usdjpy": 157.93,
+    "usdjpy_20d_pct": 1.46,
+    "usdjpy_20d_delta_pct": 1.46,
     "usdjpy_60d_high": 163.86,
-    "usdjpy_pullback_from_60d_high_pct": -3.82,
-    "krw_usd": 1343.3,
-    "krw_20d_pct": -0.13,
+    "usdjpy_pullback_from_60d_high_pct": -3.62,
+    "krw_usd": 1343.2,
+    "krw_20d_pct": -0.14,
     "jgb_10y_pct": 2.94,
     "jgb_asof": "2026-08-01",
     "ust_jgb_spread_bps": 233.7,
@@ -343,9 +343,9 @@
     "kbe_spy_20d_delta_pct": -6.15,
     "cdx_ig_bps": 86.0,
     "cdx_hy_bps": 324.0,
-    "dxy": 102.18,
-    "dxy_pct_20d": 3.05,
-    "dxy_z_60d": 1.92,
+    "dxy": 102.2,
+    "dxy_pct_20d": 3.07,
+    "dxy_z_60d": 1.94,
     "asia_indices": {
       "N225": {
         "symbol": "^N225",
@@ -358,9 +358,9 @@
       "HSI": {
         "symbol": "^HSI",
         "label": "Hang Seng (港)",
-        "close": 23972.2,
-        "chg_1d": -0.0,
-        "chg_5d_pct": -2.19,
+        "close": 24040.34,
+        "chg_1d": 0.28,
+        "chg_5d_pct": -1.92,
         "asof": "2026-10-05"
       },
       "SSE": {
@@ -392,31 +392,31 @@
       "es_f": {
         "symbol": "ES=F",
         "label": "S&P 500 futures",
-        "price": 7768.75,
-        "chg_pct": -0.11
+        "price": 7777.75,
+        "chg_pct": 0.01
       },
       "nq_f": {
         "symbol": "NQ=F",
         "label": "Nasdaq futures",
-        "price": 31068.0,
-        "chg_pct": 0.02
+        "price": 31077.75,
+        "chg_pct": 0.05
       },
       "cl_f": {
         "symbol": "CL=F",
         "label": "WTI crude futures",
-        "price": 89.59,
-        "chg_pct": -1.67
+        "price": 89.41,
+        "chg_pct": -1.87
       },
       "gc_f": {
         "symbol": "GC=F",
         "label": "Gold futures",
-        "price": 4191.0,
-        "chg_pct": 0.69
+        "price": 4195.5,
+        "chg_pct": 0.8
       }
     },
     "oil_uso": 147.37,
     "oil_pct_20d": 3.72,
-    "oil_wti": 89.59,
+    "oil_wti": 89.4,
     "eem_pct_20d": 0.3,
     "eem_vs_spx_20d": 0.51,
     "volume_confirm": {
@@ -501,18 +501,18 @@
     "stablecoin_total_bn": 258.0,
     "usdt_bn": 184.0,
     "usdc_bn": 74.0,
-    "vix": 16.3,
-    "bbi_score": 0.34,
+    "vix": 16.15,
+    "bbi_score": 0.37,
     "bbi_components": {
-      "vix": -0.28,
+      "vix": -0.31,
       "ig": -1.26,
       "hy": -0.78,
       "erp": 1.86
     }
   },
   "_meta": {
-    "cached_at": "2026-10-05T17:03:17.674831",
-    "age_sec": 1786,
+    "cached_at": "2026-10-05T17:33:18.125602",
+    "age_sec": 1785,
     "stale": true,
     "refreshing": true
   }
