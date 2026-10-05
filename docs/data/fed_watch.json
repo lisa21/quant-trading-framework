@@ -5,18 +5,24 @@
       "date": "2026-10-28",
       "days_until": 23,
       "probabilities": {
-        "hold": 82.3,
-        "hike_25": 17.7
+        "cut_50": 0,
+        "cut_25": 0,
+        "hold": 82,
+        "hike_25": 18,
+        "hike_50": 0
       },
       "most_likely": "hold",
-      "consensus_direction": "hawkish_lean"
+      "consensus_direction": "hawkish_tail"
     },
     {
       "date": "2026-12-09",
       "days_until": 65,
       "probabilities": {
-        "hold": 18,
-        "hike_25": 82
+        "cut_50": 0,
+        "cut_25": 0,
+        "hold": 21,
+        "hike_25": 79,
+        "hike_50": 0
       },
       "most_likely": "hike_25",
       "consensus_direction": "hawkish"
@@ -25,8 +31,11 @@
       "date": "2027-01-27",
       "days_until": 114,
       "probabilities": {
-        "hold": 64,
-        "hike_25": 36
+        "cut_50": 0,
+        "cut_25": 0,
+        "hold": 61,
+        "hike_25": 39,
+        "hike_50": 0
       },
       "most_likely": "hold",
       "consensus_direction": "hawkish_lean"
@@ -35,8 +44,11 @@
       "date": "2027-03-17",
       "days_until": 163,
       "probabilities": {
+        "cut_50": 0,
+        "cut_25": 0,
         "hold": 29,
-        "hike_25": 71
+        "hike_25": 71,
+        "hike_50": 0
       },
       "most_likely": "hike_25",
       "consensus_direction": "hawkish"
@@ -45,41 +57,37 @@
   "implied_terminal_rate": "4.50-4.75",
   "implied_terminal_date": "2027-Q3",
   "data_snapshot_date": "2026-10-05",
-  "recent_event_impact": "2026-10-02 September NFP +29K, below roughly +84K to +90K consensus; unemployment rose to 4.2%. This cooled October hike pricing sharply and lifted hold odds to roughly 82%-84%, though the curve still prices a strong probability of a December hike.",
-  "commentary": "Data snapshot is 2026-10-05 for the next-meeting CME/FedWatch-derived quote and live Fed funds futures replica; the multi-meeting path is after the 2026-10-02 NFP release, so the key recent jobs event is reflected. The weak NFP reduced immediate October tightening odds, but markets still imply a hawkish path with a December hike as the modal outcome.",
+  "recent_event_impact": "2026-10-02 NFP +29K, below roughly 84K-90K expectations, unemployment 4.2%; CME-reported October hold odds rose sharply after the jobs report, while CPI/PPI for September are not yet released as of 2026-10-05.",
+  "commentary": "Snapshot is 2026-10-05 close; the latest market pricing reflects the 2026-10-02 weak NFP print, which cut near-term hike odds but did not remove the expected modest hiking path into December and early 2027. No September CPI/PPI release occurred in the last 7 days; the next CPI/PPI prints are scheduled after this snapshot, so the current pricing mainly reflects labor-market softening rather than fresh inflation data.",
   "sources": [
     {
       "url": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
-      "type": "cme_fedwatch"
-    },
-    {
-      "url": "https://www.gate.com/en-us/news/detail/fed-keeps-rates-unchanged-with-779-probability-in-october-per-cme-fedwatch-17890910",
-      "type": "cme_fedwatch_report"
+      "type": "cme_fedwatch_official"
     },
     {
       "url": "https://www.frenzycap.com/fedwatch",
-      "type": "fed_funds_futures_replica"
+      "type": "cme_futures_replicated_fedwatch"
     },
     {
-      "url": "https://www.investing.com/central-banks/fed-rate-monitor",
-      "type": "fed_funds_futures_backup"
+      "url": "https://sessionopen.com/fed-watch",
+      "type": "fed_funds_futures_snapshot"
     },
     {
       "url": "https://www.bls.gov/news.release/archives/empsit_10022026.htm",
-      "type": "nfp_event"
+      "type": "nfp_release"
     },
     {
-      "url": "https://www.axios.com/2026/10/02/september-jobs-fed-interest-rates",
-      "type": "recent_event_impact"
+      "url": "https://www.kiplinger.com/investing/economy/this-weeks-economic-calendar",
+      "type": "recent_event_and_cme_fedwatch_context"
     }
   ],
   "confidence": "medium",
   "source_via": "codex_cli_websearch",
-  "fetched_at": "2026-10-05T04:34:11+00:00",
+  "fetched_at": "2026-10-05T13:04:18+00:00",
   "_meta": {
-    "cached_at": "2026-10-05T13:34:11.723374",
-    "age_sec": 30537,
-    "stale": true,
-    "refreshing": true
+    "cached_at": "2026-10-05T22:04:18.218307",
+    "age_sec": 1725,
+    "stale": false,
+    "refreshing": false
   }
 }

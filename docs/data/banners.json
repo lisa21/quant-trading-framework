@@ -8,16 +8,29 @@
     "magnitude": "small",
     "score": 0,
     "event_counts": {
-      "MEDIA_ATTACK": 4,
+      "MEDIA_ATTACK": 3,
       "DOMESTIC_POLICY": 2,
-      "TARIFF": 1,
+      "DEAL": 1,
       "GEOPOLITICAL": 2,
       "NOISE": 2
     },
-    "breaking": [],
+    "breaking": [
+      {
+        "event_type": "DEAL",
+        "direction": "bullish",
+        "magnitude": "medium",
+        "confidence": 7,
+        "tickers": [
+          "SPY"
+        ],
+        "preview": "Trump credits tariffs for bringing pharmaceutical manufacturing campus to Ohio: https://justthenews.com/government/white",
+        "verbatim": "Trump credits tariffs for bringing pharmaceutical manufacturing campus to Ohio",
+        "post_time": "2026-10-04T17:49:24.109Z"
+      }
+    ],
     "summary": {
-      "text": null,
-      "state": "generating",
+      "text": "美外交利好夹杂巴西选情与噪音，情绪中性偏暖",
+      "state": "cached",
       "post_ids": [
         "117386635456194100",
         "117386191183722432",
