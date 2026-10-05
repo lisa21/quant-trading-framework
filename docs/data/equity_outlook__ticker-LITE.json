@@ -6,10 +6,10 @@
     "n_analysts": 26,
     "recommendation": "strong_buy",
     "current_price": 1085.42,
-    "forward_eps": 34.73,
+    "forward_eps": 34.83,
     "trailing_eps": -92.91,
     "eps_growth_pct": null,
-    "forward_pe": 31.26,
+    "forward_pe": 31.16,
     "trailing_pe": null,
     "target_mean": 1156.88,
     "target_high": 1400.0,
@@ -147,13 +147,13 @@
           "downLast30days": 1.0
         },
         "0y": {
-          "upLast7days": 1.0,
+          "upLast7days": 0.0,
           "upLast30days": 22.0,
           "downLast30days": 0.0
         },
         "+1y": {
-          "upLast7days": 12.0,
-          "upLast30days": 12.0,
+          "upLast7days": 1.0,
+          "upLast30days": 1.0,
           "downLast30days": 0.0
         }
       },
@@ -165,9 +165,9 @@
         "eps_current": 34.8288,
         "eps_30d_ago": 33.3012,
         "eps_trend_pct_30d": 4.59,
-        "up_30d": 12,
+        "up_30d": 1,
         "down_30d": 0,
-        "net_30d": 12
+        "net_30d": 1
       }
     }
   },
@@ -196,13 +196,13 @@
     ]
   },
   "official_guidance_status": "not_connected",
-  "fetched_at": "2026-10-04T14:03:10.813850+00:00",
+  "fetched_at": "2026-10-04T22:03:07.485004+00:00",
   "source": "yfinance analyst aggregation",
   "_meta": {
-    "cached_at": "2026-10-04T23:03:10.814858",
-    "age_sec": 28795,
-    "stale": true,
-    "refreshing": true
+    "cached_at": "2026-10-05T07:03:07.485004",
+    "age_sec": 7200,
+    "stale": false,
+    "refreshing": false
   },
   "ticker": "LITE",
   "is_proxy": false
