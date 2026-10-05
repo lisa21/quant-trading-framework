@@ -8,46 +8,49 @@
     "magnitude": "small",
     "score": 0,
     "event_counts": {
-      "DOMESTIC_POLICY": 1,
-      "NOISE": 4,
-      "DEAL": 2,
-      "MEDIA_ATTACK": 1
+      "MEDIA_ATTACK": 6,
+      "GEOPOLITICAL": 2,
+      "MARKET": 1,
+      "DOMESTIC_POLICY": 2,
+      "TARIFF": 1,
+      "NOISE": 2
     },
     "breaking": [
       {
-        "event_type": "DEAL",
+        "event_type": "MARKET",
         "direction": "bullish",
         "magnitude": "medium",
-        "confidence": 8,
+        "confidence": 7,
         "tickers": [
-          "SPY"
+          "QQQ",
+          "TQQQ",
+          "SOXL",
+          "NVDA"
         ],
-        "preview": "I am thrilled to announce the Republic of Korea Deal keeps getting BETTER! 8.4 Billion Dollars for an enhanced Oil Recov",
-        "verbatim": "Republic of Korea Deal keeps getting BETTER! 8.4 Billion Dollars for an enhanced Oil Recovery Project.",
-        "post_time": "2026-10-02T12:38:49.656Z"
+        "preview": "Following the Historic White House Accord on Super Intelligence, where the World's most important Technology Companies c",
+        "verbatim": "the World's most important Technology Companies came together... America continues to lead the World in Super Intelligence",
+        "post_time": "2026-10-04T12:23:09.107Z"
       },
       {
-        "event_type": "DEAL",
+        "event_type": "TARIFF",
         "direction": "bullish",
         "magnitude": "small",
         "confidence": 7,
         "tickers": [
-          "SPY",
-          "QQQ",
-          "GLD"
+          "SPY"
         ],
-        "preview": "Europe has just agreed to release a massive amount of their heavily stocked Diesel Oil. The process will begin immediate",
-        "verbatim": "Europe has just agreed to release a massive amount of their heavily stocked Diesel Oil. The process will begin immediately.",
-        "post_time": "2026-10-02T14:01:01.407Z"
+        "preview": "Trump credits tariffs for bringing pharmaceutical manufacturing campus to Ohio: https://justthenews.com/government/white",
+        "verbatim": "Trump credits tariffs for bringing pharmaceutical manufacturing campus to Ohio",
+        "post_time": "2026-10-04T17:49:24.109Z"
       }
     ],
     "summary": {
-      "text": "内容多为致谢和媒体攻击，市场情绪偏中性。",
-      "state": "cached",
+      "text": null,
+      "state": "generating",
       "post_ids": [
-        "117373586079029403",
-        "117373388463106981",
-        "117372767454121009"
+        "117386191183722432",
+        "117384612085223868",
+        "117384609805773432"
       ]
     }
   },
