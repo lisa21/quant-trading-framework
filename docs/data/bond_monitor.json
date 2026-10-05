@@ -1,5 +1,5 @@
 {
-  "asof": "2026-10-05T19:33",
+  "asof": "2026-10-05T20:03",
   "yields": {
     "10y": {
       "value": 5.277,
@@ -247,7 +247,7 @@
     },
     {
       "level": "warn",
-      "msg": "USDJPY 157.96 进入 155-160 口头干预区间 (JP MoF)",
+      "msg": "USDJPY 157.93 进入 155-160 口头干预区间 (JP MoF)",
       "key": "jpy_verbal_zone"
     },
     {
@@ -320,13 +320,13 @@
     "sofr_pct": 3.87,
     "iorb_pct": 3.9,
     "sofr_iorb_spread_bps": -3.0,
-    "usdjpy": 157.96,
-    "usdjpy_20d_pct": 1.13,
-    "usdjpy_20d_delta_pct": 1.13,
+    "usdjpy": 157.93,
+    "usdjpy_20d_pct": 1.11,
+    "usdjpy_20d_delta_pct": 1.11,
     "usdjpy_60d_high": 163.86,
-    "usdjpy_pullback_from_60d_high_pct": -3.6,
-    "krw_usd": 1345.4,
-    "krw_20d_pct": 0.03,
+    "usdjpy_pullback_from_60d_high_pct": -3.62,
+    "krw_usd": 1343.8,
+    "krw_20d_pct": -0.09,
     "jgb_10y_pct": 2.94,
     "jgb_asof": "2026-08-01",
     "ust_jgb_spread_bps": 233.7,
@@ -392,31 +392,31 @@
       "es_f": {
         "symbol": "ES=F",
         "label": "S&P 500 futures",
-        "price": 7763.5,
-        "chg_pct": -0.18
+        "price": 7765.25,
+        "chg_pct": -0.15
       },
       "nq_f": {
         "symbol": "NQ=F",
         "label": "Nasdaq futures",
-        "price": 30987.25,
-        "chg_pct": -0.24
+        "price": 30990.5,
+        "chg_pct": -0.23
       },
       "cl_f": {
         "symbol": "CL=F",
         "label": "WTI crude futures",
-        "price": 90.75,
-        "chg_pct": -0.4
+        "price": 90.63,
+        "chg_pct": -0.53
       },
       "gc_f": {
         "symbol": "GC=F",
         "label": "Gold futures",
-        "price": 4185.9,
-        "chg_pct": 0.57
+        "price": 4188.4,
+        "chg_pct": 0.63
       }
     },
     "oil_uso": 147.37,
     "oil_pct_20d": 3.72,
-    "oil_wti": 90.75,
+    "oil_wti": 90.63,
     "eem_pct_20d": 0.3,
     "eem_vs_spx_20d": 0.51,
     "volume_confirm": {
@@ -499,20 +499,20 @@
     "unemployment_pct": 4.2,
     "unemployment_asof": "2026-09-01",
     "stablecoin_total_bn": 258.0,
-    "usdt_bn": 184.0,
+    "usdt_bn": 184.1,
     "usdc_bn": 74.0,
-    "vix": 16.3,
-    "bbi_score": 0.34,
+    "vix": 16.28,
+    "bbi_score": 0.35,
     "bbi_components": {
-      "vix": -0.28,
+      "vix": -0.29,
       "ig": -1.26,
       "hy": -0.78,
       "erp": 1.86
     }
   },
   "_meta": {
-    "cached_at": "2026-10-05T19:33:18.248105",
-    "age_sec": 1784,
+    "cached_at": "2026-10-05T20:03:20.305272",
+    "age_sec": 1783,
     "stale": true,
     "refreshing": true
   }
