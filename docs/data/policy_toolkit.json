@@ -1,6 +1,6 @@
 {
-  "as_of": "2026-10-05T07:06:52.273941",
-  "count_total_actions": 660,
+  "as_of": "2026-10-05T19:36:49.096508",
+  "count_total_actions": 667,
   "tools": [
     {
       "tool_key": "fed_hawkish_signal",
@@ -23,7 +23,7 @@
         "confidence": 9
       },
       "yield_reaction_30y": {},
-      "event_count_180d": 338
+      "event_count_180d": 343
     },
     {
       "tool_key": "ycc",
@@ -46,7 +46,7 @@
         "confidence": 5
       },
       "yield_reaction_30y": {},
-      "event_count_180d": 6
+      "event_count_180d": 7
     },
     {
       "tool_key": "qra_wording",
@@ -207,7 +207,7 @@
         "confidence": 6
       },
       "yield_reaction_30y": {},
-      "event_count_180d": 222
+      "event_count_180d": 223
     },
     {
       "tool_key": "fima_repo",
@@ -233,7 +233,5 @@
       "yield_reaction_30y": {},
       "event_count_180d": 0
     }
-  ],
-  "stale": true,
-  "age_hours": 12.4
+  ]
 }
