@@ -3,38 +3,38 @@
   "meetings": [
     {
       "date": "2026-10-28",
-      "days_until": 23,
+      "days_until": 22,
       "probabilities": {
         "cut_50": 0,
         "cut_25": 0,
-        "hold": 82,
-        "hike_25": 18,
+        "hold": 78,
+        "hike_25": 22,
         "hike_50": 0
       },
       "most_likely": "hold",
-      "consensus_direction": "hawkish_tail"
+      "consensus_direction": "hawkish_lean"
     },
     {
       "date": "2026-12-09",
-      "days_until": 65,
+      "days_until": 64,
       "probabilities": {
         "cut_50": 0,
         "cut_25": 0,
-        "hold": 21,
-        "hike_25": 79,
+        "hold": 18,
+        "hike_25": 82,
         "hike_50": 0
       },
       "most_likely": "hike_25",
-      "consensus_direction": "hawkish"
+      "consensus_direction": "hawkish_lean"
     },
     {
       "date": "2027-01-27",
-      "days_until": 114,
+      "days_until": 113,
       "probabilities": {
         "cut_50": 0,
         "cut_25": 0,
-        "hold": 61,
-        "hike_25": 39,
+        "hold": 58,
+        "hike_25": 42,
         "hike_50": 0
       },
       "most_likely": "hold",
@@ -42,7 +42,7 @@
     },
     {
       "date": "2027-03-17",
-      "days_until": 163,
+      "days_until": 162,
       "probabilities": {
         "cut_50": 0,
         "cut_25": 0,
@@ -51,43 +51,39 @@
         "hike_50": 0
       },
       "most_likely": "hike_25",
-      "consensus_direction": "hawkish"
+      "consensus_direction": "hawkish_lean"
     }
   ],
-  "implied_terminal_rate": "4.50-4.75",
-  "implied_terminal_date": "2027-Q3",
-  "data_snapshot_date": "2026-10-05",
-  "recent_event_impact": "2026-10-02 NFP +29K, below roughly 84K-90K expectations, unemployment 4.2%; CME-reported October hold odds rose sharply after the jobs report, while CPI/PPI for September are not yet released as of 2026-10-05.",
-  "commentary": "Snapshot is 2026-10-05 close; the latest market pricing reflects the 2026-10-02 weak NFP print, which cut near-term hike odds but did not remove the expected modest hiking path into December and early 2027. No September CPI/PPI release occurred in the last 7 days; the next CPI/PPI prints are scheduled after this snapshot, so the current pricing mainly reflects labor-market softening rather than fresh inflation data.",
+  "implied_terminal_rate": "4.42%",
+  "implied_terminal_date": "2027-03-17",
+  "data_snapshot_date": "2026-10-06",
+  "recent_event_impact": "2026-10-02 NFP: September payrolls +29K, below roughly +84K to +90K consensus, unemployment rose to 4.2%; October hike odds fell sharply and the near-term path shifted toward hold-first, hike-later pricing. September CPI and PPI had not yet been released as of the snapshot; they are scheduled for 2026-10-14 and 2026-10-15.",
+  "commentary": "Snapshot is current to 2026-10-06, with backup page timestamp 2026-10-05 17:09 ET, after the 2026-10-02 NFP release. The weak NFP print reduced immediate October tightening pressure, but futures still price a hawkish path with a December 25bp hike as the modal outcome and March 2027 implied rate near 4.42%.",
   "sources": [
     {
       "url": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
-      "type": "cme_fedwatch_official"
+      "type": "cme_fedwatch"
     },
     {
       "url": "https://www.frenzycap.com/fedwatch",
-      "type": "cme_futures_replicated_fedwatch"
+      "type": "fed_funds_futures_cme_methodology"
     },
     {
-      "url": "https://sessionopen.com/fed-watch",
-      "type": "fed_funds_futures_snapshot"
+      "url": "https://www.fisclear.com/fed-watch",
+      "type": "backup_cme_futures_derived"
     },
     {
-      "url": "https://www.bls.gov/news.release/archives/empsit_10022026.htm",
-      "type": "nfp_release"
-    },
-    {
-      "url": "https://www.kiplinger.com/investing/economy/this-weeks-economic-calendar",
-      "type": "recent_event_and_cme_fedwatch_context"
+      "url": "https://www.bls.gov/news.release/empsit.htm",
+      "type": "recent_event_nfp"
     }
   ],
   "confidence": "medium",
   "source_via": "codex_cli_websearch",
-  "fetched_at": "2026-10-05T13:04:18+00:00",
+  "fetched_at": "2026-10-05T21:34:16+00:00",
   "_meta": {
-    "cached_at": "2026-10-05T22:04:18.218307",
-    "age_sec": 30525,
-    "stale": true,
-    "refreshing": true
+    "cached_at": "2026-10-06T06:34:16.500839",
+    "age_sec": 1727,
+    "stale": false,
+    "refreshing": false
   }
 }
