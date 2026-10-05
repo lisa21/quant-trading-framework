@@ -43,7 +43,7 @@
       },
       {
         "ticker": "AVGO",
-        "pe": 18.32
+        "pe": 18.31
       },
       {
         "ticker": "MRVL",
@@ -236,13 +236,13 @@
     ]
   },
   "official_guidance_status": "not_connected",
-  "fetched_at": "2026-10-04T18:03:10.007726+00:00",
+  "fetched_at": "2026-10-05T00:33:09.147900+00:00",
   "source": "yfinance analyst aggregation",
   "_meta": {
-    "cached_at": "2026-10-05T03:03:10.025570",
-    "age_sec": 23396,
-    "stale": true,
-    "refreshing": true
+    "cached_at": "2026-10-05T09:33:09.147900",
+    "age_sec": 1797,
+    "stale": false,
+    "refreshing": false
   },
   "ticker": "SOXL",
   "is_proxy": true

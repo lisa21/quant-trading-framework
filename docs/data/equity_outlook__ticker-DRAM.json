@@ -7,10 +7,10 @@
     "recommendation": "strong_buy",
     "current_price": 1074.89,
     "forward_eps": 205.95,
-    "trailing_eps": 74.38,
-    "eps_growth_pct": 176.9,
+    "trailing_eps": 74.33,
+    "eps_growth_pct": 177.1,
     "forward_pe": 5.22,
-    "trailing_pe": 14.45,
+    "trailing_pe": 14.46,
     "target_mean": 1520.02,
     "target_high": 2200.0,
     "target_low": 361.0,
@@ -18,9 +18,9 @@
     "revenue_growth_pct": 379.3,
     "earnings_growth_pct": 1060.5,
     "next_earnings": "2026-12-24",
-    "implied_pe_hold": 2976.32,
-    "implied_pe_hold_upside": 176.9,
-    "peg_fair_price": 36433.35,
+    "implied_pe_hold": 2978.32,
+    "implied_pe_hold_upside": 177.1,
+    "peg_fair_price": 36474.54,
     "peg_ratio": 0.03,
     "hist_pe_median": 55.12,
     "hist_pe_p25": 8.3,
@@ -43,7 +43,7 @@
       },
       {
         "ticker": "285A.T",
-        "pe": 19.12
+        "pe": 19.25
       },
       {
         "ticker": "WDC",
@@ -204,8 +204,8 @@
       {
         "key": "pe_hold",
         "label": "前瞻 EPS × 当前估值",
-        "implied_price": 2976.32,
-        "gap_pct": 176.9
+        "implied_price": 2978.32,
+        "gap_pct": 177.1
       },
       {
         "key": "peer_pe",
@@ -217,22 +217,22 @@
     "median_gap_pct": 62.9,
     "revision_signal": "upward",
     "required_eps_growth_pct": -73.8,
-    "consensus_eps_growth_pct": 176.9,
-    "growth_cushion_pct": 250.7,
+    "consensus_eps_growth_pct": 177.1,
+    "growth_cushion_pct": 250.9,
     "rationale": [
       "多口径隐含价中位数高于现价 62.9%",
       "近 30 天 EPS 共识上修",
-      "历史 PE 口径要求 EPS 增长 -73.8%，共识为 +176.9%"
+      "历史 PE 口径要求 EPS 增长 -73.8%，共识为 +177.1%"
     ]
   },
   "official_guidance_status": "not_connected",
-  "fetched_at": "2026-10-04T18:03:09.719259+00:00",
+  "fetched_at": "2026-10-05T00:33:08.971982+00:00",
   "source": "yfinance analyst aggregation",
   "_meta": {
-    "cached_at": "2026-10-05T03:03:09.736310",
-    "age_sec": 23396,
-    "stale": true,
-    "refreshing": true
+    "cached_at": "2026-10-05T09:33:08.972981",
+    "age_sec": 1797,
+    "stale": false,
+    "refreshing": false
   },
   "ticker": "DRAM",
   "is_proxy": true

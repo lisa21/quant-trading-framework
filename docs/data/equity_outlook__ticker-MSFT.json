@@ -7,10 +7,10 @@
     "recommendation": "strong_buy",
     "current_price": 517.53,
     "forward_eps": 23.65,
-    "trailing_eps": 17.96,
+    "trailing_eps": 17.95,
     "eps_growth_pct": 31.7,
     "forward_pe": 21.89,
-    "trailing_pe": 28.82,
+    "trailing_pe": 28.83,
     "target_mean": 578.82,
     "target_high": 870.0,
     "target_low": 440.0,
@@ -18,7 +18,7 @@
     "revenue_growth_pct": 17.7,
     "earnings_growth_pct": 31.7,
     "next_earnings": "2026-10-29",
-    "implied_pe_hold": 681.41,
+    "implied_pe_hold": 681.79,
     "implied_pe_hold_upside": 31.7,
     "peg_fair_price": 749.62,
     "peg_ratio": 0.69,
@@ -208,7 +208,7 @@
       {
         "key": "pe_hold",
         "label": "前瞻 EPS × 当前估值",
-        "implied_price": 681.41,
+        "implied_price": 681.79,
         "gap_pct": 31.7
       },
       {
@@ -236,13 +236,13 @@
     ]
   },
   "official_guidance_status": "not_connected",
-  "fetched_at": "2026-10-04T18:03:09.992912+00:00",
+  "fetched_at": "2026-10-05T00:33:08.867516+00:00",
   "source": "yfinance analyst aggregation",
   "_meta": {
-    "cached_at": "2026-10-05T03:03:10.024065",
-    "age_sec": 23396,
-    "stale": true,
-    "refreshing": true
+    "cached_at": "2026-10-05T09:33:08.869511",
+    "age_sec": 1797,
+    "stale": false,
+    "refreshing": false
   },
   "ticker": "MSFT",
   "is_proxy": false
