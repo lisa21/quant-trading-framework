@@ -1,5 +1,5 @@
 {
-  "asof": "2026-10-06T00:33",
+  "asof": "2026-10-06T01:03",
   "yields": {
     "10y": {
       "value": 5.328,
@@ -66,13 +66,13 @@
       "source": "yfinance ^FVX"
     },
     "30y": {
-      "value": 5.682,
-      "chg_1d_bps": 5.2,
-      "chg_5d_bps": 12.1,
-      "chg_20d_bps": 43.6,
-      "z_score_20d": 1.27,
+      "value": 5.685,
+      "chg_1d_bps": 5.5,
+      "chg_5d_bps": 12.4,
+      "chg_20d_bps": 43.9,
+      "z_score_20d": 1.34,
       "history": [
-        5.682,
+        5.685,
         5.63,
         5.603,
         5.638,
@@ -98,13 +98,13 @@
       "source": "yfinance ^TYX"
     },
     "3m": {
-      "value": 4.003,
-      "chg_1d_bps": 1.0,
-      "chg_5d_bps": -5.4,
-      "chg_20d_bps": 24.6,
-      "z_score_20d": 0.38,
+      "value": 4.025,
+      "chg_1d_bps": 3.2,
+      "chg_5d_bps": -3.2,
+      "chg_20d_bps": 26.8,
+      "z_score_20d": 1.2,
       "history": [
-        4.003,
+        4.025,
         3.993,
         3.982,
         4.03,
@@ -203,10 +203,10 @@
     }
   },
   "gld_correlation": {
-    "vs_10y": -0.48,
-    "vs_tips_10y": -0.052,
+    "vs_10y": -0.482,
+    "vs_tips_10y": -0.047,
     "regime": "weak_hedge",
-    "reason": "相关性 -0.052，对冲关系变弱"
+    "reason": "相关性 -0.047，对冲关系变弱"
   },
   "anomalies": [],
   "warnings": [
@@ -242,7 +242,7 @@
     },
     {
       "level": "warn",
-      "msg": "MOVE 113.4 债券波动率抬升 (>100 = 期限对冲变贵)",
+      "msg": "MOVE 113.5 债券波动率抬升 (>100 = 期限对冲变贵)",
       "key": "move_elevated"
     },
     {
@@ -252,7 +252,7 @@
     },
     {
       "level": "warn",
-      "msg": "USDJPY 157.93 进入 155-160 口头干预区间 (JP MoF)",
+      "msg": "USDJPY 158.01 进入 155-160 口头干预区间 (JP MoF)",
       "key": "jpy_verbal_zone"
     },
     {
@@ -262,12 +262,12 @@
     },
     {
       "level": "bad",
-      "msg": "SPY-IEF 60d 相关 +0.504 → 股债双杀严重区 (1970s 滞胀级, 传统对冲完全失效)",
+      "msg": "SPY-IEF 60d 相关 +0.5 → 股债双杀严重区 (1970s 滞胀级, 传统对冲完全失效)",
       "key": "stock_bond_corr_extreme"
     },
     {
       "level": "bad",
-      "msg": "KBE/SPY 20d -7.57% 银行明显跑输 (2023-SVB 前 2 周就是这个)",
+      "msg": "KBE/SPY 20d -7.43% 银行明显跑输 (2023-SVB 前 2 周就是这个)",
       "key": "bank_stress_alert"
     },
     {
@@ -292,13 +292,13 @@
     },
     {
       "level": "info",
-      "msg": "稳定币影子美元 $258.0B (USDT $184B + USDC $74B, 抽血 EM 通胀国 + 压低美债短端)",
+      "msg": "稳定币影子美元 $258.1B (USDT $184B + USDC $74B, 抽血 EM 通胀国 + 压低美债短端)",
       "key": "stablecoin_large"
     }
   ],
   "macro_context": {
-    "term_spread_30_10_bps": 35.4,
-    "spx_trailing_pe": 24.99,
+    "term_spread_30_10_bps": 35.7,
+    "spx_trailing_pe": 25.0,
     "spx_eps_yield_pct": 4.0,
     "erp_vs_tips_pct": 1.12,
     "erp_basis": "trailing",
@@ -315,8 +315,8 @@
     "walcl_tn": 6.743,
     "walcl_asof": "2026-09-30",
     "walcl_12w_delta_bn": -0.0,
-    "move_index": 113.4,
-    "move_20d_delta": 40.3,
+    "move_index": 113.5,
+    "move_20d_delta": 40.4,
     "effr_pct": 3.88,
     "sofr_effr_spread_bps": 0.0,
     "bank_reserves_bn": 2948.0,
@@ -325,13 +325,13 @@
     "sofr_pct": 3.88,
     "iorb_pct": 3.9,
     "sofr_iorb_spread_bps": -2.0,
-    "usdjpy": 157.93,
-    "usdjpy_20d_pct": 1.46,
-    "usdjpy_20d_delta_pct": 1.46,
+    "usdjpy": 158.01,
+    "usdjpy_20d_pct": 1.16,
+    "usdjpy_20d_delta_pct": 1.16,
     "usdjpy_60d_high": 163.86,
-    "usdjpy_pullback_from_60d_high_pct": -3.62,
-    "krw_usd": 1342.5,
-    "krw_20d_pct": -0.19,
+    "usdjpy_pullback_from_60d_high_pct": -3.57,
+    "krw_usd": 1342.1,
+    "krw_20d_pct": -0.22,
     "jgb_10y_pct": 2.94,
     "jgb_asof": "2026-08-01",
     "ust_jgb_spread_bps": 238.8,
@@ -343,14 +343,14 @@
     "hedge_cost_jp": 2.42,
     "real_yield_gap_us_jp": 1.85,
     "cpi_jp_yoy_pct": 3.17,
-    "spy_ief_60d_corr": 0.504,
-    "kbe_spy_ratio": 0.08295,
-    "kbe_spy_20d_delta_pct": -7.57,
+    "spy_ief_60d_corr": 0.5,
+    "kbe_spy_ratio": 0.08308,
+    "kbe_spy_20d_delta_pct": -7.43,
     "cdx_ig_bps": 85.0,
     "cdx_hy_bps": 310.0,
-    "dxy": 102.2,
-    "dxy_pct_20d": 3.07,
-    "dxy_z_60d": 1.94,
+    "dxy": 102.18,
+    "dxy_pct_20d": 3.05,
+    "dxy_z_60d": 1.92,
     "asia_indices": {
       "N225": {
         "symbol": "^N225",
@@ -363,10 +363,10 @@
       "HSI": {
         "symbol": "^HSI",
         "label": "Hang Seng (港)",
-        "close": 24040.34,
-        "chg_1d": 0.28,
-        "chg_5d_pct": -1.92,
-        "asof": "2026-10-05"
+        "close": 23972.29,
+        "chg_1d": -2.6,
+        "chg_5d_pct": -3.19,
+        "asof": "2026-10-02"
       },
       "SSE": {
         "symbol": "000001.SS",
@@ -397,104 +397,104 @@
       "es_f": {
         "symbol": "ES=F",
         "label": "S&P 500 futures",
-        "price": 7807.25,
-        "chg_pct": 0.39
+        "price": 7815.0,
+        "chg_pct": 0.49
       },
       "nq_f": {
         "symbol": "NQ=F",
         "label": "Nasdaq futures",
-        "price": 31226.25,
-        "chg_pct": 0.53
+        "price": 31241.5,
+        "chg_pct": 0.58
       },
       "cl_f": {
         "symbol": "CL=F",
         "label": "WTI crude futures",
-        "price": 91.12,
-        "chg_pct": 0.01
+        "price": 90.33,
+        "chg_pct": -0.86
       },
       "gc_f": {
         "symbol": "GC=F",
         "label": "Gold futures",
-        "price": 4157.1,
-        "chg_pct": -0.12
+        "price": 4166.2,
+        "chg_pct": 0.09
       }
     },
-    "oil_uso": 145.93,
-    "oil_pct_20d": 2.8,
-    "oil_wti": 91.12,
-    "eem_pct_20d": -0.07,
-    "eem_vs_spx_20d": -0.68,
+    "oil_uso": 145.63,
+    "oil_pct_20d": 2.59,
+    "oil_wti": 90.33,
+    "eem_pct_20d": -0.09,
+    "eem_vs_spx_20d": -0.71,
     "volume_confirm": {
       "rates": {
         "proxy": "TLT",
         "label": "20+Y 美债",
-        "vol_z_20d": -1.56,
+        "vol_z_20d": -1.41,
         "notable": true
       },
       "real_rates": {
         "proxy": "TIP",
         "label": "TIPS ETF",
-        "vol_z_20d": -2.89,
+        "vol_z_20d": -2.79,
         "notable": true
       },
       "dxy": {
         "proxy": "UUP",
         "label": "美元 ETF",
-        "vol_z_20d": -1.81,
+        "vol_z_20d": -1.78,
         "notable": true
       },
       "credit_ig": {
         "proxy": "LQD",
         "label": "投资级信用 ETF",
-        "vol_z_20d": -2.62,
+        "vol_z_20d": -2.45,
         "notable": true
       },
       "credit_hy": {
         "proxy": "HYG",
         "label": "高收益信用 ETF",
-        "vol_z_20d": -1.57,
+        "vol_z_20d": -1.49,
         "notable": true
       },
       "vol": {
         "proxy": "VXX",
         "label": "VIX 期货 ETF",
-        "vol_z_20d": -2.39,
+        "vol_z_20d": -2.25,
         "notable": true
       },
       "em": {
         "proxy": "EEM",
         "label": "新兴市场 ETF",
-        "vol_z_20d": -4.32,
+        "vol_z_20d": -4.08,
         "notable": true
       },
       "us_equity": {
         "proxy": "SPY",
         "label": "S&P 500 ETF",
-        "vol_z_20d": -3.83,
+        "vol_z_20d": -3.65,
         "notable": true
       },
       "us_qqq": {
         "proxy": "QQQ",
         "label": "Nasdaq 100 ETF",
-        "vol_z_20d": -3.62,
+        "vol_z_20d": -3.46,
         "notable": true
       },
       "jp_equity": {
         "proxy": "EWJ",
         "label": "iShares JP ETF (代 N225)",
-        "vol_z_20d": -1.97,
+        "vol_z_20d": -1.9,
         "notable": true
       },
       "kr_equity": {
         "proxy": "EWY",
         "label": "iShares KR ETF (代 KOSPI)",
-        "vol_z_20d": -2.6,
+        "vol_z_20d": -2.46,
         "notable": true
       },
       "oil": {
         "proxy": "USO",
         "label": "WTI 原油 ETF",
-        "vol_z_20d": -2.48,
+        "vol_z_20d": -2.41,
         "notable": true
       }
     },
@@ -503,21 +503,21 @@
     "core_cpi_yoy_pct": 2.76,
     "unemployment_pct": 4.2,
     "unemployment_asof": "2026-09-01",
-    "stablecoin_total_bn": 258.0,
+    "stablecoin_total_bn": 258.1,
     "usdt_bn": 184.1,
     "usdc_bn": 74.0,
-    "vix": 15.56,
-    "bbi_score": 0.53,
+    "vix": 15.59,
+    "bbi_score": 0.52,
     "bbi_components": {
-      "vix": -0.41,
+      "vix": -0.4,
       "ig": -1.29,
       "hy": -0.88,
       "erp": 1.88
     }
   },
   "_meta": {
-    "cached_at": "2026-10-06T00:33:16.642492",
-    "age_sec": 1787,
+    "cached_at": "2026-10-06T01:03:17.973172",
+    "age_sec": 1785,
     "stale": true,
     "refreshing": true
   }

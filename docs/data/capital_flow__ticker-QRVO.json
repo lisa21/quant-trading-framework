@@ -1,11 +1,11 @@
 {
-  "ticker": "IEI",
+  "ticker": "QRVO",
   "flow": {
     "super_net": 0.0,
     "big_net": 0.0,
-    "mid_net": -6724633.328,
-    "small_net": -3801383.272,
-    "total_net": -10526016.600000001,
+    "mid_net": 0.0,
+    "small_net": 0.0,
+    "total_net": 0.0,
     "smart_pct": 0.0
   },
   "anomaly": {
@@ -13,11 +13,11 @@
     "reason": "",
     "score": 0.0
   },
-  "asof": "2026-10-05 12:02:31",
+  "asof": "",
   "source": "moomoo",
   "_meta": {
-    "cached_at": "2026-10-06T01:03:05.331418",
-    "age_sec": 1798,
+    "cached_at": "2026-10-06T00:03:04.561560",
+    "age_sec": 5399,
     "stale": true,
     "refreshing": true
   }
