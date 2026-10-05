@@ -13168,14 +13168,14 @@
   "cache_contract": "15efd89eda8e",
   "_meta": {
     "cached_at": "2026-10-05T21:33:46.707113",
-    "age_sec": 7157,
+    "age_sec": 8957,
     "stale": false,
     "refreshing": false
   },
   "flow_meta": {
     "generated_at": "2026-10-05T14:06:22.478399+00:00",
     "status": "ready",
-    "age_sec": 1559.7,
+    "age_sec": 3359.7,
     "stale": false
   }
 }

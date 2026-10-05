@@ -1,5 +1,5 @@
 {
-  "ts": "2026-10-05T14:03:05.170103+00:00",
+  "ts": "2026-10-05T14:33:04.249618+00:00",
   "tickers": [
     {
       "ticker": "TDK",
@@ -3585,7 +3585,7 @@
       "earnings_event": {
         "date": "2026-08-03",
         "state": "released",
-        "days": -63,
+        "days": -64,
         "source_verified": true,
         "source_label": "MUFG IR · FY2026 Q1 财报日程",
         "source_url": "https://www.mufg.jp/english/ir/index.html"
@@ -5622,7 +5622,7 @@
   ],
   "data_source": "yfinance",
   "_meta": {
-    "cached_at": "2026-10-05T23:03:07.522440",
+    "cached_at": "2026-10-05T23:33:07.449212",
     "age_sec": 1796,
     "stale": true,
     "refreshing": true
