@@ -33,7 +33,7 @@
       "times": {
         "decision_written_at": "2026-10-05T16:03:39+00:00",
         "market_observed_at": "2026-10-06 01:03",
-        "broker_checked_at": "2026-10-05T16:33:03+00:00",
+        "broker_checked_at": "2026-10-05T17:03:03+00:00",
         "last_fill_at": "2026-09-01T16:03:59.056554+00:00"
       },
       "system_action": "WATCH_BUY",
@@ -61,7 +61,7 @@
       "times": {
         "decision_written_at": "2026-10-05T16:03:40+00:00",
         "market_observed_at": "2026-10-06 01:03",
-        "broker_checked_at": "2026-10-05T16:33:03+00:00",
+        "broker_checked_at": "2026-10-05T17:03:03+00:00",
         "last_fill_at": "2026-09-02T10:06:19.550586+00:00"
       },
       "system_action": "WATCH_BUY",
@@ -89,7 +89,7 @@
       "times": {
         "decision_written_at": "2026-10-05T16:03:54+00:00",
         "market_observed_at": "2026-10-06 01:03",
-        "broker_checked_at": "2026-10-05T16:33:03+00:00",
+        "broker_checked_at": "2026-10-05T17:03:03+00:00",
         "last_fill_at": "2026-08-18T19:47:45.581288+00:00"
       },
       "system_action": "WATCH_BUY_PROBE",
@@ -128,7 +128,7 @@
       "times": {
         "decision_written_at": "2026-10-05T16:03:55+00:00",
         "market_observed_at": "2026-10-06 01:03",
-        "broker_checked_at": "2026-10-05T16:33:03+00:00",
+        "broker_checked_at": "2026-10-05T17:03:03+00:00",
         "last_fill_at": "2026-10-05T13:21:07.040509+00:00"
       },
       "system_action": "WATCH_BUY",
@@ -156,7 +156,7 @@
       "times": {
         "decision_written_at": "2026-10-05T16:04:04+00:00",
         "market_observed_at": "2026-10-06 01:04",
-        "broker_checked_at": "2026-10-05T16:33:03+00:00",
+        "broker_checked_at": "2026-10-05T17:03:03+00:00",
         "last_fill_at": null
       },
       "system_action": "HOLD",

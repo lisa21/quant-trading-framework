@@ -1,356 +1,356 @@
 {
-  "ts": "2026-10-04T16:03:04.794455+00:00",
+  "ts": "2026-10-05T16:33:03.798446+00:00",
   "boards": [
     {
       "key": "QQQ",
       "zh": "纳斯达克100 QQQ",
       "note": "TQQQ 3x 追踪",
-      "spot": 749.58,
+      "spot": 753.64,
       "expiry": "2026-10-05",
       "distribution": [
         {
-          "strike": 735.0,
-          "call_vol": 72,
-          "put_vol": 30992
-        },
-        {
-          "strike": 736.0,
-          "call_vol": 231,
-          "put_vol": 28035
-        },
-        {
           "strike": 740.0,
-          "call_vol": 1092,
-          "put_vol": 19167
+          "call_vol": 187,
+          "put_vol": 13969
         },
         {
           "strike": 742.0,
-          "call_vol": 409,
-          "put_vol": 11629
+          "call_vol": 208,
+          "put_vol": 10059
         },
         {
           "strike": 743.0,
-          "call_vol": 824,
-          "put_vol": 14973
+          "call_vol": 319,
+          "put_vol": 11247
         },
         {
           "strike": 744.0,
-          "call_vol": 1253,
-          "put_vol": 11410
+          "call_vol": 299,
+          "put_vol": 12843
         },
         {
           "strike": 745.0,
-          "call_vol": 2756,
-          "put_vol": 31076
+          "call_vol": 1900,
+          "put_vol": 30005
         },
         {
           "strike": 746.0,
-          "call_vol": 1915,
-          "put_vol": 13208
+          "call_vol": 810,
+          "put_vol": 32240
         },
         {
           "strike": 747.0,
-          "call_vol": 6039,
-          "put_vol": 19266
+          "call_vol": 4395,
+          "put_vol": 45940
         },
         {
           "strike": 748.0,
-          "call_vol": 15394,
-          "put_vol": 53705
+          "call_vol": 5568,
+          "put_vol": 68143
         },
         {
           "strike": 749.0,
-          "call_vol": 33731,
-          "put_vol": 39572
+          "call_vol": 9520,
+          "put_vol": 66666
         },
         {
           "strike": 750.0,
-          "call_vol": 53892,
-          "put_vol": 59252
+          "call_vol": 40686,
+          "put_vol": 192828
         },
         {
           "strike": 751.0,
-          "call_vol": 26935,
-          "put_vol": 22644
+          "call_vol": 56482,
+          "put_vol": 126681
         },
         {
           "strike": 752.0,
-          "call_vol": 35065,
-          "put_vol": 14446
+          "call_vol": 127353,
+          "put_vol": 200402
         },
         {
           "strike": 753.0,
-          "call_vol": 40323,
-          "put_vol": 14136
+          "call_vol": 228255,
+          "put_vol": 247881
         },
         {
           "strike": 754.0,
-          "call_vol": 25903,
-          "put_vol": 7193
+          "call_vol": 265147,
+          "put_vol": 115314
         },
         {
           "strike": 755.0,
-          "call_vol": 46274,
-          "put_vol": 3285
+          "call_vol": 194198,
+          "put_vol": 34507
         },
         {
           "strike": 756.0,
-          "call_vol": 13673,
-          "put_vol": 1020
+          "call_vol": 81073,
+          "put_vol": 11815
         },
         {
           "strike": 757.0,
-          "call_vol": 11090,
-          "put_vol": 0
+          "call_vol": 42893,
+          "put_vol": 2184
+        },
+        {
+          "strike": 758.0,
+          "call_vol": 26487,
+          "put_vol": 1577
+        },
+        {
+          "strike": 759.0,
+          "call_vol": 12110,
+          "put_vol": 823
         },
         {
           "strike": 760.0,
-          "call_vol": 31534,
-          "put_vol": 713
+          "call_vol": 27763,
+          "put_vol": 861
         }
       ],
-      "call_wall_strike": 750.0,
-      "call_wall_vol": 53892,
-      "put_wall_strike": 750.0,
-      "put_wall_vol": 59252,
-      "max_pain": 750.0,
+      "call_wall_strike": 754.0,
+      "call_wall_vol": 265147,
+      "put_wall_strike": 753.0,
+      "put_wall_vol": 247881,
+      "max_pain": 753.0,
       "n_strikes": 20
     },
     {
       "key": "SMH",
       "zh": "半导体 SMH",
       "note": "SOXL 3x / DRAM / MULL 追踪",
-      "spot": 630.6,
+      "spot": 630.84,
       "expiry": "2026-10-05",
       "distribution": [
         {
+          "strike": 590.0,
+          "call_vol": 3,
+          "put_vol": 146
+        },
+        {
           "strike": 592.5,
-          "call_vol": 0,
-          "put_vol": 208
+          "call_vol": 1,
+          "put_vol": 125
         },
         {
           "strike": 595.0,
           "call_vol": 10,
-          "put_vol": 185
+          "put_vol": 109
         },
         {
           "strike": 600.0,
-          "call_vol": 45,
-          "put_vol": 300
+          "call_vol": 6,
+          "put_vol": 127
         },
         {
-          "strike": 605.0,
-          "call_vol": 17,
-          "put_vol": 901
+          "strike": 612.5,
+          "call_vol": 1,
+          "put_vol": 261
         },
         {
-          "strike": 607.5,
-          "call_vol": 14,
-          "put_vol": 433
+          "strike": 615.0,
+          "call_vol": 6,
+          "put_vol": 98
         },
         {
-          "strike": 610.0,
-          "call_vol": 44,
-          "put_vol": 273
+          "strike": 617.5,
+          "call_vol": 1,
+          "put_vol": 282
+        },
+        {
+          "strike": 620.0,
+          "call_vol": 31,
+          "put_vol": 377
         },
         {
           "strike": 622.5,
-          "call_vol": 255,
-          "put_vol": 0
+          "call_vol": 9,
+          "put_vol": 357
+        },
+        {
+          "strike": 625.0,
+          "call_vol": 12,
+          "put_vol": 947
+        },
+        {
+          "strike": 627.5,
+          "call_vol": 60,
+          "put_vol": 580
         },
         {
           "strike": 630.0,
-          "call_vol": 201,
-          "put_vol": 0
+          "call_vol": 194,
+          "put_vol": 804
         },
         {
           "strike": 632.5,
-          "call_vol": 143,
-          "put_vol": 0
+          "call_vol": 707,
+          "put_vol": 45
         },
         {
           "strike": 635.0,
-          "call_vol": 573,
-          "put_vol": 0
+          "call_vol": 413,
+          "put_vol": 13
         },
         {
           "strike": 637.5,
-          "call_vol": 538,
-          "put_vol": 0
+          "call_vol": 1053,
+          "put_vol": 3
         },
         {
           "strike": 640.0,
-          "call_vol": 509,
-          "put_vol": 0
-        },
-        {
-          "strike": 642.5,
-          "call_vol": 459,
-          "put_vol": 0
+          "call_vol": 221,
+          "put_vol": 38
         },
         {
           "strike": 645.0,
-          "call_vol": 1135,
-          "put_vol": 0
+          "call_vol": 260,
+          "put_vol": 1
         },
         {
           "strike": 647.5,
-          "call_vol": 471,
-          "put_vol": 0
+          "call_vol": 70,
+          "put_vol": 6
         },
         {
           "strike": 650.0,
-          "call_vol": 1555,
-          "put_vol": 0
+          "call_vol": 196,
+          "put_vol": 3
         },
         {
-          "strike": 652.5,
-          "call_vol": 594,
-          "put_vol": 0
-        },
-        {
-          "strike": 655.0,
-          "call_vol": 1579,
-          "put_vol": 0
-        },
-        {
-          "strike": 657.5,
-          "call_vol": 290,
-          "put_vol": 5
-        },
-        {
-          "strike": 660.0,
-          "call_vol": 343,
+          "strike": 665.0,
+          "call_vol": 408,
           "put_vol": 0
         }
       ],
-      "call_wall_strike": 655.0,
-      "call_wall_vol": 1579,
-      "put_wall_strike": 605.0,
-      "put_wall_vol": 901,
-      "max_pain": 610.0,
+      "call_wall_strike": 637.5,
+      "call_wall_vol": 1053,
+      "put_wall_strike": 625.0,
+      "put_wall_vol": 947,
+      "max_pain": 630.0,
       "n_strikes": 20
     },
     {
       "key": "GLD",
       "zh": "黄金 GLD",
       "note": "GLD 现货追踪",
-      "spot": 380.14,
+      "spot": 378.43,
       "expiry": "2026-10-05",
       "distribution": [
         {
-          "strike": 360.0,
-          "call_vol": 0,
-          "put_vol": 736
-        },
-        {
-          "strike": 365.0,
-          "call_vol": 0,
-          "put_vol": 657
-        },
-        {
           "strike": 370.0,
-          "call_vol": 0,
-          "put_vol": 1651
+          "call_vol": 18,
+          "put_vol": 698
         },
         {
           "strike": 375.0,
-          "call_vol": 0,
-          "put_vol": 2278
+          "call_vol": 200,
+          "put_vol": 683
         },
         {
           "strike": 376.0,
-          "call_vol": 0,
-          "put_vol": 550
+          "call_vol": 39,
+          "put_vol": 644
         },
         {
           "strike": 377.0,
-          "call_vol": 67,
-          "put_vol": 2736
+          "call_vol": 226,
+          "put_vol": 1476
         },
         {
           "strike": 378.0,
-          "call_vol": 0,
-          "put_vol": 682
+          "call_vol": 354,
+          "put_vol": 3491
         },
         {
           "strike": 379.0,
-          "call_vol": 0,
-          "put_vol": 1120
+          "call_vol": 2287,
+          "put_vol": 6973
         },
         {
           "strike": 380.0,
-          "call_vol": 1547,
-          "put_vol": 803
+          "call_vol": 4704,
+          "put_vol": 2367
         },
         {
           "strike": 381.0,
-          "call_vol": 3052,
-          "put_vol": 733
+          "call_vol": 2774,
+          "put_vol": 320
         },
         {
           "strike": 382.0,
-          "call_vol": 0,
-          "put_vol": 264
+          "call_vol": 1435,
+          "put_vol": 80
         },
         {
           "strike": 383.0,
-          "call_vol": 1509,
-          "put_vol": 90
+          "call_vol": 1727,
+          "put_vol": 28
         },
         {
           "strike": 384.0,
-          "call_vol": 2053,
-          "put_vol": 75
+          "call_vol": 806,
+          "put_vol": 55
         },
         {
           "strike": 385.0,
-          "call_vol": 1723,
-          "put_vol": 230
+          "call_vol": 655,
+          "put_vol": 55
+        },
+        {
+          "strike": 386.0,
+          "call_vol": 477,
+          "put_vol": 63
         },
         {
           "strike": 387.0,
-          "call_vol": 753,
-          "put_vol": 11
-        },
-        {
-          "strike": 388.0,
-          "call_vol": 200,
-          "put_vol": 18
+          "call_vol": 239,
+          "put_vol": 85
         },
         {
           "strike": 390.0,
-          "call_vol": 1626,
-          "put_vol": 73
+          "call_vol": 209,
+          "put_vol": 124
         },
         {
-          "strike": 393.0,
-          "call_vol": 226,
-          "put_vol": 26
+          "strike": 391.0,
+          "call_vol": 81,
+          "put_vol": 112
         },
         {
           "strike": 395.0,
-          "call_vol": 244,
-          "put_vol": 2
+          "call_vol": 699,
+          "put_vol": 162
         },
         {
-          "strike": 400.0,
-          "call_vol": 184,
-          "put_vol": 2
+          "strike": 407.0,
+          "call_vol": 2,
+          "put_vol": 235
+        },
+        {
+          "strike": 408.0,
+          "call_vol": 15,
+          "put_vol": 255
+        },
+        {
+          "strike": 413.0,
+          "call_vol": 18,
+          "put_vol": 198
         }
       ],
-      "call_wall_strike": 381.0,
-      "call_wall_vol": 3052,
-      "put_wall_strike": 377.0,
-      "put_wall_vol": 2736,
+      "call_wall_strike": 380.0,
+      "call_wall_vol": 4704,
+      "put_wall_strike": 379.0,
+      "put_wall_vol": 6973,
       "max_pain": 380.0,
       "n_strikes": 20
     }
   ],
   "_meta": {
-    "cached_at": "2026-10-05T01:03:08.344184",
-    "age_sec": 88195,
-    "stale": true,
-    "refreshing": true
+    "cached_at": "2026-10-06T01:33:05.850967",
+    "age_sec": 1797,
+    "stale": false,
+    "refreshing": false
   }
 }
