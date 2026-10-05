@@ -1,5 +1,5 @@
 {
-  "asof": "2026-10-05T18:03",
+  "asof": "2026-10-05T18:33",
   "yields": {
     "10y": {
       "value": 5.277,
@@ -325,8 +325,8 @@
     "usdjpy_20d_delta_pct": 1.46,
     "usdjpy_60d_high": 163.86,
     "usdjpy_pullback_from_60d_high_pct": -3.62,
-    "krw_usd": 1343.3,
-    "krw_20d_pct": -0.13,
+    "krw_usd": 1342.6,
+    "krw_20d_pct": -0.18,
     "jgb_10y_pct": 2.94,
     "jgb_asof": "2026-08-01",
     "ust_jgb_spread_bps": 233.7,
@@ -343,9 +343,9 @@
     "kbe_spy_20d_delta_pct": -6.15,
     "cdx_ig_bps": 86.0,
     "cdx_hy_bps": 324.0,
-    "dxy": 102.13,
-    "dxy_pct_20d": 3.0,
-    "dxy_z_60d": 1.87,
+    "dxy": 102.11,
+    "dxy_pct_20d": 2.97,
+    "dxy_z_60d": 1.85,
     "asia_indices": {
       "N225": {
         "symbol": "^N225",
@@ -392,31 +392,31 @@
       "es_f": {
         "symbol": "ES=F",
         "label": "S&P 500 futures",
-        "price": 7771.25,
+        "price": 7770.75,
         "chg_pct": -0.08
       },
       "nq_f": {
         "symbol": "NQ=F",
         "label": "Nasdaq futures",
-        "price": 31034.25,
-        "chg_pct": -0.09
+        "price": 31030.5,
+        "chg_pct": -0.1
       },
       "cl_f": {
         "symbol": "CL=F",
         "label": "WTI crude futures",
-        "price": 90.11,
-        "chg_pct": -1.1
+        "price": 90.33,
+        "chg_pct": -0.86
       },
       "gc_f": {
         "symbol": "GC=F",
         "label": "Gold futures",
-        "price": 4195.9,
-        "chg_pct": 0.81
+        "price": 4197.7,
+        "chg_pct": 0.85
       }
     },
     "oil_uso": 147.37,
     "oil_pct_20d": 3.72,
-    "oil_wti": 90.11,
+    "oil_wti": 90.33,
     "eem_pct_20d": 0.3,
     "eem_vs_spx_20d": 0.51,
     "volume_confirm": {
@@ -499,20 +499,20 @@
     "unemployment_pct": 4.2,
     "unemployment_asof": "2026-09-01",
     "stablecoin_total_bn": 258.0,
-    "usdt_bn": 184.1,
+    "usdt_bn": 184.0,
     "usdc_bn": 74.0,
-    "vix": 16.38,
-    "bbi_score": 0.34,
+    "vix": 16.25,
+    "bbi_score": 0.35,
     "bbi_components": {
-      "vix": -0.27,
+      "vix": -0.29,
       "ig": -1.26,
       "hy": -0.78,
       "erp": 1.86
     }
   },
   "_meta": {
-    "cached_at": "2026-10-05T18:03:19.159831",
-    "age_sec": 1783,
+    "cached_at": "2026-10-05T18:33:18.321096",
+    "age_sec": 1785,
     "stale": true,
     "refreshing": true
   }
