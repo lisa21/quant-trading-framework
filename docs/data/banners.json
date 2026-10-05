@@ -10,15 +10,15 @@
     "event_counts": {
       "MEDIA_ATTACK": 3,
       "DOMESTIC_POLICY": 2,
-      "DEAL": 1,
+      "TARIFF": 1,
       "GEOPOLITICAL": 2,
       "NOISE": 2
     },
     "breaking": [
       {
-        "event_type": "DEAL",
+        "event_type": "TARIFF",
         "direction": "bullish",
-        "magnitude": "medium",
+        "magnitude": "small",
         "confidence": 7,
         "tickers": [
           "SPY"
