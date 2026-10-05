@@ -2,21 +2,21 @@
   "ticker": "MULL",
   "flow": {
     "super_net": 0.0,
-    "big_net": 228839.15600000002,
+    "big_net": -60415.74399999995,
     "mid_net": -1107644.371,
-    "small_net": -3643742.323000001,
-    "total_net": -4522547.538000001,
-    "smart_pct": 0.008705472839998424
+    "small_net": -4700039.824000001,
+    "total_net": -5868099.939000003,
+    "smart_pct": -0.001879444726290814
   },
   "anomaly": {
     "detected": false,
     "reason": "",
     "score": 0.0
   },
-  "asof": "2026-10-05 14:02:49",
+  "asof": "2026-10-05 14:33:01",
   "source": "moomoo",
   "_meta": {
-    "cached_at": "2026-10-06T03:03:03.750065",
+    "cached_at": "2026-10-06T03:33:04.619323",
     "age_sec": 1800,
     "stale": true,
     "refreshing": true
