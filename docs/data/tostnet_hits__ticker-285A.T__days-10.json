@@ -38,8 +38,8 @@
   "count": 4,
   "_meta": {
     "cached_at": "2026-10-05T07:03:07.247302",
-    "age_sec": 19801,
-    "stale": false,
-    "refreshing": false
+    "age_sec": 21601,
+    "stale": true,
+    "refreshing": true
   }
 }
