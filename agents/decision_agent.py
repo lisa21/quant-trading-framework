@@ -776,6 +776,45 @@ def _apply_options_flow_guard(
     return enriched
 
 
+def _et_today():
+    from datetime import datetime as _dt, timedelta as _td, timezone as _tz
+    try:
+        from zoneinfo import ZoneInfo
+        return _dt.now(ZoneInfo("America/New_York")).date()
+    except Exception:
+        return (_dt.now(_tz.utc) - _td(hours=4)).date()
+
+
+def _apply_supply_event_guard(result: dict, ticker: str, context=None) -> dict:
+    """供给冲击日历 (2026-10-05, supply_calendar): 个股增发 / 股东转售 / 解禁窗口内
+    新买入降级 HOLD (不卖出); 指数调仓 / 季度期权到期 / 季末前后一天只标注 flow_day.
+    回测 context 不读 live 日历 (无未来函数). 日历缺失或过期 → 不拦截."""
+    if context is not None and getattr(context, "is_backtest", False):
+        return result
+    try:
+        import supply_calendar as _sc
+        data = _sc.load()
+        today = _et_today()
+        flow = _sc.flow_days_near(today, data)
+        events = _sc.active_events(ticker or "", today, data)
+    except Exception:
+        return result
+    if flow:
+        result = {**result, "flow_day": [f"{e['type']} {e['date']}" for e in flow]}
+    action = result.get("action")
+    if not events or action not in BULLISH_SIGNAL_ACTIONS:
+        return result
+    e = events[0]
+    return {
+        **result,
+        "action":       "HOLD",
+        "demoted_from": action,
+        "supply_guard": events,
+        "reason":       (f"supply_event ({e['type']} {e['date']}, 窗口 {e['window'][0]}~{e['window'][1]}): "
+                         f"供给冲击窗口内不新买 (orig={action}, prev={(result.get('reason') or '')[:40]})"),
+    }
+
+
 def _apply_earnings_guard(result: dict, ticker: str, events: dict) -> dict:
     """关联个股财报临近时，按期权隐含 move 屏蔽 BUY/WATCH_BUY。
 
@@ -1585,6 +1624,7 @@ def _get_decision_impl(market: dict, events: dict, macro: dict | None,
     )
     result = _apply_uncertain_guard(result, ev)
     result = _apply_earnings_guard(result, market.get("ticker", ""), events)
+    result = _apply_supply_event_guard(result, market.get("ticker", ""), context)
     result = _apply_trump_override(result, trump_sig)
     result = _apply_options_flow_guard(
         result, market.get("ticker", ""), market, events

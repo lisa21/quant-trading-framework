@@ -97,3 +97,4 @@ agents/signals/growth_watch.json
 agents/signals/growth_watch_log.jsonl
 agents/signals/job_*
 agents/signals/semi_risk_guard.json
+agents/signals/supply_calendar.json
