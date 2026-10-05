@@ -30,16 +30,16 @@
     "implied_hist_p25": 728.02,
     "implied_hist_p75": 1112.19,
     "implied_hist_upside": 633.4,
-    "peer_pe_median": 18.46,
+    "peer_pe_median": 18.69,
     "peer_pe_n_peers": 5,
     "peer_pe_details": [
       {
         "ticker": "SWKS",
-        "pe": 16.45
+        "pe": 16.91
       },
       {
         "ticker": "AVGO",
-        "pe": 18.46
+        "pe": 18.69
       },
       {
         "ticker": "6981.T",
@@ -47,15 +47,15 @@
       },
       {
         "ticker": "QCOM",
-        "pe": 17.75
+        "pe": 17.72
       },
       {
         "ticker": "MTSI",
-        "pe": 37.36
+        "pe": 38.67
       }
     ],
-    "implied_peer_median": 145.95,
-    "implied_peer_upside": 27.8,
+    "implied_peer_median": 147.77,
+    "implied_peer_upside": 29.4,
     "source": "yfinance analyst aggregation",
     "forward_estimates": {
       "earnings": {
@@ -214,29 +214,29 @@
       {
         "key": "peer_pe",
         "label": "前瞻 EPS × 同行 PE 中位",
-        "implied_price": 145.95,
-        "gap_pct": 27.8
+        "implied_price": 147.77,
+        "gap_pct": 29.4
       }
     ],
-    "median_gap_pct": 27.8,
+    "median_gap_pct": 29.4,
     "revision_signal": "upward",
     "required_eps_growth_pct": -75.0,
     "consensus_eps_growth_pct": 83.4,
     "growth_cushion_pct": 158.4,
     "rationale": [
-      "多口径隐含价中位数高于现价 27.8%",
+      "多口径隐含价中位数高于现价 29.4%",
       "近 30 天 EPS 共识上修",
       "历史 PE 口径要求 EPS 增长 -75.0%，共识为 +83.4%"
     ]
   },
   "official_guidance_status": "not_connected",
-  "fetched_at": "2026-10-05T14:03:09.695567+00:00",
+  "fetched_at": "2026-10-05T20:33:10.147155+00:00",
   "source": "yfinance analyst aggregation",
   "_meta": {
-    "cached_at": "2026-10-05T23:03:09.696569",
-    "age_sec": 23398,
-    "stale": true,
-    "refreshing": true
+    "cached_at": "2026-10-06T05:33:10.147155",
+    "age_sec": 1796,
+    "stale": false,
+    "refreshing": false
   },
   "ticker": "QRVO",
   "is_proxy": false

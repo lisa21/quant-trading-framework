@@ -4,9 +4,9 @@
       "key": "SPY",
       "zh": "大盘 S&P500",
       "linked": "参考",
-      "price": 774.88,
-      "pct_5d": 1.21,
-      "pct_20d": 0.86,
+      "price": 774.83,
+      "pct_5d": 1.2,
+      "pct_20d": 0.85,
       "dist_ma20": 1.38,
       "trend": "up",
       "regime": "chop",
@@ -17,12 +17,12 @@
       "is_choppy": true,
       "style_reason": "10日趋势效率很低(0.04)；ADX偏低(11.0)；10日穿越MA20 2次；净涨跌小但路径反复",
       "style_metrics": {
-        "pct_5d": 1.21,
-        "pct_20d": 0.86,
+        "pct_5d": 1.2,
+        "pct_20d": 0.85,
         "dist_ma20_pct": 1.38,
-        "dist_ma50_pct": 1.56,
-        "efficiency_10": 0.044,
-        "efficiency_20": 0.081,
+        "dist_ma50_pct": 1.55,
+        "efficiency_10": 0.042,
+        "efficiency_20": 0.08,
         "adx_14": 11.0,
         "reversal_count_10d": 3,
         "ma20_crossings_10d": 2,
@@ -94,10 +94,10 @@
       "key": "GLD",
       "zh": "黄金 GLD",
       "linked": "GLD 1x",
-      "price": 379.57,
-      "pct_5d": 0.44,
+      "price": 379.55,
+      "pct_5d": 0.43,
       "pct_20d": -6.69,
-      "dist_ma20": -3.13,
+      "dist_ma20": -3.14,
       "trend": "down",
       "regime": "weak",
       "regime_zh": "弱势",
@@ -107,9 +107,9 @@
       "is_choppy": false,
       "style_reason": "10日涨跌反转7次",
       "style_metrics": {
-        "pct_5d": 0.44,
+        "pct_5d": 0.43,
         "pct_20d": -6.69,
-        "dist_ma20_pct": -3.13,
+        "dist_ma20_pct": -3.14,
         "dist_ma50_pct": -4.26,
         "efficiency_10": 0.477,
         "efficiency_20": 0.334,
@@ -121,7 +121,7 @@
       "policy_note": "方向不明：按中性环境处理"
     }
   ],
-  "ts": "2026-10-05T20:03:06.078136+00:00",
+  "ts": "2026-10-05T20:33:04.374587+00:00",
   "canonical_regime": "bull_chop",
   "n_disagreements_this_call": 0,
   "rotation_speed": {
@@ -146,8 +146,8 @@
     "asof": "2026-10-05 00:00:00-04:00"
   },
   "_meta": {
-    "cached_at": "2026-10-06T05:03:06.081168",
-    "age_sec": 1797,
+    "cached_at": "2026-10-06T05:33:04.377585",
+    "age_sec": 1799,
     "stale": true,
     "refreshing": true
   }
