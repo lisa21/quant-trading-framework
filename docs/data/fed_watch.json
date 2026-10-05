@@ -5,8 +5,8 @@
       "date": "2026-10-28",
       "days_until": 23,
       "probabilities": {
-        "hold": 80.0,
-        "hike_25": 20.0
+        "hold": 82.3,
+        "hike_25": 17.7
       },
       "most_likely": "hold",
       "consensus_direction": "hawkish_lean"
@@ -15,66 +15,71 @@
       "date": "2026-12-09",
       "days_until": 65,
       "probabilities": {
-        "hold": 23.6,
-        "hike_25": 62.3,
-        "hike_50": 14.1
+        "hold": 18,
+        "hike_25": 82
       },
       "most_likely": "hike_25",
-      "consensus_direction": "hawkish_lean"
+      "consensus_direction": "hawkish"
     },
     {
       "date": "2027-01-27",
       "days_until": 114,
       "probabilities": {
-        "hold": 16.2,
-        "hike_25": 50.1,
-        "hike_50": 33.7
+        "hold": 64,
+        "hike_25": 36
       },
-      "most_likely": "hike_25",
+      "most_likely": "hold",
       "consensus_direction": "hawkish_lean"
     },
     {
       "date": "2027-03-17",
       "days_until": 163,
       "probabilities": {
-        "hold": 6.1,
-        "hike_25": 29.1,
-        "hike_50": 64.8
+        "hold": 29,
+        "hike_25": 71
       },
-      "most_likely": "hike_50",
-      "consensus_direction": "hawkish_lean"
+      "most_likely": "hike_25",
+      "consensus_direction": "hawkish"
     }
   ],
   "implied_terminal_rate": "4.50-4.75",
-  "implied_terminal_date": "2027-Q2",
-  "data_snapshot_date": "2026-10-02 12:55 UTC",
-  "recent_event_impact": "2026-10-02 NFP +29K，低于约84K-90K预期；失业率升至4.2%，7-8月合计下修60K，显著压低10月加息概率。2026-09-30 PCE通胀低于预期，也削弱了近期继续加息的紧迫性；最近7天未发现新的CPI/PPI正式发布。",
-  "commentary": "数据快照为2026-10-02 12:55 UTC，晚于当天NFP发布，因此已反映就业意外走弱的影响；市场从10月大概率加息转为大概率按兵不动，但12月以后仍定价较强的累计加息路径。因CME官方页面可见快照较旧，完整3-4次会议分布采用复制CME FedWatch方法的替代源；远期会议的hike_50包含累计加息50bp及以上的简化归类。",
+  "implied_terminal_date": "2027-Q3",
+  "data_snapshot_date": "2026-10-05",
+  "recent_event_impact": "2026-10-02 September NFP +29K, below roughly +84K to +90K consensus; unemployment rose to 4.2%. This cooled October hike pricing sharply and lifted hold odds to roughly 82%-84%, though the curve still prices a strong probability of a December hike.",
+  "commentary": "Data snapshot is 2026-10-05 for the next-meeting CME/FedWatch-derived quote and live Fed funds futures replica; the multi-meeting path is after the 2026-10-02 NFP release, so the key recent jobs event is reflected. The weak NFP reduced immediate October tightening odds, but markets still imply a hawkish path with a December hike as the modal outcome.",
   "sources": [
     {
       "url": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
       "type": "cme_fedwatch"
     },
     {
-      "url": "https://terminal.kryptomagazin.cz/en/macro/fedwatch",
-      "type": "cme_fedwatch_replica"
-    },
-    {
-      "url": "https://www.gate.com/en-us/news/detail/cme-fedwatch-779-odds-fed-keeps-rates-unchanged-in-october-17890554",
+      "url": "https://www.gate.com/en-us/news/detail/fed-keeps-rates-unchanged-with-779-probability-in-october-per-cme-fedwatch-17890910",
       "type": "cme_fedwatch_report"
     },
     {
+      "url": "https://www.frenzycap.com/fedwatch",
+      "type": "fed_funds_futures_replica"
+    },
+    {
+      "url": "https://www.investing.com/central-banks/fed-rate-monitor",
+      "type": "fed_funds_futures_backup"
+    },
+    {
       "url": "https://www.bls.gov/news.release/archives/empsit_10022026.htm",
-      "type": "nfp_official"
+      "type": "nfp_event"
+    },
+    {
+      "url": "https://www.axios.com/2026/10/02/september-jobs-fed-interest-rates",
+      "type": "recent_event_impact"
     }
   ],
   "confidence": "medium",
   "source_via": "codex_cli_websearch",
-  "fetched_at": "2026-10-04T20:04:16+00:00",
+  "fetched_at": "2026-10-05T04:34:11+00:00",
   "_meta": {
-    "cached_at": "2026-10-05T05:04:17.011329",
-    "age_sec": 30528,
-    "stale": true,
-    "refreshing": true
+    "cached_at": "2026-10-05T13:34:11.723374",
+    "age_sec": 1730,
+    "stale": false,
+    "refreshing": false
   }
 }
