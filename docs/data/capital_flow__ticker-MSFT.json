@@ -1,23 +1,23 @@
 {
   "ticker": "MSFT",
   "flow": {
-    "super_net": -45629522.969,
-    "big_net": -22386258.041999996,
-    "mid_net": -38278820.761999995,
-    "small_net": -153137677.611,
-    "total_net": -259432279.38399994,
-    "smart_pct": -0.04651647677518695
+    "super_net": 12885973.76,
+    "big_net": 50442707.30100001,
+    "mid_net": 54156390.916999996,
+    "small_net": 55906692.47,
+    "total_net": 173391764.448,
+    "smart_pct": 0.1929993992970795
   },
   "anomaly": {
-    "detected": false,
-    "reason": "",
-    "score": 0.0
+    "detected": true,
+    "reason": "主力（super+big）净流入 $+63.3M（占总成交额 +19.3%）",
+    "score": 0.643331330990265
   },
-  "asof": "2026-10-05 09:02:29",
+  "asof": "2026-10-05 09:32:49",
   "source": "moomoo",
   "_meta": {
-    "cached_at": "2026-10-05T22:03:10.889762",
-    "age_sec": 1794,
+    "cached_at": "2026-10-05T22:33:05.014618",
+    "age_sec": 1800,
     "stale": true,
     "refreshing": true
   }

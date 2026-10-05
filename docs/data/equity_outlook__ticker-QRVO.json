@@ -234,9 +234,9 @@
   "source": "yfinance analyst aggregation",
   "_meta": {
     "cached_at": "2026-10-05T16:33:15.989975",
-    "age_sec": 21592,
-    "stale": false,
-    "refreshing": false
+    "age_sec": 23392,
+    "stale": true,
+    "refreshing": true
   },
   "ticker": "QRVO",
   "is_proxy": false

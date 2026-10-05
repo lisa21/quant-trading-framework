@@ -2,12 +2,12 @@
   "orchestrator_pid": 136132,
   "orchestrator_alive": true,
   "opend_alive": true,
-  "last_log_mtime": "2026-10-05T22:24:20.588556",
-  "log_age_min": 8.7,
+  "last_log_mtime": "2026-10-05T22:36:22.489094",
+  "log_age_min": 26.7,
   "log_path": "F:\\fsi-skills\\agents\\logs\\run_20261005.log",
-  "now": "2026-10-05T13:33:03.245748+00:00",
+  "now": "2026-10-05T14:03:03.407916+00:00",
   "version": {
-    "git_head": "fbc18926c07e",
+    "git_head": "2b71a0ef771f",
     "is_dirty": true,
     "modified_files": 45,
     "untracked_files": 109
@@ -17,6 +17,6 @@
     "age_days": 55,
     "is_stale": false
   },
-  "ai_last_call_ts": "2026-10-05T13:24:20.116012+00:00",
+  "ai_last_call_ts": "2026-10-05T13:33:55.636001+00:00",
   "last_invalidation": "2026-09-18T06:36:31.172847+00:00"
 }
