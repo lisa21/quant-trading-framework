@@ -662,7 +662,7 @@
           {
             "time": "09:00",
             "vol": 1137000,
-            "ratio": 0.97,
+            "ratio": 0.89,
             "open": 18663.33,
             "price": 18623.33,
             "chg_pct": -0.21,
@@ -825,8 +825,8 @@
   "asof": "2026-10-02 15:20 JST",
   "source": "yfinance_intraday",
   "_meta": {
-    "cached_at": "2026-10-05T07:03:06.245552",
-    "age_sec": 7198,
+    "cached_at": "2026-10-05T09:03:08.014275",
+    "age_sec": 1795,
     "stale": true,
     "refreshing": true
   }

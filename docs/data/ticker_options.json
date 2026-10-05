@@ -14611,14 +14611,14 @@
   "cache_contract": "15efd89eda8e",
   "_meta": {
     "cached_at": "2026-10-04T21:03:45.863438",
-    "age_sec": 43158,
+    "age_sec": 44957,
     "stale": false,
     "refreshing": false
   },
   "flow_meta": {
     "generated_at": "2026-10-02T20:06:22.184675+00:00",
     "status": "stale",
-    "age_sec": 186961.9,
+    "age_sec": 188760.4,
     "stale": true
   }
 }

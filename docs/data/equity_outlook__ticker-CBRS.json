@@ -7,7 +7,7 @@
     "recommendation": "strong_buy",
     "current_price": 166.43,
     "forward_eps": 1.27,
-    "trailing_eps": -4.66,
+    "trailing_eps": -5.14,
     "eps_growth_pct": null,
     "forward_pe": 130.67,
     "trailing_pe": null,
@@ -207,13 +207,13 @@
     ]
   },
   "official_guidance_status": "not_connected",
-  "fetched_at": "2026-10-04T16:03:11.166931+00:00",
+  "fetched_at": "2026-10-05T00:03:10.590850+00:00",
   "source": "yfinance analyst aggregation",
   "_meta": {
-    "cached_at": "2026-10-05T01:03:11.167942",
-    "age_sec": 28797,
-    "stale": true,
-    "refreshing": true
+    "cached_at": "2026-10-05T09:03:10.591858",
+    "age_sec": 1796,
+    "stale": false,
+    "refreshing": false
   },
   "ticker": "CBRS",
   "is_proxy": false

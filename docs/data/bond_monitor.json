@@ -1,5 +1,5 @@
 {
-  "asof": "2026-10-05T07:03",
+  "asof": "2026-10-05T09:03",
   "yields": {
     "10y": {
       "value": 5.277,
@@ -247,7 +247,7 @@
     },
     {
       "level": "warn",
-      "msg": "USDJPY 157.92 进入 155-160 口头干预区间 (JP MoF)",
+      "msg": "USDJPY 157.64 进入 155-160 口头干预区间 (JP MoF)",
       "key": "jpy_verbal_zone"
     },
     {
@@ -320,13 +320,13 @@
     "sofr_pct": 3.87,
     "iorb_pct": 3.9,
     "sofr_iorb_spread_bps": -3.0,
-    "usdjpy": 157.92,
-    "usdjpy_20d_pct": 1.1,
-    "usdjpy_20d_delta_pct": 1.1,
+    "usdjpy": 157.64,
+    "usdjpy_20d_pct": 0.92,
+    "usdjpy_20d_delta_pct": 0.92,
     "usdjpy_60d_high": 163.86,
-    "usdjpy_pullback_from_60d_high_pct": -3.63,
-    "krw_usd": 1342.9,
-    "krw_20d_pct": -0.16,
+    "usdjpy_pullback_from_60d_high_pct": -3.8,
+    "krw_usd": 1343.2,
+    "krw_20d_pct": -0.14,
     "jgb_10y_pct": 2.94,
     "jgb_asof": "2026-08-01",
     "ust_jgb_spread_bps": 233.7,
@@ -343,9 +343,9 @@
     "kbe_spy_20d_delta_pct": -6.15,
     "cdx_ig_bps": 86.0,
     "cdx_hy_bps": 324.0,
-    "dxy": 101.93,
-    "dxy_pct_20d": 2.96,
-    "dxy_z_60d": 1.72,
+    "dxy": 101.92,
+    "dxy_pct_20d": 2.78,
+    "dxy_z_60d": 1.66,
     "asia_indices": {
       "N225": {
         "symbol": "^N225",
@@ -392,31 +392,31 @@
       "es_f": {
         "symbol": "ES=F",
         "label": "S&P 500 futures",
-        "price": 7777.25,
-        "chg_pct": 0.69
+        "price": 7784.0,
+        "chg_pct": 0.09
       },
       "nq_f": {
         "symbol": "NQ=F",
         "label": "Nasdaq futures",
-        "price": 31061.75,
-        "chg_pct": 0.98
+        "price": 31129.25,
+        "chg_pct": 0.22
       },
       "cl_f": {
         "symbol": "CL=F",
         "label": "WTI crude futures",
-        "price": 91.11,
-        "chg_pct": -1.9
+        "price": 90.84,
+        "chg_pct": -0.3
       },
       "gc_f": {
         "symbol": "GC=F",
         "label": "Gold futures",
-        "price": 4162.3,
-        "chg_pct": -0.95
+        "price": 4169.7,
+        "chg_pct": 0.18
       }
     },
     "oil_uso": 147.37,
     "oil_pct_20d": 3.72,
-    "oil_wti": 91.11,
+    "oil_wti": 90.84,
     "eem_pct_20d": 0.3,
     "eem_vs_spx_20d": 0.51,
     "volume_confirm": {
@@ -511,8 +511,8 @@
     }
   },
   "_meta": {
-    "cached_at": "2026-10-05T07:03:18.897609",
-    "age_sec": 7185,
+    "cached_at": "2026-10-05T09:03:21.030387",
+    "age_sec": 1781,
     "stale": true,
     "refreshing": true
   }
