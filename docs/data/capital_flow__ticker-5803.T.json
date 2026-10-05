@@ -103,7 +103,7 @@
         "tier": "huge_abs"
       }
     ],
-    "day_ratio": 0.7,
+    "day_ratio": 0.75,
     "trading_date": "2026-10-05",
     "date_short": "10/5",
     "net_bias": "sell",
@@ -214,20 +214,20 @@
           }
         ],
         "slices": [],
-        "day_ratio": 0.7,
-        "day_chg_pct": -1.25,
+        "day_ratio": 0.75,
+        "day_chg_pct": -1.48,
         "day_open": 5660.0,
-        "day_close": 5589.0,
+        "day_close": 5576.0,
         "net_bias": "sell",
         "buy_shares": 1061500,
         "sell_shares": 8924100,
         "buy_value_oku": 59.01,
         "sell_value_oku": 499.81,
         "full_bias": "sell",
-        "full_up_shares": 6821300,
-        "full_down_shares": 12677300,
-        "full_up_value_oku": 380.2,
-        "full_down_value_oku": 708.74
+        "full_up_shares": 7699600,
+        "full_down_shares": 13425000,
+        "full_up_value_oku": 429.26,
+        "full_down_value_oku": 750.4
       },
       {
         "trading_date": "2026-10-02",
@@ -331,7 +331,7 @@
           }
         ],
         "slices": [],
-        "day_ratio": 1.63,
+        "day_ratio": 1.62,
         "day_chg_pct": 3.64,
         "day_open": 5391.0,
         "day_close": 5587.0,
@@ -448,7 +448,7 @@
           }
         ],
         "slices": [],
-        "day_ratio": 1.08,
+        "day_ratio": 1.07,
         "day_chg_pct": 2.96,
         "day_open": 5203.0,
         "day_close": 5357.0,
@@ -565,7 +565,7 @@
           }
         ],
         "slices": [],
-        "day_ratio": 1.07,
+        "day_ratio": 1.06,
         "day_chg_pct": 2.85,
         "day_open": 5087.0,
         "day_close": 5232.0,
@@ -622,7 +622,7 @@
           }
         ],
         "slices": [],
-        "day_ratio": 0.68,
+        "day_ratio": 0.67,
         "day_chg_pct": 0,
         "day_open": NaN,
         "day_close": 4902.0,
@@ -687,11 +687,11 @@
       "value_oku_min": 1.0
     }
   },
-  "asof": "2026-10-05 11:30 JST",
+  "asof": "2026-10-05 12:45 JST",
   "source": "yfinance_intraday",
   "_meta": {
-    "cached_at": "2026-10-05T12:33:06.363945",
-    "age_sec": 1797,
+    "cached_at": "2026-10-05T13:03:06.743939",
+    "age_sec": 1800,
     "stale": true,
     "refreshing": true
   }

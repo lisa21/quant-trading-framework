@@ -1,119 +1,113 @@
 {
   "ticker": "IEI",
-  "sector": "固定收益ETF/中期美国国债",
-  "business": "IEI 是 iShares 3-7 Year Treasury Bond ETF，主要追踪 ICE 美国 3-7 年期国债指数，提供中期美国国债利率敞口。",
+  "sector": "美国中期国债ETF",
+  "business": "IEI 是 iShares 3-7 Year Treasury Bond ETF，核心业务是被动追踪美国3至7年期国债组合的价格与收益表现。",
   "upstream": [
     {
       "name": "美国财政部",
       "ticker": null,
-      "note": "发行 ETF 持有的 3-7 年期美国国债，是底层资产来源",
-      "weight": 95,
+      "note": "发行ETF持有的美国中期国债，是底层资产的唯一核心发行方",
+      "weight": 100,
       "confidence": "high"
     },
     {
-      "name": "ICE Data Indices",
-      "ticker": "ICE",
-      "note": "提供 ICE US Treasury 3-7 Year Bond Index 作为跟踪基准",
+      "name": "BlackRock",
+      "ticker": "BLK",
+      "note": "iShares品牌与基金管理人，负责指数复制、组合管理和产品运营",
       "weight": 85,
       "confidence": "high"
     },
     {
-      "name": "BlackRock Fund Advisors / iShares",
-      "ticker": "BLK",
-      "note": "基金管理、组合复制、申赎和运营管理",
-      "weight": 80,
+      "name": "ICE Data Indices",
+      "ticker": null,
+      "note": "提供IEI追踪的美国3-7年期国债指数规则和基准数据",
+      "weight": 70,
       "confidence": "high"
     },
     {
-      "name": "State Street Bank and Trust Company",
+      "name": "State Street",
       "ticker": "STT",
-      "note": "为 iShares ETF 生态常见的托管、基金会计及行政服务方",
+      "note": "为多只ETF提供托管、基金会计或资产服务，支撑ETF运营链条",
       "weight": 45,
       "confidence": "medium"
     },
     {
-      "name": "Nasdaq",
-      "ticker": "NDAQ",
-      "note": "提供 IEI 二级市场挂牌和交易基础设施",
-      "weight": 35,
-      "confidence": "high"
+      "name": "美国国债一级交易商体系",
+      "ticker": null,
+      "note": "提供国债二级市场流动性和申购赎回所需的债券交易通道",
+      "weight": 40,
+      "confidence": "medium"
     }
   ],
   "downstream": [
     {
-      "name": "机构固定收益投资者",
-      "ticker": null,
-      "note": "用于配置中期美国国债、管理组合久期和利率风险",
-      "weight": 90,
-      "confidence": "medium"
-    },
-    {
-      "name": "注册投资顾问和模型组合平台",
-      "ticker": null,
-      "note": "作为核心债券或中期国债模块纳入资产配置组合",
+      "name": "Charles Schwab",
+      "ticker": "SCHW",
+      "note": "券商和财富管理平台，客户通过其账户配置IEI作为中期国债敞口",
       "weight": 75,
       "confidence": "medium"
     },
     {
-      "name": "养老金、保险和现金管理账户",
-      "ticker": null,
-      "note": "用于低信用风险收益、流动性管理和资产负债久期匹配",
+      "name": "Morgan Stanley",
+      "ticker": "MS",
+      "note": "财富管理和机构客户平台，可将IEI用于利率风险管理和固定收益配置",
       "weight": 65,
       "confidence": "medium"
     },
     {
-      "name": "线上券商及财富管理客户",
+      "name": "Bank of America",
+      "ticker": "BAC",
+      "note": "美林财富管理及机构渠道可能使用IEI进行国债配置和现金替代管理",
+      "weight": 60,
+      "confidence": "medium"
+    },
+    {
+      "name": "Fidelity Investments",
       "ticker": null,
-      "note": "通过券商平台买入 IEI 以获得美国国债 ETF 敞口",
+      "note": "零售和顾问渠道客户可通过其平台买入IEI作为中期美债ETF",
       "weight": 55,
       "confidence": "medium"
     },
     {
-      "name": "战术资产配置和宏观交易账户",
+      "name": "Vanguard",
       "ticker": null,
-      "note": "用于表达对美联储政策、收益率曲线和避险需求的观点",
+      "note": "资产配置和经纪平台客户可能将IEI作为中期美国国债敞口工具",
       "weight": 45,
-      "confidence": "medium"
+      "confidence": "low"
     }
   ],
   "peers": [
     {
-      "name": "iShares 7-10 Year Treasury Bond ETF",
-      "ticker": "IEF",
-      "note": "同属 iShares 美国国债 ETF，久期更长，竞争中长期国债配置资金",
-      "confidence": "high"
-    },
-    {
-      "name": "iShares 1-3 Year Treasury Bond ETF",
-      "ticker": "SHY",
-      "note": "同属 iShares 美国国债 ETF，久期更短，竞争短中期国债配置资金",
-      "confidence": "high"
-    },
-    {
       "name": "Vanguard Intermediate-Term Treasury ETF",
       "ticker": "VGIT",
-      "note": "低费率中期美国国债 ETF，直接竞争中期国债配置需求",
+      "note": "同样提供美国中期国债ETF敞口",
       "confidence": "high"
     },
     {
       "name": "Schwab Intermediate-Term U.S. Treasury ETF",
       "ticker": "SCHR",
-      "note": "中期美国国债 ETF，面向成本敏感型固定收益投资者",
+      "note": "低费率中期美国国债ETF，直接竞争固定收益配置资金",
       "confidence": "high"
     },
     {
       "name": "SPDR Portfolio Intermediate Term Treasury ETF",
       "ticker": "SPTI",
-      "note": "中期美国国债 ETF，竞争同类久期和国债敞口资金",
+      "note": "追踪中期美国国债市场，面向资产配置和利率对冲需求",
+      "confidence": "high"
+    },
+    {
+      "name": "iShares 7-10 Year Treasury Bond ETF",
+      "ticker": "IEF",
+      "note": "同属iShares国债ETF，久期更长，部分替代IEI的中期美债配置需求",
       "confidence": "high"
     }
   ],
-  "generated_at": "2026-09-05T03:33:33.894959+00:00",
+  "generated_at": "2026-10-05T04:03:35.939701+00:00",
   "source": "codex",
   "_meta": {
-    "cached_at": "2026-09-05T12:33:33.895960",
-    "age_sec": 2593774,
-    "stale": true,
-    "refreshing": true
+    "cached_at": "2026-10-05T13:03:35.940701",
+    "age_sec": 1774,
+    "stale": false,
+    "refreshing": false
   }
 }

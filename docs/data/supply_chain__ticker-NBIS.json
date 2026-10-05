@@ -1,41 +1,41 @@
 {
   "ticker": "NBIS",
-  "sector": "AI云计算/AI基础设施",
-  "business": "Nebius Group 主要提供面向AI训练、微调和推理的GPU云、专用算力集群、存储、网络与相关平台服务。",
+  "sector": "AI云计算基础设施",
+  "business": "Nebius Group（NBIS）主要提供面向AI训练和推理的GPU云、托管计算集群和相关AI基础设施服务。",
   "upstream": [
     {
       "name": "NVIDIA",
       "ticker": "NVDA",
-      "note": "提供核心GPU、InfiniBand/高速网络、HGX/H200、Blackwell、Vera Rubin等AI计算平台，并为战略合作方和投资方",
+      "note": "提供核心GPU、CUDA生态和高速网络组件，是AI云算力供给的关键来源",
       "weight": 95,
-      "confidence": "high"
+      "confidence": "medium"
     },
     {
-      "name": "DataOne",
-      "ticker": null,
-      "note": "Vineland等大型AI数据中心的建设、拥有和运营合作方，提供承载Nebius GPU集群的设施能力",
-      "weight": 65,
-      "confidence": "high"
+      "name": "Super Micro Computer",
+      "ticker": "SMCI",
+      "note": "提供GPU服务器和机架级AI计算系统",
+      "weight": 75,
+      "confidence": "medium"
     },
     {
-      "name": "Dell Technologies / Supermicro",
+      "name": "Dell Technologies",
       "ticker": "DELL",
-      "note": "可能作为NVIDIA系统服务器、机柜和AI服务器整机/OEM供应链的一部分；Supermicro ticker 为 SMCI",
+      "note": "提供企业级服务器、存储和AI基础设施集成能力",
+      "weight": 55,
+      "confidence": "low"
+    },
+    {
+      "name": "Arista Networks",
+      "ticker": "ANET",
+      "note": "提供数据中心以太网交换机和低延迟网络设备",
       "weight": 45,
-      "confidence": "medium"
+      "confidence": "low"
     },
     {
-      "name": "Bloom Energy",
-      "ticker": "BE",
-      "note": "为Vineland项目提供现场燃料电池等电力方案，支撑高密度AI数据中心供电",
-      "weight": 35,
-      "confidence": "medium"
-    },
-    {
-      "name": "Vertiv",
-      "ticker": "VRT",
-      "note": "数据中心电力、散热和液冷基础设施潜在供应商，受益于高密度GPU机柜部署",
-      "weight": 25,
+      "name": "Equinix",
+      "ticker": "EQIX",
+      "note": "提供数据中心托管、互联和全球机房基础设施",
+      "weight": 40,
       "confidence": "low"
     }
   ],
@@ -43,35 +43,35 @@
     {
       "name": "Microsoft",
       "ticker": "MSFT",
-      "note": "购买Nebius在新泽西等地的专用GPU基础设施容量，用于AI云与模型训练/推理需求",
-      "weight": 95,
-      "confidence": "high"
-    },
-    {
-      "name": "Meta Platforms",
-      "ticker": "META",
-      "note": "签订长期AI基础设施协议，购买基于NVIDIA Vera Rubin等平台的大规模专用算力容量",
+      "note": "采购AI云算力和GPU基础设施容量，用于支持模型训练、推理和云服务扩容",
       "weight": 90,
-      "confidence": "high"
-    },
-    {
-      "name": "AI-native初创企业",
-      "ticker": null,
-      "note": "购买按需或预留GPU云资源，用于模型训练、微调、推理和MLOps工作流",
-      "weight": 55,
-      "confidence": "high"
-    },
-    {
-      "name": "前沿AI实验室",
-      "ticker": null,
-      "note": "潜在或现有客户群，需求集中在大规模GPU集群、低延迟网络和分布式存储",
-      "weight": 40,
       "confidence": "medium"
     },
     {
-      "name": "企业客户",
+      "name": "Mistral AI",
       "ticker": null,
-      "note": "购买安全、可靠的AI基础设施，用于内部模型开发、开源模型部署和生产推理",
+      "note": "使用GPU云资源进行大模型训练和推理部署",
+      "weight": 55,
+      "confidence": "low"
+    },
+    {
+      "name": "Hugging Face",
+      "ticker": null,
+      "note": "面向模型托管、推理和开发者生态使用AI计算资源",
+      "weight": 45,
+      "confidence": "low"
+    },
+    {
+      "name": "Perplexity AI",
+      "ticker": null,
+      "note": "潜在使用高性能推理算力支撑AI搜索和问答服务",
+      "weight": 35,
+      "confidence": "low"
+    },
+    {
+      "name": "企业AI开发团队",
+      "ticker": null,
+      "note": "采购GPU云实例、托管集群和AI开发环境，用于私有模型训练及应用部署",
       "weight": 30,
       "confidence": "medium"
     }
@@ -80,40 +80,40 @@
     {
       "name": "CoreWeave",
       "ticker": "CRWV",
-      "note": "GPU云和AI基础设施租赁，直接竞争大规模NVIDIA GPU容量客户",
+      "note": "专注GPU云和AI基础设施租赁，是最直接的专业AI云竞争者",
       "confidence": "high"
     },
     {
-      "name": "Lambda",
-      "ticker": null,
-      "note": "面向开发者和企业的GPU云、AI训练和推理基础设施",
-      "confidence": "medium"
-    },
-    {
-      "name": "Crusoe",
-      "ticker": null,
-      "note": "AI云与数据中心基础设施，竞争高性能GPU集群和能源优化部署",
-      "confidence": "medium"
-    },
-    {
-      "name": "Oracle Cloud Infrastructure",
+      "name": "Oracle",
       "ticker": "ORCL",
-      "note": "云厂商AI基础设施和GPU集群服务，与Nebius争夺企业和AI实验室算力需求",
+      "note": "通过OCI提供GPU云和AI训练集群，竞争大型企业AI云工作负载",
       "confidence": "medium"
     },
     {
-      "name": "Amazon Web Services",
+      "name": "Amazon",
       "ticker": "AMZN",
-      "note": "超大规模云AI训练与推理基础设施，竞争企业AI云预算",
+      "note": "AWS提供GPU实例、自研AI芯片和大规模云基础设施",
+      "confidence": "medium"
+    },
+    {
+      "name": "Microsoft",
+      "ticker": "MSFT",
+      "note": "Azure AI基础设施与GPU云服务在企业客户和大模型工作负载上竞争",
+      "confidence": "medium"
+    },
+    {
+      "name": "Alphabet",
+      "ticker": "GOOGL",
+      "note": "Google Cloud通过GPU和TPU云服务竞争AI训练与推理市场",
       "confidence": "medium"
     }
   ],
-  "generated_at": "2026-09-05T03:33:33.620828+00:00",
+  "generated_at": "2026-10-05T04:03:35.506680+00:00",
   "source": "codex",
   "_meta": {
-    "cached_at": "2026-09-05T12:33:33.620828",
-    "age_sec": 2593774,
-    "stale": true,
-    "refreshing": true
+    "cached_at": "2026-10-05T13:03:35.510233",
+    "age_sec": 1774,
+    "stale": false,
+    "refreshing": false
   }
 }

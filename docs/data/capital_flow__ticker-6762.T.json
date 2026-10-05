@@ -55,7 +55,7 @@
         "tier": "ratio_spike"
       }
     ],
-    "day_ratio": 1.56,
+    "day_ratio": 1.7,
     "trading_date": "2026-10-05",
     "date_short": "10/5",
     "net_bias": "buy",
@@ -143,20 +143,20 @@
             "tier": "multi_bar"
           }
         ],
-        "day_ratio": 1.56,
-        "day_chg_pct": 2.61,
+        "day_ratio": 1.7,
+        "day_chg_pct": 2.44,
         "day_open": 3367.0,
-        "day_close": 3455.0,
+        "day_close": 3449.0,
         "net_bias": "buy",
         "buy_shares": 2868300,
         "sell_shares": 0,
         "buy_value_oku": 98.28,
         "sell_value_oku": 0,
         "full_bias": "buy",
-        "full_up_shares": 6410900,
-        "full_down_shares": 3323100,
-        "full_up_value_oku": 220.01,
-        "full_down_value_oku": 114.06
+        "full_up_shares": 6528800,
+        "full_down_shares": 4178200,
+        "full_up_value_oku": 224.08,
+        "full_down_value_oku": 143.51
       },
       {
         "trading_date": "2026-10-02",
@@ -183,7 +183,7 @@
         "date_short": "10/1",
         "peak_bars": [],
         "slices": [],
-        "day_ratio": 1.63,
+        "day_ratio": 1.62,
         "day_chg_pct": 5.52,
         "day_open": 3024.0,
         "day_close": 3191.0,
@@ -241,7 +241,7 @@
             "tier": "multi_bar"
           }
         ],
-        "day_ratio": 1.31,
+        "day_ratio": 1.3,
         "day_chg_pct": -1.51,
         "day_open": 3040.0,
         "day_close": 2994.0,
@@ -261,7 +261,7 @@
         "date_short": "9/29",
         "peak_bars": [],
         "slices": [],
-        "day_ratio": 0.72,
+        "day_ratio": 0.71,
         "day_chg_pct": 0,
         "day_open": NaN,
         "day_close": 2901.0,
@@ -326,11 +326,11 @@
       "value_oku_min": 1.0
     }
   },
-  "asof": "2026-10-05 11:30 JST",
+  "asof": "2026-10-05 12:45 JST",
   "source": "yfinance_intraday",
   "_meta": {
-    "cached_at": "2026-10-05T12:33:07.379964",
-    "age_sec": 1796,
+    "cached_at": "2026-10-05T13:03:05.215911",
+    "age_sec": 1801,
     "stale": true,
     "refreshing": true
   }
