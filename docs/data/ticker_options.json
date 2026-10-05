@@ -13799,14 +13799,14 @@
   "cache_contract": "15efd89eda8e",
   "_meta": {
     "cached_at": "2026-10-05T21:33:46.707113",
-    "age_sec": 10757,
+    "age_sec": 12557,
     "stale": false,
     "refreshing": false
   },
   "flow_meta": {
     "generated_at": "2026-10-05T15:06:22.492568+00:00",
     "status": "ready",
-    "age_sec": 1559.5,
+    "age_sec": 3359.9,
     "stale": false
   }
 }
