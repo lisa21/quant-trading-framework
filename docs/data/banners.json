@@ -8,33 +8,34 @@
     "magnitude": "small",
     "score": 0,
     "event_counts": {
-      "MEDIA_ATTACK": 1,
-      "TARIFF": 1,
-      "GEOPOLITICAL": 2,
-      "NOISE": 2,
-      "DOMESTIC_POLICY": 1
+      "NOISE": 3,
+      "DOMESTIC_POLICY": 1,
+      "GEOPOLITICAL": 1,
+      "MARKET": 1,
+      "MEDIA_ATTACK": 2
     },
     "breaking": [
       {
-        "event_type": "TARIFF",
-        "direction": "bullish",
+        "event_type": "MARKET",
+        "direction": "bearish",
         "magnitude": "small",
         "confidence": 7,
         "tickers": [
-          "SPY"
+          "SPY",
+          "GLD"
         ],
-        "preview": "Trump credits tariffs for bringing pharmaceutical manufacturing campus to Ohio: https://justthenews.com/government/white",
-        "verbatim": "Trump credits tariffs for bringing pharmaceutical manufacturing campus to Ohio",
-        "post_time": "2026-10-04T17:49:24.109Z"
+        "preview": "What's driving up Gasoline is no longer the Strait of Hormuz, because Record Numbers of Barrels are coming out now on an",
+        "verbatim": "What's driving up Gasoline is no longer the Strait of Hormuz... but the word, \"Refineries,\" where Russia's are being blown up by Ukraine",
+        "post_time": "2026-10-05T16:32:36.420Z"
       }
     ],
     "summary": {
-      "text": "美外交利好夹杂巴西选情与噪音，情绪中性偏暖",
-      "state": "cached",
+      "text": null,
+      "state": "generating",
       "post_ids": [
-        "117386635456194100",
-        "117386191183722432",
-        "117384612085223868"
+        "117389597190725188",
+        "117389593495407380",
+        "117389589417251241"
       ]
     }
   },
