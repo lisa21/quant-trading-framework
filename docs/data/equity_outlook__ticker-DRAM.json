@@ -230,9 +230,9 @@
   "source": "yfinance analyst aggregation",
   "_meta": {
     "cached_at": "2026-10-05T23:03:09.875819",
-    "age_sec": 21596,
-    "stale": false,
-    "refreshing": false
+    "age_sec": 23398,
+    "stale": true,
+    "refreshing": true
   },
   "ticker": "DRAM",
   "is_proxy": true
