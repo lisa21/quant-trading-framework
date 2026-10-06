@@ -1,6 +1,6 @@
 {
-  "as_of": "2026-10-06T08:06:38.953209",
-  "count_total_actions": 667,
+  "as_of": "2026-10-06T20:37:00.738176",
+  "count_total_actions": 670,
   "tools": [
     {
       "tool_key": "fed_hawkish_signal",
@@ -12,21 +12,18 @@
       "status": "已用",
       "last_action": {
         "tool_key": "fed_hawkish_signal",
-        "action_type": "announced",
-        "date": "2026-10-04",
-        "actor": "Warsh",
-        "amount_desc": "first rate hike since 2023",
-        "commentary": "加息抬升前端利率，对债市救助方向相反。",
-        "verbatim": "Removed A Dose of Accommodation",
-        "source": "GoogleNews: Warsh Federal Reserve rate hike inflation",
-        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOeU0tQzIxZDN4RUk5d2dKSkg3TUIwSGpROThyQ05qYjZyMjV4WU8yY1hkaFFCcGNyXzVWRWViUUFQU3BKcmM5ejJ3UWN2VzQ2N040SHFxNWt1RlJvT3diUzZlOGZnVTBGdnBaOGI0LTA3Zy0xRTJGcktGUl9UaDhUV2pscTE3NmpLYWtIei1Cb0dMb3k5N1g4cw?oc=5",
-        "confidence": 9
+        "action_type": "signaled",
+        "date": "2026-10-05",
+        "actor": "FOMC",
+        "amount_desc": "",
+        "commentary": "“加息延后不等于宽松”偏鹰，长端利率下行空间受压。",
+        "verbatim": "Fed Hike Delay Isn’t Relief, FOMC Minutes Put the Rate Plateau to the Test",
+        "source": "GoogleNews: FOMC minutes rate expectations",
+        "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNbFlxUUlpUGZmbzlxRm5Mejc0cE9WRE5mSWllTlRnLU9wNG1BTkRpM0dWUVVieHppT3dMR2ZGU1p5RER6S3pTRi1mWWZCT1Q0ZW9HeVFsOUZBSGFHUWtGQzF4RndLQThJU0RnbHZ5azk0c0lHTVRuLVRXU3ltWmIzZG9RclctSUNrdWd1NURJdGFmTW13cmVCOFRxWlAzYThBUVc4eGZEaTBXRnBicUJMVW5HUm5EMXdUSTZBUWppcUEwbzdDaE9pYnYzWGFKVnVMTGo4bmRISWpic25E?oc=5",
+        "confidence": 5
       },
-      "yield_reaction_30y": {
-        "t0_bp": 3.5,
-        "yield_at_close": 5.665
-      },
-      "event_count_180d": 343
+      "yield_reaction_30y": {},
+      "event_count_180d": 346
     },
     {
       "tool_key": "ycc",
@@ -236,7 +233,5 @@
       "yield_reaction_30y": {},
       "event_count_180d": 0
     }
-  ],
-  "stale": true,
-  "age_hours": 12.4
+  ]
 }
