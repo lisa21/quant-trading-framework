@@ -194,6 +194,14 @@
 </div>
 </details>
 
+<!-- Row 0-top: 持仓置顶 (2026-10-06 用户要求; 公开快照也显示完整持仓) -->
+<div class="grid">
+  <div class="card" style="border-left:4px solid #58a6ff">
+    <h2 title="moomoo 模拟账户实际持仓 + 系统动作。C=核心仓 S=卫星仓，L1/L2/L3=金字塔加仓层">💼 持仓 & 状态 <small id="positions-meta">当前持仓</small></h2>
+    <div id="positions"></div>
+  </div>
+</div>
+
 <!-- Row 0-priority: 今日值得关注 (覆盖所有 tracked ticker, thesis+regime+confluence 综合排名) -->
 <div class="grid">
   <div class="card" style="border-left:4px solid var(--ok)">
@@ -332,14 +340,6 @@
   </div>
 </div>
 
-<!-- Row 5: 持仓（AI 分析已移到 Row 0 顶部） -->
-<div class="grid owner-only">
-  <div class="card">
-    <h2 title="从 trader_state.json 读的每标的仓位状态。C=核心仓 S=卫星仓，L1/L2/L3=金字塔加仓层">持仓 & 状态 <small>当前持仓</small></h2>
-    <div id="positions"></div>
-  </div>
-</div>
-
 <!-- Row 6: log tail -->
 <div class="grid">
   <div class="card">
@@ -363,7 +363,8 @@ const sideCls = a => {
 async function fetchJson(url) {
   if (window.STATIC_SNAPSHOT_MODE) {
     // 私人 endpoint 直接返 null（面板会显示 owner-only 或直接空）
-    const PRIVATE = ['/api/positions', '/api/trades', '/api/log', '/api/nav', '/api/trump_verify', '/api/institutional'];
+    // 2026-10-06: 用户决定公开页完整显示持仓 → /api/positions 不再是私有
+    const PRIVATE = ['/api/trades', '/api/log', '/api/nav', '/api/trump_verify', '/api/institutional'];
     if (PRIVATE.some(p => url.startsWith(p))) return { error: 'owner_only' };
     // /api/xxx?ticker=Y&days=Z → data/xxx__Y__d10.json
     let path = url.replace(/^\//, '');
@@ -3018,9 +3019,12 @@ async function loadPositions() {
   const staleNote = ageSec > 300
     ? `<span class="badge bad" style="font-size:9px" title="持仓刷新失败, 下面是旧数据">⚠ 持仓数据 ${ageSec >= 3600 ? (ageSec / 3600).toFixed(1) + ' 小时' : Math.round(ageSec / 60) + ' 分钟'}前, 未能刷新</span> `
     : '';
-  const srcLabel = staleNote + (p.sync_source === 'moomoo_live'
-    ? '<span class="badge ok" style="font-size:9px">🟢 moomoo 实时同步 (60s cache)</span>'
-    : '<span class="badge warn" style="font-size:9px" title="moomoo 未连或不可用，只显示本地 state">⚠ state fallback (moomoo 掉线)</span>');
+  const snapAt = (p._meta && p._meta.cached_at) ? String(p._meta.cached_at).replace('T', ' ').slice(0, 16) : '';
+  const srcLabel = window.STATIC_SNAPSHOT_MODE
+    ? `<span class="badge info" style="font-size:9px">📸 快照: 持仓数据取自 ${snapAt || '—'} (日本时间, 每 30 分钟更新)</span>`
+    : staleNote + (p.sync_source === 'moomoo_live'
+      ? '<span class="badge ok" style="font-size:9px">🟢 moomoo 实时同步 (60s cache)</span>'
+      : '<span class="badge warn" style="font-size:9px" title="moomoo 未连或不可用，只显示本地 state">⚠ state fallback (moomoo 掉线)</span>');
   const plCls = v => v == null ? 'muted' : (v > 0 ? 'ok' : (v < 0 ? 'bad' : 'muted'));
   const fmtSign = v => v == null ? '-' : (v >= 0 ? '+' + v.toLocaleString() : v.toLocaleString());
   const fmtPct = v => v == null ? '-' : ((v * 100).toFixed(2) + '%');
@@ -3970,10 +3974,11 @@ async function loadAll() {
     loadHmm(),          // 市场大周期是公开信号（非 owner-only）
     loadBondMonitor(),  // 美债 + Fed 政策路径（公开衍生信号）
     loadThesisTimeline(),  // thesis 时间线 + next conjecture (2026-09-18)
+    loadPositions(),       // 2026-10-06: 公开快照也显示持仓 (置顶)
   ];
   // Owner-only endpoints skip in static mode
   if (!window.STATIC_SNAPSHOT_MODE) {
-    promises.push(loadNav(), loadPositions(), loadInstitutional(), loadTrades(), loadLog());
+    promises.push(loadNav(), loadInstitutional(), loadTrades(), loadLog());
   }
   await Promise.all(promises);
 }

@@ -65,6 +65,7 @@ GLOBAL_ENDPOINTS = [
     "/api/events",
     "/api/jp_watch",
     "/api/option_walls_chart",
+    "/api/positions",      # 2026-10-06 用户决定: 公开页完整显示持仓
 ]
 
 # Per-ticker endpoints — 迭代 watch list
@@ -80,7 +81,7 @@ PER_TICKER_ENDPOINTS = {
 
 # 私人 endpoints — 明确跳过
 PRIVATE_ENDPOINTS = {
-    "/api/nav", "/api/positions", "/api/trades", "/api/log",
+    "/api/nav", "/api/trades", "/api/log",
     "/api/benchmark", "/api/trump_verify", "/api/institutional",
 }
 
@@ -330,6 +331,10 @@ def snapshot_all(only: str | None = None, skip_tickers: bool = False) -> dict:
         url = f"{BASE_URL}{ep}"
         print(f"[global] {ep}")
         data = _fetch(url)
+        # 持仓只在被请求时才刷新: 第一次拿到过期缓存 → 等后台刷新完成再取一次
+        if ep == "/api/positions" and isinstance(data, dict) and (data.get("_meta") or {}).get("stale"):
+            time.sleep(15)
+            data = _fetch(url) or data
         if data is not None:
             path = _save(ep, data)
             if path is not None:
