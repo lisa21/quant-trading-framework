@@ -7,10 +7,10 @@
     "recommendation": "buy",
     "current_price": 232.57,
     "forward_eps": -3.49,
-    "trailing_eps": 1.28,
-    "eps_growth_pct": -372.7,
+    "trailing_eps": 1.23,
+    "eps_growth_pct": -383.8,
     "forward_pe": -66.63,
-    "trailing_pe": 181.7,
+    "trailing_pe": 189.08,
     "target_mean": 283.58,
     "target_high": 415.0,
     "target_low": 84.0,
@@ -18,8 +18,8 @@
     "revenue_growth_pct": 454.0,
     "earnings_growth_pct": null,
     "next_earnings": "2026-11-10",
-    "implied_pe_hold": -634.22,
-    "implied_pe_hold_upside": -372.7,
+    "implied_pe_hold": -660.0,
+    "implied_pe_hold_upside": -383.8,
     "peg_fair_price": null,
     "peg_ratio": null,
     "hist_pe_median": null,
@@ -203,7 +203,7 @@
     "median_gap_pct": 21.9,
     "revision_signal": "upward",
     "required_eps_growth_pct": null,
-    "consensus_eps_growth_pct": -372.7,
+    "consensus_eps_growth_pct": -383.8,
     "growth_cushion_pct": null,
     "rationale": [
       "多口径隐含价中位数高于现价 21.9%",
@@ -211,13 +211,13 @@
     ]
   },
   "official_guidance_status": "not_connected",
-  "fetched_at": "2026-10-06T02:33:22.111770+00:00",
+  "fetched_at": "2026-10-06T08:33:26.484382+00:00",
   "source": "yfinance analyst aggregation",
   "_meta": {
-    "cached_at": "2026-10-06T11:33:22.112777",
-    "age_sec": 21601,
-    "stale": true,
-    "refreshing": true
+    "cached_at": "2026-10-06T17:33:26.485382",
+    "age_sec": 1798,
+    "stale": false,
+    "refreshing": false
   },
   "ticker": "NBIS",
   "is_proxy": false

@@ -43,7 +43,7 @@
       },
       {
         "ticker": "1810.HK",
-        "pe": 15.66
+        "pe": 15.77
       }
     ],
     "implied_peer_median": 212.55,
@@ -228,13 +228,13 @@
     ]
   },
   "official_guidance_status": "not_connected",
-  "fetched_at": "2026-10-06T02:33:21.590212+00:00",
+  "fetched_at": "2026-10-06T08:33:25.867556+00:00",
   "source": "yfinance analyst aggregation",
   "_meta": {
-    "cached_at": "2026-10-06T11:33:21.591470",
-    "age_sec": 21602,
-    "stale": true,
-    "refreshing": true
+    "cached_at": "2026-10-06T17:33:25.870057",
+    "age_sec": 1798,
+    "stale": false,
+    "refreshing": false
   },
   "ticker": "AAPL",
   "is_proxy": false
