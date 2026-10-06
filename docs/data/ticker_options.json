@@ -14595,14 +14595,14 @@
   "cache_contract": "15efd89eda8e",
   "_meta": {
     "cached_at": "2026-10-06T22:03:44.549047",
-    "age_sec": 12560,
+    "age_sec": 14361,
     "stale": false,
     "refreshing": false
   },
   "flow_meta": {
     "generated_at": "2026-10-06T16:06:24.094023+00:00",
     "status": "ready",
-    "age_sec": 1559.3,
+    "age_sec": 3360.2,
     "stale": false
   }
 }
