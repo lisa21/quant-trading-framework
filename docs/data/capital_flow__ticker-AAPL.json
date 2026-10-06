@@ -1,22 +1,22 @@
 {
   "ticker": "AAPL",
   "flow": {
-    "super_net": 5604531.9609999955,
-    "big_net": -39751735.12199998,
-    "mid_net": -57694654.360000014,
-    "small_net": -170480750.71099997,
-    "total_net": -262322608.2320001,
-    "smart_pct": -0.012560170883367543
+    "super_net": 2984077.6,
+    "big_net": 3585407.907999999,
+    "mid_net": 1368629.3020000001,
+    "small_net": -121830.67600000091,
+    "total_net": 7816284.133999996,
+    "smart_pct": 0.12027234975541527
   },
   "anomaly": {
     "detected": false,
     "reason": "",
     "score": 0.0
   },
-  "asof": "2026-10-06 09:03:00",
+  "asof": "2026-10-06 09:33:09",
   "source": "moomoo",
   "_meta": {
-    "cached_at": "2026-10-06T22:03:21.843609",
+    "cached_at": "2026-10-06T22:33:20.234310",
     "age_sec": 1798,
     "stale": true,
     "refreshing": true
