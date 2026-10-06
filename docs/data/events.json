@@ -2,83 +2,83 @@
   "events": [
     {
       "date": "2026-10-13",
-      "days": 7,
+      "days": 6,
       "event": "CPI Release",
       "impact": "high"
     },
     {
       "date": "2026-10-14",
-      "days": 8,
+      "days": 7,
       "event": "PPI Release",
       "impact": "high"
     },
     {
       "date": "2026-10-15",
-      "days": 9,
+      "days": 8,
       "event": "Retail Sales",
       "impact": "high"
     },
     {
       "date": "2026-10-28",
-      "days": 22,
+      "days": 21,
       "event": "FOMC Decision",
       "impact": "high"
     },
     {
       "date": "2026-10-28",
-      "days": 22,
+      "days": 21,
       "event": "GOOG Q3 Earnings (capex 是否继续上调?)",
       "impact": "high"
     },
     {
       "date": "2026-10-28",
-      "days": 22,
+      "days": 21,
       "event": "MSFT Q1 FY27 Earnings (capex 是否继续收窄?)",
       "impact": "high"
     },
     {
       "date": "2026-10-29",
-      "days": 23,
+      "days": 22,
       "event": "PCE Release",
       "impact": "critical"
     },
     {
       "date": "2026-10-30",
-      "days": 24,
+      "days": 23,
       "event": "AMZN Q3 Earnings (capex 是否继续上调?)",
       "impact": "high"
     },
     {
       "date": "2026-11-06",
-      "days": 31,
+      "days": 30,
       "event": "NFP Release",
       "impact": "high"
     },
     {
       "date": "2026-11-12",
-      "days": 37,
+      "days": 36,
       "event": "CPI Release",
       "impact": "high"
     },
     {
       "date": "2026-11-13",
-      "days": 38,
+      "days": 37,
       "event": "PPI Release",
       "impact": "high"
     },
     {
       "date": "2026-11-13",
-      "days": 38,
+      "days": 37,
       "event": "Retail Sales",
       "impact": "high"
     },
     {
       "date": "2026-11-18",
-      "days": 43,
+      "days": 42,
       "event": "NVDA Earnings (est)",
       "impact": "high"
     }
   ],
-  "today": "2026-10-06",
+  "today": "2026-10-07",
   "days_ahead": 45
 }
