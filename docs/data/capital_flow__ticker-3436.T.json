@@ -6,7 +6,7 @@
     "reason": "",
     "score": 0.0,
     "peak_bars": [],
-    "day_ratio": 0.19,
+    "day_ratio": 0.25,
     "trading_date": "2026-10-06",
     "date_short": "10/6",
     "net_bias": "neutral",
@@ -20,20 +20,20 @@
         "date_short": "10/6",
         "peak_bars": [],
         "slices": [],
-        "day_ratio": 0.19,
-        "day_chg_pct": -0.08,
+        "day_ratio": 0.25,
+        "day_chg_pct": 0.46,
         "day_open": 3657.0,
-        "day_close": 3654.0,
+        "day_close": 3674.0,
         "net_bias": "neutral",
         "buy_shares": 0,
         "sell_shares": 0,
         "buy_value_oku": 0,
         "sell_value_oku": 0,
         "full_bias": "neutral",
-        "full_up_shares": 826200,
-        "full_down_shares": 796400,
-        "full_up_value_oku": 30.27,
-        "full_down_value_oku": 29.07
+        "full_up_shares": 1085300,
+        "full_down_shares": 1064400,
+        "full_up_value_oku": 39.76,
+        "full_down_value_oku": 38.86
       },
       {
         "trading_date": "2026-10-05",
@@ -73,7 +73,7 @@
         "date_short": "10/2",
         "peak_bars": [],
         "slices": [],
-        "day_ratio": 1.14,
+        "day_ratio": 1.13,
         "day_chg_pct": 2.84,
         "day_open": 3487.0,
         "day_close": 3586.0,
@@ -93,7 +93,7 @@
         "date_short": "10/1",
         "peak_bars": [],
         "slices": [],
-        "day_ratio": 1.14,
+        "day_ratio": 1.13,
         "day_chg_pct": 4.85,
         "day_open": 3299.0,
         "day_close": 3459.0,
@@ -126,7 +126,7 @@
           }
         ],
         "slices": [],
-        "day_ratio": 1.44,
+        "day_ratio": 1.43,
         "day_chg_pct": 3.54,
         "day_open": 3216.0,
         "day_close": 3330.0,
@@ -177,11 +177,11 @@
       "value_oku_min": 1.0
     }
   },
-  "asof": "2026-10-06 10:15 JST",
+  "asof": "2026-10-06 10:45 JST",
   "source": "yfinance_intraday",
   "_meta": {
-    "cached_at": "2026-10-06T10:33:12.396178",
-    "age_sec": 1808,
+    "cached_at": "2026-10-06T11:03:21.981801",
+    "age_sec": 1796,
     "stale": true,
     "refreshing": true
   }

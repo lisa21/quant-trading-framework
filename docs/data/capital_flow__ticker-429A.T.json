@@ -4,7 +4,7 @@
   "anomaly": {
     "detected": true,
     "reason": "10/6 09:05 6.01× 均值 · 主动买 ¥2.51億 (@¥4020.0)",
-    "score": 0.2,
+    "score": 0.4,
     "peak_bars": [
       {
         "time": "09:05",
@@ -17,15 +17,27 @@
         "value_oku": 2.51,
         "date": "2026-10-06",
         "tier": "ratio_spike"
+      },
+      {
+        "time": "10:25",
+        "vol": 42500,
+        "ratio": 5.8,
+        "open": 4065.0,
+        "price": 4085.0,
+        "chg_pct": 0.49,
+        "direction": "buy",
+        "value_oku": 1.74,
+        "date": "2026-10-06",
+        "tier": "ratio_spike"
       }
     ],
-    "day_ratio": 0.56,
+    "day_ratio": 0.79,
     "trading_date": "2026-10-06",
     "date_short": "10/6",
     "net_bias": "buy",
-    "buy_shares": 62500,
+    "buy_shares": 105000,
     "sell_shares": 0,
-    "buy_value_oku": 2.51,
+    "buy_value_oku": 4.25,
     "sell_value_oku": 0,
     "days": [
       {
@@ -43,30 +55,42 @@
             "value_oku": 2.51,
             "date": "2026-10-06",
             "tier": "ratio_spike"
+          },
+          {
+            "time": "10:25",
+            "vol": 42500,
+            "ratio": 5.8,
+            "open": 4065.0,
+            "price": 4085.0,
+            "chg_pct": 0.49,
+            "direction": "buy",
+            "value_oku": 1.74,
+            "date": "2026-10-06",
+            "tier": "ratio_spike"
           }
         ],
         "slices": [],
-        "day_ratio": 0.56,
-        "day_chg_pct": 2.53,
+        "day_ratio": 0.79,
+        "day_chg_pct": 3.04,
         "day_open": 3950.0,
-        "day_close": 4050.0,
+        "day_close": 4070.0,
         "net_bias": "buy",
-        "buy_shares": 62500,
+        "buy_shares": 105000,
         "sell_shares": 0,
-        "buy_value_oku": 2.51,
+        "buy_value_oku": 4.25,
         "sell_value_oku": 0,
         "full_bias": "buy",
-        "full_up_shares": 172000,
-        "full_down_shares": 46300,
-        "full_up_value_oku": 6.95,
-        "full_down_value_oku": 1.87
+        "full_up_shares": 234800,
+        "full_down_shares": 73100,
+        "full_up_value_oku": 9.51,
+        "full_down_value_oku": 2.96
       },
       {
         "trading_date": "2026-10-05",
         "date_short": "10/5",
         "peak_bars": [],
         "slices": [],
-        "day_ratio": 1.13,
+        "day_ratio": 1.11,
         "day_chg_pct": -1.62,
         "day_open": 4005.0,
         "day_close": 3940.0,
@@ -86,7 +110,7 @@
         "date_short": "10/2",
         "peak_bars": [],
         "slices": [],
-        "day_ratio": 0.85,
+        "day_ratio": 0.84,
         "day_chg_pct": -2.64,
         "day_open": 3975.0,
         "day_close": 3870.0,
@@ -106,7 +130,7 @@
         "date_short": "10/1",
         "peak_bars": [],
         "slices": [],
-        "day_ratio": 0.83,
+        "day_ratio": 0.82,
         "day_chg_pct": 1.27,
         "day_open": 3935.0,
         "day_close": 3985.0,
@@ -151,7 +175,7 @@
           }
         ],
         "slices": [],
-        "day_ratio": 1.24,
+        "day_ratio": 1.23,
         "day_chg_pct": -1.53,
         "day_open": 3920.0,
         "day_close": 3860.0,
@@ -197,18 +221,18 @@
         "date_short": "9/30"
       },
       {
-        "time": "13:25",
-        "vol": 27800,
-        "ratio": 6.8,
-        "open": 3870.0,
-        "price": 3890.0,
-        "chg_pct": 0.52,
+        "time": "10:25",
+        "vol": 42500,
+        "ratio": 5.8,
+        "open": 4065.0,
+        "price": 4085.0,
+        "chg_pct": 0.49,
         "direction": "buy",
-        "value_oku": 1.08,
-        "date": "2026-09-30",
+        "value_oku": 1.74,
+        "date": "2026-10-06",
         "tier": "ratio_spike",
-        "_score": 7.34,
-        "date_short": "9/30"
+        "_score": 10.09,
+        "date_short": "10/6"
       }
     ],
     "thresholds": {
@@ -216,11 +240,11 @@
       "value_oku_min": 1.0
     }
   },
-  "asof": "2026-10-06 10:15 JST",
+  "asof": "2026-10-06 10:45 JST",
   "source": "yfinance_intraday",
   "_meta": {
-    "cached_at": "2026-10-06T10:33:12.579155",
-    "age_sec": 1807,
+    "cached_at": "2026-10-06T11:03:21.154787",
+    "age_sec": 1797,
     "stale": true,
     "refreshing": true
   }

@@ -240,9 +240,9 @@
   "source": "yfinance analyst aggregation",
   "_meta": {
     "cached_at": "2026-10-06T05:33:09.767276",
-    "age_sec": 19813,
-    "stale": false,
-    "refreshing": false
+    "age_sec": 21610,
+    "stale": true,
+    "refreshing": true
   },
   "ticker": "SOXL",
   "is_proxy": true
