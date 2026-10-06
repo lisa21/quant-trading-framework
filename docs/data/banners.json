@@ -8,34 +8,62 @@
     "magnitude": "small",
     "score": 0,
     "event_counts": {
-      "NOISE": 3,
-      "DOMESTIC_POLICY": 1,
-      "GEOPOLITICAL": 1,
       "MARKET": 1,
-      "MEDIA_ATTACK": 2
+      "NOISE": 1,
+      "MEDIA_ATTACK": 5,
+      "DOMESTIC_POLICY": 7,
+      "DEAL": 1
     },
     "breaking": [
       {
+        "event_type": "DEAL",
+        "direction": "bullish",
+        "magnitude": "medium",
+        "confidence": 9,
+        "tickers": [
+          "SPY"
+        ],
+        "preview": "HUGE INVESTMENT WIN for NEBRASKA AND THE U.S.!Beckton Dickenson (BD), one of the largest Medical Device Manufacturers, h",
+        "verbatim": "HUGE INVESTMENT WIN... BD... has agreed to an Investment of 3 BILLION DOLLARS to Onshore Manufacturing",
+        "post_time": "2026-10-06T03:18:50.947Z"
+      },
+      {
         "event_type": "MARKET",
         "direction": "bearish",
-        "magnitude": "small",
+        "magnitude": "medium",
         "confidence": 7,
         "tickers": [
           "SPY",
+          "QQQ",
           "GLD"
         ],
         "preview": "What's driving up Gasoline is no longer the Strait of Hormuz, because Record Numbers of Barrels are coming out now on an",
         "verbatim": "What's driving up Gasoline is no longer the Strait of Hormuz... but the word, \"Refineries,\" where Russia's are being blown up by Ukraine",
         "post_time": "2026-10-05T16:32:36.420Z"
+      },
+      {
+        "event_type": "DOMESTIC_POLICY",
+        "direction": "bullish",
+        "magnitude": "medium",
+        "confidence": 7,
+        "tickers": [
+          "SPY",
+          "QQQ",
+          "TQQQ",
+          "GLD"
+        ],
+        "preview": "If Republicans win the House of Representatives and the Senate in the 2026 Midterm Elections, I'm going to give all Adul",
+        "verbatim": "I'm going to give all Adult Citizens in the United States of America, $5,000.",
+        "post_time": "2026-10-05T22:00:51.961Z"
       }
     ],
     "summary": {
-      "text": "特朗普抨击媒体造假并展示人气，市场情绪中性偏弱。",
-      "state": "cached",
+      "text": null,
+      "state": "generating",
       "post_ids": [
-        "117389597190725188",
-        "117389593495407380",
-        "117389589417251241"
+        "117393952565404870",
+        "117393803999487824",
+        "117391801119298224"
       ]
     }
   },
