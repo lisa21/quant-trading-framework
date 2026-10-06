@@ -1,5 +1,5 @@
 {
-  "asof": "2026-10-06T14:03",
+  "asof": "2026-10-06T14:33",
   "yields": {
     "10y": {
       "value": 5.311,
@@ -325,8 +325,8 @@
     "usdjpy_20d_delta_pct": 2.79,
     "usdjpy_60d_high": 163.86,
     "usdjpy_pullback_from_60d_high_pct": -3.49,
-    "krw_usd": 1342.5,
-    "krw_20d_pct": -0.08,
+    "krw_usd": 1342.7,
+    "krw_20d_pct": -0.06,
     "jgb_10y_pct": 2.94,
     "jgb_asof": "2026-08-01",
     "ust_jgb_spread_bps": 237.1,
@@ -343,24 +343,24 @@
     "kbe_spy_20d_delta_pct": -7.75,
     "cdx_ig_bps": 85.0,
     "cdx_hy_bps": 310.0,
-    "dxy": 102.17,
-    "dxy_pct_20d": 3.37,
-    "dxy_z_60d": 1.85,
+    "dxy": 102.2,
+    "dxy_pct_20d": 3.4,
+    "dxy_z_60d": 1.88,
     "asia_indices": {
       "N225": {
         "symbol": "^N225",
         "label": "Nikkei 225 (日)",
-        "close": 70463.32,
-        "chg_1d": 0.74,
-        "chg_5d_pct": 7.61,
+        "close": 70555.11,
+        "chg_1d": 0.87,
+        "chg_5d_pct": 7.75,
         "asof": "2026-10-06"
       },
       "HSI": {
         "symbol": "^HSI",
         "label": "Hang Seng (港)",
-        "close": 24228.47,
-        "chg_1d": 0.78,
-        "chg_5d_pct": -1.68,
+        "close": 24218.74,
+        "chg_1d": 0.74,
+        "chg_5d_pct": -1.72,
         "asof": "2026-10-06"
       },
       "SSE": {
@@ -382,9 +382,9 @@
       "KOSPI": {
         "symbol": "^KS11",
         "label": "KOSPI (韩)",
-        "close": 6910.61,
-        "chg_1d": -1.33,
-        "chg_5d_pct": 0.3,
+        "close": 6925.51,
+        "chg_1d": -1.12,
+        "chg_5d_pct": 0.52,
         "asof": "2026-10-06"
       }
     },
@@ -392,31 +392,31 @@
       "es_f": {
         "symbol": "ES=F",
         "label": "S&P 500 futures",
-        "price": 7833.0,
-        "chg_pct": 0.09
+        "price": 7834.5,
+        "chg_pct": 0.11
       },
       "nq_f": {
         "symbol": "NQ=F",
         "label": "Nasdaq futures",
-        "price": 31338.0,
-        "chg_pct": 0.06
+        "price": 31362.25,
+        "chg_pct": 0.14
       },
       "cl_f": {
         "symbol": "CL=F",
         "label": "WTI crude futures",
-        "price": 90.0,
-        "chg_pct": 0.64
+        "price": 89.88,
+        "chg_pct": 0.5
       },
       "gc_f": {
         "symbol": "GC=F",
         "label": "Gold futures",
-        "price": 4147.7,
-        "chg_pct": -0.22
+        "price": 4149.9,
+        "chg_pct": -0.17
       }
     },
     "oil_uso": 143.99,
     "oil_pct_20d": 1.43,
-    "oil_wti": 90.0,
+    "oil_wti": 89.88,
     "eem_pct_20d": 0.04,
     "eem_vs_spx_20d": -0.81,
     "volume_confirm": {
@@ -499,7 +499,7 @@
     "unemployment_pct": 4.2,
     "unemployment_asof": "2026-09-01",
     "stablecoin_total_bn": 258.3,
-    "usdt_bn": 184.0,
+    "usdt_bn": 184.1,
     "usdc_bn": 74.3,
     "vix": 15.52,
     "bbi_score": 0.49,
@@ -511,8 +511,8 @@
     }
   },
   "_meta": {
-    "cached_at": "2026-10-06T14:03:19.259051",
-    "age_sec": 1783,
+    "cached_at": "2026-10-06T14:33:18.128423",
+    "age_sec": 7187,
     "stale": true,
     "refreshing": true
   }

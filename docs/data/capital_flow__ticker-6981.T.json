@@ -103,7 +103,7 @@
         "tier": "huge_abs"
       }
     ],
-    "day_ratio": 0.84,
+    "day_ratio": 0.91,
     "trading_date": "2026-10-06",
     "date_short": "10/6",
     "net_bias": "neutral",
@@ -214,20 +214,20 @@
           }
         ],
         "slices": [],
-        "day_ratio": 0.84,
-        "day_chg_pct": 1.57,
+        "day_ratio": 0.91,
+        "day_chg_pct": 1.82,
         "day_open": 8790.0,
-        "day_close": 8928.0,
+        "day_close": 8950.0,
         "net_bias": "neutral",
         "buy_shares": 2651100,
         "sell_shares": 1540000,
         "buy_value_oku": 235.74,
         "sell_value_oku": 136.08,
         "full_bias": "neutral",
-        "full_up_shares": 7153200,
-        "full_down_shares": 7330700,
-        "full_up_value_oku": 636.1,
-        "full_down_value_oku": 650.93
+        "full_up_shares": 7989600,
+        "full_down_shares": 7798300,
+        "full_up_value_oku": 710.91,
+        "full_down_value_oku": 692.73
       },
       {
         "trading_date": "2026-10-05",
@@ -448,7 +448,7 @@
           }
         ],
         "slices": [],
-        "day_ratio": 0.97,
+        "day_ratio": 0.96,
         "day_chg_pct": -0.7,
         "day_open": 8513.0,
         "day_close": 8453.0,
@@ -590,7 +590,7 @@
             "tier": "huge_2bar"
           }
         ],
-        "day_ratio": 1.43,
+        "day_ratio": 1.42,
         "day_chg_pct": 3.57,
         "day_open": 8179.0,
         "day_close": 8471.0,
@@ -707,7 +707,7 @@
           }
         ],
         "slices": [],
-        "day_ratio": 1.12,
+        "day_ratio": 1.11,
         "day_chg_pct": -2.75,
         "day_open": 8116.0,
         "day_close": 7893.0,
@@ -772,11 +772,11 @@
       "value_oku_min": 1.0
     }
   },
-  "asof": "2026-10-06 13:45 JST",
+  "asof": "2026-10-06 14:15 JST",
   "source": "yfinance_intraday",
   "_meta": {
-    "cached_at": "2026-10-06T14:03:23.764694",
-    "age_sec": 1796,
+    "cached_at": "2026-10-06T14:33:22.437510",
+    "age_sec": 7199,
     "stale": true,
     "refreshing": true
   }
