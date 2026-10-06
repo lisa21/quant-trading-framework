@@ -1,5 +1,5 @@
 {
-  "asof": "2026-10-07T06:03",
+  "asof": "2026-10-07T06:33",
   "yields": {
     "10y": {
       "value": 5.269,
@@ -196,10 +196,10 @@
   },
   "spreads": {
     "2s10s": {
-      "value": 0.47,
-      "chg_20d_bps": 6.0,
+      "value": 0.48,
+      "chg_20d_bps": 8.0,
       "regime": "正常",
-      "asof": "2026-10-05"
+      "asof": "2026-10-06"
     }
   },
   "gld_correlation": {
@@ -287,7 +287,7 @@
     },
     {
       "level": "info",
-      "msg": "稳定币影子美元 $258.2B (USDT $184B + USDC $74B, 抽血 EM 通胀国 + 压低美债短端)",
+      "msg": "稳定币影子美元 $258.3B (USDT $184B + USDC $74B, 抽血 EM 通胀国 + 压低美债短端)",
       "key": "stablecoin_large"
     }
   ],
@@ -325,8 +325,8 @@
     "usdjpy_20d_delta_pct": 2.75,
     "usdjpy_60d_high": 163.86,
     "usdjpy_pullback_from_60d_high_pct": -3.52,
-    "krw_usd": 1339.4,
-    "krw_20d_pct": -0.31,
+    "krw_usd": 1337.0,
+    "krw_20d_pct": -0.49,
     "jgb_10y_pct": 2.94,
     "jgb_asof": "2026-08-01",
     "ust_jgb_spread_bps": 232.9,
@@ -343,9 +343,9 @@
     "kbe_spy_20d_delta_pct": -7.85,
     "cdx_ig_bps": 84.0,
     "cdx_hy_bps": 312.0,
-    "dxy": 101.85,
-    "dxy_pct_20d": 3.05,
-    "dxy_z_60d": 1.54,
+    "dxy": 101.86,
+    "dxy_pct_20d": 3.06,
+    "dxy_z_60d": 1.55,
     "asia_indices": {
       "N225": {
         "symbol": "^N225",
@@ -392,31 +392,31 @@
       "es_f": {
         "symbol": "ES=F",
         "label": "S&P 500 futures",
-        "price": 7879.5,
-        "chg_pct": 0.68
+        "price": 7880.5,
+        "chg_pct": 0.69
       },
       "nq_f": {
         "symbol": "NQ=F",
         "label": "Nasdaq futures",
-        "price": 31501.5,
+        "price": 31501.0,
         "chg_pct": 0.59
       },
       "cl_f": {
         "symbol": "CL=F",
         "label": "WTI crude futures",
-        "price": 89.93,
-        "chg_pct": 0.56
+        "price": 89.91,
+        "chg_pct": 0.54
       },
       "gc_f": {
         "symbol": "GC=F",
         "label": "Gold futures",
-        "price": 4192.2,
-        "chg_pct": 0.85
+        "price": 4192.7,
+        "chg_pct": 0.86
       }
     },
     "oil_uso": 144.91,
     "oil_pct_20d": -0.77,
-    "oil_wti": 89.93,
+    "oil_wti": 89.91,
     "eem_pct_20d": -0.81,
     "eem_vs_spx_20d": -2.78,
     "volume_confirm": {
@@ -498,9 +498,9 @@
     "core_cpi_yoy_pct": 2.76,
     "unemployment_pct": 4.2,
     "unemployment_asof": "2026-09-01",
-    "stablecoin_total_bn": 258.2,
+    "stablecoin_total_bn": 258.3,
     "usdt_bn": 184.1,
-    "usdc_bn": 74.1,
+    "usdc_bn": 74.2,
     "vix": 15.01,
     "bbi_score": 0.53,
     "bbi_components": {
@@ -511,8 +511,8 @@
     }
   },
   "_meta": {
-    "cached_at": "2026-10-07T06:03:20.429582",
-    "age_sec": 1783,
+    "cached_at": "2026-10-07T06:33:17.659894",
+    "age_sec": 1786,
     "stale": true,
     "refreshing": true
   }
