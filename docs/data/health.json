@@ -3,11 +3,11 @@
   "orchestrator_alive": true,
   "opend_alive": true,
   "last_log_mtime": "2026-10-06T12:03:04.036268",
-  "log_age_min": 60.0,
+  "log_age_min": 90.0,
   "log_path": "F:\\fsi-skills\\agents\\logs\\run_20261006.log",
-  "now": "2026-10-06T04:03:03.065906+00:00",
+  "now": "2026-10-06T04:33:03.530377+00:00",
   "version": {
-    "git_head": "92a9eef2c022",
+    "git_head": "e5bf3f03db63",
     "is_dirty": true,
     "modified_files": 45,
     "untracked_files": 110
