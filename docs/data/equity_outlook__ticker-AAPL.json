@@ -30,7 +30,7 @@
     "implied_hist_p25": 278.86,
     "implied_hist_p75": 357.15,
     "implied_hist_upside": -2.0,
-    "peer_pe_median": 22.21,
+    "peer_pe_median": 22.18,
     "peer_pe_n_peers": 3,
     "peer_pe_details": [
       {
@@ -39,15 +39,15 @@
       },
       {
         "ticker": "MSFT",
-        "pe": 22.21
+        "pe": 22.18
       },
       {
         "ticker": "1810.HK",
-        "pe": 15.52
+        "pe": 15.66
       }
     ],
-    "implied_peer_median": 212.84,
-    "implied_peer_upside": -36.1,
+    "implied_peer_median": 212.55,
+    "implied_peer_upside": -36.2,
     "source": "yfinance analyst aggregation",
     "forward_estimates": {
       "earnings": {
@@ -136,15 +136,15 @@
         "0y": {
           "current": 8.8202,
           "7daysAgo": 8.8194,
-          "30daysAgo": 8.8125,
-          "60daysAgo": 8.8165,
-          "90daysAgo": 8.7596
+          "30daysAgo": 8.8123,
+          "60daysAgo": 8.8041,
+          "90daysAgo": 8.7595
         },
         "+1y": {
           "current": 9.5758,
           "7daysAgo": 9.5783,
-          "30daysAgo": 9.5329,
-          "60daysAgo": 9.5885,
+          "30daysAgo": 9.5669,
+          "60daysAgo": 9.554,
           "90daysAgo": 9.6826
         }
       },
@@ -176,8 +176,8 @@
         "trend_signal": "flat",
         "breadth_signal": "upward",
         "eps_current": 9.5758,
-        "eps_30d_ago": 9.5329,
-        "eps_trend_pct_30d": 0.45,
+        "eps_30d_ago": 9.5669,
+        "eps_trend_pct_30d": 0.09,
         "up_30d": 5,
         "down_30d": 3,
         "net_30d": 2
@@ -212,8 +212,8 @@
       {
         "key": "peer_pe",
         "label": "前瞻 EPS × 同行 PE 中位",
-        "implied_price": 212.84,
-        "gap_pct": -36.1
+        "implied_price": 212.55,
+        "gap_pct": -36.2
       }
     ],
     "median_gap_pct": -1.7,
@@ -228,13 +228,13 @@
     ]
   },
   "official_guidance_status": "not_connected",
-  "fetched_at": "2026-10-05T20:33:09.707842+00:00",
+  "fetched_at": "2026-10-06T02:33:21.590212+00:00",
   "source": "yfinance analyst aggregation",
   "_meta": {
-    "cached_at": "2026-10-06T05:33:09.707842",
-    "age_sec": 21610,
-    "stale": true,
-    "refreshing": true
+    "cached_at": "2026-10-06T11:33:21.591470",
+    "age_sec": 1801,
+    "stale": false,
+    "refreshing": false
   },
   "ticker": "AAPL",
   "is_proxy": false

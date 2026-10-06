@@ -1,9 +1,9 @@
 {
-  "generated_at_utc": "2026-10-06T02:33:20+00:00",
-  "generated_at_local": "2026-10-06T11:33:20",
-  "endpoints_ok": 131,
+  "generated_at_utc": "2026-10-06T03:03:22+00:00",
+  "generated_at_local": "2026-10-06T12:03:22",
+  "endpoints_ok": 132,
   "endpoints_fail": 0,
-  "elapsed_sec": 17.7,
+  "elapsed_sec": 20.2,
   "saved_files": [
     "ai_analysis.json",
     "ai_targets.json",
@@ -37,6 +37,7 @@
     "capital_flow__ticker-TQQQ.json",
     "capital_flow__ticker-USO.json",
     "capital_flow__ticker-XLV.json",
+    "equity_curve.json",
     "equity_outlook__ticker-AAPL.json",
     "equity_outlook__ticker-CBRS.json",
     "equity_outlook__ticker-DRAM.json",

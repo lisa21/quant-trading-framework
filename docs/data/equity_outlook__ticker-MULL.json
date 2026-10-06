@@ -11,10 +11,10 @@
     "eps_growth_pct": 178.1,
     "forward_pe": 5.15,
     "trailing_pe": 14.31,
-    "target_mean": 1521.76,
+    "target_mean": 1535.57,
     "target_high": 2200.0,
     "target_low": 361.0,
-    "target_upside_pct": 43.0,
+    "target_upside_pct": 44.3,
     "revenue_growth_pct": 379.3,
     "earnings_growth_pct": 1060.5,
     "next_earnings": "2026-12-24",
@@ -30,28 +30,28 @@
     "implied_hist_p25": 1715.42,
     "implied_hist_p75": 27853.82,
     "implied_hist_upside": 971.5,
-    "peer_pe_median": 8.91,
+    "peer_pe_median": 8.9,
     "peer_pe_n_peers": 4,
     "peer_pe_details": [
       {
         "ticker": "005930.KS",
-        "pe": 3.91
+        "pe": 3.89
       },
       {
         "ticker": "000660.KS",
-        "pe": 3.91
+        "pe": 3.81
       },
       {
         "ticker": "285A.T",
-        "pe": 18.95
+        "pe": 18.64
       },
       {
         "ticker": "WDC",
         "pe": 13.91
       }
     ],
-    "implied_peer_median": 1841.49,
-    "implied_peer_upside": 73.1,
+    "implied_peer_median": 1839.42,
+    "implied_peer_upside": 72.9,
     "source": "yfinance analyst aggregation",
     "forward_estimates": {
       "earnings": {
@@ -80,12 +80,12 @@
           "growth": 1.3878
         },
         "+1y": {
-          "avg": 205.9545,
+          "avg": 206.6767,
           "low": 161.0,
           "high": 335.5,
           "yearAgoEps": 176.4161,
-          "numberOfAnalysts": 33.0,
-          "growth": 0.1674
+          "numberOfAnalysts": 34.0,
+          "growth": 0.1715
         }
       },
       "revenue": {
@@ -114,12 +114,12 @@
           "growth": 1.0642
         },
         "+1y": {
-          "avg": 314163874140.0,
+          "avg": 314369438180.0,
           "low": 127430000000.0,
           "high": 396620000000.0,
           "yearAgoRevenue": 274928614880.0,
-          "numberOfAnalysts": 40.0,
-          "growth": 0.1427
+          "numberOfAnalysts": 41.0,
+          "growth": 0.1435
         }
       },
       "eps_trend": {
@@ -145,7 +145,7 @@
           "90daysAgo": 150.0075
         },
         "+1y": {
-          "current": 205.9545,
+          "current": 206.6767,
           "7daysAgo": 179.5134,
           "30daysAgo": 171.0249,
           "60daysAgo": 166.8887,
@@ -164,13 +164,13 @@
           "downLast30days": 1.0
         },
         "0y": {
-          "upLast7days": 2.0,
+          "upLast7days": 3.0,
           "upLast30days": 5.0,
           "downLast30days": 1.0
         },
         "+1y": {
           "upLast7days": 3.0,
-          "upLast30days": 3.0,
+          "upLast30days": 4.0,
           "downLast30days": 1.0
         }
       },
@@ -179,12 +179,12 @@
         "signal": "upward",
         "trend_signal": "upward",
         "breadth_signal": "upward",
-        "eps_current": 205.9545,
+        "eps_current": 206.6767,
         "eps_30d_ago": 171.0249,
-        "eps_trend_pct_30d": 20.42,
-        "up_30d": 3,
+        "eps_trend_pct_30d": 20.85,
+        "up_30d": 4,
         "down_30d": 1,
-        "net_30d": 2
+        "net_30d": 3
       }
     }
   },
@@ -198,8 +198,8 @@
       {
         "key": "analyst_target",
         "label": "分析师目标均值",
-        "implied_price": 1521.76,
-        "gap_pct": 43.0
+        "implied_price": 1535.57,
+        "gap_pct": 44.3
       },
       {
         "key": "pe_hold",
@@ -210,29 +210,29 @@
       {
         "key": "peer_pe",
         "label": "前瞻 EPS × 同行 PE 中位",
-        "implied_price": 1841.49,
-        "gap_pct": 73.1
+        "implied_price": 1839.42,
+        "gap_pct": 72.9
       }
     ],
-    "median_gap_pct": 73.1,
+    "median_gap_pct": 72.9,
     "revision_signal": "upward",
     "required_eps_growth_pct": -74.1,
     "consensus_eps_growth_pct": 178.1,
     "growth_cushion_pct": 252.2,
     "rationale": [
-      "多口径隐含价中位数高于现价 73.1%",
+      "多口径隐含价中位数高于现价 72.9%",
       "近 30 天 EPS 共识上修",
       "历史 PE 口径要求 EPS 增长 -74.1%，共识为 +178.1%"
     ]
   },
   "official_guidance_status": "not_connected",
-  "fetched_at": "2026-10-05T20:33:09.880268+00:00",
+  "fetched_at": "2026-10-06T02:33:22.217692+00:00",
   "source": "yfinance analyst aggregation",
   "_meta": {
-    "cached_at": "2026-10-06T05:33:09.881266",
-    "age_sec": 21610,
-    "stale": true,
-    "refreshing": true
+    "cached_at": "2026-10-06T11:33:22.218693",
+    "age_sec": 1800,
+    "stale": false,
+    "refreshing": false
   },
   "ticker": "MULL",
   "is_proxy": true

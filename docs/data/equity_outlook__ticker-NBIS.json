@@ -30,7 +30,7 @@
     "implied_hist_p25": null,
     "implied_hist_p75": null,
     "implied_hist_upside": null,
-    "peer_pe_median": 22.6,
+    "peer_pe_median": 22.59,
     "peer_pe_n_peers": 4,
     "peer_pe_details": [
       {
@@ -43,14 +43,14 @@
       },
       {
         "ticker": "MSFT",
-        "pe": 22.21
+        "pe": 22.18
       },
       {
         "ticker": "GOOGL",
         "pe": 22.99
       }
     ],
-    "implied_peer_median": -78.89,
+    "implied_peer_median": -78.85,
     "implied_peer_upside": -133.9,
     "source": "yfinance analyst aggregation",
     "forward_estimates": {
@@ -168,21 +168,21 @@
         },
         "+1y": {
           "upLast7days": 1.0,
-          "upLast30days": 4.0,
-          "downLast30days": 2.0
+          "upLast30days": 1.0,
+          "downLast30days": 1.0
         }
       },
       "revision_summary": {
         "period": "+1y",
         "signal": "upward",
         "trend_signal": "upward",
-        "breadth_signal": "upward",
+        "breadth_signal": "flat",
         "eps_current": -5.6426,
         "eps_30d_ago": -4.6914,
         "eps_trend_pct_30d": 20.28,
-        "up_30d": 4,
-        "down_30d": 2,
-        "net_30d": 2
+        "up_30d": 1,
+        "down_30d": 1,
+        "net_30d": 0
       }
     }
   },
@@ -211,13 +211,13 @@
     ]
   },
   "official_guidance_status": "not_connected",
-  "fetched_at": "2026-10-05T20:33:09.786080+00:00",
+  "fetched_at": "2026-10-06T02:33:22.111770+00:00",
   "source": "yfinance analyst aggregation",
   "_meta": {
-    "cached_at": "2026-10-06T05:33:09.786080",
-    "age_sec": 21610,
-    "stale": true,
-    "refreshing": true
+    "cached_at": "2026-10-06T11:33:22.112777",
+    "age_sec": 1800,
+    "stale": false,
+    "refreshing": false
   },
   "ticker": "NBIS",
   "is_proxy": false
