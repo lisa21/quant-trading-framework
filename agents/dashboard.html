@@ -202,6 +202,16 @@
   </div>
 </div>
 
+<!-- Row 0-top-2: 账户收益曲线 (2026-10-06 用户要求; 公开快照也显示) -->
+<div class="grid">
+  <div class="card" style="border-left:4px solid #3fb950">
+    <h2 title="数据源 signals/nav_history.jsonl：按美东交易日取当日最后一次净值记录。虚线 = 没有记录的区间（不是走平）。SPY 按首个记录日缩放到同一起点，只作对比。">📈 账户收益曲线 <small id="equity-meta">Equity Curve vs SPY</small></h2>
+    <div id="equity-stats" style="display:flex; flex-wrap:wrap; gap:6px 18px; font-size:12px; margin-bottom:6px"></div>
+    <div style="position:relative; height:240px"><canvas id="equity-chart"></canvas></div>
+    <div id="equity-note" style="font-size:10px; color:var(--muted); margin-top:4px; line-height:1.45"></div>
+  </div>
+</div>
+
 <!-- Row 0-priority: 今日值得关注 (覆盖所有 tracked ticker, thesis+regime+confluence 综合排名) -->
 <div class="grid">
   <div class="card" style="border-left:4px solid var(--ok)">
@@ -3966,6 +3976,74 @@ async function loadOptionWalls() {
   $('option-walls-chart').innerHTML = html;
 }
 
+// 账户收益曲线 (2026-10-06): 公开快照也显示. 虚线段 = 无记录区间.
+async function loadEquityCurve() {
+  const e = await fetchJson('/api/equity_curve');
+  if (!e || !e.exists || !(e.points || []).length) {
+    $('equity-stats').innerHTML = `<small style="color:var(--muted)">${(e && e.error) ? '收益曲线暂不可用: ' + e.error : '暂无净值记录'}</small>`;
+    return;
+  }
+  const pct = v => v == null ? '—' : `${v > 0 ? '+' : ''}${v.toFixed(2)}%`;
+  const cls = v => v == null ? '' : (v >= 0 ? 'ok' : 'bad');
+  const item = (k, v, c, tip) => `<span title="${tip || ''}"><span style="color:var(--muted)">${k}</span> <b class="${c || ''}">${v}</b></span>`;
+  $('equity-meta').textContent = `${e.start_date} → ${e.end_date} · ${e.points.length} 个交易日`;
+  $('equity-stats').innerHTML = [
+    item('当前净值', '$' + fmt(e.current_nav)),
+    item('区间收益', pct(e.period_return_pct), cls(e.period_return_pct), `自 ${e.start_date} 首个记录 $${fmt(e.start_nav)}`),
+    item('SPY 同期', pct(e.spy_return_pct), cls(e.spy_return_pct), e.benchmark_ok === false ? 'SPY 数据拉取失败' : ''),
+    item('超额', e.excess_pp == null ? '—' : `${e.excess_pp > 0 ? '+' : ''}${e.excess_pp.toFixed(2)}pp`, cls(e.excess_pp)),
+    item('记录期最大回撤', pct(e.max_dd_in_record_pct), 'bad', e.max_dd_date ? `最低点 ${e.max_dd_date}` : ''),
+    item('距历史峰值', pct(e.dd_from_all_time_peak_pct), cls(e.dd_from_all_time_peak_pct), e.all_time_peak ? `历史峰值 $${fmt(e.all_time_peak)}（出现在记录开始之前）` : ''),
+  ].join('');
+  const gaps = (e.gaps || []).map(g => `${g.from} → ${g.to}（${g.days} 天）`).join('、');
+  $('equity-note').innerHTML = `${e.note || ''}${gaps ? `<br>⚠ 无记录区间：${gaps}` : ''}`;
+
+  const pts = e.points;
+  const gapSeg = ctx => (pts[ctx.p1DataIndex] && pts[ctx.p1DataIndex].gap_before_days) ? [5, 5] : undefined;
+  const canvas = $('equity-chart');
+  if (!canvas) return;
+  if (window.equityChart) window.equityChart.destroy();
+  const hasSpy = pts.some(p => p.spy_scaled != null);
+  const datasets = [{
+    label: '账户净值', data: pts.map(p => ({x: p.date, y: p.nav})),
+    borderColor: '#58a6ff', backgroundColor: 'rgba(88,166,255,0.08)', fill: true,
+    tension: 0.15, pointRadius: 0, borderWidth: 2, segment: {borderDash: gapSeg},
+  }];
+  if (hasSpy) datasets.push({
+    label: 'SPY（同起点）', data: pts.map(p => ({x: p.date, y: p.spy_scaled})),
+    borderColor: '#d29922', fill: false, tension: 0.15, pointRadius: 0, borderWidth: 1.5,
+    segment: {borderDash: gapSeg}, spanGaps: true,
+  });
+  window.equityChart = new Chart(canvas.getContext('2d'), {
+    type: 'line',
+    data: {datasets},
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      interaction: {mode: 'index', intersect: false},
+      scales: {
+        x: {type: 'time', time: {unit: 'week', tooltipFormat: 'yyyy-MM-dd', displayFormats: {week: 'MM-dd'}},
+            ticks: {color: '#7d8590', font: {size: 10}}, grid: {color: 'rgba(48,54,61,0.5)'}},
+        y: {ticks: {color: '#7d8590', font: {size: 10}, callback: v => '$' + (v / 1e6).toFixed(2) + 'M'},
+            grid: {color: 'rgba(48,54,61,0.5)'}},
+      },
+      plugins: {
+        legend: {labels: {color: '#e6edf3', font: {size: 11}}},
+        tooltip: {callbacks: {
+          label: c => {
+            const p = pts[c.dataIndex];
+            if (c.datasetIndex === 0) return `账户 $${fmt(p.nav)}（${pct(p.ret_pct)}，回撤 ${pct(p.dd_pct)}）`;
+            return `SPY 同起点 $${fmt(p.spy_scaled)}`;
+          },
+          afterBody: items => {
+            const p = pts[items[0].dataIndex];
+            return p.gap_before_days ? [`⚠ 与上一记录间隔 ${p.gap_before_days} 天（中间无数据）`] : [];
+          },
+        }},
+      },
+    },
+  });
+}
+
 async function loadAll() {
   const promises = [
     loadHealth(), loadTopPicks(), loadSectors(), loadBanners(),
@@ -3975,6 +4053,7 @@ async function loadAll() {
     loadBondMonitor(),  // 美债 + Fed 政策路径（公开衍生信号）
     loadThesisTimeline(),  // thesis 时间线 + next conjecture (2026-09-18)
     loadPositions(),       // 2026-10-06: 公开快照也显示持仓 (置顶)
+    loadEquityCurve(),     // 2026-10-06: 账户收益曲线 (公开)
   ];
   // Owner-only endpoints skip in static mode
   if (!window.STATIC_SNAPSHOT_MODE) {

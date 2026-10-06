@@ -10,6 +10,7 @@ API 端点：
   GET /                   → dashboard.html
   GET /api/health         → { orchestrator_alive, opend_alive, last_log_ts, uptime }
   GET /api/nav            → NAV 历史 + peak + dd_pct
+  GET /api/equity_curve   → 账户收益曲线 (按交易日 + SPY 对比, 公开)
   GET /api/positions      → moomoo 当前持仓（如可用）
   GET /api/institutional  → 组合风险/压力/归因/杠杆路径/成交质量
   GET /api/trades?n=20    → 最近 N 笔 trade_log
@@ -1286,6 +1287,17 @@ def _compute_oil() -> dict:
     out["pct_20d"] = prices.get("wti", {}).get("pct_20d")
     out["source"] = "WTI 期货 (CL=F) 主 + 5 因子"
     return out
+
+
+def api_equity_curve() -> dict:
+    """账户收益曲线 (2026-10-06): nav_history 按美东交易日 + SPY 同期对比. 公开."""
+    def _compute():
+        try:
+            from equity_curve import compute
+            return compute(SIGNALS_DIR)
+        except Exception as e:  # noqa: BLE001
+            return {"exists": False, "error": str(e), "points": []}
+    return _cached("equity_curve_v1", ttl_sec=900, compute_fn=_compute)
 
 
 def api_top_picks(n: int = 10) -> dict:
@@ -5311,6 +5323,8 @@ class Handler(BaseHTTPRequestHandler):
                 self._json(api_health())
             elif path == "/api/nav":
                 self._json(api_nav(days=days))
+            elif path == "/api/equity_curve":
+                self._json(api_equity_curve())
             elif path == "/api/positions":
                 self._json(api_positions())
             elif path == "/api/institutional":
