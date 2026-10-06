@@ -237,12 +237,12 @@
     }
   ],
   "peak_nav": 1623960.823,
-  "current_nav": 1277906.945,
+  "current_nav": 1278496.123,
   "sync_source": "moomoo_live",
   "moomoo_ok": true,
   "_meta": {
-    "cached_at": "2026-10-06T22:03:06.550843",
-    "age_sec": 15,
+    "cached_at": "2026-10-06T22:33:05.009314",
+    "age_sec": 14,
     "stale": false,
     "refreshing": false
   }

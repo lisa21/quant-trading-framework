@@ -10,8 +10,8 @@
     "event_counts": {
       "MARKET": 1,
       "NOISE": 1,
-      "MEDIA_ATTACK": 5,
-      "DOMESTIC_POLICY": 7,
+      "MEDIA_ATTACK": 7,
+      "DOMESTIC_POLICY": 6,
       "DEAL": 1
     },
     "breaking": [
@@ -24,13 +24,13 @@
           "SPY"
         ],
         "preview": "HUGE INVESTMENT WIN for NEBRASKA AND THE U.S.!Beckton Dickenson (BD), one of the largest Medical Device Manufacturers, h",
-        "verbatim": "HUGE INVESTMENT WIN... BD... has agreed to an Investment of 3 BILLION DOLLARS to Onshore Manufacturing",
+        "verbatim": "BD... has agreed to an Investment of 3 BILLION DOLLARS to Onshore Manufacturing",
         "post_time": "2026-10-06T03:18:50.947Z"
       },
       {
         "event_type": "MARKET",
         "direction": "bearish",
-        "magnitude": "medium",
+        "magnitude": "small",
         "confidence": 7,
         "tickers": [
           "SPY",
@@ -38,18 +38,17 @@
           "GLD"
         ],
         "preview": "What's driving up Gasoline is no longer the Strait of Hormuz, because Record Numbers of Barrels are coming out now on an",
-        "verbatim": "What's driving up Gasoline is no longer the Strait of Hormuz... but the word, \"Refineries,\" where Russia's are being blown up by Ukraine",
+        "verbatim": "What's driving up Gasoline... \"Refineries,\" where Russia's are being blown up by Ukraine, and where ours are being closed up",
         "post_time": "2026-10-05T16:32:36.420Z"
       },
       {
         "event_type": "DOMESTIC_POLICY",
         "direction": "bullish",
-        "magnitude": "medium",
+        "magnitude": "small",
         "confidence": 7,
         "tickers": [
           "SPY",
           "QQQ",
-          "TQQQ",
           "GLD"
         ],
         "preview": "If Republicans win the House of Representatives and the Senate in the 2026 Midterm Elections, I'm going to give all Adul",
@@ -61,9 +60,9 @@
       "text": null,
       "state": "generating",
       "post_ids": [
+        "117393995402609279",
         "117393952565404870",
-        "117393803999487824",
-        "117391801119298224"
+        "117393803999487824"
       ]
     }
   },

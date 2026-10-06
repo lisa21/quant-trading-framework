@@ -8,7 +8,7 @@
       "rsi": 59.7,
       "vol_ratio": 0.92,
       "trend": "down",
-      "ts": "2026-10-06 21:37:34",
+      "ts": "2026-10-06 22:24:37",
       "display_profile": {
         "card_group": "main",
         "asset_class": "equity",
@@ -35,7 +35,7 @@
       "rsi": 39.3,
       "vol_ratio": 0.56,
       "trend": "down",
-      "ts": "2026-10-06 21:37:33",
+      "ts": "2026-10-06 22:24:36",
       "display_profile": {
         "card_group": "main",
         "asset_class": "equity",
@@ -62,7 +62,7 @@
       "rsi": 47.8,
       "vol_ratio": 0.87,
       "trend": "down",
-      "ts": "2026-10-06 21:37:32",
+      "ts": "2026-10-06 22:24:36",
       "display_profile": {
         "card_group": "macro",
         "asset_class": "fixed_income",
@@ -89,7 +89,7 @@
       "rsi": 47.1,
       "vol_ratio": 0.0,
       "trend": "up",
-      "ts": "2026-10-06 21:37:31",
+      "ts": "2026-10-06 22:24:35",
       "display_profile": {
         "card_group": "main",
         "asset_class": "equity",
@@ -116,7 +116,7 @@
       "rsi": 71.9,
       "vol_ratio": 1.13,
       "trend": "up",
-      "ts": "2026-10-06 21:37:31",
+      "ts": "2026-10-06 22:24:34",
       "display_profile": {
         "card_group": "main",
         "asset_class": "equity",
@@ -143,7 +143,7 @@
       "rsi": 54.3,
       "vol_ratio": 0.98,
       "trend": "up",
-      "ts": "2026-10-06 21:37:13",
+      "ts": "2026-10-06 22:24:33",
       "display_profile": {
         "card_group": "main",
         "asset_class": "equity",
@@ -170,7 +170,7 @@
       "rsi": 65.6,
       "vol_ratio": 1.25,
       "trend": "up",
-      "ts": "2026-10-06 21:37:12",
+      "ts": "2026-10-06 22:24:33",
       "display_profile": {
         "card_group": "main",
         "asset_class": "equity",
@@ -197,7 +197,7 @@
       "rsi": 66.6,
       "vol_ratio": 0.66,
       "trend": "up",
-      "ts": "2026-10-06 21:37:12",
+      "ts": "2026-10-06 22:24:32",
       "display_profile": {
         "card_group": "main",
         "asset_class": "equity",
@@ -209,7 +209,7 @@
         "show_supply_chain": true,
         "fundamental_profile": "industrial"
       },
-      "action_zh": "持仓观望",
+      "action_zh": "关注买入",
       "conf": 3,
       "scale": 5,
       "regime": "偏多震荡",
@@ -224,7 +224,7 @@
       "rsi": 34.6,
       "vol_ratio": 1.38,
       "trend": "down",
-      "ts": "2026-10-06 21:37:11",
+      "ts": "2026-10-06 22:24:31",
       "display_profile": {
         "card_group": "macro",
         "asset_class": "fixed_income",
@@ -251,7 +251,7 @@
       "rsi": 43.8,
       "vol_ratio": 2.4,
       "trend": "down",
-      "ts": "2026-10-06 21:37:10",
+      "ts": "2026-10-06 22:24:31",
       "display_profile": {
         "card_group": "main",
         "asset_class": "equity",
@@ -263,7 +263,7 @@
         "show_supply_chain": true,
         "fundamental_profile": "industrial"
       },
-      "action_zh": "主动试探仓",
+      "action_zh": "关注买入",
       "conf": 5,
       "scale": 5,
       "regime": "偏多震荡",
@@ -278,7 +278,7 @@
       "rsi": 50.8,
       "vol_ratio": 0.81,
       "trend": "up",
-      "ts": "2026-10-06 21:36:54",
+      "ts": "2026-10-06 22:24:30",
       "display_profile": {
         "card_group": "main",
         "asset_class": "equity",
@@ -305,7 +305,7 @@
       "rsi": 33.3,
       "vol_ratio": 0.46,
       "trend": "down",
-      "ts": "2026-10-06 21:36:53",
+      "ts": "2026-10-06 22:24:29",
       "display_profile": {
         "card_group": "macro",
         "asset_class": "commodity",
@@ -332,7 +332,7 @@
       "rsi": 62.7,
       "vol_ratio": 0.73,
       "trend": "up",
-      "ts": "2026-10-06 21:36:25",
+      "ts": "2026-10-06 22:24:24",
       "display_profile": {
         "card_group": "main",
         "asset_class": "equity",
@@ -359,7 +359,7 @@
       "rsi": 55.5,
       "vol_ratio": 0.59,
       "trend": "up",
-      "ts": "2026-10-06 21:36:25",
+      "ts": "2026-10-06 22:24:23",
       "display_profile": {
         "card_group": "main",
         "asset_class": "equity",
@@ -386,7 +386,7 @@
       "rsi": 68.7,
       "vol_ratio": 0.62,
       "trend": "up",
-      "ts": "2026-10-06 21:36:24",
+      "ts": "2026-10-06 22:24:22",
       "display_profile": {
         "card_group": "main",
         "asset_class": "equity",
@@ -413,7 +413,7 @@
       "rsi": 72.1,
       "vol_ratio": 0.75,
       "trend": "up",
-      "ts": "2026-10-06 21:36:23",
+      "ts": "2026-10-06 22:24:21",
       "display_profile": {
         "card_group": "main",
         "asset_class": "equity",
