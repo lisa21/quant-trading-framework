@@ -14020,14 +14020,14 @@
   "cache_contract": "15efd89eda8e",
   "_meta": {
     "cached_at": "2026-10-06T22:03:44.549047",
-    "age_sec": 23360,
+    "age_sec": 25159,
     "stale": false,
     "refreshing": false
   },
   "flow_meta": {
     "generated_at": "2026-10-06T19:06:24.126171+00:00",
     "status": "ready",
-    "age_sec": 1560.7,
+    "age_sec": 3359.6,
     "stale": false
   }
 }
