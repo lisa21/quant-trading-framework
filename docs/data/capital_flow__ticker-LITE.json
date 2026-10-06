@@ -1,0 +1,24 @@
+{
+  "ticker": "LITE",
+  "flow": {
+    "super_net": -6600275.987000001,
+    "big_net": 499080.6220000014,
+    "mid_net": 8726503.056000002,
+    "small_net": 23582623.253000006,
+    "total_net": 26207930.944000006,
+    "smart_pct": -0.020441734255779328
+  },
+  "anomaly": {
+    "detected": false,
+    "reason": "",
+    "score": 0.0
+  },
+  "asof": "2026-10-06 11:33:14",
+  "source": "moomoo",
+  "_meta": {
+    "cached_at": "2026-10-07T00:33:20.498947",
+    "age_sec": 3600,
+    "stale": true,
+    "refreshing": true
+  }
+}

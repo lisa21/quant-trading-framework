@@ -3,82 +3,82 @@
   "meetings": [
     {
       "date": "2026-10-28",
-      "days_until": 22,
+      "days_until": 21,
       "probabilities": {
-        "hold": 75.9,
-        "hike_25": 24.1
+        "hold": 76.2,
+        "hike_25": 23.8
       },
       "most_likely": "hold",
-      "consensus_direction": "hawkish_lean_fading"
-    },
-    {
-      "date": "2026-12-09",
-      "days_until": 64,
-      "probabilities": {
-        "hold": 14.4,
-        "hike_25": 66.1,
-        "hike_50": 19.5
-      },
-      "most_likely": "hike_25",
       "consensus_direction": "hawkish_lean"
     },
     {
-      "date": "2027-01-27",
-      "days_until": 113,
+      "date": "2026-12-09",
+      "days_until": 63,
       "probabilities": {
-        "hold": 8.2,
-        "hike_25": 43.9,
-        "hike_50": 47.9
+        "hold": 13.2,
+        "hike_25": 67.1,
+        "hike_50": 19.7
+      },
+      "most_likely": "hike_25",
+      "consensus_direction": "hawkish"
+    },
+    {
+      "date": "2027-01-27",
+      "days_until": 112,
+      "probabilities": {
+        "hold": 7.7,
+        "hike_25": 44.8,
+        "hike_50": 47.4
       },
       "most_likely": "hike_50",
       "consensus_direction": "hawkish"
     },
     {
       "date": "2027-03-17",
-      "days_until": 162,
+      "days_until": 161,
       "probabilities": {
-        "hold": 2.5,
-        "hike_25": 19.0,
-        "hike_50": 78.5
+        "hold": 2.1,
+        "hike_25": 18.0,
+        "hike_50": 79.9
       },
       "most_likely": "hike_50",
       "consensus_direction": "hawkish"
     }
   ],
   "implied_terminal_rate": "4.50-4.75",
-  "implied_terminal_date": "2027-Q2/Q3",
-  "data_snapshot_date": "2026-10-06 03:05 EDT",
-  "recent_event_impact": "2026-10-02 NFP +29K, below about +90K expected; unemployment rose to 4.2% from 4.1%, pushing the 2026-10-28 hold probability sharply higher versus the prior week.",
-  "commentary": "Data snapshot is 2026-10-06 03:05 EDT, after the 2026-10-02 September payrolls release, so the weak NFP print is reflected. September CPI and PPI had not yet been released as of the snapshot, with BLS schedules pointing to 2026-10-14 for CPI and 2026-10-15 for PPI; the latest pricing still leans toward hikes beyond October, but much less aggressively for the next meeting after the payroll miss.",
+  "implied_terminal_date": "2027-Q2",
+  "data_snapshot_date": "2026-10-06",
+  "recent_event_impact": "2026-10-02 NFP: September payrolls +29K versus about +84K to +90K expected, unemployment 4.2%; this reduced near-term hike pressure, but earlier hot August CPI/PPI left hikes priced for December and 2027.",
+  "commentary": "Data snapshot is 2026-10-06, after the 2026-10-02 NFP release, so the weak payroll surprise is reflected; no CPI/PPI release occurred within 2026-10-01 to 2026-10-07, with September PPI scheduled for 2026-10-15. Markets lean to an October hold, then price renewed hikes into December/2027 because inflation concerns from the prior CPI/PPI cycle remain dominant despite softer labor data.",
   "sources": [
     {
       "url": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html",
       "type": "cme_fedwatch"
     },
     {
-      "url": "https://www.investing.com/central-banks/fed-rate-monitor",
-      "type": "cme_fedwatch_derived"
-    },
-    {
       "url": "https://www.oanda.jp/lab-education/dictionary/fedwatchtool/",
       "type": "cme_fedwatch_snapshot"
     },
     {
-      "url": "https://www.axios.com/2026/10/02/september-jobs-federal-reserve-trump",
-      "type": "recent_event"
+      "url": "https://www.frenzycap.com/fedwatch",
+      "type": "fed_funds_futures_replica"
+    },
+    {
+      "url": "https://www.bls.gov/news.release/archives/empsit_10022026.htm",
+      "type": "nfp_release"
     },
     {
       "url": "https://www.bls.gov/ppi/",
-      "type": "release_calendar"
+      "type": "ppi_calendar"
     }
   ],
   "confidence": "medium",
   "source_via": "codex_cli_websearch",
-  "fetched_at": "2026-10-06T07:34:11+00:00",
+  "fetched_at": "2026-10-06T16:04:37+00:00",
   "_meta": {
-    "cached_at": "2026-10-06T16:34:11.223975",
-    "age_sec": 30533,
-    "stale": true,
-    "refreshing": true
+    "cached_at": "2026-10-07T01:04:37.365498",
+    "age_sec": 1707,
+    "stale": false,
+    "refreshing": false
   }
 }

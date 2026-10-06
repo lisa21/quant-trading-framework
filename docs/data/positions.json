@@ -77,7 +77,7 @@
       "pyramid_layer": 2,
       "entry_conf": 5,
       "entry_price": 228.5,
-      "entry_high": 248.4,
+      "entry_high": 252.7,
       "source": "moomoo_live"
     },
     {
@@ -177,7 +177,7 @@
       "pyramid_layer": 2,
       "entry_conf": 5,
       "entry_price": 71.88,
-      "entry_high": 84.71,
+      "entry_high": 84.97,
       "source": "moomoo_live"
     },
     {
@@ -241,7 +241,7 @@
   "sync_source": "moomoo_live",
   "moomoo_ok": true,
   "_meta": {
-    "cached_at": "2026-10-07T01:03:05.642514",
+    "cached_at": "2026-10-07T01:33:05.416400",
     "age_sec": 14,
     "stale": false,
     "refreshing": false

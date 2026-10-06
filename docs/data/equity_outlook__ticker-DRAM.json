@@ -1,0 +1,239 @@
+{
+  "cache_schema": 1,
+  "source_stock": "MU",
+  "state": "ready",
+  "analyst_consensus": {
+    "n_analysts": 46,
+    "recommendation": "strong_buy",
+    "current_price": 1069.18,
+    "forward_eps": 207.11,
+    "trailing_eps": 74.33,
+    "eps_growth_pct": 178.6,
+    "forward_pe": 5.16,
+    "trailing_pe": 14.38,
+    "target_mean": 1535.57,
+    "target_high": 2200.0,
+    "target_low": 361.0,
+    "target_upside_pct": 43.6,
+    "revenue_growth_pct": 379.3,
+    "earnings_growth_pct": 1060.5,
+    "next_earnings": "2026-12-24",
+    "implied_pe_hold": 2978.8,
+    "implied_pe_hold_upside": 178.6,
+    "peg_fair_price": 36990.5,
+    "peg_ratio": 0.03,
+    "hist_pe_median": 55.21,
+    "hist_pe_p25": 8.31,
+    "hist_pe_p75": 134.94,
+    "hist_pe_n_days": 776,
+    "implied_hist_median": 11434.74,
+    "implied_hist_p25": 1721.11,
+    "implied_hist_p75": 27947.92,
+    "implied_hist_upside": 969.5,
+    "peer_pe_median": 8.47,
+    "peer_pe_n_peers": 4,
+    "peer_pe_details": [
+      {
+        "ticker": "005930.KS",
+        "pe": 3.85
+      },
+      {
+        "ticker": "000660.KS",
+        "pe": 3.77
+      },
+      {
+        "ticker": "285A.T",
+        "pe": 18.57
+      },
+      {
+        "ticker": "WDC",
+        "pe": 13.09
+      }
+    ],
+    "implied_peer_median": 1754.25,
+    "implied_peer_upside": 64.1,
+    "source": "yfinance analyst aggregation",
+    "forward_estimates": {
+      "earnings": {
+        "0q": {
+          "avg": 38.2106,
+          "low": 30.2,
+          "high": 40.47,
+          "yearAgoEps": 3.03,
+          "numberOfAnalysts": 33.0,
+          "growth": 11.6108
+        },
+        "+1q": {
+          "avg": 42.1201,
+          "low": 39.71,
+          "high": 46.85,
+          "yearAgoEps": 4.78,
+          "numberOfAnalysts": 30.0,
+          "growth": 7.8117
+        },
+        "0y": {
+          "avg": 176.4161,
+          "low": 72.29,
+          "high": 214.7,
+          "yearAgoEps": 73.8829,
+          "numberOfAnalysts": 36.0,
+          "growth": 1.3878
+        },
+        "+1y": {
+          "avg": 206.6767,
+          "low": 161.0,
+          "high": 335.5,
+          "yearAgoEps": 176.4161,
+          "numberOfAnalysts": 34.0,
+          "growth": 0.1715
+        }
+      },
+      "revenue": {
+        "0q": {
+          "avg": 61670130780.0,
+          "low": 58065000000.0,
+          "high": 65610000000.0,
+          "yearAgoRevenue": 13643000000.0,
+          "numberOfAnalysts": 33.0,
+          "growth": 3.5203
+        },
+        "+1q": {
+          "avg": 66970314159.0,
+          "low": 58853000000.0,
+          "high": 74381000000.0,
+          "yearAgoRevenue": 23860000000.0,
+          "numberOfAnalysts": 31.0,
+          "growth": 1.8068
+        },
+        "0y": {
+          "avg": 274928614880.0,
+          "low": 212417000000.0,
+          "high": 307231000000.0,
+          "yearAgoRevenue": 133188000000.0,
+          "numberOfAnalysts": 37.0,
+          "growth": 1.0642
+        },
+        "+1y": {
+          "avg": 314369438180.0,
+          "low": 127430000000.0,
+          "high": 396620000000.0,
+          "yearAgoRevenue": 274928614880.0,
+          "numberOfAnalysts": 41.0,
+          "growth": 0.1435
+        }
+      },
+      "eps_trend": {
+        "0q": {
+          "current": 38.2106,
+          "7daysAgo": 35.6641,
+          "30daysAgo": 34.8915,
+          "60daysAgo": 34.8798,
+          "90daysAgo": 34.8105
+        },
+        "+1q": {
+          "current": 42.1201,
+          "7daysAgo": 38.4661,
+          "30daysAgo": 37.7685,
+          "60daysAgo": 37.7185,
+          "90daysAgo": 37.4848
+        },
+        "0y": {
+          "current": 176.4161,
+          "7daysAgo": 160.0418,
+          "30daysAgo": 156.2494,
+          "60daysAgo": 155.7946,
+          "90daysAgo": 150.0075
+        },
+        "+1y": {
+          "current": 206.6767,
+          "7daysAgo": 179.5134,
+          "30daysAgo": 171.0249,
+          "60daysAgo": 166.8887,
+          "90daysAgo": 163.347
+        }
+      },
+      "eps_revisions": {
+        "0q": {
+          "upLast7days": 4.0,
+          "upLast30days": 6.0,
+          "downLast30days": 1.0
+        },
+        "+1q": {
+          "upLast7days": 3.0,
+          "upLast30days": 6.0,
+          "downLast30days": 1.0
+        },
+        "0y": {
+          "upLast7days": 3.0,
+          "upLast30days": 5.0,
+          "downLast30days": 1.0
+        },
+        "+1y": {
+          "upLast7days": 3.0,
+          "upLast30days": 4.0,
+          "downLast30days": 1.0
+        }
+      },
+      "revision_summary": {
+        "period": "+1y",
+        "signal": "upward",
+        "trend_signal": "upward",
+        "breadth_signal": "upward",
+        "eps_current": 206.6767,
+        "eps_30d_ago": 171.0249,
+        "eps_trend_pct_30d": 20.85,
+        "up_30d": 4,
+        "down_30d": 1,
+        "net_30d": 3
+      }
+    }
+  },
+  "pricing": {
+    "classification": "underpriced",
+    "label": "市场预期偏低",
+    "tone": "ok",
+    "confidence": "high",
+    "anchor_count": 3,
+    "anchors": [
+      {
+        "key": "analyst_target",
+        "label": "分析师目标均值",
+        "implied_price": 1535.57,
+        "gap_pct": 43.6
+      },
+      {
+        "key": "pe_hold",
+        "label": "前瞻 EPS × 当前估值",
+        "implied_price": 2978.8,
+        "gap_pct": 178.6
+      },
+      {
+        "key": "peer_pe",
+        "label": "前瞻 EPS × 同行 PE 中位",
+        "implied_price": 1754.25,
+        "gap_pct": 64.1
+      }
+    ],
+    "median_gap_pct": 64.1,
+    "revision_signal": "upward",
+    "required_eps_growth_pct": -73.9,
+    "consensus_eps_growth_pct": 178.6,
+    "growth_cushion_pct": 252.5,
+    "rationale": [
+      "多口径隐含价中位数高于现价 64.1%",
+      "近 30 天 EPS 共识上修",
+      "历史 PE 口径要求 EPS 增长 -73.9%，共识为 +178.6%"
+    ]
+  },
+  "official_guidance_status": "not_connected",
+  "fetched_at": "2026-10-06T15:03:25.156438+00:00",
+  "source": "yfinance analyst aggregation",
+  "_meta": {
+    "cached_at": "2026-10-07T00:03:25.157437",
+    "age_sec": 5398,
+    "stale": false,
+    "refreshing": false
+  },
+  "ticker": "DRAM",
+  "is_proxy": true
+}
