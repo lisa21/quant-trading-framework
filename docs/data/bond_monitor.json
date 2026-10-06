@@ -1,5 +1,5 @@
 {
-  "asof": "2026-10-07T06:33",
+  "asof": "2026-10-07T07:03",
   "yields": {
     "10y": {
       "value": 5.269,
@@ -247,7 +247,7 @@
     },
     {
       "level": "warn",
-      "msg": "USDJPY 158.09 进入 155-160 口头干预区间 (JP MoF)",
+      "msg": "USDJPY 158.1 进入 155-160 口头干预区间 (JP MoF)",
       "key": "jpy_verbal_zone"
     },
     {
@@ -320,13 +320,13 @@
     "sofr_pct": 3.89,
     "iorb_pct": 3.9,
     "sofr_iorb_spread_bps": -1.0,
-    "usdjpy": 158.09,
-    "usdjpy_20d_pct": 2.75,
-    "usdjpy_20d_delta_pct": 2.75,
+    "usdjpy": 158.1,
+    "usdjpy_20d_pct": 2.76,
+    "usdjpy_20d_delta_pct": 2.76,
     "usdjpy_60d_high": 163.86,
     "usdjpy_pullback_from_60d_high_pct": -3.52,
-    "krw_usd": 1337.0,
-    "krw_20d_pct": -0.49,
+    "krw_usd": 1336.9,
+    "krw_20d_pct": -0.5,
     "jgb_10y_pct": 2.94,
     "jgb_asof": "2026-08-01",
     "ust_jgb_spread_bps": 232.9,
@@ -343,9 +343,9 @@
     "kbe_spy_20d_delta_pct": -7.85,
     "cdx_ig_bps": 84.0,
     "cdx_hy_bps": 312.0,
-    "dxy": 101.86,
-    "dxy_pct_20d": 3.06,
-    "dxy_z_60d": 1.55,
+    "dxy": 101.84,
+    "dxy_pct_20d": 3.04,
+    "dxy_z_60d": 1.53,
     "asia_indices": {
       "N225": {
         "symbol": "^N225",
@@ -511,8 +511,8 @@
     }
   },
   "_meta": {
-    "cached_at": "2026-10-07T06:33:17.659894",
-    "age_sec": 1786,
+    "cached_at": "2026-10-07T07:03:22.063582",
+    "age_sec": 1782,
     "stale": true,
     "refreshing": true
   }
