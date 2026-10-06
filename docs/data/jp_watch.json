@@ -5623,7 +5623,7 @@
   "data_source": "yfinance",
   "_meta": {
     "cached_at": "2026-10-06T10:03:06.155672",
-    "age_sec": 1798,
+    "age_sec": 3598,
     "stale": true,
     "refreshing": true
   }
