@@ -3,19 +3,8 @@
   "path": "ai_targets_2026-10-05.json",
   "mtime": "2026-10-05T22:24:20.569489",
   "broker_status": "ok",
-  "pending_count": 1,
-  "pending_orders": [
-    {
-      "order_id": "466908",
-      "ticker": "US.DRAM",
-      "side": "BUY",
-      "qty": 283.0,
-      "dealt_qty": 0.0,
-      "price": 61.06,
-      "status": "SUBMITTED",
-      "system_managed": true
-    }
-  ],
+  "pending_count": 0,
+  "pending_orders": [],
   "manual_pending_count": 0,
   "version": 1,
   "ts": "2026-10-05T09:23",
@@ -33,7 +22,7 @@
       "times": {
         "decision_written_at": "2026-10-05T19:46:56+00:00",
         "market_observed_at": "2026-10-06 04:46",
-        "broker_checked_at": "2026-10-05T23:33:03+00:00",
+        "broker_checked_at": "2026-10-06T00:03:03+00:00",
         "last_fill_at": "2026-09-01T16:03:59.056554+00:00"
       },
       "system_action": "WATCH_BUY",
@@ -61,7 +50,7 @@
       "times": {
         "decision_written_at": "2026-10-05T19:46:57+00:00",
         "market_observed_at": "2026-10-06 04:46",
-        "broker_checked_at": "2026-10-05T23:33:03+00:00",
+        "broker_checked_at": "2026-10-06T00:03:03+00:00",
         "last_fill_at": "2026-09-02T10:06:19.550586+00:00"
       },
       "system_action": "WATCH_BUY",
@@ -89,7 +78,7 @@
       "times": {
         "decision_written_at": "2026-10-05T19:47:11+00:00",
         "market_observed_at": "2026-10-06 04:46",
-        "broker_checked_at": "2026-10-05T23:33:03+00:00",
+        "broker_checked_at": "2026-10-06T00:03:03+00:00",
         "last_fill_at": "2026-08-18T19:47:45.581288+00:00"
       },
       "system_action": "WATCH_BUY",
@@ -97,24 +86,13 @@
       "system_reason": "bullish trend + momentum",
       "system_ts": "2026-10-06T04:47:11.769698",
       "target_outdated": true,
-      "execution_status": "submitted",
+      "execution_status": "candidate",
       "effective_entry_ref": 61.57,
       "effective_stop_ref": 58.49,
       "effective_target_ref": null,
       "effective_price_source": "latest_system_decision",
       "position_qty": 0,
-      "pending_orders": [
-        {
-          "order_id": "466908",
-          "ticker": "US.DRAM",
-          "side": "BUY",
-          "qty": 283.0,
-          "dealt_qty": 0.0,
-          "price": 61.06,
-          "status": "SUBMITTED",
-          "system_managed": true
-        }
-      ]
+      "pending_orders": []
     },
     {
       "ticker": "US.MULL",
@@ -128,7 +106,7 @@
       "times": {
         "decision_written_at": "2026-10-05T19:47:12+00:00",
         "market_observed_at": "2026-10-06 04:47",
-        "broker_checked_at": "2026-10-05T23:33:03+00:00",
+        "broker_checked_at": "2026-10-06T00:03:03+00:00",
         "last_fill_at": "2026-10-05T13:21:07.040509+00:00"
       },
       "system_action": "WATCH_BUY",
@@ -156,7 +134,7 @@
       "times": {
         "decision_written_at": "2026-10-05T19:47:33+00:00",
         "market_observed_at": "2026-10-06 04:47",
-        "broker_checked_at": "2026-10-05T23:33:03+00:00",
+        "broker_checked_at": "2026-10-06T00:03:03+00:00",
         "last_fill_at": null
       },
       "system_action": "HOLD",
