@@ -240,9 +240,9 @@
   "source": "yfinance analyst aggregation",
   "_meta": {
     "cached_at": "2026-10-06T11:33:22.016343",
-    "age_sec": 19801,
-    "stale": false,
-    "refreshing": false
+    "age_sec": 21601,
+    "stale": true,
+    "refreshing": true
   },
   "ticker": "TQQQ",
   "is_proxy": true
