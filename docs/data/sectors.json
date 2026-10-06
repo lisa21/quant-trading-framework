@@ -121,15 +121,16 @@
       "policy_note": "短线承压：等待价格与动量重新确认"
     }
   ],
-  "ts": "2026-10-06T00:03:03.775319+00:00",
+  "ts": "2026-10-06T00:33:05.431534+00:00",
   "canonical_regime": "unknown",
   "n_disagreements_this_call": 0,
   "rotation_speed": {
-    "rotation_speed": 4,
+    "rotation_speed": 5,
     "window_weeks": 12,
     "n_weeks_evaluated": 12,
     "current_top1": "SMH",
     "recent_top1_history": [
+      "XLV",
       "XLE",
       "XLE",
       "GLD",
@@ -138,16 +139,15 @@
       "GLD",
       "XLE",
       "XLE",
-      "SMH",
       "SMH",
       "SMH",
       "SMH"
     ],
-    "asof": "2026-10-05 00:00:00-04:00"
+    "asof": "2026-10-02 00:00:00-04:00"
   },
   "_meta": {
-    "cached_at": "2026-10-06T09:03:03.775319",
-    "age_sec": 1799,
+    "cached_at": "2026-10-06T09:33:05.432557",
+    "age_sec": 1797,
     "stale": true,
     "refreshing": true
   }

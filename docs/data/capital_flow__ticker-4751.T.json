@@ -6,9 +6,9 @@
     "reason": "",
     "score": 0.0,
     "peak_bars": [],
-    "day_ratio": 0.85,
-    "trading_date": "2026-10-05",
-    "date_short": "10/5",
+    "day_ratio": 0.05,
+    "trading_date": "2026-10-06",
+    "date_short": "10/6",
     "net_bias": "neutral",
     "buy_shares": 0,
     "sell_shares": 0,
@@ -16,11 +16,31 @@
     "sell_value_oku": 0,
     "days": [
       {
+        "trading_date": "2026-10-06",
+        "date_short": "10/6",
+        "peak_bars": [],
+        "slices": [],
+        "day_ratio": 0.05,
+        "day_chg_pct": 0.0,
+        "day_open": 1238.0,
+        "day_close": 1238.0,
+        "net_bias": "neutral",
+        "buy_shares": 0,
+        "sell_shares": 0,
+        "buy_value_oku": 0,
+        "sell_value_oku": 0,
+        "full_bias": "sell",
+        "full_up_shares": 48600,
+        "full_down_shares": 89700,
+        "full_up_value_oku": 0.6,
+        "full_down_value_oku": 1.11
+      },
+      {
         "trading_date": "2026-10-05",
         "date_short": "10/5",
         "peak_bars": [],
         "slices": [],
-        "day_ratio": 0.85,
+        "day_ratio": 0.89,
         "day_chg_pct": 0.7,
         "day_open": 1221.0,
         "day_close": 1229.5,
@@ -40,7 +60,7 @@
         "date_short": "10/2",
         "peak_bars": [],
         "slices": [],
-        "day_ratio": 0.67,
+        "day_ratio": 0.71,
         "day_chg_pct": -0.12,
         "day_open": 1231.0,
         "day_close": 1229.5,
@@ -73,7 +93,7 @@
           }
         ],
         "slices": [],
-        "day_ratio": 1.22,
+        "day_ratio": 1.28,
         "day_chg_pct": 0.28,
         "day_open": 1231.5,
         "day_close": 1235.0,
@@ -106,7 +126,7 @@
           }
         ],
         "slices": [],
-        "day_ratio": 1.03,
+        "day_ratio": 1.08,
         "day_chg_pct": 2.4,
         "day_open": 1206.0,
         "day_close": 1235.0,
@@ -120,26 +140,6 @@
         "full_down_shares": 983600,
         "full_up_value_oku": 20.35,
         "full_down_value_oku": 12.02
-      },
-      {
-        "trading_date": "2026-09-29",
-        "date_short": "9/29",
-        "peak_bars": [],
-        "slices": [],
-        "day_ratio": 0.95,
-        "day_chg_pct": 0,
-        "day_open": NaN,
-        "day_close": 1209.5,
-        "net_bias": "neutral",
-        "buy_shares": 0,
-        "sell_shares": 0,
-        "buy_value_oku": 0,
-        "sell_value_oku": 0,
-        "full_bias": "neutral",
-        "full_up_shares": 1102800,
-        "full_down_shares": 1154500,
-        "full_up_value_oku": 13.35,
-        "full_down_value_oku": 13.95
       }
     ],
     "highlights": [
@@ -177,11 +177,11 @@
       "value_oku_min": 1.0
     }
   },
-  "asof": "2026-10-05 15:20 JST",
+  "asof": "2026-10-06 09:15 JST",
   "source": "yfinance_intraday",
   "_meta": {
-    "cached_at": "2026-10-06T09:03:05.859591",
-    "age_sec": 1799,
+    "cached_at": "2026-10-06T09:33:06.515777",
+    "age_sec": 1797,
     "stale": true,
     "refreshing": true
   }
