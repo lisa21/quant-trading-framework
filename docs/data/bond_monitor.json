@@ -1,5 +1,5 @@
 {
-  "asof": "2026-10-06T18:03",
+  "asof": "2026-10-06T18:33",
   "yields": {
     "10y": {
       "value": 5.311,
@@ -325,8 +325,8 @@
     "usdjpy_20d_delta_pct": 0.98,
     "usdjpy_60d_high": 163.86,
     "usdjpy_pullback_from_60d_high_pct": -3.74,
-    "krw_usd": 1338.5,
-    "krw_20d_pct": -0.38,
+    "krw_usd": 1339.3,
+    "krw_20d_pct": -0.32,
     "jgb_10y_pct": 2.94,
     "jgb_asof": "2026-08-01",
     "ust_jgb_spread_bps": 237.1,
@@ -343,9 +343,9 @@
     "kbe_spy_20d_delta_pct": -7.75,
     "cdx_ig_bps": 85.0,
     "cdx_hy_bps": 310.0,
-    "dxy": 102.03,
-    "dxy_pct_20d": 3.23,
-    "dxy_z_60d": 1.72,
+    "dxy": 102.05,
+    "dxy_pct_20d": 3.25,
+    "dxy_z_60d": 1.74,
     "asia_indices": {
       "N225": {
         "symbol": "^N225",
@@ -392,31 +392,31 @@
       "es_f": {
         "symbol": "ES=F",
         "label": "S&P 500 futures",
-        "price": 7846.25,
-        "chg_pct": 0.26
+        "price": 7845.25,
+        "chg_pct": 0.24
       },
       "nq_f": {
         "symbol": "NQ=F",
         "label": "Nasdaq futures",
-        "price": 31397.5,
-        "chg_pct": 0.25
+        "price": 31406.75,
+        "chg_pct": 0.28
       },
       "cl_f": {
         "symbol": "CL=F",
         "label": "WTI crude futures",
-        "price": 87.91,
-        "chg_pct": -1.7
+        "price": 87.77,
+        "chg_pct": -1.86
       },
       "gc_f": {
         "symbol": "GC=F",
         "label": "Gold futures",
-        "price": 4179.5,
-        "chg_pct": 0.55
+        "price": 4182.5,
+        "chg_pct": 0.62
       }
     },
     "oil_uso": 143.99,
     "oil_pct_20d": 1.43,
-    "oil_wti": 87.91,
+    "oil_wti": 87.77,
     "eem_pct_20d": 0.04,
     "eem_vs_spx_20d": -0.81,
     "volume_confirm": {
@@ -500,8 +500,8 @@
     "unemployment_asof": "2026-09-01",
     "stablecoin_total_bn": 258.2,
     "usdt_bn": 184.1,
-    "usdc_bn": 74.2,
-    "vix": 15.44,
+    "usdc_bn": 74.1,
+    "vix": 15.42,
     "bbi_score": 0.5,
     "bbi_components": {
       "vix": -0.43,
@@ -511,8 +511,8 @@
     }
   },
   "_meta": {
-    "cached_at": "2026-10-06T18:03:20.579392",
-    "age_sec": 1783,
+    "cached_at": "2026-10-06T18:33:17.805545",
+    "age_sec": 1786,
     "stale": true,
     "refreshing": true
   }
