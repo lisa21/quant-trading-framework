@@ -103,7 +103,7 @@
         "tier": "huge_abs"
       }
     ],
-    "day_ratio": 0.84,
+    "day_ratio": 0.96,
     "trading_date": "2026-10-06",
     "date_short": "10/6",
     "net_bias": "neutral",
@@ -214,20 +214,20 @@
           }
         ],
         "slices": [],
-        "day_ratio": 0.84,
-        "day_chg_pct": -1.0,
+        "day_ratio": 0.96,
+        "day_chg_pct": -1.42,
         "day_open": 19000.0,
-        "day_close": 18810.0,
+        "day_close": 18730.0,
         "net_bias": "neutral",
         "buy_shares": 2764800,
         "sell_shares": 4915600,
         "buy_value_oku": 522.52,
         "sell_value_oku": 927.8,
         "full_bias": "neutral",
-        "full_up_shares": 11316600,
-        "full_down_shares": 12157900,
-        "full_up_value_oku": 2132.57,
-        "full_down_value_oku": 2286.22
+        "full_up_shares": 13284500,
+        "full_down_shares": 13949400,
+        "full_up_value_oku": 2502.22,
+        "full_down_value_oku": 2622.07
       },
       {
         "trading_date": "2026-10-05",
@@ -473,7 +473,7 @@
             "tier": "huge_2bar"
           }
         ],
-        "day_ratio": 1.22,
+        "day_ratio": 1.21,
         "day_chg_pct": 1.46,
         "day_open": 18870.0,
         "day_close": 19145.0,
@@ -627,7 +627,7 @@
             "tier": "huge_2bar"
           }
         ],
-        "day_ratio": 1.61,
+        "day_ratio": 1.6,
         "day_chg_pct": 2.22,
         "day_open": 18665.0,
         "day_close": 19080.0,
@@ -744,7 +744,7 @@
           }
         ],
         "slices": [],
-        "day_ratio": 1.17,
+        "day_ratio": 1.16,
         "day_chg_pct": 0.64,
         "day_open": 18000.0,
         "day_close": 18115.0,
@@ -809,11 +809,11 @@
       "value_oku_min": 1.0
     }
   },
-  "asof": "2026-10-06 14:15 JST",
+  "asof": "2026-10-06 15:20 JST",
   "source": "yfinance_intraday",
   "_meta": {
-    "cached_at": "2026-10-06T14:33:21.444414",
-    "age_sec": 7200,
+    "cached_at": "2026-10-06T16:33:24.874516",
+    "age_sec": 1795,
     "stale": true,
     "refreshing": true
   }

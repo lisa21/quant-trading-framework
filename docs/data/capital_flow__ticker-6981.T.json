@@ -103,7 +103,7 @@
         "tier": "huge_abs"
       }
     ],
-    "day_ratio": 0.91,
+    "day_ratio": 1.07,
     "trading_date": "2026-10-06",
     "date_short": "10/6",
     "net_bias": "neutral",
@@ -214,20 +214,20 @@
           }
         ],
         "slices": [],
-        "day_ratio": 0.91,
-        "day_chg_pct": 1.82,
+        "day_ratio": 1.07,
+        "day_chg_pct": 0.91,
         "day_open": 8790.0,
-        "day_close": 8950.0,
+        "day_close": 8870.0,
         "net_bias": "neutral",
         "buy_shares": 2651100,
         "sell_shares": 1540000,
         "buy_value_oku": 235.74,
         "sell_value_oku": 136.08,
         "full_bias": "neutral",
-        "full_up_shares": 7989600,
-        "full_down_shares": 7798300,
-        "full_up_value_oku": 710.91,
-        "full_down_value_oku": 692.73
+        "full_up_shares": 8488300,
+        "full_down_shares": 10362900,
+        "full_up_value_oku": 755.59,
+        "full_down_value_oku": 921.16
       },
       {
         "trading_date": "2026-10-05",
@@ -331,7 +331,7 @@
           }
         ],
         "slices": [],
-        "day_ratio": 1.01,
+        "day_ratio": 1.0,
         "day_chg_pct": -0.32,
         "day_open": 8752.0,
         "day_close": 8724.0,
@@ -448,7 +448,7 @@
           }
         ],
         "slices": [],
-        "day_ratio": 0.96,
+        "day_ratio": 0.95,
         "day_chg_pct": -0.7,
         "day_open": 8513.0,
         "day_close": 8453.0,
@@ -590,7 +590,7 @@
             "tier": "huge_2bar"
           }
         ],
-        "day_ratio": 1.42,
+        "day_ratio": 1.41,
         "day_chg_pct": 3.57,
         "day_open": 8179.0,
         "day_close": 8471.0,
@@ -707,7 +707,7 @@
           }
         ],
         "slices": [],
-        "day_ratio": 1.11,
+        "day_ratio": 1.1,
         "day_chg_pct": -2.75,
         "day_open": 8116.0,
         "day_close": 7893.0,
@@ -772,11 +772,11 @@
       "value_oku_min": 1.0
     }
   },
-  "asof": "2026-10-06 14:15 JST",
+  "asof": "2026-10-06 15:20 JST",
   "source": "yfinance_intraday",
   "_meta": {
-    "cached_at": "2026-10-06T14:33:22.437510",
-    "age_sec": 7199,
+    "cached_at": "2026-10-06T16:33:24.579979",
+    "age_sec": 1795,
     "stale": true,
     "refreshing": true
   }
