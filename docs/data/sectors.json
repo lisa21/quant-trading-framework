@@ -121,7 +121,7 @@
       "policy_note": "方向不明：按中性环境处理"
     }
   ],
-  "ts": "2026-10-06T03:03:07.288967+00:00",
+  "ts": "2026-10-06T03:33:04.888402+00:00",
   "canonical_regime": "unknown",
   "n_disagreements_this_call": 0,
   "rotation_speed": {
@@ -146,8 +146,8 @@
     "asof": "2026-10-05 00:00:00-04:00"
   },
   "_meta": {
-    "cached_at": "2026-10-06T12:03:07.288967",
-    "age_sec": 1796,
+    "cached_at": "2026-10-06T12:33:04.907538",
+    "age_sec": 1798,
     "stale": true,
     "refreshing": true
   }
