@@ -1,12 +1,12 @@
 {
-  "ts": "2026-10-06T15:03:03.792125+00:00",
+  "ts": "2026-10-06T15:33:03.961295+00:00",
   "factors": [
     {
       "arrow": "·",
       "name": "WTI 油价",
       "direction": "neutral",
       "weight": 1,
-      "value": "$87.8 (20d -5.6%)",
+      "value": "$88.02 (20d -5.4%)",
       "hint": "美国基准油价 20 天大幅涨跌指示供需变化"
     },
     {
@@ -14,7 +14,7 @@
       "name": "Brent-WTI 价差",
       "direction": "bullish",
       "weight": 1,
-      "value": "$10.42 (Brent $98.22 - WTI $87.8)",
+      "value": "$10.25 (Brent $98.27 - WTI $88.02)",
       "hint": "正常 $2-6；>$7 = 供应紧张利多，接近 0 = 美国供应过剩利空"
     },
     {
@@ -22,7 +22,7 @@
       "name": "XLE 能源板块",
       "direction": "bearish",
       "weight": 1,
-      "value": "XLE -1.4% vs SPY +2.2% (差 -3.5pp)",
+      "value": "XLE -1.1% vs SPY +2.2% (差 -3.4pp)",
       "hint": "能源股跑赢大盘 = 市场认可油价上行；跑输 = 不信任"
     },
     {
@@ -30,7 +30,7 @@
       "name": "美元指数 DXY",
       "direction": "neutral",
       "weight": 1,
-      "value": "101.88 (5d +0.5%)",
+      "value": "101.82 (5d +0.4%)",
       "hint": "油以美元计价，美元升值 = 油价承压。DXY 5d +2% = 利空油"
     },
     {
@@ -46,7 +46,7 @@
       "name": "OVX 油价波动率",
       "direction": "bearish",
       "weight": 1,
-      "value": "48.97 · 极高（>45），市场恐慌",
+      "value": "48.82 · 极高（>45），市场恐慌",
       "hint": "OVX = CBOE 原油 ETF 波动率指数（类似 VIX）。低=平稳利多，高=恐慌利空"
     },
     {
@@ -63,13 +63,13 @@
   "notes": [
     "综合 score=+0，多因子分歧，观察后续"
   ],
-  "price": 87.8,
-  "pct_5d": -1.77,
-  "pct_20d": -5.62,
+  "price": 88.02,
+  "pct_5d": -1.52,
+  "pct_20d": -5.39,
   "source": "WTI 期货 (CL=F) 主 + 5 因子",
   "_meta": {
-    "cached_at": "2026-10-07T00:03:06.174343",
-    "age_sec": 1797,
+    "cached_at": "2026-10-07T00:33:06.163329",
+    "age_sec": 1798,
     "stale": true,
     "refreshing": true
   }

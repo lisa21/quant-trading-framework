@@ -10,9 +10,10 @@
     "event_counts": {
       "MARKET": 1,
       "NOISE": 2,
-      "MEDIA_ATTACK": 8,
+      "MEDIA_ATTACK": 9,
       "DOMESTIC_POLICY": 6,
-      "DEAL": 1
+      "DEAL": 1,
+      "GEOPOLITICAL": 1
     },
     "breaking": [
       {
@@ -24,31 +25,30 @@
           "SPY"
         ],
         "preview": "HUGE INVESTMENT WIN for NEBRASKA AND THE U.S.!Beckton Dickenson (BD), one of the largest Medical Device Manufacturers, h",
-        "verbatim": "HUGE INVESTMENT WIN... agreed to an Investment of 3 BILLION DOLLARS to Onshore Manufacturing",
+        "verbatim": "BD... has agreed to an Investment of 3 BILLION DOLLARS to Onshore Manufacturing",
         "post_time": "2026-10-06T03:18:50.947Z"
       },
       {
-        "event_type": "MARKET",
-        "direction": "bearish",
+        "event_type": "DOMESTIC_POLICY",
+        "direction": "bullish",
         "magnitude": "small",
         "confidence": 7,
         "tickers": [
           "SPY",
-          "QQQ",
-          "GLD"
+          "QQQ"
         ],
-        "preview": "What's driving up Gasoline is no longer the Strait of Hormuz, because Record Numbers of Barrels are coming out now on an",
-        "verbatim": "What's driving up Gasoline is no longer the Strait of Hormuz... but the word, \"Refineries,\" where Russia's are being blown up by Ukraine",
-        "post_time": "2026-10-05T16:32:36.420Z"
+        "preview": "If Republicans win the House of Representatives and the Senate in the 2026 Midterm Elections, I'm going to give all Adul",
+        "verbatim": "I'm going to give all Adult Citizens in the United States of America, $5,000.",
+        "post_time": "2026-10-05T22:00:51.961Z"
       }
     ],
     "summary": {
-      "text": "特朗普强调共和党选情造势并攻击媒体，情绪偏风险中性。",
-      "state": "cached",
+      "text": null,
+      "state": "generating",
       "post_ids": [
-        "117394290541424422",
-        "117394284349556435",
-        "117393995402609279"
+        "117394656543560911",
+        "117394338110958110",
+        "117394290541424422"
       ]
     }
   },
