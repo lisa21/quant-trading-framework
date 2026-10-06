@@ -62,6 +62,10 @@ _refresh_flag: dict[str, bool] = {}
 _refresh_locks: dict[str, threading.Lock] = {}
 
 
+_refresh_started: dict[str, float] = {}
+HUNG_REFRESH_SEC = 300
+
+
 def _cached(name: str, ttl_sec: int, compute_fn, first_call_async: bool = False,
             first_call_placeholder: dict | None = None, cache_validator=None):
     """返回缓存 JSON + 元数据 (cached_at / age_sec / stale / refreshing)。
@@ -94,7 +98,12 @@ def _cached(name: str, ttl_sec: int, compute_fn, first_call_async: bool = False,
 
     def _spawn_refresh():
         if _refresh_flag.get(name):
-            return
+            # 2026-10-06: 刷新线程卡死 (例如 SDK 无响应) 时不能永远占着标志
+            started = _refresh_started.get(name, 0.0)
+            if time.time() - started < HUNG_REFRESH_SEC:
+                return
+            _refresh_flag[name] = False
+            _refresh_locks[name] = threading.Lock()   # 卡死的线程还占着旧锁
         lock = _refresh_locks.setdefault(name, threading.Lock())
 
         def _bg_refresh():
@@ -102,6 +111,7 @@ def _cached(name: str, ttl_sec: int, compute_fn, first_call_async: bool = False,
                 if _refresh_flag.get(name):
                     return
                 _refresh_flag[name] = True
+                _refresh_started[name] = time.time()
                 try:
                     fresh = compute_fn()
                     cache_path.write_text(
@@ -435,13 +445,53 @@ def api_nav(days: int = 30) -> dict:
     }
 
 
+MOOMOO_QUERY_TIMEOUT_SEC = 20
+
+
+def _moomoo_query(fn, timeout: float | None = None):
+    """在 _TRADER_LOCK 下、带超时地调用 moomoo SDK (2026-10-06).
+
+    之前持仓查询不加锁, 与其他线程并发使用同一个 ctx; 一旦 SDK 调用卡住,
+    后台刷新线程永远不返回, /api/positions 停在 3 天前的缓存. 现在: 拿不到锁或
+    超时 → 返 None (调用方按"moomoo 不可用"处理), 并关闭卡住的连接, 下次重连.
+    """
+    import threading as _th
+    from paper_trader import _TRADER_LOCK, _ctx_close
+    timeout = MOOMOO_QUERY_TIMEOUT_SEC if timeout is None else timeout
+    if not _TRADER_LOCK.acquire(timeout=timeout):
+        return None
+    box: dict = {}
+    def _run():
+        try:
+            box["v"] = fn()
+        except Exception as e:  # noqa: BLE001
+            box["e"] = e
+    try:
+        t = _th.Thread(target=_run, daemon=True)
+        t.start()
+        t.join(timeout)
+        if t.is_alive():
+            try:
+                _ctx_close()
+            except Exception:
+                pass
+            return None
+        if "e" in box:
+            return None
+        return box.get("v")
+    finally:
+        _TRADER_LOCK.release()
+
+
 def _fetch_moomoo_live_positions() -> list[dict] | None:
-    """实时查 moomoo SIMULATE 账户全部持仓。失败返 None."""
+    """实时查 moomoo SIMULATE 账户全部持仓。失败 / 超时返 None."""
     try:
         from paper_trader import _ctx_get, ACC_ID, TRD_ENV
         from moomoo import RET_OK
-        ctx = _ctx_get()
-        ret, pos = ctx.position_list_query(trd_env=TRD_ENV, acc_id=ACC_ID)
+        got = _moomoo_query(lambda: _ctx_get().position_list_query(trd_env=TRD_ENV, acc_id=ACC_ID))
+        if got is None:
+            return None
+        ret, pos = got
         if ret != RET_OK or pos is None or (hasattr(pos, "empty") and pos.empty):
             return []
         rows = []

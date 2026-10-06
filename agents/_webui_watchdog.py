@@ -66,6 +66,8 @@ JOBS = {
     # 2026-10-05: 供给冲击日历 (增发 / 转售 / 解禁 + 指数调仓日), 每天收盘后
     "supply_calendar": {"bat": "_supply_calendar.bat", "market_quiet": True,
                         "auto_every_days": 1},
+    # 2026-10-06: 只读诊断 (本机请求 WebUI 接口), 按需触发
+    "webui_diag": {"bat": "_webui_diag.bat"},
 }
 QUIET_BLOCK_UTC_HOURS = (12, 21)
 
