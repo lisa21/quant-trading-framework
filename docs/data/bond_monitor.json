@@ -1,5 +1,5 @@
 {
-  "asof": "2026-10-07T08:03",
+  "asof": "2026-10-07T08:33",
   "yields": {
     "10y": {
       "value": 5.269,
@@ -247,7 +247,7 @@
     },
     {
       "level": "warn",
-      "msg": "USDJPY 158.19 进入 155-160 口头干预区间 (JP MoF)",
+      "msg": "USDJPY 158.23 进入 155-160 口头干预区间 (JP MoF)",
       "key": "jpy_verbal_zone"
     },
     {
@@ -320,13 +320,13 @@
     "sofr_pct": 3.89,
     "iorb_pct": 3.9,
     "sofr_iorb_spread_bps": -1.0,
-    "usdjpy": 158.19,
-    "usdjpy_20d_pct": 3.07,
-    "usdjpy_20d_delta_pct": 3.07,
+    "usdjpy": 158.23,
+    "usdjpy_20d_pct": 3.1,
+    "usdjpy_20d_delta_pct": 3.1,
     "usdjpy_60d_high": 163.86,
-    "usdjpy_pullback_from_60d_high_pct": -3.46,
-    "krw_usd": 1337.0,
-    "krw_20d_pct": -0.17,
+    "usdjpy_pullback_from_60d_high_pct": -3.44,
+    "krw_usd": 1338.3,
+    "krw_20d_pct": -0.07,
     "jgb_10y_pct": 2.94,
     "jgb_asof": "2026-08-01",
     "ust_jgb_spread_bps": 232.9,
@@ -392,31 +392,31 @@
       "es_f": {
         "symbol": "ES=F",
         "label": "S&P 500 futures",
-        "price": 7881.5,
+        "price": 7882.0,
         "chg_pct": 0.71
       },
       "nq_f": {
         "symbol": "NQ=F",
         "label": "Nasdaq futures",
-        "price": 31490.75,
-        "chg_pct": 0.55
+        "price": 31504.5,
+        "chg_pct": 0.6
       },
       "cl_f": {
         "symbol": "CL=F",
         "label": "WTI crude futures",
-        "price": 89.75,
-        "chg_pct": 0.36
+        "price": 89.88,
+        "chg_pct": 0.5
       },
       "gc_f": {
         "symbol": "GC=F",
         "label": "Gold futures",
-        "price": 4189.6,
-        "chg_pct": 0.79
+        "price": 4193.1,
+        "chg_pct": 0.87
       }
     },
     "oil_uso": 144.91,
     "oil_pct_20d": -0.77,
-    "oil_wti": 89.75,
+    "oil_wti": 89.88,
     "eem_pct_20d": -0.81,
     "eem_vs_spx_20d": -2.78,
     "volume_confirm": {
@@ -471,7 +471,7 @@
       "us_qqq": {
         "proxy": "QQQ",
         "label": "Nasdaq 100 ETF",
-        "vol_z_20d": -1.08,
+        "vol_z_20d": -1.05,
         "notable": true
       },
       "jp_equity": {
@@ -511,7 +511,7 @@
     }
   },
   "_meta": {
-    "cached_at": "2026-10-07T08:03:19.415281",
+    "cached_at": "2026-10-07T08:33:19.222299",
     "age_sec": 1784,
     "stale": true,
     "refreshing": true
