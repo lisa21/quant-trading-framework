@@ -249,7 +249,7 @@
           {
             "time": "09:00",
             "vol": 3781000,
-            "ratio": 1.73,
+            "ratio": 1.58,
             "open": 5660.0,
             "price": 5640.0,
             "chg_pct": -0.35,
@@ -715,7 +715,7 @@
       {
         "time": "09:00",
         "vol": 3781000,
-        "ratio": 1.73,
+        "ratio": 1.58,
         "open": 5660.0,
         "price": 5640.0,
         "chg_pct": -0.35,
@@ -723,7 +723,7 @@
         "value_oku": 213.25,
         "date": "2026-10-05",
         "tier": "huge_abs",
-        "_score": 368.92,
+        "_score": 336.94,
         "date_short": "10/5"
       },
       {
@@ -763,8 +763,8 @@
   "asof": "2026-10-06 15:20 JST",
   "source": "yfinance_intraday",
   "_meta": {
-    "cached_at": "2026-10-07T08:33:21.591328",
-    "age_sec": 1798,
+    "cached_at": "2026-10-07T09:03:22.198585",
+    "age_sec": 1796,
     "stale": true,
     "refreshing": true
   }

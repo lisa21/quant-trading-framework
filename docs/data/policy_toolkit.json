@@ -1,30 +1,7 @@
 {
-  "as_of": "2026-10-06T20:37:00.738176",
-  "count_total_actions": 670,
+  "as_of": "2026-10-07T09:07:00.053206",
+  "count_total_actions": 673,
   "tools": [
-    {
-      "tool_key": "fed_hawkish_signal",
-      "zh": "Fed 官员鹰派信号",
-      "owner": "Fed (口头)",
-      "feasibility": "high",
-      "canonical_desc": "官员讲话暗示维持高利率或加息",
-      "invalidation": "会推高长端收益率 → 反救市信号",
-      "status": "已用",
-      "last_action": {
-        "tool_key": "fed_hawkish_signal",
-        "action_type": "signaled",
-        "date": "2026-10-05",
-        "actor": "FOMC",
-        "amount_desc": "",
-        "commentary": "“加息延后不等于宽松”偏鹰，长端利率下行空间受压。",
-        "verbatim": "Fed Hike Delay Isn’t Relief, FOMC Minutes Put the Rate Plateau to the Test",
-        "source": "GoogleNews: FOMC minutes rate expectations",
-        "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNbFlxUUlpUGZmbzlxRm5Mejc0cE9WRE5mSWllTlRnLU9wNG1BTkRpM0dWUVVieHppT3dMR2ZGU1p5RER6S3pTRi1mWWZCT1Q0ZW9HeVFsOUZBSGFHUWtGQzF4RndLQThJU0RnbHZ5azk0c0lHTVRuLVRXU3ltWmIzZG9RclctSUNrdWd1NURJdGFmTW13cmVCOFRxWlAzYThBUVc4eGZEaTBXRnBicUJMVW5HUm5EMXdUSTZBUWppcUEwbzdDaE9pYnYzWGFKVnVMTGo4bmRISWpic25E?oc=5",
-        "confidence": 5
-      },
-      "yield_reaction_30y": {},
-      "event_count_180d": 346
-    },
     {
       "tool_key": "ycc",
       "zh": "收益率曲线控制 (YCC)",
@@ -164,6 +141,29 @@
       "event_count_180d": 27
     },
     {
+      "tool_key": "fed_hawkish_signal",
+      "zh": "Fed 官员鹰派信号",
+      "owner": "Fed (口头)",
+      "feasibility": "high",
+      "canonical_desc": "官员讲话暗示维持高利率或加息",
+      "invalidation": "会推高长端收益率 → 反救市信号",
+      "status": "口头/待发",
+      "last_action": {
+        "tool_key": "fed_hawkish_signal",
+        "action_type": "signaled",
+        "date": "2026-10-06",
+        "actor": "FOMC",
+        "amount_desc": "",
+        "commentary": "若会议纪要强化加息预期，长端收益率易上行，不是救债市信号。",
+        "verbatim": "FOMC Minutes Hold Key to U.S. Rate Hike Outlook",
+        "source": "GoogleNews: FOMC minutes rate expectations",
+        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE4tSmozQTJZZHRlZ3o5c21TcVg2RjFEOC1Kbnhfb056VjJoSW5jUDVOdzgwRXlHeG00aUZTb0xoYzk5M3U4THF4UUR6a2M0TFgxcEJYQzVkd1F0QjlIYW9hT21DTWUyU2c0VGZrNTFZMV9EOHFaWlE?oc=5",
+        "confidence": 5
+      },
+      "yield_reaction_30y": {},
+      "event_count_180d": 348
+    },
+    {
       "tool_key": "qe_restart",
       "zh": "重启 QE / 扩表",
       "owner": "Fed",
@@ -207,7 +207,7 @@
         "confidence": 6
       },
       "yield_reaction_30y": {},
-      "event_count_180d": 224
+      "event_count_180d": 225
     },
     {
       "tool_key": "fima_repo",
@@ -233,7 +233,5 @@
       "yield_reaction_30y": {},
       "event_count_180d": 0
     }
-  ],
-  "stale": true,
-  "age_hours": 12.4
+  ]
 }
