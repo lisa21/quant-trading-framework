@@ -221,6 +221,14 @@
   </div>
 </div>
 
+<!-- Row 0-top-3: QQQ/SPY 大额看跌期权监控 (2026-10-07 用户要求重点监控; 只展示, 不进交易) -->
+<div class="grid">
+  <div class="card" style="border-left:4px solid #f85149">
+    <h2 title="条件: put、到期 ≥7 天、虚值、单合约本轮新增权利金 ≥ $100 万、非疑似多腿。数据是 yfinance 期权链快照 (约 30 分钟一次)，无法区分买方/卖方；次日 OI 增加只说明新开仓。只作监控，预测力待历史检验。">🐻 QQQ / SPY 大额看跌监控 <small id="index-watch-meta">Index Put Watch</small></h2>
+    <div id="index-watch"><small style="color:var(--muted)">加载中...</small></div>
+  </div>
+</div>
+
 <!-- Row 0-priority: 今日值得关注 (覆盖所有 tracked ticker, thesis+regime+confluence 综合排名) -->
 <div class="grid">
   <div class="card" style="border-left:4px solid var(--ok)">
@@ -4089,6 +4097,37 @@ async function loadFills() {
       <tbody>${rows}</tbody></table>`;
 }
 
+// QQQ/SPY 大额看跌监控 (2026-10-07): 只展示; 快照数据看不出买卖方向, 页面上明确写出
+async function loadIndexWatch() {
+  const f = await fetchJson('/api/options_flow');
+  const el = $('index-watch');
+  if (!el) return;
+  const w = f && f.index_watch;
+  if (!w) { el.innerHTML = '<small style="color:var(--muted)">等待下一次期权扫描（美股交易时段约 30 分钟一次）</small>'; return; }
+  const m = v => v == null ? '—' : '$' + (v >= 1e6 ? (v / 1e6).toFixed(1) + 'M' : fmt(Math.round(v)));
+  $('index-watch-meta').textContent = `扫描 ${(f.generated_at || '').slice(5, 16).replace('T', ' ')} UTC${f.stale ? ' · ⚠ 过期' : ''}`;
+  const blocks = ['QQQ', 'SPY'].map(src => {
+    const x = (w.sources || {})[src] || {};
+    const rows = (x.top || []).map(r => `<tr>
+        <td>${r.expiry || ''}<small> (${r.dte}天)</small></td>
+        <td style="text-align:right">$${fmt(r.strike)}<small> (${r.moneyness != null ? ((r.moneyness - 1) * 100).toFixed(1) + '%' : ''})</small></td>
+        <td style="text-align:right">${fmt(r.contracts)}</td>
+        <td style="text-align:right"><b>${m(r.estimated_premium)}</b></td>
+        <td style="text-align:right">${r.volume_oi_ratio != null ? r.volume_oi_ratio.toFixed(1) : '—'}</td>
+        <td><small>${r.status === 'oi_confirmed' ? '✓ 次日OI增 ' + fmt(r.oi_delta) : (r.status === 'oi_not_confirmed' ? '✗ OI未增' : '待确认')}</small></td>
+        <td><small title="快照推测，置信度低">${r.aggressor === 'buy' ? '偏买方?' : (r.aggressor === 'sell' ? '偏卖方?' : '不明')}</small></td>
+      </tr>`).join('');
+    return `<div style="margin-bottom:8px">
+      <div style="font-size:12px; margin-bottom:3px"><b>${src}</b>
+        <span style="color:var(--muted)">大额虚值 put</span> <b class="${x.n_large_otm_puts ? 'warn' : ''}">${x.n_large_otm_puts || 0} 笔 · ${m(x.large_otm_put_premium)}</b>
+        <span style="color:var(--muted)">· 次日OI确认</span> ${x.n_oi_confirmed || 0}
+        <span style="color:var(--muted)" title="仅限已入选事件 (评分≥40, 到期≥7天) 的权利金比，不是全市场 put/call 比">· put/call 权利金比</span> ${x.put_call_premium_ratio_dte7plus != null ? x.put_call_premium_ratio_dte7plus.toFixed(2) : '—'}</div>
+      ${rows ? `<table><thead><tr><th>到期</th><th style="text-align:right">行权价 (距现价)</th><th style="text-align:right">新增张数</th><th style="text-align:right">权利金</th><th style="text-align:right">量/OI</th><th>OI确认</th><th>方向猜测</th></tr></thead><tbody>${rows}</tbody></table>` : '<small style="color:var(--muted)">本轮无符合条件的大额虚值 put</small>'}
+    </div>`;
+  }).join('');
+  el.innerHTML = blocks + `<div style="font-size:10px; color:var(--muted); line-height:1.45">⚠ ${w.caveat || ''}</div>`;
+}
+
 async function loadAll() {
   const promises = [
     loadHealth(), loadTopPicks(), loadSectors(), loadBanners(),
@@ -4100,6 +4139,7 @@ async function loadAll() {
     loadPositions(),       // 2026-10-06: 公开快照也显示持仓 (置顶)
     loadFills(),           // 2026-10-07: 交割单 + 现金 (公开, 置顶)
     loadEquityCurve(),     // 2026-10-06: 账户收益曲线 (公开)
+    loadIndexWatch(),      // 2026-10-07: QQQ/SPY 大额看跌监控 (公开, 只展示)
   ];
   // Owner-only endpoints skip in static mode
   if (!window.STATIC_SNAPSHOT_MODE) {

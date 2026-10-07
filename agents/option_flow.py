@@ -107,11 +107,93 @@ POSITION_PROXY_MAP: dict[str, list[dict[str, Any]]] = {
     ],
 }
 
+# 2026-10-07 用户要求重点监控 QQQ/SPY 大额看跌. SPY 只进"指数看跌监控", 不映射到任何持仓,
+# 所以不改变 _aggregate_positions / 决策 guard 的行为.
+INDEX_WATCH_SOURCES = ("QQQ", "SPY")
+INDEX_WATCH_MIN_DTE = 7                 # 0-6 天到期多为做市/当日博弈, 不代表机构方向性头寸
+INDEX_WATCH_MIN_PREMIUM = 1_000_000.0   # 单个合约本轮新增成交 ≥ $100 万权利金
+INDEX_WATCH_LOG_PATH = FLOW_DIR / "index_watch_log.jsonl"
+
 MONITORED_SOURCES = tuple(dict.fromkeys(
-    proxy["source"]
-    for proxies in POSITION_PROXY_MAP.values()
-    for proxy in proxies
+    [proxy["source"] for proxies in POSITION_PROXY_MAP.values() for proxy in proxies]
+    + list(INDEX_WATCH_SOURCES)
 ))
+
+
+def _index_watch_row(event: dict[str, Any]) -> dict[str, Any]:
+    keys = ("id", "status", "event_date", "observed_at", "source", "expiry", "dte", "strike", "spot",
+            "moneyness", "contracts", "open_interest", "volume_oi_ratio", "estimated_premium",
+            "delta_notional", "aggressor", "aggressor_confidence", "score", "complex_suspected")
+    row = {k: event.get(k) for k in keys}
+    row["oi_delta"] = (event.get("oi_confirmation") or {}).get("oi_delta")
+    return row
+
+
+def build_index_watch(events: list[dict[str, Any]]) -> dict[str, Any]:
+    """QQQ/SPY 大额看跌期权监控 (只展示, 不进交易决策).
+
+    条件: put, 到期 ≥ 7 天, 虚值 (strike < spot), 本轮新增权利金 ≥ $100 万, 非疑似多腿组合.
+    快照数据看不出是"买 put (看跌)"还是"卖 put (看涨/收租)", aggressor 只是低置信度猜测;
+    次日 OI 增加 (oi_confirmed) 只说明是新开仓, 仍不说明方向.
+    """
+    out: dict[str, Any] = {
+        "criteria": {
+            "option_type": "put", "min_dte": INDEX_WATCH_MIN_DTE, "otm": True,
+            "min_premium_usd": INDEX_WATCH_MIN_PREMIUM, "exclude_complex": True,
+        },
+        "caveat": ("期权链快照无法区分买方/卖方: 大额 put 可能是买保护(看跌/对冲), 也可能是卖 put(看多); "
+                   "次日 OI 增加只证明是新开仓. 仅作监控, 不触发交易; 预测力待历史检验."),
+        "sources": {},
+    }
+    for source in INDEX_WATCH_SOURCES:
+        rel = [e for e in events if e.get("source") == source and _safe_int(e.get("dte")) >= INDEX_WATCH_MIN_DTE]
+        puts = [e for e in rel
+                if e.get("option_type") == "put"
+                and _safe_float(e.get("moneyness"), 1.0) < 1.0
+                and _safe_float(e.get("estimated_premium")) >= INDEX_WATCH_MIN_PREMIUM
+                and not e.get("complex_suspected")]
+        puts.sort(key=lambda e: _safe_float(e.get("estimated_premium")), reverse=True)
+        put_prem = sum(_safe_float(e.get("estimated_premium")) for e in rel if e.get("option_type") == "put")
+        call_prem = sum(_safe_float(e.get("estimated_premium")) for e in rel if e.get("option_type") == "call")
+        out["sources"][source] = {
+            "n_large_otm_puts": len(puts),
+            "large_otm_put_premium": round(sum(_safe_float(e.get("estimated_premium")) for e in puts), 2),
+            "n_oi_confirmed": sum(1 for e in puts if e.get("status") == "oi_confirmed"),
+            # 仅限已入选事件 (score ≥ 40) 的权利金比, 不是全市场 put/call 比
+            "put_call_premium_ratio_dte7plus": round(put_prem / call_prem, 3) if call_prem > 0 else None,
+            "top": [_index_watch_row(e) for e in puts[:8]],
+        }
+    return out
+
+
+def append_index_watch_log(index_watch: dict[str, Any], path: Path | None = None) -> int:
+    """把入选事件按 (id, status, event_date) 去重追加到 jsonl, 供日后检验预测力. 返回新增条数."""
+    path = Path(path or INDEX_WATCH_LOG_PATH)
+    seen: set[tuple] = set()
+    if path.exists():
+        try:
+            for line in path.read_text(encoding="utf-8").splitlines()[-5000:]:
+                try:
+                    r = json.loads(line)
+                    seen.add((r.get("id"), r.get("status"), r.get("event_date")))
+                except json.JSONDecodeError:
+                    continue
+        except OSError:
+            pass
+    new = []
+    for src in (index_watch.get("sources") or {}).values():
+        for row in src.get("top") or []:
+            key = (row.get("id"), row.get("status"), row.get("event_date"))
+            if key in seen:
+                continue
+            seen.add(key)
+            new.append(row)
+    if new:
+        path.parent.mkdir(parents=True, exist_ok=True)
+        with open(path, "a", encoding="utf-8") as f:
+            for row in new:
+                f.write(json.dumps(row, ensure_ascii=False) + "\n")
+    return len(new)
 
 _REFRESH_LOCK = threading.Lock()
 
@@ -854,6 +936,7 @@ def analyze_option_payloads(
     events = [event for event in events if _safe_int(event.get("score")) >= SIGNAL_MIN_SCORE]
     events.sort(key=lambda event: (_safe_int(event.get("score")), _safe_float(event.get("estimated_premium"))), reverse=True)
     positions = _aggregate_positions(events)
+    index_watch = build_index_watch(events)   # 在截断前算, 0DTE 噪音不会挤掉它
 
     # Avoid unbounded state growth while retaining pending far-dated contracts.
     now_ts = now.timestamp()
@@ -886,6 +969,7 @@ def analyze_option_payloads(
         "events": events[:100],
         "long_dated_events": [event for event in events if _safe_int(event.get("dte")) >= 46][:30],
         "positions": positions,
+        "index_watch": index_watch,
     }
     state = {
         "schema_version": SCHEMA_VERSION,
@@ -987,6 +1071,10 @@ def refresh_option_flow(
         )
         atomic_write_json(STATE_PATH, state)
         atomic_write_json(LATEST_PATH, result)
+        try:
+            append_index_watch_log(result.get("index_watch") or {})
+        except Exception as exc:  # 存档失败不影响监控
+            logger.warning(f"[options-flow] index watch log skipped: {exc}")
         return result
     finally:
         _REFRESH_LOCK.release()

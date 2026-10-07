@@ -70,6 +70,8 @@ JOBS = {
     "webui_diag": {"bat": "_webui_diag.bat"},
     # 2026-10-07: 只读账户快照 (accinfo 全字段 / 持仓 / 当日订单), 按需触发
     "account_snapshot": {"bat": "_account_snapshot.bat"},
+    # 2026-10-07: put/call 比 & 卖空量 预测力检验 (大量下载 → 收盘后跑), 按需触发
+    "flow_history_test": {"bat": "_flow_history_test.bat", "market_quiet": True},
 }
 QUIET_BLOCK_UTC_HOURS = (12, 21)
 
