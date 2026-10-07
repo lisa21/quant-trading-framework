@@ -1,12 +1,21 @@
 {
   "ticker": "5803.T",
   "days": 10,
-  "hits": [],
-  "count": 0,
+  "hits": [
+    {
+      "date": "20261006",
+      "trade_time": "15:32",
+      "price": 5731.6847,
+      "volume": 945200,
+      "value_oku": 54.2,
+      "sheet": "Tost50億円"
+    }
+  ],
+  "count": 1,
   "_meta": {
-    "cached_at": "2026-10-07T09:33:22.007931",
-    "age_sec": 25201,
-    "stale": true,
-    "refreshing": true
+    "cached_at": "2026-10-07T16:33:24.278876",
+    "age_sec": 1798,
+    "stale": false,
+    "refreshing": false
   }
 }
