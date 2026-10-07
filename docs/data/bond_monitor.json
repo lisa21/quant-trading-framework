@@ -1,5 +1,5 @@
 {
-  "asof": "2026-10-07T09:03",
+  "asof": "2026-10-07T09:33",
   "yields": {
     "10y": {
       "value": 5.269,
@@ -203,10 +203,10 @@
     }
   },
   "gld_correlation": {
-    "vs_10y": -0.5,
-    "vs_tips_10y": 0.196,
+    "vs_10y": -0.524,
+    "vs_tips_10y": 0.195,
     "regime": "aligned",
-    "reason": "相关性 0.196，正相关（可能通胀 regime，两者同向）"
+    "reason": "相关性 0.195，正相关（可能通胀 regime，两者同向）"
   },
   "anomalies": [],
   "warnings": [
@@ -247,13 +247,23 @@
     },
     {
       "level": "warn",
-      "msg": "USDJPY 158.36 进入 155-160 口头干预区间 (JP MoF)",
+      "msg": "USDJPY 158.42 进入 155-160 口头干预区间 (JP MoF)",
       "key": "jpy_verbal_zone"
     },
     {
       "level": "bad",
       "msg": "BIS CIP: FX 对冲后 UST 10Y (2.84%) < JGB (2.94%) = JP 投资者会抛售 UST",
       "key": "cip_repatriation_signal"
+    },
+    {
+      "level": "bad",
+      "msg": "SPY-IEF 60d 相关 +0.501 → 股债双杀严重区 (1970s 滞胀级, 传统对冲完全失效)",
+      "key": "stock_bond_corr_extreme"
+    },
+    {
+      "level": "bad",
+      "msg": "KBE/SPY 20d -7.85% 银行明显跑输 (2023-SVB 前 2 周就是这个)",
+      "key": "bank_stress_alert"
     },
     {
       "level": "warn",
@@ -310,13 +320,13 @@
     "sofr_pct": 3.89,
     "iorb_pct": 3.9,
     "sofr_iorb_spread_bps": -1.0,
-    "usdjpy": 158.36,
-    "usdjpy_20d_pct": 3.18,
-    "usdjpy_20d_delta_pct": 3.18,
+    "usdjpy": 158.42,
+    "usdjpy_20d_pct": 3.22,
+    "usdjpy_20d_delta_pct": 3.22,
     "usdjpy_60d_high": 163.86,
-    "usdjpy_pullback_from_60d_high_pct": -3.36,
-    "krw_usd": 1339.0,
-    "krw_20d_pct": -0.02,
+    "usdjpy_pullback_from_60d_high_pct": -3.32,
+    "krw_usd": 1339.4,
+    "krw_20d_pct": 0.01,
     "jgb_10y_pct": 2.94,
     "jgb_asof": "2026-08-01",
     "ust_jgb_spread_bps": 232.9,
@@ -328,29 +338,30 @@
     "hedge_cost_jp": 2.43,
     "real_yield_gap_us_jp": 1.79,
     "cpi_jp_yoy_pct": 3.17,
-    "kbe_spy_ratio": null,
-    "kbe_spy_20d_delta_pct": null,
+    "spy_ief_60d_corr": 0.501,
+    "kbe_spy_ratio": 0.08203,
+    "kbe_spy_20d_delta_pct": -7.85,
     "cdx_ig_bps": 84.0,
     "cdx_hy_bps": 312.0,
-    "dxy": 101.91,
-    "dxy_pct_20d": 3.11,
-    "dxy_z_60d": 1.6,
+    "dxy": 101.93,
+    "dxy_pct_20d": 3.13,
+    "dxy_z_60d": 1.62,
     "asia_indices": {
       "N225": {
         "symbol": "^N225",
         "label": "Nikkei 225 (日)",
-        "close": 69946.86,
-        "chg_1d": 2.4,
-        "chg_5d_pct": 6.18,
-        "asof": "2026-10-05"
+        "close": 70692.23,
+        "chg_1d": 0.01,
+        "chg_5d_pct": 5.9,
+        "asof": "2026-10-07"
       },
       "HSI": {
         "symbol": "^HSI",
         "label": "Hang Seng (港)",
-        "close": 24040.34,
-        "chg_1d": 0.28,
-        "chg_5d_pct": -1.92,
-        "asof": "2026-10-05"
+        "close": 24280.56,
+        "chg_1d": 1.0,
+        "chg_5d_pct": -1.47,
+        "asof": "2026-10-06"
       },
       "SSE": {
         "symbol": "000001.SS",
@@ -371,43 +382,43 @@
       "KOSPI": {
         "symbol": "^KS11",
         "label": "KOSPI (韩)",
-        "close": 7003.74,
-        "chg_1d": 0.46,
-        "chg_5d_pct": -1.09,
-        "asof": "2026-10-02"
+        "close": 6912.74,
+        "chg_1d": -0.41,
+        "chg_5d_pct": 0.61,
+        "asof": "2026-10-07"
       }
     },
     "us_futures": {
       "es_f": {
         "symbol": "ES=F",
         "label": "S&P 500 futures",
-        "price": 7880.75,
-        "chg_pct": 0.7
+        "price": 7882.75,
+        "chg_pct": 0.72
       },
       "nq_f": {
         "symbol": "NQ=F",
         "label": "Nasdaq futures",
-        "price": 31492.75,
-        "chg_pct": 0.56
+        "price": 31502.5,
+        "chg_pct": 0.59
       },
       "cl_f": {
         "symbol": "CL=F",
         "label": "WTI crude futures",
-        "price": 89.99,
-        "chg_pct": 0.63
+        "price": 90.23,
+        "chg_pct": 0.89
       },
       "gc_f": {
         "symbol": "GC=F",
         "label": "Gold futures",
-        "price": 4195.6,
-        "chg_pct": 0.93
+        "price": 4190.1,
+        "chg_pct": 0.8
       }
     },
-    "oil_uso": null,
-    "oil_pct_20d": null,
-    "oil_wti": 89.99,
-    "eem_pct_20d": null,
-    "eem_vs_spx_20d": null,
+    "oil_uso": 144.91,
+    "oil_pct_20d": -0.77,
+    "oil_wti": 90.23,
+    "eem_pct_20d": -0.81,
+    "eem_vs_spx_20d": -2.78,
     "volume_confirm": {
       "rates": {
         "proxy": "TLT",
@@ -500,8 +511,8 @@
     }
   },
   "_meta": {
-    "cached_at": "2026-10-07T09:03:19.742730",
-    "age_sec": 1783,
+    "cached_at": "2026-10-07T09:33:17.757704",
+    "age_sec": 1785,
     "stale": true,
     "refreshing": true
   }
