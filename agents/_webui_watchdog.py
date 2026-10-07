@@ -72,6 +72,8 @@ JOBS = {
     "account_snapshot": {"bat": "_account_snapshot.bat"},
     # 2026-10-07: put/call 比 & 卖空量 预测力检验 (大量下载 → 收盘后跑), 按需触发
     "flow_history_test": {"bat": "_flow_history_test.bat", "market_quiet": True},
+    # 2026-10-07: 信用利差 → 股市预警 预测力检验, 按需触发
+    "credit_warning_test": {"bat": "_credit_warning_test.bat", "market_quiet": True},
 }
 QUIET_BLOCK_UTC_HOURS = (12, 21)
 
