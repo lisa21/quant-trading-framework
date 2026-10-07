@@ -68,6 +68,8 @@ JOBS = {
                         "auto_every_days": 1},
     # 2026-10-06: 只读诊断 (本机请求 WebUI 接口), 按需触发
     "webui_diag": {"bat": "_webui_diag.bat"},
+    # 2026-10-07: 只读账户快照 (accinfo 全字段 / 持仓 / 当日订单), 按需触发
+    "account_snapshot": {"bat": "_account_snapshot.bat"},
 }
 QUIET_BLOCK_UTC_HOURS = (12, 21)
 

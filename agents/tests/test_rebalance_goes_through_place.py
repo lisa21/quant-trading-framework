@@ -40,6 +40,8 @@ class RebalanceUsesPlace(unittest.TestCase):
         self.stack.enter_context(patch.object(pt, "EXECUTION_LOG_PATH", self.ledger))
         self.stack.enter_context(patch.object(pt, "_log_trade"))
         self.stack.enter_context(patch.dict(sys.modules, {"notifications": MagicMock()}))
+        # 2026-10-07 现金纪律另有 test_cash_discipline 覆盖; 这里只测下单链路
+        self.stack.enter_context(patch.object(pt, "_fund_buy_qty", side_effect=lambda c, q, p: q))
 
     def tearDown(self):
         self.stack.close()
@@ -121,7 +123,8 @@ class PlaceRecordsTag(unittest.TestCase):
              patch.object(pt, "_ctx_get", return_value=_broker("P1")), \
              patch.object(pt, "_log_trade"), \
              patch.object(pt, "_portfolio_what_if", return_value={"allow_order": True}), \
-             patch.dict(sys.modules, {"notifications": MagicMock()}):
+             patch.dict(sys.modules, {"notifications": MagicMock()}), \
+             patch.object(pt, "_fund_buy_qty", side_effect=lambda c, q, p: q):
             pt._place("US.TEST", pt.TrdSide.BUY, 1, 10.0, tag="[PYRAMID L2]")
         ev = [json.loads(l) for l in ledger.read_text(encoding="utf-8").splitlines()]
         self.assertEqual(ev[0]["tag"], "[PYRAMID L2]")

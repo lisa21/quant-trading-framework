@@ -38,10 +38,11 @@ from paper_trader import (
     execute as trade_execute,
     monitor_software_stops,
     refresh_nav_peak,
+    restore_cash_floor,
     sync_pending_entries_from_latest_signals,
 )
 from claude_gate import apply_claude_gate
-from trading_contracts import ORDER_ACTIONS
+from trading_contracts import ORDER_ACTIONS, TRADE_WINDOWS
 from atomic_io import atomic_write_json
 from data_quality import PointInTimeStore, audit_latest_signal_files
 
@@ -848,6 +849,14 @@ def run_cycle(window: str | None = None) -> None:
         refresh_nav_peak()
     except Exception:
         pass
+    # 现金纪律 规则 B (2026-10-07): 交易窗口内现金 < 0 → 卖 SHY/IEI 补回, 不借保证金
+    if window in TRADE_WINDOWS:
+        try:
+            restored = restore_cash_floor()
+            if restored:
+                logger.warning(f"[cash] 恢复现金卖单: {restored}")
+        except Exception as exc:
+            logger.exception(f"[cash] restore_cash_floor failed: {exc}")
     if window and window != "pre-open":
         _ensure_current_regime()
     macro = _build_macro()

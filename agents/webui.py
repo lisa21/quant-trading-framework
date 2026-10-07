@@ -11,6 +11,7 @@ API 端点：
   GET /api/health         → { orchestrator_alive, opend_alive, last_log_ts, uptime }
   GET /api/nav            → NAV 历史 + peak + dd_pct
   GET /api/equity_curve   → 账户收益曲线 (按交易日 + SPY 对比, 公开)
+  GET /api/fills          → 交割单 + 近 30 天买卖汇总 + 账户现金 (公开)
   GET /api/positions      → moomoo 当前持仓（如可用）
   GET /api/institutional  → 组合风险/压力/归因/杠杆路径/成交质量
   GET /api/trades?n=20    → 最近 N 笔 trade_log
@@ -1287,6 +1288,39 @@ def _compute_oil() -> dict:
     out["pct_20d"] = prices.get("wti", {}).get("pct_20d")
     out["source"] = "WTI 期货 (CL=F) 主 + 5 因子"
     return out
+
+
+def _fetch_account_cash() -> dict | None:
+    """moomoo 账户现金 / 净值 / 持仓市值 (加锁 + 超时). 失败返 None."""
+    try:
+        from paper_trader import _ctx_get, ACC_ID, TRD_ENV
+        from moomoo import RET_OK
+        got = _moomoo_query(lambda: _ctx_get().accinfo_query(trd_env=TRD_ENV, acc_id=ACC_ID, currency="USD"))
+        if got is None:
+            return None
+        ret, info = got
+        if ret != RET_OK or info is None or info.empty:
+            return None
+        r = info.iloc[0]
+        nav = float(r.get("total_assets", 0) or 0)
+        cash = float(r.get("cash", 0) or 0)
+        return {"cash": cash, "nav": nav, "market_val": float(r.get("market_val", 0) or 0),
+                "cash_pct": round(cash / nav * 100, 2) if nav else None}
+    except Exception:
+        return None
+
+
+def api_fills(n: int = 40) -> dict:
+    """交割单 (2026-10-07 用户要求置顶 + 公开): 券商真实成交 (按订单聚合) + 近 30 天买卖汇总 + 账户现金."""
+    def _compute():
+        from datetime import timedelta
+        import fill_ledger
+        rows = fill_ledger.statement_rows(n=n)
+        since = (datetime.now(timezone.utc) - timedelta(days=30)).isoformat()
+        flow = fill_ledger.get_cash_flow(since=since)
+        return {"rows": rows, "flow_30d": flow, "account": _fetch_account_cash(),
+                "note": "券商成交记录 (未成交/撤单不列); 手续费: 券商未提供时显示'未计入'"}
+    return _cached(f"fills_v1_{n}", ttl_sec=300, compute_fn=_compute)
 
 
 def api_equity_curve() -> dict:
@@ -5325,6 +5359,8 @@ class Handler(BaseHTTPRequestHandler):
                 self._json(api_nav(days=days))
             elif path == "/api/equity_curve":
                 self._json(api_equity_curve())
+            elif path == "/api/fills":
+                self._json(api_fills())
             elif path == "/api/positions":
                 self._json(api_positions())
             elif path == "/api/institutional":

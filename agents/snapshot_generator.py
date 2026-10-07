@@ -67,6 +67,7 @@ GLOBAL_ENDPOINTS = [
     "/api/option_walls_chart",
     "/api/positions",      # 2026-10-06 用户决定: 公开页完整显示持仓
     "/api/equity_curve",   # 2026-10-06 用户要求: 公开页显示账户收益曲线
+    "/api/fills",          # 2026-10-07 用户要求: 交割单置顶公开 (含账户现金)
 ]
 
 # Per-ticker endpoints — 迭代 watch list

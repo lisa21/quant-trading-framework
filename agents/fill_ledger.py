@@ -378,3 +378,40 @@ def summary_by_ticker(since: Optional[str] = None) -> dict[str, dict]:
         if tk:
             tickers.add(tk)
     return {tk: get_position(tk, since=since) for tk in sorted(tickers)}
+
+
+def statement_rows(n: int = 50, since: Optional[str] = None) -> list[dict]:
+    """交割单 (2026-10-07): 按订单聚合的券商成交, 最新在前.
+
+    部分成交按 order_id 取累计最后一条; 手续费 None = 券商未提供 (≠ 0).
+    """
+    final_by_oid: dict[str, dict] = {}
+    for ev in get_fills(since=since, include_partial=True):
+        oid = str(ev.get("order_id") or "")
+        if not oid:
+            continue
+        prev = final_by_oid.get(oid)
+        if prev is None or str(ev.get("ts", "")) > str(prev.get("ts", "")):
+            final_by_oid[oid] = ev
+    fees = load_order_fees()
+    rows = []
+    for oid, ev in final_by_oid.items():
+        dealt = float(ev.get("dealt_qty") or 0)
+        avg = float(ev.get("average_fill_price") or 0)
+        if dealt <= 0 or avg <= 0:
+            continue
+        side = (ev.get("side") or "").upper()
+        rows.append({
+            "ts": ev.get("ts"),
+            "order_id": oid,
+            "ticker": canonical_ticker(ev.get("ticker")).replace("US.", ""),
+            "side": "SELL" if side in ("SELL", "SELL_ALL", "REDUCE") else side,
+            "qty": dealt,
+            "price": round(avg, 4),
+            "amount": round(dealt * avg, 2),
+            "fee": fees.get(oid),
+            "status": ev.get("broker_status") or ev.get("event"),
+            "partial": ev.get("event") == "partial",
+        })
+    rows.sort(key=lambda r: str(r["ts"] or ""), reverse=True)
+    return rows[:n]

@@ -202,6 +202,15 @@
   </div>
 </div>
 
+<!-- Row 0-top-1: 交割单 (2026-10-07 用户要求置顶 + 公开; 含账户现金和近 30 天买卖汇总) -->
+<div class="grid">
+  <div class="card" style="border-left:4px solid #d29922">
+    <h2 title="moomoo 模拟账户真实成交，按订单聚合（部分成交取累计）。未成交 / 撤单不列。现金为负 = 在借保证金。">🧾 交割单 & 现金 <small id="fills-meta">Fills · Cash</small></h2>
+    <div id="fills-summary" style="display:flex; flex-wrap:wrap; gap:6px 18px; font-size:12px; margin-bottom:6px"></div>
+    <div id="fills" style="max-height:260px; overflow-y:auto"></div>
+  </div>
+</div>
+
 <!-- Row 0-top-2: 账户收益曲线 (2026-10-06 用户要求; 公开快照也显示) -->
 <div class="grid">
   <div class="card" style="border-left:4px solid #3fb950">
@@ -4044,6 +4053,42 @@ async function loadEquityCurve() {
   });
 }
 
+// 交割单 (2026-10-07): 公开快照也显示; 现金为负 = 借保证金, 红色提示
+async function loadFills() {
+  const f = await fetchJson('/api/fills');
+  if (!f || f.error || !f.rows) {
+    $('fills').innerHTML = `<small style="color:var(--muted)">交割单暂不可用${f && f.error ? '：' + f.error : ''}</small>`;
+    return;
+  }
+  const money = v => v == null ? '—' : (v < 0 ? '-$' : '$') + fmt(Math.abs(Math.round(v)));
+  const acc = f.account || {};
+  const flow = f.flow_30d || {};
+  const cashCls = acc.cash == null ? '' : (acc.cash < 0 ? 'bad' : 'ok');
+  const cashTip = acc.cash != null && acc.cash < 0 ? '现金为负 = 正在借保证金。现金纪律：买入须有现金覆盖，不够先卖 SHY；现金<0 时卖 SHY/IEI 补回' : '';
+  const item = (k, v, c, tip) => `<span title="${tip || ''}"><span style="color:var(--muted)">${k}</span> <b class="${c || ''}">${v}</b></span>`;
+  $('fills-summary').innerHTML = [
+    item('账户现金', money(acc.cash) + (acc.cash_pct != null ? ` (${acc.cash_pct > 0 ? '+' : ''}${acc.cash_pct.toFixed(1)}% NAV)` : ''), cashCls, cashTip),
+    item('近 30 天买入', `${money(flow.gross_out)} · ${flow.n_buys ?? 0} 笔`, ''),
+    item('卖出', `${money(flow.gross_in)} · ${flow.n_sells ?? 0} 笔`, ''),
+    item('净买入', money(flow.net_flow == null ? null : -flow.net_flow), (flow.net_flow || 0) < 0 ? 'warn' : 'ok', '买入金额 − 卖出金额；持续为正 = 只买不卖'),
+  ].join('');
+  $('fills-meta').textContent = (f._meta && f._meta.cached_at) ? `更新 ${String(f._meta.cached_at).slice(5, 16).replace('T', ' ')}（日本时间）` : 'Fills · Cash';
+  if (!f.rows.length) { $('fills').innerHTML = '<small>暂无成交</small>'; return; }
+  const rows = f.rows.map(r => `
+    <tr>
+      <td><small>${new Date(r.ts).toLocaleString('zh-CN', {timeZone: 'Asia/Tokyo', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit'})}</small></td>
+      <td><b>${r.ticker}</b></td>
+      <td class="side ${r.side}">${r.side === 'BUY' ? '买入' : '卖出'}${r.partial ? '<small>（部分）</small>' : ''}</td>
+      <td style="text-align:right">${fmt(r.qty)}</td>
+      <td style="text-align:right">$${fmt(r.price)}</td>
+      <td style="text-align:right">${money(r.amount)}</td>
+      <td style="text-align:right"><small>${r.fee == null ? '未计入' : '$' + fmt(r.fee)}</small></td>
+    </tr>`).join('');
+  $('fills').innerHTML = `<table>
+      <thead><tr><th>时间 (JST)</th><th>标的</th><th>方向</th><th style="text-align:right">数量</th><th style="text-align:right">成交价</th><th style="text-align:right">金额</th><th style="text-align:right">手续费</th></tr></thead>
+      <tbody>${rows}</tbody></table>`;
+}
+
 async function loadAll() {
   const promises = [
     loadHealth(), loadTopPicks(), loadSectors(), loadBanners(),
@@ -4053,6 +4098,7 @@ async function loadAll() {
     loadBondMonitor(),  // 美债 + Fed 政策路径（公开衍生信号）
     loadThesisTimeline(),  // thesis 时间线 + next conjecture (2026-09-18)
     loadPositions(),       // 2026-10-06: 公开快照也显示持仓 (置顶)
+    loadFills(),           // 2026-10-07: 交割单 + 现金 (公开, 置顶)
     loadEquityCurve(),     // 2026-10-06: 账户收益曲线 (公开)
   ];
   // Owner-only endpoints skip in static mode

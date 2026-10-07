@@ -772,7 +772,14 @@ _power_cache_ts: float = 0.0
 
 
 def _get_account_power() -> float:
-    """查 SIMULATE 账户购买力，5 分钟内缓存。OpenD 故障时返回 ACCOUNT_POWER_FALLBACK。"""
+    """仓位计算基数 (5 分钟缓存). OpenD 故障时返回 ACCOUNT_POWER_FALLBACK.
+
+    2026-10-07: 改用账户净值 total_assets, 不再用 moomoo 的 power.
+      · 账户是 MARGIN 模拟户, power 是"含保证金的购买力", 随借款增减, 不是组合规模;
+        vol-target 的 final_pct / 单笔 40% / 相关性组上限都按"占组合净值"定义.
+      · 旧代码 power<=0 (购买力用尽) 时回退到 150 万 → 用尽反而按 150 万下单. 现在
+        查询成功但净值<=0 → 返回 0 (不开新仓); 只有查询失败才用回退值.
+    """
     global _power_cache, _power_cache_ts
     now = time.time()
     if _power_cache is not None and now - _power_cache_ts < 300:
@@ -781,13 +788,167 @@ def _get_account_power() -> float:
         ctx = _ctx_get()
         ret, info = ctx.accinfo_query(trd_env=TRD_ENV, acc_id=ACC_ID, currency="USD")
         if ret == RET_OK and info is not None and not info.empty:
-            p = float(info.iloc[0].get("power", 0) or 0)
-            if p > 0:
-                _power_cache, _power_cache_ts = p, now
-                return p
+            nav = float(info.iloc[0].get("total_assets", 0) or 0)
+            nav = max(0.0, nav)
+            _power_cache, _power_cache_ts = nav, now
+            return nav
     except Exception:
         pass
     return ACCOUNT_POWER_FALLBACK
+
+
+# ---------- 现金纪律 (2026-10-07 用户要求: 注意现金总值, 不能只买不卖) ----------
+# 事实: 账户是 MARGIN 模拟户, 旧 BUY 路径从不看现金. 2026-09-07~10-06 买入 71.4 万、
+#   卖出 34.6 万, 10-07 现金 -33.5 万 = 在借保证金. 系统的杠杆预算本来只来自杠杆 ETF
+#   + 有效总敞口 180% 上限 (pretrade_portfolio_gate), 借钱从来不是设计的一部分.
+# 规则 A (买入): 买入金额必须有现金覆盖. 不够 → 先卖"现金替代品" SHY 补足; 仍不够 →
+#   缩量; 一股都覆盖不了 → 放弃. 这条不受 SIM_ACTIVE 豁免.
+# 规则 B (恢复): 每个交易窗口若现金 < 0 → 依次卖 SHY、IEI 补到 >= 0.
+# 为什么是 SHY/IEI: (1) 久期最短、最接近现金, 换回现金对组合风险改变最小;
+#   (2) 两者都高于系统自己的目标上限 (auto_rebalance 模板 SHY/IEI max 25%);
+#   (3) 用借来的钱持有短债 = 负利差, 没有对应的 thesis 收益.
+CASH_FLOOR_USD = 0.0
+BUY_FUNDING_SOURCES = ("US.SHY",)
+RESTORE_FUNDING_SOURCES = ("US.SHY", "US.IEI")
+_OPEN_ORDER_STATUSES = {
+    "SUBMITTING", "SUBMITTED", "WAITING_SUBMIT", "FILLED_PART", "UNSUBMITTED",
+}
+
+
+def plan_funding_sells(shortfall_usd: float, holdings: dict, sources) -> tuple[list[dict], float]:
+    """纯函数: 按 sources 顺序卖出, 凑够 shortfall_usd. 返回 (卖单列表, 仍缺口).
+
+    holdings: {code: {"qty": 可卖股数, "price": 价格}}. 股数向上取整 (宁可多 1 股也要覆盖).
+    """
+    import math as _m
+    sells: list[dict] = []
+    remaining = float(shortfall_usd)
+    for code in sources:
+        if remaining <= 0:
+            break
+        h = holdings.get(code) or {}
+        qty_avail = int(h.get("qty") or 0)
+        price = float(h.get("price") or 0)
+        if qty_avail <= 0 or price <= 0:
+            continue
+        qty = min(qty_avail, int(_m.ceil(remaining / price)))
+        if qty <= 0:
+            continue
+        sells.append({"code": code, "qty": qty, "price": price, "usd": round(qty * price, 2)})
+        remaining -= qty * price
+    return sells, max(0.0, round(remaining, 2))
+
+
+def _account_cash_view() -> dict | None:
+    """实时现金视图 (不缓存). 查询失败 → None (调用方 fail-closed)."""
+    try:
+        ctx = _ctx_get()
+        ret, info = ctx.accinfo_query(trd_env=TRD_ENV, acc_id=ACC_ID, currency="USD")
+        if ret != RET_OK or info is None or info.empty:
+            return None
+        row = info.iloc[0]
+        cash = float(row.get("cash", 0) or 0)
+        nav = float(row.get("total_assets", 0) or 0)
+        pending_buy = pending_sell = 0.0
+        pending_sell_codes: set[str] = set()
+        ret_o, orders = ctx.order_list_query(trd_env=TRD_ENV, acc_id=ACC_ID)
+        if ret_o == RET_OK and orders is not None and not orders.empty:
+            for _, o in orders.iterrows():
+                status = str(o.get("order_status", "")).upper().split(".")[-1]
+                if status not in _OPEN_ORDER_STATUSES:
+                    continue
+                left = float(o.get("qty", 0) or 0) - float(o.get("dealt_qty", 0) or 0)
+                px = float(o.get("price", 0) or 0)
+                if left <= 0 or px <= 0:
+                    continue
+                side = str(o.get("trd_side", "")).upper()
+                if side.endswith("BUY"):
+                    pending_buy += left * px
+                else:
+                    pending_sell += left * px
+                    pending_sell_codes.add(str(o.get("code", "")))
+        return {
+            "cash": cash, "nav": nav,
+            "pending_buy": round(pending_buy, 2), "pending_sell": round(pending_sell, 2),
+            "pending_sell_codes": pending_sell_codes,
+            # 可用现金 = 现金 - 未成交买单占用 + 未成交卖单回款 - 底线
+            "available": round(cash - pending_buy + pending_sell - CASH_FLOOR_USD, 2),
+        }
+    except Exception as exc:
+        logger.warning(f"[cash] 账户现金查询失败: {exc}")
+        return None
+
+
+def _sellable_holdings(codes) -> dict:
+    out: dict = {}
+    try:
+        ctx = _ctx_get()
+        ret, pos = ctx.position_list_query(trd_env=TRD_ENV, acc_id=ACC_ID)
+        if ret != RET_OK or pos is None or pos.empty:
+            return out
+        for _, r in pos.iterrows():
+            code = str(r.get("code", ""))
+            if code in codes:
+                qty = float(r.get("can_sell_qty", r.get("qty", 0)) or 0)
+                price = float(r.get("nominal_price", 0) or 0)
+                out[code] = {"qty": int(qty), "price": price}
+    except Exception as exc:
+        logger.warning(f"[cash] 持仓查询失败: {exc}")
+    return out
+
+
+def _submit_funding_sells(sells: list[dict], reason: str) -> list[str]:
+    done = []
+    for s in sells:
+        oid = _place(s["code"], TrdSide.SELL, int(s["qty"]), float(s["price"]),
+                     tag=f"[REBALANCE CASH {reason}]",
+                     decision={"action": "REBALANCE_SELL", "reason": f"cash: {reason}",
+                               "engine": "cash_discipline"})
+        if oid:
+            done.append(f"{s['code']} -{s['qty']} (${s['usd']:,.0f}) order={oid}")
+    return done
+
+
+def _fund_buy_qty(code: str, qty: int, order_price: float) -> int:
+    """规则 A: 返回现金能覆盖的买入股数 (必要时先卖 SHY 补足). 0 = 放弃."""
+    view = _account_cash_view()
+    if view is None:
+        logger.error(f"[cash] SKIP BUY {code}: 无法确认现金, fail-closed")
+        return 0
+    cost = qty * order_price
+    avail = view["available"]
+    if avail >= cost:
+        return qty
+    shortfall = cost - avail
+    sources = tuple(c for c in BUY_FUNDING_SOURCES
+                    if c != code and c not in view["pending_sell_codes"])
+    sells, remaining = plan_funding_sells(shortfall, _sellable_holdings(sources), sources)
+    submitted = _submit_funding_sells(sells, f"fund BUY {code} x{qty}") if sells else []
+    funded = sum(s["usd"] for s in sells if any(x.startswith(s["code"]) for x in submitted))
+    affordable = int(max(0.0, avail + funded) // order_price) if order_price > 0 else 0
+    new_qty = min(qty, affordable)
+    logger.warning(
+        f"[cash] BUY {code} x{qty} 需 ${cost:,.0f}, 可用现金 ${avail:,.0f} "
+        f"(现金 ${view['cash']:,.0f}, 挂单买 ${view['pending_buy']:,.0f}/卖 ${view['pending_sell']:,.0f}); "
+        f"卖 SHY 补足: {submitted or '无可卖'} → 买入 {new_qty} 股"
+    )
+    return new_qty
+
+
+def restore_cash_floor() -> list[str]:
+    """规则 B: 现金 < 底线 → 依次卖 SHY、IEI 补足. 已有在途卖单的标的不重复下单."""
+    with _TRADER_LOCK:
+        view = _account_cash_view()
+        if view is None or view["available"] >= 0:
+            return []
+        sources = tuple(c for c in RESTORE_FUNDING_SOURCES if c not in view["pending_sell_codes"])
+        sells, remaining = plan_funding_sells(-view["available"], _sellable_holdings(sources), sources)
+        done = _submit_funding_sells(sells, "restore cash>=0") if sells else []
+        logger.warning(
+            f"[cash] 现金 ${view['cash']:,.0f} (可用 ${view['available']:,.0f}) < 0 → "
+            f"恢复卖单 {done or '无'}" + (f"; 仍缺 ${remaining:,.0f}, 需人工决定" if remaining > 0 else "")
+        )
+        return done
 
 
 def _group_current_exposure_usd(group: str) -> float:
@@ -1355,6 +1516,13 @@ def _place(code: str, side, qty: int, price: float, tag: str = "",
         logger.warning(f"[trader] SKIP {side} {code} qty={qty} price={price}")
         return None
     side_label = "BUY " if side == TrdSide.BUY else "SELL"
+    # 规则 A 现金纪律 (2026-10-07): 买入必须有现金覆盖, 不借保证金; 不受 SIM_ACTIVE 豁免
+    if side == TrdSide.BUY and not DRY_RUN:
+        funded_qty = _fund_buy_qty(code, int(qty), price * (1 + buffer))
+        if funded_qty <= 0:
+            logger.error(f"[trader] SKIP BUY {code}: 现金不足且无 SHY 可卖 (现金纪律)")
+            return None
+        qty = funded_qty
     # Data provenance gate is fail-closed for new risk and fail-open for exits.
     # Missing optional quote fields only creates a warning; invalid/stale price
     # blocks BUY.  This keeps historical callers compatible while hardening the
