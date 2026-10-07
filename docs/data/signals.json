@@ -8,7 +8,7 @@
       "rsi": 49.9,
       "vol_ratio": 0.91,
       "trend": "down",
-      "ts": "2026-10-07 11:38:20",
+      "ts": "2026-10-07 14:37:25",
       "display_profile": {
         "card_group": "main",
         "asset_class": "equity",
@@ -35,7 +35,7 @@
       "rsi": 39.7,
       "vol_ratio": 0.54,
       "trend": "down",
-      "ts": "2026-10-07 11:38:19",
+      "ts": "2026-10-07 14:37:24",
       "display_profile": {
         "card_group": "main",
         "asset_class": "equity",
@@ -62,7 +62,7 @@
       "rsi": 51.4,
       "vol_ratio": 0.69,
       "trend": "up",
-      "ts": "2026-10-07 11:38:19",
+      "ts": "2026-10-07 14:37:23",
       "display_profile": {
         "card_group": "macro",
         "asset_class": "fixed_income",
@@ -89,7 +89,7 @@
       "rsi": 58.2,
       "vol_ratio": 0.0,
       "trend": "up",
-      "ts": "2026-10-07 11:38:18",
+      "ts": "2026-10-07 14:37:23",
       "display_profile": {
         "card_group": "main",
         "asset_class": "equity",
@@ -116,7 +116,7 @@
       "rsi": 85.2,
       "vol_ratio": 0.93,
       "trend": "up",
-      "ts": "2026-10-07 11:38:17",
+      "ts": "2026-10-07 14:37:22",
       "display_profile": {
         "card_group": "main",
         "asset_class": "equity",
@@ -143,7 +143,7 @@
       "rsi": 68.9,
       "vol_ratio": 1.38,
       "trend": "up",
-      "ts": "2026-10-07 11:38:17",
+      "ts": "2026-10-07 14:37:21",
       "display_profile": {
         "card_group": "main",
         "asset_class": "equity",
@@ -170,7 +170,7 @@
       "rsi": 63.4,
       "vol_ratio": 0.98,
       "trend": "up",
-      "ts": "2026-10-07 11:38:16",
+      "ts": "2026-10-07 14:37:20",
       "display_profile": {
         "card_group": "main",
         "asset_class": "equity",
@@ -197,7 +197,7 @@
       "rsi": 83.5,
       "vol_ratio": 0.88,
       "trend": "up",
-      "ts": "2026-10-07 11:38:15",
+      "ts": "2026-10-07 14:37:19",
       "display_profile": {
         "card_group": "main",
         "asset_class": "equity",
@@ -224,7 +224,7 @@
       "rsi": 39.2,
       "vol_ratio": 1.28,
       "trend": "down",
-      "ts": "2026-10-07 11:38:14",
+      "ts": "2026-10-07 14:37:19",
       "display_profile": {
         "card_group": "macro",
         "asset_class": "fixed_income",
@@ -251,7 +251,7 @@
       "rsi": 47.6,
       "vol_ratio": 1.41,
       "trend": "down",
-      "ts": "2026-10-07 11:38:14",
+      "ts": "2026-10-07 14:37:18",
       "display_profile": {
         "card_group": "main",
         "asset_class": "equity",
@@ -278,7 +278,7 @@
       "rsi": 50.7,
       "vol_ratio": 0.72,
       "trend": "up",
-      "ts": "2026-10-07 11:38:13",
+      "ts": "2026-10-07 14:37:17",
       "display_profile": {
         "card_group": "main",
         "asset_class": "equity",
@@ -305,7 +305,7 @@
       "rsi": 40.0,
       "vol_ratio": 0.84,
       "trend": "down",
-      "ts": "2026-10-07 11:38:12",
+      "ts": "2026-10-07 14:37:17",
       "display_profile": {
         "card_group": "macro",
         "asset_class": "commodity",
@@ -332,7 +332,7 @@
       "rsi": 66.0,
       "vol_ratio": 0.82,
       "trend": "up",
-      "ts": "2026-10-07 11:37:46",
+      "ts": "2026-10-07 14:37:11",
       "display_profile": {
         "card_group": "main",
         "asset_class": "equity",
@@ -359,7 +359,7 @@
       "rsi": 60.8,
       "vol_ratio": 0.86,
       "trend": "down",
-      "ts": "2026-10-07 11:37:45",
+      "ts": "2026-10-07 14:37:10",
       "display_profile": {
         "card_group": "main",
         "asset_class": "equity",
@@ -386,7 +386,7 @@
       "rsi": 84.0,
       "vol_ratio": 0.74,
       "trend": "up",
-      "ts": "2026-10-07 11:37:45",
+      "ts": "2026-10-07 14:37:09",
       "display_profile": {
         "card_group": "main",
         "asset_class": "equity",
@@ -413,7 +413,7 @@
       "rsi": 77.8,
       "vol_ratio": 0.74,
       "trend": "up",
-      "ts": "2026-10-07 11:37:44",
+      "ts": "2026-10-07 14:37:08",
       "display_profile": {
         "card_group": "main",
         "asset_class": "equity",
