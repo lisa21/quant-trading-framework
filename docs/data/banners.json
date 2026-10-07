@@ -8,10 +8,11 @@
     "magnitude": "small",
     "score": 0,
     "event_counts": {
-      "MEDIA_ATTACK": 7,
-      "DOMESTIC_POLICY": 7,
+      "MEDIA_ATTACK": 4,
+      "DOMESTIC_POLICY": 5,
       "DEAL": 1,
-      "NOISE": 1
+      "NOISE": 1,
+      "GEOPOLITICAL": 1
     },
     "breaking": [
       {

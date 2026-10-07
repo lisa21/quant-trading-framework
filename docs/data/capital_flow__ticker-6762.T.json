@@ -4,9 +4,9 @@
   "anomaly": {
     "detected": false,
     "reason": "",
-    "score": 0.0,
+    "score": 0.20999999999999996,
     "peak_bars": [],
-    "day_ratio": 0.75,
+    "day_ratio": 1.21,
     "trading_date": "2026-10-07",
     "date_short": "10/7",
     "net_bias": "neutral",
@@ -33,20 +33,20 @@
             "tier": "multi_bar"
           }
         ],
-        "day_ratio": 0.75,
-        "day_chg_pct": 0.51,
+        "day_ratio": 1.21,
+        "day_chg_pct": -0.37,
         "day_open": 3561.0,
-        "day_close": 3579.0,
+        "day_close": 3548.0,
         "net_bias": "neutral",
         "buy_shares": 0,
         "sell_shares": 0,
         "buy_value_oku": 0,
         "sell_value_oku": 0,
         "full_bias": "neutral",
-        "full_up_shares": 3344100,
-        "full_down_shares": 2346000,
-        "full_up_value_oku": 119.44,
-        "full_down_value_oku": 83.33
+        "full_up_shares": 5401900,
+        "full_down_shares": 3936000,
+        "full_up_value_oku": 192.65,
+        "full_down_value_oku": 139.78
       },
       {
         "trading_date": "2026-10-06",
@@ -235,7 +235,7 @@
             "tier": "multi_bar"
           }
         ],
-        "day_ratio": 3.58,
+        "day_ratio": 3.49,
         "day_chg_pct": 4.5,
         "day_open": 3489.0,
         "day_close": 3646.0,
@@ -329,7 +329,7 @@
             "tier": "multi_bar"
           }
         ],
-        "day_ratio": 2.0,
+        "day_ratio": 1.95,
         "day_chg_pct": 1.66,
         "day_open": 3367.0,
         "day_close": 3423.0,
@@ -349,7 +349,7 @@
         "date_short": "10/2",
         "peak_bars": [],
         "slices": [],
-        "day_ratio": 0.85,
+        "day_ratio": 0.83,
         "day_chg_pct": 1.01,
         "day_open": 3161.0,
         "day_close": 3193.0,
@@ -369,7 +369,7 @@
         "date_short": "10/1",
         "peak_bars": [],
         "slices": [],
-        "day_ratio": 1.33,
+        "day_ratio": 1.3,
         "day_chg_pct": 5.52,
         "day_open": 3024.0,
         "day_close": 3191.0,
@@ -434,11 +434,11 @@
       "value_oku_min": 1.0
     }
   },
-  "asof": "2026-10-07 10:15 JST",
+  "asof": "2026-10-07 13:45 JST",
   "source": "yfinance_intraday",
   "_meta": {
-    "cached_at": "2026-10-07T10:33:21.009178",
-    "age_sec": 1798,
+    "cached_at": "2026-10-07T14:03:20.003600",
+    "age_sec": 1799,
     "stale": true,
     "refreshing": true
   }

@@ -7,10 +7,10 @@
     "recommendation": "strong_buy",
     "current_price": 1045.56,
     "forward_eps": 206.33,
-    "trailing_eps": 74.33,
-    "eps_growth_pct": 177.6,
+    "trailing_eps": 73.04,
+    "eps_growth_pct": 182.5,
     "forward_pe": 5.07,
-    "trailing_pe": 14.07,
+    "trailing_pe": 14.31,
     "target_mean": 1535.57,
     "target_high": 2200.0,
     "target_low": 361.0,
@@ -18,9 +18,9 @@
     "revenue_growth_pct": 379.3,
     "earnings_growth_pct": 1060.5,
     "next_earnings": "2026-12-24",
-    "implied_pe_hold": 2902.37,
-    "implied_pe_hold_upside": 177.6,
-    "peg_fair_price": 36644.64,
+    "implied_pe_hold": 2953.63,
+    "implied_pe_hold_upside": 182.5,
+    "peg_fair_price": 37655.67,
     "peg_ratio": 0.03,
     "hist_pe_median": 55.21,
     "hist_pe_p25": 8.31,
@@ -39,11 +39,11 @@
       },
       {
         "ticker": "000660.KS",
-        "pe": 3.77
+        "pe": 3.71
       },
       {
         "ticker": "285A.T",
-        "pe": 18.57
+        "pe": 18.2
       },
       {
         "ticker": "WDC",
@@ -204,8 +204,8 @@
       {
         "key": "pe_hold",
         "label": "前瞻 EPS × 当前估值",
-        "implied_price": 2902.37,
-        "gap_pct": 177.6
+        "implied_price": 2953.63,
+        "gap_pct": 182.5
       },
       {
         "key": "peer_pe",
@@ -216,21 +216,21 @@
     ],
     "median_gap_pct": 65.4,
     "revision_signal": "upward",
-    "required_eps_growth_pct": -74.5,
-    "consensus_eps_growth_pct": 177.6,
-    "growth_cushion_pct": 252.1,
+    "required_eps_growth_pct": -74.1,
+    "consensus_eps_growth_pct": 182.5,
+    "growth_cushion_pct": 256.6,
     "rationale": [
       "多口径隐含价中位数高于现价 65.4%",
       "近 30 天 EPS 共识上修",
-      "历史 PE 口径要求 EPS 增长 -74.5%，共识为 +177.6%"
+      "历史 PE 口径要求 EPS 增长 -74.1%，共识为 +182.5%"
     ]
   },
   "official_guidance_status": "not_connected",
-  "fetched_at": "2026-10-06T21:33:24.959922+00:00",
+  "fetched_at": "2026-10-07T04:03:24.310669+00:00",
   "source": "yfinance analyst aggregation",
   "_meta": {
-    "cached_at": "2026-10-07T06:33:24.960440",
-    "age_sec": 16197,
+    "cached_at": "2026-10-07T13:03:24.312663",
+    "age_sec": 5398,
     "stale": false,
     "refreshing": false
   },

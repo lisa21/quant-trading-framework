@@ -35,7 +35,7 @@
     "peer_pe_details": [
       {
         "ticker": "SWKS",
-        "pe": 14.99
+        "pe": 14.53
       },
       {
         "ticker": "AVGO",
@@ -43,7 +43,7 @@
       },
       {
         "ticker": "6981.T",
-        "pe": 37.21
+        "pe": 36.63
       },
       {
         "ticker": "QCOM",
@@ -229,11 +229,11 @@
     ]
   },
   "official_guidance_status": "not_connected",
-  "fetched_at": "2026-10-06T21:33:24.831656+00:00",
+  "fetched_at": "2026-10-07T04:03:24.042456+00:00",
   "source": "yfinance analyst aggregation",
   "_meta": {
-    "cached_at": "2026-10-07T06:33:24.831656",
-    "age_sec": 16197,
+    "cached_at": "2026-10-07T13:03:24.043451",
+    "age_sec": 5398,
     "stale": false,
     "refreshing": false
   },
