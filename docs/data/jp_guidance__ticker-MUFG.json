@@ -79,7 +79,7 @@
     "source": "yfinance analyst aggregation",
     "_meta": {
       "cached_at": "2026-10-07T09:33:22.897994",
-      "age_sec": 3600,
+      "age_sec": 5399,
       "stale": false,
       "refreshing": false
     }
